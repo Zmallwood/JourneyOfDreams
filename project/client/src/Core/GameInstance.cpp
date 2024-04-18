@@ -1,36 +1,19 @@
 #include "GameInstance.h"
+#include "Engine/DoOneGameLoopFrame.h"
 #include "Engine/Graphics/Graphics.h"
+#include "Engine/Net/Net.h"
 #include "Engine/Rendering/Shaders/DefaultShaderFragment.h"
 #include "Engine/Rendering/Shaders/DefaultShaderVertex.h"
-#include "Engine/Net/Net.h"
 
 namespace zw
 {
-    struct context
-    {
-        int x;
-    };
-
-    void loop_fn(void *arg)
-    {
-        _<Graphics>().ClearCanvas();
-
-        // Draw a triangle from the 3 vertices
-        glDrawArrays(GL_TRIANGLES, 0, 3);
-
-        _<Graphics>().PresentCanvas();
-    }
-
     void GameInstance::Run()
     {
-        _<Net>();
+        _<Net>(); // Touch Net to initialize it
 
-        _<Graphics>();
+        _<Graphics>(); // Touch Graphics to initialize it
 
-        struct context ctx;
         int simulate_infinite_loop = 1;
-
-        ctx.x = 0;
 
         // Create Vertex Array Object
         GLuint vao;
@@ -69,6 +52,6 @@ namespace zw
         glEnableVertexAttribArray(posAttrib);
         glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
-        emscripten_set_main_loop_arg(loop_fn, &ctx, -1, simulate_infinite_loop);
+        emscripten_set_main_loop(DoOneGameLoopFrame, -1, simulate_infinite_loop);
     }
 }
