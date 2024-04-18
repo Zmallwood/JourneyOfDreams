@@ -2,13 +2,12 @@
 
 namespace zw
 {
-    class Engine
+    class IScene
     {
       public:
-        Engine();
-        void ClearCanvas();
         void Update();
         void Render();
-        void PresentCanvas();
+        virtual void UpdateDerived() = 0;
+        virtual void RenderDerived() = 0;
     };
 }

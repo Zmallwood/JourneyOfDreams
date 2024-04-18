@@ -16,7 +16,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMake/")
 #include_directories(${SDL2_INCLUDE_DIRS})
 
 if(TRUE)
-  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} " )
+  set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}" )
 endif()
 
 set (OGRE_LIBRARIES /home/andreas/SourceBuild/ogre/OgreMain)

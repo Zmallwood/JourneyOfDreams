@@ -1,8 +1,16 @@
 #include "Engine.h"
 #include "Graphics/Graphics.h"
+#include "Net/Net.h"
+#include "ScenesCore/SceneManager.h"
 
 namespace zw
 {
+    Engine::Engine()
+    {
+        _<Net>();          // Touch Net to initialize it
+        _<Graphics>();     // Touch Graphics to initialize it
+        _<SceneManager>(); // Touch SceneManager to initialize it
+    }
 
     void Engine::ClearCanvas()
     {
@@ -11,12 +19,12 @@ namespace zw
 
     void Engine::Update()
     {
+        _<SceneManager>().UpdateCurrentScene();
     }
 
     void Engine::Render()
     {
-        // Draw a triangle from the 3 vertices
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        _<SceneManager>().RenderCurrentScene();
     }
 
     void Engine::PresentCanvas()

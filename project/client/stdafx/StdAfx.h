@@ -4,6 +4,8 @@
 
 #include <iostream>
 #include <memory>
+#include <map>
+#include <utility>
 #include <stdio.h>
 
 #include <SDL2/SDL.h>
@@ -15,6 +17,7 @@
 
 #include "Common/Singleton.h"
 #include "Common/SDLDeleter.h"
+#include "Common/Utilities.h"
 
 #include "../../shared/matter/src/Size.h"
 #include "../../shared/matter/src/ColorF.h"

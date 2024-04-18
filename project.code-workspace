@@ -11,7 +11,12 @@
 			"functional": "cpp",
 			"*.tcc": "cpp",
 			"string_view": "cpp",
-			"system_error": "cpp"
+			"system_error": "cpp",
+			"memory": "cpp",
+			"bitset": "cpp",
+			"chrono": "cpp",
+			"algorithm": "cpp",
+			"format": "cpp"
 		}
 	}
 }
