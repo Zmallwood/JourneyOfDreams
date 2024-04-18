@@ -9,6 +9,8 @@ namespace zw
     {
       public:
         Graphics();
+        void ClearCanvas();
+        void PresentCanvas();
         auto Window()
         {
             return m_window;

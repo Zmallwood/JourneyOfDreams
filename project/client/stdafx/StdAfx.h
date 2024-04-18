@@ -15,3 +15,6 @@
 
 #include "Common/Singleton.h"
 #include "Common/SDLDeleter.h"
+
+#include "../../shared/matter/src/Size.h"
+#include "../../shared/matter/src/ColorF.h"
