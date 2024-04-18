@@ -1,6 +1,7 @@
 #include "Engine.h"
 #include "Graphics/Graphics.h"
 #include "Net/Net.h"
+#include "PollEvents.h"
 #include "ScenesCore/SceneManager.h"
 
 namespace zw
@@ -15,6 +16,11 @@ namespace zw
     void Engine::ClearCanvas()
     {
         _<Graphics>().ClearCanvas();
+    }
+
+    void Engine::HandleInput()
+    {
+        PollEvents();
     }
 
     void Engine::Update()

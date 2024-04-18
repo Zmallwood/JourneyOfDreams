@@ -10,6 +10,7 @@ namespace zw
         SceneManager();
         void UpdateCurrentScene();
         void RenderCurrentScene();
+        void GoToScene(const std::string& sceneName);
 
       private:
         std::map<int, IScene&> m_scenes;

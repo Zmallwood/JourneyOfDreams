@@ -25,4 +25,9 @@ namespace zw
         if (m_scenes.count(m_currentScene))
             m_scenes.at(m_currentScene).Render();
     }
+
+    void SceneManager::GoToScene(const std::string &sceneName)
+    {
+        m_currentScene = Hash(sceneName);
+    }
 }

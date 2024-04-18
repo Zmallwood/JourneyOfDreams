@@ -6,6 +6,7 @@
 #include <memory>
 #include <map>
 #include <utility>
+#include <set>
 #include <stdio.h>
 
 #include <SDL2/SDL.h>

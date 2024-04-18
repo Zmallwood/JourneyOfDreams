@@ -7,6 +7,7 @@ namespace zw
       public:
         Engine();
         void ClearCanvas();
+        void HandleInput();
         void Update();
         void Render();
         void PresentCanvas();

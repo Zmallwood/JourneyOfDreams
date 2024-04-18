@@ -1,6 +1,8 @@
 #include "IntroScene.h"
+#include "Core/Engine/Input/KeyboardInput.h"
 #include "Core/Engine/Rendering/Shaders/DefaultShaderFragment.h"
 #include "Core/Engine/Rendering/Shaders/DefaultShaderVertex.h"
+#include "Core/Engine/ScenesCore/SceneManager.h"
 
 namespace zw
 {
@@ -46,6 +48,8 @@ namespace zw
 
     void IntroScene::UpdateDerived()
     {
+        if (_<KeyboardInput>().AnyKeyIsPressed())
+            _<SceneManager>().GoToScene("MainMenuScene");
     }
 
     void IntroScene::RenderDerived()
