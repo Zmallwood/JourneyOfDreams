@@ -7,7 +7,7 @@
 //The port number the WebSocket server listens on
 #define PORT_NUMBER 1238
 
-int main(int argc, char* argv[])
+int main(int argc, char* argv[]) 
 {
 	//Create the event loop for the main thread, and the WebSocket server
 	asio::io_service mainEventLoop;

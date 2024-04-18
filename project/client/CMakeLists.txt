@@ -21,9 +21,14 @@ endif()
 
 set (OGRE_LIBRARIES /home/andreas/SourceBuild/ogre/OgreMain)
 
-include_directories(${PROJECT_SOURCE_DIR}/Samples/Character/include)
-add_executable(WebClient src/Main.cpp)
+include_directories(${PROJECT_SOURCE_DIR}/src)
+file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+add_executable(WebClient ${SRC_FILES})
 target_link_libraries(WebClient websocket)
+set(PCH_FILES
+    "stdafx/StdAfx.h"
+)
+target_precompile_headers(WebClient PRIVATE ${PCH_FILES})
 #target_link_libraries(EmscriptenSample OgreRTShaderSystem OgreBites ${OGRE_LIBRARIES})
 
 

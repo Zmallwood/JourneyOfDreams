@@ -4,5 +4,14 @@
 			"path": "project"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"optional": "cpp",
+			"string": "cpp",
+			"functional": "cpp",
+			"*.tcc": "cpp",
+			"string_view": "cpp",
+			"system_error": "cpp"
+		}
+	}
 }
