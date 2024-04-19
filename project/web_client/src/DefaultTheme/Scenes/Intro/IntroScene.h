@@ -10,5 +10,10 @@ namespace zw
         IntroScene();
         void UpdateDerived() override;
         void RenderDerived() override;
+
+      private:
+        GLuint vao;
+        GLuint shaderProgram;
+        RID m_ridBackground{ 0 };
     };
 }

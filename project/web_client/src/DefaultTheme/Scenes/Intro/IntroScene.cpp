@@ -1,5 +1,6 @@
 #include "IntroScene.h"
 #include "Core/Engine/Input/KeyboardInput.h"
+#include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/Rendering/Shaders/DefaultShaderFragment.h"
 #include "Core/Engine/Rendering/Shaders/DefaultShaderVertex.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
@@ -9,7 +10,7 @@ namespace zw
     IntroScene::IntroScene()
     {
         // Create Vertex Array Object
-        GLuint vao;
+
         glGenVertexArraysOES(1, &vao);
         glBindVertexArrayOES(vao);
 
@@ -33,7 +34,7 @@ namespace zw
         glCompileShader(fragmentShader);
 
         // Link the vertex and fragment shader into a shader program
-        GLuint shaderProgram = glCreateProgram();
+        shaderProgram = glCreateProgram();
         glAttachShader(shaderProgram, vertexShader);
         glAttachShader(shaderProgram, fragmentShader);
         // glBindFragDataLocation(shaderProgram, 0, "outColor");
@@ -44,6 +45,8 @@ namespace zw
         GLint posAttrib = glGetAttribLocation(shaderProgram, "position");
         glEnableVertexAttribArray(posAttrib);
         glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
+
+        m_ridBackground = _<ImageRenderer>().NewImage();
     }
 
     void IntroScene::UpdateDerived()
@@ -54,7 +57,12 @@ namespace zw
 
     void IntroScene::RenderDerived()
     {
+        _<ImageRenderer>().DrawImage(m_ridBackground, "GroundGrass", { 0.0f, 0.0f, 1.0f, 1.0f },
+                                     { 1.0f, 1.0f, 1.0f, 1.0f });
+
+        //glUseProgram(shaderProgram);
+        //glBindVertexArrayOES(vao);
         // Draw a triangle from the 3 vertices
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        //glDrawArrays(GL_TRIANGLES, 0, 3);
     }
 }

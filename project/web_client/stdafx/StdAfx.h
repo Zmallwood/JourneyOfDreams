@@ -8,6 +8,7 @@
 #include <utility>
 #include <set>
 #include <filesystem>
+#include <numeric>
 #include <stdio.h>
 
 #include <SDL2/SDL.h>
@@ -17,9 +18,14 @@
 #include <emscripten/websocket.h>
 #include <emscripten.h>
 
+#include "Common/Aliases.h"
 #include "Common/Singleton.h"
 #include "Common/SDLDeleter.h"
 #include "Common/Utilities.h"
 
 #include "../../shared/matter/src/Size.h"
 #include "../../shared/matter/src/ColorF.h"
+#include "../../shared/matter/src/RectF.h"
+#include "../../shared/matter/src/GLRectF.h"
+#include "../../shared/matter/src/Vertex2F.h"
+#include "../../shared/matter/src/PointF.h"

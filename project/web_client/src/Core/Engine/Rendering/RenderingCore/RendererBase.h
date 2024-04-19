@@ -28,6 +28,8 @@ namespace zw
             return m_shaderProgram;
         }
 
+        inline static const int k_numVertsInRect = 4;
+
       private:
         void SetArrayBufferData(GLuint VBOID, int numVertices, const void *data, int numFloatsPerEntry,
                                 int layoutLocation = -1) const;
