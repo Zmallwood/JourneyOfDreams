@@ -4,7 +4,7 @@ MAINTAINER zmallwood@proton.me
 
 RUN mkdir -p /app
 
-COPY ./bin /app
+COPY ./bin_web_client /app
 
 WORKDIR /app
 
