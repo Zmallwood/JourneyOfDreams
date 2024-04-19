@@ -7,6 +7,7 @@
 #include <map>
 #include <utility>
 #include <set>
+#include <filesystem>
 #include <stdio.h>
 
 #include <SDL2/SDL.h>

@@ -20,7 +20,7 @@ namespace zw
         SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
         SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 
-        auto glc = SDL_GL_CreateContext(m_window.get());
+        auto glContext = SDL_GL_CreateContext(m_window.get());
 
         m_renderer = std::shared_ptr<SDL_Renderer>(
             SDL_CreateRenderer(m_window.get(), -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE),
