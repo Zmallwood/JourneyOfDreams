@@ -1,52 +1,14 @@
 #include "IntroScene.h"
 #include "Core/Engine/Input/KeyboardInput.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
-#include "Core/Engine/Rendering/Shaders/DefaultShaderFragment.h"
-#include "Core/Engine/Rendering/Shaders/DefaultShaderVertex.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
 namespace zw
 {
     IntroScene::IntroScene()
     {
-        // Create Vertex Array Object
-
-        glGenVertexArraysOES(1, &vao);
-        glBindVertexArrayOES(vao);
-
-        // Create a Vertex Buffer Object and copy the vertex data to it
-        GLuint vbo;
-        glGenBuffers(1, &vbo);
-
-        GLfloat vertices[] = { 0.0f, 0.5f, 0.5f, -0.5f, -0.5f, -0.5f };
-
-        glBindBuffer(GL_ARRAY_BUFFER, vbo);
-        glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-        // Create and compile the vertex shader
-        GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-        glShaderSource(vertexShader, 1, &vertexSource, NULL);
-        glCompileShader(vertexShader);
-
-        // Create and compile the fragment shader
-        GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-        glShaderSource(fragmentShader, 1, &fragmentSource, NULL);
-        glCompileShader(fragmentShader);
-
-        // Link the vertex and fragment shader into a shader program
-        shaderProgram = glCreateProgram();
-        glAttachShader(shaderProgram, vertexShader);
-        glAttachShader(shaderProgram, fragmentShader);
-        // glBindFragDataLocation(shaderProgram, 0, "outColor");
-        glLinkProgram(shaderProgram);
-        glUseProgram(shaderProgram);
-
-        // Specify the layout of the vertex data
-        GLint posAttrib = glGetAttribLocation(shaderProgram, "position");
-        glEnableVertexAttribArray(posAttrib);
-        glVertexAttribPointer(posAttrib, 2, GL_FLOAT, GL_FALSE, 0, 0);
-
         m_ridBackground = _<ImageRenderer>().NewImage();
+        m_ridLogo = _<ImageRenderer>().NewImage();
     }
 
     void IntroScene::UpdateDerived()
@@ -57,12 +19,9 @@ namespace zw
 
     void IntroScene::RenderDerived()
     {
-        _<ImageRenderer>().DrawImage(m_ridBackground, "GroundGrass", { 0.0f, 0.0f, 1.0f, 1.0f },
+        _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f },
                                      { 1.0f, 1.0f, 1.0f, 1.0f });
-
-        //glUseProgram(shaderProgram);
-        //glBindVertexArrayOES(vao);
-        // Draw a triangle from the 3 vertices
-        //glDrawArrays(GL_TRIANGLES, 0, 3);
+        _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo", { 0.3f, 0.2f, 0.4f, 0.2f },
+                                     { 1.0f, 1.0f, 1.0f, 1.0f });
     }
 }

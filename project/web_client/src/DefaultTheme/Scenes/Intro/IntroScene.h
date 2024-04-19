@@ -12,8 +12,7 @@ namespace zw
         void RenderDerived() override;
 
       private:
-        GLuint vao;
-        GLuint shaderProgram;
         RID m_ridBackground{ 0 };
+        RID m_ridLogo{ 0 };
     };
 }

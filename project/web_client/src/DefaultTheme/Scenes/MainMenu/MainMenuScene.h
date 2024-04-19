@@ -7,7 +7,12 @@ namespace zw
     class MainMenuScene : public IScene
     {
       public:
+        MainMenuScene();
         void UpdateDerived() override;
         void RenderDerived() override;
+
+      private:
+        RID m_ridBackground{ 0 };
+        RID m_ridLogo{ 0 };
     };
 }
