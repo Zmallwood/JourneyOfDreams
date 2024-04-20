@@ -44,4 +44,15 @@ namespace zw
     {
         return height / GetAspectRatio();
     }
+
+    PointF GetMousePosition()
+    {
+        int x;
+        int y;
+        SDL_GetMouseState(&x, &y);
+
+        auto canvasSize = GetCanvasSize();
+
+        return { static_cast<float>(x) / canvasSize.w, static_cast<float>(y) / canvasSize.h };
+    }
 }

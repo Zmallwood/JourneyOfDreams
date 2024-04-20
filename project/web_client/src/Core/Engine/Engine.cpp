@@ -1,4 +1,5 @@
 #include "Engine.h"
+#include "Cursor/Cursor.h"
 #include "Graphics/Graphics.h"
 #include "Net/Net.h"
 #include "PollEvents.h"
@@ -11,6 +12,7 @@ namespace zw
         _<Net>();          // Touch Net to initialize it
         _<Graphics>();     // Touch Graphics to initialize it
         _<SceneManager>(); // Touch SceneManager to initialize it
+        _<Cursor>();       // Touch Cursor to initialize it
     }
 
     void Engine::ClearCanvas()
@@ -31,6 +33,7 @@ namespace zw
     void Engine::Render()
     {
         _<SceneManager>().RenderCurrentScene();
+        _<Cursor>().Render();
     }
 
     void Engine::PresentCanvas()
