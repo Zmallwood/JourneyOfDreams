@@ -8,6 +8,9 @@ namespace zw
           m_fontSize(fontSize), m_textColor(textColor)
     {
         m_ridText = _<TextRenderer>().NewString();
+
+        SetDrawBackground(false);
+        SetDrawBorders(false);
     }
 
     void GUILabel::UpdateDerived()

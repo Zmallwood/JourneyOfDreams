@@ -34,4 +34,14 @@ namespace zw
 
         return nameWithExt.substr(0, nameWithExt.find_last_of('.'));
     }
+
+    float ConvertWidthToHeight(float width)
+    {
+        return width * GetAspectRatio();
+    }
+
+    float ConvertHeightToWidth(float height)
+    {
+        return height / GetAspectRatio();
+    }
 }

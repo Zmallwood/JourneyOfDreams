@@ -12,6 +12,14 @@ namespace zw
         : m_position(position), m_size(size), m_alignment(alignment)
     {
         m_ridBackgroundImage = _<ImageRenderer>().NewImage();
+        m_ridBorderLeft = _<ImageRenderer>().NewImage();
+        m_ridBorderRight = _<ImageRenderer>().NewImage();
+        m_ridBorderTop = _<ImageRenderer>().NewImage();
+        m_ridBorderBottom = _<ImageRenderer>().NewImage();
+        m_ridBorderCornerTopLeft = _<ImageRenderer>().NewImage();
+        m_ridBorderCornerTopRight = _<ImageRenderer>().NewImage();
+        m_ridBorderCornerBottomLeft = _<ImageRenderer>().NewImage();
+        m_ridBorderCornerBottomRight = _<ImageRenderer>().NewImage();
     }
 
     void GUIWidget::Update()
@@ -23,31 +31,88 @@ namespace zw
 
     void GUIWidget::Render()
     {
-        auto finalPosition = GetAbsolutePosition();
+        auto finalPosition = GetFinalPosition();
         auto finalArea = RectF{ finalPosition.x, finalPosition.y, m_size.w, m_size.h };
-        auto backgroundPatternFillAmount = SizeF{ .w = finalArea.w * m_backgroundPatternSize.w,
-                                                  .h = finalArea.h * m_backgroundPatternSize.h };
-        switch (m_alignment)
+
+        if (m_drawBackground)
         {
-        case GUIAlign::TopLeft:
-            break;
-        case GUIAlign::TopRight:
-            finalArea.x -= finalArea.w;
-            break;
-        case GUIAlign::BottomRight:
-            finalArea.x -= finalArea.w;
-            finalArea.y -= finalArea.h;
-            break;
-        case GUIAlign::BottomLeft:
-            finalArea.y -= finalArea.h;
-            break;
-        case GUIAlign::Center:
-            finalArea.x -= finalArea.w / 2;
-            finalArea.y -= finalArea.h / 2;
-            break;
+            auto backgroundPatternFillAmount = SizeF{ .w = finalArea.w * m_backgroundPatternSize.w,
+                                                      .h = finalArea.h * m_backgroundPatternSize.h };
+            switch (m_alignment)
+            {
+            case GUIAlign::TopLeft:
+                break;
+            case GUIAlign::TopRight:
+                finalArea.x -= finalArea.w;
+                break;
+            case GUIAlign::BottomRight:
+                finalArea.x -= finalArea.w;
+                finalArea.y -= finalArea.h;
+                break;
+            case GUIAlign::BottomLeft:
+                finalArea.y -= finalArea.h;
+                break;
+            case GUIAlign::Center:
+                finalArea.x -= finalArea.w / 2;
+                finalArea.y -= finalArea.h / 2;
+                break;
+            }
+            _<ImageRenderer>().DrawImage(m_ridBackgroundImage, m_backgroundImage, finalArea, true,
+                                         backgroundPatternFillAmount);
         }
-        _<ImageRenderer>().DrawImage(m_ridBackgroundImage, m_backgroundImage, finalArea, true,
-                                     backgroundPatternFillAmount);
+
+        if (m_drawBorders)
+        {
+            auto horizontalBorderWidth = m_borderWidth;
+            auto verticalBorderWidth = ConvertWidthToHeight(m_borderWidth);
+            auto borderHorizontalPatternFillAmount = SizeF{ 1.0f, finalArea.h * horizontalBorderWidth };
+            auto borderVerticalPatternFillAmount = SizeF{ finalArea.w * verticalBorderWidth, 1.0f };
+
+            auto borderLeftalArea = RectF{ finalArea.x - horizontalBorderWidth, finalArea.y,
+                                           horizontalBorderWidth, finalArea.h };
+            _<ImageRenderer>().DrawImage(m_ridBorderLeft, m_borderVerticalImage, borderLeftalArea, true,
+                                         borderHorizontalPatternFillAmount);
+
+            auto borderTopArea
+                = RectF{ finalArea.x, finalArea.y - verticalBorderWidth, finalArea.w, verticalBorderWidth };
+            _<ImageRenderer>().DrawImage(m_ridBorderTop, m_borderHorizontalImage, borderTopArea, true,
+                                         borderVerticalPatternFillAmount);
+
+            auto borderRightArea
+                = RectF{ finalArea.x + finalArea.w, finalArea.y, horizontalBorderWidth, finalArea.h };
+            _<ImageRenderer>().DrawImage(m_ridBorderRight, m_borderVerticalImage, borderRightArea, true,
+                                         borderHorizontalPatternFillAmount);
+
+            auto borderBottomArea
+                = RectF{ finalArea.x, finalArea.y + finalArea.h, finalArea.w, verticalBorderWidth };
+            _<ImageRenderer>().DrawImage(m_ridBorderBottom, m_borderHorizontalImage, borderBottomArea, true,
+                                         borderVerticalPatternFillAmount);
+
+            auto borderCornerTopLeftArea
+                = RectF{ finalArea.x - horizontalBorderWidth, finalArea.y - verticalBorderWidth,
+                         horizontalBorderWidth, verticalBorderWidth };
+            _<ImageRenderer>().DrawImage(m_ridBorderCornerTopLeft, m_borderCornerTopLeftImage,
+                                         borderCornerTopLeftArea);
+
+            auto borderCornerTopRightArea
+                = RectF{ finalArea.x + finalArea.w, finalArea.y - verticalBorderWidth, horizontalBorderWidth,
+                         verticalBorderWidth };
+            _<ImageRenderer>().DrawImage(m_ridBorderCornerTopRight, m_borderCornerTopRightImage,
+                                         borderCornerTopRightArea);
+
+            auto borderCornerBottomRightArea = RectF{ finalArea.x + finalArea.w, finalArea.y + finalArea.h,
+                                                      horizontalBorderWidth, verticalBorderWidth };
+            _<ImageRenderer>().DrawImage(m_ridBorderCornerBottomRight, m_borderCornerBottomRightImage,
+                                         borderCornerBottomRightArea);
+
+            auto borderCornerBottomLeftArea
+                = RectF{ finalArea.x - horizontalBorderWidth, finalArea.y + finalArea.h,
+                         horizontalBorderWidth, verticalBorderWidth };
+            _<ImageRenderer>().DrawImage(m_ridBorderCornerBottomLeft, m_borderCornerBottomLeftImage,
+                                         borderCornerBottomLeftArea);
+        }
+
+        // Draw children
 
         for (auto &entry : m_childWidgets)
             entry.second->Render();
@@ -97,23 +162,26 @@ namespace zw
 
         auto paddedAlignedPosition = alignedPosition;
 
+        auto horizontalPadding = m_padding;
+        auto verticalPadding = ConvertWidthToHeight(m_padding);
+
         switch (m_alignment)
         {
         case GUIAlign::TopLeft:
-            paddedAlignedPosition.x += m_padding;
-            paddedAlignedPosition.y += m_padding;
+            paddedAlignedPosition.x += horizontalPadding;
+            paddedAlignedPosition.y += verticalPadding;
             break;
         case GUIAlign::TopRight:
-            paddedAlignedPosition.x -= m_padding;
-            paddedAlignedPosition.y += m_padding;
+            paddedAlignedPosition.x -= horizontalPadding;
+            paddedAlignedPosition.y += verticalPadding;
             break;
         case GUIAlign::BottomRight:
-            paddedAlignedPosition.x -= m_padding;
-            paddedAlignedPosition.y -= m_padding;
+            paddedAlignedPosition.x -= horizontalPadding;
+            paddedAlignedPosition.y -= verticalPadding;
             break;
         case GUIAlign::BottomLeft:
-            paddedAlignedPosition.x += m_padding;
-            paddedAlignedPosition.y -= m_padding;
+            paddedAlignedPosition.x += horizontalPadding;
+            paddedAlignedPosition.y -= verticalPadding;
             break;
         case GUIAlign::Center:
             break;

@@ -50,18 +50,43 @@ namespace zw
 
       protected:
         PointF GetFinalPosition();
+        void SetDrawBackground(bool drawBackground)
+        {
+            m_drawBackground = drawBackground;
+        }
+        void SetDrawBorders(bool drawBorders)
+        {
+            m_drawBorders = drawBorders;
+        }
 
       private:
         PointF GetAbsolutePosition();
 
         PointF m_position{ 0.0f, 0.0f };
         SizeF m_size{ 100.0f, 100.0f };
-        std::string m_backgroundImage{ "TransparentWood" };
+        std::string m_backgroundImage{ "GUIDefaultBackground" };
+        std::string m_borderVerticalImage{ "GUIDefaultBorderVertical" };
+        std::string m_borderHorizontalImage{ "GUIDefaultBorderHorizontal" };
+        std::string m_borderCornerTopLeftImage{ "GUIDefaultBorderCornerTopLeft" };
+        std::string m_borderCornerTopRightImage{ "GUIDefaultBorderCornerTopRight" };
+        std::string m_borderCornerBottomRightImage{ "GUIDefaultBorderCornerBottomRight" };
+        std::string m_borderCornerBottomLeftImage{ "GUIDefaultBorderCornerBottomLeft" };
         RID m_ridBackgroundImage{};
+        RID m_ridBorderLeft;
+        RID m_ridBorderTop;
+        RID m_ridBorderRight;
+        RID m_ridBorderBottom;
+        RID m_ridBorderCornerTopLeft;
+        RID m_ridBorderCornerTopRight;
+        RID m_ridBorderCornerBottomRight;
+        RID m_ridBorderCornerBottomLeft;
         SizeF m_backgroundPatternSize{ 0.2f, 0.2f };
         GUIAlign m_alignment{ GUIAlign::TopLeft };
         std::map<int, std::shared_ptr<GUIWidget>> m_childWidgets;
         std::shared_ptr<GUIWidget> m_parentWidget{};
         float m_padding{ 0.01f };
+        float m_borderWidth{ 0.01f };
+        bool m_drawBackground{ true };
+        bool m_drawBorders{ true };
     };
 }
