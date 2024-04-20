@@ -11,7 +11,7 @@ namespace zw
         m_ridBackground = _<ImageRenderer>().NewImage();
         m_ridLogo = _<ImageRenderer>().NewImage();
         GUI()->AddWidget("LoginPanel",
-                         std::make_shared<GUIPanel>(RectF{ .x = 0.5f, .y = 0.5f, .w = 0.2f, .h = 0.2f },
+                         std::make_shared<GUIPanel>(RectF{ .x = 0.5f, .y = 0.5f, .w = 0.3f, .h = 0.3f },
                                                     GUIAlign::Center));
         GUI()
             ->GetWidget<GUIPanel>("LoginPanel")
@@ -19,7 +19,11 @@ namespace zw
         GUI()
             ->GetWidget<GUIPanel>("LoginPanel")
             ->AddWidget("LoginButton",
-                        std::make_shared<GUIButton>(RectF{ 0.0f, 0.1f, 0.1f, 0.05f }, "Login", [] {}));
+                        std::make_shared<GUIButton>(RectF{ 0.17f, 0.2f, 0.1f, 0.05f }, "Login", [] {}));
+        GUI()
+            ->GetWidget<GUIPanel>("LoginPanel")
+            ->AddWidget("RegisterButton",
+                        std::make_shared<GUIButton>(RectF{ 0.014f, 0.2f, 0.1f, 0.05f }, "Register", [] {}));
     }
 
     void MainMenuScene::UpdateDerived()
