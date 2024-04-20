@@ -14,6 +14,7 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_opengles2.h>
+#include <SDL2/SDL_ttf.h>
 
 #include <emscripten/websocket.h>
 #include <emscripten.h>
