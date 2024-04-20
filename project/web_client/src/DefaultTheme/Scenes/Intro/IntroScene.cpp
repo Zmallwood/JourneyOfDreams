@@ -22,10 +22,8 @@ namespace zw
 
     void IntroScene::RenderDerived()
     {
-        _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f },
-                                     { 1.0f, 1.0f, 1.0f, 1.0f });
-        _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo", { 0.3f, 0.2f, 0.4f, 0.2f },
-                                     { 1.0f, 1.0f, 1.0f, 1.0f });
+        _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
+        _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo", { 0.3f, 0.2f, 0.4f, 0.2f });
 
         if (SDL_GetTicks() % 600 < 400)
         {

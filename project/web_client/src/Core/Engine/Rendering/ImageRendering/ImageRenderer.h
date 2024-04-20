@@ -10,7 +10,12 @@ namespace zw
         ImageRenderer();
         ~ImageRenderer();
         RID NewImage();
-        void DrawImage(RID rid, const std::string& imageName, const RectF &dest, ColorF color);
+        /**
+         * \brief Draw image to canvas. NOTE: if repeatTexture is true, the image size must be power
+         * of 2
+         */
+        void DrawImage(RID rid, const std::string &imageName, const RectF &dest, bool repeatTexture = false,
+                       SizeF textureFillAmount = { 1.0f, 1.0f }, ColorF color = { 1.0f, 1.0f, 1.0f });
 
       private:
         static constexpr int k_locPosition = 0;

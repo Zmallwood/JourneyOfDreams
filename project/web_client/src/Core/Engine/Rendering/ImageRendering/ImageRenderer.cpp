@@ -34,7 +34,8 @@ namespace zw
         return rid;
     }
 
-    void ImageRenderer::DrawImage(RID rid, const std::string &imageName, const RectF &dest, ColorF color)
+    void ImageRenderer::DrawImage(RID rid, const std::string &imageName, const RectF &dest,
+                                  bool repeatTexture, SizeF textureFillAmount, ColorF color)
     {
         auto GLRect = dest.ToGLRectF();
         Vertex2F verts[RendererBase::k_numVertsInRect];
@@ -42,17 +43,27 @@ namespace zw
         verts[1].pos = { GLRect.x, GLRect.y };
         verts[2].pos = { GLRect.x + GLRect.w, GLRect.y };
         verts[3].pos = { GLRect.x + GLRect.w, GLRect.y - GLRect.h };
-        verts[0].uv = { 0.0f, 1.0f };
+        verts[0].uv = { 0.0f, 1.0f / textureFillAmount.h };
         verts[1].uv = { 0.0f, 0.0f };
-        verts[2].uv = { 1.0f, 0.0f };
-        verts[3].uv = { 1.0f, 1.0f };
+        verts[2].uv = { 1.0f / textureFillAmount.w, 0.0f };
+        verts[3].uv = { 1.0f / textureFillAmount.w, 1.0f / textureFillAmount.h };
         glDisable(GL_DEPTH_TEST);
         auto imageID = _<ImageBank>().GetImage(imageName);
         if (imageID == -1)
             return;
         glBindTexture(GL_TEXTURE_2D, imageID);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        if (repeatTexture)
+        {
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        }
+        else
+        {
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        }
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
         auto indices = std::vector<int>(RendererBase::k_numVertsInRect);
         std::iota(std::begin(indices), std::end(indices), 0);
         std::vector<float> positions;
