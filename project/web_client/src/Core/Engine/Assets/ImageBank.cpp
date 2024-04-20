@@ -22,11 +22,12 @@ namespace zw
         return -1;
     }
 
-    void ImageBank::CreateBlankImage(const std::string &uniqueImageName)
+    GLuint ImageBank::CreateBlankImage(const std::string &uniqueImageName)
     {
         GLuint texID;
         glGenTextures(1, &texID);
         m_images.insert({ Hash(uniqueImageName), texID });
+        return texID;
     }
 
     void ImageBank::LoadImages()

@@ -14,5 +14,6 @@ namespace zw
       private:
         RID m_ridBackground{ 0 };
         RID m_ridLogo{ 0 };
+        RID m_startText {};
     };
 }

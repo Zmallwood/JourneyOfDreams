@@ -8,7 +8,7 @@ namespace zw
         ImageBank();
         ~ImageBank();
         GLuint GetImage(const std::string& imageName);
-        void CreateBlankImage(const std::string& uniqueImageName);
+        GLuint CreateBlankImage(const std::string& uniqueImageName);
 
       private:
         void LoadImages();

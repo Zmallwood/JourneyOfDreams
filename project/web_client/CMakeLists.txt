@@ -16,6 +16,8 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMake/")
 #find_package(SDL2 REQUIRED)
 #include_directories(${SDL2_INCLUDE_DIRS})
 
+link_directories(~/temp/emsdk/upstream/emscripten/cache/sysroot/lib)
+
 if(TRUE)
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}" )
 endif()
@@ -25,7 +27,7 @@ set (OGRE_LIBRARIES /home/andreas/SourceBuild/ogre/OgreMain)
 include_directories(${PROJECT_SOURCE_DIR}/src)
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 add_executable(WebClient ${SRC_FILES})
-target_link_libraries(WebClient websocket)
+target_link_libraries(WebClient websocket bz2 freetype SDL2_ttf)
 set(PCH_FILES
     "stdafx/StdAfx.h"
 )

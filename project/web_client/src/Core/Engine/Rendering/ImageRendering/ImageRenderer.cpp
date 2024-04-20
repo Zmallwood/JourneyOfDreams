@@ -56,7 +56,6 @@ namespace zw
         std::vector<float> positions;
         std::vector<float> colors;
         std::vector<float> uvs;
-
         for (auto &vert : verts)
         {
             positions.push_back(vert.pos.x);
