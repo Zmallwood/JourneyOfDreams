@@ -27,8 +27,8 @@ namespace zw
 
         if (SDL_GetTicks() % 600 < 400)
         {
-            _<TextRenderer>().DrawString(m_startText, "Tjosan", { 0.5f, 0.6f },
-                                         { 1.0f, 1.0f, 1.0f, 1.0f }, true, FontSizes::_20);
+            _<TextRenderer>().DrawString(m_startText, "Press any key to start", { 0.5f, 0.6f },
+                                         Colors::Wheat, true, FontSizes::_20);
         }
     }
 }

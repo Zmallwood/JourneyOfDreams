@@ -43,13 +43,17 @@ namespace zw
         {
             return m_size;
         }
+        auto Padding()
+        {
+            return m_padding;
+        }
 
       protected:
         PointF GetFinalPosition();
 
       private:
         PointF GetAbsolutePosition();
-        
+
         PointF m_position{ 0.0f, 0.0f };
         SizeF m_size{ 100.0f, 100.0f };
         std::string m_backgroundImage{ "TransparentWood" };
@@ -58,5 +62,6 @@ namespace zw
         GUIAlign m_alignment{ GUIAlign::TopLeft };
         std::map<int, std::shared_ptr<GUIWidget>> m_childWidgets;
         std::shared_ptr<GUIWidget> m_parentWidget{};
+        float m_padding{ 0.01f };
     };
 }

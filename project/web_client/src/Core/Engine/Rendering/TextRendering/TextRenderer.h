@@ -12,7 +12,7 @@ namespace zw
         TextRenderer();
         void RenderText(RID rid, const std::string &text, ColorF color, bool centerAlign, FontSizes fontSize,
                         std::string &outUniqueNameID, SizeF &outSize) const;
-        void DrawString(RID rid, const std::string& text, PointF position, ColorF color = { 1.0f, 1.0f, 1.0f },
+        void DrawString(RID rid, const std::string& text, PointF position, ColorF color = Colors::Wheat,
                         bool centerAlign = false, FontSizes fontSize = FontSizes::_30);
         RID NewString();
         SizeF MeasureString(const std::string &text, FontSizes fontSize) const;

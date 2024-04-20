@@ -95,6 +95,30 @@ namespace zw
             }
         }
 
-        return alignedPosition;
+        auto paddedAlignedPosition = alignedPosition;
+
+        switch (m_alignment)
+        {
+        case GUIAlign::TopLeft:
+            paddedAlignedPosition.x += m_padding;
+            paddedAlignedPosition.y += m_padding;
+            break;
+        case GUIAlign::TopRight:
+            paddedAlignedPosition.x -= m_padding;
+            paddedAlignedPosition.y += m_padding;
+            break;
+        case GUIAlign::BottomRight:
+            paddedAlignedPosition.x -= m_padding;
+            paddedAlignedPosition.y -= m_padding;
+            break;
+        case GUIAlign::BottomLeft:
+            paddedAlignedPosition.x += m_padding;
+            paddedAlignedPosition.y -= m_padding;
+            break;
+        case GUIAlign::Center:
+            break;
+        }
+
+        return paddedAlignedPosition;
     }
 }

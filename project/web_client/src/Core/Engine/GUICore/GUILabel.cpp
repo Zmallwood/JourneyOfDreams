@@ -16,7 +16,7 @@ namespace zw
 
     void GUILabel::RenderDerived()
     {
-        auto alignedPosition = GetFinalPosition();
-        _<TextRenderer>().DrawString(m_ridText, m_text, alignedPosition, m_textColor, false, m_fontSize);
+        auto finalPosition = GetFinalPosition();
+        _<TextRenderer>().DrawString(m_ridText, m_text, finalPosition, m_textColor, false, m_fontSize);
     }
 }
