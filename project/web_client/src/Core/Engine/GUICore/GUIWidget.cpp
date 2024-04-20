@@ -189,4 +189,10 @@ namespace zw
 
         return paddedAlignedPosition;
     }
+
+    RectF GUIWidget::GetFinalArea()
+    {
+        auto finalPosition = GetFinalPosition();
+        return RectF{ finalPosition.x, finalPosition.y, m_size.w, m_size.h };
+    }
 }

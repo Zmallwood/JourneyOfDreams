@@ -50,6 +50,7 @@ namespace zw
 
       protected:
         PointF GetFinalPosition();
+        RectF GetFinalArea();
         void SetDrawBackground(bool drawBackground)
         {
             m_drawBackground = drawBackground;

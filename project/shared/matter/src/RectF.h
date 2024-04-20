@@ -21,6 +21,10 @@ namespace zw
         {
             return { w, h };
         }
+        bool Contains(PointF point) const
+        {
+            return point.x >= x && point.x <= x + w && point.y >= y && point.y <= y + h;
+        }
 
         float x{ 0.0f };
         float y{ 0.0f };

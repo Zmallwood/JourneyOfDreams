@@ -109,7 +109,10 @@ namespace zw
         // rect.y -= static_cast<float>(text_h) / canvSz.h / 2.0f;
 
         if (centerAlign)
+        {
             rect.x -= static_cast<float>(text_w) / static_cast<float>(canvSz.h) / 2.0f / GetAspectRatio();
+            rect.y -= static_cast<float>(text_h) / static_cast<float>(canvSz.h) / 2.0f;
+        }
 
         auto scale = 1.0f;
         rect.x += rect.w / 2.0f - rect.w / 2.0f * scale;
