@@ -17,28 +17,6 @@ namespace zw
     void GUILabel::RenderDerived()
     {
         auto alignedPosition = GetFinalPosition();
-        if (ParentWidget())
-        {
-            switch (ParentWidget()->Alignment())
-            {
-            case GUIAlign::TopLeft:
-                break;
-            case GUIAlign::TopRight:
-                alignedPosition.x -= ParentWidget()->Size().w;
-                break;
-            case GUIAlign::BottomRight:
-                alignedPosition.x -= ParentWidget()->Size().w;
-                alignedPosition.y -= ParentWidget()->Size().h;
-                break;
-            case GUIAlign::BottomLeft:
-                alignedPosition.y -= ParentWidget()->Size().h;
-                break;
-            case GUIAlign::Center:
-                alignedPosition.x -= ParentWidget()->Size().w / 2;
-                alignedPosition.y -= ParentWidget()->Size().h / 2;
-                break;
-            }
-        }
         _<TextRenderer>().DrawString(m_ridText, m_text, alignedPosition, m_textColor, false, m_fontSize);
     }
 }

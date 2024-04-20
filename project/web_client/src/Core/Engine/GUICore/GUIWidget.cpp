@@ -23,7 +23,7 @@ namespace zw
 
     void GUIWidget::Render()
     {
-        auto finalPosition = GetFinalPosition();
+        auto finalPosition = GetAbsolutePosition();
         auto finalArea = RectF{ finalPosition.x, finalPosition.y, m_size.w, m_size.h };
         auto backgroundPatternFillAmount = SizeF{ .w = finalArea.w * m_backgroundPatternSize.w,
                                                   .h = finalArea.h * m_backgroundPatternSize.h };
@@ -61,11 +61,40 @@ namespace zw
         m_childWidgets.insert({ Hash(nameIdentifier), childWidget });
     }
 
-    PointF GUIWidget::GetFinalPosition()
+    PointF GUIWidget::GetAbsolutePosition()
     {
         auto finalPosition = m_position;
         if (m_parentWidget)
-            finalPosition += m_parentWidget->GetFinalPosition();
+            finalPosition += m_parentWidget->GetAbsolutePosition();
         return finalPosition;
+    }
+
+    PointF GUIWidget::GetFinalPosition()
+    {
+        auto alignedPosition = GetAbsolutePosition();
+        if (ParentWidget())
+        {
+            switch (ParentWidget()->Alignment())
+            {
+            case GUIAlign::TopLeft:
+                break;
+            case GUIAlign::TopRight:
+                alignedPosition.x -= ParentWidget()->Size().w;
+                break;
+            case GUIAlign::BottomRight:
+                alignedPosition.x -= ParentWidget()->Size().w;
+                alignedPosition.y -= ParentWidget()->Size().h;
+                break;
+            case GUIAlign::BottomLeft:
+                alignedPosition.y -= ParentWidget()->Size().h;
+                break;
+            case GUIAlign::Center:
+                alignedPosition.x -= ParentWidget()->Size().w / 2;
+                alignedPosition.y -= ParentWidget()->Size().h / 2;
+                break;
+            }
+        }
+
+        return alignedPosition;
     }
 }
