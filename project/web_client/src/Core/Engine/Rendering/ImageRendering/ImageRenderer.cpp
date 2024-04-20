@@ -48,9 +48,11 @@ namespace zw
         verts[3].uv = { 1.0f, 1.0f };
         glDisable(GL_DEPTH_TEST);
         auto imageID = _<ImageBank>().GetImage(imageName);
+        if (imageID == -1)
+            return;
+        glBindTexture(GL_TEXTURE_2D, imageID);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-        glBindTexture(GL_TEXTURE_2D, imageID);
         auto indices = std::vector<int>(RendererBase::k_numVertsInRect);
         std::iota(std::begin(indices), std::end(indices), 0);
         std::vector<float> positions;
