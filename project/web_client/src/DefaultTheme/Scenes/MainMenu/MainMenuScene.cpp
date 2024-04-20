@@ -9,7 +9,8 @@ namespace zw
         m_ridBackground = _<ImageRenderer>().NewImage();
         m_ridLogo = _<ImageRenderer>().NewImage();
         GUI()->AddWidget("LoginPanel",
-                         std::make_shared<GUIPanel>(RectF{ .x = 0.4f, .y = 0.3f, .w = 0.2f, .h = 0.2f }));
+                         std::make_shared<GUIPanel>(RectF{ .x = 0.5f, .y = 0.5f, .w = 0.2f, .h = 0.2f },
+                                                    GUIAlign::Center));
     }
 
     void MainMenuScene::UpdateDerived()
