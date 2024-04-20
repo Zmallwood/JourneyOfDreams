@@ -5,7 +5,7 @@
 
 namespace zw
 {
-    TextRenderer::TextRenderer() : m_uniqueNameIDs(std::make_shared<std::map<RID, std::string>>())
+    TextRenderer::TextRenderer()
     {
         TTF_Init();
         auto fontPath = k_relFontsPath + "PixeloidSans.ttf";
@@ -36,7 +36,7 @@ namespace zw
         if (!textSurf)
             return;
         glEnable(GL_TEXTURE_2D);
-        auto uniqueNameID = m_uniqueNameIDs->at(rid);
+        auto uniqueNameID = m_uniqueNameIDs.at(rid);
         auto imgID = _<ImageBank>().GetImage(uniqueNameID);
         glBindTexture(GL_TEXTURE_2D, imgID);
         // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
@@ -85,7 +85,7 @@ namespace zw
         auto id = s_idCounter++;
         auto uniqueName = "RenderedImage" + std::to_string(id);
         auto ridImage = _<ImageBank>().CreateBlankImage(uniqueName);
-        m_uniqueNameIDs->insert({ ridImage, uniqueName });
+        m_uniqueNameIDs.insert({ ridImage, uniqueName });
         auto ridGLResource = _<ImageRenderer>().NewImage();
         m_ridsGLResources.insert({ ridImage, ridGLResource });
 

@@ -1,5 +1,6 @@
 #include "PollEvents.h"
 #include "Input/KeyboardInput.h"
+#include "Input/MouseInput.h"
 
 namespace zw
 {
@@ -24,11 +25,11 @@ namespace zw
 
                 break;
             case SDL_MOUSEBUTTONDOWN:
-                //_<MouseInput>().OnPress(event.button.button);
+                _<MouseInput>().OnPress(event.button.button);
 
                 break;
             case SDL_MOUSEBUTTONUP:
-                //_<MouseInput>().OnRelease(event.button.button);
+                _<MouseInput>().OnRelease(event.button.button);
 
                 break;
             case SDL_MOUSEMOTION:
