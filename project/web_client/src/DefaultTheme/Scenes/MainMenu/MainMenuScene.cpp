@@ -1,5 +1,6 @@
 #include "MainMenuScene.h"
 #include "Core/Engine/GUICore/GUIPanel.h"
+#include "Core/Engine/GUICore/GUILabel.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 
 namespace zw

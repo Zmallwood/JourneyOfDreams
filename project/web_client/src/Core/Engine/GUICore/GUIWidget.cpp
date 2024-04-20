@@ -3,21 +3,29 @@
 
 namespace zw
 {
-    GUIWidget::GUIWidget(RectF area, GUIAlign alignment) : m_area(area), m_alignment(alignment)
+    GUIWidget::GUIWidget(RectF area, GUIAlign alignment)
+        : GUIWidget(area.GetPosition(), area.GetSize(), alignment)
+    {
+    }
+
+    GUIWidget::GUIWidget(PointF position, SizeF size, GUIAlign alignment)
+        : m_position(position), m_size(size), m_alignment(alignment)
     {
         m_ridBackgroundImage = _<ImageRenderer>().NewImage();
     }
 
     void GUIWidget::Update()
     {
+        for (auto &entry : m_childWidgets)
+            entry.second->Update();
         UpdateDerived();
     }
 
     void GUIWidget::Render()
     {
-        auto backgroundPatternFillAmount
-            = SizeF{ .w = m_area.w * m_backgroundPatternSize.w, .h = m_area.h * m_backgroundPatternSize.h };
-        auto finalArea = m_area;
+        auto finalArea = RectF{ m_position.x, m_position.y, m_size.w, m_size.h };
+        auto backgroundPatternFillAmount = SizeF{ .w = finalArea.w * m_backgroundPatternSize.w,
+                                                  .h = finalArea.h * m_backgroundPatternSize.h };
         switch (m_alignment)
         {
         case GUIAlign::TopLeft:
@@ -39,6 +47,15 @@ namespace zw
         }
         _<ImageRenderer>().DrawImage(m_ridBackgroundImage, m_backgroundImage, finalArea, true,
                                      backgroundPatternFillAmount);
+
+        for (auto &entry : m_childWidgets)
+            entry.second->Render();
+
         RenderDerived();
+    }
+
+    void GUIWidget::AddChildWidget(const std::string &nameIdentifier, std::shared_ptr<GUIWidget> childWidget)
+    {
+        m_childWidgets.insert({ Hash(nameIdentifier), childWidget });
     }
 }
