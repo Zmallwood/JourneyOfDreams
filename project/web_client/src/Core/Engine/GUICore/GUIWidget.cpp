@@ -23,7 +23,8 @@ namespace zw
 
     void GUIWidget::Render()
     {
-        auto finalArea = RectF{ m_position.x, m_position.y, m_size.w, m_size.h };
+        auto finalPosition = GetFinalPosition();
+        auto finalArea = RectF{ finalPosition.x, finalPosition.y, m_size.w, m_size.h };
         auto backgroundPatternFillAmount = SizeF{ .w = finalArea.w * m_backgroundPatternSize.w,
                                                   .h = finalArea.h * m_backgroundPatternSize.h };
         switch (m_alignment)
@@ -54,8 +55,17 @@ namespace zw
         RenderDerived();
     }
 
-    void GUIWidget::AddChildWidget(const std::string &nameIdentifier, std::shared_ptr<GUIWidget> childWidget)
+    void GUIWidget::AddWidget(const std::string &nameIdentifier, std::shared_ptr<GUIWidget> childWidget)
     {
+        childWidget->SetParentWidget(shared_from_this());
         m_childWidgets.insert({ Hash(nameIdentifier), childWidget });
+    }
+
+    PointF GUIWidget::GetFinalPosition()
+    {
+        auto finalPosition = m_position;
+        if (m_parentWidget)
+            finalPosition += m_parentWidget->GetFinalPosition();
+        return finalPosition;
     }
 }

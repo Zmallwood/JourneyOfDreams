@@ -15,6 +15,7 @@ namespace zw
         void DrawString(RID rid, const std::string& text, PointF position, ColorF color = { 1.0f, 1.0f, 1.0f },
                         bool centerAlign = false, FontSizes fontSize = FontSizes::_30);
         RID NewString();
+        SizeF MeasureString(const std::string &text, FontSizes fontSize) const;
         auto Fonts() const
         {
             return m_fonts;

@@ -1,6 +1,6 @@
 #include "MainMenuScene.h"
-#include "Core/Engine/GUICore/GUIPanel.h"
 #include "Core/Engine/GUICore/GUILabel.h"
+#include "Core/Engine/GUICore/GUIPanel.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 
 namespace zw
@@ -12,6 +12,8 @@ namespace zw
         GUI()->AddWidget("LoginPanel",
                          std::make_shared<GUIPanel>(RectF{ .x = 0.5f, .y = 0.5f, .w = 0.2f, .h = 0.2f },
                                                     GUIAlign::Center));
+        GUI()->GetWidget<GUIPanel>("LoginPanel")
+            ->AddWidget("LoginLabel", std::make_shared<GUILabel>(PointF{ 0.0f, 0.0f }, "Login"));
     }
 
     void MainMenuScene::UpdateDerived()

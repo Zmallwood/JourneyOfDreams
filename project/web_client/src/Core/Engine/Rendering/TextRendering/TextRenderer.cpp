@@ -44,8 +44,8 @@ namespace zw
         // glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-        //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        //glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
         auto w = textOutlineSurf->w;
         auto h = textOutlineSurf->h;
         auto img
@@ -106,7 +106,7 @@ namespace zw
         int text_h;
         TTF_SizeText(m_fonts.at(fontSize)->SDLFont().get(), text.data(), &text_w, &text_h);
         // rect.h *= GetAspectRatio(_<GraphicsView>()->Window());
-        rect.y -= static_cast<float>(text_h) / canvSz.h / 2.0f;
+        // rect.y -= static_cast<float>(text_h) / canvSz.h / 2.0f;
 
         if (centerAlign)
             rect.x -= static_cast<float>(text_w) / static_cast<float>(canvSz.h) / 2.0f / GetAspectRatio();
@@ -118,5 +118,15 @@ namespace zw
         rect.h *= scale;
         auto ridGLResource = m_ridsGLResources.at(rid);
         _<ImageRenderer>().DrawImage(ridGLResource, uniqueNameID, rect, false);
+    }
+
+    SizeF TextRenderer::MeasureString(const std::string &text, FontSizes fontSize) const
+    {
+        auto font = m_fonts.at(fontSize)->SDLFont();
+        int text_w;
+        int text_h;
+        TTF_SizeText(font.get(), text.data(), &text_w, &text_h);
+        auto canvSz = GetCanvasSize();
+        return { static_cast<float>(text_w) / canvSz.w, static_cast<float>(text_h) / canvSz.h };
     }
 }

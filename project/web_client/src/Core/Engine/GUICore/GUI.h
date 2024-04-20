@@ -4,12 +4,11 @@
 
 namespace zw
 {
-    class GUI : public GUIWidget, public std::enable_shared_from_this<GUI>
+    class GUI : public GUIWidget
     {
       public:
         void Update() override;
         void Render() override;
-        void AddWidget(const std::string &nameIdentifier, std::shared_ptr<GUIWidget> widget);
         template <class T>
         std::shared_ptr<T> GetWidget(const std::string &nameIdentifier)
         { 

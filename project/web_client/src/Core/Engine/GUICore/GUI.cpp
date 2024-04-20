@@ -15,11 +15,6 @@ namespace zw
             entry.second->Render();
     }
 
-    void GUI::AddWidget(const std::string &nameIdentifier, std::shared_ptr<GUIWidget> widget)
-    {
-        ChildWidgets().insert({ Hash(nameIdentifier), widget });
-    }
-
     std::shared_ptr<GUIWidget> GUI::GetWidget (const std::string &nameIdentifier,
                                               std::shared_ptr<GUIWidget> widget)
     {

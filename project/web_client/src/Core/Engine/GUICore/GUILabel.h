@@ -17,5 +17,6 @@ namespace zw
         std::string m_text;
         FontSizes m_fontSize;
         ColorF m_textColor{ 1.0f, 1.0f, 1.0f };
+        RID m_ridText{};
     };
 }
