@@ -1,13 +1,13 @@
-#include "ManagedTextLine.h"
+#include "ManagedTextString.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
 namespace zw
 {
-    ManagedTextLine::ManagedTextLine(float maxRenderWidth) : m_maxRenderWidth(maxRenderWidth)
+    ManagedTextString::ManagedTextString(float maxRenderWidth) : m_maxRenderWidth(maxRenderWidth)
     {
     }
 
-    void ManagedTextLine::InsertText(const std::string &text)
+    void ManagedTextString::InsertText(const std::string &text)
     {
         if (text.empty())
         {
@@ -23,7 +23,7 @@ namespace zw
         }
     }
 
-    void ManagedTextLine::TryMoveCursorLeft()
+    void ManagedTextString::TryMoveCursorLeft()
     {
         if (m_cursorPosition > 0)
         {
@@ -40,11 +40,15 @@ namespace zw
         }
     }
 
-    void ManagedTextLine::TryMoveCursorRight()
+    void ManagedTextString::TryMoveCursorRight()
     {
         if (m_cursorPosition < m_text.size())
         {
             m_cursorPosition++;
+
+            if (m_cursorPosition - m_cursorOffset > GetAppearedText().size()) {
+                m_cursorOffset++;
+            }
         }
 
         if (IsTextOverflow())
@@ -57,7 +61,7 @@ namespace zw
             }
         }
 
-        if (m_cursorPosition - m_cursorOffset == GetAppearedText().size() + 1 && m_cursorPosition < m_text.size())
+        if (m_cursorPosition - m_cursorOffset == GetAppearedText().size() + 1 && m_cursorPosition <= m_text.size())
         {
             m_cursorOffset++;
             m_cursorRightClip = 0;
@@ -68,7 +72,7 @@ namespace zw
         }
     }
 
-    void ManagedTextLine::TryDeleteLeft()
+    void ManagedTextString::TryDeleteLeft()
     {
         if (m_cursorPosition > 0)
         {
@@ -77,7 +81,7 @@ namespace zw
         }
     }
 
-    void ManagedTextLine::TryDeleteRight()
+    void ManagedTextString::TryDeleteRight()
     {
         if (m_cursorPosition < m_text.size())
         {
@@ -85,22 +89,22 @@ namespace zw
         }
     }
 
-    int ManagedTextLine::AppearedCursorPosition() const
+    int ManagedTextString::AppearedCursorPosition() const
     {
         return m_cursorPosition - m_cursorOffset;
     }
 
-    bool ManagedTextLine::IsTextOverflow() const
+    bool ManagedTextString::IsTextOverflow() const
     {
         return _<TextRenderer>().MeasureString(GetAppearedText(), FontSizes::_20).w > m_maxRenderWidth;
     }
 
-    std::string ManagedTextLine::OffsetedText() const
+    std::string ManagedTextString::OffsetedText() const
     {
         return m_text.substr(m_cursorOffset);
     }
 
-    std::string ManagedTextLine::GetAppearedText() const
+    std::string ManagedTextString::GetAppearedText() const
     {
         auto offsetedText = OffsetedText();
         return offsetedText.substr(0, offsetedText.size() - m_cursorRightClip);

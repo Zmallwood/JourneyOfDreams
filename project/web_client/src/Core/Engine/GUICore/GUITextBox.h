@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GUIWidget.h"
-#include "ManagedTextLine.h"
+#include "ManagedTextString.h"
 
 namespace zw
 {
@@ -16,7 +16,7 @@ namespace zw
         RID m_ridBackground{};
         RID m_ridText{};
         RID m_ridCursorImage{};
-        ManagedTextLine m_managedTextLine;
+        ManagedTextString m_managedTextLine;
         ColorF m_textColor{ Colors::Wheat };
         const std::string k_cursorImage{ "GUITextBoxCursor" };
         float m_cursorHeight{ 0.01f };

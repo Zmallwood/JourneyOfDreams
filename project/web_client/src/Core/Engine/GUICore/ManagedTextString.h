@@ -2,10 +2,10 @@
 
 namespace zw
 {
-    class ManagedTextLine
+    class ManagedTextString
     {
       public:
-        ManagedTextLine(float maxRenderWidth = 1.0f);
+        ManagedTextString(float maxRenderWidth = 1.0f);
         void InsertText(const std::string &text);
         void TryMoveCursorLeft();
         void TryMoveCursorRight();
