@@ -4,7 +4,7 @@
 namespace zw
 {
     GUILabel::GUILabel(PointF position, const std::string &text, FontSizes fontSize, ColorF textColor)
-        : GUIWidget(position, _<TextRenderer>().MeasureString(m_text, m_fontSize)), m_text(text),
+        : GUIWidget(position, _<TextRenderer>().MeasureString(m_text, fontSize)), m_text(text),
           m_fontSize(fontSize), m_textColor(textColor)
     {
         m_ridText = _<TextRenderer>().NewString();

@@ -219,4 +219,16 @@ namespace zw
     {
         return GetParentGUI()->FocusedWidget() == shared_from_this();
     }
+
+    std::map<int, std::shared_ptr<GUIWidget>> GUIWidget::GetChildWidgetsRecursively()
+    {
+        std::map<int, std::shared_ptr<GUIWidget>> result;
+        for (auto &entry : m_childWidgets)
+        {
+            result.insert(entry);
+            auto childResult = entry.second->GetChildWidgetsRecursively();
+            result.insert(childResult.begin(), childResult.end());
+        }
+        return result;
+    }
 }

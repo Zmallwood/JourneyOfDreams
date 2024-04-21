@@ -20,6 +20,7 @@ namespace zw
         virtual void RenderDerived()
         {
         }
+        std::map<int, std::shared_ptr<GUIWidget>> GetChildWidgetsRecursively();
         std::shared_ptr<GUIWidget> AddWidget(const std::string &nameIdentifier,
                                              std::shared_ptr<GUIWidget> childWidget);
         auto &ChildWidgets()
@@ -50,6 +51,10 @@ namespace zw
         {
             return m_padding;
         }
+        auto Focusable()
+        {
+            return m_focusable;
+        }
 
       protected:
         PointF GetFinalPosition();
@@ -71,6 +76,10 @@ namespace zw
         void SetBackgroundImage(const std::string &backgroundImage)
         {
             m_backgroundImage = backgroundImage;
+        }
+        void SetFocusable(bool focusable)
+        {
+            m_focusable = focusable;
         }
 
       private:
@@ -103,5 +112,6 @@ namespace zw
         float m_borderWidth{ 0.01f };
         bool m_drawBackground{ true };
         bool m_drawBorders{ true };
+        bool m_focusable{ false };
     };
 }

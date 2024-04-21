@@ -1,4 +1,5 @@
 #include "GUI.h"
+#include "Core/Engine/Input/KeyboardInput.h"
 #include "GUIWidget.h"
 
 namespace zw
@@ -7,6 +8,11 @@ namespace zw
     {
         for (auto &entry : ChildWidgets())
             entry.second->Update();
+
+        if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_TAB))
+        {
+            FocusNextWidget();
+        }
     }
 
     void GUI::Render()
@@ -15,7 +21,7 @@ namespace zw
             entry.second->Render();
     }
 
-    std::shared_ptr<GUIWidget> GUI::GetWidget (const std::string &nameIdentifier,
+    std::shared_ptr<GUIWidget> GUI::GetWidget(const std::string &nameIdentifier,
                                               std::shared_ptr<GUIWidget> widget)
     {
         for (auto &entry : ChildWidgets())
@@ -38,4 +44,29 @@ namespace zw
         return nullptr;
     }
 
+    void GUI::FocusNextWidget()
+    {
+        if (ChildWidgets().empty())
+        {
+            return;
+        }
+
+        std::shared_ptr<GUIWidget> widget = FocusedWidget();
+
+        for (auto &entry : GetChildWidgetsRecursively())
+        {
+            if (widget == nullptr && entry.second->Focusable())
+            {
+                widget = entry.second;
+                break;
+            }
+            else if (widget != nullptr && entry.second->Focusable() && widget != entry.second)
+            {
+                widget = entry.second;
+                break;
+            }
+        }
+
+        SetFocusedWidget(widget);
+    }
 }

@@ -15,6 +15,7 @@ namespace zw
         SetDrawBackground(false);
         SetDrawBorders(false);
         SetBackgroundImage("GUIDefaultTextBoxBackground");
+        SetFocusable(true);
     }
 
     void GUITextBox::UpdateDerived()

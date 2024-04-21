@@ -16,4 +16,11 @@ namespace zw
     {
         return m_pressedKeys.size() > 0;
     }
+
+    bool KeyboardInput::KeyHasBeenFiredPickResult(SDL_Keycode key)
+    {
+        auto result = m_pressedKeys.contains(key);
+        m_pressedKeys.erase(key);
+        return result;
+    }
 }

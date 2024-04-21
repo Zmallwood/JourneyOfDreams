@@ -24,6 +24,7 @@ namespace zw
         }
 
       private:
+        void FocusNextWidget();
         std::shared_ptr<GUIWidget> GetWidget(const std::string &nameIdentifier,
                                              std::shared_ptr<GUIWidget> widget);
         std::shared_ptr<GUIWidget> m_focusedWidget{};
