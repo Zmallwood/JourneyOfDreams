@@ -9,7 +9,7 @@ namespace zw
 {
     GUITextBox::GUITextBox(RectF area, ColorF textColor, bool passwordMode)
         : GUIWidget(area), m_textColor(textColor), m_cursorHeight(area.h - 2 * Padding()),
-          m_passwordMode(passwordMode), m_managedTextLine(area.w - 2 * Padding())
+          m_managedTextLine(area.w - 2 * Padding(), passwordMode)
     {
         m_ridBackground = _<ImageRenderer>().NewImage();
         m_ridText = _<TextRenderer>().NewString();
@@ -82,11 +82,6 @@ namespace zw
         auto textY = finalPosition.y;
 
         auto textToRender = m_managedTextLine.GetAppearedText();
-
-        if (m_passwordMode)
-        {
-            textToRender = std::string(textToRender.size(), '*');
-        }
 
         _<TextRenderer>().DrawString(m_ridText, textToRender, { textX, textY }, m_textColor, false,
                                      FontSizes::_20);

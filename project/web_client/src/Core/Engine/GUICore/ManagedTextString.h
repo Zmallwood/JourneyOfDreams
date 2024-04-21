@@ -5,7 +5,7 @@ namespace zw
     class ManagedTextString
     {
       public:
-        ManagedTextString(float maxRenderWidth = 1.0f);
+        ManagedTextString(float maxRenderWidth = 1.0f, bool passwordMode = false);
         void InsertText(const std::string &text);
         void TryMoveCursorLeft();
         void TryMoveCursorRight();
@@ -30,5 +30,6 @@ namespace zw
         int m_cursorOffset{ 0 };
         int m_cursorRightClip{ 0 };
         float m_maxRenderWidth{ 1.0f };
+        bool m_passwordMode{ false };
     };
 }

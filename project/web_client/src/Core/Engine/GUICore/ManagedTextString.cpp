@@ -3,7 +3,8 @@
 
 namespace zw
 {
-    ManagedTextString::ManagedTextString(float maxRenderWidth) : m_maxRenderWidth(maxRenderWidth)
+    ManagedTextString::ManagedTextString(float maxRenderWidth, bool passwordMode)
+        : m_maxRenderWidth(maxRenderWidth), m_passwordMode(passwordMode)
     {
     }
 
@@ -117,7 +118,13 @@ namespace zw
     std::string ManagedTextString::GetAppearedText() const
     {
         auto offsetedText = OffsetedText();
-        return offsetedText.substr(0, offsetedText.size() - m_cursorRightClip);
+        auto clippedText = offsetedText.substr(0, offsetedText.size() - m_cursorRightClip);
+        auto result = clippedText;
+        if (m_passwordMode)
+        {
+            result = std::string(result.size(), '*');
+        }
+        return result;
     }
 
     void ManagedTextString::MoveCursorToStart()
@@ -155,7 +162,7 @@ namespace zw
             {
                 lastCharWidth = _<TextRenderer>().MeasureString(textToRender.substr(i, 1), FontSizes::_20).w;
             }
-            if (charWidth + lastCharWidth/2 > localMouseX)
+            if (charWidth + lastCharWidth / 2 > localMouseX)
             {
                 break;
             }
