@@ -54,6 +54,14 @@ namespace zw
             {
                 m_managedTextLine.TryDeleteRight();
             }
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_HOME))
+            {
+                m_managedTextLine.MoveCursorToStart();
+            }
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_END))
+            {
+                m_managedTextLine.MoveCursorToEnd();
+            }
         }
     }
 

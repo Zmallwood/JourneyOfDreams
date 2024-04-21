@@ -119,4 +119,26 @@ namespace zw
         auto offsetedText = OffsetedText();
         return offsetedText.substr(0, offsetedText.size() - m_cursorRightClip);
     }
+
+    void ManagedTextString::MoveCursorToStart()
+    {
+        m_cursorPosition = 0;
+        m_cursorOffset = 0;
+        m_cursorRightClip = 0;
+        while (IsTextOverflow())
+        {
+            m_cursorRightClip++;
+        }
+    }
+
+    void ManagedTextString::MoveCursorToEnd()
+    {
+        m_cursorPosition = m_text.size();
+        m_cursorOffset = 0;
+        m_cursorRightClip = 0;
+        while (IsTextOverflow())
+        {
+            m_cursorOffset++;
+        }
+    }
 }

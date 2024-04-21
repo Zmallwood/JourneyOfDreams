@@ -13,6 +13,8 @@ namespace zw
         void TryDeleteRight();
         int AppearedCursorPosition() const;
         std::string GetAppearedText() const;
+        void MoveCursorToStart();
+        void MoveCursorToEnd();
         auto CursorPosition() const
         {
             return m_cursorPosition;
