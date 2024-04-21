@@ -92,6 +92,11 @@ namespace zw
         {
             m_text.erase(m_cursorPosition, 1);
         }
+        m_cursorRightClip = 0;
+        while (IsTextOverflow())
+        {
+            m_cursorRightClip++;
+        }
     }
 
     int ManagedTextString::AppearedCursorPosition() const
