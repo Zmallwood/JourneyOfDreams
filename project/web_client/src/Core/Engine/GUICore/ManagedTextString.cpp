@@ -46,7 +46,8 @@ namespace zw
         {
             m_cursorPosition++;
 
-            if (m_cursorPosition - m_cursorOffset > GetAppearedText().size()) {
+            if (m_cursorPosition - m_cursorOffset > GetAppearedText().size())
+            {
                 m_cursorOffset++;
             }
         }
@@ -60,7 +61,8 @@ namespace zw
             }
         }
 
-        if (m_cursorPosition - m_cursorOffset == GetAppearedText().size() + 1 && m_cursorPosition <= m_text.size())
+        if (m_cursorPosition - m_cursorOffset == GetAppearedText().size() + 1
+            && m_cursorPosition <= m_text.size())
         {
             m_cursorRightClip = 0;
             while (IsTextOverflow())
@@ -76,6 +78,11 @@ namespace zw
         {
             m_text.erase(m_cursorPosition - 1, 1);
             TryMoveCursorLeft();
+            m_cursorOffset = std::max(0, m_cursorOffset - 1);
+            if (m_cursorPosition == m_cursorOffset)
+            {
+                m_cursorPosition++;
+            }
         }
     }
 
