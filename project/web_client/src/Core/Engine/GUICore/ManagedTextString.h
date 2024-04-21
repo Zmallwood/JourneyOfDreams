@@ -20,6 +20,10 @@ namespace zw
         {
             return m_cursorPosition;
         }
+        auto Text() const
+        {
+            return m_text;
+        }
 
       private:
         std::string OffsetedText() const;

@@ -12,7 +12,7 @@ namespace zw
         m_connection->InitiateConnectToServer();
     }
 
-    EMSCRIPTEN_RESULT Net::Send(const std::string &data)
+    EMSCRIPTEN_RESULT Net::Send(std::map<std::string, std::string> data)
     {
         return m_connection->SendMessage(data);
     }

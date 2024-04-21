@@ -10,7 +10,7 @@ namespace zw
         Net();
         void Update();
         void BeginEstablishConnection();
-        EMSCRIPTEN_RESULT Send(const std::string &data);
+        EMSCRIPTEN_RESULT Send(std::map<std::string, std::string> data);
         bool Connected();
         auto Connection() const
         {

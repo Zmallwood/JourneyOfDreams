@@ -6,7 +6,7 @@ namespace zw
     {
       public:
         void InitiateConnectToServer();
-        EMSCRIPTEN_RESULT SendMessage(const std::string &data);
+        EMSCRIPTEN_RESULT SendMessage(std::map<std::string, std::string> data);
         auto Connected() const
         {
             return m_connected;

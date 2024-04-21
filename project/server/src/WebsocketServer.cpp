@@ -138,7 +138,7 @@ void WebsocketServer::onMessage(ClientConnection conn, WebsocketEndpoint::messag
 			//Extract the message type and remove it from the payload
 			std::string messageType = messageObject[MESSAGE_FIELD].asString();
 			messageObject.removeMember(MESSAGE_FIELD);
-			
+
 			//If any handlers are registered for the message type, invoke them
 			auto& handlers = this->messageHandlers[messageType];
 			for (auto handler : handlers) {

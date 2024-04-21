@@ -112,4 +112,8 @@ namespace zw
                                          RectF{ cursorX, cursorY, k_cursorWidth, m_cursorHeight });
         }
     }
+
+    std::string GUITextBox::GetText() {
+        return m_managedTextLine.Text();
+    }
 }

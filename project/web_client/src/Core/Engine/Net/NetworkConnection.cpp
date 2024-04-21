@@ -8,7 +8,8 @@ namespace zw
         puts("onopen");
         std::cout << "connected\n";
         EMSCRIPTEN_RESULT result;
-        //result = emscripten_websocket_send_utf8_text(websocketEvent->socket, "\"__MESSAGE__\":yoyoyo");
+        result = emscripten_websocket_send_utf8_text(websocketEvent->socket,
+                                                     "{\"__MESSAGE__\":\"message\", \"test\":\"hej\"}");
         if (result)
         {
             printf("Failed to emscripten_websocket_send_utf8_text(): %d\n", result);
@@ -19,9 +20,17 @@ namespace zw
         return EM_TRUE;
     }
 
-    EMSCRIPTEN_RESULT NetworkConnection::SendMessage(const std::string &data)
+    EMSCRIPTEN_RESULT NetworkConnection::SendMessage(std::map<std::string, std::string> data)
     {
-        auto result = emscripten_websocket_send_utf8_text(*m_serverSocket, "hoge");
+        std::string json;
+        json = "{";
+        json += "\"__MESSAGE__\":\"message\",";
+        for (auto &pair : data)
+        {
+            json += "\"" + pair.first + "\":\"" + pair.second + "\",";
+        }
+        json += "}";
+        auto result = emscripten_websocket_send_utf8_text(*m_serverSocket, json.c_str());
         if (result)
         {
             printf("Failed to emscripten_websocket_send_utf8_text(): %d\n", result);
@@ -52,12 +61,12 @@ namespace zw
             printf("message: %s\n", websocketEvent->data);
         }
 
-        //EMSCRIPTEN_RESULT result;
-        //result = emscripten_websocket_close(websocketEvent->socket, 1000, "no reason");
-        //if (result)
+        // EMSCRIPTEN_RESULT result;
+        // result = emscripten_websocket_close(websocketEvent->socket, 1000, "no reason");
+        // if (result)
         //{
-        //    printf("Failed to emscripten_websocket_close(): %d\n", result);
-        //}
+        //     printf("Failed to emscripten_websocket_close(): %d\n", result);
+        // }
         return EM_TRUE;
     }
 

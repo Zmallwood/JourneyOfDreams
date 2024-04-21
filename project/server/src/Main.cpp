@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
 			}
 			
 			//Echo the message pack to the client
-			server.sendMessage(conn, "message", args);
+			//server.sendMessage(conn, "message", args);
 		});
 	});
 	

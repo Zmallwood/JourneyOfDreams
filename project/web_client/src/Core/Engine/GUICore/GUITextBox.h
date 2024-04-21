@@ -11,6 +11,7 @@ namespace zw
         GUITextBox(RectF area, ColorF textColor = Colors::Wheat, bool passwordMode = false);
         void UpdateDerived() override;
         void RenderDerived() override;
+        std::string GetText();
 
       private:
         RID m_ridBackground{};
