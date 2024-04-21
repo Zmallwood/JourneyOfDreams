@@ -32,6 +32,10 @@ namespace zw
             if (_<MouseInput>().LeftButton().Pressed())
             {
                 Focus();
+
+                auto localMousePosX = mousePos.x - GetFinalPosition().x - Padding();
+
+                m_managedTextLine.SetCursorPositionFromLocalX(localMousePosX);
             }
         }
 

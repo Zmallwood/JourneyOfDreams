@@ -141,4 +141,27 @@ namespace zw
             m_cursorOffset++;
         }
     }
+
+    void ManagedTextString::SetCursorPositionFromLocalX(float localMouseX)
+    {
+        auto textToRender = GetAppearedText();
+
+        auto offsetedCursorPosition = 0;
+        for (auto i = 0; i < textToRender.size(); i++)
+        {
+            auto charWidth = _<TextRenderer>().MeasureString(textToRender.substr(0, i), FontSizes::_20).w;
+            auto lastCharWidth = 0.0f;
+            if (i < textToRender.size())
+            {
+                lastCharWidth = _<TextRenderer>().MeasureString(textToRender.substr(i, 1), FontSizes::_20).w;
+            }
+            if (charWidth + lastCharWidth/2 > localMouseX)
+            {
+                break;
+            }
+            offsetedCursorPosition++;
+        }
+
+        m_cursorPosition = offsetedCursorPosition + m_cursorOffset;
+    }
 }

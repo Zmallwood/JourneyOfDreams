@@ -15,6 +15,7 @@ namespace zw
         std::string GetAppearedText() const;
         void MoveCursorToStart();
         void MoveCursorToEnd();
+        void SetCursorPositionFromLocalX(float localMouseX);
         auto CursorPosition() const
         {
             return m_cursorPosition;
