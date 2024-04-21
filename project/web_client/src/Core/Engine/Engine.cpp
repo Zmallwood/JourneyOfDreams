@@ -4,6 +4,7 @@
 #include "Net/Net.h"
 #include "PollEvents.h"
 #include "ScenesCore/SceneManager.h"
+#include "Net/Net.h"
 
 namespace zw
 {
@@ -29,6 +30,11 @@ namespace zw
     void Engine::Update()
     {
         _<SceneManager>().UpdateCurrentScene();
+    }
+
+    void Engine::UpdateNet()
+    {
+        _<Net>().Update();
     }
 
     void Engine::Render()

@@ -7,5 +7,7 @@ namespace zw
     class LoginRequestScene : public IScene
     {
       public:
+        LoginRequestScene();
+        void OnEnter() override;
     };
 }

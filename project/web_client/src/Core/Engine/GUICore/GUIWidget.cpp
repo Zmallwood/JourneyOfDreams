@@ -192,7 +192,7 @@ namespace zw
             }
         }
 
-        return alignedPosition;
+        return alignedPosition; 
     }
 
     PointF GUIWidget::GetFinalPosition()
