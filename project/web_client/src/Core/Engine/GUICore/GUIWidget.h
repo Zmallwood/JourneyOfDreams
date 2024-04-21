@@ -81,6 +81,10 @@ namespace zw
         {
             m_focusable = focusable;
         }
+        auto TicksTimeGotFocus()
+        {
+            return m_ticksTimeGotFocus;
+        }
 
       private:
         PointF GetAbsolutePosition();
@@ -113,5 +117,6 @@ namespace zw
         bool m_drawBackground{ true };
         bool m_drawBorders{ true };
         bool m_focusable{ false };
+        int m_ticksTimeGotFocus{ 0 };
     };
 }

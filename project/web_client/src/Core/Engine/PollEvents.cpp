@@ -36,7 +36,7 @@ namespace zw
                 break;
 
             case SDL_TEXTINPUT:
-                //_<KeyboardInput>().AppendTextInput(event.text.text);
+                _<KeyboardInput>().AppendTextInput(event.text.text);
 
                 break;
             case SDL_MOUSEWHEEL:

@@ -13,6 +13,8 @@ namespace zw
         {
             FocusNextWidget();
         }
+
+        _<KeyboardInput>().ClearTextInput();
     }
 
     void GUI::Render()

@@ -23,4 +23,21 @@ namespace zw
         m_pressedKeys.erase(key);
         return result;
     }
+
+    void KeyboardInput::AppendTextInput(const std::string &text)
+    {
+        m_textInput += text;
+    }
+
+    std::string KeyboardInput::PickTextInput()
+    {
+        auto result = m_textInput;
+        m_textInput.clear();
+        return result;
+    }
+
+    void KeyboardInput::ClearTextInput()
+    {
+        m_textInput.clear();
+    }
 }

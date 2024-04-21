@@ -23,8 +23,9 @@ namespace zw
                                                     RectF{ 0.014f, 0.2f, 0.1f, 0.05f }, "Register", [] {}));
         loginPanel->AddWidget("UsernameTextBox",
                               std::make_shared<GUITextBox>(RectF{ 0.05f, 0.05f, 0.18f, 0.05f }));
-        loginPanel->AddWidget("PasswordTextBox",
-                              std::make_shared<GUITextBox>(RectF{ 0.05f, 0.12f, 0.18f, 0.05f }));
+        loginPanel->AddWidget(
+            "PasswordTextBox",
+            std::make_shared<GUITextBox>(RectF{ 0.05f, 0.12f, 0.18f, 0.05f }, Colors::Wheat, true));
     }
 
     void LoginScene::UpdateDerived()

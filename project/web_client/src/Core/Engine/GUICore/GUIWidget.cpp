@@ -203,6 +203,7 @@ namespace zw
     void GUIWidget::Focus()
     {
         GetParentGUI()->SetFocusedWidget(shared_from_this());
+        m_ticksTimeGotFocus = Ticks();
     }
 
     std::shared_ptr<GUI> GUIWidget::GetParentGUI()

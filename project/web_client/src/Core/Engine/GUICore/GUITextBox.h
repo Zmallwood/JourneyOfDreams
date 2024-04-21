@@ -1,13 +1,14 @@
 #pragma once
 
 #include "GUIWidget.h"
+#include "ManagedTextLine.h"
 
 namespace zw
 {
     class GUITextBox : public GUIWidget
     {
       public:
-        GUITextBox(RectF area, ColorF textColor = Colors::Black);
+        GUITextBox(RectF area, ColorF textColor = Colors::Wheat, bool passwordMode = false);
         void UpdateDerived() override;
         void RenderDerived() override;
 
@@ -15,11 +16,11 @@ namespace zw
         RID m_ridBackground{};
         RID m_ridText{};
         RID m_ridCursorImage{};
-        std::string m_text{};
-        ColorF m_textColor{ Colors::Black };
-        int m_cursorPosition{ 0 };
+        ManagedTextLine m_managedTextLine;
+        ColorF m_textColor{ Colors::Wheat };
         const std::string k_cursorImage{ "GUITextBoxCursor" };
         float m_cursorHeight{ 0.01f };
-        const float k_cursorWidth{ 0.004f };
+        bool m_passwordMode{ false };
+        const float k_cursorWidth{ 0.002f };
     };
 }
