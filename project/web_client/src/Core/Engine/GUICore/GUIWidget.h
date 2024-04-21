@@ -4,6 +4,8 @@
 
 namespace zw
 {
+    class GUI;
+
     class GUIWidget : public std::enable_shared_from_this<GUIWidget>
     {
       public:
@@ -52,6 +54,8 @@ namespace zw
       protected:
         PointF GetFinalPosition();
         RectF GetFinalArea();
+        void Focus();
+        bool HasFocus();
         void SetDrawBackground(bool drawBackground)
         {
             m_drawBackground = drawBackground;
@@ -71,6 +75,7 @@ namespace zw
 
       private:
         PointF GetAbsolutePosition();
+        std::shared_ptr<GUI> GetParentGUI();
 
         PointF m_position{ 0.0f, 0.0f };
         SizeF m_size{ 100.0f, 100.0f };

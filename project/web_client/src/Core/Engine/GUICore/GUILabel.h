@@ -12,6 +12,10 @@ namespace zw
                  ColorF textColor = Colors::Wheat);
         void UpdateDerived() override;
         void RenderDerived() override;
+        void SetText(const std::string &text)
+        {
+            m_text = text;
+        }
 
       private:
         std::string m_text;

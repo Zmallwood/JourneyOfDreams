@@ -1,5 +1,6 @@
 #include "GUIWidget.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
+#include "GUI.h"
 
 namespace zw
 {
@@ -197,5 +198,25 @@ namespace zw
     {
         auto finalPosition = GetFinalPosition();
         return RectF{ finalPosition.x, finalPosition.y, m_size.w, m_size.h };
+    }
+
+    void GUIWidget::Focus()
+    {
+        GetParentGUI()->SetFocusedWidget(shared_from_this());
+    }
+
+    std::shared_ptr<GUI> GUIWidget::GetParentGUI()
+    {
+        std::shared_ptr<GUIWidget> parent = m_parentWidget;
+        while (parent->ParentWidget() != nullptr)
+        {
+            parent = parent->ParentWidget();
+        }
+        return dynamic_pointer_cast<GUI>(parent);
+    }
+
+    bool GUIWidget::HasFocus()
+    {
+        return GetParentGUI()->FocusedWidget() == shared_from_this();
     }
 }

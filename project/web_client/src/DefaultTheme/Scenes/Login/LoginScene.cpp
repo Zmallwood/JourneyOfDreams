@@ -18,7 +18,7 @@ namespace zw
         loginPanel->AddWidget("LoginLabel", std::make_shared<GUILabel>(PointF{ 0.0f, 0.0f }, "Login"));
         loginPanel->AddWidget("LoginButton",
                               std::make_shared<GUIButton>(RectF{ 0.17f, 0.2f, 0.1f, 0.05f }, "Login",
-                                                          [] { _<SceneManager>().GoToScene("Main"); }));
+                                                          [] { _<SceneManager>().GoToScene("MainScene"); }));
         loginPanel->AddWidget("RegisterButton", std::make_shared<GUIButton>(
                                                     RectF{ 0.014f, 0.2f, 0.1f, 0.05f }, "Register", [] {}));
         loginPanel->AddWidget("UsernameTextBox",
