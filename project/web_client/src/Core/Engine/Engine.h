@@ -10,6 +10,7 @@ namespace zw
         void HandleInput();
         void Update();
         void Render();
+        void UpdatePostRender();
         void PresentCanvas();
     };
 }

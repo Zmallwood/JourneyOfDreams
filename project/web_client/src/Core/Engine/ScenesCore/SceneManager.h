@@ -10,6 +10,7 @@ namespace zw
         SceneManager();
         void UpdateCurrentScene();
         void RenderCurrentScene();
+        void UpdatePostRenderCurrentScene();
         void GoToScene(const std::string& sceneName);
 
       private:

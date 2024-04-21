@@ -61,6 +61,7 @@ namespace zw
         RectF GetFinalArea();
         void Focus();
         bool HasFocus();
+        virtual PointF GetAlignedAbsolutePosition();
         void SetDrawBackground(bool drawBackground)
         {
             m_drawBackground = drawBackground;

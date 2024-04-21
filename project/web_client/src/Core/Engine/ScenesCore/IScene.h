@@ -10,8 +10,18 @@ namespace zw
         IScene();
         void Update();
         void Render();
-        virtual void UpdateDerived() = 0;
-        virtual void RenderDerived() = 0;
+        virtual void OnEnter()
+        {
+        }
+        virtual void UpdateDerived()
+        {
+        }
+        virtual void RenderDerived()
+        {
+        }
+        virtual void UpdatePostRender()
+        {
+        }
         auto GUI()
         {
             return m_gui;

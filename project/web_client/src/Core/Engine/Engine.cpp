@@ -37,6 +37,11 @@ namespace zw
         _<Cursor>().Render();
     }
 
+    void Engine::UpdatePostRender()
+    {
+        _<SceneManager>().UpdatePostRenderCurrentScene();
+    }
+
     void Engine::PresentCanvas()
     {
         _<Graphics>().PresentCanvas();

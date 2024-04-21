@@ -9,6 +9,7 @@ namespace zw
         _<Engine>().HandleInput();
         _<Engine>().Update();
         _<Engine>().Render();
+        _<Engine>().UpdatePostRender();
         _<Engine>().PresentCanvas();
     }
 }
