@@ -53,7 +53,6 @@ namespace zw
 
         if (IsTextOverflow())
         {
-            m_cursorOffset++;
             m_cursorRightClip = 0;
             while (IsTextOverflow())
             {
@@ -63,7 +62,6 @@ namespace zw
 
         if (m_cursorPosition - m_cursorOffset == GetAppearedText().size() + 1 && m_cursorPosition <= m_text.size())
         {
-            m_cursorOffset++;
             m_cursorRightClip = 0;
             while (IsTextOverflow())
             {
@@ -77,7 +75,7 @@ namespace zw
         if (m_cursorPosition > 0)
         {
             m_text.erase(m_cursorPosition - 1, 1);
-            m_cursorPosition--;
+            TryMoveCursorLeft();
         }
     }
 
