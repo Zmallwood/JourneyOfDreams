@@ -5,7 +5,7 @@ namespace zw
 {
     void DoOneGameLoopFrame()
     {
-        _<Engine>().ClearCanvas();
+        _<Engine>().Reset();
         _<Engine>().HandleInput();
         _<Engine>().Update();
         _<Engine>().Render();

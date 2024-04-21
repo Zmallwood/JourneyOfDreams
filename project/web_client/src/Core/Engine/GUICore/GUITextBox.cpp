@@ -3,6 +3,7 @@
 #include "Core/Engine/Input/MouseInput.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
+#include "Core/Engine/Cursor/Cursor.h"
 
 namespace zw
 {
@@ -26,6 +27,8 @@ namespace zw
 
         if (GetFinalArea().Contains(mousePos))
         {
+            _<Cursor>().SetStyle(CursorStyles::TextInput);
+
             if (_<MouseInput>().LeftButton().Pressed())
             {
                 Focus();

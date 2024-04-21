@@ -15,8 +15,9 @@ namespace zw
         _<Cursor>();       // Touch Cursor to initialize it
     }
 
-    void Engine::ClearCanvas()
+    void Engine::Reset()
     {
+        _<Cursor>().ResetStyle();
         _<Graphics>().ClearCanvas();
     }
 

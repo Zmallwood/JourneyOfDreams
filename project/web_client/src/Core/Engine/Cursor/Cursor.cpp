@@ -9,6 +9,11 @@ namespace zw
         SDL_ShowCursor(SDL_DISABLE);
     }
 
+    void Cursor::ResetStyle()
+    {
+        m_style = CursorStyles::Default;
+    }
+
     void Cursor::Render()
     {
         auto mousePos = GetMousePosition();
