@@ -12,6 +12,16 @@ namespace zw
         void UpdateDerived() override;
         void RenderDerived() override;
 
+      protected:
+        auto BackgroundHoveredImage()
+        {
+            return m_backgroundHoveredImage;
+        }
+        void SetBackgroundHoveredImage(const std::string &backgroundHoveredImage)
+        {
+            m_backgroundHoveredImage = backgroundHoveredImage;
+        }
+
       private:
         RID m_ridText{};
         std::string m_text;
@@ -19,7 +29,6 @@ namespace zw
         std::function<void()> m_onClick;
         RID m_ridBackground{};
         bool m_isHovered{ false };
-        const std::string k_backgroundImage{ "GUIDefaultButtonBackground" };
-        const std::string k_backgroundHoveredImage{ "GUIDefaultButtonBackgroundHovered" };
+        std::string m_backgroundHoveredImage{};
     };
 }

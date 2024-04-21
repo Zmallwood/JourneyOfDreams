@@ -1,4 +1,5 @@
 #include "GUIButton.h"
+#include "Core/Engine/Input/MouseInput.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
@@ -12,6 +13,8 @@ namespace zw
 
         SetDrawBackground(false);
         SetDrawBorders(false);
+        SetBackgroundImage("GUIDefaultButtonBackground");
+        SetBackgroundHoveredImage("GUIDefaultButtonBackgroundHovered");
     }
 
     void GUIButton::UpdateDerived()
@@ -21,6 +24,11 @@ namespace zw
         if (GetFinalArea().Contains(mousePos))
         {
             m_isHovered = true;
+
+            if (_<MouseInput>().LeftButton().Pressed())
+            {
+                m_onClick();
+            }
         }
         else
         {
@@ -32,13 +40,13 @@ namespace zw
     {
         std::string backgroundImage;
 
-        switch (m_isHovered)
+        if (m_isHovered)
         {
-        case true:
-            backgroundImage = k_backgroundHoveredImage;
-            break;
-        case false:
-            backgroundImage = k_backgroundImage;
+            backgroundImage = BackgroundHoveredImage();
+        }
+        else
+        {
+            backgroundImage = BackgroundImage();
         }
 
         _<ImageRenderer>().DrawImage(m_ridBackground, backgroundImage, GetFinalArea());

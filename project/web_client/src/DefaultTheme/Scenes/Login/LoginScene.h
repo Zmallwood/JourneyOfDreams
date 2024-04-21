@@ -4,10 +4,10 @@
 
 namespace zw
 {
-    class MainMenuScene : public IScene
+    class LoginScene : public IScene
     {
       public:
-        MainMenuScene();
+        LoginScene();
         void UpdateDerived() override;
         void RenderDerived() override;
 

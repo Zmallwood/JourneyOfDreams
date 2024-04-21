@@ -18,7 +18,8 @@ namespace zw
         virtual void RenderDerived()
         {
         }
-        void AddWidget(const std::string &nameIdentifier, std::shared_ptr<GUIWidget> childWidget);
+        std::shared_ptr<GUIWidget> AddWidget(const std::string &nameIdentifier,
+                                             std::shared_ptr<GUIWidget> childWidget);
         auto &ChildWidgets()
         {
             return m_childWidgets;
@@ -58,6 +59,14 @@ namespace zw
         void SetDrawBorders(bool drawBorders)
         {
             m_drawBorders = drawBorders;
+        }
+        auto BackgroundImage()
+        {
+            return m_backgroundImage;
+        }
+        void SetBackgroundImage(const std::string &backgroundImage)
+        {
+            m_backgroundImage = backgroundImage;
         }
 
       private:

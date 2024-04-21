@@ -1,17 +1,15 @@
 #include "SceneManager.h"
-#include "DefaultTheme/Scenes/Intro/IntroScene.h"
 #include "DefaultTheme/Scenes/Main/MainScene.h"
-#include "DefaultTheme/Scenes/MainMenu/MainMenuScene.h"
+#include "DefaultTheme/Scenes/Login/LoginScene.h"
 
 namespace zw
 {
     SceneManager::SceneManager()
     {
-        m_scenes.insert({ Hash("IntroScene"), _<IntroScene>() });
-        m_scenes.insert({ Hash("MainMenuScene"), _<MainMenuScene>() });
+        m_scenes.insert({ Hash("LoginScene"), _<LoginScene>() });
         m_scenes.insert({ Hash("MainScene"), _<MainScene>() });
 
-        m_currentScene = Hash("IntroScene");
+        m_currentScene = Hash("LoginScene");
     }
 
     void SceneManager::UpdateCurrentScene()

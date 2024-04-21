@@ -120,10 +120,13 @@ namespace zw
         RenderDerived();
     }
 
-    void GUIWidget::AddWidget(const std::string &nameIdentifier, std::shared_ptr<GUIWidget> childWidget)
+    std::shared_ptr<GUIWidget> GUIWidget::AddWidget(const std::string &nameIdentifier,
+                                                    std::shared_ptr<GUIWidget> childWidget)
     {
         childWidget->SetParentWidget(shared_from_this());
         m_childWidgets.insert({ Hash(nameIdentifier), childWidget });
+
+        return childWidget;
     }
 
     PointF GUIWidget::GetAbsolutePosition()
