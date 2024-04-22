@@ -71,6 +71,10 @@ namespace zw
                     // Read user input from stdin
                     std::getline(std::cin, input);
 
+                    if (input == "quit") {
+                        mainEventLoop.stop();
+                    }
+
                     // Broadcast the input to all connected clients (is sent on the network thread)
                     Json::Value payload;
                     payload["input"] = input;

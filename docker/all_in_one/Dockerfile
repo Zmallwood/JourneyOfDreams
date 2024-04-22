@@ -1,4 +1,3 @@
-#This is a sample Image
 FROM ubuntu:latest
 MAINTAINER zmallwood@proton.me
 

@@ -18,21 +18,18 @@ namespace zw
     {
         auto username = _<RegisterScene>().GUI()->GetWidget<GUITextBox>("UsernameTextBox")->GetText();
         auto password = _<RegisterScene>().GUI()->GetWidget<GUITextBox>("PasswordTextBox")->GetText();
-        auto confirmPassword
-            = _<RegisterScene>().GUI()->GetWidget<GUITextBox>("ConfirmPasswordTextBox")->GetText();
 
         SHA256 sha;
 
         sha.update(password);
         std::array<uint8_t, 32> digestPassword = sha.digest();
 
-        std::cout << SHA256::toString(digestPassword) << std::endl;
+        auto passwordHash = SHA256::toString(digestPassword);
 
-        sha.update(confirmPassword);
-        std::array<uint8_t, 32> digestConfirmPassword = sha.digest();
+        std::map<std::string, std::string> data;
+        data.insert({"Username", username});
+        data.insert({"PasswordHash", passwordHash});
 
-        std::cout << SHA256::toString(digestConfirmPassword) << std::endl;
-
-        //_<NetClient>().Send({{"Username", username},{"Password", password}});
+        _<NetClient>().Send(data);
     }
 }

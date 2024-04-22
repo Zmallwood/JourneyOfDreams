@@ -8,7 +8,7 @@ namespace zw
     TextRenderer::TextRenderer()
     {
         TTF_Init();
-        auto fontPath = k_relFontsPath + "PixeloidSans.ttf";
+        auto fontPath = k_relFontsPath + "DefaultFont.ttf";
         auto font20 = std::make_shared<Font>(fontPath, 20);
         auto font30 = std::make_shared<Font>(fontPath, 30);
         auto font50 = std::make_shared<Font>(fontPath, 50);
