@@ -1,5 +1,7 @@
 #pragma once
 
+#include <SDL.h>
+
 namespace zw
 {
     using RID = GLuint;
