@@ -1,6 +1,7 @@
 #pragma once
 
 #include "GUIAlign.h"
+#include "WidgetEntry.h"
 
 namespace zw
 {
@@ -12,6 +13,7 @@ namespace zw
         GUIWidget() = default;
         GUIWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft);
         GUIWidget(PointF position, SizeF size, GUIAlign alignment = GUIAlign::TopLeft);
+        void InsertWaitingWidgets();
         void Destroy();
         virtual void Initialize()
         {
@@ -24,7 +26,7 @@ namespace zw
         virtual void RenderDerived()
         {
         }
-        std::map<int, std::shared_ptr<GUIWidget>> GetChildWidgetsRecursively();
+        std::vector<WidgetEntry> GetChildWidgetsRecursively();
         std::shared_ptr<GUIWidget> AddWidget(const std::string &nameIdentifier,
                                              std::shared_ptr<GUIWidget> childWidget);
         std::shared_ptr<GUIWidget> AddWidget(std::shared_ptr<GUIWidget> childWidget);
@@ -120,7 +122,7 @@ namespace zw
         RID m_ridBorderCornerBottomLeft;
         SizeF m_backgroundPatternSize{ 0.2f, 0.2f };
         GUIAlign m_alignment{ GUIAlign::TopLeft };
-        std::map<int, std::shared_ptr<GUIWidget>> m_childWidgets;
+        std::vector<WidgetEntry> m_childWidgets;
         std::shared_ptr<GUIWidget> m_parentWidget{};
         float m_padding{ 0.01f };
         float m_borderWidth{ 0.01f };
@@ -129,6 +131,7 @@ namespace zw
         bool m_focusable{ false };
         int m_ticksTimeGotFocus{ 0 };
         bool m_markedForDestruction{ false };
+        std::vector<WidgetEntry> m_widgetsToInsert {};
 
         inline static int s_unnamedWidgetCounter{ 0 };
     };

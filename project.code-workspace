@@ -78,7 +78,9 @@
 			"variant": "cpp",
 			"list": "cpp",
 			"filesystem": "cpp",
-			"regex": "cpp"
+			"regex": "cpp",
+			"set": "cpp",
+			"ranges": "cpp"
 		}
 	}
 }

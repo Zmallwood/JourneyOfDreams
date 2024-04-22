@@ -25,7 +25,7 @@ namespace zw
         {
             m_isHovered = true;
 
-            if (_<MouseInput>().LeftButton().Pressed())
+            if (_<MouseInput>().LeftButton().PressedPickResult())
             {
                 m_onClick();
             }

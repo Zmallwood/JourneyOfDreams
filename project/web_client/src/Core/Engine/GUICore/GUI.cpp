@@ -7,9 +7,10 @@ namespace zw
     void GUI::Update()
     {
         for (auto &entry : ChildWidgets())
-            entry.second->Update();
+            entry.widget->Update();
 
         DestroyMarkedWidgets();
+        InsertWaitingWidgets();
 
         if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_TAB))
         {
@@ -19,24 +20,21 @@ namespace zw
         _<KeyboardInput>().ClearTextInput();
     }
 
-    void GUI::DestroyMarkedWidgets() {
+    void GUI::DestroyMarkedWidgets()
+    {
         for (auto it = ChildWidgets().begin(); it != ChildWidgets().end();)
         {
-            if (it->second->MarkedForDestruction())
-            {
+            if (it->widget->MarkedForDestruction())
                 it = ChildWidgets().erase(it);
-            }
             else
-            {
                 ++it;
-            }
         }
     }
 
     void GUI::Render()
     {
-        for (auto &entry : std::views::reverse(ChildWidgets()))
-            entry.second->Render();
+        for (auto &entry : ChildWidgets())
+            entry.widget->Render();
     }
 
     std::shared_ptr<GUIWidget> GUI::GetWidget(const std::string &nameIdentifier,
@@ -44,9 +42,9 @@ namespace zw
     {
         for (auto &entry : GetChildWidgetsRecursively())
         {
-            if (entry.first == Hash(nameIdentifier))
+            if (entry.id == Hash(nameIdentifier))
             {
-                return entry.second;
+                return entry.widget;
             }
         }
 
@@ -64,14 +62,14 @@ namespace zw
 
         for (auto &entry : GetChildWidgetsRecursively())
         {
-            if (widget == nullptr && entry.second->Focusable())
+            if (widget == nullptr && entry.widget->Focusable())
             {
-                widget = entry.second;
+                widget = entry.widget;
                 break;
             }
-            else if (widget != nullptr && entry.second->Focusable() && widget != entry.second)
+            else if (widget != nullptr && entry.widget->Focusable() && widget != entry.widget)
             {
-                widget = entry.second;
+                widget = entry.widget;
                 break;
             }
         }

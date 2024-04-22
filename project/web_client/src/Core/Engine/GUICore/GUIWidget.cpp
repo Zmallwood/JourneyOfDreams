@@ -23,15 +23,31 @@ namespace zw
         m_ridBorderCornerBottomRight = _<ImageRenderer>().NewImage();
     }
 
+    void GUIWidget::InsertWaitingWidgets() {
+        for (auto &entry : m_widgetsToInsert)
+        {
+            m_childWidgets.push_back(entry);
+        }
+        m_widgetsToInsert.clear();
+
+        for (auto &entry : m_childWidgets)
+        {
+            entry.widget->InsertWaitingWidgets();
+        }
+    }
+
     void GUIWidget::Destroy()
     {
         m_markedForDestruction = true;
+
+        for (auto &entry : m_childWidgets)
+            entry.widget->Destroy();
     }
 
     void GUIWidget::Update()
     {
         for (auto &entry : m_childWidgets)
-            entry.second->Update();
+            entry.widget->Update();
         UpdateDerived();
     }
 
@@ -135,7 +151,7 @@ namespace zw
         // Draw children
 
         for (auto &entry : m_childWidgets)
-            entry.second->Render();
+            entry.widget->Render();
 
         RenderDerived();
     }
@@ -145,7 +161,7 @@ namespace zw
     {
         childWidget->Initialize();
         childWidget->SetParentWidget(shared_from_this());
-        m_childWidgets.insert({ Hash(nameIdentifier), childWidget });
+        m_widgetsToInsert.push_back({ Hash(nameIdentifier), childWidget });
 
         return childWidget;
     }
@@ -280,14 +296,14 @@ namespace zw
         return GetParentGUI()->FocusedWidget() == shared_from_this();
     }
 
-    std::map<int, std::shared_ptr<GUIWidget>> GUIWidget::GetChildWidgetsRecursively()
+    std::vector<WidgetEntry> GUIWidget::GetChildWidgetsRecursively()
     {
-        std::map<int, std::shared_ptr<GUIWidget>> result;
+        std::vector<WidgetEntry> result;
         for (auto &entry : m_childWidgets)
         {
-            result.insert(entry);
-            auto childResult = entry.second->GetChildWidgetsRecursively();
-            result.insert(childResult.begin(), childResult.end());
+            result.push_back(entry);
+            auto childResult = entry.widget->GetChildWidgetsRecursively();
+            result.insert(result.end(), childResult.begin(), childResult.end());
         }
         return result;
     }
