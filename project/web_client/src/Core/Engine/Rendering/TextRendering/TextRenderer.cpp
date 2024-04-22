@@ -22,7 +22,7 @@ namespace zw
     {
         auto font = m_fonts.at(fontSize)->SDLFont();
 
-        if (!font)
+        if (!font) 
             return;
 
         auto colorSDL = color.ToSDLColor();
