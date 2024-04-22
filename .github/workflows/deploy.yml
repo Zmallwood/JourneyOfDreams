@@ -29,14 +29,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-#      - name: Build WebClient, run cmake
-#        run: CC=emcc CXX=em++ emcmake cmake project/web_client -B build_web_client
+      - name: Build WebClient, run cmake
+        run: CC=emcc CXX=em++ emcmake cmake project/web_client -B build_web_client
         
-#      - name: Build WebClient, run make
-#        run: cd build_web_client && emmake make
+      - name: Build WebClient, run make
+        run: cd build_web_client && emmake make
 
-#      - name: Rename WebClient.html to index.html
-#        run: mv ../bin_web_client/WebClient.html ../bin_web_client/index.html
+      - name: Rename WebClient.html to index.html
+        run: mv ../bin_web_client/WebClient.html ../bin_web_client/index.html
 
 #      - name: Build WebClientServer Docker image
 #        run: docker build -t jod.web_client_server:latest -f docker/web_client_server/Dockerfile .
