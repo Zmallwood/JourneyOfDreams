@@ -4,10 +4,10 @@
 
 namespace zw
 {
-    class LoginRequestScene : public IScene
+    class LoginNetRequestScene : public IScene
     {
       public:
-        LoginRequestScene();
+        LoginNetRequestScene();
         void OnEnter() override;
     };
 }

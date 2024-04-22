@@ -7,8 +7,7 @@ namespace zw
 {
     ServerConnectScene::ServerConnectScene()
     {
-        GUI()->AddWidget("ServerConnectLabel",
-                         std::make_shared<GUILabel>(PointF{ .x = 0.5f, .y = 0.5f }, "Connecting to server...",
+        GUI()->AddWidget(std::make_shared<GUILabel>(PointF{ .x = 0.5f, .y = 0.5f }, "Connecting to server...",
                                                     GUIAlign::Center));
     }
 
@@ -21,7 +20,7 @@ namespace zw
     {
         if (_<NetClient>().Connected())
         {
-            _<SceneManager>().GoToScene("LoginRequestScene");
+            _<SceneManager>().GoToScene("LoginScene");
         }
     }
 }

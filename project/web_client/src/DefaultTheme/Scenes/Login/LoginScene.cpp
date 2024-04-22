@@ -12,16 +12,15 @@ namespace zw
     {
         m_ridBackground = _<ImageRenderer>().NewImage();
         m_ridLogo = _<ImageRenderer>().NewImage();
-        auto loginPanel = GUI()->AddWidget(
-            "LoginPanel", std::make_shared<GUIPanel>(RectF{ .x = 0.5f, .y = 0.5f, .w = 0.3f, .h = 0.3f },
-                                                     GUIAlign::Center));
-        loginPanel->AddWidget("LoginLabel", std::make_shared<GUILabel>(PointF{ 0.0f, 0.0f }, "Login"));
-        loginPanel->AddWidget("LoginButton", std::make_shared<GUIButton>(
-                                                 RectF{ 0.17f, 0.2f, 0.1f, 0.05f }, "Login",
-                                                 [] { _<SceneManager>().GoToScene("ServerConnectScene"); }));
-        loginPanel->AddWidget("RegisterButton", std::make_shared<GUIButton>(
-                                                    RectF{ 0.014f, 0.2f, 0.1f, 0.05f }, "Register",
-                                                    [] { _<SceneManager>().GoToScene("RegisterScene"); }));
+        auto loginPanel = GUI()->AddWidget(std::make_shared<GUIPanel>(
+            RectF{ .x = 0.5f, .y = 0.5f, .w = 0.3f, .h = 0.3f }, GUIAlign::Center));
+        loginPanel->AddWidget(std::make_shared<GUILabel>(PointF{ 0.0f, 0.0f }, "Login"));
+        loginPanel->AddWidget(
+            std::make_shared<GUIButton>(RectF{ 0.17f, 0.2f, 0.1f, 0.05f }, "Login",
+                                        [] { _<SceneManager>().GoToScene("LoginNetRequestScene"); }));
+        loginPanel->AddWidget(std::make_shared<GUIButton>(RectF{ 0.014f, 0.2f, 0.1f, 0.05f }, "Register",
+                                                          []
+                                                          { _<SceneManager>().GoToScene("RegisterScene"); }));
         loginPanel->AddWidget("UsernameTextBox",
                               std::make_shared<GUITextBox>(RectF{ 0.05f, 0.05f, 0.18f, 0.05f }));
         loginPanel->AddWidget(

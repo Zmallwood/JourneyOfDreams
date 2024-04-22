@@ -144,6 +144,12 @@ namespace zw
         return childWidget;
     }
 
+    std::shared_ptr<GUIWidget> GUIWidget::AddWidget(std::shared_ptr<GUIWidget> childWidget)
+    {
+        auto generatedName = "Widget" + std::to_string(s_unnamedWidgetCounter++);
+        return AddWidget(generatedName, childWidget);
+    }
+
     PointF GUIWidget::GetAbsolutePosition()
     {
         auto finalPosition = m_position;
@@ -192,7 +198,7 @@ namespace zw
             }
         }
 
-        return alignedPosition; 
+        return alignedPosition;
     }
 
     PointF GUIWidget::GetFinalPosition()

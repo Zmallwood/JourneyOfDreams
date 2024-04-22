@@ -1,21 +1,23 @@
 #include "SceneManager.h"
 #include "DefaultTheme/Scenes/Login/LoginScene.h"
-#include "DefaultTheme/Scenes/LoginRequest/LoginRequestScene.h"
+#include "DefaultTheme/Scenes/LoginNetRequest/LoginNetRequestScene.h"
 #include "DefaultTheme/Scenes/Main/MainScene.h"
 #include "DefaultTheme/Scenes/ServerConnect/ServerConnectScene.h"
 #include "DefaultTheme/Scenes/Register/RegisterScene.h"
+#include "DefaultTheme/Scenes/RegisterNetRequest/RegisterNetRequestScene.h"
 
 namespace zw
 {
     SceneManager::SceneManager()
     {
-        m_scenes.insert({ Hash("LoginScene"), _<LoginScene>() });
         m_scenes.insert({ Hash("ServerConnectScene"), _<ServerConnectScene>() });
-        m_scenes.insert({ Hash("LoginRequestScene"), _<LoginRequestScene>() });
+        m_scenes.insert({ Hash("LoginScene"), _<LoginScene>() });
+        m_scenes.insert({ Hash("LoginNetRequestScene"), _<LoginNetRequestScene>() });
         m_scenes.insert({ Hash("RegisterScene"), _<RegisterScene>() });
+        m_scenes.insert({ Hash("RegisterNetRequestScene"), _<RegisterNetRequestScene>() });
         m_scenes.insert({ Hash("MainScene"), _<MainScene>() });
 
-        m_currentScene = Hash("LoginScene");
+        GoToScene("ServerConnectScene");
     }
 
     void SceneManager::UpdateCurrentScene()

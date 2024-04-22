@@ -23,6 +23,7 @@ namespace zw
         std::map<int, std::shared_ptr<GUIWidget>> GetChildWidgetsRecursively();
         std::shared_ptr<GUIWidget> AddWidget(const std::string &nameIdentifier,
                                              std::shared_ptr<GUIWidget> childWidget);
+        std::shared_ptr<GUIWidget> AddWidget(std::shared_ptr<GUIWidget> childWidget);
         auto &ChildWidgets()
         {
             return m_childWidgets;
@@ -119,5 +120,7 @@ namespace zw
         bool m_drawBorders{ true };
         bool m_focusable{ false };
         int m_ticksTimeGotFocus{ 0 };
+
+        inline static int s_unnamedWidgetCounter{ 0 };
     };
 }
