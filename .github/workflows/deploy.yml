@@ -10,22 +10,6 @@ jobs:
     steps:
       - uses: mymindstorm/setup-emsdk@v14
 
-#      - name: Verify Emscripten
-#        run: emcc -v
-
-#      - name: Checkout SDL2
-#        uses: actions/checkout@main
-#        with:
-#          repository: libsdl-org/SDL
-
-#      - name: Build SDL2
-#        run: |
-#          mkdir build-wasm
-#          cd build-wasm
-#          emcmake cmake ..
-#          emmake make
-#          make install
-
       - name: Checkout code
         uses: actions/checkout@v2
 
@@ -35,9 +19,12 @@ jobs:
       - name: Build WebClient, run make
         run: cd build_web_client && emmake make && mv ../bin_web_client/WebClient.html ../bin_web_client/index.html
 
+      - name: Build GameServer, run cmake
+        run: cmake project/server -B build_server
 
-      - name: Rename WebClient.html to index.html
-        run: cd build_web_client && ls
+      - name: Build GameServer, run make
+        run: cd build_server && cmake --build . --parallel 6
+
 
 #      - name: Build WebClientServer Docker image
 #        run: docker build -t jod.web_client_server:latest -f docker/web_client_server/Dockerfile .
