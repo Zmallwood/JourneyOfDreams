@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build WebClient, run cmake
-        run: CC=emcc CXX=em++ cmake project/web_client -B build_web_client
+        run: CC=emcc CXX=em++ emcmake cmake project/web_client -B build_web_client
         
       - name: Build WebClient, run make
         run: cd build_web_client && emmake make
