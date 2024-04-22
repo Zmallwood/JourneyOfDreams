@@ -27,6 +27,7 @@ namespace zw
         void FocusNextWidget();
         std::shared_ptr<GUIWidget> GetWidget(const std::string &nameIdentifier,
                                              std::shared_ptr<GUIWidget> widget);
+        void DestroyMarkedWidgets();
         std::shared_ptr<GUIWidget> m_focusedWidget{};
     };
 }

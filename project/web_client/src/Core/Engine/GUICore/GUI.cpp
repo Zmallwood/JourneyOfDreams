@@ -9,6 +9,8 @@ namespace zw
         for (auto &entry : ChildWidgets())
             entry.second->Update();
 
+        DestroyMarkedWidgets();
+
         if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_TAB))
         {
             FocusNextWidget();
@@ -17,9 +19,23 @@ namespace zw
         _<KeyboardInput>().ClearTextInput();
     }
 
+    void GUI::DestroyMarkedWidgets() {
+        for (auto it = ChildWidgets().begin(); it != ChildWidgets().end();)
+        {
+            if (it->second->MarkedForDestruction())
+            {
+                it = ChildWidgets().erase(it);
+            }
+            else
+            {
+                ++it;
+            }
+        }
+    }
+
     void GUI::Render()
     {
-        for (auto &entry : ChildWidgets())
+        for (auto &entry : std::views::reverse(ChildWidgets()))
             entry.second->Render();
     }
 

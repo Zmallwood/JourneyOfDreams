@@ -1,6 +1,7 @@
 #include "RegisterScene.h"
 #include "Core/Engine/GUICore/GUIButton.h"
 #include "Core/Engine/GUICore/GUILabel.h"
+#include "Core/Engine/GUICore/GUIMessageBox.h"
 #include "Core/Engine/GUICore/GUIPanel.h"
 #include "Core/Engine/GUICore/GUITextBox.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
@@ -15,9 +16,20 @@ namespace zw
         auto registerPanel = GUI()->AddWidget(std::make_shared<GUIPanel>(
             RectF{ .x = 0.5f, .y = 0.5f, .w = 0.35f, .h = 0.4f }, GUIAlign::Center));
         registerPanel->AddWidget(std::make_shared<GUILabel>(PointF{ 0.0f, 0.0f }, "Register"));
-        registerPanel->AddWidget(
-            std::make_shared<GUIButton>(RectF{ 0.22f, 0.3f, 0.1f, 0.05f }, "Register",
-                                        [] { _<SceneManager>().GoToScene("RegisterNetRequestScene"); }));
+        registerPanel->AddWidget(std::make_shared<GUIButton>(
+            RectF{ 0.22f, 0.3f, 0.1f, 0.05f }, "Register",
+            [this]
+            {
+                if (EnsurePasswordConfirmed())
+                {
+                    _<SceneManager>().GoToScene("RegisterNetRequestScene");
+                }
+                else
+                {
+                    GUI()->AddWidget(std::make_shared<GUIMessageBox>(
+                        PointF{ .x = 0.5f, .y = 0.5f }, "Your typed passwords do not match.", "Error"));
+                }
+            }));
         registerPanel->AddWidget(std::make_shared<GUIButton>(
             RectF{ 0.014f, 0.3f, 0.1f, 0.05f }, "Back", [] { _<SceneManager>().GoToScene("LoginScene"); }));
         registerPanel->AddWidget(
@@ -34,6 +46,21 @@ namespace zw
         registerPanel->AddWidget(
             "ConfirmPasswordTextBox",
             std::make_shared<GUITextBox>(RectF{ 0.15f, 0.19f, 0.18f, 0.05f }, Colors::Wheat, true));
+    }
+
+    bool RegisterScene::EnsurePasswordConfirmed()
+    {
+        auto tbPassword = GUI()->GetWidget<GUITextBox>("PasswordTextBox");
+        auto tbConfirmPassword = GUI()->GetWidget<GUITextBox>("ConfirmPasswordTextBox");
+
+        if (tbPassword->GetText() != tbConfirmPassword->GetText())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     void RegisterScene::OnEnter()

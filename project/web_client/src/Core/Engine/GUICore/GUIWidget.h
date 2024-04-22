@@ -12,6 +12,10 @@ namespace zw
         GUIWidget() = default;
         GUIWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft);
         GUIWidget(PointF position, SizeF size, GUIAlign alignment = GUIAlign::TopLeft);
+        void Destroy();
+        virtual void Initialize()
+        {
+        }
         virtual void Update();
         virtual void Render();
         virtual void UpdateDerived()
@@ -55,6 +59,10 @@ namespace zw
         auto Focusable()
         {
             return m_focusable;
+        }
+        auto MarkedForDestruction()
+        {
+            return m_markedForDestruction;
         }
 
       protected:
@@ -120,6 +128,7 @@ namespace zw
         bool m_drawBorders{ true };
         bool m_focusable{ false };
         int m_ticksTimeGotFocus{ 0 };
+        bool m_markedForDestruction{ false };
 
         inline static int s_unnamedWidgetCounter{ 0 };
     };

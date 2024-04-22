@@ -23,6 +23,11 @@ namespace zw
         m_ridBorderCornerBottomRight = _<ImageRenderer>().NewImage();
     }
 
+    void GUIWidget::Destroy()
+    {
+        m_markedForDestruction = true;
+    }
+
     void GUIWidget::Update()
     {
         for (auto &entry : m_childWidgets)
@@ -138,6 +143,7 @@ namespace zw
     std::shared_ptr<GUIWidget> GUIWidget::AddWidget(const std::string &nameIdentifier,
                                                     std::shared_ptr<GUIWidget> childWidget)
     {
+        childWidget->Initialize();
         childWidget->SetParentWidget(shared_from_this());
         m_childWidgets.insert({ Hash(nameIdentifier), childWidget });
 

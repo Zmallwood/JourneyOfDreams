@@ -9,6 +9,7 @@
 #include <set>
 #include <filesystem>
 #include <numeric>
+#include <ranges>
 #include <stdio.h>
 
 #include <SDL2/SDL.h>

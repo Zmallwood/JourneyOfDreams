@@ -13,6 +13,8 @@ namespace zw
         void RenderDerived() override;
 
       private:
+        bool EnsurePasswordConfirmed();
+
         RID m_ridBackground{ 0 };
         RID m_ridLogo{ 0 };
     };
