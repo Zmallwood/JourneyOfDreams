@@ -20,5 +20,6 @@ namespace zw
         constexpr ColorF Teal{ 0.0f, 0.5f, 0.5f };
         constexpr ColorF Navy{ 0.0f, 0.0f, 0.5f };
         constexpr ColorF Wheat{ 0.96f, 0.87f, 0.7f };
+        constexpr ColorF DarkOrange{ 1.0f, 0.55f, 0.0f };
     }
 }

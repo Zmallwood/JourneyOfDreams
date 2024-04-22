@@ -14,6 +14,11 @@ namespace zw
         SetDrawBorders(false);
     }
 
+    GUILabel::GUILabel(PointF position, const std::string &text, ColorF textColor)
+        : GUILabel(position, text, GUIAlign::TopLeft, FontSizes::_20, textColor)
+    {
+    }
+
     void GUILabel::UpdateDerived()
     {
     }
@@ -51,7 +56,8 @@ namespace zw
             alignedPosition = PointF(absolutePosition.x, absolutePosition.y - textSize.h / 2);
             break;
         case GUIAlign::Center:
-            alignedPosition = PointF(absolutePosition.x - textSize.w / 2, absolutePosition.y - textSize.h / 2);
+            alignedPosition
+                = PointF(absolutePosition.x - textSize.w / 2, absolutePosition.y - textSize.h / 2);
             break;
         }
 

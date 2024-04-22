@@ -10,6 +10,7 @@ namespace zw
       public:
         GUILabel(PointF position, const std::string &text, GUIAlign alignment = GUIAlign::TopLeft,
                  FontSizes fontSize = FontSizes::_20, ColorF textColor = Colors::Wheat);
+        GUILabel(PointF position, const std::string &text, ColorF textColor);
         void UpdateDerived() override;
         void RenderDerived() override;
         PointF GetAlignedAbsolutePosition() override;

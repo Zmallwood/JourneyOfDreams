@@ -1,16 +1,16 @@
 #include "Engine.h"
 #include "Cursor/Cursor.h"
 #include "Graphics/Graphics.h"
-#include "Net/Net.h"
+#include "Net/NetClient.h"
 #include "PollEvents.h"
 #include "ScenesCore/SceneManager.h"
-#include "Net/Net.h"
+#include "Net/NetClient.h"
 
 namespace zw
 {
     Engine::Engine()
     {
-        _<Net>();          // Touch Net to initialize it
+        _<NetClient>();          // Touch NetClient to initialize it
         _<Graphics>();     // Touch Graphics to initialize it
         _<SceneManager>(); // Touch SceneManager to initialize it
         _<Cursor>();       // Touch Cursor to initialize it
@@ -34,7 +34,7 @@ namespace zw
 
     void Engine::UpdateNet()
     {
-        _<Net>().Update();
+        _<NetClient>().Update();
     }
 
     void Engine::Render()

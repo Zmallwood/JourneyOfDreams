@@ -18,7 +18,8 @@ endif()
 set (OGRE_LIBRARIES /home/andreas/SourceBuild/ogre/OgreMain)
 
 include_directories(${PROJECT_SOURCE_DIR}/Samples/Character/include)
-add_executable(Server src/Main.cpp src/WebsocketServer.cpp)
+file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+add_executable(Server ${SRC_FILES})
 target_include_directories(Server PUBLIC external)
 
 # Compile jsoncpp from source

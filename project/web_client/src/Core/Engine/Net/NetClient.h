@@ -4,10 +4,10 @@ namespace zw
 {
     class NetworkConnection;
 
-    class Net
+    class NetClient
     {
       public:
-        Net();
+        NetClient();
         void Update();
         void BeginEstablishConnection();
         EMSCRIPTEN_RESULT Send(std::map<std::string, std::string> data);

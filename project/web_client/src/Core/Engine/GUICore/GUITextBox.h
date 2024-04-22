@@ -12,6 +12,7 @@ namespace zw
         void UpdateDerived() override;
         void RenderDerived() override;
         std::string GetText();
+        void ClearText();
 
       private:
         RID m_ridBackground{};

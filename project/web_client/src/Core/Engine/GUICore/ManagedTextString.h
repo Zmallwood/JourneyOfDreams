@@ -16,6 +16,7 @@ namespace zw
         void MoveCursorToStart();
         void MoveCursorToEnd();
         void SetCursorPositionFromLocalX(float localMouseX);
+        void Reset();
         auto CursorPosition() const
         {
             return m_cursorPosition;

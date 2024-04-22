@@ -1,6 +1,6 @@
 #include "ServerConnectScene.h"
 #include "Core/Engine/GUICore/GUILabel.h"
-#include "Core/Engine/Net/Net.h"
+#include "Core/Engine/Net/NetClient.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
 namespace zw
@@ -14,12 +14,12 @@ namespace zw
 
     void ServerConnectScene::OnEnter()
     {
-        _<Net>().BeginEstablishConnection();
+        _<NetClient>().BeginEstablishConnection();
     }
 
     void ServerConnectScene::UpdateDerived()
     {
-        if (_<Net>().Connected())
+        if (_<NetClient>().Connected())
         {
             _<SceneManager>().GoToScene("LoginRequestScene");
         }

@@ -116,4 +116,8 @@ namespace zw
     std::string GUITextBox::GetText() {
         return m_managedTextLine.Text();
     }
+
+    void GUITextBox::ClearText() {
+        m_managedTextLine.Reset();
+    }
 }

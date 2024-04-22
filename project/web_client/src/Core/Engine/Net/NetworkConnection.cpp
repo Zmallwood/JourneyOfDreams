@@ -1,5 +1,5 @@
 #include "NetworkConnection.h"
-#include "Net.h"
+#include "NetClient.h"
 
 namespace zw
 {
@@ -15,8 +15,8 @@ namespace zw
             printf("Failed to emscripten_websocket_send_utf8_text(): %d\n", result);
         }
         std::cout << "sent message\n";
-        _<Net>().Connection()->SetConnected(true);
-        _<Net>().Connection()->SetServerSocket(&websocketEvent->socket);
+        _<NetClient>().Connection()->SetConnected(true);
+        _<NetClient>().Connection()->SetServerSocket(&websocketEvent->socket);
         return EM_TRUE;
     }
 

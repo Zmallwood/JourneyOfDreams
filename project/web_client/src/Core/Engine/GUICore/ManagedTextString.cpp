@@ -171,4 +171,12 @@ namespace zw
 
         m_cursorPosition = offsetedCursorPosition + m_cursorOffset;
     }
+
+    void ManagedTextString::Reset()
+    {
+        m_text.clear();
+        m_cursorPosition = 0;
+        m_cursorOffset = 0;
+        m_cursorRightClip = 0;
+    }
 }
