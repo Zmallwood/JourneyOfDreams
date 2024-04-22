@@ -8,23 +8,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: mymindstorm/setup-emsdk@v14
+#      - uses: mymindstorm/setup-emsdk@v14
 
-      - name: Verify Emscripten
-        run: emcc -v
+#      - name: Verify Emscripten
+#        run: emcc -v
 
-      - name: Checkout SDL2
-        uses: actions/checkout@main
-        with:
-          repository: libsdl-org/SDL
+#      - name: Checkout SDL2
+#        uses: actions/checkout@main
+#        with:
+#          repository: libsdl-org/SDL
 
-      - name: Build SDL2
-        run: |
-          mkdir build-wasm
-          cd build-wasm
-          emcmake cmake ..
-          emmake make
-          make install
+#      - name: Build SDL2
+#        run: |
+#          mkdir build-wasm
+#          cd build-wasm
+#          emcmake cmake ..
+#          emmake make
+#          make install
 
       - name: Checkout code
         uses: actions/checkout@v2
@@ -34,6 +34,7 @@ jobs:
         
       - name: Build WebClient, run make
         run: cd build_web_client && emmake make
+
 
       - name: Rename WebClient.html to index.html
         run: mv ../bin_web_client/WebClient.html ../bin_web_client/index.html
