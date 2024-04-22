@@ -12,7 +12,7 @@
 #include <ranges>
 #include <stdio.h>
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_opengles2.h>
 #include <SDL2/SDL_ttf.h>
