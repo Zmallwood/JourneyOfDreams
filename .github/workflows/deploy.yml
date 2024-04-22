@@ -13,6 +13,9 @@ jobs:
       - name: Verify Emscripten
         run: emcc -v
 
+      - name: Prepare for building SDL2
+        run: mkdir SDL2
+
       - name: Checkout SDL2
         uses: actions/checkout@main
         with:
@@ -20,10 +23,12 @@ jobs:
 
       - name: Build SDL2
         run: |
+          cd SDL2
           mkdir build-wasm
           cd build-wasm
           emcmake cmake ..
           emmake make
+          make install
 
       - name: Checkout code
         uses: actions/checkout@v2
