@@ -27,7 +27,8 @@ set (OGRE_LIBRARIES /home/andreas/SourceBuild/ogre/OgreMain)
 
 include_directories(${PROJECT_SOURCE_DIR}/src)
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
-add_executable(WebClient ${SRC_FILES})
+file(GLOB_RECURSE SRC_FILES_EXTERNAL ${PROJECT_SOURCE_DIR}/external/*.cpp)
+add_executable(WebClient ${SRC_FILES} ${SRC_FILES_EXTERNAL})
 target_link_libraries(WebClient websocket bz2 freetype SDL2_ttf)
 set(PCH_FILES
     "stdafx/StdAfx.h"

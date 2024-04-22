@@ -32,3 +32,5 @@
 #include "../../shared/matter/src/PointF.h"
 #include "../../shared/matter/src/SizeF.h"
 #include "../../shared/matter/src/Colors.h"
+
+#include "../external/SHA256/include/SHA256.h"
