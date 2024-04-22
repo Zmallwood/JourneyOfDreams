@@ -9,13 +9,13 @@ jobs:
 
     steps:
       - uses: mymindstorm/setup-emsdk@v14
+      - uses: threeal/cmake-action@main
 
-      - name: Verify
+      - name: Verify Emscripten
         run: emcc -v
 
       - name: Checkout code
         uses: actions/checkout@v2
-
 
 #      - name: Build WebClientServer Docker image
 #        run: docker build -t jod.web_client_server:latest -f docker/web_client_server/Dockerfile .
