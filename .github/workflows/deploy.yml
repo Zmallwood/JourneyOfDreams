@@ -17,6 +17,8 @@ jobs:
         uses: actions/checkout@main
         with:
           repository: libsdl-org/SDL
+
+      - name: Build SDL2
         run: |
           mkdir build-wasm
           cd build-wasm
