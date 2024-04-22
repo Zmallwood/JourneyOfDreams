@@ -20,7 +20,7 @@ jobs:
         run: CC=emcc CXX=em++ emcmake cmake project/web_client -B build_web_client
         
       - name: Build WebClient, run make
-        run: cd build_web_client && emmake make
+        run: cd build_web_client && emmake make -sUSE_SDL=2
 
       - name: Rename WebClient.html to index.html
         run: mv ../bin_web_client/WebClient.html ../bin_web_client/index.html
