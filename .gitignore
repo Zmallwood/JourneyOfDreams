@@ -33,3 +33,7 @@
 
 # Folders
 #project/web_client/resources/
+build_server/
+build_web_client/
+bin_server/
+bin_web_client/
