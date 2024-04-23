@@ -1,4 +1,5 @@
 source ~/temp/emsdk/emsdk_env.sh &&
+cd ..
 CC=emcc CXX=em++ cmake project/web_client -B build_web_client &&
 cd build_web_client &&
 emmake make

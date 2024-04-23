@@ -19,5 +19,6 @@ namespace zw
         auto username = _<LoginScene>().GUI()->GetWidget<GUITextBox>("UsernameTextBox")->GetText();
         auto password = _<LoginScene>().GUI()->GetWidget<GUITextBox>("PasswordTextBox")->GetText();
         _<NetClient>().Send({{"Username", username},{"Password", password}});
+        _<SceneManager>().GoToScene("MainScene");
     }
 }

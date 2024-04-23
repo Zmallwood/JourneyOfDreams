@@ -7,7 +7,7 @@ EM_JS(int, canvas_get_height, (), { return window.innerHeight; });
 
 namespace zw
 {
-    Graphics::Graphics()
+    Graphics::Graphics() 
     {
         SDL_Init(SDL_INIT_EVERYTHING);
 

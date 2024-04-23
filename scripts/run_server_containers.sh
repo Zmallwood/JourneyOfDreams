@@ -1,3 +1,4 @@
+cd ..
 tmux new-session -d -s mySession -n myWindow
 tmux split-window -hf
 tmux send-keys -t mySession:myWindow "sudo docker run -p 80:80 jod.web_client_server:latest" Enter
