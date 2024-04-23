@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: mymindstorm/setup-emsdk@v14
 
-       - name: Close existing tmux
-         run: echo "tjosan"
+      - name: Close existing tmux
+        run: echo "tjosan"
 
       - name: Checkout code
         uses: actions/checkout@v2
