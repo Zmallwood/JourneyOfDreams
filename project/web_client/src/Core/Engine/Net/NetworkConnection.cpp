@@ -75,7 +75,7 @@ namespace zw
         if (!emscripten_websocket_is_supported())
             return;
 
-        EmscriptenWebSocketCreateAttributes ws_attrs = { "ws://localhost:1238", NULL, EM_TRUE };
+        EmscriptenWebSocketCreateAttributes ws_attrs = { "ws://127.0.0.1:1238", NULL, EM_TRUE };
 
         EMSCRIPTEN_WEBSOCKET_T ws = emscripten_websocket_new(&ws_attrs);
         emscripten_websocket_set_onopen_callback(ws, NULL, OnOpen);
