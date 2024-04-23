@@ -1,5 +1,5 @@
 #include "Graphics.h"
-#include "Core/Configuration/GameProperties.h"
+#include "configuration/src/GameProperties.h"
 
 EM_JS(int, canvas_get_width, (), { return window.innerWidth; });
 

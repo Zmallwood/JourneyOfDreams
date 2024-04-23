@@ -1,6 +1,10 @@
 #pragma once
 
+#if (EMSCRIPTEN)
 #include <SDL.h>
+#else()
+#include <SDL2/SDL.h>
+#endif()
 
 namespace zw
 {

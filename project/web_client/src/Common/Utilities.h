@@ -5,7 +5,6 @@
 
 namespace zw
 {
-    int Hash(const std::string &text);
     Size GetCanvasSize();
     float GetAspectRatio();
     std::string FileExtension(const std::string &absPath);

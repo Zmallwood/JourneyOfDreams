@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/MapGenerator.dir/src/Main.cpp.o -o /home/andreas/Code/C++/JourneyOfDreams/repository/bin_map_generator/MapGenerator 

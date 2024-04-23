@@ -26,10 +26,11 @@ endif()
 
 set (OGRE_LIBRARIES /home/andreas/SourceBuild/ogre/OgreMain)
 
-include_directories(${PROJECT_SOURCE_DIR}/src)
+include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/../shared)
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 file(GLOB_RECURSE SRC_FILES_EXTERNAL ${PROJECT_SOURCE_DIR}/external/*.cpp)
-add_executable(WebClient ${SRC_FILES} ${SRC_FILES_EXTERNAL})
+file(GLOB_RECURSE SRC_FILES_SHARED ${PROJECT_SOURCE_DIR}/../shared/*.cpp)
+add_executable(WebClient ${SRC_FILES} ${SRC_FILES_EXTERNAL} ${SRC_FILES_SHARED})
 #target_link_libraries(WebClient websocket bz2 freetype SDL2_ttf)
 target_link_libraries(WebClient websocket)
 set(PCH_FILES

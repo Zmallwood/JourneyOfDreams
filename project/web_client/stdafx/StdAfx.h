@@ -21,7 +21,6 @@
 #include <emscripten.h>
 
 #include "Common/Aliases.h"
-#include "Common/Singleton.h"
 #include "Common/SDLDeleter.h"
 #include "Common/Utilities.h"
 
@@ -33,5 +32,8 @@
 #include "../../shared/matter/src/PointF.h"
 #include "../../shared/matter/src/SizeF.h"
 #include "../../shared/matter/src/Colors.h"
+
+#include "../../shared/common/src/Hash.h"
+#include "../../shared/common/src/Singleton.h"
 
 #include "../external/SHA256/include/SHA256.h"
