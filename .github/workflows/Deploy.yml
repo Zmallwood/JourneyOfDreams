@@ -100,7 +100,6 @@ jobs:
           tmux send-keys -t JOD_TMUX_SESSION:myWindow "docker run -ti -p 1238:1238 jod.game_server:latest" Enter
           tmux split-window -hf
           tmux select-pane -L
-          tmux attach -t JOD_TMUX_SESSION:myWindow
           ENDSSH
 
 
