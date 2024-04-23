@@ -64,23 +64,14 @@ jobs:
       - name: Close existing tmux
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-#        run: ssh ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }}:${{ secrets.REMOTE_SERVER_PATH }} "tmux kill-server"
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} << 'ENDSSH'
-          tmux kill-server
-          exit
-          ENDSSH
+          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} 'tmux kill-server'
 
       - name: Stop all running docker containers
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-#        run: ssh ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }}:${{ secrets.REMOTE_SERVER_PATH }} "docker stop $(docker ps -a -q)"
         run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} << 'ENDSSH'
-          docker stop $(docker ps -a -q)
-          exit
-          ENDSSH
-
+          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} 'docker stop $(docker ps -a -q)'
 
 
 #       - name: Start tmux
