@@ -44,7 +44,7 @@ jobs:
           mkdir -p /home/runner/.ssh
           # Replace example.com with the hostname of the machine
           # you're SSH-ing into
-          ssh-keyscan ${{ secrets.REMOTE_SERVER_ADDRESS }} >> /home/runner/.ssh/known_hosts
+          ssh-keyscan 143.110.128.10 >> /home/runner/.ssh/known_hosts
           # DOKKU_SSH_KEY is the name of the repository secret
           echo "${{ secrets.JOD_SSH_KEY }}" > /home/runner/.ssh/github_actions
           chmod 600 /home/runner/.ssh/github_actions
