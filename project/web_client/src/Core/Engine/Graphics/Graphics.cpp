@@ -10,7 +10,7 @@ namespace zw
         auto canvasSize = _<GameProperties>().CanvasSize();
 
         m_window = std::shared_ptr<SDL_Window>(
-            SDL_CreateWindow("Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, canvasSize.w,
+            SDL_CreateWindow("Journey of Dreams", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, canvasSize.w,
                              canvasSize.h, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN),
             SDLDeleter());
 
