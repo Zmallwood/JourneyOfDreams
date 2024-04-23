@@ -69,7 +69,7 @@ jobs:
           tmux has-session -t $session 2>/dev/null
 
           if [ $? != 0 ]; then
-            tmux kill-server
+            #tmux kill-server
           fi
           ENDSSH
 
