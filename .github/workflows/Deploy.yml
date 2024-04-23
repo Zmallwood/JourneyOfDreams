@@ -66,10 +66,11 @@ jobs:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: ssh ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} "tmux kill-server"
 
-#       - name: Stop all running docker containers
-#        env:
-#          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-#        run: ssh ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} "docker stop $(docker ps -a -q)"
+      - name: Stop all running docker containers
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: ssh ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} "docker stop $(docker ps -a -q)"
+
 
 
 #       - name: Start tmux
