@@ -79,6 +79,15 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} 'docker stop $(docker ps -a -q)'
 
+      - name: Load docker images
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} << 'ENDSSH'
+          docker load -i WebClientServer.tar
+          docker load -i GameServer.tar
+          ENDSSH
+
       - name: Start servers in tmux
         env:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
@@ -86,28 +95,16 @@ jobs:
           ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} << 'ENDSSH'
           tmux new-session -d -s JOD_TMUX_SESSION -n myWindow
           tmux split-window -hf
-          tmux send-keys -t JOD_TMUX_SESSION:myWindow "docker load -p 80:80 -i WebClientServer.tar" Enter
+          tmux send-keys -t JOD_TMUX_SESSION:myWindow "docker run -p 80:80 jod.web_client_server:latest" Enter
           tmux select-pane -L
-          tmux send-keys -t JOD_TMUX_SESSION:myWindow "docker load -ti -p 1238:1238 -i GameServer.tar" Enter
+          tmux send-keys -t JOD_TMUX_SESSION:myWindow "docker run -ti -p 1238:1238 jod.game_server:latest" Enter
           tmux split-window -hf
           tmux select-pane -L
           tmux attach -t JOD_TMUX_SESSION:myWindow
           ENDSSH
 
 
-#       - name: Start tmux
-#        env:
-#          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-#        run: |
 
-
-#      - name: Load Docker image on remote server
-#         env:
-#           SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-#        run: |
-#          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }} << 'ENDSSH'
-#          docker load -i ${{ secrets.REMOTE_SERVER_PATH }}/my-image.tar
-#          ENDSSH
 
 #      - name: Transfer Docker Compose file to remote server
 #         env:
