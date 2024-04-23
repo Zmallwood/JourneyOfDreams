@@ -212,8 +212,11 @@ CMakeFiles/WorldGenerator.dir/cmake_pch.hxx.gch: CMakeFiles/WorldGenerator.dir/c
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/matter/src/Size.h \
-  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/matter/src/ColorF.h \
+  /usr/include/c++/11/fstream \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/include/c++/11/bits/fstream.tcc \
   /usr/include/SDL2/SDL.h \
   /usr/include/SDL2/SDL_main.h \
   /usr/include/SDL2/SDL_stdinc.h \
@@ -380,6 +383,8 @@ CMakeFiles/WorldGenerator.dir/cmake_pch.hxx.gch: CMakeFiles/WorldGenerator.dir/c
   /usr/include/SDL2/SDL_version.h \
   /usr/include/SDL2/SDL_locale.h \
   /usr/include/SDL2/SDL_misc.h \
+  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/matter/src/Size.h \
+  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/matter/src/ColorF.h \
   /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/matter/src/Point.h \
   /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/common/src/Hash.h \
   /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/common/src/Singleton.h
@@ -417,20 +422,26 @@ CMakeFiles/WorldGenerator.dir/src/Generation/SubProcess/GenerateGrass.cpp.o: CMa
   /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Generation/SubProcess/GenerateGrass.cpp \
   /usr/include/stdc-predef.h \
   /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Generation/SubProcess/GenerateGrass.h \
-  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/WorldArea.h \
-  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/Tile.h
+  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/Tile.h \
+  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/World.h \
+  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/WorldArea.h
 
 CMakeFiles/WorldGenerator.dir/src/Main.cpp.o: CMakeFiles/WorldGenerator.dir/cmake_pch.hxx \
   /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Main.cpp \
   /usr/include/stdc-predef.h \
   /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Generation/GenerateNewWorld.h \
-  /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/SaveWorldToFile.h
+  /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/WorldFileWriter.h
 
-CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o: CMakeFiles/WorldGenerator.dir/cmake_pch.hxx \
-  /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/SaveWorldToFile.cpp \
+CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o: CMakeFiles/WorldGenerator.dir/cmake_pch.hxx \
+  /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/WorldFileWriter.cpp \
   /usr/include/stdc-predef.h \
-  /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/SaveWorldToFile.h
+  /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/WorldFileWriter.h \
+  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/Tile.h \
+  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/World.h \
+  /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/WorldArea.h
 
+
+/home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/WorldFileWriter.cpp:
 
 /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Main.cpp:
 
@@ -446,9 +457,11 @@ CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o: CMakeFiles/World
 
 /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/common/src/Hash.cpp:
 
-/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/common/src/Singleton.h:
-
 /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/matter/src/Point.h:
+
+/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/matter/src/ColorF.h:
+
+/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/matter/src/Size.h:
 
 /usr/include/SDL2/SDL_locale.h:
 
@@ -538,13 +551,13 @@ CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o: CMakeFiles/World
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vlintrin.h:
 
+/home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/WorldFileWriter.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512erintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512fintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avxintrin.h:
-
-/home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/SaveWorldToFile.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/wmmintrin.h:
 
@@ -622,9 +635,17 @@ CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o: CMakeFiles/World
 
 /usr/include/SDL2/SDL_mutex.h:
 
+/usr/include/SDL2/SDL_endian.h:
+
+/usr/include/SDL2/SDL_error.h:
+
+/usr/include/SDL2/SDL_audio.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/fxsrintrin.h:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
+
+/usr/include/c++/11/fstream:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
@@ -850,8 +871,6 @@ CMakeFiles/WorldGenerator.dir/cmake_pch.hxx.cxx:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/cpu_defines.h:
 
-/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/matter/src/ColorF.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
 /usr/include/c++/11/debug/assertions.h:
@@ -975,8 +994,6 @@ CMakeFiles/WorldGenerator.dir/cmake_pch.hxx.cxx:
 /usr/include/c++/11/initializer_list:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
-
-/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/matter/src/Size.h:
 
 /usr/include/SDL2/SDL_gesture.h:
 
@@ -1108,6 +1125,8 @@ CMakeFiles/WorldGenerator.dir/cmake_pch.hxx.cxx:
 
 /usr/include/SDL2/SDL_events.h:
 
+/usr/include/c++/11/bits/codecvt.h:
+
 /usr/include/c++/11/bits/basic_ios.tcc:
 
 /usr/include/SDL2/SDL_stdinc.h:
@@ -1156,6 +1175,14 @@ CMakeFiles/WorldGenerator.dir/cmake_pch.hxx:
 
 /usr/include/SDL2/SDL.h:
 
+/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
+
+/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/common/src/Singleton.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
+
+/usr/include/c++/11/bits/fstream.tcc:
+
 /usr/include/SDL2/close_code.h:
 
 /usr/include/c++/11/stdlib.h:
@@ -1198,10 +1225,6 @@ CMakeFiles/WorldGenerator.dir/cmake_pch.hxx:
 
 /usr/include/c++/11/tr1/beta_function.tcc:
 
-/home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/SaveWorldToFile.cpp:
-
-/usr/include/SDL2/SDL_audio.h:
-
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
@@ -1219,7 +1242,3 @@ CMakeFiles/WorldGenerator.dir/cmake_pch.hxx:
 /usr/include/c++/11/cstdlib:
 
 /usr/include/SDL2/SDL_atomic.h:
-
-/usr/include/SDL2/SDL_error.h:
-
-/usr/include/SDL2/SDL_endian.h:

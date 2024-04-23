@@ -6,9 +6,10 @@ namespace zw
     {
       public:
         void SetGround(const std::string &groundName);
-        auto GroundHash()
+        void SetGround(int groundHash);
+        auto Ground()
         {
-            return m_groundHash;
+            return m_ground;
         }
         auto Elevation()
         {
@@ -16,7 +17,7 @@ namespace zw
         }
 
       private:
-        int m_groundHash{ 0 };
+        int m_ground{ 0 };
         float m_elevation{ 0.0f };
     };
 }

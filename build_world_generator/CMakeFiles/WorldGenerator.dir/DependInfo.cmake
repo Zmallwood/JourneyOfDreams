@@ -24,8 +24,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx" "CMakeFiles/WorldGenerator.dir/src/Generation/SubProcess/GenerateGrass.cpp.o" "gcc" "CMakeFiles/WorldGenerator.dir/src/Generation/SubProcess/GenerateGrass.cpp.o.d"
   "/home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Main.cpp" "CMakeFiles/WorldGenerator.dir/src/Main.cpp.o" "gcc" "CMakeFiles/WorldGenerator.dir/src/Main.cpp.o.d"
   "/home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx" "CMakeFiles/WorldGenerator.dir/src/Main.cpp.o" "gcc" "CMakeFiles/WorldGenerator.dir/src/Main.cpp.o.d"
-  "/home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/SaveWorldToFile.cpp" "CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o" "gcc" "CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o.d"
-  "/home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx" "CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o" "gcc" "CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o.d"
+  "/home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/WorldFileWriter.cpp" "CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o" "gcc" "CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o.d"
+  "/home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx" "CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o" "gcc" "CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o.d"
   )
 
 # Targets to which this target links.

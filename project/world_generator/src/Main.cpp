@@ -1,5 +1,5 @@
 #include "Generation/GenerateNewWorld.h"
-#include "Saving/SaveWorldToFile.h"
+#include "Saving/WorldFileWriter.h"
 
 int main(int argc, char *argv[])
 {
@@ -7,7 +7,8 @@ int main(int argc, char *argv[])
 
     std::cout << "Journey Of Dreams - World Generator\n";
 
-    SaveWorldToFile(GenerateNewWorld());
+    GenerateNewWorld();
+    _<WorldFileWriter>().WriteWorldToFile();
 
     return 0;
 }

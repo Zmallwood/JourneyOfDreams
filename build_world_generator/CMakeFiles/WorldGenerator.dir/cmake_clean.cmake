@@ -17,8 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/WorldGenerator.dir/src/Generation/SubProcess/GenerateGrass.cpp.o.d"
   "CMakeFiles/WorldGenerator.dir/src/Main.cpp.o"
   "CMakeFiles/WorldGenerator.dir/src/Main.cpp.o.d"
-  "CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o"
-  "CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o.d"
+  "CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o"
+  "CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o.d"
 )
 
 # Per-language clean rules from dependency scanning.

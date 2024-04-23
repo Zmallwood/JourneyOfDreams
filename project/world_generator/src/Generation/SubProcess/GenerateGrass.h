@@ -2,7 +2,5 @@
 
 namespace zw
 {
-    class WorldArea;
-
-    void GenerateGrass(std::shared_ptr<WorldArea> worldArea);
+    void GenerateGrass();
 }

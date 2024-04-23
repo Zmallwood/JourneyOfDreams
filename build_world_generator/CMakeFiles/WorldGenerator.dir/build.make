@@ -132,21 +132,21 @@ CMakeFiles/WorldGenerator.dir/src/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WorldGenerator.dir/src/Main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx -S /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Main.cpp -o CMakeFiles/WorldGenerator.dir/src/Main.cpp.s
 
-CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o: CMakeFiles/WorldGenerator.dir/flags.make
-CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o: /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/SaveWorldToFile.cpp
-CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o: CMakeFiles/WorldGenerator.dir/cmake_pch.hxx
-CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o: CMakeFiles/WorldGenerator.dir/cmake_pch.hxx.gch
-CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o: CMakeFiles/WorldGenerator.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx -MD -MT CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o -MF CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o.d -o CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o -c /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/SaveWorldToFile.cpp
+CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o: CMakeFiles/WorldGenerator.dir/flags.make
+CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o: /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/WorldFileWriter.cpp
+CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o: CMakeFiles/WorldGenerator.dir/cmake_pch.hxx
+CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o: CMakeFiles/WorldGenerator.dir/cmake_pch.hxx.gch
+CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o: CMakeFiles/WorldGenerator.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx -MD -MT CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o -MF CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o.d -o CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o -c /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/WorldFileWriter.cpp
 
-CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx -E /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/SaveWorldToFile.cpp > CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.i
+CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx -E /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/WorldFileWriter.cpp > CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.i
 
-CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx -S /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/SaveWorldToFile.cpp -o CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.s
+CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx -S /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator/src/Saving/WorldFileWriter.cpp -o CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.s
 
 CMakeFiles/WorldGenerator.dir/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/Tile.cpp.o: CMakeFiles/WorldGenerator.dir/flags.make
 CMakeFiles/WorldGenerator.dir/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/Tile.cpp.o: /home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/Tile.cpp
@@ -217,7 +217,7 @@ WorldGenerator_OBJECTS = \
 "CMakeFiles/WorldGenerator.dir/src/Generation/GenerateNewWorld.cpp.o" \
 "CMakeFiles/WorldGenerator.dir/src/Generation/SubProcess/GenerateGrass.cpp.o" \
 "CMakeFiles/WorldGenerator.dir/src/Main.cpp.o" \
-"CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o" \
+"CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o" \
 "CMakeFiles/WorldGenerator.dir/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/Tile.cpp.o" \
 "CMakeFiles/WorldGenerator.dir/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/World.cpp.o" \
 "CMakeFiles/WorldGenerator.dir/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/WorldArea.cpp.o" \
@@ -230,7 +230,7 @@ WorldGenerator_EXTERNAL_OBJECTS =
 /home/andreas/Code/C++/JourneyOfDreams/repository/bin_world_generator/WorldGenerator: CMakeFiles/WorldGenerator.dir/src/Generation/GenerateNewWorld.cpp.o
 /home/andreas/Code/C++/JourneyOfDreams/repository/bin_world_generator/WorldGenerator: CMakeFiles/WorldGenerator.dir/src/Generation/SubProcess/GenerateGrass.cpp.o
 /home/andreas/Code/C++/JourneyOfDreams/repository/bin_world_generator/WorldGenerator: CMakeFiles/WorldGenerator.dir/src/Main.cpp.o
-/home/andreas/Code/C++/JourneyOfDreams/repository/bin_world_generator/WorldGenerator: CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o
+/home/andreas/Code/C++/JourneyOfDreams/repository/bin_world_generator/WorldGenerator: CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o
 /home/andreas/Code/C++/JourneyOfDreams/repository/bin_world_generator/WorldGenerator: CMakeFiles/WorldGenerator.dir/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/Tile.cpp.o
 /home/andreas/Code/C++/JourneyOfDreams/repository/bin_world_generator/WorldGenerator: CMakeFiles/WorldGenerator.dir/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/World.cpp.o
 /home/andreas/Code/C++/JourneyOfDreams/repository/bin_world_generator/WorldGenerator: CMakeFiles/WorldGenerator.dir/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/WorldArea.cpp.o

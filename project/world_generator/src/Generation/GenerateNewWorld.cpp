@@ -4,11 +4,8 @@
 
 namespace zw
 {
-    std::shared_ptr<WorldArea> GenerateNewWorld()
+    void GenerateNewWorld()
     {
-        auto worldArea = _<World>().WorldArea();
-        GenerateGrass(worldArea);
-
-        return worldArea;
+        GenerateGrass();
     }
 }

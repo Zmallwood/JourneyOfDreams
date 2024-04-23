@@ -10,6 +10,7 @@
 #include <filesystem>
 #include <numeric>
 #include <ranges>
+#include <fstream>
 #include <stdio.h>
 
 #include <SDL.h>

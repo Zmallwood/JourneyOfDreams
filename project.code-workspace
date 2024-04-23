@@ -80,7 +80,8 @@
 			"filesystem": "cpp",
 			"regex": "cpp",
 			"set": "cpp",
-			"ranges": "cpp"
+			"ranges": "cpp",
+			"fstream": "cpp"
 		}
 	}
 }

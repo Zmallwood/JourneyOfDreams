@@ -33,4 +33,4 @@ target_precompile_headers(WorldGenerator PRIVATE ${PCH_FILES})
 # Compile jsoncpp from source
 #add_library(jsoncpp STATIC ${PROJECT_SOURCE_DIR}/external/jsoncpp.cpp)
 
-#target_link_libraries(MapGenerator jsoncpp)
+target_link_libraries(WorldGenerator SDL2)

@@ -312,29 +312,29 @@ src/Main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/WorldGenerator.dir/build.make CMakeFiles/WorldGenerator.dir/src/Main.cpp.s
 .PHONY : src/Main.cpp.s
 
-src/Saving/SaveWorldToFile.o: src/Saving/SaveWorldToFile.cpp.o
-.PHONY : src/Saving/SaveWorldToFile.o
+src/Saving/WorldFileWriter.o: src/Saving/WorldFileWriter.cpp.o
+.PHONY : src/Saving/WorldFileWriter.o
 
 # target to build an object file
-src/Saving/SaveWorldToFile.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WorldGenerator.dir/build.make CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o
-.PHONY : src/Saving/SaveWorldToFile.cpp.o
+src/Saving/WorldFileWriter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WorldGenerator.dir/build.make CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o
+.PHONY : src/Saving/WorldFileWriter.cpp.o
 
-src/Saving/SaveWorldToFile.i: src/Saving/SaveWorldToFile.cpp.i
-.PHONY : src/Saving/SaveWorldToFile.i
+src/Saving/WorldFileWriter.i: src/Saving/WorldFileWriter.cpp.i
+.PHONY : src/Saving/WorldFileWriter.i
 
 # target to preprocess a source file
-src/Saving/SaveWorldToFile.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WorldGenerator.dir/build.make CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.i
-.PHONY : src/Saving/SaveWorldToFile.cpp.i
+src/Saving/WorldFileWriter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WorldGenerator.dir/build.make CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.i
+.PHONY : src/Saving/WorldFileWriter.cpp.i
 
-src/Saving/SaveWorldToFile.s: src/Saving/SaveWorldToFile.cpp.s
-.PHONY : src/Saving/SaveWorldToFile.s
+src/Saving/WorldFileWriter.s: src/Saving/WorldFileWriter.cpp.s
+.PHONY : src/Saving/WorldFileWriter.s
 
 # target to generate assembly for a file
-src/Saving/SaveWorldToFile.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/WorldGenerator.dir/build.make CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.s
-.PHONY : src/Saving/SaveWorldToFile.cpp.s
+src/Saving/WorldFileWriter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/WorldGenerator.dir/build.make CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.s
+.PHONY : src/Saving/WorldFileWriter.cpp.s
 
 # Help Target
 help:
@@ -369,9 +369,9 @@ help:
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
-	@echo "... src/Saving/SaveWorldToFile.o"
-	@echo "... src/Saving/SaveWorldToFile.i"
-	@echo "... src/Saving/SaveWorldToFile.s"
+	@echo "... src/Saving/WorldFileWriter.o"
+	@echo "... src/Saving/WorldFileWriter.i"
+	@echo "... src/Saving/WorldFileWriter.s"
 .PHONY : help
 
 

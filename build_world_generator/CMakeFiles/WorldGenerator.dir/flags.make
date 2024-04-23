@@ -16,7 +16,7 @@ CXX_FLAGS =
 
 # PCH options: CMakeFiles/WorldGenerator.dir/src/Main.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx
 
-# PCH options: CMakeFiles/WorldGenerator.dir/src/Saving/SaveWorldToFile.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx
+# PCH options: CMakeFiles/WorldGenerator.dir/src/Saving/WorldFileWriter.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx
 
 # PCH options: CMakeFiles/WorldGenerator.dir/home/andreas/Code/C++/JourneyOfDreams/repository/project/shared/world_structure/src/Tile.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/andreas/Code/C++/JourneyOfDreams/repository/build_world_generator/CMakeFiles/WorldGenerator.dir/cmake_pch.hxx
 
