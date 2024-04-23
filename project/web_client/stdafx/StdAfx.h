@@ -32,6 +32,7 @@
 #include "../../shared/matter/src/PointF.h"
 #include "../../shared/matter/src/SizeF.h"
 #include "../../shared/matter/src/Colors.h"
+#include "../../shared/matter/src/Point.h"
 
 #include "../../shared/common/src/Hash.h"
 #include "../../shared/common/src/Singleton.h"

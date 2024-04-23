@@ -8,6 +8,9 @@ namespace zw
     {
       public:
         WorldArea();
+        Size GetSize();
+        std::shared_ptr<Tile> GetTile(Point coordinate);
+        bool IsValidCoordinate(Point coordinate);
         auto &Tiles()
         {
             return m_tiles;
