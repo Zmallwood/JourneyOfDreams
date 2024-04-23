@@ -26,7 +26,7 @@ namespace zw
                                   << std::endl;
 
                         // Send a hello message to the client
-                        server.sendMessage(conn, "tjosan", Json::Value());
+                        server.sendMessage(conn, "tjoho", Json::Value());
                     });
             });
         server.disconnect(
