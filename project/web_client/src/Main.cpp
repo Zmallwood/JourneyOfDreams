@@ -1,6 +1,6 @@
 #include "DefaultTheme/RunNewGameInstance.h"
 
-int main()
+int main(int argc, char *argv[])
 {
     zw::RunNewGameInstance();
 
