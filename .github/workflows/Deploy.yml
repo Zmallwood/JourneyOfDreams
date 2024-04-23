@@ -62,9 +62,7 @@ jobs:
           scp -o StrictHostKeyChecking=no GameServer.tar ${{ secrets.REMOTE_SERVER_USERNAME }}@${{ secrets.REMOTE_SERVER_ADDRESS }}:${{ secrets.REMOTE_SERVER_PATH }}
 
        - name: Close existing tmux
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-            script: tmux kill-server
+        run: tmux kill-server
 
 #       - name: Stop all running docker containers
 #        env:
