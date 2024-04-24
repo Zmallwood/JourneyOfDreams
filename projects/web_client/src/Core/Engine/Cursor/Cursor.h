@@ -1,29 +1,45 @@
 #pragma once
 #include "CursorStyles.h"
 
-namespace zw {
-  class Cursor {
-   public:
-    Cursor();
+namespace zw
+{
+    /// Game mouse cursor which replaces default system cursor.
+    class Cursor
+    {
+      public:
+        /// Allocated image resource and hides default system cursor inside canvas.
+        Cursor();
 
-    void ResetStyle();
+        /// Resets cursors visual style at the beginning of each frame.
+        void ResetStyle();
 
-    void Render();
-    
-    void SetStyle(CursorStyles style) {
-      m_style = style;
-    }
+        /// Render the cursor image at current mouse location.
+        void Render();
 
-   private:
-    CursorStyles m_style{ CursorStyles::Default };
-    RID m_ridCursorImage{};
-    float m_cursorSize{ 0.05f };
+        /// Style setter.
+        void SetStyle(CursorStyles style)
+        {
+            m_style = style;
+        }
 
-    const std::map<CursorStyles, std::string> m_cursorImages{ { CursorStyles::Default, "CursorDefault" },
-                                                              { CursorStyles::TextInput, "CursorTextInput" },
-                                                              { CursorStyles::Hovering, "CursorHovering" },
-                                                              { CursorStyles::Rotating, "CursorRotating" },
-                                                              { CursorStyles::Attacking,
-                                                                "CursorAttacking" } };
-  };
+      private:
+        /// Current cursor style, determines which cursor image is being rendered.
+        CursorStyles m_style{ CursorStyles::Default };
+        
+        /// Cursor image resource ID.
+        RID m_ridCursorImage{};
+        
+        /// Size of the rendered cursor image.
+        float m_cursorSize{ 0.05f };
+
+        /// Mapping of cursor image names to available cursor styles.
+        const std::map<CursorStyles, std::string> m_cursorImages
+        {
+            { CursorStyles::Default, "CursorDefault" },
+            { CursorStyles::TextInput, "CursorTextInput" },
+            { CursorStyles::Hovering, "CursorHovering" },
+            { CursorStyles::Rotating, "CursorRotating" },
+            { CursorStyles::Attacking, "CursorAttacking" }
+        };
+    };
 }

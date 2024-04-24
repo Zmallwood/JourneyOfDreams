@@ -3,7 +3,7 @@
 
 namespace zw
 {
-    /// Render ID
+    /// Resource ID
     using RID = GLuint;
 
     /// Ticks elapsed since game start
