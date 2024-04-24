@@ -1,24 +1,34 @@
 #pragma once
 
-namespace zw {
-	class ImageBank
-	{
-	  public:
-	    ImageBank();
+namespace zw
+{
+    /// Loads and provides images loaded from the file system.
+    class ImageBank
+    {
+      public:
+        /// Initializes bank by loading all images in images folder.
+        ImageBank();
 
-	    ~ImageBank();
+        /// Frees all allocated OpenGL image resources.
+        ~ImageBank();
 
-	    GLuint GetImage(const std::string &imageName);
+        /// Provides the image with the specified name.
+        GLuint GetImage(const std::string &imageName);
 
-	    GLuint CreateBlankImage(const std::string &uniqueImageName);
+        /// Creates a blank image resource, given the specified name, and returns its ID.
+        GLuint CreateBlankImage(const std::string &uniqueImageName);
 
-	  private:
-	    void LoadImages();
+      private:
+        /// Load all images from file system in the images path.
+        void LoadImages();
 
-	    GLuint LoadSingleImage(const std::string &absFilePath);
+        /// Load a single image at the path and return its resource ID.
+        GLuint LoadSingleImage(const std::string &absFilePath);
 
-	    std::map<int, GLuint> m_images;
+        /// Internal image storage.
+        std::map<int, GLuint> m_images;
 
-	    const std::string k_relImagesPath = "images";
-	};
+        /// Path to the images folder, relative the applications base path.
+        const std::string k_relImagesPath = "images";
+    };
 }

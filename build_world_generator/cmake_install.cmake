@@ -1,4 +1,4 @@
-# Install script for directory: /home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator
+# Install script for directory: /home/andreas/Code/C++/JourneyOfDreams/repository/projects/world_generator
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

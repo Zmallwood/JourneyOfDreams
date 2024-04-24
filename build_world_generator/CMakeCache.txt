@@ -216,7 +216,7 @@ Game2Emscripten_BINARY_DIR:STATIC=/home/andreas/Code/C++/JourneyOfDreams/reposit
 Game2Emscripten_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-Game2Emscripten_SOURCE_DIR:STATIC=/home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator
+Game2Emscripten_SOURCE_DIR:STATIC=/home/andreas/Code/C++/JourneyOfDreams/repository/projects/world_generator
 
 
 ########################
@@ -303,7 +303,7 @@ CMAKE_GENERATOR_PLATFORM:INTERNAL=
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
-CMAKE_HOME_DIRECTORY:INTERNAL=/home/andreas/Code/C++/JourneyOfDreams/repository/project/world_generator
+CMAKE_HOME_DIRECTORY:INTERNAL=/home/andreas/Code/C++/JourneyOfDreams/repository/projects/world_generator
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
