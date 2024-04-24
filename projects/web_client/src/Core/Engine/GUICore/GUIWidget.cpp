@@ -147,9 +147,20 @@ namespace zw {
 
   std::shared_ptr<GUIWidget> GUIWidget::AddWidget(const std::string &nameIdentifier,
                                                   std::shared_ptr<GUIWidget> childWidget) {
+    auto nameHash = Hash(nameIdentifier);
+    for (auto & entry : m_childWidgets) {
+        if (entry.id == nameHash) {
+            return nullptr;
+        }
+    }
+    for (auto & entry : m_widgetsToInsert) {
+        if (entry.id == nameHash) {
+            return nullptr;
+        }
+    }
     childWidget->Initialize();
     childWidget->SetParentWidget(shared_from_this());
-    m_widgetsToInsert.push_back({ Hash(nameIdentifier), childWidget });
+    m_widgetsToInsert.push_back({nameHash, childWidget });
     return childWidget;
   }
 

@@ -26,7 +26,7 @@ namespace zw
                 }
                 else
                 {
-                    GUI()->AddWidget(std::make_shared<GUIMessageBox>(
+                    GUI()->AddWidget("MsgBoxIncorrectPasswordConfirmation", std::make_shared<GUIMessageBox>(
                         PointF{ .x = 0.5f, .y = 0.5f }, "Your typed passwords do not match.", "Error"));
                 }
             }));
