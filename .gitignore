@@ -35,5 +35,7 @@
 #project/web_client/resources/
 build_server/
 build_web_client/
+build_world_generator/
 bin_server/
 bin_web_client/
+bin_world_generator/
