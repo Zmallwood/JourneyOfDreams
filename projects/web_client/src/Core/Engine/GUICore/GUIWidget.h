@@ -17,6 +17,8 @@ namespace zw {
 
     void Destroy();
 
+    void DestroyMarkedWidgets();
+
     virtual void Initialize() {
     }
 

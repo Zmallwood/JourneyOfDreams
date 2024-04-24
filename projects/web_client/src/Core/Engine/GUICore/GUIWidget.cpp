@@ -36,6 +36,23 @@ namespace zw {
       entry.widget->Destroy();
   }
 
+  void GUIWidget::DestroyMarkedWidgets()
+    {
+        for (auto it = ChildWidgets().begin(); it != ChildWidgets().end();)
+        {
+            it->widget->DestroyMarkedWidgets();
+        
+            if (it->widget->MarkedForDestruction())
+            {
+                it = ChildWidgets().erase(it);
+            }
+            else
+            {
+                ++it;
+            }
+        }
+    }
+
   void GUIWidget::Update() {
     for (auto &entry : m_childWidgets)
       entry.widget->Update();
