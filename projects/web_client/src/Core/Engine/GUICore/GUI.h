@@ -2,32 +2,45 @@
 
 #include "GUIWidget.h"
 
-namespace zw {
-  class GUI : public GUIWidget {
-   public:
-    void Update() override;
+namespace zw
+{
+    /// Manages GUI widgets for a scene.
+    class GUI : public GUIWidget
+    {
+      public:
+        /// Update and manage adding/removing/focusing of the GUI widgets.
+        void Update() override;
 
-    void Render() override;
+        /// Render the GUI widgets.
+        void Render() override;
 
-    template <class T>
-    std::shared_ptr<T> GetWidget(const std::string &nameIdentifier) {
-      return static_pointer_cast<T>(GetWidget(nameIdentifier, shared_from_this()));
-    }
+        /// Get widget by name, casted to T pointer.
+        template <class T>
+        std::shared_ptr<T> GetWidget(const std::string &nameIdentifier)
+        {
+            return static_pointer_cast<T>(GetWidget(nameIdentifier));
+        }
 
-    auto FocusedWidget() {
-      return m_focusedWidget;
-    }
+        /// Focused widget getter.
+        auto FocusedWidget()
+        {
+            return m_focusedWidget;
+        }
 
-    void SetFocusedWidget(std::shared_ptr<GUIWidget> focusedWidget) {
-      m_focusedWidget = focusedWidget;
-    }
+        /// Focused widget setter.
+        void SetFocusedWidget(std::shared_ptr<GUIWidget> focusedWidget)
+        {
+            m_focusedWidget = focusedWidget;
+        }
 
-   private:
-    void FocusNextWidget();
+      private:
+        /// Focus next widget in the GUI, which will receive the typed text input.
+        void FocusNextWidget();
 
-    std::shared_ptr<GUIWidget> GetWidget(const std::string &nameIdentifier,
-                                         std::shared_ptr<GUIWidget> widget);
+        /// Get widget by name returned as a widget pointer.
+        std::shared_ptr<GUIWidget> GetWidget(const std::string &nameIdentifier);
 
-    std::shared_ptr<GUIWidget> m_focusedWidget{};
-  };
+        /// Currently focused widget, nullptr if none is focused.
+        std::shared_ptr<GUIWidget> m_focusedWidget{};
+    };
 }

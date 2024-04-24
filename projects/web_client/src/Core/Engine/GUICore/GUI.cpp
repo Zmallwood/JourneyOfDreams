@@ -32,9 +32,7 @@ namespace zw
             entry.widget->Render();
     }
 
-    std::shared_ptr<GUIWidget> GUI::GetWidget(
-                                    const std::string &nameIdentifier,
-                                    std::shared_ptr<GUIWidget> widget)
+    std::shared_ptr<GUIWidget> GUI::GetWidget(const std::string &nameIdentifier)
     {
         // Search in all widgets recursively for the widget with the specified name.
         for (auto &entry : GetChildWidgetsRecursively())
@@ -61,7 +59,8 @@ namespace zw
 
         // Get currently focused widget.
         auto widget = FocusedWidget();
-    
+
+        // Search through all widgets recursively for the next widget to focus.
         for (auto &entry : GetChildWidgetsRecursively())
         {
             if (widget == nullptr && entry.widget->Focusable())
