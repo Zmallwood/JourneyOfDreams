@@ -14,13 +14,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build WebClient, run cmake
-        run: CC=emcc CXX=em++ emcmake cmake project/web_client -B build_web_client
+        run: CC=emcc CXX=em++ emcmake cmake projects/web_client -B build_web_client
 
       - name: Build WebClient, run make
         run: cd build_web_client && emmake make && mv ../bin_web_client/WebClient.html ../bin_web_client/index.html
 
       - name: Build GameServer, run cmake
-        run: cmake project/server -B build_server
+        run: cmake projects/server -B build_server
 
       - name: Build GameServer, run make
         run: cd build_server && cmake --build . --parallel 6
