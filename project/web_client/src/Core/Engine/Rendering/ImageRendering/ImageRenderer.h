@@ -8,8 +8,11 @@ namespace zw
     {
       public:
         ImageRenderer();
+
         ~ImageRenderer();
+
         RID NewImage();
+
         /**
          * \brief Draw image to canvas. NOTE: if repeatTexture is true, the image size must be power
          * of 2

@@ -6,7 +6,9 @@ namespace zw
     {
       public:
         FPSCounter();
+
         void Update();
+
         void Render();
 
       private:

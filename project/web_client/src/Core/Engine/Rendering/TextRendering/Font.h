@@ -8,10 +8,12 @@ namespace zw
     {
       public:
         Font(const std::string& fontFileName, int fontSize);
+
         auto SDLFont() const
         {
             return m_font;
         }
+
         auto OutlineSDLFont() const
         {
             return m_outlineFont;

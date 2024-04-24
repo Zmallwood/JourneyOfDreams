@@ -1,6 +1,5 @@
 #pragma once
 
-namespace zw
-{
-    void DoOneGameLoopFrame();
+namespace zw {
+  void DoOneGameLoopFrame();
 }

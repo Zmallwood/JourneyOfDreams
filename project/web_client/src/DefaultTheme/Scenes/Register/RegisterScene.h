@@ -8,8 +8,11 @@ namespace zw
     {
       public:
         RegisterScene();
+
         void OnEnter() override;
+
         void UpdateDerived() override;
+
         void RenderDerived() override;
 
       private:

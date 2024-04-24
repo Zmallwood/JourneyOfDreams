@@ -8,6 +8,7 @@ namespace zw
     {
       public:
         LoginNetRequestScene();
+
         void OnEnter() override;
     };
 }

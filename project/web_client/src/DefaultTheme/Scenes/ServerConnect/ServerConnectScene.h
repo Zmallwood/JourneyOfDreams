@@ -8,7 +8,9 @@ namespace zw
     {
       public:
         ServerConnectScene();
+
         void OnEnter() override;
+
         void UpdateDerived() override;
     };
 }

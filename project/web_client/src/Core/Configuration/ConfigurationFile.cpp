@@ -1,5 +1,5 @@
 #include "ConfigurationFile.h"
 
-namespace zw {
-    
+namespace zw
+{
 }

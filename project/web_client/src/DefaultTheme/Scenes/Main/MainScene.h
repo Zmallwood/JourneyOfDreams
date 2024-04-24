@@ -8,7 +8,9 @@ namespace zw
     {
       public:
         void OnEnter() override;
+
         void UpdateDerived() override;
+
         void RenderDerived() override;
     };
 }

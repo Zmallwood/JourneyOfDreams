@@ -6,6 +6,7 @@ namespace zw
     {
       public:
         void Update();
+
         void Render();
     };
 }

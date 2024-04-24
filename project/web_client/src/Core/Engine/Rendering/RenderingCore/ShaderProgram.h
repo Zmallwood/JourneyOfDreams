@@ -6,7 +6,9 @@ namespace zw
     {
       public:
         bool Create(const GLchar *vertexShaderSource, const GLchar *fragmentShaderSource);
+
         void Cleanup();
+
         auto ProgramID()
         {
             return m_programID;

@@ -8,8 +8,11 @@ namespace zw
     {
       public:
         LoginScene();
+
         void OnEnter() override;
+
         void UpdateDerived() override;
+
         void RenderDerived() override;
 
       private:

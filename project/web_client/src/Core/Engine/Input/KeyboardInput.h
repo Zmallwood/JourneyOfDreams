@@ -6,11 +6,17 @@ namespace zw
     {
       public:
         void OnKeyPress(SDL_Keycode key);
+
         void OnKeyRelease(SDL_Keycode key);
+
         bool AnyKeyIsPressed();
+
         bool KeyHasBeenFiredPickResult(SDL_Keycode key);
+
         void AppendTextInput(const std::string &text);
+
         std::string PickTextInput();
+
         void ClearTextInput();
 
       private:
