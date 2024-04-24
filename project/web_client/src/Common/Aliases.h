@@ -2,9 +2,10 @@
 #include <SDL.h>
 
 namespace zw
-{	/// Render ID
-	using RID = GLuint;
+{
+    /// Render ID
+    using RID = GLuint;
 
-	/// Ticks elapsed since game start
-	static auto Ticks = SDL_GetTicks;
+    /// Ticks elapsed since game start
+    static auto Ticks = SDL_GetTicks;
 }
