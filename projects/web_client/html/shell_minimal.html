@@ -55,8 +55,46 @@
       body {background-color: steelblue;}
 
     </style>
+
+
+    <script>
+    function setupKeyboardHandlers() {
+      // this is really only necessary for Android screen keyboards
+      function keyEventHandler(e) {
+        if (e.keyCode == 229) {
+          if (typeof e.custom === "undefined") {
+//            e.stopImmediatePropagation();
+            let oldText = elems.text.value;
+            setTimeout(function () {
+              const keyString = elems.text.value.replace(oldText, '');
+//              alert("keyString = '" + keyString + "', oldText = '" + oldText +"'");
+              if (keyString.length < 1)
+                return;
+              let customEventInit = {custom: true};
+              customEventInit = Object.assign(customEventInit, e);
+              customEventInit.keyCode = keyString.charCodeAt(keyString.length-1);
+              let customKeydown = new KeyboardEvent("keydown", customEventInit);
+              window.dispatchEvent(customKeydown);
+              let customKeyup = new KeyboardEvent("keyup", customEventInit);
+              window.dispatchEvent(customKeyup);
+            }, 0);
+          }
+        }
+      }
+
+      // Setup handler for keydown event
+      window.addEventListener("keydown", keyEventHandler, true);
+    }
+    function init() {
+      setupKeyboardHandlers();
+    }
+  </script>
+
+
+
+
   </head>
-  <body>
+  <body onload="init()">
     <figure style="overflow:visible;" id="spinner"><div class="spinner"></div><center style="margin-top:0.5em"><strong>emscripten</strong></center></figure>
     <div class="emscripten" id="status">Downloading...</div>
     <div class="emscripten">
