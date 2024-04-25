@@ -8,6 +8,12 @@ namespace zw
     class GUI : public GUIWidget
     {
       public:
+        void Initialize() override;
+
+        void ShowKeyboard();
+
+        void HideKeyboard();
+
         /// Update and manage adding/removing/focusing of the GUI widgets.
         void Update() override;
 

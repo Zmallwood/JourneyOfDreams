@@ -7,6 +7,8 @@ namespace zw {
 
     void InsertText(const std::string &text);
 
+    void AppendCharacter(char c);
+
     void TryMoveCursorLeft();
 
     void TryMoveCursorRight();

@@ -1,11 +1,36 @@
 #include "GUI.h"
 #include "Core/Engine/Input/KeyboardInput.h"
+#include "Core/Engine/Input/MouseInput.h"
 #include "GUIWidget.h"
+#include "OnScreenKeyboard.h"
 
 namespace zw
 {
+    void GUI::Initialize()
+    {
+        AddWidget("OnScreenKeyboard", std::make_shared<OnScreenKeyboard>());
+    }
+
+    void GUI::ShowKeyboard()
+    {
+        GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Show();
+    }
+
+    void GUI::HideKeyboard()
+    {
+        GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Hide();
+    }
+
     void GUI::Update()
     {
+        GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->BringToFront();
+
+        if (_<MouseInput>().LeftButton().Pressed()
+            && !GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->MouseOver())
+        {
+            SetFocusedWidget(nullptr);
+        }
+
         // Update all child widgets in the same order as they have been added.
         for (auto &entry : ChildWidgets())
             entry.widget->Update();
@@ -17,12 +42,18 @@ namespace zw
         InsertWaitingWidgets();
 
         // Focus next widget on pressing the tab key.
-        if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_TAB)) {
+        if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_TAB))
+        {
             FocusNextWidget();
         }
 
         // Clear all typed text input as it has already been handled by the GUIs widgets.
         _<KeyboardInput>().ClearTextInput();
+
+        if (FocusedWidget() == nullptr)
+        {
+            GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Hide();
+        }
     }
 
     void GUI::Render()
@@ -67,7 +98,7 @@ namespace zw
             // If no widget is currently focused, return first focusable widget.
             {
                 widget = entry.widget;
-                
+
                 break;
             }
             else if (widget != nullptr && entry.widget->Focusable() && widget != entry.widget)
@@ -75,7 +106,7 @@ namespace zw
             // which does not equal to the currently focused.
             {
                 widget = entry.widget;
-                
+
                 break;
             }
         }

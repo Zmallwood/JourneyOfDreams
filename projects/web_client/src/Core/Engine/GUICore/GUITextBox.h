@@ -18,6 +18,8 @@ namespace zw {
 
     void Focus() override;
 
+    void TypeCharacter(char c);
+
    private:
     RID m_ridBackground{};
     RID m_ridText{};

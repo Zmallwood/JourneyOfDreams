@@ -1,5 +1,7 @@
 #include "GUITextBox.h"
 #include "Core/Engine/Cursor/Cursor.h"
+#include "Core/Engine/GUICore/OnScreenKeyboard.h"
+#include "Core/Engine/GUICore/GUI.h"
 #include "Core/Engine/Input/KeyboardInput.h"
 #include "Core/Engine/Input/MouseInput.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
@@ -18,6 +20,11 @@ namespace zw
         SetDrawBorders(false);
         SetBackgroundImage("GUIDefaultTextBoxBackground");
         SetFocusable(true);
+    }
+
+    void GUITextBox::TypeCharacter(char c)
+    {
+        m_managedTextLine.AppendCharacter(c);
     }
 
     void GUITextBox::UpdateDerived()
@@ -109,6 +116,7 @@ namespace zw
 
     void GUITextBox::Focus()
     {
+        GetParentGUI()->ShowKeyboard();
         GUIWidget::Focus();
     }
 }

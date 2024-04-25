@@ -17,6 +17,14 @@ namespace zw {
     }
   }
 
+  void ManagedTextString::AppendCharacter(char c) {
+    m_text.insert(m_cursorPosition, 1, c);
+    m_cursorPosition++;
+    while (IsTextOverflow()) {
+      m_cursorOffset++;
+    }
+  }
+
   void ManagedTextString::TryMoveCursorLeft() {
     if (m_cursorPosition > 0) {
       m_cursorPosition--;

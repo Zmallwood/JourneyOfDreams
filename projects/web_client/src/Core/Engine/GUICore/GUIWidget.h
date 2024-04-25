@@ -2,150 +2,185 @@
 #include "GUIAlign.h"
 #include "WidgetEntry.h"
 
-namespace zw {
-  class GUI;
+namespace zw
+{
+    class GUI;
 
-  class GUIWidget : public std::enable_shared_from_this<GUIWidget> {
-   public:
-    GUIWidget() = default;
+    class GUIWidget : public std::enable_shared_from_this<GUIWidget>
+    {
+      public:
+        GUIWidget() = default;
 
-    GUIWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft);
+        GUIWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft);
 
-    GUIWidget(PointF position, SizeF size, GUIAlign alignment = GUIAlign::TopLeft);
+        GUIWidget(PointF position, SizeF size, GUIAlign alignment = GUIAlign::TopLeft);
 
-    void InsertWaitingWidgets();
+        void InsertWaitingWidgets();
 
-    void Destroy();
+        void Destroy();
 
-    void DestroyMarkedWidgets();
+        void DestroyMarkedWidgets();
 
-    virtual void Initialize() {
-    }
+        void BringToFront();
 
-    virtual void Update();
+        bool MouseOver();
 
-    virtual void Render();
+        virtual void Initialize()
+        {
+        }
 
-    virtual void UpdateDerived() {
-    }
+        virtual void Update();
 
-    virtual void RenderDerived() {
-    }
+        virtual void Render();
 
-    std::vector<WidgetEntry> GetChildWidgetsRecursively();
+        virtual void UpdateDerived()
+        {
+        }
 
-    std::shared_ptr<GUIWidget> AddWidget(const std::string &nameIdentifier,
-                                         std::shared_ptr<GUIWidget> childWidget);
+        virtual void RenderDerived()
+        {
+        }
 
-    std::shared_ptr<GUIWidget> AddWidget(std::shared_ptr<GUIWidget> childWidget);
+        std::vector<WidgetEntry> GetChildWidgetsRecursively();
 
-    auto &ChildWidgets() {
-      return m_childWidgets;
-    }
+        std::shared_ptr<GUIWidget> AddWidget(const std::string &nameIdentifier,
+                                             std::shared_ptr<GUIWidget> childWidget);
 
-    auto ParentWidget() {
-      return m_parentWidget;
-    }
+        std::shared_ptr<GUIWidget> AddWidget(std::shared_ptr<GUIWidget> childWidget);
 
-    auto SetParentWidget(std::shared_ptr<GUIWidget> parentWidget) {
-      m_parentWidget = parentWidget;
-    }
+        auto &ChildWidgets()
+        {
+            return m_childWidgets;
+        }
 
-    auto Alignment() {
-      return m_alignment;
-    }
+        auto ParentWidget()
+        {
+            return m_parentWidget;
+        }
 
-    void SetSize(SizeF size) {
-      m_size = size;
-    }
+        auto SetParentWidget(std::shared_ptr<GUIWidget> parentWidget)
+        {
+            m_parentWidget = parentWidget;
+        }
 
-    auto Size() {
-      return m_size;
-    }
+        auto Alignment()
+        {
+            return m_alignment;
+        }
 
-    auto Padding() {
-      return m_padding;
-    }
+        void SetSize(SizeF size)
+        {
+            m_size = size;
+        }
 
-    auto Focusable() {
-      return m_focusable;
-    }
+        auto Size()
+        {
+            return m_size;
+        }
 
-    auto MarkedForDestruction() {
-      return m_markedForDestruction;
-    }
+        auto Padding()
+        {
+            return m_padding;
+        }
 
-   protected:
-    PointF GetFinalPosition();
+        auto Focusable()
+        {
+            return m_focusable;
+        }
 
-    RectF GetFinalArea();
+        auto MarkedForDestruction()
+        {
+            return m_markedForDestruction;
+        }
 
-    virtual void Focus();
+        void SetDrawBackground(bool drawBackground)
+        {
+            m_drawBackground = drawBackground;
+        }
 
-    bool HasFocus();
+        void SetDrawBorders(bool drawBorders)
+        {
+            m_drawBorders = drawBorders;
+        }
 
-    virtual PointF GetAlignedAbsolutePosition();
+      protected:
+        PointF GetFinalPosition();
 
-    void SetDrawBackground(bool drawBackground) {
-      m_drawBackground = drawBackground;
-    }
+        RectF GetFinalArea();
 
-    void SetDrawBorders(bool drawBorders) {
-      m_drawBorders = drawBorders;
-    }
+        virtual void Focus();
 
-    auto BackgroundImage() {
-      return m_backgroundImage;
-    }
+        bool HasFocus();
 
-    void SetBackgroundImage(const std::string &backgroundImage) {
-      m_backgroundImage = backgroundImage;
-    }
+        virtual PointF GetAlignedAbsolutePosition();
 
-    void SetFocusable(bool focusable) {
-      m_focusable = focusable;
-    }
+        std::shared_ptr<GUI> GetParentGUI();
 
-    auto TicksTimeGotFocus() {
-      return m_ticksTimeGotFocus;
-    }
+        auto BackgroundImage()
+        {
+            return m_backgroundImage;
+        }
 
-   private:
-    PointF GetAbsolutePosition();
+        void SetBackgroundImage(const std::string &backgroundImage)
+        {
+            m_backgroundImage = backgroundImage;
+        }
 
-    std::shared_ptr<GUI> GetParentGUI();
+        void SetFocusable(bool focusable)
+        {
+            m_focusable = focusable;
+        }
 
-    PointF m_position{ 0.0f, 0.0f };
-    SizeF m_size{ 100.0f, 100.0f };
-    std::string m_backgroundImage{ "GUIDefaultBackground" };
-    std::string m_borderVerticalImage{ "GUIDefaultBorderVertical" };
-    std::string m_borderHorizontalImage{ "GUIDefaultBorderHorizontal" };
-    std::string m_borderCornerTopLeftImage{ "GUIDefaultBorderCornerTopLeft" };
-    std::string m_borderCornerTopRightImage{ "GUIDefaultBorderCornerTopRight" };
-    std::string m_borderCornerBottomRightImage{ "GUIDefaultBorderCornerBottomRight" };
-    std::string m_borderCornerBottomLeftImage{ "GUIDefaultBorderCornerBottomLeft" };
-    RID m_ridBackgroundImage{};
-    RID m_ridBorderLeft;
-    RID m_ridBorderTop;
-    RID m_ridBorderRight;
-    RID m_ridBorderBottom;
-    RID m_ridBorderCornerTopLeft;
-    RID m_ridBorderCornerTopRight;
-    RID m_ridBorderCornerBottomRight;
-    RID m_ridBorderCornerBottomLeft;
-    SizeF m_backgroundPatternSize{ 0.2f, 0.2f };
-    GUIAlign m_alignment{ GUIAlign::TopLeft };
-    std::vector<WidgetEntry> m_childWidgets;
-    std::shared_ptr<GUIWidget> m_parentWidget{};
-    float m_padding{ 0.01f };
-    float m_borderWidth{ 0.01f };
-    bool m_drawBackground{ true };
-    bool m_drawBorders{ true };
-    bool m_focusable{ false };
-    int m_ticksTimeGotFocus{ 0 };
-    bool m_markedForDestruction{ false };
-    std::vector<WidgetEntry> m_widgetsToInsert{};
+        auto TicksTimeGotFocus()
+        {
+            return m_ticksTimeGotFocus;
+        }
 
-    inline static int s_unnamedWidgetCounter{ 0 };
-  };
+        void SetVisible(bool visible)
+        {
+            m_visible = visible;
+        }
+
+        void SetPadding(float padding)
+        {
+            m_padding = padding;
+        }
+
+      private:
+        PointF GetAbsolutePosition();
+
+        PointF m_position{ 0.0f, 0.0f };
+        SizeF m_size{ 100.0f, 100.0f };
+        std::string m_backgroundImage{ "GUIDefaultBackground" };
+        std::string m_borderVerticalImage{ "GUIDefaultBorderVertical" };
+        std::string m_borderHorizontalImage{ "GUIDefaultBorderHorizontal" };
+        std::string m_borderCornerTopLeftImage{ "GUIDefaultBorderCornerTopLeft" };
+        std::string m_borderCornerTopRightImage{ "GUIDefaultBorderCornerTopRight" };
+        std::string m_borderCornerBottomRightImage{ "GUIDefaultBorderCornerBottomRight" };
+        std::string m_borderCornerBottomLeftImage{ "GUIDefaultBorderCornerBottomLeft" };
+        RID m_ridBackgroundImage{};
+        RID m_ridBorderLeft;
+        RID m_ridBorderTop;
+        RID m_ridBorderRight;
+        RID m_ridBorderBottom;
+        RID m_ridBorderCornerTopLeft;
+        RID m_ridBorderCornerTopRight;
+        RID m_ridBorderCornerBottomRight;
+        RID m_ridBorderCornerBottomLeft;
+        SizeF m_backgroundPatternSize{ 0.2f, 0.2f };
+        GUIAlign m_alignment{ GUIAlign::TopLeft };
+        std::vector<WidgetEntry> m_childWidgets;
+        std::shared_ptr<GUIWidget> m_parentWidget{};
+        float m_padding{ 0.01f };
+        float m_borderWidth{ 0.01f };
+        bool m_drawBackground{ true };
+        bool m_drawBorders{ true };
+        bool m_focusable{ false };
+        int m_ticksTimeGotFocus{ 0 };
+        bool m_markedForDestruction{ false };
+        std::vector<WidgetEntry> m_widgetsToInsert{};
+        bool m_visible{ true };
+
+        inline static int s_unnamedWidgetCounter{ 0 };
+    };
 }
