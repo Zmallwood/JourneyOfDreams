@@ -16,6 +16,7 @@ namespace zw {
   void Engine::Reset() {
     _<Cursor>().ResetStyle();
     _<Graphics>().ClearCanvas();
+    SDL_SetHint(SDL_HINT_ENABLE_SCREEN_KEYBOARD, "1");
     SDL_StartTextInput();
   }
 
