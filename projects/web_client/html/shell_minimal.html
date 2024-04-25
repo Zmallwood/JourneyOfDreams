@@ -55,8 +55,13 @@
       body {background-color: steelblue;}
 
     </style>
+    <script>
+      function init() {
+        document.getElementById("myTextField").focus();
+      }
+    </script>
   </head>
-  <body>
+  <body onload="init()">
     <figure style="overflow:visible;" id="spinner"><div class="spinner"></div><center style="margin-top:0.5em"><strong>emscripten</strong></center></figure>
     <div class="emscripten" id="status">Downloading...</div>
     <div class="emscripten">
@@ -148,5 +153,6 @@
       };
     </script>
     {{{ SCRIPT }}}
+    <input type="text" id="myTextField" value="Text field.">
   </body>
 </html>
