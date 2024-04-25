@@ -9,3 +9,4 @@ namespace zw
     /// Ticks elapsed since game start
     static auto Ticks = SDL_GetTicks;
 }
+    

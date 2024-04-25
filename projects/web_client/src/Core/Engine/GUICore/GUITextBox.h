@@ -16,6 +16,8 @@ namespace zw {
 
     void ClearText();
 
+    void Focus() override;
+
    private:
     RID m_ridBackground{};
     RID m_ridText{};

@@ -2,7 +2,7 @@
 source ~/temp/emsdk/emsdk_env.sh &&
 cd .. &&
 CC=emcc CXX=em++ cmake projects/web_client -B build_web_client &&
-cd build_web_client &&
+cd build_web_client
 emmake make &&
 mv ../bin_web_client/WebClient.html ../bin_web_client/index.html &&
 
@@ -10,13 +10,13 @@ mv ../bin_web_client/WebClient.html ../bin_web_client/index.html &&
 cd .. &&
 cmake projects/server -B build_server &&
 cd build_server &&
-cmake --build . --parallel 6 &
+cmake --build . --parallel 6 &&
 
 # Build WorldGenerator
 cd .. &&
 cmake projects/world_generator -B build_world_generator &&
 cd build_world_generator &&
-cmake --build . --parallel 6 &
+cmake --build . --parallel 6 &&
 
 # Build docker images
 cd .. &&

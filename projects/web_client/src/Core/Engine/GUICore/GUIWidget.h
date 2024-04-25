@@ -80,7 +80,7 @@ namespace zw {
 
     RectF GetFinalArea();
 
-    void Focus();
+    virtual void Focus();
 
     bool HasFocus();
 
