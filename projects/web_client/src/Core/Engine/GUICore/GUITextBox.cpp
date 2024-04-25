@@ -109,8 +109,6 @@ namespace zw
 
     void GUITextBox::Focus()
     {
-        std::cout << "focus\n";
-        SDL_StartTextInput();
         GUIWidget::Focus();
     }
 }
