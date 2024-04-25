@@ -16,6 +16,7 @@ namespace zw {
   void Engine::Reset() {
     _<Cursor>().ResetStyle();
     _<Graphics>().ClearCanvas();
+    SDL_StartTextInput();
   }
 
   void Engine::HandleInput() {
