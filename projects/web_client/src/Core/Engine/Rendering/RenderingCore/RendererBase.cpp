@@ -3,7 +3,10 @@
 
 namespace zw
 {
-    RendererBase::RendererBase() : m_shaderProgram(std::make_shared<zw::ShaderProgram>())
+    RendererBase::RendererBase()
+        : m_shaderProgram(std::make_shared<zw::ShaderProgram>()),
+          m_VAOIDs(std::make_shared<std::vector<GLuint>>()),
+          m_VBOIDs(std::make_shared<std::map<BufferTypes, std::shared_ptr<std::map<GLuint, GLuint>>>>())
     {
     }
 
@@ -11,7 +14,7 @@ namespace zw
     {
         GLuint VAOID;
         glGenVertexArraysOES(1, &VAOID);
-        m_VAOIDs.push_back(VAOID); // Store newly created VAO id
+        m_VAOIDs->push_back(VAOID); // Store newly created VAO id
 
         return VAOID;
     }
@@ -20,8 +23,12 @@ namespace zw
     {
         GLuint buffID;
         glGenBuffers(1, &buffID);
-        m_VBOIDs[buffType][VAOID] = buffID; // Store newly created VBO id,
-                                            // with the VAO id as one of keys
+        if (!m_VBOIDs->contains(buffType))
+        {
+            m_VBOIDs->insert({ buffType, std::make_shared<std::map<GLuint, GLuint>>() });
+        }
+        (*(*m_VBOIDs)[buffType])[VAOID] = buffID; // Store newly created VBO id,
+                                                  // with the VAO id as one of keys
         return buffID;
     }
 
@@ -100,7 +107,7 @@ namespace zw
 
     GLuint RendererBase::GetBuffID(BufferTypes buffType, GLuint VAOID) const
     {
-        return m_VBOIDs.at(buffType).at(VAOID); // Returns the buffer of provided type and VAO id
+        return m_VBOIDs->at(buffType)->at(VAOID); // Returns the buffer of provided type and VAO id
     }
 
     void RendererBase::UpdateIndicesData(GLuint indicesVBOID, std::vector<int> &indices) const
@@ -156,16 +163,16 @@ namespace zw
 
     void RendererBase::CleanupBase() const
     {
-        for (auto &buffType : m_VBOIDs) // Loop through all keys of buffer types
+        for (auto &buffType : *m_VBOIDs) // Loop through all keys of buffer types
         {
-            for (auto &bufferEntry : buffType.second) // Loop through all keys of VAO ids
+            for (auto &bufferEntry : (*buffType.second)) // Loop through all keys of VAO ids
             {
                 glDeleteBuffers(1, // Delete every VBO
                                 &bufferEntry.second);
             }
         }
 
-        for (auto VAOID : m_VAOIDs) // Loop through all VAO ids
+        for (auto VAOID : *m_VAOIDs) // Loop through all VAO ids
         {
             glDeleteVertexArraysOES(1, &VAOID); // And delete them
         }

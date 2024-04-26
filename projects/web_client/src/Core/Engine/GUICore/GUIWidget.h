@@ -9,7 +9,7 @@ namespace zw
     class GUIWidget : public std::enable_shared_from_this<GUIWidget>
     {
       public:
-        GUIWidget() = default;
+        GUIWidget() : m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>()) {}
 
         GUIWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft);
 
@@ -178,7 +178,7 @@ namespace zw
         bool m_focusable{ false };
         int m_ticksTimeGotFocus{ 0 };
         bool m_markedForDestruction{ false };
-        std::vector<WidgetEntry> m_widgetsToInsert{};
+        std::shared_ptr<std::vector<WidgetEntry>> m_widgetsToInsert{};
         bool m_visible{ true };
 
         inline static int s_unnamedWidgetCounter{ 0 };

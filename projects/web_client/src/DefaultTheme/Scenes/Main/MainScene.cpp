@@ -8,6 +8,7 @@ namespace zw
     void MainScene::OnEnter()
     {
         _<WorldFileReader>().ReadWorldFile();
+        _<WorldView>();
     }
 
     void MainScene::UpdateDerived()

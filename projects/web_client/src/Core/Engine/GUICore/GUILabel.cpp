@@ -4,7 +4,7 @@
 namespace zw {
   GUILabel::GUILabel(PointF position, const std::string &text, GUIAlign alignment, FontSizes fontSize,
                      ColorF textColor)
-      : GUIWidget(position, _<TextRenderer>().MeasureString(m_text, fontSize), alignment), m_text(text),
+      : GUIWidget(position, _<TextRenderer>().MeasureString(text, fontSize), alignment), m_text(std::make_shared<std::string>(text)),
         m_fontSize(fontSize), m_textColor(textColor) {
     m_ridText = _<TextRenderer>().NewString();
     SetDrawBackground(false);
@@ -19,7 +19,7 @@ namespace zw {
   }
 
   PointF GUILabel::GetAlignedAbsolutePosition() {
-    auto textSize = _<TextRenderer>().MeasureString(m_text, m_fontSize);
+    auto textSize = _<TextRenderer>().MeasureString(*m_text, m_fontSize);
     auto absolutePosition = GUIWidget::GetAlignedAbsolutePosition();
     PointF alignedPosition;
     switch (Alignment()) {
@@ -56,6 +56,6 @@ namespace zw {
 
   void GUILabel::RenderDerived() {
     auto finalPosition = GetFinalPosition();
-    _<TextRenderer>().DrawString(m_ridText, m_text, finalPosition, m_textColor, false, m_fontSize);
+    _<TextRenderer>().DrawString(m_ridText, *m_text, finalPosition, m_textColor, false, m_fontSize);
   }
 }

@@ -17,12 +17,12 @@ namespace zw {
 
     PointF GetAlignedAbsolutePosition() override;
 
-    void SetText(const std::string &text) {
+    void SetText(std::shared_ptr<std::string> text) {
       m_text = text;
     }
 
    private:
-    std::string m_text;
+    std::shared_ptr<std::string> m_text;
     FontSizes m_fontSize;
     ColorF m_textColor{ Colors::Wheat };
     RID m_ridText{};

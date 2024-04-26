@@ -29,6 +29,6 @@ namespace zw
         _<MainScene>()
             .GUI()
             ->GetWidget<GUILabel>("FPSCounterLabel")
-            ->SetText("FPS: " + std::to_string(m_fps));
+            ->SetText(std::make_shared<std::string>("FPS: " + std::to_string(m_fps)));
     }
 }

@@ -24,6 +24,7 @@
 #include "Common/Aliases.h"
 #include "Common/SDLDeleter.h"
 #include "Common/Utilities.h"
+#include "Common/Square.h"
 
 #include "../../shared/matter/src/Size.h"
 #include "../../shared/matter/src/ColorF.h"

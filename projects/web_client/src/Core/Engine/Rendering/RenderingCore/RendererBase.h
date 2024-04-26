@@ -55,8 +55,8 @@ namespace zw
         void UpdateArrayBufferDataInt(GLuint VBOID, std::vector<float> &data, int numFloatsPerEntry,
                                       int layoutLocation) const;
 
-        std::vector<GLuint> m_VAOIDs;
-        std::map<BufferTypes, std::map<GLuint, GLuint>> m_VBOIDs;
+        std::shared_ptr<std::vector<GLuint>> m_VAOIDs;
+        std::shared_ptr<std::map<BufferTypes, std::shared_ptr<std::map<GLuint, GLuint>>>> m_VBOIDs;
         std::shared_ptr<zw::ShaderProgram> m_shaderProgram;
         inline static const auto k_numFloatsPerEntry
             = std::map<BufferTypes, int>{ { BufferTypes::Indices, 1 },     { BufferTypes::Positions2D, 2 },

@@ -10,7 +10,7 @@ namespace zw
     }
 
     GUIWidget::GUIWidget(PointF position, SizeF size, GUIAlign alignment)
-        : m_position(position), m_size(size), m_alignment(alignment)
+        : m_position(position), m_size(size), m_alignment(alignment),  m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>())
     {
         m_ridBackgroundImage = _<ImageRenderer>().NewImage();
         m_ridBorderLeft = _<ImageRenderer>().NewImage();
@@ -25,11 +25,11 @@ namespace zw
 
     void GUIWidget::InsertWaitingWidgets()
     {
-        for (auto &entry : m_widgetsToInsert)
+        for (auto &entry : *m_widgetsToInsert)
         {
             m_childWidgets.push_back(entry);
         }
-        m_widgetsToInsert.clear();
+        m_widgetsToInsert->clear();
         for (auto &entry : m_childWidgets)
         {
             entry.widget->InsertWaitingWidgets();
@@ -208,7 +208,7 @@ namespace zw
                 return nullptr;
             }
         }
-        for (auto &entry : m_widgetsToInsert)
+        for (auto &entry : *m_widgetsToInsert)
         {
             if (entry.id == nameHash)
             {
@@ -217,7 +217,7 @@ namespace zw
         }
         childWidget->Initialize();
         childWidget->SetParentWidget(shared_from_this());
-        m_widgetsToInsert.push_back({ nameHash, childWidget });
+        m_widgetsToInsert->push_back({ nameHash, childWidget });
         return childWidget;
     }
 
