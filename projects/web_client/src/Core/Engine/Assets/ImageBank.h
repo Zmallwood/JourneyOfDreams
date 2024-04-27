@@ -21,10 +21,9 @@ namespace zw
         /// Creates a blank image resource, given the specified name, and returns its ID.
         GLuint CreateBlankImage(const std::string &uniqueImageName);
 
+      private:
         /// Load all images from file system in the images path.
         void LoadImages();
-
-      private:
 
         /// Load a single image at the path and return its resource ID.
         GLuint LoadSingleImage(const std::string &absFilePath);
