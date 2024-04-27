@@ -26,6 +26,7 @@ namespace zw {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     auto defaultClearColor = _<ClientProperties>().DefaultClearColor();
     glClearColor(defaultClearColor.r, defaultClearColor.g, defaultClearColor.b, defaultClearColor.a);
+    _<ImageBank>().LoadImages();
   }
 
   void Graphics::ClearCanvas() {
