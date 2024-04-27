@@ -19,8 +19,8 @@ jobs:
           sudo apt-get -y install libboost-dev
           sudo apt-get -y install libpqxx-dev
           sudo apt-get -y install libsdl2-dev
-          sudo apt-get -y install libsdl2_image-dev
-          sudo apt-get -y install libsdl2_ttf-dev
+          sudo apt-get -y install libsdl2-image-dev
+          sudo apt-get -y install libsdl2-ttf-dev
           #git clone https://github.com/emscripten-core/emsdk.git
           #cd emsdk
           #git pull
