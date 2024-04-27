@@ -27,12 +27,12 @@ jobs:
 
       - name: Build WebClient, run cmake
         run: |
-          source "/home/runner/work/JourneyOfDreams/JourneyOfDreams/emsdk/emsdk_env.sh"
+          #source "/home/runner/work/JourneyOfDreams/JourneyOfDreams/emsdk/emsdk_env.sh"
           CC=clang CXX=clang cmake projects/web_client -B build_web_client
 
       - name: Build WebClient, run make
         run: |
-          source "/home/runner/work/JourneyOfDreams/JourneyOfDreams/emsdk/emsdk_env.sh"
+          #source "/home/runner/work/JourneyOfDreams/JourneyOfDreams/emsdk/emsdk_env.sh"
           cd build_web_client && make && mv ../bin_web_client/WebClient.html ../bin_web_client/index.html
 
       - name: Build GameServer, run cmake
