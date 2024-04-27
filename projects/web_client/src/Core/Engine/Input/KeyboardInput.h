@@ -11,6 +11,8 @@ namespace zw
 
         bool AnyKeyIsPressed();
 
+        bool KeyIsPressed(SDL_Keycode key);
+
         bool KeyHasBeenFiredPickResult(SDL_Keycode key);
 
         void AppendTextInput(const std::string &text);

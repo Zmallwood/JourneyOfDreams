@@ -17,6 +17,11 @@ namespace zw
         return m_pressedKeys.size() > 0;
     }
 
+    bool KeyboardInput::KeyIsPressed(SDL_Keycode key)
+    {
+        return m_pressedKeys.contains(key);
+    }
+
     bool KeyboardInput::KeyHasBeenFiredPickResult(SDL_Keycode key)
     {
         auto result = m_pressedKeys.contains(key);
