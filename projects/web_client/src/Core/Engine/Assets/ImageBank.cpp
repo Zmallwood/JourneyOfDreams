@@ -1,9 +1,11 @@
 #include "ImageBank.h"
+#include "Core/Engine/Graphics/Graphics.h"
 
 namespace zw
 {
     ImageBank::ImageBank()
     {
+        _<Graphics>(); // Touch Graphics to initialize it
         // Load all images in images path.
         LoadImages();
     }
