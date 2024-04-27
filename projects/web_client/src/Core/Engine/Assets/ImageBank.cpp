@@ -118,7 +118,10 @@ namespace zw
 
         // // Free SDL surface resource. Its not needed anymore
         // // as the image data is stored in the OpenGL texture now.
-        // SDL_FreeSurface(surf);
+        // if (surf)
+        // {
+        //     SDL_FreeSurface(surf);
+        // }
 
         // // Return the previously generated resource ID.
         // return texID;
