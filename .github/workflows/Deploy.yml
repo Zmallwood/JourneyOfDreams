@@ -13,6 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Prepare dependencies
+        run: |
+          sudo apt-get -y update
+          sudo apt-get -y install libboost-dev
+
       - name: Build WebClient, run cmake
         run: CC=emcc CXX=em++ emcmake cmake projects/web_client -B build_web_client
 
