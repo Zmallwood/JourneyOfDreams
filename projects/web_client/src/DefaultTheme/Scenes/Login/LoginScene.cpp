@@ -30,8 +30,8 @@ namespace zw
 
     void LoginScene::OnEnter()
     {
-        GUI()->GetWidget<GUITextBox>("UsernameTextBox")->ClearText();
-        GUI()->GetWidget<GUITextBox>("PasswordTextBox")->ClearText();
+        // GUI()->GetWidget<GUITextBox>("UsernameTextBox")->ClearText();
+        // GUI()->GetWidget<GUITextBox>("PasswordTextBox")->ClearText();
     }
 
     void LoginScene::UpdateDerived()
@@ -40,7 +40,7 @@ namespace zw
 
     void LoginScene::RenderDerived()
     {
-        _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
-        _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo", { 0.4f, 0.2f, 0.2f, 0.1f });
+        // _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
+        // _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo", { 0.4f, 0.2f, 0.2f, 0.1f });
     }
 }
