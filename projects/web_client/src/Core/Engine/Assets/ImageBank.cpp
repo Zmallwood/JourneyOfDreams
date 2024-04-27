@@ -99,7 +99,7 @@ namespace zw
             glEnable(GL_TEXTURE_2D);
 
             // Use the newly created OpenGL texture.
-            if (texID)
+            if (texID) 
             {
                 glBindTexture(GL_TEXTURE_2D, texID);
 
