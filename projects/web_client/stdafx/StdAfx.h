@@ -26,6 +26,8 @@
 #include "Common/Utilities.h"
 #include "Common/Square.h"
 
+#include "Core/Engine/CoreMath/TileGridCalculations.h"
+
 #include "../../shared/matter/src/Size.h"
 #include "../../shared/matter/src/ColorF.h"
 #include "../../shared/matter/src/RectF.h"

@@ -13,14 +13,14 @@ namespace zw
         {
             return m_defaultClearColor;
         }
-        auto GridSize()
+        auto NumGridRows()
         {
-            return m_gridSize;
+            return m_numGridRows;
         }
 
       private:
         Size m_canvasSize{ 1000, 600 };
         ColorF m_defaultClearColor{ 0.0f, 0.5f, 1.0f };
-        int m_gridSize = 25;
+        int m_numGridRows = 11;
     };
 }
