@@ -52,29 +52,29 @@ namespace zw
 
     void ImageBank::LoadImages()
     {
-        // using iterator = std::filesystem::recursive_directory_iterator;
+        using iterator = std::filesystem::recursive_directory_iterator;
 
-        // // Create path string to load the images from.
-        // auto allImagesPath = k_relImagesPath + "/";
+        // Create path string to load the images from.
+        auto allImagesPath = k_relImagesPath + "/";
 
-        // for (auto &entry : iterator(allImagesPath))
-        // {
-        //     auto absPath = entry.path().string();
+        for (auto &entry : iterator(allImagesPath))
+        {
+            auto absPath = entry.path().string();
 
-        //     // Only handle files with png extenstion.
-        //     if (FileExtension(absPath) != "png")
-        //         continue;
+            // Only handle files with png extenstion.
+            if (FileExtension(absPath) != "png")
+                continue;
 
-        //     // Do the atual loading of the image file.
-        //     auto texID = LoadSingleImage(absPath);
+            // Do the atual loading of the image file.
+            auto texID = LoadSingleImage(absPath);
 
-        //     // Extract its pure name without path or extension.
-        //     auto imageName = FilenameNoExtension(absPath);
+            // Extract its pure name without path or extension.
+            auto imageName = FilenameNoExtension(absPath);
 
-        //     // Insert a new entry into the images storage,
-        //     // with the image name hash as key and the resource ID as value.
-        //     m_images.insert({ Hash(imageName), texID });
-        // }
+            // Insert a new entry into the images storage,
+            // with the image name hash as key and the resource ID as value.
+            m_images.insert({ Hash(imageName), texID });
+        }
     }
 
     GLuint ImageBank::LoadSingleImage(const std::string &absFilePath)
