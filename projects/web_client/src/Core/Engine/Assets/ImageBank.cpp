@@ -82,7 +82,6 @@ namespace zw
 
     GLuint ImageBank::LoadSingleImage(const std::string &absFilePath)
     {
-        SDL_Init(SDL_INIT_EVERYTHING);
         // Will hold the resulting ID for the loaded image file.
         GLuint texID;
 

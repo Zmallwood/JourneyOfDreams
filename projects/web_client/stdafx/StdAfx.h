@@ -13,10 +13,10 @@
 #include <fstream>
 #include <stdio.h>
 
-#include <SDL.h>
-#include <SDL_image.h>
-#include <SDL_opengles2.h>
-#include <SDL_ttf.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_opengles2.h>
+#include <SDL2/SDL_ttf.h>
 
 #include <emscripten/websocket.h>
 #include <emscripten.h>
