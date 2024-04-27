@@ -21,7 +21,7 @@ jobs:
           sudo apt-get -y install emscripten
 
       - name: Build WebClient, run cmake
-        run: CC=emcc CXX=em++ emcmake cmake projects/web_client -B build_web_client
+        run: sudo CC=emcc CXX=em++ emcmake cmake projects/web_client -B build_web_client
 
       - name: Build WebClient, run make
         run: cd build_web_client && emmake make && mv ../bin_web_client/WebClient.html ../bin_web_client/index.html
