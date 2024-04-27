@@ -78,7 +78,8 @@
 			"*.ipp": "cpp",
 			"ranges": "cpp",
 			"regex": "cpp",
-			"bitset": "cpp"
+			"bitset": "cpp",
+			"fstream": "cpp"
 		}
 	}
 }

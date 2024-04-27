@@ -2,6 +2,7 @@
 #include "Core/Configuration/ClientProperties.h"
 #include "Core/Engine/CoreGameObjects/Player.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
+#include "DefaultTheme/Scenes/Main/SubProcess/TileHoverer.h"
 #include "world_structure/src/Object.h"
 #include "world_structure/src/Tile.h"
 #include "world_structure/src/World.h"
@@ -28,6 +29,7 @@ namespace zw
         }
 
         m_ridPlayer = _<ImageRenderer>().NewImage();
+        m_ridHoveredTile = _<ImageRenderer>().NewImage();
     }
 
     void WorldView::Update()
@@ -75,6 +77,13 @@ namespace zw
                 }
 
                 _<ImageRenderer>().DrawImage(m_ridsTiles->at(x).at(y), groundImage, dest);
+
+                auto hoveredCoord = _<TileHoverer>().HoveredCoordinate();
+
+                if (hoveredCoord.x == mapX && hoveredCoord.y == mapY)
+                {
+                    _<ImageRenderer>().DrawImage(m_ridHoveredTile, "HoveredTile", dest);
+                }
 
                 if (tile->Object() != nullptr)
                 {

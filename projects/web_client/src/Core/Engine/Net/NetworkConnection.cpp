@@ -1,5 +1,6 @@
 #include "NetworkConnection.h"
 #include "NetClient.h"
+#include "Core/Configuration/ConfigurationFile.h"
 
 namespace zw
 {
@@ -75,7 +76,10 @@ namespace zw
         if (!emscripten_websocket_is_supported())
             return;
 
-        EmscriptenWebSocketCreateAttributes ws_attrs = { "ws://143.110.128.10:1238", NULL, EM_TRUE };
+        auto connectionString = "ws://" + _<ConfigurationFile>().ServerAddress() + ":" + std::to_string(_<ConfigurationFile>().ServerPort());
+        std::cout << "conn: " << connectionString << std::endl;
+
+        EmscriptenWebSocketCreateAttributes ws_attrs = { connectionString.c_str(), NULL, EM_TRUE };
         //EmscriptenWebSocketCreateAttributes ws_attrs = { "ws://localhost:1238", NULL, EM_TRUE };
 
         EMSCRIPTEN_WEBSOCKET_T ws = emscripten_websocket_new(&ws_attrs);

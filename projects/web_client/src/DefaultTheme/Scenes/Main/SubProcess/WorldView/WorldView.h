@@ -14,5 +14,6 @@ namespace zw
         std::shared_ptr<std::vector<std::vector<RID>>> m_ridsTiles;
         std::shared_ptr<std::vector<std::vector<RID>>> m_ridsObjects;
         RID m_ridPlayer;
+        RID m_ridHoveredTile;
     };
 }
