@@ -18,8 +18,7 @@ namespace zw
 
     GLuint ImageBank::GetImage(const std::string &imageName)
     {
-        return 0;
-        // return GetImage(Hash(imageName));
+        return GetImage(Hash(imageName));
     }
 
     GLuint ImageBank::GetImage(int imageNameHash)
