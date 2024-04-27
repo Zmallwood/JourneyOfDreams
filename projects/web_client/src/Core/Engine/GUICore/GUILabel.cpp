@@ -27,28 +27,28 @@ namespace zw {
       alignedPosition = absolutePosition;
       break;
     case GUIAlign::TopCenter:
-      alignedPosition = PointF(absolutePosition.x - textSize.w / 2, absolutePosition.y);
+      alignedPosition = PointF{absolutePosition.x - textSize.w / 2, absolutePosition.y};
       break;
     case GUIAlign::TopRight:
-      alignedPosition = PointF(absolutePosition.x - textSize.w, absolutePosition.y);
+      alignedPosition = PointF{absolutePosition.x - textSize.w, absolutePosition.y};
       break;
     case GUIAlign::RightCenter:
-      alignedPosition = PointF(absolutePosition.x - textSize.w, absolutePosition.y - textSize.h / 2);
+      alignedPosition = PointF{absolutePosition.x - textSize.w, absolutePosition.y - textSize.h / 2};
       break;
     case GUIAlign::BottomRight:
-      alignedPosition = PointF(absolutePosition.x - textSize.w, absolutePosition.y - textSize.h);
+      alignedPosition = PointF{absolutePosition.x - textSize.w, absolutePosition.y - textSize.h};
       break;
     case GUIAlign::BottomCenter:
-      alignedPosition = PointF(absolutePosition.x - textSize.w / 2, absolutePosition.y - textSize.h);
+      alignedPosition = PointF{absolutePosition.x - textSize.w / 2, absolutePosition.y - textSize.h};
       break;
     case GUIAlign::BottomLeft:
-      alignedPosition = PointF(absolutePosition.x, absolutePosition.y - textSize.h);
+      alignedPosition = PointF{absolutePosition.x, absolutePosition.y - textSize.h};
       break;
     case GUIAlign::LeftCenter:
-      alignedPosition = PointF(absolutePosition.x, absolutePosition.y - textSize.h / 2);
+      alignedPosition = PointF{absolutePosition.x, absolutePosition.y - textSize.h / 2};
       break;
     case GUIAlign::Center:
-      alignedPosition = PointF(absolutePosition.x - textSize.w / 2, absolutePosition.y - textSize.h / 2);
+      alignedPosition = PointF{absolutePosition.x - textSize.w / 2, absolutePosition.y - textSize.h / 2};
       break;
     }
     return alignedPosition;
