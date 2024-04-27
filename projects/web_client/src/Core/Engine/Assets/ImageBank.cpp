@@ -118,12 +118,9 @@ namespace zw
                 glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB, GL_UNSIGNED_BYTE,
                              surf->pixels);
             }
-        }
 
-        // Free SDL surface resource. Its not needed anymore
-        // as the image data is stored in the OpenGL texture now.
-        if (surf)
-        {
+            // Free SDL surface resource. Its not needed anymore
+            // as the image data is stored in the OpenGL texture now.
             SDL_FreeSurface(surf);
         }
 
