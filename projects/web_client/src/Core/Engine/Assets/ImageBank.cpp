@@ -91,7 +91,7 @@ namespace zw
         if (std::filesystem::exists(absFilePath))
         {
             // Get image data from the image file.
-            auto surf = IMG_Load("resources/GroundGrass.png");
+            auto surf = IMG_Load("images/GroundGrass.png");
 
             // // Generate a new OpenGL texture and get its ID.
             glGenTextures(1, &texID);
