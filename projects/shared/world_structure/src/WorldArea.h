@@ -11,6 +11,7 @@ namespace zw
         Size GetSize();
         std::shared_ptr<Tile> GetTile(Point coordinate);
         bool IsValidCoordinate(Point coordinate);
+        Point GetRandomCoordinate();
         auto &Tiles()
         {
             return m_tiles;

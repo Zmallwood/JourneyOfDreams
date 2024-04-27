@@ -1,13 +1,13 @@
 #include "WorldArea.h"
 #include "Tile.h"
-#include "configuration/src/GameProperties.h"
+#include "configuration/src/GlobalProperties.h"
 
 namespace zw
 {
     WorldArea::WorldArea()
     {
-        auto width = _<GameProperties>().WorldAreaSize().w;
-        auto height = _<GameProperties>().WorldAreaSize().h;
+        auto width = _<GlobalProperties>().WorldAreaSize().w;
+        auto height = _<GlobalProperties>().WorldAreaSize().h;
 
         for (auto x = 0; x < width; x++)
         {
@@ -39,5 +39,11 @@ namespace zw
     {
         auto size = GetSize();
         return coordinate.x >= 0 && coordinate.y >= 0 && coordinate.x < size.w && coordinate.y < size.h;
+    }
+
+    Point WorldArea::GetRandomCoordinate()
+    {
+        auto size = GetSize();
+        return { .x = rand() % size.w, .y = rand() % size.h };
     }
 }

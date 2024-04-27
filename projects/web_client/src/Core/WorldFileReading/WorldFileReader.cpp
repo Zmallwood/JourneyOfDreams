@@ -23,7 +23,7 @@ namespace zw
                 std::getline(worldFile, line);
 
                 auto tile = worldArea->GetTile({ .x = x, .y = y });
-                auto groundHash = line;
+                auto groundHash = std::stoi(line);
                 tile->SetGround(groundHash);
             }
         }

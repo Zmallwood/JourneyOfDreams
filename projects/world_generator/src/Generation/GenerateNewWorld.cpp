@@ -1,11 +1,14 @@
 #include "GenerateNewWorld.h"
 #include "../../shared/world_structure/src/World.h"
 #include "SubProcess/GenerateGrass.h"
+#include "SubProcess/GenerateWater.h"
 
 namespace zw
 {
     void GenerateNewWorld()
     {
+        srand(time(0));
         GenerateGrass();
+        GenerateWater();
     }
 }

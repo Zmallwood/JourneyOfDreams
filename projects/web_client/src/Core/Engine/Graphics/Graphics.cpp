@@ -1,5 +1,5 @@
 #include "Graphics.h"
-#include "configuration/src/GameProperties.h"
+#include "Core/Configuration/ClientProperties.h"
 
 EM_JS(int, canvas_get_width, (), { return window.innerWidth; });
 EM_JS(int, canvas_get_height, (), { return window.innerHeight; });
@@ -7,7 +7,7 @@ EM_JS(int, canvas_get_height, (), { return window.innerHeight; });
 namespace zw {
   Graphics::Graphics() {
     SDL_Init(SDL_INIT_EVERYTHING);
-    auto canvasSize = _<GameProperties>().CanvasSize();
+    auto canvasSize = _<ClientProperties>().CanvasSize();
     m_window = std::shared_ptr<SDL_Window>(
         SDL_CreateWindow("Journey of Dreams", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                          canvas_get_width(), canvas_get_height(), SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN),
@@ -23,7 +23,7 @@ namespace zw {
         SDLDeleter());
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    auto defaultClearColor = _<GameProperties>().DefaultClearColor();
+    auto defaultClearColor = _<ClientProperties>().DefaultClearColor();
     glClearColor(defaultClearColor.r, defaultClearColor.g, defaultClearColor.b, defaultClearColor.a);
   }
 

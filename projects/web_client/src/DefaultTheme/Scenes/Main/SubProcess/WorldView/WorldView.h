@@ -12,5 +12,6 @@ namespace zw
 
       private:
         std::shared_ptr<std::vector<std::vector<RID>>> m_ridsTiles;
+        RID m_ridPlayer;
     };
 }

@@ -11,4 +11,9 @@ namespace zw
     {
         m_ground = groundHash;
     }
+
+    bool Tile::IsWalkable()
+    {
+        return m_ground != Hash("GroundWater");
+    }
 }

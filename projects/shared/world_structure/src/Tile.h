@@ -7,6 +7,7 @@ namespace zw
       public:
         void SetGround(const std::string &groundName);
         void SetGround(int groundHash);
+        bool IsWalkable();
         auto Ground()
         {
             return m_ground;
