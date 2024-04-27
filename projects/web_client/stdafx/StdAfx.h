@@ -12,6 +12,7 @@
 #include <ranges>
 #include <fstream>
 #include <algorithm>
+#include <vector>
 #include <stdio.h>
 
 #include <SDL2/SDL.h>
