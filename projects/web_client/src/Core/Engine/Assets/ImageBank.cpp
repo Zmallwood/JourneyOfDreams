@@ -95,10 +95,10 @@ namespace zw
             glGenTextures(1, &texID);
 
             // We will work with 2D textures.
-            // glEnable(GL_TEXTURE_2D);
+            glEnable(GL_TEXTURE_2D);
 
             // Use the newly created OpenGL texture.
-            // glBindTexture(GL_TEXTURE_2D, texID);
+            glBindTexture(GL_TEXTURE_2D, texID);
 
             // // Determine image format.
             if (surf)
