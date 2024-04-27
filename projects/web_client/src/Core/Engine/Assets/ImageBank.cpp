@@ -79,11 +79,12 @@ namespace zw
 
     GLuint ImageBank::LoadSingleImage(const std::string &absFilePath)
     {
-        return 0;
-        // // Will hold the resulting ID for the loaded image file.
-        // GLuint texID;
+        // Will hold the resulting ID for the loaded image file.
+        GLuint texID;
 
-        // // Get image data from the image file.
+        return 0;
+
+        // Get image data from the image file.
         // auto surf = IMG_Load(absFilePath.data());
 
         // // We will work with 2D textures.
