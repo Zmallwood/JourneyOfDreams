@@ -3,7 +3,7 @@
 
 namespace zw
 {
-    ImageBank::ImageBank()
+    ImageBank::ImageBank() : m_images(std::make_shared<std::map<int, GLuint>>())
     {
         _<Graphics>(); // Touch Graphics to ensure the graphics, with the GL context, is initialized.
 
@@ -30,7 +30,7 @@ namespace zw
     GLuint ImageBank::GetImage(int imageNameHash)
     {
         // Iterate through all the loaded images.
-        for (auto img : m_images)
+        for (auto img : *m_images)
             // If its key, being the hash of the image name, equals the hash of the specified name.
             if (img.first == imageNameHash)
                 // If so, return this image ID.
@@ -47,7 +47,7 @@ namespace zw
         glGenTextures(1, &texID);
 
         // Insert new image entry with image name hash as key and the new ID as value.
-        m_images.insert({ Hash(uniqueImageName), texID });
+        m_images->insert({ Hash(uniqueImageName), texID });
 
         // Return the ID of the newly created blank image resource.
         return texID;
@@ -76,7 +76,7 @@ namespace zw
 
             // Insert a new entry into the images storage,
             // with the image name hash as key and the resource ID as value.
-            //m_images.insert({ Hash(imageName), texID });
+            m_images->insert({ Hash(imageName), texID });
         }
     }
 
