@@ -12,7 +12,7 @@ namespace zw
     // {
     //     if (m_images.empty())
     //         return;
-            
+
     //     // Iterate through all the loaded images.
     //     for (const auto &img : m_images)
     //         // And free every allocated image resource.

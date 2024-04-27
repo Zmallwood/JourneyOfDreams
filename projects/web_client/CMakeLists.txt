@@ -31,4 +31,4 @@ target_precompile_headers(WebClient PRIVATE ${PCH_FILES})
 
 target_compile_features(WebClient PRIVATE cxx_std_20)
 
-target_link_options(WebClient PRIVATE --preload-file ${CMAKE_SOURCE_DIR}/resources@/ -sALLOW_MEMORY_GROWTH --use-preload-plugins -fsanitize=undefined -sMAX_WEBGL_VERSION=2 -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -sSDL2_IMAGE_FORMATS=[png] -sUSE_SDL_TTF=2 --shell-file ${CMAKE_SOURCE_DIR}/html/shell_minimal.html)
+target_link_options(WebClient PRIVATE -use-preload-plugins --preload-file ${CMAKE_SOURCE_DIR}/resources@/ -sALLOW_MEMORY_GROWTH --use-preload-plugins -fsanitize=undefined -sMAX_WEBGL_VERSION=2 -sUSE_SDL=2 -sUSE_SDL_IMAGE=2 -sSDL2_IMAGE_FORMATS=[png] -sUSE_SDL_TTF=2 --shell-file ${CMAKE_SOURCE_DIR}/html/shell_minimal.html)
