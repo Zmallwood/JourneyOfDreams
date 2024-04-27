@@ -92,8 +92,8 @@ namespace zw
         // // Generate a new OpenGL texture and get its ID.
         // glGenTextures(1, &texID);
 
-        // // Use the newly created OpenGL texture.
-        // glBindTexture(GL_TEXTURE_2D, texID);
+        // Use the newly created OpenGL texture.
+        glBindTexture(GL_TEXTURE_2D, texID);
 
         // // Apply necessary texture parameters.
         // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
