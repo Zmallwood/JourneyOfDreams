@@ -86,7 +86,7 @@ namespace zw
         GLuint texID;
 
         // Get image data from the image file.
-        auto surf = IMG_Load(absFilePath.c_str()); 
+        auto surf = IMG_Load(absFilePath.c_str());  
 
         // // Generate a new OpenGL texture and get its ID.
         glGenTextures(1, &texID);
