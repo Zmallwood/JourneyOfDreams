@@ -5,8 +5,8 @@ namespace zw
 {
     void DoOneGameLoopFrame()
     {
-        // _<Engine>().Reset();
-        // _<Engine>().HandleInput();
+         _<Engine>().Reset();
+         _<Engine>().HandleInput();
         // _<Engine>().Update();
         // _<Engine>().UpdateNet();
         // _<Engine>().Render();
