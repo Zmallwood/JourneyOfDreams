@@ -8,7 +8,7 @@ namespace zw
         _<Graphics>(); // Touch Graphics to ensure the graphics, with the GL context, is initialized.
 
         // Load all images in images path.
-        //LoadImages();
+        LoadImages();
     }
 
     // ImageBank::~ImageBank()
