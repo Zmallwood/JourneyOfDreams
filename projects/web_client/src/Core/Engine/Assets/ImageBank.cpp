@@ -84,9 +84,7 @@ namespace zw
 
         // Get image data from the image file.
         auto surf = IMG_Load(absFilePath.data());
-        SDL_FreeSurface(surf);
 
-        return 0;
 
         // // We will work with 2D textures.
         // glEnable(GL_TEXTURE_2D);
@@ -117,14 +115,14 @@ namespace zw
         //                  surf->pixels);
         // }
 
-        // // Free SDL surface resource. Its not needed anymore
-        // // as the image data is stored in the OpenGL texture now.
-        // if (surf)
-        // {
-        //     SDL_FreeSurface(surf);
-        // }
+        // Free SDL surface resource. Its not needed anymore
+        // as the image data is stored in the OpenGL texture now.
+        if (surf)
+        {
+            SDL_FreeSurface(surf);
+        }
 
         // // Return the previously generated resource ID.
-        // return texID;
+        return texID;
     }
 }
