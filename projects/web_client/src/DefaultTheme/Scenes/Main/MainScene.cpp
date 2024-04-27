@@ -4,6 +4,7 @@
 #include "SubProcess/FPSCounter.h"
 #include "SubProcess/WorldView/WorldView.h"
 #include "SubProcess/UpdateKeyboardMovement.h"
+#include "SubProcess/UpdateClickMovement.h"
 #include "SubProcess/TileHoverer.h"
 
 namespace zw
@@ -18,6 +19,7 @@ namespace zw
     void MainScene::UpdateDerived()
     {
         UpdateKeyboardMovement();
+        UpdateClickMovement();
         _<TileHoverer>().Update();
         _<WorldView>().Update();
         _<FPSCounter>().Update();

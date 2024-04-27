@@ -59,7 +59,7 @@ namespace zw
 
                 auto tile = worldArea->GetTile({ .x = mapX, .y = mapY });
 
-                auto tileX = 0.5f - (numGridCols - 1) / 2 * tileWidth + x * tileWidth;
+                auto tileX = x * tileWidth;
                 auto tileY = y * tileHeight;
 
                 auto dest = RectF{ tileX, tileY, tileWidth, tileHeight };

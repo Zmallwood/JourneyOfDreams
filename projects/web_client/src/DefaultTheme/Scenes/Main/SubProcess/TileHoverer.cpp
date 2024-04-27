@@ -19,6 +19,6 @@ namespace zw
         auto hoveredRow = static_cast<int>(mousePosition.y / tileHeight);
 
         m_hoveredCoordinate = { .x = player.GetX() - (numGridCols - 1) / 2 + hoveredCol,
-                          .y = player.GetY() - (numGridRows - 1) / 2 + hoveredRow };
+                                .y = player.GetY() - (numGridRows - 1) / 2 + hoveredRow };
     }
 }
