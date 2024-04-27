@@ -38,16 +38,15 @@ namespace zw
 
     GLuint ImageBank::CreateBlankImage(const std::string &uniqueImageName)
     {
-        return 0;
-        // // Generate new image resource and get its ID.
-        // GLuint texID;
-        // glGenTextures(1, &texID);
+        // Generate new image resource and get its ID.
+        GLuint texID;
+        glGenTextures(1, &texID);
 
-        // // Insert new image entry with image name hash as key and the new ID as value.
-        // m_images.insert({ Hash(uniqueImageName), texID });
+        // Insert new image entry with image name hash as key and the new ID as value.
+        m_images.insert({ Hash(uniqueImageName), texID });
 
-        // // Return the ID of the newly created blank image resource.
-        // return texID;
+        // Return the ID of the newly created blank image resource.
+        return texID;
     }
 
     void ImageBank::LoadImages()
