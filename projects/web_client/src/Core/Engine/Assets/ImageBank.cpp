@@ -90,8 +90,8 @@ namespace zw
 
         if (std::filesystem::exists(absFilePath))
         {
-// Get image data from the image file.
-#if defined(__JOD__)
+#if defined(__JOD_RUNTIME__) 
+            // Get image data from the image file.
             auto surf = IMG_Load(absFilePath.c_str());
 
             // // Generate a new OpenGL texture and get its ID.

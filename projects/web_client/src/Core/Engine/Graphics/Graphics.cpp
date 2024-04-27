@@ -1,6 +1,6 @@
 #include "Graphics.h"
 #include "Core/Configuration/ClientProperties.h"
-#define __JOD__
+#define __JOD_RUNTIME__
 #include "Core/Engine/Assets/ImageBank.h"
 
 EM_JS(int, canvas_get_width, (), { return window.innerWidth; });
