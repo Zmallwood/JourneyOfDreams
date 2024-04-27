@@ -84,6 +84,7 @@ namespace zw
 
         // Get image data from the image file.
         auto surf = IMG_Load(absFilePath.data());
+        SDL_FreeSurface(surf);
 
         return 0;
 
