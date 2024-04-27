@@ -53,7 +53,7 @@ namespace zw
         return texID;
     }
 
-    void ImageBank::LoadImages()   
+    void ImageBank::LoadImages()
     {
         using iterator = std::filesystem::directory_iterator;
 
@@ -90,8 +90,9 @@ namespace zw
 
         if (std::filesystem::exists(absFilePath))
         {
-            // Get image data from the image file.
-            auto surf = IMG_Load("GroundGrass.png"); 
+// Get image data from the image file.
+#if defined(__JOD__)
+            auto surf = IMG_Load(absFilePath.c_str());
 
             // // Generate a new OpenGL texture and get its ID.
             glGenTextures(1, &texID);
@@ -100,7 +101,7 @@ namespace zw
             glEnable(GL_TEXTURE_2D);
 
             // Use the newly created OpenGL texture.
-            if (texID)  
+            if (texID)
             {
                 glBindTexture(GL_TEXTURE_2D, texID);
 
@@ -118,16 +119,14 @@ namespace zw
                         {
                             // Transfer image data from SDL surface to OpenGL texture resource.
                             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA,
-                            GL_UNSIGNED_BYTE,
-                                         surf->pixels);
+                                         GL_UNSIGNED_BYTE, surf->pixels);
                         }
                         else
                         // RGB (without alpha channel)
                         {
                             // Transfer image data from SDL surface to OpenGL texture resource.
                             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB,
-                            GL_UNSIGNED_BYTE,
-                                         surf->pixels);
+                                         GL_UNSIGNED_BYTE, surf->pixels);
                         }
                     }
 
@@ -136,6 +135,9 @@ namespace zw
                     SDL_FreeSurface(surf);
                 }
             }
+#else
+            return 0;
+#endif
 
             glBindTexture(GL_TEXTURE_2D, 0);
         }
