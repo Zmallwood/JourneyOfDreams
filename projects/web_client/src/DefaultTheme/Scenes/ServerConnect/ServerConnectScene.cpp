@@ -13,14 +13,14 @@ namespace zw
 
     void ServerConnectScene::OnEnter()
     {
-        // _<NetClient>().BeginEstablishConnection();
+        _<NetClient>().BeginEstablishConnection();
     }
 
     void ServerConnectScene::UpdateDerived()
     {
-        // if (_<NetClient>().Connected())
-        // {
-        //     _<SceneManager>().GoToScene("LoginScene");
-        // }
+        if (_<NetClient>().Connected())
+        {
+            _<SceneManager>().GoToScene("LoginScene");
+        }
     }
 }
