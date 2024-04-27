@@ -80,7 +80,7 @@ namespace zw
         }
     }
 
-    GLuint ImageBank::LoadSingleImage(const std::string &absFilePath)
+    GLuint ImageBank::LoadSingleImage(std::string absFilePath)
     {
         SDL_Init(SDL_INIT_EVERYTHING);
         IMG_Init(IMG_INIT_PNG);
@@ -91,7 +91,7 @@ namespace zw
         if (std::filesystem::exists(absFilePath))
         {
             // Get image data from the image file.
-            auto surf = IMG_Load("images/GroundGrass.png");
+            auto surf = IMG_Load(absFilePath.c_str());
 
             // // Generate a new OpenGL texture and get its ID.
             glGenTextures(1, &texID);

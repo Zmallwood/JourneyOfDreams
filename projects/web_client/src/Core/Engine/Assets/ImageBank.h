@@ -27,7 +27,7 @@ namespace zw
       private:
 
         /// Load a single image at the path and return its resource ID.
-        GLuint LoadSingleImage(const std::string &absFilePath);
+        GLuint LoadSingleImage(std::string absFilePath);
 
         /// Internal image storage.
         std::shared_ptr<std::map<int, GLuint>> m_images;
