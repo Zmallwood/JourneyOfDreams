@@ -85,40 +85,42 @@ namespace zw
         // Get image data from the image file.
         auto surf = IMG_Load(absFilePath.data());
 
-        // We will work with 2D textures.
-        glEnable(GL_TEXTURE_2D);
+        return 0;
 
-        // Generate a new OpenGL texture and get its ID.
-        glGenTextures(1, &texID);
+        // // We will work with 2D textures.
+        // glEnable(GL_TEXTURE_2D);
 
-        // Use the newly created OpenGL texture.
-        glBindTexture(GL_TEXTURE_2D, texID);
+        // // Generate a new OpenGL texture and get its ID.
+        // glGenTextures(1, &texID);
 
-        // Apply necessary texture parameters.
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        // // Use the newly created OpenGL texture.
+        // glBindTexture(GL_TEXTURE_2D, texID);
 
-        // Determine image format.
-        if (surf->format->BytesPerPixel == 4)
-        // RGBA (with alpha channel)
-        {
-            // Transfer image data from SDL surface to OpenGL texture resource.
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA, GL_UNSIGNED_BYTE,
-                         surf->pixels);
-        }
-        else
-        // RGB (without alpha channel)
-        {
-            // Transfer image data from SDL surface to OpenGL texture resource.
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB, GL_UNSIGNED_BYTE,
-                         surf->pixels);
-        }
+        // // Apply necessary texture parameters.
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 
-        // Free SDL surface resource. Its not needed anymore
-        // as the image data is stored in the OpenGL texture now.
-        SDL_FreeSurface(surf);
+        // // Determine image format.
+        // if (surf->format->BytesPerPixel == 4)
+        // // RGBA (with alpha channel)
+        // {
+        //     // Transfer image data from SDL surface to OpenGL texture resource.
+        //     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA, GL_UNSIGNED_BYTE,
+        //                  surf->pixels);
+        // }
+        // else
+        // // RGB (without alpha channel)
+        // {
+        //     // Transfer image data from SDL surface to OpenGL texture resource.
+        //     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB, GL_UNSIGNED_BYTE,
+        //                  surf->pixels);
+        // }
 
-        // Return the previously generated resource ID.
-        return texID;
+        // // Free SDL surface resource. Its not needed anymore
+        // // as the image data is stored in the OpenGL texture now.
+        // SDL_FreeSurface(surf);
+
+        // // Return the previously generated resource ID.
+        // return texID;
     }
 }
