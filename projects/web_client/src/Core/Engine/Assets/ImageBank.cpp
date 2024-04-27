@@ -83,7 +83,7 @@ namespace zw
         GLuint texID;
 
         // Get image data from the image file.
-        auto surf = IMG_Load(absFilePath.data());
+        //auto surf = IMG_Load(absFilePath.data());
 
         return 0;
 
