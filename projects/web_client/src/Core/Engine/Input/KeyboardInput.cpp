@@ -39,7 +39,7 @@ namespace zw
 
     std::string KeyboardInput::PickTextInput()
     {
-        // auto result = m_textInput;
+        auto result = m_textInput;
         // m_textInput.clear();
         return result;
     }

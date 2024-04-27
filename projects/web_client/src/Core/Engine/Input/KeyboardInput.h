@@ -22,7 +22,7 @@ namespace zw
         void ClearTextInput();
 
       private:
-        std::set<SDL_Keycode> m_pressedKeys;
+        // std::set<SDL_Keycode> m_pressedKeys;
         std::string m_textInput;
     };
 }

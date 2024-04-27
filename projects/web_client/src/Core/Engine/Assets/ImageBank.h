@@ -28,7 +28,7 @@ namespace zw
         GLuint LoadSingleImage(const std::string &absFilePath);
 
         /// Internal image storage.
-        std::map<int, GLuint> m_images;
+        // std::map<int, GLuint> m_images;
 
         /// Path to the images folder, relative the applications base path.
         const std::string k_relImagesPath = "images";
