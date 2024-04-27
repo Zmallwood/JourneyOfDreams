@@ -11,23 +11,23 @@ namespace zw
 {
     void MainScene::OnEnter()
     {
-        // _<WorldFileReader>().ReadWorldFile();
-        // EnsureGoodPlayerPosition();
-        // _<WorldView>();
+        _<WorldFileReader>().ReadWorldFile();
+        EnsureGoodPlayerPosition();
+        _<WorldView>();
     }
 
     void MainScene::UpdateDerived()
     {
-        // UpdateKeyboardMovement();
-        // UpdateClickMovement();
-        // _<TileHoverer>().Update();
-        // _<WorldView>().Update();
-        // _<FPSCounter>().Update();
+        UpdateKeyboardMovement();
+        UpdateClickMovement();
+        _<TileHoverer>().Update();
+        _<WorldView>().Update();
+        _<FPSCounter>().Update();
     }
 
     void MainScene::RenderDerived()
     {
-        // _<WorldView>().Render();
-        // _<FPSCounter>().Render();
+        _<WorldView>().Render();
+        _<FPSCounter>().Render();
     }
 }
