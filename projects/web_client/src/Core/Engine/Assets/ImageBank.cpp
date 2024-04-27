@@ -69,10 +69,10 @@ namespace zw
                 continue;
 
             // Do the atual loading of the image file.
-            //auto texID = LoadSingleImage(absPath);
+            auto texID = LoadSingleImage(absPath);
 
             // Extract its pure name without path or extension.
-            //auto imageName = FilenameNoExtension(absPath);
+            auto imageName = FilenameNoExtension(absPath);
 
             // Insert a new entry into the images storage,
             // with the image name hash as key and the resource ID as value.
@@ -82,6 +82,7 @@ namespace zw
 
     GLuint ImageBank::LoadSingleImage(const std::string &absFilePath)
     {
+        SDL_Init(SDL_INIT_EVERYTHING);
         IMG_Init(IMG_INIT_PNG);
 
         // Will hold the resulting ID for the loaded image file.
