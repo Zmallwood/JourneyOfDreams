@@ -53,7 +53,7 @@ namespace zw
         return texID;
     }
 
-    void ImageBank::LoadImages()
+    void ImageBank::LoadImages() 
     {
         using iterator = std::filesystem::directory_iterator;
 
