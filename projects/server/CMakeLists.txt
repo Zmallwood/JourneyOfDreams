@@ -26,3 +26,7 @@ target_include_directories(Server PUBLIC external)
 add_library(jsoncpp STATIC ${PROJECT_SOURCE_DIR}/external/jsoncpp.cpp)
 
 target_link_libraries(Server jsoncpp)
+set(PCH_FILES
+    "stdafx/StdAfx.h"
+)
+target_precompile_headers(Server PRIVATE ${PCH_FILES})
