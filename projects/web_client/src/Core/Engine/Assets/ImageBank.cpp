@@ -86,8 +86,8 @@ namespace zw
         auto surf = IMG_Load(absFilePath.data());
 
 
-        // // We will work with 2D textures.
-        // glEnable(GL_TEXTURE_2D);
+        // We will work with 2D textures.
+        glEnable(GL_TEXTURE_2D);
 
         // // Generate a new OpenGL texture and get its ID.
         // glGenTextures(1, &texID);
