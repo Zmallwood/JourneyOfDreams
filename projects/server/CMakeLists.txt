@@ -15,9 +15,6 @@ if(TRUE)
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} " )
 endif()
 
-set (OGRE_LIBRARIES /home/andreas/SourceBuild/ogre/OgreMain)
-
-include_directories(${PROJECT_SOURCE_DIR}/Samples/Character/include)
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 add_executable(Server ${SRC_FILES})
 target_include_directories(Server PUBLIC external)
