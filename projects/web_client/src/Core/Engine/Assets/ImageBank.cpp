@@ -82,10 +82,10 @@ namespace zw
         // Will hold the resulting ID for the loaded image file.
         GLuint texID;
 
-        return 0;
-
         // Get image data from the image file.
-        // auto surf = IMG_Load(absFilePath.data());
+        auto surf = IMG_Load(absFilePath.data());
+
+        return 0;
 
         // // We will work with 2D textures.
         // glEnable(GL_TEXTURE_2D);
