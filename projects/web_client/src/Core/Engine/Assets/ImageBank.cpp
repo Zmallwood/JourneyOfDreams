@@ -97,7 +97,7 @@ namespace zw
         // Use the newly created OpenGL texture.
         // glBindTexture(GL_TEXTURE_2D, texID);
 
-        // // Determine image format. 
+        // // Determine image format.  
         if (surf)
         {
             // Apply necessary texture parameters.
