@@ -76,7 +76,7 @@ namespace zw
 
             // Insert a new entry into the images storage,
             // with the image name hash as key and the resource ID as value.
-            m_images.insert({ Hash(imageName), texID });
+            //m_images.insert({ Hash(imageName), texID });
         }
     }
 
