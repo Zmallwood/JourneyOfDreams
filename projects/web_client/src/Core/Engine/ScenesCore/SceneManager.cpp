@@ -10,7 +10,7 @@ namespace zw
 {
     SceneManager::SceneManager()
     {
-        //m_scenes.insert({ Hash("ServerConnectScene"), _<ServerConnectScene>() });
+        m_scenes.insert({ Hash("ServerConnectScene"), _<ServerConnectScene>() });
         //m_scenes.insert({ Hash("LoginScene"), _<LoginScene>() });
         // m_scenes.insert({ Hash("LoginNetRequestScene"), _<LoginNetRequestScene>() });
         // m_scenes.insert({ Hash("RegisterScene"), _<RegisterScene>() });
