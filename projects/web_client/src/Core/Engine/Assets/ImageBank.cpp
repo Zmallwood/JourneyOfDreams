@@ -4,8 +4,8 @@ namespace zw
 {
     ImageBank::ImageBank()
     {
-        // // Load all images in images path.
-        // LoadImages();
+        // Load all images in images path.
+        LoadImages();
     }
 
     ImageBank::~ImageBank()
