@@ -10,7 +10,8 @@ namespace zw
         ImageBank();
 
         /// Frees all allocated OpenGL image resources.
-        ~ImageBank();
+        // Emscripten: destructors appearantly not called => cannot cleanup
+        // ~ImageBank();
 
         /// Provides the image with the specified name.
         GLuint GetImage(const std::string &imageName);
