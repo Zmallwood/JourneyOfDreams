@@ -23,6 +23,7 @@ jobs:
           git pull
           ./emsdk install latest
           ./emsdk activate latest
+          ./emsdk update
           source ./emsdk_env.sh
 
       - name: Build WebClient, run cmake
