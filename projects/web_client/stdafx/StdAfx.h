@@ -18,8 +18,8 @@
 #include <SDL2/SDL_opengles2.h>
 #include <SDL2/SDL_ttf.h>
 
-#include <emscripten/websocket.h>
-#include <emscripten.h>
+// #include <emscripten/websocket.h>
+// #include <emscripten.h>
 
 #include "Common/Aliases.h"
 #include "Common/SDLDeleter.h"

@@ -2,8 +2,8 @@
 #include "Core/Configuration/ClientProperties.h"
 #include "Core/Engine/Assets/ImageBank.h"
 
-EM_JS(int, canvas_get_width, (), { return window.innerWidth; });
-EM_JS(int, canvas_get_height, (), { return window.innerHeight; });
+// EM_JS(int, canvas_get_width, (), { return window.innerWidth; });
+// EM_JS(int, canvas_get_height, (), { return window.innerHeight; });
 
 namespace zw {
   Graphics::Graphics() {
@@ -11,7 +11,7 @@ namespace zw {
     auto canvasSize = _<ClientProperties>().CanvasSize();
     m_window = std::shared_ptr<SDL_Window>(
         SDL_CreateWindow("Journey of Dreams", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                         canvas_get_width(), canvas_get_height(), SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN),
+                         canvasSize.w, canvasSize.h, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN),
         SDLDeleter());
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);

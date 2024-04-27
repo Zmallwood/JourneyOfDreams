@@ -7,7 +7,8 @@ namespace zw
       public:
         void InitiateConnectToServer();
 
-        EMSCRIPTEN_RESULT SendMessage(std::map<std::string, std::string> data);
+        // EMSCRIPTEN_RESULT SendMessage(std::map<std::string, std::string> data);
+        void SendMessage(std::map<std::string, std::string> data);
 
         auto Connected() const
         {
@@ -19,13 +20,13 @@ namespace zw
             m_connected = connected;
         }
 
-        void SetServerSocket(const EMSCRIPTEN_WEBSOCKET_T *serverSocket)
-        {
-            m_serverSocket = serverSocket;
-        }
+        // void SetServerSocket(const EMSCRIPTEN_WEBSOCKET_T *serverSocket)
+        // {
+        //     m_serverSocket = serverSocket;
+        // }
 
       private:
         bool m_connected{ false };
-        const EMSCRIPTEN_WEBSOCKET_T *m_serverSocket{ nullptr };
+        // const EMSCRIPTEN_WEBSOCKET_T *m_serverSocket{ nullptr };
     };
 }

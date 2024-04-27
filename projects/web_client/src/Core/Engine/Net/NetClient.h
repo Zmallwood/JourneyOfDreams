@@ -13,7 +13,8 @@ namespace zw
 
         void BeginEstablishConnection();
 
-        EMSCRIPTEN_RESULT Send(std::map<std::string, std::string> data);
+        //EMSCRIPTEN_RESULT Send(std::map<std::string, std::string> data);
+        void Send(std::map<std::string, std::string> data);
 
         bool Connected();
 
