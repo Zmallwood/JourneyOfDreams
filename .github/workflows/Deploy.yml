@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: mymindstorm/setup-emsdk@master
+      - uses: mymindstorm/setup-emsdk@v14
 
       - name: Checkout code
         uses: actions/checkout@v2
