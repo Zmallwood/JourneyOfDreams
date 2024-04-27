@@ -13,6 +13,7 @@
 #include <fstream>
 #include <algorithm>
 #include <vector>
+#include <functional>
 #include <stdio.h>
 
 #include <SDL2/SDL.h>
