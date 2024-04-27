@@ -11,6 +11,7 @@
 #include <numeric>
 #include <ranges>
 #include <fstream>
+#include <algorithm>
 #include <stdio.h>
 
 #include <SDL2/SDL.h>

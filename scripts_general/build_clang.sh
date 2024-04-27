@@ -7,7 +7,6 @@
 
 
 # Build web_client_server
-source ~/temp/emsdk/emsdk_env.sh &&
 cd .. &&
 CC=clang CXX=clang cmake projects/web_client -B build_web_client &&
 cd build_web_client
