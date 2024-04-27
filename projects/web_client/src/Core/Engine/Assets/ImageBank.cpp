@@ -95,7 +95,7 @@ namespace zw
         glEnable(GL_TEXTURE_2D);
 
         // Use the newly created OpenGL texture.
-        glBindTexture(GL_TEXTURE_2D, texID);
+        // glBindTexture(GL_TEXTURE_2D, texID);
 
         // // Determine image format.
         if (surf)
