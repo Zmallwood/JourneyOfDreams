@@ -5,7 +5,8 @@ namespace zw
 {
     ImageBank::ImageBank()
     {
-        _<Graphics>(); // Touch Graphics to initialize it
+        _<Graphics>(); // Touch Graphics to ensure the graphics, with the GL context, is initialized.
+
         // Load all images in images path.
         LoadImages();
     }
