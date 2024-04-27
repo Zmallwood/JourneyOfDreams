@@ -55,7 +55,7 @@ namespace zw
 
     void ImageBank::LoadImages()
     {
-        using iterator = std::filesystem::recursive_directory_iterator;
+        using iterator = std::filesystem::directory_iterator;
 
         // Create path string to load the images from.
         auto allImagesPath = k_relImagesPath + "/";
