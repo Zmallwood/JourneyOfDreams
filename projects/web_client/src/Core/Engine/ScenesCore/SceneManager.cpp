@@ -1,10 +1,10 @@
 #include "SceneManager.h"
-#include "DefaultTheme/Scenes/Login/LoginScene.h"
-#include "DefaultTheme/Scenes/LoginNetRequest/LoginNetRequestScene.h"
-#include "DefaultTheme/Scenes/Main/MainScene.h"
+// #include "DefaultTheme/Scenes/Login/LoginScene.h"
+// #include "DefaultTheme/Scenes/LoginNetRequest/LoginNetRequestScene.h"
+// #include "DefaultTheme/Scenes/Main/MainScene.h"
 #include "DefaultTheme/Scenes/ServerConnect/ServerConnectScene.h"
-#include "DefaultTheme/Scenes/Register/RegisterScene.h"
-#include "DefaultTheme/Scenes/RegisterNetRequest/RegisterNetRequestScene.h"
+// #include "DefaultTheme/Scenes/Register/RegisterScene.h"
+// #include "DefaultTheme/Scenes/RegisterNetRequest/RegisterNetRequestScene.h"
 
 namespace zw
 {
@@ -22,26 +22,26 @@ namespace zw
 
     void SceneManager::UpdateCurrentScene()
     {
-        if (m_scenes.contains(m_currentScene))
-            m_scenes.at(m_currentScene).Update();
+        // if (m_scenes.contains(m_currentScene))
+        //     m_scenes.at(m_currentScene).Update();
     }
 
     void SceneManager::RenderCurrentScene()
     {
-        if (m_scenes.contains(m_currentScene))
-            m_scenes.at(m_currentScene).Render();
+        // if (m_scenes.contains(m_currentScene))
+        //     m_scenes.at(m_currentScene).Render();
     }
 
     void SceneManager::UpdatePostRenderCurrentScene()
     {
-        if (m_scenes.contains(m_currentScene))
-            m_scenes.at(m_currentScene).UpdatePostRender();
+        // if (m_scenes.contains(m_currentScene))
+        //     m_scenes.at(m_currentScene).UpdatePostRender();
     }
 
     void SceneManager::GoToScene(const std::string &sceneName)
     {
-        m_currentScene = Hash(sceneName);
-        if (m_scenes.contains(m_currentScene))
-            m_scenes.at(m_currentScene).OnEnter();
+        // m_currentScene = Hash(sceneName);
+        // if (m_scenes.contains(m_currentScene))
+        //     m_scenes.at(m_currentScene).OnEnter();
     }
 }
