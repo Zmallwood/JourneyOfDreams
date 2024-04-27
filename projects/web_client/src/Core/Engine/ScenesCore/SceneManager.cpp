@@ -11,11 +11,11 @@ namespace zw
     SceneManager::SceneManager()
     {
         m_scenes.insert({ Hash("ServerConnectScene"), _<ServerConnectScene>() });
-        m_scenes.insert({ Hash("LoginScene"), _<LoginScene>() });
-        m_scenes.insert({ Hash("LoginNetRequestScene"), _<LoginNetRequestScene>() });
-        m_scenes.insert({ Hash("RegisterScene"), _<RegisterScene>() });
-        m_scenes.insert({ Hash("RegisterNetRequestScene"), _<RegisterNetRequestScene>() });
-        m_scenes.insert({ Hash("MainScene"), _<MainScene>() });
+        // m_scenes.insert({ Hash("LoginScene"), _<LoginScene>() });
+        // m_scenes.insert({ Hash("LoginNetRequestScene"), _<LoginNetRequestScene>() });
+        // m_scenes.insert({ Hash("RegisterScene"), _<RegisterScene>() });
+        // m_scenes.insert({ Hash("RegisterNetRequestScene"), _<RegisterNetRequestScene>() });
+        // m_scenes.insert({ Hash("MainScene"), _<MainScene>() });
 
         GoToScene("ServerConnectScene");
     }
