@@ -34,8 +34,8 @@ namespace zw
         return rid;
     }
 
-    void ImageRenderer::DrawImage(RID rid, const std::string &imageName, const RectF &dest,
-                                  bool repeatTexture, SizeF textureFillAmount, ColorF color)
+    void ImageRenderer::DrawImage(RID rid, int imageNameHash, const RectF &dest, bool repeatTexture,
+                                  SizeF textureFillAmount, ColorF color)
     {
         auto GLRect = dest.ToGLRectF();
         Vertex2F verts[RendererBase::k_numVertsInRect];
@@ -48,7 +48,7 @@ namespace zw
         verts[2].uv = { 1.0f / textureFillAmount.w, 0.0f };
         verts[3].uv = { 1.0f / textureFillAmount.w, 1.0f / textureFillAmount.h };
         glDisable(GL_DEPTH_TEST);
-        auto imageID = _<ImageBank>().GetImage(imageName);
+        auto imageID = _<ImageBank>().GetImage(imageNameHash);
         if (imageID == -1)
             return;
         glBindTexture(GL_TEXTURE_2D, imageID);
@@ -94,5 +94,11 @@ namespace zw
         UpdateData(uvBuffID, uvs, BufferTypes::Uvs, k_locUv);
         glDrawElements(GL_TRIANGLE_FAN, RendererBase::k_numVertsInRect, GL_UNSIGNED_INT, NULL);
         UseVAOEnd();
+    }
+
+    void ImageRenderer::DrawImage(RID rid, const std::string &imageName, const RectF &dest,
+                                  bool repeatTexture, SizeF textureFillAmount, ColorF color)
+    {
+        DrawImage(rid, Hash(imageName), dest, repeatTexture, textureFillAmount, color);
     }
 }

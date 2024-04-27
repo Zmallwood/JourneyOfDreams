@@ -12,19 +12,24 @@ namespace zw
     {
         // Iterate through all the loaded images.
         for (const auto &img : m_images)
-        // And free every allocated image resource.
+            // And free every allocated image resource.
             glDeleteTextures(1, &img.second);
     }
 
     GLuint ImageBank::GetImage(const std::string &imageName)
     {
+        return GetImage(Hash(imageName));
+    }
+
+    GLuint ImageBank::GetImage(int imageNameHash)
+    {
         // Iterate through all the loaded images.
         for (auto img : m_images)
             // If its key, being the hash of the image name, equals the hash of the specified name.
-            if (img.first == Hash(imageName))
+            if (img.first == imageNameHash)
                 // If so, return this image ID.
                 return img.second;
-                
+
         // No image with the name found, return fail value.
         return -1;
     }
@@ -48,7 +53,7 @@ namespace zw
 
         // Create path string to load the images from.
         auto allImagesPath = k_relImagesPath + "/";
-     
+
         for (auto &entry : iterator(allImagesPath))
         {
             auto absPath = entry.path().string();
@@ -95,13 +100,15 @@ namespace zw
         // RGBA (with alpha channel)
         {
             // Transfer image data from SDL surface to OpenGL texture resource.
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA, GL_UNSIGNED_BYTE, surf->pixels);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA, GL_UNSIGNED_BYTE,
+                         surf->pixels);
         }
         else
         // RGB (without alpha channel)
         {
             // Transfer image data from SDL surface to OpenGL texture resource.
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB, GL_UNSIGNED_BYTE, surf->pixels);
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB, GL_UNSIGNED_BYTE,
+                         surf->pixels);
         }
 
         // Free SDL surface resource. Its not needed anymore

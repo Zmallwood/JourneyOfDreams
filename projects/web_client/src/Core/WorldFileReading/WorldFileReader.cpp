@@ -1,7 +1,8 @@
 #include "WorldFileReader.h"
+#include "world_structure/src/Tile.h"
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
-#include "world_structure/src/Tile.h"
+#include "world_structure/src/Object.h"
 
 namespace zw
 {
@@ -20,11 +21,20 @@ namespace zw
         {
             for (auto x = 0; x < width; x++)
             {
+                auto tile = worldArea->GetTile({ .x = x, .y = y });
+
                 std::getline(worldFile, line);
 
-                auto tile = worldArea->GetTile({ .x = x, .y = y });
                 auto groundHash = std::stoi(line);
                 tile->SetGround(groundHash);
+
+                std::getline(worldFile, line);
+
+                auto objectHash = std::stoi(line);
+                if (objectHash != 0)
+                {
+                    tile->SetObject(std::make_shared<Object>(objectHash));
+                }
             }
         }
 

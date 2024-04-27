@@ -30,7 +30,7 @@ namespace zw
         RID m_ridCursorImage{};
         
         /// Size of the rendered cursor image.
-        float m_cursorSize{ 0.05f };
+        float m_cursorSize{ 0.03f };
 
         /// Mapping of cursor image names to available cursor styles.
         const std::map<CursorStyles, std::string> m_cursorImages

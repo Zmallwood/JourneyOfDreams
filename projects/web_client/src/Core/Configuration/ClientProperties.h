@@ -21,6 +21,6 @@ namespace zw
       private:
         Size m_canvasSize{ 1000, 600 };
         ColorF m_defaultClearColor{ 0.0f, 0.5f, 1.0f };
-        int m_gridSize = 21;
+        int m_gridSize = 25;
     };
 }

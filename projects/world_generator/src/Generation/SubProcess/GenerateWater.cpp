@@ -11,7 +11,7 @@ namespace zw
         auto width = worldArea->GetSize().w;
         auto height = worldArea->GetSize().h;
 
-        auto numLakes = 100;
+        auto numLakes = 50;
 
         for (auto i = 0; i < numLakes; i++)
         {

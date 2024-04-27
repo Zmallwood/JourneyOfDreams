@@ -12,6 +12,7 @@ namespace zw
         std::shared_ptr<Tile> GetTile(Point coordinate);
         bool IsValidCoordinate(Point coordinate);
         Point GetRandomCoordinate();
+        std::shared_ptr<Tile> GetRandomTile();
         auto &Tiles()
         {
             return m_tiles;

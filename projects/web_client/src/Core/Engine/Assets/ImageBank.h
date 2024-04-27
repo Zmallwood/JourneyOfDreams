@@ -15,6 +15,8 @@ namespace zw
         /// Provides the image with the specified name.
         GLuint GetImage(const std::string &imageName);
 
+        GLuint GetImage(int imageNameHash);
+
         /// Creates a blank image resource, given the specified name, and returns its ID.
         GLuint CreateBlankImage(const std::string &uniqueImageName);
 

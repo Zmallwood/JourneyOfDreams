@@ -46,4 +46,9 @@ namespace zw
         auto size = GetSize();
         return { .x = rand() % size.w, .y = rand() % size.h };
     }
+
+    std::shared_ptr<Tile> WorldArea::GetRandomTile()
+    {
+        return GetTile(GetRandomCoordinate());
+    }
 }
