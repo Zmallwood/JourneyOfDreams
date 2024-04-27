@@ -85,15 +85,14 @@ namespace zw
         // Get image data from the image file.
         auto surf = IMG_Load(absFilePath.data());
 
+        // // Generate a new OpenGL texture and get its ID.
+        glGenTextures(1, &texID);
 
         // We will work with 2D textures.
         glEnable(GL_TEXTURE_2D);
 
-        // // Generate a new OpenGL texture and get its ID.
-        glGenTextures(1, &texID);
-
-        // // Use the newly created OpenGL texture.
-        // glBindTexture(GL_TEXTURE_2D, texID);
+        // Use the newly created OpenGL texture.
+        glBindTexture(GL_TEXTURE_2D, texID);
 
         // // Apply necessary texture parameters.
         // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
