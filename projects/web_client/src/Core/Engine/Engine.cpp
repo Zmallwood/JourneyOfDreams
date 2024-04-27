@@ -24,7 +24,7 @@ namespace zw
 
     void Engine::HandleInput()
     {
-        //PollEvents();
+        PollEvents();
     }
 
     void Engine::Update()
