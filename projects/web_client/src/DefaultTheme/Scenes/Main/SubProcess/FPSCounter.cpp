@@ -7,8 +7,8 @@ namespace zw
 {
     FPSCounter::FPSCounter()
     {
-        _<MainScene>().GUI()->AddWidget("FPSCounterLabel",
-                                        std::make_shared<GUILabel>(PointF{ .x = 0.85f, .y = 0.0f }, "FPS: 0"));
+        // _<MainScene>().GUI()->AddWidget("FPSCounterLabel",
+        //                                 std::make_shared<GUILabel>(PointF{ .x = 0.85f, .y = 0.0f }, "FPS: 0"));
     }
 
     void FPSCounter::Update()
@@ -26,9 +26,9 @@ namespace zw
 
     void FPSCounter::Render()
     {
-        _<MainScene>()
-            .GUI()
-            ->GetWidget<GUILabel>("FPSCounterLabel")
-            ->SetText(std::make_shared<std::string>("FPS: " + std::to_string(m_fps)));
+        // _<MainScene>()
+        //     .GUI()
+        //     ->GetWidget<GUILabel>("FPSCounterLabel")
+        //     ->SetText(std::make_shared<std::string>("FPS: " + std::to_string(m_fps)));
     }
 }

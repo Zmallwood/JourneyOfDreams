@@ -1,9 +1,9 @@
 #pragma once
 
-#include "Core/Engine/GUICore/GUI.h"
-
 namespace zw
 {
+    // class GUI;
+
     class IScene
     {
       public:
@@ -29,12 +29,12 @@ namespace zw
         {
         }
 
-        auto GUI()
-        {
-            return m_gui;
-        }
+        // auto GUI()
+        // {
+        //     return m_gui;
+        // }
 
       private:
-        std::shared_ptr<zw::GUI> m_gui;
+        // std::shared_ptr<zw::GUI> m_gui;
     };
 }

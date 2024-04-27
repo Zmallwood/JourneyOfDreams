@@ -7,8 +7,8 @@ namespace zw
 {
     ServerConnectScene::ServerConnectScene() 
     {
-        GUI()->AddWidget(std::make_shared<GUILabel>(PointF{ .x = 0.5f, .y = 0.5f }, "Connecting to server...",
-                                                    GUIAlign::Center));
+        // GUI()->AddWidget(std::make_shared<GUILabel>(PointF{ .x = 0.5f, .y = 0.5f }, "Connecting to server...",
+        //                                             GUIAlign::Center));
     }
 
     void ServerConnectScene::OnEnter()
