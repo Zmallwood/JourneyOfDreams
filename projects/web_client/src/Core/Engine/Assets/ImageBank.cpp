@@ -1,6 +1,4 @@
 #include "ImageBank.h"
-#include "Common/Hash.h"
-#include "Common/Utilities.h"
 #include <SDL_image.h>
 
 namespace zw

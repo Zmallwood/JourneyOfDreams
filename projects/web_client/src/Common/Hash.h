@@ -2,5 +2,5 @@
 #include <string>
 namespace zw
 {
-    int Hash(const std::string &text);
+    inline int Hash(const std::string &text);
 }

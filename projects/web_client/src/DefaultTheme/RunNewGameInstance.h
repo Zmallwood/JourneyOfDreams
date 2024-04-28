@@ -2,5 +2,5 @@
 
 namespace zw
 {
-    void RunNewGameInstance();
+    extern void RunNewGameInstance();
 }
