@@ -27,6 +27,8 @@ namespace zw
         /// Load a single image at the path and return its resource ID.
         GLuint LoadSingleImage(const std::string &absFilePath);
 
+        SDL_Surface *LoadImage(const char *filename);
+
         /// Internal image storage.
         std::map<int, GLuint> m_images;
 
