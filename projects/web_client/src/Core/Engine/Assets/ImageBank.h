@@ -16,13 +16,13 @@ namespace zw
         // Emscripten: destructors appearantly not called => cannot cleanup
         // ~ImageBank();
 
-        /// Provides the image with the specified name.
-        GLuint GetImage(const std::string &imageName);
+        // /// Provides the image with the specified name.
+        // GLuint GetImage(const std::string &imageName);
 
-        GLuint GetImage(int imageNameHash);
+        // GLuint GetImage(int imageNameHash);
 
-        /// Creates a blank image resource, given the specified name, and returns its ID.
-        GLuint CreateBlankImage(const std::string &uniqueImageName);
+        // /// Creates a blank image resource, given the specified name, and returns its ID.
+        // GLuint CreateBlankImage(const std::string &uniqueImageName);
 
         /// Load all images from file system in the images path.
         void LoadImages();

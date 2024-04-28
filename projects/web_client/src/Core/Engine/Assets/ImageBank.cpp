@@ -25,36 +25,36 @@ namespace zw
     //         glDeleteTextures(1, &img.second);
     // }
 
-    GLuint ImageBank::GetImage(const std::string &imageName)
-    {
-        return GetImage(Hash(imageName));
-    }
+    // GLuint ImageBank::GetImage(const std::string &imageName)
+    // {
+    //     return GetImage(Hash(imageName));
+    // }
 
-    GLuint ImageBank::GetImage(int imageNameHash)
-    {
-        // Iterate through all the loaded images.
-        for (auto img : *m_images)
-            // If its key, being the hash of the image name, equals the hash of the specified name.
-            if (img.first == imageNameHash)
-                // If so, return this image ID.
-                return img.second;
+    // GLuint ImageBank::GetImage(int imageNameHash)
+    // {
+    //     // Iterate through all the loaded images.
+    //     for (auto img : *m_images)
+    //         // If its key, being the hash of the image name, equals the hash of the specified name.
+    //         if (img.first == imageNameHash)
+    //             // If so, return this image ID.
+    //             return img.second;
 
-        // No image with the name found, return fail value.
-        return -1;
-    }
+    //     // No image with the name found, return fail value.
+    //     return -1;
+    // }
 
-    GLuint ImageBank::CreateBlankImage(const std::string &uniqueImageName)
-    {
-        // Generate new image resource and get its ID.
-        GLuint texID;
-        glGenTextures(1, &texID);
+    // GLuint ImageBank::CreateBlankImage(const std::string &uniqueImageName)
+    // {
+    //     // Generate new image resource and get its ID.
+    //     GLuint texID;
+    //     glGenTextures(1, &texID);
 
-        // Insert new image entry with image name hash as key and the new ID as value.
-        m_images->insert({ Hash(uniqueImageName), texID });
+    //     // Insert new image entry with image name hash as key and the new ID as value.
+    //     m_images->insert({ Hash(uniqueImageName), texID });
 
-        // Return the ID of the newly created blank image resource.
-        return texID;
-    }
+    //     // Return the ID of the newly created blank image resource.
+    //     return texID;
+    // }
 
     void ImageBank::LoadImages()
     {
