@@ -1,5 +1,5 @@
 #include "Engine.h"
-// #include "Assets/ImageBank.h"
+#include "Assets/ImageBank.h"
 // #include "Cursor/Cursor.h"
 #include "Graphics/Graphics.h"
 // #include "Net/NetClient.h"
@@ -10,9 +10,9 @@
 namespace zw
 {
     Engine::Engine()
-        : m_graphics(std::make_shared<zw::Graphics>())
+        : m_graphics(std::make_shared<zw::Graphics>()),
+        m_imageBank(std::make_shared<zw::ImageBank>())
         //,
-        // m_imageBank(std::make_shared<zw::ImageBank>()),
         //   m_netClient(std::make_shared<zw::NetClient>()),
         //   m_sceneManager(std::make_shared<zw::SceneManager>(*this)),
         //   m_cursor(std::make_shared<zw::Cursor>(*this)),
