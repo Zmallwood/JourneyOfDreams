@@ -38,7 +38,7 @@ namespace zw
             // NOTE: Should free stbi_load 'data' variable here
             return NULL;
         }
-        return surface;
+        return surface; 
     }
 
     void ImageBank::LoadImages() 
