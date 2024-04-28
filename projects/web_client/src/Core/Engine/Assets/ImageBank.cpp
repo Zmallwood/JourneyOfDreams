@@ -7,39 +7,39 @@ namespace zw
     {
         std::string absPath = "GroundGrass.png";
 
-        GLuint texID;
+        // GLuint texID;
 
         auto surf = IMG_Load(absPath.c_str());
-        glGenTextures(1, &texID);
-        glEnable(GL_TEXTURE_2D);
+        // glGenTextures(1, &texID);
+        // glEnable(GL_TEXTURE_2D);
 
-        if (texID)
-        {
-            glBindTexture(GL_TEXTURE_2D, texID);
+        // if (texID)
+        // {
+        //     glBindTexture(GL_TEXTURE_2D, texID);
 
-            if (surf)
-            {
-                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-                glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        //     if (surf)
+        //     {
+        //         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        //         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 
-                if (surf->format)
-                {
-                    if (surf->format->BytesPerPixel == 4)
-                    {
-                        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA,
-                                     GL_UNSIGNED_BYTE, surf->pixels);
-                    }
-                    else
-                    {
-                        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB, GL_UNSIGNED_BYTE,
-                                     surf->pixels);
-                    }
-                }
+        //         if (surf->format)
+        //         {
+        //             if (surf->format->BytesPerPixel == 4)
+        //             {
+        //                 glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA,
+        //                              GL_UNSIGNED_BYTE, surf->pixels);
+        //             }
+        //             else
+        //             {
+        //                 glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB, GL_UNSIGNED_BYTE,
+        //                              surf->pixels);
+        //             }
+        //         }
 
-                SDL_FreeSurface(surf);
-            }
-        }
+        //         SDL_FreeSurface(surf);
+        //     }
+        // }
 
-        glBindTexture(GL_TEXTURE_2D, 0);
+        // glBindTexture(GL_TEXTURE_2D, 0);
     }
 }
