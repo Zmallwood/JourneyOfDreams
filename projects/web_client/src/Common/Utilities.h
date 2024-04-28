@@ -1,6 +1,7 @@
 #pragma once
 #include "../../shared/matter/src/PointF.h"
 #include "../../shared/matter/src/Size.h"
+#include <string>
 
 namespace zw
 {

@@ -2,6 +2,10 @@
 // #include "Core/Configuration/ClientProperties.h"
 // #include "Core/Engine/Assets/ImageBank.h"
 // #include "Core/Engine/Engine.h"
+#include <emscripten.h>
+#include <SDL_opengles2.h>
+#include "Common/SDLDeleter.h"
+#include <SDL.h>
 
 EM_JS(int, canvas_get_width, (), { return window.innerWidth; });
 EM_JS(int, canvas_get_height, (), { return window.innerHeight; });

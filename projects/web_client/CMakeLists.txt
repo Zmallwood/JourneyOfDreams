@@ -29,9 +29,9 @@ add_executable(WebClient
 )
 
 target_link_libraries(WebClient websocket)
-set(PCH_FILES
-    "stdafx/StdAfx.h"
-)
-target_precompile_headers(WebClient PRIVATE ${PCH_FILES})
+# set(PCH_FILES
+#     "stdafx/StdAfx.h"
+# )
+# target_precompile_headers(WebClient PRIVATE ${PCH_FILES})
 
 target_compile_features(WebClient PRIVATE cxx_std_20)

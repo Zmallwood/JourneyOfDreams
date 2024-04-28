@@ -1,5 +1,8 @@
 #pragma once
 
+#include <map>
+#include <SDL_opengles2.h>
+
 namespace zw
 {
     /// Loads and provides images loaded from the file system.

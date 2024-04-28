@@ -2,6 +2,7 @@
 #include "Engine/DoOneGameLoopFrame.h"
 #include "Engine/Engine.h"
 // #include "Engine/Assets/ImageBank.h"
+#include <emscripten.h>
 
 namespace zw
 {

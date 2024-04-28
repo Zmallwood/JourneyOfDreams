@@ -1,5 +1,8 @@
 #include "SDLDeleter.h"
 
+#include <SDL.h>
+#include <SDL_ttf.h>
+
 namespace zw
 {
     void SDLDeleter::operator()(SDL_Window *window)
