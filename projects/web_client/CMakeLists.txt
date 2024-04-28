@@ -1,6 +1,5 @@
-project(Game2Emscripten)
+project(WebClient)
 cmake_minimum_required(VERSION 3.22)
-set(MEDIA_DIR ${PROJECT_SOURCE_DIR}/Media/)
 
 set(CMAKE_EXECUTABLE_SUFFIX ".html")
 SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='[\"png\"]' -s USE_SDL_TTF=2 -s NO_DISABLE_EXCEPTION_CATCHING")
