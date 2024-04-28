@@ -12,6 +12,8 @@ namespace zw
       public:
         Graphics(Engine& engine);
 
+        void Init();
+
         void ClearCanvas();
 
         void PresentCanvas();
@@ -29,5 +31,6 @@ namespace zw
       private:
         std::shared_ptr<SDL_Window> m_window{};
         std::shared_ptr<SDL_Renderer> m_renderer{};
+        Engine& m_engine;
     };
 }

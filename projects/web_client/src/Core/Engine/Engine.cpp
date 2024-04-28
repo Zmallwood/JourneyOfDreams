@@ -10,7 +10,8 @@
 namespace zw
 {
     Engine::Engine()
-        : m_graphics(std::make_shared<zw::Graphics>(*this)), m_imageBank(std::make_shared<zw::ImageBank>()),
+        : m_graphics(std::make_shared<zw::Graphics>(*this)),
+        m_imageBank(std::make_shared<zw::ImageBank>()),
           m_netClient(std::make_shared<zw::NetClient>()),
           m_sceneManager(std::make_shared<zw::SceneManager>(*this)),
           m_cursor(std::make_shared<zw::Cursor>(*this)),
@@ -18,7 +19,9 @@ namespace zw
     {
         srand(time(0));
 
+        m_graphics->Init();
         m_imageBank->LoadImages();
+        m_sceneManager->Init();
     }
 
     void Engine::Reset()

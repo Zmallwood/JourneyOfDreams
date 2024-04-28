@@ -8,7 +8,11 @@ EM_JS(int, canvas_get_height, (), { return window.innerHeight; });
 
 namespace zw
 {
-    Graphics::Graphics(Engine &engine)
+    Graphics::Graphics(Engine &engine) : m_engine(engine)
+    {
+    }
+
+    void Graphics::Init()
     {
         SDL_Init(SDL_INIT_EVERYTHING);
         // auto canvasSize = _<ClientProperties>().CanvasSize();
@@ -29,7 +33,7 @@ namespace zw
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         // auto defaultClearColor = _<ClientProperties>().DefaultClearColor();
         // glClearColor(defaultClearColor.r, defaultClearColor.g, defaultClearColor.b, defaultClearColor.a);
-        engine.ImageBank()->LoadImages();
+        m_engine.ImageBank()->LoadImages();
     }
 
     void Graphics::ClearCanvas()

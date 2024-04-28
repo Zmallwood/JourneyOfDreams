@@ -8,9 +8,14 @@
 
 namespace zw
 {
-    SceneManager::SceneManager(Engine &engine)
+    SceneManager::SceneManager(Engine &engine) : m_engine(engine)
     {
-        m_scenes.insert({ Hash("ServerConnectScene"), std::make_shared<ServerConnectScene>(engine) });
+
+    }
+
+    void SceneManager::Init()
+    {
+        m_scenes.insert({ Hash("ServerConnectScene"), std::make_shared<ServerConnectScene>(m_engine) });
         // m_scenes.insert({ Hash("LoginScene"), _<LoginScene>() });
         //  m_scenes.insert({ Hash("LoginNetRequestScene"), _<LoginNetRequestScene>() });
         //  m_scenes.insert({ Hash("RegisterScene"), _<RegisterScene>() });

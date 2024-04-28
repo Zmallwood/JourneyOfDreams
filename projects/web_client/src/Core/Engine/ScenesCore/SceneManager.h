@@ -10,6 +10,8 @@ namespace zw
       public:
         SceneManager(Engine& engine);
 
+        void Init();
+
         void UpdateCurrentScene();
 
         void RenderCurrentScene();
@@ -27,5 +29,6 @@ namespace zw
       private:
         std::map<int, std::shared_ptr<IScene>> m_scenes;
         int m_currentScene{ 0 };
+        Engine &m_engine;
     };
 }
