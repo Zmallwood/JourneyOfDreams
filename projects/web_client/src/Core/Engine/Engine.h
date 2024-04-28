@@ -3,6 +3,7 @@
 namespace zw
 {
     class ImageBank;
+    class Graphics;
 
     class Engine
     {
@@ -28,7 +29,13 @@ namespace zw
             return m_imageBank;
         }
 
+        auto Graphics()
+        {
+            return m_graphics;
+        }
+
       private:
         std::shared_ptr<zw::ImageBank> m_imageBank;
+        std::shared_ptr<zw::Graphics> m_graphics;
     };
 }

@@ -1,26 +1,26 @@
 #include "Engine.h"
+#include "Assets/ImageBank.h"
 #include "Cursor/Cursor.h"
 #include "Graphics/Graphics.h"
 #include "Net/NetClient.h"
 #include "PollEvents.h"
 #include "ScenesCore/SceneManager.h"
-#include "Assets/ImageBank.h"
 
 namespace zw
 {
-    Engine::Engine() : m_imageBank(std::make_shared<zw::ImageBank>())
+    Engine::Engine()
+        : m_imageBank(std::make_shared<zw::ImageBank>()), m_graphics(std::make_shared<zw::Graphics>())
     {
         srand(time(0));
         _<NetClient>();    // Touch NetClient to initialize it
-        _<Graphics>();     // Touch Graphics to initialize it
         _<SceneManager>(); // Touch SceneManager to initialize it
         _<Cursor>();       // Touch Cursor to initialize it
     }
 
-    void Engine::Reset() 
+    void Engine::Reset()
     {
         _<Cursor>().ResetStyle();
-        _<Graphics>().ClearCanvas();
+        m_graphics->ClearCanvas();
     }
 
     void Engine::HandleInput()
@@ -51,6 +51,6 @@ namespace zw
 
     void Engine::PresentCanvas()
     {
-        _<Graphics>().PresentCanvas();
+        m_graphics->PresentCanvas();
     }
 }
