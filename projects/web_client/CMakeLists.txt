@@ -16,11 +16,13 @@ include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/../shared)
 # add_executable(WebClient ${SRC_FILES} ${SRC_FILES_EXTERNAL} ${SRC_FILES_SHARED})
 
 add_executable(WebClient
-${PROJECT_SOURCE_DIR}/src/MainNew.cpp
-${PROJECT_SOURCE_DIR}/src/DefaultTheme/RunNewGameInstance.cpp
-${PROJECT_SOURCE_DIR}/src/Core/GameInstance.cpp
-${PROJECT_SOURCE_DIR}/src/Core/Engine/DoOneGameLoopFrame.cpp
-${PROJECT_SOURCE_DIR}/src/Core/Engine/Engine.cpp
+    ${PROJECT_SOURCE_DIR}/src/MainNew.cpp
+    ${PROJECT_SOURCE_DIR}/src/DefaultTheme/RunNewGameInstance.cpp
+    ${PROJECT_SOURCE_DIR}/src/Core/GameInstance.cpp
+    ${PROJECT_SOURCE_DIR}/src/Core/Engine/DoOneGameLoopFrame.cpp
+    ${PROJECT_SOURCE_DIR}/src/Core/Engine/Engine.cpp
+    ${PROJECT_SOURCE_DIR}/src/Common/SDLDeleter.cpp
+    ${PROJECT_SOURCE_DIR}/src/Core/Engine/Graphics/Graphics.cpp
 )
 
 target_link_libraries(WebClient websocket)

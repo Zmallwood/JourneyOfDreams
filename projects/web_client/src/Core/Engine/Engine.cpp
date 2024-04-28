@@ -1,7 +1,7 @@
 #include "Engine.h"
 // #include "Assets/ImageBank.h"
 // #include "Cursor/Cursor.h"
-// #include "Graphics/Graphics.h"
+#include "Graphics/Graphics.h"
 // #include "Net/NetClient.h"
 // #include "PollEvents.h"
 // #include "Rendering/TextRendering/TextRenderer.h"
@@ -10,7 +10,8 @@
 namespace zw
 {
     Engine::Engine()
-        // : m_graphics(std::make_shared<zw::Graphics>(*this)),
+        : m_graphics(std::make_shared<zw::Graphics>())
+        //,
         // m_imageBank(std::make_shared<zw::ImageBank>()),
         //   m_netClient(std::make_shared<zw::NetClient>()),
         //   m_sceneManager(std::make_shared<zw::SceneManager>(*this)),
@@ -19,7 +20,7 @@ namespace zw
     {
         srand(time(0));
 
-        // m_graphics->Init();
+        m_graphics->Init();
         // m_imageBank->LoadImages();
         // m_sceneManager->Init();
     }
@@ -27,7 +28,7 @@ namespace zw
     void Engine::Reset()
     {
         // m_cursor->ResetStyle();
-        // m_graphics->ClearCanvas();
+        m_graphics->ClearCanvas();
     }
 
     void Engine::HandleInput()
@@ -58,6 +59,6 @@ namespace zw
 
     void Engine::PresentCanvas()
     {
-        // m_graphics->PresentCanvas();
+        m_graphics->PresentCanvas();
     }
 }

@@ -5,12 +5,10 @@ struct SDL_Renderer;
 
 namespace zw
 {
-    class Engine;
-
     class Graphics
     {
       public:
-        Graphics(Engine& engine);
+        Graphics();
 
         void Init();
 
@@ -31,6 +29,5 @@ namespace zw
       private:
         std::shared_ptr<SDL_Window> m_window{};
         std::shared_ptr<SDL_Renderer> m_renderer{};
-        Engine& m_engine;
     };
 }

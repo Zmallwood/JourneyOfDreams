@@ -1,14 +1,14 @@
 #include "Graphics.h"
-#include "Core/Configuration/ClientProperties.h"
-#include "Core/Engine/Assets/ImageBank.h"
-#include "Core/Engine/Engine.h"
+// #include "Core/Configuration/ClientProperties.h"
+// #include "Core/Engine/Assets/ImageBank.h"
+// #include "Core/Engine/Engine.h"
 
 EM_JS(int, canvas_get_width, (), { return window.innerWidth; });
 EM_JS(int, canvas_get_height, (), { return window.innerHeight; });
 
 namespace zw
 {
-    Graphics::Graphics(Engine &engine) : m_engine(engine)
+    Graphics::Graphics()
     {
     }
 
@@ -33,7 +33,7 @@ namespace zw
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         // auto defaultClearColor = _<ClientProperties>().DefaultClearColor();
         // glClearColor(defaultClearColor.r, defaultClearColor.g, defaultClearColor.b, defaultClearColor.a);
-        m_engine.ImageBank()->LoadImages();
+        // m_engine.ImageBank()->LoadImages();
     }
 
     void Graphics::ClearCanvas()
