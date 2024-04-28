@@ -11,10 +11,5 @@ namespace zw
         void LoadImages();
 
       private:
-        GLuint LoadSingleImage(std::string absFilePath);
-
-        std::shared_ptr<std::map<int, GLuint>> m_images;
-
-        const std::string k_relImagesPath = "images";
     };
 }
