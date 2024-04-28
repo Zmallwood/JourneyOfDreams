@@ -10,10 +10,12 @@ add_definitions()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../../bin_web_client)
 
 include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/../shared)
-file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
-file(GLOB_RECURSE SRC_FILES_EXTERNAL ${PROJECT_SOURCE_DIR}/external/*.cpp)
-file(GLOB_RECURSE SRC_FILES_SHARED ${PROJECT_SOURCE_DIR}/../shared/*.cpp)
-add_executable(WebClient ${SRC_FILES} ${SRC_FILES_EXTERNAL} ${SRC_FILES_SHARED})
+# file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
+# file(GLOB_RECURSE SRC_FILES_EXTERNAL ${PROJECT_SOURCE_DIR}/external/*.cpp)
+# file(GLOB_RECURSE SRC_FILES_SHARED ${PROJECT_SOURCE_DIR}/../shared/*.cpp)
+# add_executable(WebClient ${SRC_FILES} ${SRC_FILES_EXTERNAL} ${SRC_FILES_SHARED})
+
+add_executable(WebClient ${PROJECT_SOURCE_DIR}/src/MainNew.cpp)
 
 target_link_libraries(WebClient websocket)
 set(PCH_FILES
