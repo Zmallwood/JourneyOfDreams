@@ -41,7 +41,7 @@ namespace zw
         return surface;
     }
 
-    void ImageBank::LoadImages()
+    void ImageBank::LoadImages() 
     {
         std::string absPath = "GroundGrass.png";
 
