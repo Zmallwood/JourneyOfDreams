@@ -81,7 +81,8 @@
 			"bitset": "cpp",
 			"fstream": "cpp",
 			"thread": "cpp",
-			"future": "cpp"
+			"future": "cpp",
+			"filesystem": "cpp"
 		}
 	}
 }
