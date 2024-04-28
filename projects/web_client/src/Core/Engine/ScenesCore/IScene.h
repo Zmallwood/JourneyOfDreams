@@ -2,7 +2,7 @@
 
 namespace zw
 {
-    // class GUI;
+    class GUI;
 
     class IScene
     {
@@ -29,12 +29,12 @@ namespace zw
         {
         }
 
-        // auto GUI()
-        // {
-        //     return m_gui;
-        // }
+        auto GUI()
+        {
+            return m_gui;
+        }
 
       private:
-        // std::shared_ptr<zw::GUI> m_gui;
+        std::shared_ptr<zw::GUI> m_gui;
     };
 }
