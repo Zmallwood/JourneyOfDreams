@@ -8,36 +8,36 @@ namespace zw
 {
     void WorldFileReader::ReadWorldFile()
     {
-        auto worldArea = _<World>().WorldArea();
-        auto width = worldArea->GetSize().w;
-        auto height = worldArea->GetSize().h;
+        // auto worldArea = _<World>().WorldArea();
+        // auto width = worldArea->GetSize().w;
+        // auto height = worldArea->GetSize().h;
 
-        std::ifstream worldFile;
-        worldFile.open(SDL_GetBasePath() + k_worldFileName);
+        // std::ifstream worldFile;
+        // worldFile.open(SDL_GetBasePath() + k_worldFileName);
 
-        std::string line;
+        // std::string line;
 
-        for (auto y = 0; y < height; y++)
-        {
-            for (auto x = 0; x < width; x++)
-            {
-                auto tile = worldArea->GetTile({ .x = x, .y = y });
+        // for (auto y = 0; y < height; y++)
+        // {
+        //     for (auto x = 0; x < width; x++)
+        //     {
+        //         auto tile = worldArea->GetTile({ .x = x, .y = y });
 
-                std::getline(worldFile, line);
+        //         std::getline(worldFile, line);
 
-                auto groundHash = std::stoi(line);
-                tile->SetGround(groundHash);
+        //         auto groundHash = std::stoi(line);
+        //         tile->SetGround(groundHash);
 
-                std::getline(worldFile, line);
+        //         std::getline(worldFile, line);
 
-                auto objectHash = std::stoi(line);
-                if (objectHash != 0)
-                {
-                    tile->SetObject(std::make_shared<Object>(objectHash));
-                }
-            }
-        }
+        //         auto objectHash = std::stoi(line);
+        //         if (objectHash != 0)
+        //         {
+        //             tile->SetObject(std::make_shared<Object>(objectHash));
+        //         }
+        //     }
+        // }
 
-        worldFile.close();
+        // worldFile.close();
     }
 }

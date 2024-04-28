@@ -5,8 +5,8 @@ namespace zw
 {
     Player::Player()
     {
-        auto worldAreaSize = _<GlobalProperties>().WorldAreaSize();
-        m_position = { .x = worldAreaSize.w / 2, .y = worldAreaSize.h / 2 };
+        //auto worldAreaSize = _<GlobalProperties>().WorldAreaSize();
+        //m_position = { .x = worldAreaSize.w / 2, .y = worldAreaSize.h / 2 };
     }
 
     int Player::GetX()

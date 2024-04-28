@@ -6,10 +6,10 @@
 namespace zw {
   class GUILabel : public GUIWidget {
    public:
-    GUILabel(PointF position, const std::string &text, GUIAlign alignment = GUIAlign::TopLeft,
+    GUILabel(zw::Engine& engine, PointF position, const std::string &text, GUIAlign alignment = GUIAlign::TopLeft,
              FontSizes fontSize = FontSizes::_20, ColorF textColor = Colors::Wheat);
 
-    GUILabel(PointF position, const std::string &text, ColorF textColor);
+    GUILabel(zw::Engine& engine, PointF position, const std::string &text, ColorF textColor);
 
     void UpdateDerived() override;
 

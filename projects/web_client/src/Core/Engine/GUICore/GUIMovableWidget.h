@@ -5,7 +5,7 @@
 namespace zw {
   class GUIMovableWidget : public GUIWidget {
    public:
-    GUIMovableWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft, bool movable = true);
+    GUIMovableWidget(zw::Engine& engine, RectF area, GUIAlign alignment = GUIAlign::TopLeft, bool movable = true);
 
    private:
     bool m_movable{ true };

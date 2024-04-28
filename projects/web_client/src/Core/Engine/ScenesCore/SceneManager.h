@@ -2,12 +2,13 @@
 
 namespace zw
 {
+    class Engine;
     class IScene;
 
     class SceneManager
     {
       public:
-        SceneManager();
+        SceneManager(Engine& engine);
 
         void UpdateCurrentScene();
 
@@ -15,10 +16,16 @@ namespace zw
 
         void UpdatePostRenderCurrentScene();
 
-        void GoToScene(const std::string& sceneName);
+        void GoToScene(const std::string &sceneName);
+
+        template <class T>
+        T &GetScene(const std::string &sceneName)
+        {
+            return dynamic_cast<T &>(*m_scenes.at(Hash(sceneName)));
+        }
 
       private:
-        std::map<int, IScene&> m_scenes;
+        std::map<int, std::shared_ptr<IScene>> m_scenes;
         int m_currentScene{ 0 };
     };
 }

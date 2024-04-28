@@ -8,7 +8,7 @@
 
 namespace zw
 {
-    LoginScene::LoginScene()
+    LoginScene::LoginScene(zw::Engine &engine) : IScene(engine)
     {
         // m_ridBackground = _<ImageRenderer>().NewImage();
         // m_ridLogo = _<ImageRenderer>().NewImage();
@@ -20,7 +20,8 @@ namespace zw
         //                                 [] { _<SceneManager>().GoToScene("LoginNetRequestScene"); }));
         // loginPanel->AddWidget(std::make_shared<GUIButton>(RectF{ 0.014f, 0.2f, 0.1f, 0.05f }, "Register",
         //                                                   []
-        //                                                   { _<SceneManager>().GoToScene("RegisterScene"); }));
+        //                                                   { _<SceneManager>().GoToScene("RegisterScene");
+        //                                                   }));
         // loginPanel->AddWidget("UsernameTextBox",
         //                       std::make_shared<GUITextBox>(RectF{ 0.05f, 0.05f, 0.18f, 0.05f }));
         // loginPanel->AddWidget(
@@ -40,7 +41,7 @@ namespace zw
 
     void LoginScene::RenderDerived()
     {
-        _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
-        _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo", { 0.4f, 0.2f, 0.2f, 0.1f });
+        // _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
+        // _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo", { 0.4f, 0.2f, 0.2f, 0.1f });
     }
 }

@@ -3,7 +3,7 @@
 
 namespace zw
 {
-    IScene::IScene() 
+    IScene::IScene(zw::Engine &engine) : m_engine(engine)
     // : m_gui(std::make_shared<zw::GUI>())
     {
         // m_gui->Initialize();

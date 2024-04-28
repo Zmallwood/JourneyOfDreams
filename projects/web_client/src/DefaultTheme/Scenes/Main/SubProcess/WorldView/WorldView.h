@@ -2,10 +2,12 @@
 
 namespace zw
 {
+    class Engine;
+
     class WorldView
     {
       public:
-        WorldView();
+        WorldView(Engine& engine);
         void Update();
 
         void Render();
@@ -15,5 +17,6 @@ namespace zw
         std::shared_ptr<std::vector<std::vector<RID>>> m_ridsObjects;
         RID m_ridPlayer;
         RID m_ridHoveredTile;
+        Engine& m_engine;
     };
 }

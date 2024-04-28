@@ -2,5 +2,7 @@
 
 namespace zw
 {
-    void UpdateClickMovement();
+    class Engine;
+    
+    void UpdateClickMovement(Engine& engine);
 }

@@ -7,7 +7,7 @@ namespace zw
     class LoginNetRequestScene : public IScene
     {
       public:
-        LoginNetRequestScene();
+        LoginNetRequestScene(zw::Engine &engine);
 
         void OnEnter() override;
     };

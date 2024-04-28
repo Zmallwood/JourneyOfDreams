@@ -3,12 +3,12 @@
 
 int main(int argc, char *argv[])
 {
-    using namespace zw;
+    // using namespace zw;
 
-    std::cout << "Journey Of Dreams - World Generator\n";
+    // std::cout << "Journey Of Dreams - World Generator\n";
 
-    GenerateNewWorld();
-    _<WorldFileWriter>().WriteWorldToFile();
+    // GenerateNewWorld();
+    // _<WorldFileWriter>().WriteWorldToFile();
 
     return 0;
 }

@@ -4,16 +4,17 @@
 
 namespace zw
 {
+    class Engine;
     class GUI;
 
     class GUIWidget : public std::enable_shared_from_this<GUIWidget>
     {
       public:
-        GUIWidget() : m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>()) {}
+        GUIWidget(zw::Engine& engine) : m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>()), m_engine(engine) {}
 
-        GUIWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft);
+        GUIWidget(zw::Engine& engine, RectF area, GUIAlign alignment = GUIAlign::TopLeft);
 
-        GUIWidget(PointF position, SizeF size, GUIAlign alignment = GUIAlign::TopLeft);
+        GUIWidget(zw::Engine& engine, PointF position, SizeF size, GUIAlign alignment = GUIAlign::TopLeft);
 
         void InsertWaitingWidgets();
 
@@ -146,6 +147,11 @@ namespace zw
             m_padding = padding;
         }
 
+        auto& Engine()
+        {
+            return m_engine;
+        }
+
       private:
         PointF GetAbsolutePosition();
 
@@ -180,6 +186,7 @@ namespace zw
         bool m_markedForDestruction{ false };
         std::shared_ptr<std::vector<WidgetEntry>> m_widgetsToInsert{};
         bool m_visible{ true };
+        zw::Engine& m_engine;
 
         inline static int s_unnamedWidgetCounter{ 0 };
     };

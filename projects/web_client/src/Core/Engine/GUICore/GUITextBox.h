@@ -6,7 +6,7 @@
 namespace zw {
   class GUITextBox : public GUIWidget {
    public:
-    GUITextBox(RectF area, ColorF textColor = Colors::Wheat, bool passwordMode = false);
+    GUITextBox(zw::Engine& engine, RectF area, ColorF textColor = Colors::Wheat, bool passwordMode = false);
 
     void UpdateDerived() override;
 

@@ -2,5 +2,7 @@
 
 namespace zw
 {
-    int CalculateNumGridCols();
+    class Engine;
+    
+    int CalculateNumGridCols(Engine& engine);
 }

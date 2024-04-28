@@ -6,18 +6,18 @@ namespace zw
 {
     EM_BOOL OnOpen(int eventType, const EmscriptenWebSocketOpenEvent *websocketEvent, void *userData)
     {
-        puts("onopen");
-        std::cout << "connected\n";
-        EMSCRIPTEN_RESULT result;
-        result = emscripten_websocket_send_utf8_text(websocketEvent->socket,
-                                                     "{\"__MESSAGE__\":\"message\", \"test\":\"hej\"}");
-        if (result)
-        {
-            printf("Failed to emscripten_websocket_send_utf8_text(): %d\n", result);
-        }
-        std::cout << "sent message\n";
-        _<NetClient>().Connection()->SetConnected(true);
-        _<NetClient>().Connection()->SetServerSocket(&websocketEvent->socket);
+        // puts("onopen");
+        // std::cout << "connected\n";
+        // EMSCRIPTEN_RESULT result;
+        // result = emscripten_websocket_send_utf8_text(websocketEvent->socket,
+        //                                              "{\"__MESSAGE__\":\"message\", \"test\":\"hej\"}");
+        // if (result)
+        // {
+        //     printf("Failed to emscripten_websocket_send_utf8_text(): %d\n", result);
+        // }
+        // std::cout << "sent message\n";
+        // _<NetClient>().Connection()->SetConnected(true);
+        // _<NetClient>().Connection()->SetServerSocket(&websocketEvent->socket);
         return EM_TRUE;
     }
 
@@ -73,19 +73,19 @@ namespace zw
 
     void NetworkConnection::InitiateConnectToServer()
     {
-        if (!emscripten_websocket_is_supported())
-            return;
+        // if (!emscripten_websocket_is_supported())
+        //     return;
 
-        auto connectionString = "ws://" + _<ConfigurationFile>().ServerAddress() + ":" + std::to_string(_<ConfigurationFile>().ServerPort());
-        std::cout << "conn: " << connectionString << std::endl;
+        // auto connectionString = "ws://" + _<ConfigurationFile>().ServerAddress() + ":" + std::to_string(_<ConfigurationFile>().ServerPort());
+        // std::cout << "conn: " << connectionString << std::endl;
 
-        EmscriptenWebSocketCreateAttributes ws_attrs = { connectionString.c_str(), NULL, EM_TRUE };
-        //EmscriptenWebSocketCreateAttributes ws_attrs = { "ws://localhost:1238", NULL, EM_TRUE };
+        // EmscriptenWebSocketCreateAttributes ws_attrs = { connectionString.c_str(), NULL, EM_TRUE };
+        // //EmscriptenWebSocketCreateAttributes ws_attrs = { "ws://localhost:1238", NULL, EM_TRUE };
 
-        EMSCRIPTEN_WEBSOCKET_T ws = emscripten_websocket_new(&ws_attrs);
-        emscripten_websocket_set_onopen_callback(ws, NULL, OnOpen);
-        emscripten_websocket_set_onerror_callback(ws, NULL, OnError);
-        emscripten_websocket_set_onclose_callback(ws, NULL, OnClose);
-        emscripten_websocket_set_onmessage_callback(ws, NULL, OnMessage);
+        // EMSCRIPTEN_WEBSOCKET_T ws = emscripten_websocket_new(&ws_attrs);
+        // emscripten_websocket_set_onopen_callback(ws, NULL, OnOpen);
+        // emscripten_websocket_set_onerror_callback(ws, NULL, OnError);
+        // emscripten_websocket_set_onclose_callback(ws, NULL, OnClose);
+        // emscripten_websocket_set_onmessage_callback(ws, NULL, OnMessage);
     }
 }

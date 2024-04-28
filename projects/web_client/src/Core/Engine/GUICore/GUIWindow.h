@@ -5,7 +5,7 @@
 namespace zw {
   class GUIWindow : public GUIMovableWidget {
    public:
-    GUIWindow(RectF area, const std::string &title, GUIAlign alignment = GUIAlign::TopLeft,
+    GUIWindow(zw::Engine& engine, RectF area, const std::string &title, GUIAlign alignment = GUIAlign::TopLeft,
               bool movable = true);
 
    private:

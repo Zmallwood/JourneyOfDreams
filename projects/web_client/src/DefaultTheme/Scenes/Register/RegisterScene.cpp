@@ -9,7 +9,7 @@
 
 namespace zw
 {
-    RegisterScene::RegisterScene()
+    RegisterScene::RegisterScene(zw::Engine &engine) : IScene(engine)
     {
         // m_ridBackground = _<ImageRenderer>().NewImage();
         // m_ridLogo = _<ImageRenderer>().NewImage();
@@ -76,7 +76,7 @@ namespace zw
 
     void RegisterScene::RenderDerived()
     {
-        _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
-        _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo", { 0.4f, 0.2f, 0.2f, 0.1f });
+        // _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
+        // _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo", { 0.4f, 0.2f, 0.2f, 0.1f });
     }
 }

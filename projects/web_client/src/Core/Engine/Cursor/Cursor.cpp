@@ -3,10 +3,10 @@
 
 namespace zw
 {
-    Cursor::Cursor()
+    Cursor::Cursor(Engine& engine) : m_engine(engine)
     {
         // Allocate render ID for the image of the cursor.
-        m_ridCursorImage = _<ImageRenderer>().NewImage();
+        // m_ridCursorImage = _<ImageRenderer>().NewImage();
 
         // Hide default system cursor when mouse is inside the game canvas.
         SDL_ShowCursor(SDL_DISABLE);
@@ -21,11 +21,11 @@ namespace zw
     void Cursor::Render()
     {
         // Get current mouse position.
-        auto mousePos = GetMousePosition();
+        auto mousePos = GetMousePosition(m_engine);
 
         // Determine cursor image dimensions.
         auto cursorWidth = m_cursorSize;
-        auto cursorHeight = ConvertWidthToHeight(m_cursorSize);
+        auto cursorHeight = ConvertWidthToHeight(m_engine, m_cursorSize);
 
         // Determine cursor image position.
         auto cursorX = mousePos.x - cursorWidth / 2;
@@ -38,6 +38,6 @@ namespace zw
         auto cursorImage = m_cursorImages.at(m_style);
 
         // Draw the cursor image at the draw area with the resource ID.
-        _<ImageRenderer>().DrawImage(m_ridCursorImage, cursorImage, cursorArea);
+        // _<ImageRenderer>().DrawImage(m_ridCursorImage, cursorImage, cursorArea);
     }
 }

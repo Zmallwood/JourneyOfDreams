@@ -4,22 +4,26 @@
 #include "Graphics/Graphics.h"
 #include "Net/NetClient.h"
 #include "PollEvents.h"
+#include "Rendering/TextRendering/TextRenderer.h"
 #include "ScenesCore/SceneManager.h"
 
 namespace zw
 {
     Engine::Engine()
-        : m_imageBank(std::make_shared<zw::ImageBank>()), m_graphics(std::make_shared<zw::Graphics>())
+        : m_graphics(std::make_shared<zw::Graphics>(*this)), m_imageBank(std::make_shared<zw::ImageBank>()),
+          m_netClient(std::make_shared<zw::NetClient>()),
+          m_sceneManager(std::make_shared<zw::SceneManager>(*this)),
+          m_cursor(std::make_shared<zw::Cursor>(*this)),
+          m_textRenderer(std::make_shared<zw::TextRenderer>(*this))
     {
         srand(time(0));
-        _<NetClient>();    // Touch NetClient to initialize it
-        _<SceneManager>(); // Touch SceneManager to initialize it
-        _<Cursor>();       // Touch Cursor to initialize it
+
+        m_imageBank->LoadImages();
     }
 
     void Engine::Reset()
     {
-        _<Cursor>().ResetStyle();
+        m_cursor->ResetStyle();
         m_graphics->ClearCanvas();
     }
 
@@ -30,23 +34,23 @@ namespace zw
 
     void Engine::Update()
     {
-        _<SceneManager>().UpdateCurrentScene();
+        m_sceneManager->UpdateCurrentScene();
     }
 
     void Engine::UpdateNet()
     {
-        _<NetClient>().Update();
+        m_netClient->Update();
     }
 
     void Engine::Render()
     {
-        _<SceneManager>().RenderCurrentScene();
-        _<Cursor>().Render();
+        m_sceneManager->RenderCurrentScene();
+        m_cursor->Render();
     }
 
     void Engine::UpdatePostRender()
     {
-        _<SceneManager>().UpdatePostRenderCurrentScene();
+        m_sceneManager->UpdatePostRenderCurrentScene();
     }
 
     void Engine::PresentCanvas()

@@ -9,6 +9,10 @@
 
 namespace zw
 {
+    MainScene::MainScene(zw::Engine &engine) : IScene(engine), m_tileHoverer(std::make_shared<zw::TileHoverer>(engine))
+    {
+    }
+
     void MainScene::OnEnter()
     {
         // _<WorldFileReader>().ReadWorldFile();

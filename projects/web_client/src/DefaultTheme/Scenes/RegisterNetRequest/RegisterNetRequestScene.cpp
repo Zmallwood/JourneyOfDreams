@@ -7,7 +7,7 @@
 
 namespace zw
 {
-    RegisterNetRequestScene::RegisterNetRequestScene()
+    RegisterNetRequestScene::RegisterNetRequestScene(zw::Engine &engine) : IScene(engine)
     {
         // GUI()->AddWidget("RegisterAccountLabel",
         //                  std::make_shared<GUILabel>(PointF{ .x = 0.5f, .y = 0.5f }, "Registering account...",

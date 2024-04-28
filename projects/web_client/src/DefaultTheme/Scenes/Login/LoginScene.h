@@ -7,7 +7,7 @@ namespace zw
     class LoginScene : public IScene
     {
       public:
-        LoginScene();
+        LoginScene(zw::Engine& engine);
 
         void OnEnter() override;
 

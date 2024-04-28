@@ -4,17 +4,18 @@
 
 namespace zw
 {
+    class Engine;
     class Font;
 
     class TextRenderer
     {
       public:
-        TextRenderer();
+        TextRenderer(Engine& engine);
 
         void RenderText(RID rid, const std::string &text, ColorF color, bool centerAlign, FontSizes fontSize,
                         std::string &outUniqueNameID, SizeF &outSize) const;
 
-        void DrawString(RID rid, const std::string& text, PointF position, ColorF color = Colors::Wheat,
+        void DrawString(RID rid, const std::string &text, PointF position, ColorF color = Colors::Wheat,
                         bool centerAlign = false, FontSizes fontSize = FontSizes::_30);
 
         RID NewString();
@@ -37,5 +38,6 @@ namespace zw
         std::map<FontSizes, std::shared_ptr<Font>> m_fonts;
         std::map<RID, std::string> m_uniqueNameIDs;
         std::map<RID, RID> m_ridsGLResources;
+        Engine &m_engine;
     };
 }

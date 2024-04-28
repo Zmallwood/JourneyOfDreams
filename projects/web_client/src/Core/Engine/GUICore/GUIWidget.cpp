@@ -4,13 +4,14 @@
 
 namespace zw
 {
-    GUIWidget::GUIWidget(RectF area, GUIAlign alignment)
-        : GUIWidget(area.GetPosition(), area.GetSize(), alignment)
+    GUIWidget::GUIWidget(zw::Engine &engine, RectF area, GUIAlign alignment)
+        : GUIWidget(engine, area.GetPosition(), area.GetSize(), alignment)
     {
     }
 
-    GUIWidget::GUIWidget(PointF position, SizeF size, GUIAlign alignment)
-        : m_position(position), m_size(size), m_alignment(alignment),  m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>())
+    GUIWidget::GUIWidget(zw::Engine &engine, PointF position, SizeF size, GUIAlign alignment)
+        : m_position(position), m_size(size), m_alignment(alignment),
+          m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>()), m_engine(engine)
     {
         // m_ridBackgroundImage = _<ImageRenderer>().NewImage();
         // m_ridBorderLeft = _<ImageRenderer>().NewImage();
@@ -161,7 +162,8 @@ namespace zw
         //     _<ImageRenderer>().DrawImage(m_ridBorderLeft, m_borderVerticalImage, borderLeftalArea, true,
         //                                  borderHorizontalPatternFillAmount);
         //     auto borderTopArea
-        //         = RectF{ finalArea.x, finalArea.y - verticalBorderWidth, finalArea.w, verticalBorderWidth };
+        //         = RectF{ finalArea.x, finalArea.y - verticalBorderWidth, finalArea.w, verticalBorderWidth
+        //         };
         //     _<ImageRenderer>().DrawImage(m_ridBorderTop, m_borderHorizontalImage, borderTopArea, true,
         //                                  borderVerticalPatternFillAmount);
         //     auto borderRightArea
@@ -170,7 +172,8 @@ namespace zw
         //                                  borderHorizontalPatternFillAmount);
         //     auto borderBottomArea
         //         = RectF{ finalArea.x, finalArea.y + finalArea.h, finalArea.w, verticalBorderWidth };
-        //     _<ImageRenderer>().DrawImage(m_ridBorderBottom, m_borderHorizontalImage, borderBottomArea, true,
+        //     _<ImageRenderer>().DrawImage(m_ridBorderBottom, m_borderHorizontalImage, borderBottomArea,
+        //     true,
         //                                  borderVerticalPatternFillAmount);
         //     auto borderCornerTopLeftArea
         //         = RectF{ finalArea.x - horizontalBorderWidth, finalArea.y - verticalBorderWidth,
@@ -178,7 +181,8 @@ namespace zw
         //     _<ImageRenderer>().DrawImage(m_ridBorderCornerTopLeft, m_borderCornerTopLeftImage,
         //                                  borderCornerTopLeftArea);
         //     auto borderCornerTopRightArea
-        //         = RectF{ finalArea.x + finalArea.w, finalArea.y - verticalBorderWidth, horizontalBorderWidth,
+        //         = RectF{ finalArea.x + finalArea.w, finalArea.y - verticalBorderWidth,
+        //         horizontalBorderWidth,
         //                  verticalBorderWidth };
         //     _<ImageRenderer>().DrawImage(m_ridBorderCornerTopRight, m_borderCornerTopRightImage,
         //                                  borderCornerTopRightArea);
@@ -347,7 +351,7 @@ namespace zw
     bool GUIWidget::HasFocus()
     {
         return false;
-        //return GetParentGUI()->FocusedWidget() == shared_from_this();
+        // return GetParentGUI()->FocusedWidget() == shared_from_this();
     }
 
     std::vector<WidgetEntry> GUIWidget::GetChildWidgetsRecursively()

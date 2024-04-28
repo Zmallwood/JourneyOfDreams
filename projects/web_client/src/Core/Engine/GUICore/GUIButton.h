@@ -5,7 +5,7 @@
 namespace zw {
   class GUIButton : public GUIWidget {
    public:
-    GUIButton(RectF area, const std::string &text, std::function<void()> onClick,
+    GUIButton(zw::Engine& engine, RectF area, const std::string &text, std::function<void()> onClick,
               ColorF textColor = Colors::Wheat);
 
     void UpdateDerived() override;

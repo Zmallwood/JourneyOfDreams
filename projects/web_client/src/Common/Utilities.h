@@ -4,11 +4,13 @@
 
 namespace zw
 {
+    class Engine;
+
     /// Return canvas size in pixels.
-    Size GetCanvasSize();
+    Size GetCanvasSize(Engine& engine);
 
     /// Get ratio of canvas width/height.
-    float GetAspectRatio();
+    float GetAspectRatio(Engine& engine);
 
     /// Get file extension from file path.
     std::string FileExtension(const std::string &absPath);
@@ -17,11 +19,11 @@ namespace zw
     std::string FilenameNoExtension(const std::string &absPath);
 
     /// Convert fractal width to corresponding height.
-    float ConvertWidthToHeight(float width);
+    float ConvertWidthToHeight(Engine& engine, float width);
 
     /// Convert fractal height to corresponding width.
-    float ConvertHeightToWidth(float height);
+    float ConvertHeightToWidth(Engine& engine, float height);
 
     /// Get mouse position in canvas in pixels.
-    PointF GetMousePosition();
+    PointF GetMousePosition(Engine& engine);
 }

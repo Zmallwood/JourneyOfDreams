@@ -5,10 +5,10 @@ namespace zw
 {
     ImageBank::ImageBank() : m_images(std::make_shared<std::map<int, GLuint>>())
     {
-        _<Graphics>(); // Touch Graphics to ensure the graphics, with the GL context, is initialized.
+        // _<Graphics>(); // Touch Graphics to ensure the graphics, with the GL context, is initialized.
 
         // Load all images in images path.
-        LoadImages();
+        // LoadImages();
     }
 
     // ImageBank::~ImageBank()

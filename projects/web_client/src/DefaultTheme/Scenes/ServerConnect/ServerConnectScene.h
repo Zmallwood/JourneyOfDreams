@@ -7,7 +7,7 @@ namespace zw
     class ServerConnectScene : public IScene
     {
       public:
-        ServerConnectScene();
+        ServerConnectScene(zw::Engine &engine);
 
         void OnEnter() override;
 

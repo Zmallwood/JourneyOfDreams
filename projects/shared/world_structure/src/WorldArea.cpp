@@ -6,8 +6,11 @@ namespace zw
 {
     WorldArea::WorldArea()
     {
-        auto width = _<GlobalProperties>().WorldAreaSize().w;
-        auto height = _<GlobalProperties>().WorldAreaSize().h;
+        // auto width = _<GlobalProperties>().WorldAreaSize().w;
+        // auto height = _<GlobalProperties>().WorldAreaSize().h;
+
+        auto width = 100;
+        auto height = 100;
 
         for (auto x = 0; x < width; x++)
         {

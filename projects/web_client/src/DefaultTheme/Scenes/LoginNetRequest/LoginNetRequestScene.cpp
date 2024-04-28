@@ -7,7 +7,7 @@
 
 namespace zw
 {
-    LoginNetRequestScene::LoginNetRequestScene()
+    LoginNetRequestScene::LoginNetRequestScene(zw::Engine &engine) : IScene(engine)
     {
         // GUI()->AddWidget("AttempLoginLabel",
         //                  std::make_shared<GUILabel>(PointF{ .x = 0.5f, .y = 0.5f }, "Attempting to login...",

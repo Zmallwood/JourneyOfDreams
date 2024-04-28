@@ -3,25 +3,31 @@
 struct SDL_Window;
 struct SDL_Renderer;
 
-namespace zw {
-  class Graphics {
-   public:
-    Graphics();
+namespace zw
+{
+    class Engine;
 
-    void ClearCanvas();
+    class Graphics
+    {
+      public:
+        Graphics(Engine& engine);
 
-    void PresentCanvas();
+        void ClearCanvas();
 
-    auto Window() {
-      return m_window;
-    }
-    
-    auto Renderer() {
-      return m_renderer;
-    }
+        void PresentCanvas();
 
-   private:
-    std::shared_ptr<SDL_Window> m_window{};
-    std::shared_ptr<SDL_Renderer> m_renderer{};
-  };
+        auto Window()
+        {
+            return m_window;
+        }
+
+        auto Renderer()
+        {
+            return m_renderer;
+        }
+
+      private:
+        std::shared_ptr<SDL_Window> m_window{};
+        std::shared_ptr<SDL_Renderer> m_renderer{};
+    };
 }
