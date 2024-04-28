@@ -23,6 +23,8 @@ add_executable(WebClient
     ${PROJECT_SOURCE_DIR}/src/Core/Engine/Engine.cpp
     ${PROJECT_SOURCE_DIR}/src/Common/SDLDeleter.cpp
     ${PROJECT_SOURCE_DIR}/src/Core/Engine/Graphics/Graphics.cpp
+    ${PROJECT_SOURCE_DIR}/src/Common/Utilities.cpp
+    ${PROJECT_SOURCE_DIR}/src/Common/Hash.cpp
     ${PROJECT_SOURCE_DIR}/src/Core/Engine/Assets/ImageBank.cpp
 )
 

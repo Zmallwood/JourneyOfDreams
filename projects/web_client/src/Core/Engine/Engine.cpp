@@ -21,7 +21,7 @@ namespace zw
         srand(time(0));
 
         m_graphics->Init();
-        // m_imageBank->LoadImages();
+        m_imageBank->LoadImages();
         // m_sceneManager->Init();
     }
 
