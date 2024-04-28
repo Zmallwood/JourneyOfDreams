@@ -3,14 +3,16 @@
 
 namespace zw
 {
-    void DoOneGameLoopFrame()
+    void DoOneGameLoopFrame(void * data)
     {
-        _<Engine>().Reset();
-        _<Engine>().HandleInput();
-        _<Engine>().Update();
-        _<Engine>().UpdateNet();
-        _<Engine>().Render();
-        _<Engine>().UpdatePostRender();
-        _<Engine>().PresentCanvas();
+        auto engine = static_cast<Engine*>(data);
+
+        engine->Reset();
+        engine->HandleInput();
+        engine->Update();
+        engine->UpdateNet();
+        engine->Render();
+        engine->UpdatePostRender();
+        engine->PresentCanvas();
     }
 }

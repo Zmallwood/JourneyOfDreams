@@ -2,6 +2,7 @@
 #include "Core/Engine/Assets/ImageBank.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Font.h"
+#include "Core/Engine/Engine.h"
 
 namespace zw
 {
@@ -37,7 +38,7 @@ namespace zw
             return;
         glEnable(GL_TEXTURE_2D);
         auto uniqueNameID = m_uniqueNameIDs.at(rid);
-        auto imgID = _<ImageBank>().GetImage(uniqueNameID);
+        auto imgID = _<Engine>().ImageBank()->GetImage(uniqueNameID);
         glBindTexture(GL_TEXTURE_2D, imgID);
         // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
         // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
@@ -86,7 +87,7 @@ namespace zw
         static int s_idCounter = 0;
         auto id = s_idCounter++;
         auto uniqueName = "RenderedImage" + std::to_string(id);
-        auto ridImage = _<ImageBank>().CreateBlankImage(uniqueName);
+        auto ridImage = _<Engine>().ImageBank()->CreateBlankImage(uniqueName);
         m_uniqueNameIDs.insert({ ridImage, uniqueName });
         auto ridGLResource = _<ImageRenderer>().NewImage();
         m_ridsGLResources.insert({ ridImage, ridGLResource });

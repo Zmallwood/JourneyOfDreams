@@ -1,22 +1,34 @@
 #pragma once
 
-namespace zw {
-  class Engine {
-   public:
-    Engine();
+namespace zw
+{
+    class ImageBank;
 
-    void Reset();
+    class Engine
+    {
+      public:
+        Engine();
 
-    void HandleInput();
+        void Reset();
 
-    void Update();
+        void HandleInput();
 
-    void UpdateNet();
+        void Update();
 
-    void Render();
+        void UpdateNet();
 
-    void UpdatePostRender();
-    
-    void PresentCanvas();
-  };
+        void Render();
+
+        void UpdatePostRender();
+
+        void PresentCanvas();
+
+        auto ImageBank()
+        {
+            return m_imageBank;
+        }
+
+      private:
+        std::shared_ptr<zw::ImageBank> m_imageBank;
+    };
 }

@@ -7,11 +7,10 @@ namespace zw
 {
     void GameInstance::Run()
     {
-        _<Engine>(); // Touch Engine to initialize
-        _<ImageBank>(); // Touch ImageBank to initialize
+        Engine engine;
 
         int simulate_infinite_loop = 1;
 
-        emscripten_set_main_loop(DoOneGameLoopFrame, -1, simulate_infinite_loop);
+        emscripten_set_main_loop_arg(DoOneGameLoopFrame, &engine, -1, simulate_infinite_loop);
     }
 }

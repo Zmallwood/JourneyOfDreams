@@ -4,10 +4,11 @@
 #include "Net/NetClient.h"
 #include "PollEvents.h"
 #include "ScenesCore/SceneManager.h"
+#include "Assets/ImageBank.h"
 
 namespace zw
 {
-    Engine::Engine()
+    Engine::Engine() : m_imageBank(std::make_shared<zw::ImageBank>())
     {
         srand(time(0));
         _<NetClient>();    // Touch NetClient to initialize it

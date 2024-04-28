@@ -90,8 +90,7 @@ namespace zw
 
         if (std::filesystem::exists(absFilePath))
         {
-// Get image data from the image file.
-#if defined(__JOD__)
+            // Get image data from the image file.
             auto surf = IMG_Load(absFilePath.c_str());
 
             // // Generate a new OpenGL texture and get its ID.
@@ -135,9 +134,6 @@ namespace zw
                     SDL_FreeSurface(surf);
                 }
             }
-#else
-            return 0;
-#endif
 
             glBindTexture(GL_TEXTURE_2D, 0);
         }

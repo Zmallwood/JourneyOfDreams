@@ -3,6 +3,7 @@
 #include "Core/Engine/Rendering/RenderingCore/ShaderProgram.h"
 #include "Shader/DefaultShaderImagesFragment.h"
 #include "Shader/DefaultShaderImagesVertex.h"
+#include "Core/Engine/Engine.h"
 
 namespace zw
 {
@@ -48,7 +49,7 @@ namespace zw
         verts[2].uv = { 1.0f / textureFillAmount.w, 0.0f };
         verts[3].uv = { 1.0f / textureFillAmount.w, 1.0f / textureFillAmount.h };
         glDisable(GL_DEPTH_TEST);
-        auto imageID = _<ImageBank>().GetImage(imageNameHash);
+        auto imageID = _<Engine>().ImageBank()->GetImage(imageNameHash);
         if (imageID == -1)
             return;
         glBindTexture(GL_TEXTURE_2D, imageID);
