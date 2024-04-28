@@ -10,37 +10,8 @@ namespace zw
         std::string absPath = "GroundGrass.png";
 
         auto texID = LoadSingleImage(absPath);
-
-        // Extract its pure name without path or extension.
-        auto imageName = FilenameNoExtension(absPath);
-
-        // Insert a new entry into the images storage,
-        // with the image name hash as key and the resource ID as value.
-        m_images->insert({ Hash(imageName), texID });
-
-        // using iterator = std::filesystem::directory_iterator;
-
-        // // Create path string to load the images from.
-        // auto allImagesPath = k_relImagesPath + "/";
-
-        // for (auto &entry : iterator(allImagesPath))
-        // {
-        //     auto absPath = entry.path().string();
-
-        //     // Only handle files with png extenstion.
-        //     if (FileExtension(absPath) != "png")
-        //         continue;
-
-        //     // Do the atual loading of the image file.
-        //     auto texID = LoadSingleImage(absPath);
-
-        //     // Extract its pure name without path or extension.
-        //     auto imageName = FilenameNoExtension(absPath);
-
-        //     // Insert a new entry into the images storage,
-        //     // with the image name hash as key and the resource ID as value.
-        //     m_images->insert({ Hash(imageName), texID });
-        // }
+        // auto imageName = FilenameNoExtension(absPath);
+        // m_images->insert({ Hash(imageName), texID }); 
     }
 
     GLuint ImageBank::LoadSingleImage(std::string absFilePath)
@@ -52,9 +23,7 @@ namespace zw
         if (std::filesystem::exists(absFilePath))
         {
             auto surf = IMG_Load(absFilePath.c_str());
-
             glGenTextures(1, &texID);
-
             glEnable(GL_TEXTURE_2D);
 
             if (texID)
@@ -86,6 +55,7 @@ namespace zw
 
             glBindTexture(GL_TEXTURE_2D, 0);
         }
+
         return texID;
     }
 }
