@@ -9,7 +9,7 @@ namespace zw
 
         // GLuint texID;
 
-        auto surf = IMG_Load(absPath.c_str());
+        auto surf = SDL_LoadBMP(absPath.c_str());
         // glGenTextures(1, &texID);
         // glEnable(GL_TEXTURE_2D);
 
