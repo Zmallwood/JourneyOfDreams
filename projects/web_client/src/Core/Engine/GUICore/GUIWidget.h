@@ -6,149 +6,302 @@ namespace JourneyOfDreams
 {
     class GUI;
 
+    /////////////////////////////////////////////////
+    /// A widget for the GUI.
+    /////////////////////////////////////////////////
     class GUIWidget : public std::enable_shared_from_this<GUIWidget>
     {
       public:
-        GUIWidget() : m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>()) {}
+        /////////////////////////////////////////////////
+        /// Default constructor, only used by the GUI
+        /// class which becomes the root widget.
+        /////////////////////////////////////////////////
+        GUIWidget();
 
+        /////////////////////////////////////////////////
+        /// Calls the other constructor with area
+        /// separated into position and size.
+        ///
+        /// \param area Area of the widget.
+        /// \param alignment Alignment of the widget.
+        /////////////////////////////////////////////////
         GUIWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft);
 
+        /////////////////////////////////////////////////
+        /// Initializes class members and allocates
+        /// graphical resources.
+        ///
+        /// \param position Position of the widget.
+        /// \param size Size of the widget.
+        /// \param alignment Alignment of the widget.
+        /////////////////////////////////////////////////
         GUIWidget(PointF position, SizeF size, GUIAlign alignment = GUIAlign::TopLeft);
 
+        /////////////////////////////////////////////////
+        /// Inserts widgets that are waiting to be inserted
+        /// and calls all the child widgets to do the same.
+        /////////////////////////////////////////////////
         void InsertWaitingWidgets();
 
+        /////////////////////////////////////////////////
+        /// Marks this widget for destruction and calls
+        /// all the child widgets to do the same.
+        /////////////////////////////////////////////////
         void Destroy();
 
+        /////////////////////////////////////////////////
+        /// Erases all child widgets that are marked for
+        /// destruction.
+        /////////////////////////////////////////////////
         void DestroyMarkedWidgets();
 
+        /////////////////////////////////////////////////
+        /// Brings this widget to the front of all
+        /// the other child widgets of the parent.
+        /////////////////////////////////////////////////
         void BringToFront();
 
+        /////////////////////////////////////////////////
+        /// Tells if the mouse is over this widget.
+        ///
+        /// \return True if the mouse is over this widget.
+        /////////////////////////////////////////////////
         bool MouseOver();
 
-        virtual void Initialize()
-        {
-        }
+        /////////////////////////////////////////////////
+        /// This is where deriving classes should put
+        /// the code for adding child widgets.
+        /////////////////////////////////////////////////
+        virtual void Initialize();
 
+        /////////////////////////////////////////////////
+        /// Updates the widget and all the child widgets
+        /// if this widget is visible.
+        /////////////////////////////////////////////////
         virtual void Update();
 
+        /////////////////////////////////////////////////
+        /// Renders the widget and all the child widgets
+        /// if this widget is visible.
+        /////////////////////////////////////////////////
         virtual void Render();
 
-        virtual void UpdateDerived()
-        {
-        }
+        /////////////////////////////////////////////////
+        /// This is where deriving classes should put
+        /// the code for updating the widget.
+        /////////////////////////////////////////////////
+        virtual void UpdateDerived();
 
-        virtual void RenderDerived()
-        {
-        }
+        /////////////////////////////////////////////////
+        /// This is where deriving classes should put
+        /// the code for rendering the widget.
+        /////////////////////////////////////////////////
+        virtual void RenderDerived();
 
+        /////////////////////////////////////////////////
+        /// Get all the child widgets of this widget,
+        /// including all the child widgets of the children
+        /// recursively.
+        ///
+        /// \return A vector of all the child widgets.
+        /////////////////////////////////////////////////
         std::vector<WidgetEntry> GetChildWidgetsRecursively();
 
+        /////////////////////////////////////////////////
+        /// Adds a child widget to this widget with a name ID.
+        ///
+        /// \param nameIdentifier Name identifier of the widget.
+        /// \param childWidget The child widget to add.
+        /// \return The child widget that was added.
+        /////////////////////////////////////////////////
         std::shared_ptr<GUIWidget> AddWidget(const std::string &nameIdentifier,
                                              std::shared_ptr<GUIWidget> childWidget);
 
+        /////////////////////////////////////////////////
+        /// Adds a child widget to this widget without a name ID.
+        ///
+        /// \param childWidget The child widget to add.
+        /// \return The child widget that was added.
+        /////////////////////////////////////////////////
         std::shared_ptr<GUIWidget> AddWidget(std::shared_ptr<GUIWidget> childWidget);
 
-        auto &ChildWidgets()
-        {
-            return m_childWidgets;
-        }
+        /////////////////////////////////////////////////
+        /// Gets all the child widgets of this widget,
+        /// not recursively.
+        ///
+        /// \return A vector of all the child widgets.
+        /////////////////////////////////////////////////
+        std::vector<WidgetEntry> &ChildWidgets();
 
-        auto ParentWidget()
-        {
-            return m_parentWidget;
-        }
+        /////////////////////////////////////////////////
+        /// Gets the parent widgets of this widget,
+        /// except for the root GUI objects which doesnt
+        /// have a parent widget.
+        ///
+        /// \return The parent widget, or nullptr if
+        ///         this object is a GUI.
+        /////////////////////////////////////////////////
+        std::shared_ptr<GUIWidget> ParentWidget();
 
-        auto SetParentWidget(std::shared_ptr<GUIWidget> parentWidget)
-        {
-            m_parentWidget = parentWidget;
-        }
+        /////////////////////////////////////////////////
+        /// Sets the parent widget of this widget.
+        ///
+        /// \param parentWidget The parent widget.
+        /////////////////////////////////////////////////
+        void SetParentWidget(std::shared_ptr<GUIWidget> parentWidget);
 
-        auto Alignment()
-        {
-            return m_alignment;
-        }
+        /////////////////////////////////////////////////
+        /// Gets the aligntment of this widget.
+        ///
+        /// \return The alignment of this widget.
+        /////////////////////////////////////////////////
+        GUIAlign Alignment();
 
-        void SetSize(SizeF size)
-        {
-            m_size = size;
-        }
+        /////////////////////////////////////////////////
+        /// Sets the size of this widget.
+        ///
+        /// \param size The size of this widget.
+        /////////////////////////////////////////////////
+        void SetSize(SizeF size);
 
-        auto Size()
-        {
-            return m_size;
-        }
+        /////////////////////////////////////////////////
+        /// Gets the size of this widget.
+        ///
+        /// \return The size of this widget.
+        /////////////////////////////////////////////////
+        SizeF Size();
 
-        auto Padding()
-        {
-            return m_padding;
-        }
+        /////////////////////////////////////////////////
+        /// Gets the padding of this widget.
+        ///
+        /// \return The padding of this widget.
+        /////////////////////////////////////////////////
+        float Padding();
 
-        auto Focusable()
-        {
-            return m_focusable;
-        }
+        /////////////////////////////////////////////////
+        /// Tells if this widget are able to get focus.
+        ///
+        /// \return True if this widget are able to get focus.
+        /////////////////////////////////////////////////
+        bool Focusable();
 
-        auto MarkedForDestruction()
-        {
-            return m_markedForDestruction;
-        }
+        /////////////////////////////////////////////////
+        /// Tells if this widget has been marked for
+        /// destruction.
+        ///
+        /// \return True if this widget has been marked for
+        ///         destruction.
+        /////////////////////////////////////////////////
+        bool MarkedForDestruction();
 
-        void SetDrawBackground(bool drawBackground)
-        {
-            m_drawBackground = drawBackground;
-        }
+        /////////////////////////////////////////////////
+        /// Sets the flag for if this widget should be
+        /// drawn with a background.
+        ///
+        /// \param drawBackground Draw background flag.
+        /////////////////////////////////////////////////
+        void SetDrawBackground(bool drawBackground);
 
-        void SetDrawBorders(bool drawBorders)
-        {
-            m_drawBorders = drawBorders;
-        }
+        /////////////////////////////////////////////////
+        /// Sets the flag for if this widget should be
+        /// drawn with borders.
+        ///
+        /// \param drawBorders Draw borders flag.
+        /////////////////////////////////////////////////
+        void SetDrawBorders(bool drawBorders);
 
       protected:
+        /////////////////////////////////////////////////
+        /// Get the final position of this widget after
+        /// alignment has been applied.
+        ///
+        /// \return The final position of this widget.
+        /////////////////////////////////////////////////
         PointF GetFinalPosition();
 
+        /////////////////////////////////////////////////
+        /// Get the final area of this widget after
+        /// alignment has been applied.
+        ///
+        /// \return The final area of this widget.
+        /////////////////////////////////////////////////
         RectF GetFinalArea();
 
+        /////////////////////////////////////////////////
+        /// Focuses this widget.
+        /////////////////////////////////////////////////
         virtual void Focus();
 
+        /////////////////////////////////////////////////
+        /// Tells if this widget has focus.
+        ///
+        /// \return True if this widget has focus.
+        /////////////////////////////////////////////////
         bool HasFocus();
 
+        /////////////////////////////////////////////////
+        /// Gets the absolute position of this widget
+        /// without alignment applied.
+        ///
+        /// \return The absolute position of this widget
+        ///         without alignment applied.
+        /////////////////////////////////////////////////
         virtual PointF GetAlignedAbsolutePosition();
 
+        /////////////////////////////////////////////////
+        /// Gets the root parent GUI object.
+        ///
+        /// \return The root parent GUI object.
+        /////////////////////////////////////////////////
         std::shared_ptr<GUI> GetParentGUI();
 
-        auto BackgroundImage()
-        {
-            return m_backgroundImage;
-        }
+        /////////////////////////////////////////////////
+        /// Gets the background image of this widget.
+        ///
+        /// \return The background image of this widget.
+        /////////////////////////////////////////////////
+        std::string BackgroundImage();
 
-        void SetBackgroundImage(const std::string &backgroundImage)
-        {
-            m_backgroundImage = backgroundImage;
-        }
+        /////////////////////////////////////////////////
+        /// Sets the background image of this widget.
+        ///
+        /// \param backgroundImage The background image
+        ///                        of this widget.
+        /////////////////////////////////////////////////
+        void SetBackgroundImage(const std::string &backgroundImage);
 
-        void SetFocusable(bool focusable)
-        {
-            m_focusable = focusable;
-        }
+        /////////////////////////////////////////////////
+        /// Sets the flag for if this widget should be
+        /// be able to get focus.
+        ///
+        /// \param focusable Focusable flag.
+        /////////////////////////////////////////////////
+        void SetFocusable(bool focusable);
 
-        auto TicksTimeGotFocus()
-        {
-            return m_ticksTimeGotFocus;
-        }
+        /////////////////////////////////////////////////
+        /// Sets the ticks value for when this widget
+        /// got focus.
+        ///
+        /// \return The ticks value for when this widget
+        /////////////////////////////////////////////////
+        int TicksTimeGotFocus();
 
-        void SetVisible(bool visible)
-        {
-            m_visible = visible;
-        }
+        /////////////////////////////////////////////////
+        /// Sets the flag for if this widget is visible.
+        ///
+        /// \param visible Visible flag.
+        /////////////////////////////////////////////////
+        void SetVisible(bool visible);
 
-        void SetPadding(float padding)
-        {
-            m_padding = padding;
-        }
+        /////////////////////////////////////////////////
+        /// Sets the padding of this widget.
+        ///
+        /// \param padding The padding of this widget.
+        /////////////////////////////////////////////////
+        void SetPadding(float padding);
 
       private:
         PointF GetAbsolutePosition();
-
         PointF m_position{ 0.0f, 0.0f };
         SizeF m_size{ 100.0f, 100.0f };
         std::string m_backgroundImage{ "GUIDefaultBackground" };
@@ -180,7 +333,6 @@ namespace JourneyOfDreams
         bool m_markedForDestruction{ false };
         std::shared_ptr<std::vector<WidgetEntry>> m_widgetsToInsert{};
         bool m_visible{ true };
-
         inline static int s_unnamedWidgetCounter{ 0 };
     };
 }

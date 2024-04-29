@@ -5,40 +5,35 @@ namespace JourneyOfDreams
 {
     Cursor::Cursor()
     {
-        // Allocate render ID for the image of the cursor.
-        m_ridCursorImage = _<ImageRenderer>().NewImage();
+        m_ridCursorImage = _<ImageRenderer>().NewImage(); // Allocate render ID for the image of the cursor.
 
-        // Hide default system cursor when mouse is inside the game canvas.
-        SDL_ShowCursor(SDL_DISABLE);
+        SDL_ShowCursor(SDL_DISABLE); // Hide default system cursor when mouse is inside the game canvas.
     }
 
     void Cursor::ResetStyle()
     {
-        // Reset the cursor style to Default at beginning of each frame.
-        m_style = CursorStyles::Default;
+        m_style = CursorStyles::Default; // Reset the cursor style to Default at beginning of each frame.
     }
 
     void Cursor::Render()
     {
-        // Get current mouse position.
-        auto mousePos = GetMousePosition();
+        auto mousePos = GetMousePosition(); // Get current mouse position.
 
-        // Determine cursor image dimensions.
-        auto cursorWidth = m_cursorSize;
-        auto cursorHeight = ConvertWidthToHeight(m_cursorSize);
+        auto cursorWidth = m_cursorSize;                        // Determine cursor image width
+        auto cursorHeight = ConvertWidthToHeight(m_cursorSize); // and height
 
-        // Determine cursor image position.
-        auto cursorX = mousePos.x - cursorWidth / 2;
-        auto cursorY = mousePos.y - cursorHeight / 2;
+        auto cursorX = mousePos.x - cursorWidth / 2;  // Determine cursor image x position.
+        auto cursorY = mousePos.y - cursorHeight / 2; // Determine cursor image y position.
 
-        // Combine position and dimensions into the draw area.
-        auto cursorArea = RectF{ cursorX, cursorY, cursorWidth, cursorHeight };
+        auto cursorArea = RectF{ // Combine position and dimensions into the draw area.
+                                 cursorX, cursorY, cursorWidth, cursorHeight
+        };
 
-        // Get the cursor image corresponding to the current cursor style.
-        auto cursorImage = m_cursorImages.at(m_style);
+        auto cursorImage = // Get the cursor image corresponding to the current cursor style.
+            m_cursorImages.at(m_style);
 
-        // Draw the cursor image at the draw area with the resource ID.
-        _<ImageRenderer>().DrawImage(m_ridCursorImage, cursorImage, cursorArea);
+        _<ImageRenderer>().DrawImage( // Draw the cursor image at the draw area with the resource ID.
+            m_ridCursorImage, cursorImage, cursorArea);
     }
 
     void Cursor::SetStyle(CursorStyles style)

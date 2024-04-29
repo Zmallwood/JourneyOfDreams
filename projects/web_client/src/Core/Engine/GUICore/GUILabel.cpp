@@ -66,4 +66,9 @@ namespace JourneyOfDreams
         auto finalPosition = GetFinalPosition();
         _<TextRenderer>().DrawString(m_ridText, *m_text, finalPosition, m_textColor, false, m_fontSize);
     }
+
+    void GUILabel::SetText(std::shared_ptr<std::string> text)
+    {
+        m_text = text;
+    }
 }

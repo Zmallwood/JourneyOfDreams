@@ -4,6 +4,10 @@
 
 namespace JourneyOfDreams
 {
+    GUIWidget::GUIWidget() : m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>())
+    {
+    }
+
     GUIWidget::GUIWidget(RectF area, GUIAlign alignment)
         : GUIWidget(area.GetPosition(), area.GetSize(), alignment)
     {
@@ -70,6 +74,10 @@ namespace JourneyOfDreams
         std::cout << "finalArea w: " << finalArea.w << ", finalArea h: " << finalArea.h << std::endl;
         return mousePosition.x >= finalArea.x && mousePosition.x <= finalArea.x + finalArea.w
                && mousePosition.y >= finalArea.y && mousePosition.y <= finalArea.y + finalArea.h;
+    }
+
+    void GUIWidget::Initialize()
+    {
     }
 
     void GUIWidget::BringToFront()
@@ -196,6 +204,14 @@ namespace JourneyOfDreams
         for (auto &entry : m_childWidgets)
             entry.widget->Render();
         RenderDerived();
+    }
+
+    void GUIWidget::UpdateDerived()
+    {
+    }
+
+    void GUIWidget::RenderDerived()
+    {
     }
 
     std::shared_ptr<GUIWidget> GUIWidget::AddWidget(const std::string &nameIdentifier,
@@ -360,5 +376,90 @@ namespace JourneyOfDreams
             result.insert(result.end(), childResult.begin(), childResult.end());
         }
         return result;
+    }
+
+    std::vector<WidgetEntry> &GUIWidget::ChildWidgets()
+    {
+        return m_childWidgets;
+    }
+
+    std::shared_ptr<GUIWidget> GUIWidget::ParentWidget()
+    {
+        return m_parentWidget;
+    }
+
+    void GUIWidget::SetParentWidget(std::shared_ptr<GUIWidget> parentWidget)
+    {
+        m_parentWidget = parentWidget;
+    }
+
+    GUIAlign GUIWidget::Alignment()
+    {
+        return m_alignment;
+    }
+
+    void GUIWidget::SetSize(SizeF size)
+    {
+        m_size = size;
+    }
+
+    SizeF GUIWidget::Size()
+    {
+        return m_size;
+    }
+
+    float GUIWidget::Padding()
+    {
+        return m_padding;
+    }
+
+    bool GUIWidget::Focusable()
+    {
+        return m_focusable;
+    }
+
+    bool GUIWidget::MarkedForDestruction()
+    {
+        return m_markedForDestruction;
+    }
+
+    void GUIWidget::SetDrawBackground(bool drawBackground)
+    {
+        m_drawBackground = drawBackground;
+    }
+
+    void GUIWidget::SetDrawBorders(bool drawBorders)
+    {
+        m_drawBorders = drawBorders;
+    }
+
+    std::string GUIWidget::BackgroundImage()
+    {
+        return m_backgroundImage;
+    }
+
+    void GUIWidget::SetBackgroundImage(const std::string &backgroundImage)
+    {
+        m_backgroundImage = backgroundImage;
+    }
+
+    void GUIWidget::SetFocusable(bool focusable)
+    {
+        m_focusable = focusable;
+    }
+
+    int GUIWidget::TicksTimeGotFocus()
+    {
+        return m_ticksTimeGotFocus;
+    }
+
+    void GUIWidget::SetVisible(bool visible)
+    {
+        m_visible = visible;
+    }
+
+    void GUIWidget::SetPadding(float padding)
+    {
+        m_padding = padding;
     }
 }

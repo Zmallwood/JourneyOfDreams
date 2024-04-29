@@ -1,6 +1,11 @@
 #pragma once
+
 #include "GUIWidget.h"
 
-namespace JourneyOfDreams {
-  typedef GUIWidget GUIPanel;
+namespace JourneyOfDreams
+{
+    /////////////////////////////////////////////////
+    /// A panel widget for the GUI.
+    /////////////////////////////////////////////////
+    typedef GUIWidget GUIPanel;
 }
