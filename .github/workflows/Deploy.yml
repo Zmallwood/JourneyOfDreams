@@ -17,7 +17,7 @@ jobs:
         run: |
           sudo apt-get -y update
           sudo apt-get -y install libboost-dev
-          sudo apt-get -y install libpqxx-dev
+          sudo apt-get -y install libsoci-dev
 
       - name: Build WebClient, run cmake
         run: CC=emcc CXX=em++ emcmake cmake projects/web_client -B build_web_client
