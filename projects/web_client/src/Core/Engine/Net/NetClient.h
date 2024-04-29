@@ -17,10 +17,7 @@ namespace JourneyOfDreams
 
         bool Connected();
 
-        auto Connection() const
-        {
-            return m_connection;
-        }
+        std::shared_ptr<NetworkConnection> Connection() const;
 
       private:
         std::shared_ptr<NetworkConnection> m_connection;

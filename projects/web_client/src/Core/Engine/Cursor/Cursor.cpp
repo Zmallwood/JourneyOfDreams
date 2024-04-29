@@ -11,8 +11,8 @@ namespace JourneyOfDreams
     }
 
     void Cursor::ResetStyle()
-    {
-        m_style = CursorStyles::Default; // Reset the cursor style to Default at beginning of each frame.
+    { // Reset the cursor style to Default at beginning of each frame.
+        m_style = CursorStyles::Default;
     }
 
     void Cursor::Render()
@@ -37,7 +37,7 @@ namespace JourneyOfDreams
     }
 
     void Cursor::SetStyle(CursorStyles style)
-    {
+    { // Setter
         m_style = style;
     }
 }

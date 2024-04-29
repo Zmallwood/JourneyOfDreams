@@ -7,17 +7,17 @@
 namespace JourneyOfDreams
 {
     void GUI::Initialize()
-    {
+    { // Add an on-screen keyboard to every GUI.
         AddWidget("OnScreenKeyboard", std::make_shared<OnScreenKeyboard>());
     }
 
     void GUI::ShowKeyboard()
-    {
+    { // Show the on-screen keyboard.
         GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Show();
     }
 
     void GUI::HideKeyboard()
-    {
+    { // Hide the on-screen keyboard.
         GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Hide();
     }
 
@@ -110,12 +110,12 @@ namespace JourneyOfDreams
     }
 
     std::shared_ptr<GUIWidget> GUI::FocusedWidget()
-    {
+    { // Getter
         return m_focusedWidget;
     }
 
     void GUI::SetFocusedWidget(std::shared_ptr<GUIWidget> focusedWidget)
-    {
+    { // Setter
         m_focusedWidget = focusedWidget;
     }
 }

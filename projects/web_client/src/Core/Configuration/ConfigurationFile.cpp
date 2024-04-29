@@ -11,6 +11,15 @@ namespace JourneyOfDreams
 
         while (std::getline(configurationFile, line)) // Read each line of the configuration file
         {
+            for (auto &c : line) // Remove all spaces from the line
+            {
+                if (c == '#')
+                {
+                    line = line.substr(0, line.find('#'));
+                    break;
+                }
+            }
+
             auto parameterName = line.substr(0, line.find('='));   // Get the parameter name
             auto parameterValue = line.substr(line.find('=') + 1); // Get the parameter value
 
@@ -31,12 +40,12 @@ namespace JourneyOfDreams
     }
 
     std::string ConfigurationFile::ServerAddress() const
-    {
+    { // Return server address
         return m_serverAddress;
     }
 
     int ConfigurationFile::ServerPort() const
-    {
+    { // Return server port
         return m_serverPort;
     }
 }

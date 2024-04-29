@@ -27,7 +27,17 @@ namespace JourneyOfDreams
     }
 
     bool MouseInput::AnyButtonPressed()
-    {
+    { // Return true if either button is pressed.
         return leftButton.Pressed() || rightButton.Pressed();
+    }
+
+    MouseButton &MouseInput::LeftButton()
+    { // Getter by reference
+        return leftButton;
+    }
+
+    MouseButton &MouseInput::RightButton()
+    { // Getter by reference
+        return rightButton;
     }
 }

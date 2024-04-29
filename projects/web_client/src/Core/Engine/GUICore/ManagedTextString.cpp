@@ -5,7 +5,7 @@ namespace JourneyOfDreams
 {
     ManagedTextString::ManagedTextString(float maxRenderWidth, bool passwordMode)
         : m_maxRenderWidth(maxRenderWidth), m_passwordMode(passwordMode)
-    {
+    { // Do nothing.
     }
 
     void ManagedTextString::InsertText(const std::string &text)
@@ -105,17 +105,17 @@ namespace JourneyOfDreams
     }
 
     int ManagedTextString::AppearedCursorPosition() const
-    {
+    { // Return cursor position as appeared with regard to the offset.
         return m_cursorPosition - m_cursorOffset;
     }
 
     bool ManagedTextString::IsTextOverflow() const
-    {
+    { // Return true if text is overflowed.
         return _<TextRenderer>().MeasureString(GetAppearedText(), FontSizes::_20).w > m_maxRenderWidth;
     }
 
     std::string ManagedTextString::OffsetedText() const
-    {
+    { // Return text with regard to the offset.
         return m_text.substr(m_cursorOffset);
     }
 
@@ -183,12 +183,12 @@ namespace JourneyOfDreams
     }
 
     int ManagedTextString::CursorPosition() const
-    {
+    { // Getter
         return m_cursorPosition;
     }
 
     std::string ManagedTextString::Text() const
-    {
+    { // Getter
         return m_text;
     }
 }

@@ -3,8 +3,8 @@
 namespace JourneyOfDreams
 {
     ImageBank::ImageBank()
-    {
-        LoadImages(); // Load all images in images path.
+    { // Load all images in images path.
+        LoadImages();
     }
 
     ImageBank::~ImageBank()
@@ -14,8 +14,8 @@ namespace JourneyOfDreams
     }
 
     GLuint ImageBank::GetImage(const std::string &imageName)
-    {
-        return GetImage(Hash(imageName)); // Hash the image name and call the other GetImage method.
+    { // Hash the image name and call the other GetImage method.
+        return GetImage(Hash(imageName));
     }
 
     GLuint ImageBank::GetImage(int imageNameHash)

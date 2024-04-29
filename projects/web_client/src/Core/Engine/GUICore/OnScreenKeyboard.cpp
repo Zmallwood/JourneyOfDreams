@@ -43,12 +43,12 @@ namespace JourneyOfDreams
     }
 
     void OnScreenKeyboard::Show()
-    {
+    { // Show the on-screen keyboard.
         SetVisible(true);
     }
 
     void OnScreenKeyboard::Hide()
-    {
+    { // Hide the on-screen keyboard.
         SetVisible(false);
     }
 

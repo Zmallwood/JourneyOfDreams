@@ -37,22 +37,22 @@ namespace JourneyOfDreams
     }
 
     void Graphics::ClearCanvas()
-    {
+    { // Clear canvas at the beginning of each frame.
         glClear(GL_COLOR_BUFFER_BIT);
     }
 
     void Graphics::PresentCanvas()
-    {
+    { // Present canvas at the end of each frame.
         SDL_GL_SwapWindow(m_window.get());
     }
 
     std::shared_ptr<SDL_Window> Graphics::Window()
-    {
+    { // Getter
         return m_window;
     }
 
     std::shared_ptr<SDL_Renderer> Graphics::Renderer()
-    {
+    { // Getter
         return m_renderer;
     }
 }

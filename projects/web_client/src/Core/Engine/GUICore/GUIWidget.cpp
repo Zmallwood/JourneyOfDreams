@@ -5,12 +5,12 @@
 namespace JourneyOfDreams
 {
     GUIWidget::GUIWidget() : m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>())
-    {
+    { // Do nothing.
     }
 
     GUIWidget::GUIWidget(RectF area, GUIAlign alignment)
         : GUIWidget(area.GetPosition(), area.GetSize(), alignment)
-    {
+    { // Do nothing.
     }
 
     GUIWidget::GUIWidget(PointF position, SizeF size, GUIAlign alignment)
@@ -77,7 +77,7 @@ namespace JourneyOfDreams
     }
 
     void GUIWidget::Initialize()
-    {
+    { // Do nothing.
     }
 
     void GUIWidget::BringToFront()
@@ -207,11 +207,11 @@ namespace JourneyOfDreams
     }
 
     void GUIWidget::UpdateDerived()
-    {
+    { // Do nothing.
     }
 
     void GUIWidget::RenderDerived()
-    {
+    { // Do nothing.
     }
 
     std::shared_ptr<GUIWidget> GUIWidget::AddWidget(const std::string &nameIdentifier,
@@ -362,7 +362,7 @@ namespace JourneyOfDreams
     }
 
     bool GUIWidget::HasFocus()
-    {
+    { // Check if the widget has focus.
         return GetParentGUI()->FocusedWidget() == shared_from_this();
     }
 
@@ -379,87 +379,87 @@ namespace JourneyOfDreams
     }
 
     std::vector<WidgetEntry> &GUIWidget::ChildWidgets()
-    {
+    { // Getter by reference.
         return m_childWidgets;
     }
 
     std::shared_ptr<GUIWidget> GUIWidget::ParentWidget()
-    {
+    { // Getter
         return m_parentWidget;
     }
 
     void GUIWidget::SetParentWidget(std::shared_ptr<GUIWidget> parentWidget)
-    {
+    { // Setter
         m_parentWidget = parentWidget;
     }
 
     GUIAlign GUIWidget::Alignment()
-    {
+    { // Getter
         return m_alignment;
     }
 
     void GUIWidget::SetSize(SizeF size)
-    {
+    { // Setter
         m_size = size;
     }
 
     SizeF GUIWidget::Size()
-    {
+    { // Getter
         return m_size;
     }
 
     float GUIWidget::Padding()
-    {
+    { // Getter
         return m_padding;
     }
 
     bool GUIWidget::Focusable()
-    {
+    { // Getter
         return m_focusable;
     }
 
     bool GUIWidget::MarkedForDestruction()
-    {
+    { // Getter
         return m_markedForDestruction;
     }
 
     void GUIWidget::SetDrawBackground(bool drawBackground)
-    {
+    { // Setter
         m_drawBackground = drawBackground;
     }
 
     void GUIWidget::SetDrawBorders(bool drawBorders)
-    {
+    { // Setter
         m_drawBorders = drawBorders;
     }
 
     std::string GUIWidget::BackgroundImage()
-    {
+    { // Getter
         return m_backgroundImage;
     }
 
     void GUIWidget::SetBackgroundImage(const std::string &backgroundImage)
-    {
+    { // Setter
         m_backgroundImage = backgroundImage;
     }
 
     void GUIWidget::SetFocusable(bool focusable)
-    {
+    { // Setter
         m_focusable = focusable;
     }
 
     int GUIWidget::TicksTimeGotFocus()
-    {
+    { // Getter
         return m_ticksTimeGotFocus;
     }
 
     void GUIWidget::SetVisible(bool visible)
-    {
+    { // Setter
         m_visible = visible;
     }
 
     void GUIWidget::SetPadding(float padding)
-    {
+    { // Setter
         m_padding = padding;
     }
 }

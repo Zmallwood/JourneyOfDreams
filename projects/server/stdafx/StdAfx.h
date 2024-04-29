@@ -6,4 +6,8 @@
 #include <thread>
 
 #include <asio/io_service.hpp>
-#include <pqxx/pqxx>
+
+#include "../../shared/common/src/Singleton.h"
+
+#include <soci/soci.h>
+#include <soci/postgresql/soci-postgresql.h>

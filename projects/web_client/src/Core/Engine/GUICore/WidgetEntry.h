@@ -1,11 +1,24 @@
 #pragma once
 
-namespace JourneyOfDreams {
-  class GUIWidget;
+namespace JourneyOfDreams
+{
+    class GUIWidget;
 
-  class WidgetEntry {
-   public:
-    int id{ 0 };
-    std::shared_ptr<GUIWidget> widget{};
-  };
+    /////////////////////////////////////////////////
+    /// Storage-entry class for a widget in the GUI.
+    /////////////////////////////////////////////////
+    class WidgetEntry
+    {
+      public:
+        /////////////////////////////////////////////////
+        /// Id of the widget, equal to the hash of the
+        /// widget name.
+        /////////////////////////////////////////////////
+        int id{ 0 };
+
+        /////////////////////////////////////////////////
+        /// The widget.
+        /////////////////////////////////////////////////
+        std::shared_ptr<GUIWidget> widget{};
+    };
 }

@@ -23,7 +23,7 @@ namespace JourneyOfDreams
     }
 
     void GUITextBox::TypeCharacter(char c)
-    {
+    { // Type a character into the text box.
         m_managedTextLine.InsertCharacter(c);
     }
 
@@ -105,12 +105,12 @@ namespace JourneyOfDreams
     }
 
     std::string GUITextBox::GetText()
-    {
+    { // Getter
         return m_managedTextLine.Text();
     }
 
     void GUITextBox::ClearText()
-    {
+    { // Clear text in the text box.
         m_managedTextLine.Reset();
     }
 

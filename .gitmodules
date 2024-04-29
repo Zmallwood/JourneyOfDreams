@@ -1,0 +1,3 @@
+[submodule "projects/server/external/libpqxx"]
+	path = projects/server/external/libpqxx
+	url = https://github.com/jtv/libpqxx

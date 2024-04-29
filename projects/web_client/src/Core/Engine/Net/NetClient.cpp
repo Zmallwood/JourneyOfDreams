@@ -25,4 +25,9 @@ namespace JourneyOfDreams
     {
         return m_connection->Connected();
     }
+
+    std::shared_ptr<NetworkConnection> NetClient::Connection() const
+    {
+        return m_connection;
+    }
 }

@@ -8,7 +8,7 @@ namespace JourneyOfDreams
                                  SizeF size, GUIAlign alignment, bool movable)
         : GUIWindow(RectF{ position.x, position.y, size.w, size.h }, title, alignment, movable),
           m_message(message)
-    {
+    { // Do nothing.
     }
 
     void GUIMessageBox::Initialize()

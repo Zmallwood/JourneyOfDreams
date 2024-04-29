@@ -15,11 +15,11 @@ namespace JourneyOfDreams
 
     GUILabel::GUILabel(PointF position, const std::string &text, ColorF textColor)
         : GUILabel(position, text, GUIAlign::TopLeft, FontSizes::_20, textColor)
-    {
+    { // Do nothing.
     }
 
     void GUILabel::UpdateDerived()
-    {
+    { // Do nothing.
     }
 
     PointF GUILabel::GetAlignedAbsolutePosition()
@@ -68,7 +68,7 @@ namespace JourneyOfDreams
     }
 
     void GUILabel::SetText(std::shared_ptr<std::string> text)
-    {
+    { // Setter
         m_text = text;
     }
 }

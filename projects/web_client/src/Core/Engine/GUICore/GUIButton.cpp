@@ -53,12 +53,12 @@ namespace JourneyOfDreams
     }
 
     std::string GUIButton::BackgroundHoveredImage()
-    {
+    { // Getter
         return m_backgroundHoveredImage;
     }
 
     void GUIButton::SetBackgroundHoveredImage(const std::string &backgroundHoveredImage)
-    {
+    { // Setter
         m_backgroundHoveredImage = backgroundHoveredImage;
     }
 }

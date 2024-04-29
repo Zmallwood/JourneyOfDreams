@@ -31,13 +31,13 @@ namespace JourneyOfDreams
     }
 
     float ConvertWidthToHeight(float width)
-    {
-        return width * GetAspectRatio(); // Use aspect ratio to convert from width to corresponding height.
+    { // Use aspect ratio to convert from width to corresponding height.
+        return width * GetAspectRatio();
     }
 
     float ConvertHeightToWidth(float height)
-    {
-        return height / GetAspectRatio(); // Use aspect ratio to convert from height to corresponding width.
+    { // Use aspect ratio to convert from height to corresponding width.
+        return height / GetAspectRatio();
     }
 
     PointF GetMousePosition()
@@ -45,7 +45,7 @@ namespace JourneyOfDreams
         int x, y;                          // To store mouse coordinates in pixels.
         SDL_GetMouseState(&x, &y);         // Use SDL to get current mouse coordinates.
         auto canvasSize = GetCanvasSize(); // Get canvas size.
-        return { // And use it to convert pixel coordinates to fractal coordinates.
+        return {                           // And use it to convert pixel coordinates to fractal coordinates.
                  static_cast<float>(x) / canvasSize.w, static_cast<float>(y) / canvasSize.h
         };
     }
