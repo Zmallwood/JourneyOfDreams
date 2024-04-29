@@ -1,7 +1,7 @@
 #include "Cursor.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     Cursor::Cursor()
     {
@@ -39,5 +39,10 @@ namespace zw
 
         // Draw the cursor image at the draw area with the resource ID.
         _<ImageRenderer>().DrawImage(m_ridCursorImage, cursorImage, cursorArea);
+    }
+
+    void Cursor::SetStyle(CursorStyles style)
+    {
+        m_style = style;
     }
 }

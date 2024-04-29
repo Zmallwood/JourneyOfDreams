@@ -4,7 +4,7 @@
 #include "../../shared/world_structure/src/World.h"
 #include "../../shared/world_structure/src/WorldArea.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void GenerateObjects()
     {

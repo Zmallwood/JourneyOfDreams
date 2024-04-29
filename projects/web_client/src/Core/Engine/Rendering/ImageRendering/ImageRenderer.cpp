@@ -4,7 +4,7 @@
 #include "Shader/DefaultShaderImagesFragment.h"
 #include "Shader/DefaultShaderImagesVertex.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     ImageRenderer::ImageRenderer()
     {

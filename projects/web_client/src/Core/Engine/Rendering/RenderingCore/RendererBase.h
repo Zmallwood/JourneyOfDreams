@@ -2,7 +2,7 @@
 
 #include "BufferTypes.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     class ShaderProgram;
 
@@ -57,7 +57,7 @@ namespace zw
 
         std::shared_ptr<std::vector<GLuint>> m_VAOIDs;
         std::shared_ptr<std::map<BufferTypes, std::shared_ptr<std::map<GLuint, GLuint>>>> m_VBOIDs;
-        std::shared_ptr<zw::ShaderProgram> m_shaderProgram;
+        std::shared_ptr<JourneyOfDreams::ShaderProgram> m_shaderProgram;
         inline static const auto k_numFloatsPerEntry
             = std::map<BufferTypes, int>{ { BufferTypes::Indices, 1 },     { BufferTypes::Positions2D, 2 },
                                           { BufferTypes::Positions3D, 3 }, { BufferTypes::Colors, 4 },

@@ -1,11 +1,16 @@
 #pragma once
 
-namespace zw
+namespace JourneyOfDreams
 {
     template <class T>
     class Square
     {
       public:
+        /////////////////////////////////////////////////
+        /// Set all values to the same value.
+        ///
+        /// \param value Value to set all values to.
+        /////////////////////////////////////////////////
         void SetAll(T value)
         {
             _00 = _01 = _11 = _10 = value;

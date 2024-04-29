@@ -1,6 +1,6 @@
 #pragma once
 
-namespace zw {
+namespace JourneyOfDreams {
   class ManagedTextString {
    public:
     ManagedTextString(float maxRenderWidth = 1.0f, bool passwordMode = false);

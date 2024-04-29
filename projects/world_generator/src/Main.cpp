@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-    using namespace zw;
+    using namespace JourneyOfDreams;
 
     std::cout << "Journey Of Dreams - World Generator\n";
 

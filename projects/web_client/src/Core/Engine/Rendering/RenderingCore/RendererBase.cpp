@@ -1,10 +1,10 @@
 #include "RendererBase.h"
 #include "ShaderProgram.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     RendererBase::RendererBase()
-        : m_shaderProgram(std::make_shared<zw::ShaderProgram>()),
+        : m_shaderProgram(std::make_shared<JourneyOfDreams::ShaderProgram>()),
           m_VAOIDs(std::make_shared<std::vector<GLuint>>()),
           m_VBOIDs(std::make_shared<std::map<BufferTypes, std::shared_ptr<std::map<GLuint, GLuint>>>>())
     {

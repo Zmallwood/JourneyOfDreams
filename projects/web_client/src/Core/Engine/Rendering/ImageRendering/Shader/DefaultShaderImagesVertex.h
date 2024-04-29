@@ -1,6 +1,6 @@
 #pragma once
 
-namespace zw
+namespace JourneyOfDreams
 {
     inline static const GLchar *defaultShaderImagesVertex =
         R"(

@@ -2,7 +2,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "GUI.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     GUIWidget::GUIWidget(RectF area, GUIAlign alignment)
         : GUIWidget(area.GetPosition(), area.GetSize(), alignment)

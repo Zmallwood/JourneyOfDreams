@@ -14,7 +14,7 @@
 #include <string>
 #include <vector>
 
-namespace zw
+namespace JourneyOfDreams
 {
     using std::map;
     using std::string;

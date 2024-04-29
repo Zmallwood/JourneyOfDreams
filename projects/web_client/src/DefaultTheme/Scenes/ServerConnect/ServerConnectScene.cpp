@@ -4,7 +4,7 @@
 #include "Core/Engine/Net/NetClient.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     ServerConnectScene::ServerConnectScene()
     {

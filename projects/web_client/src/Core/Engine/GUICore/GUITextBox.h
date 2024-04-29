@@ -3,7 +3,7 @@
 #include "GUIWidget.h"
 #include "ManagedTextString.h"
 
-namespace zw {
+namespace JourneyOfDreams {
   class GUITextBox : public GUIWidget {
    public:
     GUITextBox(RectF area, ColorF textColor = Colors::Wheat, bool passwordMode = false);

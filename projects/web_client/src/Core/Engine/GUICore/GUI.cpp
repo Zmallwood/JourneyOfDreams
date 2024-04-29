@@ -4,7 +4,7 @@
 #include "GUIWidget.h"
 #include "OnScreenKeyboard.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void GUI::Initialize()
     {
@@ -31,24 +31,22 @@ namespace zw
             SetFocusedWidget(nullptr);
         }
 
-        // Update all child widgets in the same order as they have been added.
-        for (auto &entry : ChildWidgets())
+        for ( // Update all child widgets in the same order as they have been added.
+            auto &entry : ChildWidgets())
             entry.widget->Update();
 
-        // Destroy all widgets that should be destroyed.
-        DestroyMarkedWidgets();
+        DestroyMarkedWidgets(); // Destroy all widgets that should be destroyed.
 
-        // Insert new widgets that are waiting to be inserted.
-        InsertWaitingWidgets();
+        InsertWaitingWidgets(); // Insert new widgets that are waiting to be inserted.
 
-        // Focus next widget on pressing the tab key.
-        if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_TAB))
+        if ( // Focus next widget on pressing the tab key.
+            _<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_TAB))
         {
             FocusNextWidget();
         }
 
-        // Clear all typed text input as it has already been handled by the GUIs widgets.
-        _<KeyboardInput>().ClearTextInput();
+        _<KeyboardInput>().ClearTextInput(); // Clear all typed text input as it has already been handled by
+                                             // the GUIs widgets.
 
         if (FocusedWidget() == nullptr)
         {
@@ -58,52 +56,49 @@ namespace zw
 
     void GUI::Render()
     {
-        // Render all widgets in the same order as they have been added.
-        for (auto &entry : ChildWidgets())
+        for ( // Render all widgets in the same order as they have been added.
+            auto &entry : ChildWidgets())
             entry.widget->Render();
     }
 
     std::shared_ptr<GUIWidget> GUI::GetWidget(const std::string &nameIdentifier)
     {
-        // Search in all widgets recursively for the widget with the specified name.
-        for (auto &entry : GetChildWidgetsRecursively())
+        for ( // Search in all widgets recursively for the widget with the specified name.
+            auto &entry : GetChildWidgetsRecursively())
         {
-            // If widget name hash is found.
-            if (entry.id == Hash(nameIdentifier))
+            if ( // If widget name hash is found.
+                entry.id == Hash(nameIdentifier))
             {
                 // Return the widget.
                 return entry.widget;
             }
         }
 
-        // Widget with the specified name not found.
-        return nullptr;
+        return nullptr; // Widget with the specified name not found.
     }
 
     void GUI::FocusNextWidget()
     {
-        if (ChildWidgets().empty())
-        // No widgets exist to focus.
+        if (ChildWidgets().empty()) // No widgets exist to focus.
         {
             return;
         }
 
-        // Get currently focused widget.
-        auto widget = FocusedWidget();
+        auto widget = FocusedWidget(); // Get currently focused widget.
 
-        // Search through all widgets recursively for the next widget to focus.
-        for (auto &entry : GetChildWidgetsRecursively())
+        for ( // Search through all widgets recursively for the next widget to focus.
+            auto &entry : GetChildWidgetsRecursively())
         {
-            if (widget == nullptr && entry.widget->Focusable())
-            // If no widget is currently focused, return first focusable widget.
+            if ( // If no widget is currently focused, return first focusable widget.
+                widget == nullptr && entry.widget->Focusable())
             {
                 widget = entry.widget;
 
                 break;
             }
-            else if (widget != nullptr && entry.widget->Focusable() && widget != entry.widget)
-            // If a widget is currently focused, return the first focusable widget
-            // which does not equal to the currently focused.
+            else if ( // If a widget is currently focused, return the first focusable widget which does not
+                      // equal to the currently focused.
+                widget != nullptr && entry.widget->Focusable() && widget != entry.widget)
             {
                 widget = entry.widget;
 
@@ -111,7 +106,16 @@ namespace zw
             }
         }
 
-        // Focus the selected widget.
-        SetFocusedWidget(widget);
+        SetFocusedWidget(widget); // Focus the selected widget.
+    }
+
+    std::shared_ptr<GUIWidget> GUI::FocusedWidget()
+    {
+        return m_focusedWidget;
+    }
+
+    void GUI::SetFocusedWidget(std::shared_ptr<GUIWidget> focusedWidget)
+    {
+        m_focusedWidget = focusedWidget;
     }
 }

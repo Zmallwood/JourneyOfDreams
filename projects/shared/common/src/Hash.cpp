@@ -1,6 +1,6 @@
 #include "Hash.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     int Hash(const std::string &text)
     {

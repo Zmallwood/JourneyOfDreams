@@ -2,7 +2,7 @@
 #include "Core/Engine/CoreGameObjects/Player.h"
 #include "Core/Engine/Input/KeyboardInput.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void UpdateKeyboardMovement()
     {

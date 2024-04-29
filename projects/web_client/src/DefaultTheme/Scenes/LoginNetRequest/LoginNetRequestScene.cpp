@@ -6,7 +6,7 @@
 #include "Core/Engine/ScenesCore/SceneManager.h"
 #include "DefaultTheme/Scenes/Login/LoginScene.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     LoginNetRequestScene::LoginNetRequestScene()
     {

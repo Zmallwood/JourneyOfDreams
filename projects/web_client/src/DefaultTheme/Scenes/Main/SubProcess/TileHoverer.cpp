@@ -2,7 +2,7 @@
 #include "Core/Configuration/ClientProperties.h"
 #include "Core/Engine/CoreGameObjects/Player.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void TileHoverer::Update()
     {

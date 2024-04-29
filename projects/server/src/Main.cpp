@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-    zw::RunNetServer();
+    JourneyOfDreams::RunNetServer();
 
     return 0;
 }

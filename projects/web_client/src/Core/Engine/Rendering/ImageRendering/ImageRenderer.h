@@ -2,7 +2,7 @@
 
 #include "Core/Engine/Rendering/RenderingCore/RendererBase.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     class ImageRenderer : public RendererBase
     {

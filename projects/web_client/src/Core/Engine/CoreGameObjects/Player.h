@@ -1,45 +1,102 @@
 #pragma once
 
-namespace zw
+namespace JourneyOfDreams
 {
+    /////////////////////////////////////////////////
+    /// Player controller character in the game.
+    /////////////////////////////////////////////////
     class Player
     {
       public:
+        /////////////////////////////////////////////////
+        /// Initializes player at center of world area.
+        /////////////////////////////////////////////////
         Player();
+
+        /////////////////////////////////////////////////
+        /// Gets the X coordinate of the player.
+        ///
+        /// \return X coordinate.
+        /////////////////////////////////////////////////
         int GetX();
+        
+        /////////////////////////////////////////////////
+        /// Gets the Y coordinate of the player.
+        ///
+        /// \return Y coordinate.
+        /////////////////////////////////////////////////
         int GetY();
+        
+        /////////////////////////////////////////////////
+        /// Moves the player north.
+        /////////////////////////////////////////////////
         void MoveNorth();
+        
+        /////////////////////////////////////////////////
+        /// Moves the player east.
+        /////////////////////////////////////////////////
         void MoveEast();
+        
+        /////////////////////////////////////////////////
+        /// Moves the player south.
+        /////////////////////////////////////////////////
         void MoveSouth();
+        
+        /////////////////////////////////////////////////
+        /// Moves the player west.
+        /////////////////////////////////////////////////
         void MoveWest();
-        auto Position()
-        {
-            return m_position;
-        }
-        void SetPosition(Point position)
-        {
-            m_position = position;
-        }
-        auto TicksLastMove()
-        {
-            return m_ticksLastMove;
-        }
-        void SetTicksLastMove(int ticksLastMove)
-        {
-            m_ticksLastMove = ticksLastMove;
-        }
-        auto MovementSpeed()
-        {
-            return m_movementSpeed;
-        }
-        auto Destination()
-        {
-            return m_destination;
-        }
-        void SetDestination(Point destination)
-        {
-            m_destination = destination;
-        }
+        
+        /////////////////////////////////////////////////
+        /// Gets the position of the player.
+        ///
+        /// \return Position point.
+        /////////////////////////////////////////////////
+        Point Position();
+        
+        /////////////////////////////////////////////////
+        /// Sets the position of the player.
+        ///
+        /// \param position Position point.
+        /////////////////////////////////////////////////
+        void SetPosition(Point position);
+        
+        /////////////////////////////////////////////////
+        /// Gets the number of ticks since the player
+        /// last moved.
+        ///
+        /// \return Number of ticks.
+        /////////////////////////////////////////////////
+        int TicksLastMove();
+        
+        /////////////////////////////////////////////////
+        /// Sets the number of ticks since the player
+        /// last moved.
+        ///
+        /// \param ticksLastMove Number of ticks.
+        /////////////////////////////////////////////////
+        void SetTicksLastMove(int ticksLastMove);
+        
+        /////////////////////////////////////////////////
+        /// Gets the movement speed of the player.
+        ///
+        /// \return Movement speed.
+        /////////////////////////////////////////////////
+        float MovementSpeed();
+        
+        /////////////////////////////////////////////////
+        /// Gets the destination of the player.
+        ///
+        /// \return Destination point.
+        /////////////////////////////////////////////////
+        Point Destination();
+        
+        /////////////////////////////////////////////////
+        /// Sets the destination of the player.
+        ///
+        /// \param destination Destination point.
+        /////////////////////////////////////////////////
+        void SetDestination(Point destination);
 
       private:
         Point m_position{ .x = 0, .y = 0 };

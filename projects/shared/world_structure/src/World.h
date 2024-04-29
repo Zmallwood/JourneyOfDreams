@@ -1,6 +1,6 @@
 #pragma once
 
-namespace zw
+namespace JourneyOfDreams
 {
     class WorldArea;
 
@@ -14,6 +14,6 @@ namespace zw
         }
 
       private:
-        std::shared_ptr<zw::WorldArea> m_worldArea;
+        std::shared_ptr<JourneyOfDreams::WorldArea> m_worldArea;
     };
 }

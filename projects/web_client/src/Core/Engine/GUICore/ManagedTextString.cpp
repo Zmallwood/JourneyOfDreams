@@ -1,7 +1,7 @@
 #include "ManagedTextString.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
-namespace zw {
+namespace JourneyOfDreams {
   ManagedTextString::ManagedTextString(float maxRenderWidth, bool passwordMode)
       : m_maxRenderWidth(maxRenderWidth), m_passwordMode(passwordMode) {
   }

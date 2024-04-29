@@ -1,22 +1,32 @@
 #pragma once
 
-namespace zw
+namespace JourneyOfDreams
 {
     class ClientProperties
     {
       public:
-        auto CanvasSize()
-        {
-            return m_canvasSize;
-        }
-        auto DefaultClearColor()
-        {
-            return m_defaultClearColor;
-        }
-        auto NumGridRows()
-        {
-            return m_numGridRows;
-        }
+        /////////////////////////////////////////////////
+        /// Return canvas size in pixels.
+        ///
+        /// \return Size of canvas in pixels.
+        /////////////////////////////////////////////////
+        Size CanvasSize() const;
+
+        /////////////////////////////////////////////////
+        /// Get default color used to clear the 
+        /// screen at the beginning of each frame.
+        ///
+        /// \return Default clear color.
+        /////////////////////////////////////////////////
+        ColorF DefaultClearColor() const;
+
+        /////////////////////////////////////////////////
+        /// Get number of rows in the 2D grid in
+        /// the world view.
+        ///
+        /// \return Number of rows in the grid.
+        /////////////////////////////////////////////////
+        int NumGridRows() const;
 
       private:
         Size m_canvasSize{ 1000, 600 };

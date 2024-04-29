@@ -6,7 +6,7 @@
 #include <SDL2/SDL.h>
 #endif()
 
-namespace zw
+namespace JourneyOfDreams
 {
     class ColorF
     {

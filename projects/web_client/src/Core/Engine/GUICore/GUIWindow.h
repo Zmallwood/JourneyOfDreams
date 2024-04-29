@@ -2,7 +2,7 @@
 
 #include "GUIMovableWidget.h"
 
-namespace zw {
+namespace JourneyOfDreams {
   class GUIWindow : public GUIMovableWidget {
    public:
     GUIWindow(RectF area, const std::string &title, GUIAlign alignment = GUIAlign::TopLeft,

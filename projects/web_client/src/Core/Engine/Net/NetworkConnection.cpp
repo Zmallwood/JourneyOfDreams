@@ -2,7 +2,7 @@
 #include "NetClient.h"
 #include "Core/Configuration/ConfigurationFile.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     EM_BOOL OnOpen(int eventType, const EmscriptenWebSocketOpenEvent *websocketEvent, void *userData)
     {

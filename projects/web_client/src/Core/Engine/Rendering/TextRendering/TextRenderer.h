@@ -2,7 +2,7 @@
 
 #include "FontSizes.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     class Font;
 

@@ -4,7 +4,7 @@
 #include "world_structure/src/WorldArea.h"
 #include "world_structure/src/Object.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void WorldFileReader::ReadWorldFile()
     {

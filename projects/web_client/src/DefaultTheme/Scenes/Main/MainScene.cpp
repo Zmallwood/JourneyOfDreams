@@ -7,7 +7,7 @@
 #include "SubProcess/UpdateClickMovement.h"
 #include "SubProcess/TileHoverer.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void MainScene::OnEnter()
     {

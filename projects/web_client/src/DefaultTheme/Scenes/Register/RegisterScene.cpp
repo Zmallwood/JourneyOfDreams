@@ -8,7 +8,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     RegisterScene::RegisterScene()
     {

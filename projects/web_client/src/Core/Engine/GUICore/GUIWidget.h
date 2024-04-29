@@ -2,7 +2,7 @@
 #include "GUIAlign.h"
 #include "WidgetEntry.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     class GUI;
 

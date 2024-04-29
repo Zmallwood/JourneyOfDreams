@@ -4,7 +4,7 @@
 #include "SubProcess/GenerateWater.h"
 #include "SubProcess/GenerateObjects.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void GenerateNewWorld()
     {

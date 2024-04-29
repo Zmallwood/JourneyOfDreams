@@ -3,7 +3,7 @@
 #include "Engine/Engine.h"
 #include "Engine/Assets/ImageBank.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void GameInstance::Run()
     {

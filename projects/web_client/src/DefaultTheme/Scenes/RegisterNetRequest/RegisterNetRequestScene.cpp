@@ -6,7 +6,7 @@
 #include "Core/Engine/ScenesCore/SceneManager.h"
 #include "DefaultTheme/Scenes/Register/RegisterScene.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     RegisterNetRequestScene::RegisterNetRequestScene()
     {

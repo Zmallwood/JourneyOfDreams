@@ -1,10 +1,10 @@
 #include "IScene.h"
 #include "Core/Engine/GUICore/GUI.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     IScene::IScene() 
-    : m_gui(std::make_shared<zw::GUI>())
+    : m_gui(std::make_shared<JourneyOfDreams::GUI>())
     {
         m_gui->Initialize();
     }

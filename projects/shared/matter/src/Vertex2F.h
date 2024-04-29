@@ -3,7 +3,7 @@
 #include "PointF.h"
 #include "ColorF.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     class Vertex2F
     {

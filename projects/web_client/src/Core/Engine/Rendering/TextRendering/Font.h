@@ -1,7 +1,7 @@
 #pragma once
 
 typedef struct _TTF_Font TTF_Font;
-namespace zw
+namespace JourneyOfDreams
 {
 
     class Font

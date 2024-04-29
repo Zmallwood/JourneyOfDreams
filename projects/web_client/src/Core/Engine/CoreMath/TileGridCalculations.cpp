@@ -1,7 +1,7 @@
 #include "TileGridCalculations.h"
 #include "Core/Configuration/ClientProperties.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     int CalculateNumGridCols()
     {

@@ -4,7 +4,7 @@
 #include "PointF.h"
 #include "SizeF.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     class RectF
     {

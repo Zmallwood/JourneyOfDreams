@@ -2,7 +2,7 @@
 
 #include "GUIWindow.h"
 
-namespace zw {
+namespace JourneyOfDreams {
   class GUIMessageBox : public GUIWindow {
    public:
     GUIMessageBox(PointF position, const std::string &message, const std::string &title = "Message",

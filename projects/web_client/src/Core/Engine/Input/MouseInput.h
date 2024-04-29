@@ -2,7 +2,7 @@
 
 #include "MouseButton.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     class MouseInput
     {

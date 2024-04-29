@@ -3,7 +3,7 @@
 #include "Core/Engine/Input/MouseInput.h"
 #include "TileHoverer.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void UpdateClickMovement()
     {

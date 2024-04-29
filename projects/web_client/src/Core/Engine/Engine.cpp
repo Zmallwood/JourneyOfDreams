@@ -5,7 +5,7 @@
 #include "PollEvents.h"
 #include "ScenesCore/SceneManager.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     Engine::Engine()
     {

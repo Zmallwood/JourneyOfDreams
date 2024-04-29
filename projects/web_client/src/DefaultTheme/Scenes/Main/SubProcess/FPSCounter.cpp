@@ -3,7 +3,7 @@
 #include "Core/Engine/GUICore/GUILabel.h"
 #include "DefaultTheme/Scenes/Main/MainScene.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     FPSCounter::FPSCounter()
     {

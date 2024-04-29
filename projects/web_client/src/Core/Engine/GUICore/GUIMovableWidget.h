@@ -2,7 +2,7 @@
 
 #include "GUIWidget.h"
 
-namespace zw {
+namespace JourneyOfDreams {
   class GUIMovableWidget : public GUIWidget {
    public:
     GUIMovableWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft, bool movable = true);

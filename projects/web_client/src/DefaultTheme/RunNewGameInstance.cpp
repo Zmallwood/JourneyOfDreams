@@ -1,7 +1,7 @@
 #include "RunNewGameInstance.h"
 #include "Core/GameInstance.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void RunNewGameInstance()
     {

@@ -1,6 +1,6 @@
 #pragma once
 
-namespace zw
+namespace JourneyOfDreams
 {
     class GUI;
 
@@ -35,6 +35,6 @@ namespace zw
         }
 
       private:
-        std::shared_ptr<zw::GUI> m_gui;
+        std::shared_ptr<JourneyOfDreams::GUI> m_gui;
     };
 }

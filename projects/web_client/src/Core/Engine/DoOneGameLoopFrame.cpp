@@ -1,7 +1,7 @@
 #include "DoOneGameLoopFrame.h"
 #include "Engine.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void DoOneGameLoopFrame()
     {

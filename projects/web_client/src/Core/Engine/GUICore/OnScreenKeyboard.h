@@ -2,7 +2,7 @@
 
 #include "GUIPanel.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     class OnScreenKeyboard : public GUIPanel
     {

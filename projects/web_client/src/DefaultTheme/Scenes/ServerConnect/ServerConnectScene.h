@@ -2,7 +2,7 @@
 
 #include "Core/Engine/ScenesCore/IScene.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     class ServerConnectScene : public IScene
     {

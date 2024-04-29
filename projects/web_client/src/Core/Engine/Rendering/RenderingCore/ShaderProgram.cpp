@@ -1,6 +1,6 @@
 #include "ShaderProgram.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     bool ShaderProgram::Create(const GLchar *vertexShaderSource, const GLchar *fragmentShaderSource)
     {

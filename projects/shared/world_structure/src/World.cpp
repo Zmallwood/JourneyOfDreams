@@ -1,9 +1,9 @@
 #include "World.h"
 #include "WorldArea.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
-    World::World() : m_worldArea(std::make_shared<zw::WorldArea>())
+    World::World() : m_worldArea(std::make_shared<JourneyOfDreams::WorldArea>())
     {
     }
 }

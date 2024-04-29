@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[])
 {
-    zw::RunNewGameInstance();
+    JourneyOfDreams::RunNewGameInstance();
 
     return 0;
 }

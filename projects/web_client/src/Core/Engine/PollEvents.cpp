@@ -2,7 +2,7 @@
 #include "Input/KeyboardInput.h"
 #include "Input/MouseInput.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void PollEvents()
     {

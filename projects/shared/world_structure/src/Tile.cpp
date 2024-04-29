@@ -1,6 +1,6 @@
 #include "Tile.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void Tile::SetGround(const std::string &groundName)
     {

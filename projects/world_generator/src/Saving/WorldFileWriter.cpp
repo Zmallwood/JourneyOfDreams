@@ -4,7 +4,7 @@
 #include "../../shared/world_structure/src/WorldArea.h"
 #include "../../shared/world_structure/src/Object.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void WorldFileWriter::WriteWorldToFile()
     {

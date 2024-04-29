@@ -1,6 +1,6 @@
 #include "Object.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     Object::Object(const std::string &objectTypeName) : m_type(Hash(objectTypeName))
     {

@@ -3,7 +3,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Font.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     TextRenderer::TextRenderer()
     {

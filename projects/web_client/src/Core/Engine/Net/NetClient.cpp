@@ -1,7 +1,7 @@
 #include "NetClient.h"
 #include "NetworkConnection.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     NetClient::NetClient() : m_connection(std::make_shared<NetworkConnection>())
     {

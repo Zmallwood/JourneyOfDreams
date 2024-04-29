@@ -1,6 +1,6 @@
 #include "KeyboardInput.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void KeyboardInput::OnKeyPress(SDL_Keycode key)
     {

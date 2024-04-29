@@ -2,7 +2,7 @@
 #include "GUIButton.h"
 #include "GUILabel.h"
 
-namespace zw {
+namespace JourneyOfDreams {
   GUIMessageBox::GUIMessageBox(PointF position, const std::string &message, const std::string &title,
                                SizeF size, GUIAlign alignment, bool movable)
       : GUIWindow(RectF{ position.x, position.y, size.w, size.h }, title, alignment, movable),

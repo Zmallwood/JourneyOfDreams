@@ -1,6 +1,6 @@
 #pragma once
 
-namespace zw
+namespace JourneyOfDreams
 {
     int Hash(const std::string &text);
 }

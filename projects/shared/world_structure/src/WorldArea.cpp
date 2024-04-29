@@ -2,7 +2,7 @@
 #include "Tile.h"
 #include "configuration/src/GlobalProperties.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     WorldArea::WorldArea()
     {

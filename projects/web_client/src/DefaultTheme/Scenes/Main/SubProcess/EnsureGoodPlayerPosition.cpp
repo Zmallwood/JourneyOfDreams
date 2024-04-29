@@ -4,7 +4,7 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     static bool CoordinateIsGoodAsPlayerPosition(Point coordinate)
     {

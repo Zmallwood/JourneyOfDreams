@@ -1,12 +1,18 @@
 #pragma once
+
 #include <SDL.h>
 
-namespace zw
+namespace JourneyOfDreams
 {
+    /////////////////////////////////////////////////
     /// Resource ID
+    /////////////////////////////////////////////////
     using RID = GLuint;
 
+    /////////////////////////////////////////////////
     /// Ticks elapsed since game start
+    ///
+    /// \return Number of ticks since game start.
+    /////////////////////////////////////////////////
     static auto Ticks = SDL_GetTicks;
 }
-    

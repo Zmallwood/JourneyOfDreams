@@ -1,6 +1,6 @@
 #include "MouseInput.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void MouseInput::OnPress(Uint8 button)
     {

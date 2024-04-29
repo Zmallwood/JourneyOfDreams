@@ -1,6 +1,6 @@
 #include "MouseButton.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     void MouseButton::OnPress()
     {

@@ -6,7 +6,7 @@
 #include "DefaultTheme/Scenes/RegisterNetRequest/RegisterNetRequestScene.h"
 #include "DefaultTheme/Scenes/ServerConnect/ServerConnectScene.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     SceneManager::SceneManager()
     {

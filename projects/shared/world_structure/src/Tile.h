@@ -1,6 +1,6 @@
 #pragma once
 
-namespace zw
+namespace JourneyOfDreams
 {
     class Object;
 
@@ -22,7 +22,7 @@ namespace zw
         {
             return m_object;
         }
-        void SetObject(const std::shared_ptr<zw::Object> object)
+        void SetObject(const std::shared_ptr<JourneyOfDreams::Object> object)
         {
             m_object = object;
         }
@@ -30,6 +30,6 @@ namespace zw
       private:
         int m_ground{ 0 };
         float m_elevation{ 0.0f };
-        std::shared_ptr<zw::Object> m_object{};
+        std::shared_ptr<JourneyOfDreams::Object> m_object{};
     };
 }

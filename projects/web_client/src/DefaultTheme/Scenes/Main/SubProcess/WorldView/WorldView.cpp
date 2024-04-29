@@ -8,7 +8,7 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
-namespace zw
+namespace JourneyOfDreams
 {
     WorldView::WorldView()
         : m_ridsTiles(std::make_shared<std::vector<std::vector<RID>>>()),

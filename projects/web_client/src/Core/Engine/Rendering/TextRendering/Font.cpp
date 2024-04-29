@@ -1,6 +1,6 @@
 #include "Font.h"
 
-namespace zw 
+namespace JourneyOfDreams 
 {
     Font::Font(const std::string &fontFileName, int fontSize)
     {

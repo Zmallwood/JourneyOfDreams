@@ -1,38 +1,55 @@
 #pragma once
 
-namespace zw
+namespace JourneyOfDreams
 {
-    /// Loads and provides images loaded from the file system.
+    /////////////////////////////////////////////////
+    /// Loads and provides images that has
+    /// been loaded from the filesystem.
+    /////////////////////////////////////////////////
     class ImageBank
     {
       public:
-        /// Initializes bank by loading all images in images folder.
+        /////////////////////////////////////////////////
+        /// Initializes bank by loading all images
+        /// in images folder.
+        /////////////////////////////////////////////////
         ImageBank();
 
+        /////////////////////////////////////////////////
         /// Frees all allocated OpenGL image resources.
+        /////////////////////////////////////////////////
         ~ImageBank();
 
-        /// Provides the image with the specified name.
+        /////////////////////////////////////////////////
+        /// Gets an image resource by name.
+        ///
+        /// \param imageName Name of the image to get.
+        /// \return Image resource ID.
+        /////////////////////////////////////////////////
         GLuint GetImage(const std::string &imageName);
 
+        /////////////////////////////////////////////////
+        /// Gets an image resource by hash code.
+        ///
+        /// \param imageNameHash Hash code of the image to get.
+        /// \return Image resource ID.
+        /////////////////////////////////////////////////
         GLuint GetImage(int imageNameHash);
 
-        /// Creates a blank image resource, given the specified name, and returns its ID.
+        /////////////////////////////////////////////////
+        /// Creates a blank image resource, given
+        /// the specified name, and returns its ID.
+        ///
+        /// \param uniqueImageName Name of the image to create.
+        /// \return Image resource ID.
+        /////////////////////////////////////////////////
         GLuint CreateBlankImage(const std::string &uniqueImageName);
 
       private:
-        /// Load all images from file system in the images path.
         void LoadImages();
-
-        /// Load a single image at the path and return its resource ID.
         GLuint LoadSingleImage(const std::string &absFilePath);
-
-        SDL_Surface *LoadImage(const char *filename);
-
-        /// Internal image storage.
+        SDL_Surface *LoadImageData(const char *filename);
         std::map<int, GLuint> m_images;
-
-        /// Path to the images folder, relative the applications base path.
         const std::string k_relImagesPath = "images";
     };
 }
