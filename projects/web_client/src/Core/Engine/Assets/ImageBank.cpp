@@ -14,9 +14,11 @@ namespace JourneyOfDreams
         /*
         ** Iterate through all the loaded images. */
         for (const auto &img : m_images)
+        {
             /*
             ** And free every allocated image resource. */
             glDeleteTextures(1, &img.second);
+        }
     }
 
     GLuint ImageBank::GetImage(const std::string &imageName)
@@ -31,12 +33,16 @@ namespace JourneyOfDreams
         /*
         ** Iterate through all the loaded images. */
         for (auto img : m_images)
+        {
             /*
             ** If its key, being the hash of the image name, equals the hash of the specified name. */
             if (img.first == imageNameHash)
+            {
                 /*
                 ** If so, return this image ID. */
                 return img.second;
+            }
+        }
         /*
         ** No image with the name found, return fail value. */
         return -1;
@@ -73,7 +79,9 @@ namespace JourneyOfDreams
             /*
             ** Only handle files with png extenstion. */
             if (FileExtension(absPath) != "png")
+            {
                 continue;
+            }
 
             /*
             ** Load the current file as an image resource. */
