@@ -14,7 +14,7 @@ namespace JourneyOfDreams
         m_ridBackground = _<ImageRenderer>().NewImage();
 
         /*
-        ** Set default widget properties. */
+        ** Set default properties. */
         SetDrawBackground(false);
         SetDrawBorders(false);
         SetBackgroundImage("GUIDefaultButtonBackground");
