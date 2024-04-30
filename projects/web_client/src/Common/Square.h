@@ -16,9 +16,8 @@ namespace JourneyOfDreams
         /////////////////////////////////////////////////
         void SetAll(T value)
         {
-            //
-            // Set all values to the same value at the same time.
-            //
+            /*
+            ** Set all values to the same value at the same time. */
             _00 = _01 = _11 = _10 = value;
         }
 
