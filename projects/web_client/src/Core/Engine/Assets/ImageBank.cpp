@@ -3,61 +3,106 @@
 namespace JourneyOfDreams
 {
     ImageBank::ImageBank()
-    { // Load all images in images path.
+    {
+        //
+        // Load all images in images path.
+        //
         LoadImages();
     }
 
     ImageBank::~ImageBank()
     {
-        for (const auto &img : m_images)      // Iterate through all the loaded images.
-            glDeleteTextures(1, &img.second); // And free every allocated image resource.
+        //
+        // Iterate through all the loaded images.
+        //
+        for (const auto &img : m_images)
+            //
+            // And free every allocated image resource.
+            //
+            glDeleteTextures(1, &img.second);
     }
 
     GLuint ImageBank::GetImage(const std::string &imageName)
-    { // Hash the image name and call the other GetImage method.
+    {
+        //
+        // Hash the image name and call the other GetImage method.
+        //
         return GetImage(Hash(imageName));
     }
 
     GLuint ImageBank::GetImage(int imageNameHash)
     {
-        for (auto img : m_images)           // Iterate through all the loaded images.
-            if (img.first == imageNameHash) // If its key, being the hash of the image name, equals the hash
-                                            // of the specified name.
-                return img.second;          // If so, return this image ID.
-        return -1;                          // No image with the name found, return fail value.
+        //
+        // Iterate through all the loaded images.
+        //
+        for (auto img : m_images)
+            //
+            // If its key, being the hash of the image name, equals the hash of the specified name.
+            //
+            if (img.first == imageNameHash)
+                //
+                // If so, return this image ID.
+                //
+                return img.second;
+        //
+        // No image with the name found, return fail value.
+        //
+        return -1;
     }
 
     GLuint ImageBank::CreateBlankImage(const std::string &uniqueImageName)
     {
-        GLuint texID;             // Generate new image resource
-        glGenTextures(1, &texID); //  and get its ID.
+        //
+        // Generate new image resource and get its ID.and get its ID.
+        //
+        GLuint texID;
+        glGenTextures(1, &texID);
 
-        m_images.insert( // Insert new image entry with image name hash as key and the new ID as value.
-            { Hash(uniqueImageName), texID });
+        //
+        // Insert new image entry with image name hash as key and the new ID as value.
+        //
+        m_images.insert({ Hash(uniqueImageName), texID });
 
-        return texID; // Return the ID of the newly created blank image resource.
+        //
+        // Return the ID of the newly created blank image resource.
+        //
+        return texID;
     }
 
     void ImageBank::LoadImages()
     {
         using iterator = std::filesystem::recursive_directory_iterator;
 
-        auto allImagesPath = k_relImagesPath + "/"; // Create path string to load the images from.
+        //
+        // Create path string to load the images from.
+        //
+        auto allImagesPath = k_relImagesPath + "/";
 
         for (auto &entry : iterator(allImagesPath))
         {
             auto absPath = entry.path().string();
 
-            if (FileExtension(absPath) != "png") // Only handle files with png extenstion.
+            //
+            // Only handle files with png extenstion.
+            //
+            if (FileExtension(absPath) != "png")
                 continue;
 
-            auto texID = LoadSingleImage(absPath); // Load the current file as an image resource.
+            //
+            // Load the current file as an image resource.
+            //
+            auto texID = LoadSingleImage(absPath);
 
-            auto imageName = FilenameNoExtension(absPath); // Extract its pure name without path or extension.
+            //
+            // // Extract its pure name without path or extension.
+            //
+            auto imageName = FilenameNoExtension(absPath);
 
-            m_images.insert( // Insert a new entry into the images storage, with the image name hash as key
-                             // and the resource ID as value.
-                { Hash(imageName), texID });
+            //
+            // Insert a new entry into the images storage, with the image name hash as key and the resource ID
+            // as value.
+            //
+            m_images.insert({ Hash(imageName), texID });
         }
     }
 

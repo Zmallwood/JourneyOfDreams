@@ -4,14 +4,30 @@ namespace JourneyOfDreams
 {
     ConfigurationFile::ConfigurationFile()
     {
-        std::ifstream configurationFile;                        // To contain the read configuration file
-        configurationFile.open(SDL_GetBasePath() + k_filePath); // Open the configuration file
+        //
+        // To contain the read configuration file
+        //
+        std::ifstream configurationFile;
 
-        std::string line; // To contain the read line
+        //
+        // Open the configuration file
+        //
+        configurationFile.open(SDL_GetBasePath() + k_filePath);
 
-        while (std::getline(configurationFile, line)) // Read each line of the configuration file
+        //
+        // To contain the read line
+        //
+        std::string line;
+
+        //
+        // Read each line of the configuration file
+        //
+        while (std::getline(configurationFile, line))
         {
-            for (auto &c : line) // Remove all spaces from the line
+            //
+            // Remove comments from the line
+            //
+            for (auto &c : line)
             {
                 if (c == '#')
                 {
@@ -20,32 +36,58 @@ namespace JourneyOfDreams
                 }
             }
 
-            auto parameterName = line.substr(0, line.find('='));   // Get the parameter name
-            auto parameterValue = line.substr(line.find('=') + 1); // Get the parameter value
+            //
+            // Get the parameter name and value
+            //
+            auto parameterName = line.substr(0, line.find('='));
+            auto parameterValue = line.substr(line.find('=') + 1);
 
-            std::transform( // Convert parameter name to lowercase
-                parameterName.begin(), parameterName.end(), parameterName.begin(), tolower);
+            //
+            // Convert parameter name to lowercase
+            //
+            std::transform(parameterName.begin(), parameterName.end(), parameterName.begin(), tolower);
 
-            if (parameterName == "serveraddress") // Check if the parameter is the server address
+            //
+            // Check if the parameter is the server address
+            //
+            if (parameterName == "serveraddress")
             {
-                m_serverAddress = parameterValue; // Set the server address
+                //
+                // Set the server address
+                //
+                m_serverAddress = parameterValue;
             }
-            else if (parameterName == "serverport") // Check if the parameter is the server port
+            //
+            // Check if the parameter is the server port
+            //
+            else if (parameterName == "serverport")
             {
-                m_serverPort = std::stoi(parameterValue); // Set the server port
+                //
+                // Set the server port
+                //
+                m_serverPort = std::stoi(parameterValue);
             }
         }
 
-        configurationFile.close(); // Close the configuration file
+        //
+        // Close the configuration file
+        //
+        configurationFile.close();
     }
 
     std::string ConfigurationFile::ServerAddress() const
-    { // Return server address
+    {
+        //
+        // Return the server address
+        //
         return m_serverAddress;
     }
 
     int ConfigurationFile::ServerPort() const
-    { // Return server port
+    {
+        //
+        // Return the server port
+        //
         return m_serverPort;
     }
 }

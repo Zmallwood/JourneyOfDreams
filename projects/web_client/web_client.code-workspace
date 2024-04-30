@@ -82,7 +82,8 @@
 			"fstream": "cpp",
 			"thread": "cpp",
 			"any": "cpp",
-			"pqxx": "cpp"
+			"pqxx": "cpp",
+			"future": "cpp"
 		}
 	}
 }
