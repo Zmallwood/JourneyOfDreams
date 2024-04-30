@@ -108,68 +108,134 @@ namespace JourneyOfDreams
 
     GLuint ImageBank::LoadSingleImage(const std::string &absFilePath)
     {
-        GLuint texID; // Will hold the resulting ID for the loaded image file.
+        //
+        // Will hold the resulting ID for the loaded image file.
+        //
+        GLuint texID;
 
-        auto surf = LoadImageData(absFilePath.data()); // Get image data from the image file.
+        //
+        // Get image data from the image file.
+        //
+        auto surf = LoadImageData(absFilePath.data());
 
-        glEnable(GL_TEXTURE_2D); // We will work with 2D textures.
+        //
+        // We will work with 2D textures.
+        //
+        glEnable(GL_TEXTURE_2D);
 
-        glGenTextures(1, &texID); // Generate a new OpenGL texture and get its ID.
+        //
+        // Generate a new OpenGL texture and get its ID.
+        //
+        glGenTextures(1, &texID);
 
-        glBindTexture(GL_TEXTURE_2D, texID); // Use the newly created OpenGL texture.
+        //
+        // Use the newly created OpenGL texture.
+        //
+        glBindTexture(GL_TEXTURE_2D, texID);
 
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER,
-                        GL_NEAREST); // Apply necessary texture parameters, mag filter.
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
-                        GL_NEAREST); // Apply necessary texture parameters, min filter.
+        //
+        // Apply necessary texture parameters
+        //
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 
-        if (surf->format->BytesPerPixel == 4) // If image format is RGBA (with alpha channel)
+        //
+        // If image format is RGBA (with alpha channel)
+        //
+        if (surf->format->BytesPerPixel == 4)
         {
-            glTexImage2D( // Transfer image data from SDL surface to OpenGL texture resource.
-                GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA, GL_UNSIGNED_BYTE, surf->pixels);
+            //
+            // Transfer image data from SDL surface to OpenGL texture resource.
+            //
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA, GL_UNSIGNED_BYTE,
+                         surf->pixels);
         }
-        else // If image format is RGB (without alpha channel)
+        //
+        // If image format is RGB (without alpha channel)
+        //
+        else
         {
-            glTexImage2D( // Transfer image data from SDL surface to OpenGL texture resource.
-                GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB, GL_UNSIGNED_BYTE, surf->pixels);
+            //
+            // Transfer image data from SDL surface to OpenGL texture resource.
+            //
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB, GL_UNSIGNED_BYTE,
+                         surf->pixels);
         }
 
-        SDL_FreeSurface(surf); // Free SDL surface resource. Its not needed anymore as the image data is
-                               // stored in the OpenGL texture now.
+        //
+        // Free SDL surface resource. Its not needed anymore as the image data is stored in the OpenGL texture
+        // now.
+        //
+        SDL_FreeSurface(surf);
 
-        return texID; // Return the previously generated resource ID.
+        //
+        // Return the previously generated resource ID.
+        //
+        return texID;
     }
 
     SDL_Surface *ImageBank::LoadImageData(const char *filename)
     {
-        int width, height, bytesPerPixel;
-        void *data = stbi_load(filename, &width, &height, &bytesPerPixel, 0); // Read data
+        int width;
+        int height;
+        int bytesPerPixel;
+
+        //
+        // Read data
+        //
+        void *data = stbi_load(filename, &width, &height, &bytesPerPixel, 0);
 
         int pitch;
-        pitch = width * bytesPerPixel; // Calculate pitch
-        pitch = (pitch + 3) & ~3;      // continue calculation
 
-        int Rmask, Gmask, Bmask, Amask;
-#if SDL_BYTEORDER == SDL_LIL_ENDIAN // Setup relevance bitmask, case little endian
+        //
+        // Calculate pitch
+        //
+        pitch = width * bytesPerPixel;
+        pitch = (pitch + 3) & ~3;
+
+        int Rmask;
+        int Gmask;
+        int Bmask;
+        int Amask;
+
+        //
+        // Setup relevance bitmask
+        //
+#if SDL_BYTEORDER == SDL_LIL_ENDIAN
         Rmask = 0x000000FF;
         Gmask = 0x0000FF00;
         Bmask = 0x00FF0000;
         Amask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
-#else // Setup relevance bitmask, case other
+#else
         int s = (bytesPerPixel == 4) ? 0 : 8;
         Rmask = 0xFF000000 >> s;
         Gmask = 0x00FF0000 >> s;
         Bmask = 0x0000FF00 >> s;
         Amask = 0x000000FF >> s;
 #endif
-        SDL_Surface *surface = SDL_CreateRGBSurfaceFrom( // Create SDL surface from image data
-            data, width, height, bytesPerPixel * 8, pitch, Rmask, Gmask, Bmask, Amask);
-        if (!surface) // If surface creation failed
+
+        //
+        // Create SDL surface from image data
+        //
+        SDL_Surface *surface = SDL_CreateRGBSurfaceFrom(data, width, height, bytesPerPixel * 8, pitch, Rmask,
+                                                        Gmask, Bmask, Amask);
+
+        //
+        // If surface creation failed
+        //
+        if (!surface)
         {
-            stbi_image_free(data); // Free image data
+            //
+            // Free image data
+            //
+            stbi_image_free(data);
+
             return nullptr;
         }
 
-        return surface; // Return the created SDL surface
+        //
+        // Return the created SDL surface
+        //
+        return surface;
     }
 }
