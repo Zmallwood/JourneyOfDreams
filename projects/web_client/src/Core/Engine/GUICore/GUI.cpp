@@ -40,7 +40,9 @@ namespace JourneyOfDreams
         /*
         ** Update all child widgets in the same order as they have been added. */
         for (auto &entry : ChildWidgets())
+        {
             entry.widget->Update();
+        }
 
         /*
         ** Destroy all widgets that should be destroyed. */
@@ -72,7 +74,9 @@ namespace JourneyOfDreams
         /*
         ** Render all widgets in the same order as they have been added. */
         for (auto &entry : ChildWidgets())
+        {
             entry.widget->Render();
+        }
     }
 
     std::shared_ptr<GUIWidget> GUI::GetWidget(const std::string &nameIdentifier)
