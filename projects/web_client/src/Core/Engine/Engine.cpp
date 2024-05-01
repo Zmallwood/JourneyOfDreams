@@ -30,6 +30,7 @@ namespace JourneyOfDreams
 
     void Engine::Update()
     {
+        std::cout << "upd: " << Ticks() << std::endl;
         _<SceneManager>().UpdateCurrentScene();
     }
 

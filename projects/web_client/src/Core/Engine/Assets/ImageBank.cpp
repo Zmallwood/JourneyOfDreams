@@ -98,6 +98,7 @@ namespace JourneyOfDreams
         /*
         ** Will hold the resulting ID for the loaded image file. */
         GLuint texID;
+
         /*
         ** Get image data from the image file. */
         auto surf = LoadImageData(absFilePath.c_str());
