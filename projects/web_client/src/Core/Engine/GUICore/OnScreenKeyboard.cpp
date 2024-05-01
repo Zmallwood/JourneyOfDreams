@@ -8,7 +8,7 @@ namespace JourneyOfDreams
 {
     OnScreenKeyboard::OnScreenKeyboard()
         : GUIPanel({ .x = 0.5f, .y = 1.0f }, { .w = 0.3f, .h = 0.15f }, GUIAlign::BottomCenter)
-    {
+    { 
         /*
         ** Set default widget propertis. **/
         SetVisible(false);
