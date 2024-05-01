@@ -1,5 +1,5 @@
 #include "ImageBank.h"
-#include <SDL_image.h>
+//#include <SDL_image.h>
 
 namespace JourneyOfDreams
 {
@@ -102,8 +102,8 @@ namespace JourneyOfDreams
 
         /*
         ** Get image data from the image file. */
-        // auto surf = LoadImageData(absFilePath.c_str());
-        auto surf = IMG_Load(absFilePath.c_str());
+        auto surf = LoadImageData(absFilePath.c_str());
+        //auto surf = IMG_Load(absFilePath.c_str());
         /*
         ** We will work with 2D textures. */
         glEnable(GL_TEXTURE_2D);
@@ -170,7 +170,7 @@ namespace JourneyOfDreams
         Gmask = 0x0000FF00;
         Bmask = 0x00FF0000;
         Amask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
-#else
+#else   
         int s = (bytesPerPixel == 4) ? 0 : 8;
         Rmask = 0xFF000000 >> s;
         Gmask = 0x00FF0000 >> s;
@@ -181,7 +181,7 @@ namespace JourneyOfDreams
         ** Create SDL surface from image data */
         SDL_Surface *surface = SDL_CreateRGBSurfaceFrom(data, width, height, bytesPerPixel * 8, pitch, Rmask,
                                                         Gmask, Bmask, Amask);
-        stbi_image_free(data);
+        //stbi_image_free(data);
         /*
         ** If surface creation failed */
         if (!surface)
@@ -189,7 +189,6 @@ namespace JourneyOfDreams
             /*
             ** Free image data */
             // stbi_image_free(data);
-            std::cout << "Error loading image\n";
 
             return nullptr;
         }
