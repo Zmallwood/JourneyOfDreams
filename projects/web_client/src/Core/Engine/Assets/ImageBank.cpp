@@ -1,10 +1,10 @@
 
 
 #include "ImageBank.h"
-//#define STB_IMAGE_IMPLEMENTATION
-//#include <SDL_image.h>
+// #define STB_IMAGE_IMPLEMENTATION
+// #include <SDL_image.h>
 
-//#include <stb_image.h>
+// #include <stb_image.h>
 
 namespace JourneyOfDreams
 {
@@ -107,7 +107,7 @@ namespace JourneyOfDreams
 
         /*
         ** Get image data from the image file. */
-        //auto surf = LoadImageData(absFilePath.c_str());
+        // auto surf = LoadImageData(absFilePath.c_str());
         auto surf = IMG_Load(absFilePath.c_str());
         /*
         ** We will work with 2D textures. */
@@ -117,11 +117,13 @@ namespace JourneyOfDreams
         glGenTextures(1, &texID);
         /*
         ** Use the newly created OpenGL texture. */
-        glBindTexture(GL_TEXTURE_2D, texID); 
+        glBindTexture(GL_TEXTURE_2D, texID);
         /*
         ** Apply necessary texture parameters */
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
         /*
         ** If image format is RGBA (with alpha channel) */
         if (surf->format->BytesPerPixel == 4)
