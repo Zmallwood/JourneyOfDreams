@@ -1,5 +1,5 @@
 #include "ImageBank.h"
-#define STB_IMAGE_IMPLEMENTATION
+//#define STB_IMAGE_IMPLEMENTATION
 //#include <SDL_image.h>
 
 namespace JourneyOfDreams
@@ -103,8 +103,8 @@ namespace JourneyOfDreams
 
         /*
         ** Get image data from the image file. */
-        auto surf = LoadImageData(absFilePath.c_str());
-        //auto surf = IMG_Load(absFilePath.c_str());
+        //auto surf = LoadImageData(absFilePath.c_str());
+        auto surf = IMG_Load(absFilePath.c_str());
         /*
         ** We will work with 2D textures. */
         glEnable(GL_TEXTURE_2D);
@@ -139,7 +139,7 @@ namespace JourneyOfDreams
         /*
         ** Free SDL surface resource. Its not needed anymore as the image data is stored in the OpenGL texture
         ** now. */
-        //SDL_FreeSurface(surf);
+        SDL_FreeSurface(surf);
         /*
         ** Return the previously generated resource ID. */
         return texID;
