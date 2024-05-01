@@ -179,13 +179,14 @@ namespace JourneyOfDreams
         ** Create SDL surface from image data */
         SDL_Surface *surface = SDL_CreateRGBSurfaceFrom(data, width, height, bytesPerPixel * 8, pitch, Rmask,
                                                         Gmask, Bmask, Amask);
+        stbi_image_free(data);
         /*
         ** If surface creation failed */
         if (!surface)
         {
             /*
             ** Free image data */
-            stbi_image_free(data);
+            // stbi_image_free(data);
 
             return nullptr;
         }
