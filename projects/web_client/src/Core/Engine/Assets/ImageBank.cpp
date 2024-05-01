@@ -79,6 +79,7 @@ namespace JourneyOfDreams
             {
                 continue;
             }
+            std::cout << "Load image: " << absPath << std::endl;
             /*
             ** Load the current file as an image resource. */
             auto texID = LoadSingleImage(absPath);
@@ -90,6 +91,7 @@ namespace JourneyOfDreams
             ** as value. */
             m_images.insert({ Hash(imageName), texID });
         }
+        std::cout << "All images loaded\n";
     }
 
     GLuint ImageBank::LoadSingleImage(const std::string &absFilePath)
