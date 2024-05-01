@@ -10,7 +10,7 @@ namespace JourneyOfDreams
         m_ridCursorImage = _<ImageRenderer>().NewImage();
         /*
         ** Hide default system cursor when mouse is inside the game canvas. */
-        SDL_ShowCursor(SDL_DISABLE);
+        SDL_ShowCursor(SDL_DISABLE); 
     } 
 
     void Cursor::ResetStyle()
