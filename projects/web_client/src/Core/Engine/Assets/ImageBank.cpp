@@ -54,11 +54,9 @@ namespace JourneyOfDreams
         ** Generate new image resource and get its ID.and get its ID. */
         GLuint texID;
         glGenTextures(1, &texID);
-
         /*
         ** Insert new image entry with image name hash as key and the new ID as value. */
         m_images.insert({ Hash(uniqueImageName), texID });
-
         /*
         ** Return the ID of the newly created blank image resource. */
         return texID;
@@ -75,22 +73,18 @@ namespace JourneyOfDreams
         for (auto &entry : iterator(allImagesPath))
         {
             auto absPath = entry.path().string();
-
             /*
             ** Only handle files with png extenstion. */
             if (FileExtension(absPath) != "png")
             {
                 continue;
             }
-
             /*
             ** Load the current file as an image resource. */
             auto texID = LoadSingleImage(absPath);
-
             /*
             ** Extract its pure name without path or extension. */
             auto imageName = FilenameNoExtension(absPath);
-
             /*
             ** Insert a new entry into the images storage, with the image name hash as key and the resource ID
             ** as value. */
@@ -103,28 +97,22 @@ namespace JourneyOfDreams
         /*
         ** Will hold the resulting ID for the loaded image file. */
         GLuint texID;
-
         /*
         ** Get image data from the image file. */
         auto surf = LoadImageData(absFilePath.data());
-
         /*
         ** We will work with 2D textures. */
         glEnable(GL_TEXTURE_2D);
-
         /*
         ** Generate a new OpenGL texture and get its ID. */
         glGenTextures(1, &texID);
-
         /*
         ** Use the newly created OpenGL texture. */
         glBindTexture(GL_TEXTURE_2D, texID);
-
         /*
         ** Apply necessary texture parameters */
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-
         /*
         ** If image format is RGBA (with alpha channel) */
         if (surf->format->BytesPerPixel == 4)
@@ -143,12 +131,10 @@ namespace JourneyOfDreams
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB, GL_UNSIGNED_BYTE,
                          surf->pixels);
         }
-
         /*
         ** Free SDL surface resource. Its not needed anymore as the image data is stored in the OpenGL texture
         ** now. */
         SDL_FreeSurface(surf);
-
         /*
         ** Return the previously generated resource ID. */
         return texID;
@@ -159,13 +145,11 @@ namespace JourneyOfDreams
         int width;
         int height;
         int bytesPerPixel;
-
         /*
         ** Read data */
         void *data = stbi_load(filename, &width, &height, &bytesPerPixel, 0);
 
         int pitch;
-
         /*
         ** Calculate pitch */
         pitch = width * bytesPerPixel;
@@ -175,7 +159,6 @@ namespace JourneyOfDreams
         int Gmask;
         int Bmask;
         int Amask;
-
         /*
         ** Setup relevance bitmask */
 #if SDL_BYTEORDER == SDL_LIL_ENDIAN
@@ -190,12 +173,10 @@ namespace JourneyOfDreams
         Bmask = 0x0000FF00 >> s;
         Amask = 0x000000FF >> s;
 #endif
-
         /*
         ** Create SDL surface from image data */
         SDL_Surface *surface = SDL_CreateRGBSurfaceFrom(data, width, height, bytesPerPixel * 8, pitch, Rmask,
                                                         Gmask, Bmask, Amask);
-
         /*
         ** If surface creation failed */
         if (!surface)
@@ -206,7 +187,6 @@ namespace JourneyOfDreams
 
             return nullptr;
         }
-
         /*
         ** Return the created SDL surface */
         return surface;

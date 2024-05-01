@@ -2,6 +2,9 @@
 
 namespace JourneyOfDreams
 {
+    /////////////////////////////////////////////////
+    /// Default vertex shader for the images rendering.
+    /////////////////////////////////////////////////
     inline static const GLchar *defaultShaderImagesVertex =
         R"(
         attribute vec4 position;

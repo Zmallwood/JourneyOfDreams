@@ -1,3 +1,4 @@
+#!/bin/bash
 sudo -u postgres psql <<"__END__"
 CREATE DATABASE journeyofdreams;
 \c journeyofdreams;

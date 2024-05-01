@@ -212,43 +212,61 @@ namespace JourneyOfDreams
             switch (m_alignment)
             {
             case GUIAlign::TopLeft:
+            {
                 break;
+            }
             case GUIAlign::TopCenter:
+            {
                 finalArea.x -= finalArea.w / 2;
 
                 break;
+            }
             case GUIAlign::TopRight:
+            {
                 finalArea.x -= finalArea.w;
 
                 break;
+            }
             case GUIAlign::RightCenter:
+            {
                 finalArea.x -= finalArea.w;
                 finalArea.y -= finalArea.h / 2;
 
                 break;
+            }
             case GUIAlign::BottomRight:
+            {
                 finalArea.x -= finalArea.w;
                 finalArea.y -= finalArea.h;
 
                 break;
+            }
             case GUIAlign::BottomCenter:
+            {
                 finalArea.x -= finalArea.w / 2;
                 finalArea.y -= finalArea.h;
 
                 break;
+            }
             case GUIAlign::BottomLeft:
+            {
                 finalArea.y -= finalArea.h;
 
                 break;
+            }
             case GUIAlign::LeftCenter:
+            {
                 finalArea.y -= finalArea.h / 2;
 
                 break;
+            }
             case GUIAlign::Center:
+            {
                 finalArea.x -= finalArea.w / 2;
                 finalArea.y -= finalArea.h / 2;
 
                 break;
+            }
             }
 
             /*
@@ -444,43 +462,61 @@ namespace JourneyOfDreams
             switch (ParentWidget()->Alignment())
             {
             case GUIAlign::TopLeft:
+            {
                 break;
+            }
             case GUIAlign::TopCenter:
+            {
                 alignedPosition.x -= ParentWidget()->Size().w / 2;
 
                 break;
+            }
             case GUIAlign::TopRight:
+            {
                 alignedPosition.x -= ParentWidget()->Size().w;
 
                 break;
+            }
             case GUIAlign::RightCenter:
+            {
                 alignedPosition.x -= ParentWidget()->Size().w;
                 alignedPosition.y -= ParentWidget()->Size().h / 2;
 
                 break;
+            }
             case GUIAlign::BottomRight:
+            {
                 alignedPosition.x -= ParentWidget()->Size().w;
                 alignedPosition.y -= ParentWidget()->Size().h;
 
                 break;
+            }
             case GUIAlign::BottomCenter:
+            {
                 alignedPosition.x -= ParentWidget()->Size().w / 2;
                 alignedPosition.y -= ParentWidget()->Size().h;
 
                 break;
+            }
             case GUIAlign::BottomLeft:
+            {
                 alignedPosition.y -= ParentWidget()->Size().h;
 
                 break;
+            }
             case GUIAlign::LeftCenter:
+            {
                 alignedPosition.y -= ParentWidget()->Size().h / 2;
 
                 break;
+            }
             case GUIAlign::Center:
+            {
                 alignedPosition.x -= ParentWidget()->Size().w / 2;
                 alignedPosition.y -= ParentWidget()->Size().h / 2;
 
                 break;
+            }
             }
         }
 
@@ -506,47 +542,65 @@ namespace JourneyOfDreams
         switch (m_alignment)
         {
         case GUIAlign::TopLeft:
+        {
             paddedAlignedPosition.x += horizontalPadding;
             paddedAlignedPosition.y += verticalPadding;
 
             break;
+        }
         case GUIAlign::TopCenter:
+        {
             paddedAlignedPosition.x += -m_size.w / 2;
             paddedAlignedPosition.y += verticalPadding;
 
             break;
+        }
         case GUIAlign::TopRight:
+        {
             paddedAlignedPosition.x += -m_size.w - horizontalPadding;
             paddedAlignedPosition.y += verticalPadding;
 
             break;
+        }
         case GUIAlign::RightCenter:
+        {
             paddedAlignedPosition.x += -m_size.w - horizontalPadding;
             paddedAlignedPosition.y += -m_size.h / 2;
 
             break;
+        }
         case GUIAlign::BottomRight:
+        {
             paddedAlignedPosition.x += -m_size.w - horizontalPadding;
             paddedAlignedPosition.y += -m_size.h - verticalPadding;
 
             break;
+        }
         case GUIAlign::BottomCenter:
+        {
             paddedAlignedPosition.x += -m_size.w / 2;
             paddedAlignedPosition.y += -m_size.h - verticalPadding;
 
             break;
+        }
         case GUIAlign::BottomLeft:
+        {
             paddedAlignedPosition.x += horizontalPadding;
             paddedAlignedPosition.y += -m_size.h - verticalPadding;
 
             break;
+        }
         case GUIAlign::LeftCenter:
+        {
             paddedAlignedPosition.x += horizontalPadding;
             paddedAlignedPosition.y += m_size.h / 2;
 
             break;
+        }
         case GUIAlign::Center:
+        {
             break;
+        }
         }
 
         return paddedAlignedPosition;

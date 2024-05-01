@@ -1,3 +1,4 @@
+#!/bin/bash
 # Build web_client_server
 source ~/temp/emsdk/emsdk_env.sh &&
 cd .. &&

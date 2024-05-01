@@ -5,17 +5,27 @@ namespace JourneyOfDreams
 {
     ManagedTextString::ManagedTextString(float maxRenderWidth, bool passwordMode)
         : m_maxRenderWidth(maxRenderWidth), m_passwordMode(passwordMode)
-    { // Do nothing.
+    {
+        /*
+        ** Do nothing. */
     }
 
     void ManagedTextString::InsertText(const std::string &text)
     {
+        /*
+        ** Cancel if there is nothing to insert. */
         if (text.empty())
         {
             return;
         }
+
+        /*
+        ** Insert text and reposition text cursor. */
         m_text.insert(m_cursorPosition, text);
         m_cursorPosition += text.size();
+
+        /*
+        ** Increase offset while text end is outside visible field. */
         while (IsTextOverflow())
         {
             m_cursorOffset++;
@@ -24,8 +34,13 @@ namespace JourneyOfDreams
 
     void ManagedTextString::InsertCharacter(char c)
     {
+        /*
+        ** Insert character and reposition text cursor. */
         m_text.insert(m_cursorPosition, 1, c);
         m_cursorPosition++;
+
+        /*
+        ** Increase offset while text end is outside visible field. */
         while (IsTextOverflow())
         {
             m_cursorOffset++;
@@ -34,14 +49,22 @@ namespace JourneyOfDreams
 
     void ManagedTextString::TryMoveCursorLeft()
     {
+        /*
+        ** Try move cursor to the left. */
         if (m_cursorPosition > 0)
         {
             m_cursorPosition--;
         }
+
+        /*
+        ** If cursor is now outside visible field, decrease offset. */
         if (m_cursorOffset > 0 && m_cursorPosition < m_cursorOffset)
         {
             m_cursorOffset--;
         }
+
+        /*
+        ** Increase right side clip until no characters are shown outside visible field. */
         while (IsTextOverflow())
         {
             m_cursorRightClip++;
@@ -50,30 +73,30 @@ namespace JourneyOfDreams
 
     void ManagedTextString::TryMoveCursorRight()
     {
+        /*
+        ** Try move cursor to the right. */
         if (m_cursorPosition < m_text.size())
         {
             m_cursorPosition++;
+
+            /*
+            ** If offseted text is longer than the text that fits in the visible field,
+            ** increase offset. */
             if (m_cursorPosition - m_cursorOffset > GetAppearedText().size())
             {
                 m_cursorOffset++;
             }
         }
-        if (IsTextOverflow())
+
+        /*
+        ** Reset right side clip. */
+        m_cursorRightClip = 0;
+
+        /*
+        ** And increase it until there is no overflow. */
+        while (IsTextOverflow())
         {
-            m_cursorRightClip = 0;
-            while (IsTextOverflow())
-            {
-                m_cursorRightClip++;
-            }
-        }
-        if (m_cursorPosition - m_cursorOffset == GetAppearedText().size() + 1
-            && m_cursorPosition <= m_text.size())
-        {
-            m_cursorRightClip = 0;
-            while (IsTextOverflow())
-            {
-                m_cursorRightClip++;
-            }
+            m_cursorRightClip++;
         }
     }
 
@@ -82,8 +105,11 @@ namespace JourneyOfDreams
         if (m_cursorPosition > 0)
         {
             m_text.erase(m_cursorPosition - 1, 1);
+
             TryMoveCursorLeft();
+            
             m_cursorOffset = std::max(0, m_cursorOffset - 1);
+
             if (m_cursorPosition == m_cursorOffset)
             {
                 m_cursorPosition++;

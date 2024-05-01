@@ -1,3 +1,4 @@
+#!/bin/bash
 cd ..
 tmux new-session -d -s mySession -n myWindow
 tmux split-window -hf

@@ -1,6 +1,6 @@
 #include "NetworkConnection.h"
-#include "NetClient.h"
 #include "Core/Configuration/ConfigurationFile.h"
+#include "NetClient.h"
 
 namespace JourneyOfDreams
 {
@@ -76,16 +76,31 @@ namespace JourneyOfDreams
         if (!emscripten_websocket_is_supported())
             return;
 
-        auto connectionString = "ws://" + _<ConfigurationFile>().ServerAddress() + ":" + std::to_string(_<ConfigurationFile>().ServerPort());
-        std::cout << "conn: " << connectionString << std::endl;
+        auto connectionString = "ws://" + _<ConfigurationFile>().ServerAddress() + ":"
+                                + std::to_string(_<ConfigurationFile>().ServerPort());
 
         EmscriptenWebSocketCreateAttributes ws_attrs = { connectionString.c_str(), NULL, EM_TRUE };
-        //EmscriptenWebSocketCreateAttributes ws_attrs = { "ws://localhost:1238", NULL, EM_TRUE };
 
         EMSCRIPTEN_WEBSOCKET_T ws = emscripten_websocket_new(&ws_attrs);
+        
         emscripten_websocket_set_onopen_callback(ws, NULL, OnOpen);
         emscripten_websocket_set_onerror_callback(ws, NULL, OnError);
         emscripten_websocket_set_onclose_callback(ws, NULL, OnClose);
         emscripten_websocket_set_onmessage_callback(ws, NULL, OnMessage);
+    }
+
+    bool NetworkConnection::Connected() const
+    {
+        return m_connected;
+    }
+
+    void NetworkConnection::SetConnected(bool connected)
+    {
+        m_connected = connected;
+    }
+
+    void NetworkConnection::SetServerSocket(const EMSCRIPTEN_WEBSOCKET_T *serverSocket)
+    {
+        m_serverSocket = serverSocket;
     }
 }

@@ -10,6 +10,7 @@ namespace JourneyOfDreams
     Engine::Engine()
     {
         srand(time(0));
+        
         _<NetClient>();    // Touch NetClient to initialize it
         _<Graphics>();     // Touch Graphics to initialize it
         _<SceneManager>(); // Touch SceneManager to initialize it

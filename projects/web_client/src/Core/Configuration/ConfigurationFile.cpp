@@ -7,15 +7,12 @@ namespace JourneyOfDreams
         /*
         ** To contain the read configuration file. */
         std::ifstream configurationFile;
-
         /*
         ** Open the configuration file. */
         configurationFile.open(SDL_GetBasePath() + k_filePath);
-
         /*
         ** To contain the read line. */
         std::string line;
-
         /*
         ** Read each line of the configuration file. */
         while (std::getline(configurationFile, line))
@@ -35,11 +32,9 @@ namespace JourneyOfDreams
             ** Get the parameter name and value. */
             auto parameterName = line.substr(0, line.find('='));
             auto parameterValue = line.substr(line.find('=') + 1);
-
             /*
             ** Convert parameter name to lowercase. */
             std::transform(parameterName.begin(), parameterName.end(), parameterName.begin(), tolower);
-
             /*
             ** Check if the parameter is the server address. */
             if (parameterName == "serveraddress")
@@ -57,7 +52,6 @@ namespace JourneyOfDreams
                 m_serverPort = std::stoi(parameterValue);
             }
         }
-
         /*
         ** Close the configuration file. */
         configurationFile.close();

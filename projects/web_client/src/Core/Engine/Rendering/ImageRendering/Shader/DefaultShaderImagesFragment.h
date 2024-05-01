@@ -2,6 +2,9 @@
 
 namespace JourneyOfDreams
 {
+    /////////////////////////////////////////////////
+    /// Default fragment shader for the images rendering.
+    /////////////////////////////////////////////////
     inline static const GLchar *defaultShaderImagesFragment =
         R"(
         precision mediump float;

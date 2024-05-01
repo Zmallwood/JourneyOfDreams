@@ -9,7 +9,6 @@ namespace JourneyOfDreams
         ** To store dimensions in pixels. */
         int w;
         int h;
-
         /*
         ** Use SDL to get window size = canvas size. */
         SDL_GetWindowSize(_<Graphics>().Window().get(), &w, &h);
@@ -22,7 +21,6 @@ namespace JourneyOfDreams
         /*
         ** Get canvas dimensions. */
         auto canvasSize = GetCanvasSize();
-
         /*
         ** And calculate the ratio between them. */
         auto aspectRatio = static_cast<float>(canvasSize.w) / canvasSize.h;
@@ -44,7 +42,6 @@ namespace JourneyOfDreams
         /*
         ** Find last occurence of '/' and get the part following it. */
         auto nameWithExt = absPath.substr(absPath.find_last_of('/') + 1);
-
         /*
         ** Then only keep the part preceeding the last occurrence of '.'. */
         auto fileName = nameWithExt.substr(0, nameWithExt.find_last_of('.'));
@@ -72,15 +69,12 @@ namespace JourneyOfDreams
         ** To store mouse coordinates in pixels. */
         int x;
         int y;
-
         /*
         ** Use SDL to get current mouse coordinates. */
         SDL_GetMouseState(&x, &y);
-
         /*
         ** Get canvas size. */
         auto canvasSize = GetCanvasSize();
-
         /*
         ** And use it to convert pixel coordinates to fractal coordinates. */
         auto mousePosition

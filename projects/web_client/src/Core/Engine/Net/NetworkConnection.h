@@ -2,27 +2,45 @@
 
 namespace JourneyOfDreams
 {
+    /////////////////////////////////////////////////
+    /// Network connection to the server.
+    /////////////////////////////////////////////////
     class NetworkConnection
     {
       public:
+        /////////////////////////////////////////////////
+        /// Create connection and setup web socket callbacks.
+        /////////////////////////////////////////////////
         void InitiateConnectToServer();
 
+        /////////////////////////////////////////////////
+        /// Send a message to the server. 
+        ///
+        /// \param data The data to send.
+        /// \return The result of the send operation.
+        /////////////////////////////////////////////////
         EMSCRIPTEN_RESULT SendMessage(std::map<std::string, std::string> data);
 
-        auto Connected() const
-        {
-            return m_connected;
-        }
+        /////////////////////////////////////////////////
+        /// Tells if the client is connected to the server.
+        ///
+        /// \return True if connected, false otherwise.
+        /////////////////////////////////////////////////
+        bool Connected() const;
 
-        void SetConnected(bool connected)
-        {
-            m_connected = connected;
-        }
+        /////////////////////////////////////////////////
+        /// Set the connected state.
+        ///
+        /// \param connected The connected state.
+        /////////////////////////////////////////////////
+        void SetConnected(bool connected);
 
-        void SetServerSocket(const EMSCRIPTEN_WEBSOCKET_T *serverSocket)
-        {
-            m_serverSocket = serverSocket;
-        }
+        /////////////////////////////////////////////////
+        /// Set the server socket object.
+        ///
+        /// \param serverSocket The server socket object.
+        /////////////////////////////////////////////////
+        void SetServerSocket(const EMSCRIPTEN_WEBSOCKET_T *serverSocket);
 
       private:
         bool m_connected{ false };

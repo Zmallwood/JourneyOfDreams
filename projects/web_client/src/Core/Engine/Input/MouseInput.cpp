@@ -4,6 +4,8 @@ namespace JourneyOfDreams
 {
     void MouseInput::OnPress(Uint8 button)
     {
+        /*
+        ** Forward call to correct button. */
         if (button == SDL_BUTTON_LEFT)
         {
             leftButton.OnPress();
@@ -16,6 +18,8 @@ namespace JourneyOfDreams
 
     void MouseInput::OnRelease(Uint8 button)
     {
+        /*
+        ** Forward call to correct button. */
         if (button == SDL_BUTTON_LEFT)
         {
             leftButton.OnRelease();
@@ -27,17 +31,23 @@ namespace JourneyOfDreams
     }
 
     bool MouseInput::AnyButtonPressed()
-    { // Return true if either button is pressed.
+    {
+        /*
+        ** Return true if either button is pressed. */
         return leftButton.Pressed() || rightButton.Pressed();
     }
 
     MouseButton &MouseInput::LeftButton()
-    { // Getter by reference
+    {
+        /*
+        ** Getter by reference */
         return leftButton;
     }
 
     MouseButton &MouseInput::RightButton()
-    { // Getter by reference
+    {
+        /*
+        ** Getter by reference */
         return rightButton;
     }
 }
