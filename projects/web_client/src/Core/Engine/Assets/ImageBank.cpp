@@ -1,10 +1,10 @@
 
 
 #include "ImageBank.h"
-// #define STB_IMAGE_IMPLEMENTATION
-// #include <SDL_image.h>
+//#define STB_IMAGE_IMPLEMENTATION
+//#include <SDL_image.h>
 
-// #include <stb_image.h>
+//#include <stb_image.h>
 
 namespace JourneyOfDreams
 {
@@ -107,8 +107,8 @@ namespace JourneyOfDreams
 
         /*
         ** Get image data from the image file. */
-        // auto surf = LoadImageData(absFilePath.c_str());
-        auto surf = IMG_Load(absFilePath.c_str());
+        auto surf = LoadImageData(absFilePath.c_str());
+        //auto surf = IMG_Load(absFilePath.c_str());
         /*
         ** We will work with 2D textures. */
         glEnable(GL_TEXTURE_2D);
@@ -122,8 +122,6 @@ namespace JourneyOfDreams
         ** Apply necessary texture parameters */
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
         /*
         ** If image format is RGBA (with alpha channel) */
         if (surf->format->BytesPerPixel == 4)
@@ -149,5 +147,58 @@ namespace JourneyOfDreams
         /*
         ** Return the previously generated resource ID. */
         return texID;
+    }
+
+    SDL_Surface *ImageBank::LoadImageData(const char *filename)
+    {
+        int width;
+        int height;
+        int bytesPerPixel;
+        /*
+        ** Read data */
+        void *data = stbi_load(filename, &width, &height, &bytesPerPixel, 0);
+
+        int pitch;
+        /*
+        ** Calculate pitch */
+        pitch = width * bytesPerPixel;
+        pitch = (pitch + 3) & ~3;
+
+        int Rmask;
+        int Gmask;
+        int Bmask;
+        int Amask;
+        /*
+        ** Setup relevance bitmask */
+#if SDL_BYTEORDER == SDL_LIL_ENDIAN
+        Rmask = 0x000000FF;
+        Gmask = 0x0000FF00;
+        Bmask = 0x00FF0000;
+        Amask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
+#else   
+        int s = (bytesPerPixel == 4) ? 0 : 8;
+        Rmask = 0xFF000000 >> s;
+        Gmask = 0x00FF0000 >> s;
+        Bmask = 0x0000FF00 >> s;
+        Amask = 0x000000FF >> s;
+#endif
+        /*
+        ** Create SDL surface from image data */
+        SDL_Surface *surface = SDL_CreateRGBSurfaceFrom(data, width, height, bytesPerPixel * 8, pitch, Rmask,
+                                                        Gmask, Bmask, Amask);
+        //stbi_image_free(data);
+        /*
+        ** If surface creation failed */
+        if (!surface)
+        {
+            /*
+            ** Free image data */
+            // stbi_image_free(data);
+
+            return nullptr;
+        }
+        /*
+        ** Return the created SDL surface */
+        return surface;
     }
 }

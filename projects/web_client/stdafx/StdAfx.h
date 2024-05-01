@@ -17,6 +17,7 @@
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_opengles2.h>
 #include <SDL2/SDL_ttf.h>
+#include <stb_image.h>
 
 #include <emscripten/websocket.h>
 #include <emscripten.h>
