@@ -1,9 +1,9 @@
 #pragma once
 
 #if (EMSCRIPTEN)
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #else()
-#include <SDL.h>
+#include <SDL2/SDL.h>
 #endif()
 
 namespace JourneyOfDreams
