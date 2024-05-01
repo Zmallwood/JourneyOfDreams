@@ -82,6 +82,7 @@ namespace JourneyOfDreams
             /*
             ** Load the current file as an image resource. */
             auto texID = LoadSingleImage(absPath);
+
             /*
             ** Extract its pure name without path or extension. */
             auto imageName = FilenameNoExtension(absPath);
@@ -99,7 +100,7 @@ namespace JourneyOfDreams
         GLuint texID;
         /*
         ** Get image data from the image file. */
-        auto surf = LoadImageData(absFilePath.data());
+        auto surf = LoadImageData(absFilePath.c_str());
         /*
         ** We will work with 2D textures. */
         glEnable(GL_TEXTURE_2D);
