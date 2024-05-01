@@ -48,7 +48,6 @@ namespace JourneyOfDreams
       private:
         void LoadImages();
         GLuint LoadSingleImage(const std::string &absFilePath);
-        SDL_Surface *LoadImageData(const char *filename);
         std::map<int, GLuint> m_images;
         const std::string k_relImagesPath = "images";
     };
