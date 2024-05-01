@@ -11,7 +11,7 @@ namespace JourneyOfDreams
         /*
         ** Hide default system cursor when mouse is inside the game canvas. */
         SDL_ShowCursor(SDL_DISABLE);
-    }
+    } 
 
     void Cursor::ResetStyle()
     {
