@@ -22,12 +22,10 @@ namespace JourneyOfDreams
         auto pnlLowerCase
             = AddWidget("pnlLowerCase", std::make_shared<GUIPanel>(PointF{ .x = 0.0f, .y = 0.0f },
                                                                    SizeF{ .w = 0.3f, .h = 0.15f }));
-
         /*
         ** Set default properties for lower case panel.**/
         pnlLowerCase->SetDrawBackground(false);
         pnlLowerCase->SetDrawBorders(false);
-
         /*
         ** Add buttons to the lower case panel. **/
         AddWidget("btn1", std::make_shared<GUIButton>(RectF{ 0.0f, 0.0f, 0.015f, 0.05f }, "1",
@@ -72,7 +70,6 @@ namespace JourneyOfDreams
         ** Get currently focused textbox. **/
         auto gui = GetParentGUI();
         auto focusedTextBox = dynamic_pointer_cast<GUITextBox>(gui->FocusedWidget());
-
         /*
         ** If any text box is focused. */
         if (focusedTextBox)

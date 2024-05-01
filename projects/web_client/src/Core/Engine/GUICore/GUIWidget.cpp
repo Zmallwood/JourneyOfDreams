@@ -42,11 +42,9 @@ namespace JourneyOfDreams
         {
             m_childWidgets.push_back(entry);
         }
-
         /*
         ** Now that they all are added, we can clear the waiting-collection. */
         m_widgetsToInsert->clear();
-
         /*
         ** Repeat this recursively for all child widgets. */
         for (auto &entry : m_childWidgets)
@@ -61,7 +59,6 @@ namespace JourneyOfDreams
         ** Mark this widget for destruction, erasing it here immediately would disrupt current
         ** iteration through the widgets for updating/rendering. */
         m_markedForDestruction = true;
-
         /*
         ** Mark also all the child widgets recursively. */
         for (auto &entry : m_childWidgets)
@@ -80,7 +77,6 @@ namespace JourneyOfDreams
             ** First, destroy marked child widgets (recursively) of the child widget in iterator.
             ** They cannot be destroyed afterwards. */
             it->widget->DestroyMarkedWidgets();
-
             /*
             ** Check if the widget in the iterator should be destroyed. */
             if (it->widget->MarkedForDestruction())
@@ -102,7 +98,6 @@ namespace JourneyOfDreams
     {
         auto mousePosition = GetMousePosition();
         auto finalArea = GetFinalArea();
-
         /*
         ** Return true if mouse position is within the area of the widget. */
         return mousePosition.x >= finalArea.x && mousePosition.x <= finalArea.x + finalArea.w
@@ -124,19 +119,16 @@ namespace JourneyOfDreams
         {
             return;
         }
-
         /*
         ** Get the parents child widgets over which this widget should
         ** be place over. */
         auto &parentChildWidgets = ParentWidget()->ChildWidgets();
-
         /*
         ** Cancel if there are no other "competing" widgets. */
         if (parentChildWidgets.size() == 0)
         {
             return;
         }
-
         /*
         ** To hold the index of this widget, as it is stored in the parents
         ** child widget collection. */
@@ -151,11 +143,9 @@ namespace JourneyOfDreams
                 break;
             }
         }
-
         /*
         ** Get iterator of currently top-most widget.*/
         auto it = parentChildWidgets.begin() + i;
-
         /*
         ** Now swap this widget and the currently top-most widget. */
         std::rotate(it, it + 1, parentChildWidgets.end());
@@ -169,14 +159,12 @@ namespace JourneyOfDreams
         {
             return;
         }
-
         /*
         ** Update the child widgets before this one. (Recursively) */
         for (auto &entry : m_childWidgets)
         {
             entry.widget->Update();
         }
-
         /*
         ** Update the logic provided by inheriting classes. */
         UpdateDerived();
@@ -190,12 +178,10 @@ namespace JourneyOfDreams
         {
             return;
         }
-
         /*
         ** Get the position to which the widget will be rendered, if the default
         ** alignment of TopLeft is used. */
         auto alignedAbsPosition = GetAlignedAbsolutePosition();
-
         /*
         ** Combine the position with the widget size to get widget area. */
         auto finalArea = RectF{ alignedAbsPosition.x, alignedAbsPosition.y, m_size.w, m_size.h };
@@ -206,7 +192,6 @@ namespace JourneyOfDreams
             ** Calculate the fill values to get a repeating background image. */
             auto backgroundPatternFillAmount = SizeF{ .w = finalArea.w * m_backgroundPatternSize.w,
                                                       .h = finalArea.h * m_backgroundPatternSize.h };
-
             /*
             ** Adjust the final area according the alternative alignments. */
             switch (m_alignment)
@@ -268,7 +253,6 @@ namespace JourneyOfDreams
                 break;
             }
             }
-
             /*
             ** Render the default widget background. */
             _<ImageRenderer>().DrawImage(m_ridBackgroundImage, m_backgroundImage, finalArea, true,
@@ -280,44 +264,37 @@ namespace JourneyOfDreams
             /*
             ** Get the width of the horizontal borders (top/bottom). */
             auto horizontalBorderWidth = m_borderWidth;
-
             /*
             ** Get the width of the vertical borders (left/right). */
             auto verticalBorderWidth = ConvertWidthToHeight(m_borderWidth);
-
             /*
             ** Determine pattern fill values to get a repeated image in the rendering. */
             auto borderHorizontalPatternFillAmount = SizeF{ 1.0f, finalArea.h * horizontalBorderWidth };
             auto borderVerticalPatternFillAmount = SizeF{ finalArea.w * verticalBorderWidth, 1.0f };
-
             /*
             ** Determine area of the left border and render it. */
             auto borderLeftalArea = RectF{ finalArea.x - horizontalBorderWidth, finalArea.y,
                                            horizontalBorderWidth, finalArea.h };
             _<ImageRenderer>().DrawImage(m_ridBorderLeft, m_borderVerticalImage, borderLeftalArea, true,
                                          borderHorizontalPatternFillAmount);
-
             /*
             ** Determine area of the left border and render it. */
             auto borderTopArea
                 = RectF{ finalArea.x, finalArea.y - verticalBorderWidth, finalArea.w, verticalBorderWidth };
             _<ImageRenderer>().DrawImage(m_ridBorderTop, m_borderHorizontalImage, borderTopArea, true,
                                          borderVerticalPatternFillAmount);
-
             /*
             ** Determine area of the right border and render it. */
             auto borderRightArea
                 = RectF{ finalArea.x + finalArea.w, finalArea.y, horizontalBorderWidth, finalArea.h };
             _<ImageRenderer>().DrawImage(m_ridBorderRight, m_borderVerticalImage, borderRightArea, true,
                                          borderHorizontalPatternFillAmount);
-
             /*
             ** Determine area of the bottom border and render it. */
             auto borderBottomArea
                 = RectF{ finalArea.x, finalArea.y + finalArea.h, finalArea.w, verticalBorderWidth };
             _<ImageRenderer>().DrawImage(m_ridBorderBottom, m_borderHorizontalImage, borderBottomArea, true,
                                          borderVerticalPatternFillAmount);
-
             /*
             ** Determine area of the top left corner and render it. */
             auto borderCornerTopLeftArea
@@ -325,7 +302,6 @@ namespace JourneyOfDreams
                          horizontalBorderWidth, verticalBorderWidth };
             _<ImageRenderer>().DrawImage(m_ridBorderCornerTopLeft, m_borderCornerTopLeftImage,
                                          borderCornerTopLeftArea);
-
             /*
             ** Determine area of the top right corner and render it. */
             auto borderCornerTopRightArea
@@ -333,14 +309,12 @@ namespace JourneyOfDreams
                          verticalBorderWidth };
             _<ImageRenderer>().DrawImage(m_ridBorderCornerTopRight, m_borderCornerTopRightImage,
                                          borderCornerTopRightArea);
-
             /*
             ** Determine area of the bottm right corner and render it. */
             auto borderCornerBottomRightArea = RectF{ finalArea.x + finalArea.w, finalArea.y + finalArea.h,
                                                       horizontalBorderWidth, verticalBorderWidth };
             _<ImageRenderer>().DrawImage(m_ridBorderCornerBottomRight, m_borderCornerBottomRightImage,
                                          borderCornerBottomRightArea);
-
             /*
             ** Determine area of the bottom left corner and render it. */
             auto borderCornerBottomLeftArea
@@ -349,14 +323,12 @@ namespace JourneyOfDreams
             _<ImageRenderer>().DrawImage(m_ridBorderCornerBottomLeft, m_borderCornerBottomLeftImage,
                                          borderCornerBottomLeftArea);
         }
-
         /*
         ** Render all the child widgets on top of the already rendered background and borders. */
         for (auto &entry : m_childWidgets)
         {
             entry.widget->Render();
         }
-
         /*
         ** Render specific render operations in inherited classes. */
         RenderDerived();
@@ -378,7 +350,6 @@ namespace JourneyOfDreams
                                                     std::shared_ptr<GUIWidget> childWidget)
     {
         auto nameHash = Hash(nameIdentifier);
-
         /*
         ** If widget with the provided widget name already exists, cancel. */
         for (auto &entry : m_childWidgets)
@@ -388,7 +359,6 @@ namespace JourneyOfDreams
                 return nullptr;
             }
         }
-
         /*
         ** If a widget with the provided widget name is already waiting to be inserted,
         ** cancel as well. */
@@ -399,19 +369,15 @@ namespace JourneyOfDreams
                 return nullptr;
             }
         }
-
         /*
         ** Initialize child widgets, such as adding its own child widgets. */
         childWidget->Initialize();
-
         /*
         ** Connect the widget to be added, by making this widget parent. */
         childWidget->SetParentWidget(shared_from_this());
-
         /*
         ** Add the widget to the collection where it will wait to be inserted. */
         m_widgetsToInsert->push_back({ nameHash, childWidget });
-
         /*
         ** Return the added child widgets, just for convenience. */
         return childWidget;
@@ -422,7 +388,6 @@ namespace JourneyOfDreams
         /*
         ** "Nameless" widgets gets a autogenerated unique name under the hood. */
         auto generatedName = "Widget" + std::to_string(s_unnamedWidgetCounter++);
-
         /*
         ** Use the autogenerate image name to add the widget as usual. */
         return AddWidget(generatedName, childWidget);
@@ -433,7 +398,6 @@ namespace JourneyOfDreams
         /*
         ** Start with the position local from the parents point of view. */
         auto finalPosition = m_position;
-
         /*
         ** If parent exists (this is not a GUI), at the parents position to the local value.
         ** Note that this is done recursively. */
@@ -451,7 +415,6 @@ namespace JourneyOfDreams
         ** Start with the absolute position of this widget,
         ** assuming that the alignment is TopLeft. */
         auto alignedPosition = GetAbsolutePosition();
-
         /*
         ** If parent exists (this is not a GUI). */
         if (ParentWidget())
@@ -519,7 +482,6 @@ namespace JourneyOfDreams
             }
             }
         }
-
         /*
         ** Return this widgets position, having taken into account
         ** the parents alignment. */
@@ -531,12 +493,10 @@ namespace JourneyOfDreams
         /*
         ** Get the final positiong without padding. */
         auto paddedAlignedPosition = GetAlignedAbsolutePosition();
-
         /*
         ** Get horizontal and vertical padding value. */
         auto horizontalPadding = m_padding;
         auto verticalPadding = ConvertWidthToHeight(m_padding);
-
         /*
         ** Add padding according to this widgets alignment. */
         switch (m_alignment)
@@ -609,7 +569,6 @@ namespace JourneyOfDreams
     RectF GUIWidget::GetFinalArea()
     {
         auto finalPosition = GetFinalPosition();
-
         /*
         ** Combine final position and widget size to get final area. */
         return RectF{ finalPosition.x, finalPosition.y, m_size.w, m_size.h };
@@ -620,7 +579,6 @@ namespace JourneyOfDreams
         /*
         ** Get root GUI object and set this widget as focused. */
         GetParentGUI()->SetFocusedWidget(shared_from_this());
-
         /*
         ** Store ticks value for when focus occured, used by the
         ** cursor blinking effect to reset at a new focus event. */
@@ -632,14 +590,12 @@ namespace JourneyOfDreams
         /*
         ** Start with current parent widget. */
         std::shared_ptr<GUIWidget> parent = m_parentWidget;
-
         /*
         ** Iterate "upwards" until there is no more parent widget. */
         while (parent->ParentWidget() != nullptr)
         {
             parent = parent->ParentWidget();
         }
-
         /*
         ** Cast the found root widget to GUI object. */
         return dynamic_pointer_cast<GUI>(parent);
@@ -658,7 +614,6 @@ namespace JourneyOfDreams
         ** To hold all child widgets, and child widgets of child widgets
         ** and so on (recursively). */
         std::vector<WidgetEntry> result;
-
         /*
         ** Iterate through this widgets child widgets. */
         for (auto &entry : m_childWidgets)
@@ -666,12 +621,10 @@ namespace JourneyOfDreams
             /*
             ** Add the child widget. */
             result.push_back(entry);
-
             /*
             ** Call this same function but on the child widget, and get
             ** its results. */
             auto childResult = entry.widget->GetChildWidgetsRecursively();
-
             /*
             ** Add the child widget results to this function calls results. */
             result.insert(result.end(), childResult.begin(), childResult.end());

@@ -11,7 +11,6 @@ namespace JourneyOfDreams
         /*
         ** Allocate graphis resources. */
         m_ridText = _<TextRenderer>().NewString();
-
         /*
         ** Set default properties. */
         SetDrawBackground(false);
@@ -36,15 +35,12 @@ namespace JourneyOfDreams
         /*
         ** Measure label text rendered size. */
         auto textSize = _<TextRenderer>().MeasureString(*m_text, m_fontSize);
-
         /*
         ** Get absolute position of this label widget. */
         auto absolutePosition = GUIWidget::GetAlignedAbsolutePosition();
-
         /*
         ** To hold the resulting position. */
         PointF alignedPosition;
-
         /*
         ** Set the resulting position, based on the text center point and the rendered text size. */
         switch (Alignment())

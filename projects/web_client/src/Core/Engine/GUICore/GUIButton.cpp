@@ -12,7 +12,6 @@ namespace JourneyOfDreams
         ** Allocate graphics resources. */
         m_ridText = _<TextRenderer>().NewString();
         m_ridBackground = _<ImageRenderer>().NewImage();
-
         /*
         ** Set default properties. */
         SetDrawBackground(false);
@@ -24,7 +23,6 @@ namespace JourneyOfDreams
     void GUIButton::UpdateDerived()
     {
         auto mousePos = GetMousePosition();
-
         /*
         ** If mouse is over button area. */
         if (GetFinalArea().Contains(mousePos))
@@ -32,7 +30,6 @@ namespace JourneyOfDreams
             /*
             ** Mark as hovered. */
             m_isHovered = true;
-
             /*
             ** If mouse button also has been pressed. */
             if (_<MouseInput>().LeftButton().PressedPickResult())
@@ -53,7 +50,6 @@ namespace JourneyOfDreams
     void GUIButton::RenderDerived()
     {
         std::string backgroundImage;
-
         /*
         ** Set rendered background image depending if the button is hovered or not. */
         if (m_isHovered)
@@ -64,17 +60,14 @@ namespace JourneyOfDreams
         {
             backgroundImage = BackgroundImage();
         }
-
         /*
         ** Draw button background. */
         _<ImageRenderer>().DrawImage(m_ridBackground, backgroundImage, GetFinalArea());
-
         /*
         ** Determine text draw position. */
         auto finalPosition = GetFinalPosition();
         auto textPosition
             = PointF{ finalPosition.x + GetFinalArea().w / 2, finalPosition.y + GetFinalArea().h / 2 };
-
         /*
         ** Draw button text. */
         _<TextRenderer>().DrawString(m_ridText, m_text, textPosition, m_textColor, true, FontSizes::_20);

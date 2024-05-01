@@ -36,33 +36,30 @@ namespace JourneyOfDreams
         {
             SetFocusedWidget(nullptr);
         }
-
         /*
         ** Update all child widgets in the same order as they have been added. */
         for (auto &entry : ChildWidgets())
         {
             entry.widget->Update();
         }
-
         /*
         ** Destroy all widgets that should be destroyed. */
         DestroyMarkedWidgets();
-
         /*
         ** Insert new widgets that are waiting to be inserted. */
         InsertWaitingWidgets();
-
         /*
         ** Focus next widget on pressing the tab key. */
         if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_TAB))
         {
             FocusNextWidget();
         }
-
         /*
         ** Clear all typed text input as it has already been handled by the GUIs widgets. */
         _<KeyboardInput>().ClearTextInput();
 
+        /*
+        ** Dont show on-screen keyboard if no widget is focused. */
         if (FocusedWidget() == nullptr)
         {
             GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Hide();
@@ -94,7 +91,6 @@ namespace JourneyOfDreams
                 return entry.widget;
             }
         }
-
         /*
         ** Widget with the specified name not found. */
         return nullptr;
@@ -108,11 +104,9 @@ namespace JourneyOfDreams
         {
             return;
         }
-
         /*
         ** Get currently focused widget. */
         auto widget = FocusedWidget();
-
         /*
         ** Search through all widgets recursively for the next widget to focus. */
         for (auto &entry : GetChildWidgetsRecursively())
@@ -135,7 +129,6 @@ namespace JourneyOfDreams
                 break;
             }
         }
-
         /*
         ** Focus the selected widget. */
         SetFocusedWidget(widget);

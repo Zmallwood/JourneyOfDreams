@@ -18,7 +18,6 @@ namespace JourneyOfDreams
         /*
         ** Add a label to this window. */
         AddWidget(std::make_shared<GUILabel>(PointF{ 0.0f, 0.0f }, m_message));
-
         /*
         ** Add a confirm button to this window. */
         AddWidget(
