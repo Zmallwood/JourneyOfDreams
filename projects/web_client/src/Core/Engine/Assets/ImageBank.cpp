@@ -1,4 +1,5 @@
 #include "ImageBank.h"
+#include <SDL_image.h>
 
 namespace JourneyOfDreams
 {
@@ -101,7 +102,8 @@ namespace JourneyOfDreams
 
         /*
         ** Get image data from the image file. */
-        auto surf = LoadImageData(absFilePath.c_str());
+        // auto surf = LoadImageData(absFilePath.c_str());
+        auto surf = IMG_Load(absFilePath.c_str());
         /*
         ** We will work with 2D textures. */
         glEnable(GL_TEXTURE_2D);

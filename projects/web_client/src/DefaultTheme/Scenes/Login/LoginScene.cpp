@@ -31,7 +31,6 @@ namespace JourneyOfDreams
 
     void LoginScene::OnEnter()
     {
-        std::cout << "upd loginscene: " << Ticks() << std::endl;
         GUI()->GetWidget<GUITextBox>("UsernameTextBox")->ClearText();
         GUI()->GetWidget<GUITextBox>("PasswordTextBox")->ClearText();
     }
@@ -42,7 +41,6 @@ namespace JourneyOfDreams
 
     void LoginScene::RenderDerived()
     {
-        std::cout << "rend loginscene: " << Ticks() << std::endl;
         _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
         _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo", { 0.4f, 0.2f, 0.2f, 0.1f });
     }
