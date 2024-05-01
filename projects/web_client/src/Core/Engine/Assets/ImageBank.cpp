@@ -1,6 +1,4 @@
 #include "ImageBank.h"
-//#define STB_IMAGE_IMPLEMENTATION
-//#include <SDL_image.h>
 
 namespace JourneyOfDreams
 {
@@ -97,7 +95,7 @@ namespace JourneyOfDreams
 
     GLuint ImageBank::LoadSingleImage(const std::string &absFilePath)
     {
-        /*
+        /*e
         ** Will hold the resulting ID for the loaded image file. */
         GLuint texID;
 
@@ -147,54 +145,55 @@ namespace JourneyOfDreams
 
     SDL_Surface *ImageBank::LoadImageData(const char *filename)
     {
-        int width;
-        int height;
-        int bytesPerPixel;
-        /*
-        ** Read data */
-        void *data = stbi_load(filename, &width, &height, &bytesPerPixel, 0);
+        return nullptr;
+//         int width;
+//         int height;
+//         int bytesPerPixel;
+//         /*
+//         ** Read data */
+//         void *data = stbi_load(filename, &width, &height, &bytesPerPixel, 0);
 
-        int pitch;
-        /*
-        ** Calculate pitch */
-        pitch = width * bytesPerPixel;
-        pitch = (pitch + 3) & ~3;
+//         int pitch;
+//         /*
+//         ** Calculate pitch */
+//         pitch = width * bytesPerPixel;
+//         pitch = (pitch + 3) & ~3;
 
-        int Rmask;
-        int Gmask;
-        int Bmask;
-        int Amask;
-        /*
-        ** Setup relevance bitmask */
-#if SDL_BYTEORDER == SDL_LIL_ENDIAN
-        Rmask = 0x000000FF;
-        Gmask = 0x0000FF00;
-        Bmask = 0x00FF0000;
-        Amask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
-#else   
-        int s = (bytesPerPixel == 4) ? 0 : 8;
-        Rmask = 0xFF000000 >> s;
-        Gmask = 0x00FF0000 >> s;
-        Bmask = 0x0000FF00 >> s;
-        Amask = 0x000000FF >> s;
-#endif
-        /*
-        ** Create SDL surface from image data */
-        SDL_Surface *surface = SDL_CreateRGBSurfaceFrom(data, width, height, bytesPerPixel * 8, pitch, Rmask,
-                                                        Gmask, Bmask, Amask);
-        //stbi_image_free(data);
-        /*
-        ** If surface creation failed */
-        if (!surface)
-        {
-            /*
-            ** Free image data */
-            // stbi_image_free(data);
+//         int Rmask;
+//         int Gmask;
+//         int Bmask;
+//         int Amask;
+//         /*
+//         ** Setup relevance bitmask */
+// #if SDL_BYTEORDER == SDL_LIL_ENDIAN
+//         Rmask = 0x000000FF;
+//         Gmask = 0x0000FF00;
+//         Bmask = 0x00FF0000;
+//         Amask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
+// #else   
+//         int s = (bytesPerPixel == 4) ? 0 : 8;
+//         Rmask = 0xFF000000 >> s;
+//         Gmask = 0x00FF0000 >> s;
+//         Bmask = 0x0000FF00 >> s;
+//         Amask = 0x000000FF >> s;
+// #endif
+//         /*
+//         ** Create SDL surface from image data */
+//         SDL_Surface *surface = SDL_CreateRGBSurfaceFrom(data, width, height, bytesPerPixel * 8, pitch, Rmask,
+//                                                         Gmask, Bmask, Amask);
+//         //stbi_image_free(data);
+//         /*
+//         ** If surface creation failed */
+//         if (!surface)
+//         {
+//             /*
+//             ** Free image data */
+//             // stbi_image_free(data);
 
-            return nullptr;
-        }
-        /*
-        ** Return the created SDL surface */
-        return surface;
+//             return nullptr;
+//         }
+//         /*
+//         ** Return the created SDL surface */
+//         return surface;
     }
 }
