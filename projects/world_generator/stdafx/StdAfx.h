@@ -5,7 +5,7 @@
 #include <vector>
 #include <fstream>
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 #include "../shared/matter/src/Size.h"
 #include "../shared/matter/src/ColorF.h"

@@ -11,7 +11,7 @@ namespace JourneyOfDreams
 {
     LoginScene::LoginScene()
     {
-        m_ridBackground = _<ImageRenderer>().NewImage();
+        m_ridBackground = _<ImageRenderer>().NewImage(); 
         m_ridLogo = _<ImageRenderer>().NewImage();
         auto loginPanel = GUI()->AddWidget(std::make_shared<GUIPanel>(
             RectF{ .x = 0.5f, .y = 0.5f, .w = 0.3f, .h = 0.3f }, GUIAlign::Center));
