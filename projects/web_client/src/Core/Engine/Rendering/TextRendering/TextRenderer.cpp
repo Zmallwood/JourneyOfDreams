@@ -22,7 +22,7 @@ namespace JourneyOfDreams
     {
         auto font = m_fonts.at(fontSize)->SDLFont();
 
-        if (!font) 
+        if (!font)
             return;
 
         auto colorSDL = color.ToSDLColor();
@@ -62,10 +62,10 @@ namespace JourneyOfDreams
                                        textOutlineSurf ? textOutlineSurf->h : 0 };
         textDestRect = textSrcRect;
 
-        textDestRect.x += Font::k_fontOutlineWidth;
-        textDestRect.w -= 2 * Font::k_fontOutlineWidth;
-        textDestRect.y += Font::k_fontOutlineWidth;
-        textDestRect.h -= 2 * Font::k_fontOutlineWidth;
+        textDestRect.x += Font::FontOutlineWidth();
+        textDestRect.w -= 2 * Font::FontOutlineWidth();
+        textDestRect.y += Font::FontOutlineWidth();
+        textDestRect.h -= 2 * Font::FontOutlineWidth();
         textOutlineDestRect = textOutlineSrcRect;
         textOutlineDestRect.y = 1;
 

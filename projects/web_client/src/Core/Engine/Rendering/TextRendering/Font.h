@@ -3,27 +3,45 @@
 typedef struct _TTF_Font TTF_Font;
 namespace JourneyOfDreams
 {
-
+    /////////////////////////////////////////////////
+    /// Represents a font for rendering text.
+    /////////////////////////////////////////////////
     class Font
     {
       public:
-        Font(const std::string& fontFileName, int fontSize);
+        /////////////////////////////////////////////////
+        /// Create a regular font object and a font object with an outline.
+        ///
+        /// \param fontFileName The file name of the font.
+        /// \param fontSize The point size of the font.
+        /////////////////////////////////////////////////
+        Font(const std::string &fontFileName, int fontSize);
 
-        auto SDLFont() const
-        {
-            return m_font;
-        }
+        /////////////////////////////////////////////////
+        /// Get the regular font object.
+        ///
+        /// \return The regular font object.
+        /////////////////////////////////////////////////
+        std::shared_ptr<TTF_Font> SDLFont() const;
 
-        auto OutlineSDLFont() const
-        {
-            return m_outlineFont;
-        }
+        /////////////////////////////////////////////////
+        /// Get the font object with an outline.
+        ///
+        /// \return The font object with an outline.
+        /////////////////////////////////////////////////
+        std::shared_ptr<TTF_Font> OutlineSDLFont() const;
 
-        static constexpr int k_fontOutlineWidth = 2;
+        /////////////////////////////////////////////////
+        /// Get the width of the font outline.
+        ///
+        /// \return The width of the font outline.
+        /////////////////////////////////////////////////
+        static const int FontOutlineWidth();
 
       private:
         std::shared_ptr<TTF_Font> m_font;
         std::shared_ptr<TTF_Font> m_outlineFont;
+        static constexpr int k_fontOutlineWidth{ 2 };
     };
 
 }
