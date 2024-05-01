@@ -64,4 +64,9 @@ namespace JourneyOfDreams
 
         return shaderCompiled;
     }
+
+    GLuint ShaderProgram::ProgramID()
+    {
+        return m_programID;
+    }
 }

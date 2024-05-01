@@ -25,10 +25,10 @@ namespace JourneyOfDreams
         auto posBuffID = GenNewBuffID(BufferTypes::Positions2D, rid);
         auto colorBuffID = GenNewBuffID(BufferTypes::Colors, rid);
         auto uvBuffID = GenNewBuffID(BufferTypes::Uvs, rid);
-        SetIndicesData(indexBuffID, RendererBase::k_numVertsInRect, nullptr);
-        SetData(posBuffID, RendererBase::k_numVertsInRect, nullptr, BufferTypes::Positions2D);
-        SetData(colorBuffID, RendererBase::k_numVertsInRect, nullptr, BufferTypes::Colors);
-        SetData(uvBuffID, RendererBase::k_numVertsInRect, nullptr, BufferTypes::Uvs);
+        SetIndicesData(indexBuffID, RendererBase::NumVerticesInRectangle(), nullptr);
+        SetData(posBuffID, RendererBase::NumVerticesInRectangle(), nullptr, BufferTypes::Positions2D);
+        SetData(colorBuffID, RendererBase::NumVerticesInRectangle(), nullptr, BufferTypes::Colors);
+        SetData(uvBuffID, RendererBase::NumVerticesInRectangle(), nullptr, BufferTypes::Uvs);
         UseVAOEnd();
 
         return rid;
@@ -38,7 +38,7 @@ namespace JourneyOfDreams
                                   SizeF textureFillAmount, ColorF color)
     {
         auto GLRect = dest.ToGLRectF();
-        Vertex2F verts[RendererBase::k_numVertsInRect];
+        Vertex2F verts[RendererBase::NumVerticesInRectangle()];
         verts[0].pos = { GLRect.x, GLRect.y - GLRect.h };
         verts[1].pos = { GLRect.x, GLRect.y };
         verts[2].pos = { GLRect.x + GLRect.w, GLRect.y };
@@ -64,7 +64,7 @@ namespace JourneyOfDreams
         }
         // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
         // glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-        auto indices = std::vector<int>(RendererBase::k_numVertsInRect);
+        auto indices = std::vector<int>(RendererBase::NumVerticesInRectangle());
         std::iota(std::begin(indices), std::end(indices), 0);
         std::vector<float> positions;
         std::vector<float> colors;
@@ -92,7 +92,7 @@ namespace JourneyOfDreams
         UpdateData(posBuffID, positions, BufferTypes::Positions2D, k_locPosition);
         UpdateData(colorBuffID, colors, BufferTypes::Colors, k_locColor);
         UpdateData(uvBuffID, uvs, BufferTypes::Uvs, k_locUv);
-        glDrawElements(GL_TRIANGLE_FAN, RendererBase::k_numVertsInRect, GL_UNSIGNED_INT, NULL);
+        glDrawElements(GL_TRIANGLE_FAN, RendererBase::NumVerticesInRectangle(), GL_UNSIGNED_INT, NULL);
         UseVAOEnd();
     }
 

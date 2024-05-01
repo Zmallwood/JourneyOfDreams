@@ -32,38 +32,36 @@ namespace JourneyOfDreams
         return buffID;
     }
 
-    void RendererBase::SetIndicesData(GLuint indicesVBOID, int numVertices, const void *data) const
+    void RendererBase::SetIndicesData(GLuint indicesVBOID, int numIndices, const void *data) const
     {
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, // Bind the VBO buffer that should hold indices data
                      indicesVBOID);
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, // Set indices data as element array buffer
-                     numVertices * k_numFloatsPerEntry.at(BufferTypes::Indices) * sizeof(float), data,
+                     numIndices * k_numFloatsPerEntry.at(BufferTypes::Indices) * sizeof(float), data,
                      GL_DYNAMIC_DRAW);
     }
 
-    void RendererBase::SetData(GLuint VBOID, int numVertices, const void *data, BufferTypes buffType,
+    void RendererBase::SetData(GLuint VBOID, int numEntries, const void *data, BufferTypes buffType,
                                int layoutLocation) const
     {
         if (buffType == BufferTypes::BoneIDs)
         {
             SetArrayBufferDataInt(VBOID, // Call other method for BoneIDs than other buffer types
-                                  numVertices, data, RendererBase::k_numFloatsPerEntry.at(buffType),
-                                  layoutLocation);
+                                  numEntries, data, k_numFloatsPerEntry.at(buffType), layoutLocation);
         }
         else
         {
             SetArrayBufferData(VBOID, // Call this function for all buffer types except BoneIDs
-                               numVertices, data, RendererBase::k_numFloatsPerEntry.at(buffType),
-                               layoutLocation);
+                               numEntries, data, k_numFloatsPerEntry.at(buffType), layoutLocation);
         }
     }
 
-    void RendererBase::SetArrayBufferData(GLuint VBOID, int numVertices, const void *data,
+    void RendererBase::SetArrayBufferData(GLuint VBOID, int numEntries, const void *data,
                                           int numFloatsPerEntry, int layoutLocation) const
     {
         glBindBuffer(GL_ARRAY_BUFFER, VBOID); // Bind the VBO for the provided VBO id
         glBufferData(GL_ARRAY_BUFFER,         // Set the buffer data as an array buffer
-                     numVertices * numFloatsPerEntry * sizeof(float), data, GL_DYNAMIC_DRAW);
+                     numEntries * numFloatsPerEntry * sizeof(float), data, GL_DYNAMIC_DRAW);
 
         if (layoutLocation >= 0) // Is valid layout location?
         {
@@ -74,12 +72,12 @@ namespace JourneyOfDreams
         }
     }
 
-    void RendererBase::SetArrayBufferDataInt(GLuint VBOID, int numVertices, const void *data,
+    void RendererBase::SetArrayBufferDataInt(GLuint VBOID, int numEntries, const void *data,
                                              int numFloatsPerEntry, int layoutLocation) const
     {
         glBindBuffer(GL_ARRAY_BUFFER, VBOID); // Bind the VBO for the provided VBO id
         glBufferData(GL_ARRAY_BUFFER,         // Set the buffer data as an array buffer
-                     numVertices * numFloatsPerEntry * sizeof(int), data, GL_DYNAMIC_DRAW);
+                     numEntries * numFloatsPerEntry * sizeof(int), data, GL_DYNAMIC_DRAW);
 
         if (layoutLocation >= 0) // Is valid layout location?
         {
@@ -146,12 +144,12 @@ namespace JourneyOfDreams
         if (buffType == BufferTypes::BoneIDs) // Does the buffer hold BoneID data=
         {
             UpdateArrayBufferDataInt(VBOID, // If so, update buffer with int data
-                                     data, RendererBase::k_numFloatsPerEntry.at(buffType), layoutLocation);
+                                     data, k_numFloatsPerEntry.at(buffType), layoutLocation);
         }
         else
         {
             UpdateArrayBufferData(VBOID, // Else, update with float data
-                                  data, RendererBase::k_numFloatsPerEntry.at(buffType), layoutLocation);
+                                  data, k_numFloatsPerEntry.at(buffType), layoutLocation);
         }
     }
 
@@ -178,5 +176,15 @@ namespace JourneyOfDreams
         }
 
         m_shaderProgram->Cleanup(); // Finally, clean up shader proram
+    }
+
+    std::shared_ptr<JourneyOfDreams::ShaderProgram> RendererBase::ShaderProgram()
+    {
+        return m_shaderProgram;
+    }
+
+    const int RendererBase::NumVerticesInRectangle()
+    {
+        return k_numVerticesInRectangle;
     }
 }
