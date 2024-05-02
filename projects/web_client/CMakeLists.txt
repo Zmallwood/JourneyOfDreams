@@ -21,31 +21,32 @@ add_executable(WebClient
   src/DefaultTheme/RunNewGameInstance.cpp
   src/Core/GameInstance.cpp
   src/Core/Engine/DoOneGameLoopFrame.cpp
-  src/Core/Engine/Engine.cpp
-  src/Core/Engine/Assets/ImageBank.cpp
-  src/DefaultTheme/Scenes/Test/TestScene.cpp
-  src/Core/Engine/ScenesCore/IScene.cpp
-  src/Core/Engine/Net/NetClient.cpp
-  src/Core/Engine/Graphics/Graphics.cpp
-  src/Core/Engine/ScenesCore/SceneManager.cpp
-  src/Core/Engine/Cursor/Cursor.cpp
-  src/Core/Engine/PollEvents.cpp
-  src/Common/Utilities.cpp
-  ../shared/common/src/Hash.cpp
-  src/Core/Configuration/ClientProperties.cpp
-  src/Common/SDLDeleter.cpp
-  src/DefaultTheme/Scenes/ServerConnect/ServerConnectScene.cpp
-  src/Core/Engine/Net/NetworkConnection.cpp
+  src/Core/Test/Tester.cpp
   src/Core/Engine/Rendering/ImageRendering/ImageRenderer.cpp
-  src/Core/Engine/GUICore/GUIWidget.cpp
-  src/Core/Engine/GUICore/GUILabel.cpp
-  src/Core/Engine/GUICore/GUI.cpp
   src/Core/Engine/Rendering/RenderingCore/RendererBase.cpp
   src/Core/Engine/Rendering/RenderingCore/ShaderProgram.cpp
-  src/Core/Engine/Rendering/TextRendering/TextRenderer.cpp
-  src/Core/Engine/GUICore/ManagedTextString.cpp
-  src/Core/Engine/Rendering/TextRendering/Font.cpp
-  src/Core/Configuration/ConfigurationFile.cpp
+  src/Core/Engine/Assets/ImageBank.cpp
+  src/Core/Engine/Graphics/Graphics.cpp
+  ../shared/common/src/Hash.cpp
+  src/Common/Utilities.cpp
+#   src/Core/Engine/Engine.cpp
+#   src/DefaultTheme/Scenes/Test/TestScene.cpp
+#   src/Core/Engine/ScenesCore/IScene.cpp
+#   src/Core/Engine/ScenesCore/SceneManager.cpp
+#   src/Core/Engine/Cursor/Cursor.cpp
+#   src/Core/Engine/PollEvents.cpp
+#   src/Core/Engine/Net/NetClient.cpp
+#   src/Core/Configuration/ClientProperties.cpp
+#   src/Common/SDLDeleter.cpp
+#   src/DefaultTheme/Scenes/ServerConnect/ServerConnectScene.cpp
+#   src/Core/Engine/Net/NetworkConnection.cpp
+#   src/Core/Engine/GUICore/GUIWidget.cpp
+#   src/Core/Engine/GUICore/GUILabel.cpp
+#   src/Core/Engine/GUICore/GUI.cpp
+#   src/Core/Engine/Rendering/TextRendering/TextRenderer.cpp
+#   src/Core/Engine/GUICore/ManagedTextString.cpp
+#   src/Core/Engine/Rendering/TextRendering/Font.cpp
+#   src/Core/Configuration/ConfigurationFile.cpp
 #   src/DefaultTheme/Scenes/Login/LoginScene.cpp
 #   src/Core/Engine/GUICore/GUITextBox.cpp
 #   src/Core/Engine/GUICore/GUIButton.cpp
