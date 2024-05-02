@@ -1,4 +1,4 @@
-#include "Tester2.h"
+#include "Tester3.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 
 namespace JourneyOfDreams
@@ -10,6 +10,15 @@ namespace JourneyOfDreams
 
     void Tester3::Render()
     {
+        if (!m_active)
+        {
+            return;
+        }
         _<ImageRenderer>().DrawImage(m_ridImage, "DefaultSceneBackground", { 0.0f, 0.0f, 1.0f, 1.0f });
+    }
+
+    void Tester3::Stop()
+    {
+        m_active = false;
     }
 }

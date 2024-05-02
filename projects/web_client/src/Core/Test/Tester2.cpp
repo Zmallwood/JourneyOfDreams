@@ -103,11 +103,11 @@ namespace JourneyOfDreams
 
     void Tester2::Render()
     {
-        static float iters = 0.0f;
         if (!m_active)
         {
             return;
         }
+        static float iters = 0.0f;
 
         glUniform1f(maxitersLocation, iters);
         glClearColor(1, 0.5, 0, 1);

@@ -7,8 +7,10 @@ namespace JourneyOfDreams
       public:
         Tester3();
         void Render();
+        void Stop();
 
       private:
+        bool m_active{ true };
         RID m_ridImage{ 0 };
     };
 }

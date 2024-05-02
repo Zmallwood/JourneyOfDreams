@@ -29,12 +29,12 @@ add_executable(WebClient
   src/Core/Engine/Assets/ImageBank.cpp
   ../shared/common/src/Hash.cpp
   src/Common/Utilities.cpp
-  # src/Core/Test/Tester3.cpp
-  # src/Core/Engine/Rendering/ImageRendering/ImageRenderer.cpp
-  # src/Core/Engine/Rendering/RenderingCore/RendererBase.cpp
-  # src/Core/Engine/Rendering/RenderingCore/ShaderProgram.cpp
-  # src/Core/Engine/Graphics/Graphics.cpp
-  #  src/Core/Configuration/ClientProperties.cpp
+  src/Core/Test/Tester3.cpp
+  src/Core/Engine/Rendering/ImageRendering/ImageRenderer.cpp
+  src/Core/Engine/Rendering/RenderingCore/RendererBase.cpp
+  src/Core/Engine/Rendering/RenderingCore/ShaderProgram.cpp
+  src/Core/Engine/Graphics/Graphics.cpp
+   src/Core/Configuration/ClientProperties.cpp
 #   src/Common/SDLDeleter.cpp
 #   src/Core/Engine/Engine.cpp
 #   src/DefaultTheme/Scenes/Test/TestScene.cpp

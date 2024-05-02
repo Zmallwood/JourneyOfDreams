@@ -14,12 +14,12 @@ namespace JourneyOfDreams
         _<Tester1>().Stop();
 
         _<Tester2>().Render();
-        // _<Tester1>().Stop();
+        _<Tester1>().Stop();
 
-        // _<Graphics>();     // Touch Graphics to initialize it
-        // _<ImageBank>(); // Touch ImageBank to initialize
+        _<Graphics>();     // Touch Graphics to initialize it
+        _<ImageBank>(); // Touch ImageBank to initialize
 
-        // _<Tester3>().Render();
+        _<Tester3>().Render();
 
         // _<Engine>(); // Touch Engine to initialize
 
