@@ -10,12 +10,13 @@ namespace JourneyOfDreams
     void DoOneGameLoopFrame()
     {
         _<Tester1>().Render();
+        _<Tester1>().Stop();
 
-        // _<Tester1>().Stop();
-        // _<Graphics>();     // Touch Graphics to initialize it
-        // _<ImageBank>(); // Touch ImageBank to initialize
 
-        // _<Tester2>().Render();
+        _<Graphics>();     // Touch Graphics to initialize it
+        _<ImageBank>(); // Touch ImageBank to initialize
+
+        _<Tester2>().Render();
 
         // _<Engine>(); // Touch Engine to initialize
 

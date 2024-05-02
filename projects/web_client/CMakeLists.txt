@@ -2,8 +2,11 @@ project(WebClient)
 cmake_minimum_required(VERSION 3.22)
 
 set(CMAKE_EXECUTABLE_SUFFIX ".html")
-SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='[\"png\"]' -s USE_SDL_TTF=2 -s NO_DISABLE_EXCEPTION_CATCHING")
-set(CMAKE_EXE_LINKER_FLAGS "--preload-file ${CMAKE_SOURCE_DIR}/resources@/ -s STB_IMAGE -s USE_SDL=2 -s MAX_WEBGL_VERSION=2 -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='[\"png\"]' -s USE_SDL_TTF=2 --shell-file ${CMAKE_SOURCE_DIR}/html/shell_minimal.html")
+#SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='[\"png\"]' -s USE_SDL_TTF=2 -s NO_DISABLE_EXCEPTION_CATCHING")
+#set(CMAKE_EXE_LINKER_FLAGS "--preload-file ${CMAKE_SOURCE_DIR}/resources@/ -s STB_IMAGE -s USE_SDL=2 -s MAX_WEBGL_VERSION=2 -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='[\"png\"]' -s USE_SDL_TTF=2 --shell-file ${CMAKE_SOURCE_DIR}/html/shell_minimal.html")
+
+SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -s USE_WEBGL2=1 -s USE_GLFW=3 -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='[\"png\"]' -s USE_SDL_TTF=2 -s NO_DISABLE_EXCEPTION_CATCHING")
+set(CMAKE_EXE_LINKER_FLAGS "--preload-file ${CMAKE_SOURCE_DIR}/resources@/ -s STB_IMAGE -s USE_WEBGL2=1 -s USE_GLFW=3 -s USE_SDL=2 -s MAX_WEBGL_VERSION=2 -s USE_SDL=2 -s USE_SDL_IMAGE=2 -s SDL2_IMAGE_FORMATS='[\"png\"]' -s USE_SDL_TTF=2 --shell-file ${CMAKE_SOURCE_DIR}/html/shell_minimal.html")
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/../../bin_web_client)
 
@@ -22,15 +25,15 @@ add_executable(WebClient
   src/Core/GameInstance.cpp
   src/Core/Engine/DoOneGameLoopFrame.cpp
   src/Core/Test/Tester1.cpp
-#   src/Core/Test/Tester2.cpp
-#   src/Core/Engine/Rendering/ImageRendering/ImageRenderer.cpp
-#   src/Core/Engine/Rendering/RenderingCore/RendererBase.cpp
-#   src/Core/Engine/Rendering/RenderingCore/ShaderProgram.cpp
-#   src/Core/Engine/Assets/ImageBank.cpp
-#   src/Core/Engine/Graphics/Graphics.cpp
-#   ../shared/common/src/Hash.cpp
-#   src/Common/Utilities.cpp
-#   src/Core/Configuration/ClientProperties.cpp
+  src/Core/Test/Tester2.cpp
+  src/Core/Engine/Rendering/ImageRendering/ImageRenderer.cpp
+  src/Core/Engine/Rendering/RenderingCore/RendererBase.cpp
+  src/Core/Engine/Rendering/RenderingCore/ShaderProgram.cpp
+  src/Core/Engine/Assets/ImageBank.cpp
+  src/Core/Engine/Graphics/Graphics.cpp
+  ../shared/common/src/Hash.cpp
+  src/Common/Utilities.cpp
+   src/Core/Configuration/ClientProperties.cpp
 #   src/Common/SDLDeleter.cpp
 #   src/Core/Engine/Engine.cpp
 #   src/DefaultTheme/Scenes/Test/TestScene.cpp

@@ -1,52 +1,151 @@
 #include "Tester1.h"
 
-EM_JS(int, canvas_get_width, (), { return window.innerWidth; });
-EM_JS(int, canvas_get_height, (), { return window.innerHeight; });
-
 namespace JourneyOfDreams
 {
+
+    const char *vertexShaderSource = "#version 300 es\n"
+                                     "layout (location = 0) in vec3 aPos;\n"
+                                     "out float u;\n"
+                                     "out float v;\n"
+                                     "void main()\n"
+                                     "{\n"
+                                     "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+                                     "   u = aPos.x;\n"
+                                     "   v = aPos.y;\n"
+                                     "}\0";
+
+    const char *fragmentShaderSource = "#version 300 es\n"
+                                       "precision mediump float;\n"
+                                       "uniform float maxiters;\n"
+                                       "in float u;\n"
+                                       "in float v;\n"
+                                       "out vec4 FragColor;\n"
+                                       "void main()\n"
+                                       "{\n"
+                                       "   FragColor = vec4(0.0f, 0.0f, 0.0f, 1.0f);\n"
+                                       "   float scaledx = (u-0.5)*1.5f;\n"
+                                       "   float scaledy = v*1.0f;\n"
+                                       "   float currentx = scaledx;\n"
+                                       "   float currenty = scaledy;\n"
+                                       "   float currentx2 = 0.0f;\n"
+                                       "   float currenty2 = 0.0f;\n"
+                                       "   for (int loopind = 1;loopind<int(maxiters);loopind++)\n"
+                                       "   {\n"
+                                       "      currentx2 = scaledx + currentx*currentx - currenty*currenty;\n"
+                                       "      currenty2 = scaledy + 2.0f*currentx*currenty;\n"
+                                       "      currentx = clamp(currentx2,-10000.0f,10000.0f);\n"
+                                       "      currenty = clamp(currenty2,-10000.0f,10000.0f);\n"
+                                       "   }\n"
+                                       "   float amplitude = currentx2*currentx + currenty2*currenty;\n"
+                                       "   if (amplitude>4.0)\n"
+                                       "       FragColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);\n"
+                                       "}\0";
+
+    GLFWwindow *window;
+    GLuint maxitersLocation ;
+
     Tester1::Tester1()
     {
         SDL_Init(SDL_INIT_EVERYTHING);
-        /*
-        ** Create SDL window, which in emscripten becomes a canvas in the html page. */
-        m_window
-            = SDL_CreateWindow("Journey of Dreams", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
-                               canvas_get_width(), canvas_get_height(), SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
-        /*
-        ** Set OpenGL attributes. */
-        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
-        SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
-        SDL_GL_SetSwapInterval(0);
-        SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-        SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
-        /*
-        ** Create OpenGL context. */
-        auto glContext = SDL_GL_CreateContext(m_window);
-        /*
-        ** Create SDL renderer. */
-        m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_TARGETTEXTURE);
-        /*
-        ** Enable alpha blending. */
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        glfwInit();
 
-        glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+        glfwWindowHint(GLFW_CLIENT_API, GLFW_OPENGL_ES_API);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
+
+        window = glfwCreateWindow(400, 300, "The Window Title", NULL, NULL);
+        glfwMakeContextCurrent(window);
+
+        GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+        glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+        glCompileShader(vertexShader);
+
+        GLchar infoLog[256];
+        glGetShaderInfoLog(vertexShader, 256, NULL, infoLog);
+        std::cout << "Vertex shader info log says: " << infoLog << std::endl;
+
+        GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+        glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+        glCompileShader(fragmentShader);
+
+        glGetShaderInfoLog(fragmentShader, 256, NULL, infoLog);
+        std::cout << "Fragment shader info log says: " << infoLog << std::endl;
+
+        GLuint program = glCreateProgram();
+        glAttachShader(program, vertexShader);
+        glAttachShader(program, fragmentShader);
+        glLinkProgram(program);
+
+        glGetProgramInfoLog(program, 256, NULL, infoLog);
+        std::cout << "Progam info log says: " << infoLog << std::endl;
+
+        glDeleteShader(vertexShader);
+        glDeleteShader(fragmentShader);
+
+        float vertices[] = {
+            -1.0f, -1.0f, 0.0f, // bottom left
+            -1.0f, 1.0f,  0.0f, // top left
+            1.0f,  -1.0f, 0.0f, // bottom right
+            -1.0f, 1.0f,  0.0f, // top left
+            1.0f,  -1.0f, 0.0f, // bottom right
+            1.0f,  1.0f,  0.0f, // top right
+        };
+
+        GLuint VAO;
+        glGenVertexArrays(1, &VAO);
+        glBindVertexArray(VAO);
+        glEnableVertexAttribArray(0);
+
+        GLuint VBO;
+        glGenBuffers(1, &VBO);
+        glBindBuffer(GL_ARRAY_BUFFER, VBO);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_TRUE, 3 * sizeof(float), 0);
+
+        glUseProgram(program);
+
+        maxitersLocation = glGetUniformLocation(program, "maxiters");
+        GLuint xsizeLocation = glGetUniformLocation(program, "xsize");
+        GLuint ysizeLocation = glGetUniformLocation(program, "ysize");
+        std::cout << "Maxiters location is " << maxitersLocation << std::endl;
+
+        int xsize;
+        int ysize;
+        glfwGetWindowSize(window, &xsize, &ysize);
+        std::cout << "Window size is " << xsize << " x " << ysize << std::endl;
+
+        glUniform1f(maxitersLocation, 10);
     }
 
     void Tester1::Render()
     {
+        static float iters = 0.0f;
         if (!m_active)
         {
             return;
         }
+
+        glUniform1f(maxitersLocation, iters);
+        glClearColor(1, 0.5, 0, 1);
         glClear(GL_COLOR_BUFFER_BIT);
-        SDL_GL_SwapWindow(m_window);
+
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+
+        glfwSwapBuffers(window);
+        glfwPollEvents();
+        glFinish();
+
+        iters = iters + 0.1;
     }
 
     void Tester1::Stop()
     {
         m_active = false;
-        SDL_DestroyRenderer(m_renderer), SDL_DestroyWindow(m_window);
+        glfwDestroyWindow(window);
+        glDeleteBuffers(1, &m_vbo);
+        glDeleteVertexArraysOES(1, &m_vao);
+        SDL_DestroyRenderer(m_renderer);
+        SDL_DestroyWindow(m_window);
     }
 }

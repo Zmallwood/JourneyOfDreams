@@ -26,22 +26,28 @@ namespace JourneyOfDreams
         /////////////////////////////////////////////////
         void PresentCanvas();
 
-        /////////////////////////////////////////////////
-        /// Get the SDL window.
-        ///
-        /// \return SDL window.
-        /////////////////////////////////////////////////
-        std::shared_ptr<SDL_Window> Window();
+        // /////////////////////////////////////////////////
+        // /// Get the SDL window.
+        // ///
+        // /// \return SDL window.
+        // /////////////////////////////////////////////////
+        // std::shared_ptr<SDL_Window> Window();
 
-        /////////////////////////////////////////////////
-        /// Get the SDL renderer.
-        ///
-        /// \return SDL renderer.
-        /////////////////////////////////////////////////
-        std::shared_ptr<SDL_Renderer> Renderer();
+        // /////////////////////////////////////////////////
+        // /// Get the SDL renderer.
+        // ///
+        // /// \return SDL renderer.
+        // /////////////////////////////////////////////////
+        // std::shared_ptr<SDL_Renderer> Renderer();
+
+        auto Window()
+        {
+            return window;
+        }
 
       private:
-        std::shared_ptr<SDL_Window> m_window{};
-        std::shared_ptr<SDL_Renderer> m_renderer{};
+        // std::shared_ptr<SDL_Window> m_window{};
+        // std::shared_ptr<SDL_Renderer> m_renderer{};
+        GLFWwindow *window;
     };
 }

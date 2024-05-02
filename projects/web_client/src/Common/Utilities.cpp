@@ -11,7 +11,8 @@ namespace JourneyOfDreams
         int h;
         /*
         ** Use SDL to get window size = canvas size. */
-        SDL_GetWindowSize(_<Graphics>().Window().get(), &w, &h);
+        // SDL_GetWindowSize(_<Graphics>().Window().get(), &w, &h);
+        glfwGetWindowSize(_<Graphics>().Window(), &w, &h);
 
         return { w, h };
     }
