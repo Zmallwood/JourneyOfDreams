@@ -3,7 +3,7 @@
 namespace JourneyOfDreams
 {
 
-    const char *vertexShaderSource = "#version 300 es\n"
+    static const char *vertexShaderSource = "#version 300 es\n"
                                      "layout (location = 0) in vec3 aPos;\n"
                                      "out float u;\n"
                                      "out float v;\n"
@@ -14,7 +14,7 @@ namespace JourneyOfDreams
                                      "   v = aPos.y;\n"
                                      "}\0";
 
-    const char *fragmentShaderSource = "#version 300 es\n"
+    static const char *fragmentShaderSource = "#version 300 es\n"
                                        "precision mediump float;\n"
                                        "uniform float maxiters;\n"
                                        "in float u;\n"
@@ -41,8 +41,8 @@ namespace JourneyOfDreams
                                        "       FragColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);\n"
                                        "}\0";
 
-    GLFWwindow *window;
-    GLuint maxitersLocation ;
+    static GLFWwindow *window;
+    static GLuint maxitersLocation ;
 
     Tester1::Tester1()
     {

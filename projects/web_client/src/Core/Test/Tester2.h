@@ -7,8 +7,15 @@ namespace JourneyOfDreams
       public:
         Tester2();
         void Render();
+        void Stop();
 
       private:
-        RID m_ridImage{ 0 };
+        bool m_active{ true };
+        SDL_Window *m_window{ nullptr };
+        SDL_Renderer *m_renderer{ nullptr };
+        GLuint m_vao;
+        GLuint m_vbo;
+        GLuint m_ebo;
+        unsigned int m_shaderProgram;
     };
 }
