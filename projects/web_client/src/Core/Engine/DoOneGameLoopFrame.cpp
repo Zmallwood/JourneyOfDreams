@@ -1,15 +1,19 @@
 #include "DoOneGameLoopFrame.h"
 #include "Engine.h"
 #include "Core/Test/Tester.h"
+#include "Assets/ImageBank.h"
+#include "Graphics/Graphics.h"
 
 namespace JourneyOfDreams
 {
     void DoOneGameLoopFrame()
     {
+        _<Graphics>();     // Touch Graphics to initialize it
+        _<ImageBank>(); // Touch ImageBank to initialize
+
         _<Tester>().Render();
 
         // _<Engine>(); // Touch Engine to initialize
-        // _<ImageBank>(); // Touch ImageBank to initialize
 
 
         // _<Engine>().Reset();

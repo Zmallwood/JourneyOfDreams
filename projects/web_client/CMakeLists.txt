@@ -29,6 +29,8 @@ add_executable(WebClient
   src/Core/Engine/Graphics/Graphics.cpp
   ../shared/common/src/Hash.cpp
   src/Common/Utilities.cpp
+  src/Core/Configuration/ClientProperties.cpp
+  src/Common/SDLDeleter.cpp
 #   src/Core/Engine/Engine.cpp
 #   src/DefaultTheme/Scenes/Test/TestScene.cpp
 #   src/Core/Engine/ScenesCore/IScene.cpp
@@ -36,8 +38,6 @@ add_executable(WebClient
 #   src/Core/Engine/Cursor/Cursor.cpp
 #   src/Core/Engine/PollEvents.cpp
 #   src/Core/Engine/Net/NetClient.cpp
-#   src/Core/Configuration/ClientProperties.cpp
-#   src/Common/SDLDeleter.cpp
 #   src/DefaultTheme/Scenes/ServerConnect/ServerConnectScene.cpp
 #   src/Core/Engine/Net/NetworkConnection.cpp
 #   src/Core/Engine/GUICore/GUIWidget.cpp
