@@ -25,10 +25,11 @@ jobs:
           cd emsdk
           ./emsdk install latest
           ./emsdk activate latest
-          source emsdk_env.sh
 
       - name: Build WebClient, run cmake
-        run: CC=emcc CXX=em++ emcmake cmake projects/web_client -B build_web_client
+        run: |
+          source emsdk/emsdk_env.sh
+          CC=emcc CXX=em++ emcmake cmake projects/web_client -B build_web_client
 
       - name: Build WebClient, run make
         run: cd build_web_client && emmake make && mv ../bin_web_client/WebClient.html ../bin_web_client/index.html
