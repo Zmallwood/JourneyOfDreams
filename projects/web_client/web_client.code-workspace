@@ -83,7 +83,9 @@
 			"thread": "cpp",
 			"any": "cpp",
 			"pqxx": "cpp",
-			"future": "cpp"
-		}
+			"future": "cpp",
+			"coroutine": "cpp"
+		},
+		"editor.lineNumbers": "off"
 	}
 }

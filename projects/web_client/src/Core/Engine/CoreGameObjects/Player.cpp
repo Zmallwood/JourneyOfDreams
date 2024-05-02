@@ -7,100 +7,86 @@ namespace JourneyOfDreams
 {
     Player::Player()
     {
-        /*
-        ** Initialize player position to the center of the world area. */
+        //initialize player position to the center of the world area
         auto worldAreaSize = _<GlobalProperties>().WorldAreaSize();
         m_position = { .x = worldAreaSize.w / 2, .y = worldAreaSize.h / 2 };
     }
 
     int Player::GetX()
     {
-        /*
-        ** Return player x position. */
+        //return player x position
         return m_position.x;
     }
 
     int Player::GetY()
     {
-        /*
-        ** Return player y position. */
+        //return player y position
         return m_position.y;
     }
 
     void Player::MoveNorth()
     {
-        /*
-        ** Move player north. */
+        //move player north
         m_position.y -= 1;
     }
 
     void Player::MoveEast()
     {
-        /*
-        ** Move player east. */
+        //move player east
         m_position.x += 1;
     }
 
     void Player::MoveSouth()
     {
-        /*
-        ** Move player south. */
+        //move player south
         m_position.y += 1;
     }
 
     void Player::MoveWest()
     {
-        /*
-        ** Move player west. */
+        //move player west
         m_position.x -= 1;
     }
 
     Point Player::Position()
     {
-        /*
-        ** Getter */
+        //getter
         return m_position;
     }
 
     void Player::SetPosition(Point position)
     {
-        /*
-        ** Setter */
+        //setter
         m_position = position;
     }
 
     int Player::TicksLastMove()
     {
-        /*
-        ** Getter */
+        //getter
         return m_ticksLastMove;
     }
 
     void Player::SetTicksLastMove(int ticksLastMove)
     {
-        /*
-        ** Setter */
+        //setter
         m_ticksLastMove = ticksLastMove;
     }
 
     float Player::MovementSpeed()
     {
-        /*
-        ** Getter */
+        //getter
         return m_movementSpeed;
     }
 
     Point Player::Destination()
     {
-        /*
-        ** Getter */
+        //getter
         return m_destination;
     }
 
     void Player::SetDestination(Point destination)
     {
-        /*
-        ** Setter */
+        //setter
         m_destination = destination;
     }
 }

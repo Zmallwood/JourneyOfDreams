@@ -7,13 +7,12 @@ namespace JourneyOfDreams
 {
     Size GetCanvasSize()
     {
-        /*
-        ** To store dimensions in pixels. */
+        //to store dimensions in pixelsx
         int w;
         int h;
-        /*
-        ** Use SDL to get window size = canvas size. */
-        // SDL_GetWindowSize(_<Graphics>().Window().get(), &w, &h);
+
+        //use SDL to get window size = canvas size
+        //SDL_GetWindowSize(_<Graphics>().Window().get(), &w, &h);
         glfwGetWindowSize(_<Graphics>().Window(), &w, &h);
 
         return { w, h };
@@ -21,11 +20,10 @@ namespace JourneyOfDreams
 
     float GetAspectRatio()
     {
-        /*
-        ** Get canvas dimensions. */
+        //get canvas dimensions
         auto canvasSize = GetCanvasSize();
-        /*
-        ** And calculate the ratio between them. */
+
+        //and calculate the ratio between them
         auto aspectRatio = static_cast<float>(canvasSize.w) / canvasSize.h;
 
         return aspectRatio;
@@ -33,8 +31,7 @@ namespace JourneyOfDreams
 
     std::string FileExtension(const std::string &absPath)
     {
-        /*
-        ** Find last occurrence of '.' and keep the part following it. */
+        //find last occurrence of '.' and keep the part following it
         auto extension = absPath.substr(absPath.find_last_of('.') + 1);
 
         return extension;
@@ -42,11 +39,10 @@ namespace JourneyOfDreams
 
     std::string FilenameNoExtension(const std::string &absPath)
     {
-        /*
-        ** Find last occurence of '/' and get the part following it. */
+        //find last occurence of '/' and get the part following it
         auto nameWithExt = absPath.substr(absPath.find_last_of('/') + 1);
-        /*
-        ** Then only keep the part preceeding the last occurrence of '.'. */
+
+        //then only keep the part preceeding the last occurrence of '.'
         auto fileName = nameWithExt.substr(0, nameWithExt.find_last_of('.'));
 
         return fileName;
@@ -54,15 +50,13 @@ namespace JourneyOfDreams
 
     float ConvertWidthToHeight(float width)
     {
-        /*
-        ** Use aspect ratio to convert from width to corresponding height. */
+        //use aspect ratio to convert from width to corresponding height
         return width * GetAspectRatio();
     }
 
     float ConvertHeightToWidth(float height)
     {
-        /*
-        ** Use aspect ratio to convert from height to corresponding width. */
+        //use aspect ratio to convert from height to corresponding width
         return height / GetAspectRatio();
     }
 
@@ -70,19 +64,19 @@ namespace JourneyOfDreams
     {
         double xpos, ypos;
         glfwGetCursorPos(_<Graphics>().Window(), &xpos, &ypos);
-        /*
-        ** To store mouse coordinates in pixels. */
+
+        //to store mouse coordinates in pixels
         int x;
         int y;
-        /*
-        ** Use SDL to get current mouse coordinates. */
-        // SDL_GetMouseState(&x, &y);
+
+        //use SDL to get current mouse coordinates
+        //SDL_GetMouseState(&x, &y);
         glfwGetWindowPos(_<Graphics>().Window(), &x, &y);
-        /*
-        ** Get canvas size. */
+
+        //get canvas size
         auto canvasSize = GetCanvasSize();
-        /*
-        ** And use it to convert pixel coordinates to fractal coordinates. */
+
+        //and use it to convert pixel coordinates to fractal coordinates
         auto mousePosition
             = PointF{ static_cast<float>(xpos) / canvasSize.w, static_cast<float>(ypos) / canvasSize.h };
 
