@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: mymindstorm/setup-emsdk@v14
+      #- uses: mymindstorm/setup-emsdk@v14
 
       - name: Checkout code
         uses: actions/checkout@v2
@@ -18,6 +18,14 @@ jobs:
           sudo apt-get -y update
           sudo apt-get -y install libboost-dev
           sudo apt-get -y install libsoci-dev
+
+      - name: Prepare Emscripten SDK
+        run: |
+          git clone https://github.com/emscripten-core/emsdk.git
+          cd emsdk
+          ./emsdk install latest
+          ./emsdk activate latest
+          source emsdk_env.sh
 
       - name: Build WebClient, run cmake
         run: CC=emcc CXX=em++ emcmake cmake projects/web_client -B build_web_client
