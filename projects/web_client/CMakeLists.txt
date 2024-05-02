@@ -23,6 +23,8 @@ add_executable(WebClient
   src/Core/Engine/DoOneGameLoopFrame.cpp
   src/Core/Engine/Engine.cpp
   src/Core/Engine/Assets/ImageBank.cpp
+  src/DefaultTheme/Scenes/Test/TestScene.cpp
+  src/Core/Engine/ScenesCore/IScene.cpp
   src/Core/Engine/Net/NetClient.cpp
   src/Core/Engine/Graphics/Graphics.cpp
   src/Core/Engine/ScenesCore/SceneManager.cpp
@@ -34,7 +36,6 @@ add_executable(WebClient
   src/Common/SDLDeleter.cpp
   src/DefaultTheme/Scenes/ServerConnect/ServerConnectScene.cpp
   src/Core/Engine/Net/NetworkConnection.cpp
-  src/Core/Engine/ScenesCore/IScene.cpp
   src/Core/Engine/Rendering/ImageRendering/ImageRenderer.cpp
   src/Core/Engine/GUICore/GUIWidget.cpp
   src/Core/Engine/GUICore/GUILabel.cpp
