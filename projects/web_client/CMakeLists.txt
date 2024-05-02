@@ -34,20 +34,20 @@ add_executable(WebClient
   src/Common/SDLDeleter.cpp
   src/DefaultTheme/Scenes/ServerConnect/ServerConnectScene.cpp
   src/Core/Engine/Net/NetworkConnection.cpp
-  src/DefaultTheme/Scenes/Login/LoginScene.cpp
   src/Core/Engine/ScenesCore/IScene.cpp
   src/Core/Engine/Rendering/ImageRendering/ImageRenderer.cpp
   src/Core/Engine/GUICore/GUIWidget.cpp
   src/Core/Engine/GUICore/GUILabel.cpp
-  src/Core/Configuration/ConfigurationFile.cpp
-  src/Core/Engine/GUICore/GUITextBox.cpp
   src/Core/Engine/GUICore/GUI.cpp
-  src/Core/Engine/GUICore/GUIButton.cpp
   src/Core/Engine/Rendering/RenderingCore/RendererBase.cpp
   src/Core/Engine/Rendering/RenderingCore/ShaderProgram.cpp
   src/Core/Engine/Rendering/TextRendering/TextRenderer.cpp
   src/Core/Engine/GUICore/ManagedTextString.cpp
   src/Core/Engine/Rendering/TextRendering/Font.cpp
+  src/Core/Configuration/ConfigurationFile.cpp
+#   src/DefaultTheme/Scenes/Login/LoginScene.cpp
+#   src/Core/Engine/GUICore/GUITextBox.cpp
+#   src/Core/Engine/GUICore/GUIButton.cpp
 #   src/DefaultTheme/Scenes/LoginNetRequest/LoginNetRequestScene.cpp
 #   src/DefaultTheme/Scenes/Register/RegisterScene.cpp
 #   src/DefaultTheme/Scenes/RegisterNetRequest/RegisterNetRequestScene.cpp
