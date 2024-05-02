@@ -16,12 +16,11 @@ namespace JourneyOfDreams
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 
-        window = glfwCreateWindow(400, 300, "The Window Title", NULL, NULL);
+        window = glfwCreateWindow(canvas_get_width(), canvas_get_height(), "The Window Title", NULL, NULL);
         glfwMakeContextCurrent(window);
 
-        int xsize;
-        int ysize;
-        glfwGetWindowSize(window, &xsize, &ysize);
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
         // /*
         // ** Create SDL window, which in emscripten becomes a canvas in the html page. */

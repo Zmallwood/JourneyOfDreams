@@ -20,6 +20,7 @@ include_directories(${PROJECT_SOURCE_DIR}/src ${PROJECT_SOURCE_DIR}/../shared)
 # add_executable(WebClient ${SRC_FILES} ${SRC_FILES_EXTERNAL} ${SRC_FILES_SHARED})
 
 add_executable(WebClient
+# DevTestsRequired source files BEGIN
   src/Main.cpp
   src/DefaultTheme/RunNewGameInstance.cpp
   src/Core/GameInstance.cpp
@@ -35,51 +36,52 @@ add_executable(WebClient
   src/Core/Engine/Rendering/RenderingCore/ShaderProgram.cpp
   src/Core/Engine/Graphics/Graphics.cpp
    src/Core/Configuration/ClientProperties.cpp
-#   src/Common/SDLDeleter.cpp
-#   src/Core/Engine/Engine.cpp
-#   src/DefaultTheme/Scenes/Test/TestScene.cpp
-#   src/Core/Engine/ScenesCore/IScene.cpp
-#   src/Core/Engine/ScenesCore/SceneManager.cpp
-#   src/Core/Engine/Cursor/Cursor.cpp
-#   src/Core/Engine/PollEvents.cpp
-#   src/Core/Engine/Net/NetClient.cpp
-#   src/DefaultTheme/Scenes/ServerConnect/ServerConnectScene.cpp
-#   src/Core/Engine/Net/NetworkConnection.cpp
-#   src/Core/Engine/GUICore/GUIWidget.cpp
-#   src/Core/Engine/GUICore/GUILabel.cpp
-#   src/Core/Engine/GUICore/GUI.cpp
-#   src/Core/Engine/Rendering/TextRendering/TextRenderer.cpp
-#   src/Core/Engine/GUICore/ManagedTextString.cpp
-#   src/Core/Engine/Rendering/TextRendering/Font.cpp
-#   src/Core/Configuration/ConfigurationFile.cpp
-#   src/DefaultTheme/Scenes/Login/LoginScene.cpp
-#   src/Core/Engine/GUICore/GUITextBox.cpp
-#   src/Core/Engine/GUICore/GUIButton.cpp
-#   src/DefaultTheme/Scenes/LoginNetRequest/LoginNetRequestScene.cpp
-#   src/DefaultTheme/Scenes/Register/RegisterScene.cpp
-#   src/DefaultTheme/Scenes/RegisterNetRequest/RegisterNetRequestScene.cpp
-#   src/DefaultTheme/Scenes/Main/MainScene.cpp
-#   src/Core/Engine/Input/KeyboardInput.cpp
-#   src/Core/Engine/Input/MouseInput.cpp
-#   src/Core/Engine/GUICore/GUIMessageBox.cpp
-#   external/SHA256/src/SHA256.cpp
-#   src/Core/WorldFileReading/WorldFileReader.cpp
-#   src/DefaultTheme/Scenes/Main/SubProcess/EnsureGoodPlayerPosition.cpp
-#   src/DefaultTheme/Scenes/Main/SubProcess/WorldView/WorldView.cpp
-#   src/DefaultTheme/Scenes/Main/SubProcess/UpdateKeyboardMovement.cpp
-#   src/DefaultTheme/Scenes/Main/SubProcess/UpdateClickMovement.cpp
-#   src/DefaultTheme/Scenes/Main/SubProcess/TileHoverer.cpp
-#   src/DefaultTheme/Scenes/Main/SubProcess/FPSCounter.cpp
-#   src/Core/Engine/Input/MouseButton.cpp
-#   src/Core/Engine/GUICore/OnScreenKeyboard.cpp
-#   src/Core/Engine/GUICore/GUIWindow.cpp
-#   ../shared/world_structure/src/WorldArea.cpp
-#   ../shared/world_structure/src/Tile.cpp
-#   ../shared/world_structure/src/World.cpp
-#   ../shared/world_structure/src/Object.cpp
-#   src/Core/Engine/CoreGameObjects/Player.cpp
-#   src/Core/Engine/CoreMath/TileGridCalculations.cpp
-#   src/Core/Engine/GUICore/GUIMovableWidget.cpp
+   # DevTestsRequired source files END
+  src/Common/SDLDeleter.cpp
+  src/Core/Engine/Engine.cpp
+  src/DefaultTheme/Scenes/Test/TestScene.cpp
+  src/Core/Engine/ScenesCore/IScene.cpp
+  src/Core/Engine/ScenesCore/SceneManager.cpp
+  src/Core/Engine/Cursor/Cursor.cpp
+  src/Core/Engine/PollEvents.cpp
+  src/Core/Engine/Net/NetClient.cpp
+  src/DefaultTheme/Scenes/ServerConnect/ServerConnectScene.cpp
+  src/Core/Engine/Net/NetworkConnection.cpp
+  src/Core/Engine/GUICore/GUIWidget.cpp
+  src/Core/Engine/GUICore/GUILabel.cpp
+  src/Core/Engine/GUICore/GUI.cpp
+  src/Core/Engine/Rendering/TextRendering/TextRenderer.cpp
+  src/Core/Engine/GUICore/ManagedTextString.cpp
+  src/Core/Engine/Rendering/TextRendering/Font.cpp
+  src/Core/Configuration/ConfigurationFile.cpp
+  src/DefaultTheme/Scenes/Login/LoginScene.cpp
+  src/Core/Engine/GUICore/GUITextBox.cpp
+  src/Core/Engine/GUICore/GUIButton.cpp
+  src/DefaultTheme/Scenes/LoginNetRequest/LoginNetRequestScene.cpp
+  src/DefaultTheme/Scenes/Register/RegisterScene.cpp
+  src/DefaultTheme/Scenes/RegisterNetRequest/RegisterNetRequestScene.cpp
+  src/DefaultTheme/Scenes/Main/MainScene.cpp
+  src/Core/Engine/Input/KeyboardInput.cpp
+  src/Core/Engine/Input/MouseInput.cpp
+  src/Core/Engine/GUICore/GUIMessageBox.cpp
+  external/SHA256/src/SHA256.cpp
+  src/Core/WorldFileReading/WorldFileReader.cpp
+  src/DefaultTheme/Scenes/Main/SubProcess/EnsureGoodPlayerPosition.cpp
+  src/DefaultTheme/Scenes/Main/SubProcess/WorldView/WorldView.cpp
+  src/DefaultTheme/Scenes/Main/SubProcess/UpdateKeyboardMovement.cpp
+  src/DefaultTheme/Scenes/Main/SubProcess/UpdateClickMovement.cpp
+  src/DefaultTheme/Scenes/Main/SubProcess/TileHoverer.cpp
+  src/DefaultTheme/Scenes/Main/SubProcess/FPSCounter.cpp
+  src/Core/Engine/Input/MouseButton.cpp
+  src/Core/Engine/GUICore/OnScreenKeyboard.cpp
+  src/Core/Engine/GUICore/GUIWindow.cpp
+  ../shared/world_structure/src/WorldArea.cpp
+  ../shared/world_structure/src/Tile.cpp
+  ../shared/world_structure/src/World.cpp
+  ../shared/world_structure/src/Object.cpp
+  src/Core/Engine/CoreGameObjects/Player.cpp
+  src/Core/Engine/CoreMath/TileGridCalculations.cpp
+  src/Core/Engine/GUICore/GUIMovableWidget.cpp
 )
 
 target_link_libraries(WebClient websocket)
