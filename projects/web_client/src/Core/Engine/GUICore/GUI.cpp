@@ -10,32 +10,32 @@ namespace JourneyOfDreams
     {
         /*
         ** Add an on-screen keyboard to every GUI. */
-        AddWidget("OnScreenKeyboard", std::make_shared<OnScreenKeyboard>());
+        // AddWidget("OnScreenKeyboard", std::make_shared<OnScreenKeyboard>());
     }
 
     void GUI::ShowKeyboard()
     {
         /*
         ** Show the on-screen keyboard. */
-        GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Show();
+        // GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Show();
     }
 
     void GUI::HideKeyboard()
     {
         /*
         ** Hide the on-screen keyboard. */
-        GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Hide();
+        // GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Hide();
     }
 
     void GUI::Update()
     {
         GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->BringToFront();
 
-        if (_<MouseInput>().LeftButton().Pressed()
-            && !GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->MouseOver())
-        {
-            SetFocusedWidget(nullptr);
-        }
+        // if (_<MouseInput>().LeftButton().Pressed()
+        //     && !GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->MouseOver())
+        // {
+        //     SetFocusedWidget(nullptr);
+        // }
         /*
         ** Update all child widgets in the same order as they have been added. */
         for (auto &entry : ChildWidgets())
@@ -50,20 +50,20 @@ namespace JourneyOfDreams
         InsertWaitingWidgets();
         /*
         ** Focus next widget on pressing the tab key. */
-        if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_TAB))
-        {
-            FocusNextWidget();
-        }
+        // if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_TAB))
+        // {
+        //     FocusNextWidget();
+        // }
         /*
         ** Clear all typed text input as it has already been handled by the GUIs widgets. */
-        _<KeyboardInput>().ClearTextInput();
+        // _<KeyboardInput>().ClearTextInput();
 
         /*
         ** Dont show on-screen keyboard if no widget is focused. */
-        if (FocusedWidget() == nullptr)
-        {
-            GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Hide();
-        }
+        // if (FocusedWidget() == nullptr)
+        // {
+        //     GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Hide();
+        // }
     }
 
     void GUI::Render()

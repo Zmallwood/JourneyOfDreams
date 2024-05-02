@@ -35,71 +35,71 @@ namespace JourneyOfDreams
 
     void GUITextBox::UpdateDerived()
     {
-        auto mousePos = GetMousePosition();
-        /*
-        ** If mouse is hovering this text box. */
-        if (GetFinalArea().Contains(mousePos))
-        {
-            /*
-            ** Change cursor symbol. */
-            _<Cursor>().SetStyle(CursorStyles::TextInput);
-            /*
-            ** If left mouse button is also pressed. */
-            if (_<MouseInput>().LeftButton().Pressed())
-            {
-                /*
-                ** Give focus */
-                Focus();
-                /*
-                ** And set the cursor position in the text box to where it was clicked. */
-                auto localMousePosX = mousePos.x - GetFinalPosition().x - Padding();
-                m_managedTextLine.SetCursorPositionFromLocalX(localMousePosX);
-            }
-        }
+        // auto mousePos = GetMousePosition();
+        // /*
+        // ** If mouse is hovering this text box. */
+        // if (GetFinalArea().Contains(mousePos))
+        // {
+        //     /*
+        //     ** Change cursor symbol. */
+        //     _<Cursor>().SetStyle(CursorStyles::TextInput);
+        //     /*
+        //     ** If left mouse button is also pressed. */
+        //     if (_<MouseInput>().LeftButton().Pressed())
+        //     {
+        //         /*
+        //         ** Give focus */
+        //         Focus();
+        //         /*
+        //         ** And set the cursor position in the text box to where it was clicked. */
+        //         auto localMousePosX = mousePos.x - GetFinalPosition().x - Padding();
+        //         m_managedTextLine.SetCursorPositionFromLocalX(localMousePosX);
+        //     }
+        // }
 
-        if (HasFocus())
-        {
-            /*
-            ** Pick all the text typed on keyboard and insert into this text box. */
-            auto textInput = _<KeyboardInput>().PickTextInput();
-            m_managedTextLine.InsertText(textInput);
-            /*
-            ** Add left arrow key functionality.*/
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_LEFT))
-            {
-                m_managedTextLine.TryMoveCursorLeft();
-            }
-            /*
-            ** Add right arrow key functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_RIGHT))
-            {
-                m_managedTextLine.TryMoveCursorRight();
-            }
-            /*
-            ** Add backspace key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_BACKSPACE))
-            {
-                m_managedTextLine.TryDeleteLeft();
-            }
-            /*
-            ** Add delete key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_DELETE))
-            {
-                m_managedTextLine.TryDeleteRight();
-            }
-            /*
-            ** Add home key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_HOME))
-            {
-                m_managedTextLine.MoveCursorToStart();
-            }
-            /*
-            ** Add end key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_END))
-            {
-                m_managedTextLine.MoveCursorToEnd();
-            }
-        }
+        // if (HasFocus())
+        // {
+        //     /*
+        //     ** Pick all the text typed on keyboard and insert into this text box. */
+        //     auto textInput = _<KeyboardInput>().PickTextInput();
+        //     m_managedTextLine.InsertText(textInput);
+        //     /*
+        //     ** Add left arrow key functionality.*/
+        //     if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_LEFT))
+        //     {
+        //         m_managedTextLine.TryMoveCursorLeft();
+        //     }
+        //     /*
+        //     ** Add right arrow key functionality. */
+        //     if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_RIGHT))
+        //     {
+        //         m_managedTextLine.TryMoveCursorRight();
+        //     }
+        //     /*
+        //     ** Add backspace key erase functionality. */
+        //     if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_BACKSPACE))
+        //     {
+        //         m_managedTextLine.TryDeleteLeft();
+        //     }
+        //     /*
+        //     ** Add delete key erase functionality. */
+        //     if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_DELETE))
+        //     {
+        //         m_managedTextLine.TryDeleteRight();
+        //     }
+        //     /*
+        //     ** Add home key erase functionality. */
+        //     if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_HOME))
+        //     {
+        //         m_managedTextLine.MoveCursorToStart();
+        //     }
+        //     /*
+        //     ** Add end key erase functionality. */
+        //     if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_END))
+        //     {
+        //         m_managedTextLine.MoveCursorToEnd();
+        //     }
+        // }
     }
 
     void GUITextBox::RenderDerived()

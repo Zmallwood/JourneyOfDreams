@@ -35,44 +35,44 @@ add_executable(WebClient
   src/DefaultTheme/Scenes/ServerConnect/ServerConnectScene.cpp
   src/Core/Engine/Net/NetworkConnection.cpp
   src/DefaultTheme/Scenes/Login/LoginScene.cpp
-  src/DefaultTheme/Scenes/LoginNetRequest/LoginNetRequestScene.cpp
-  src/DefaultTheme/Scenes/Register/RegisterScene.cpp
-  src/DefaultTheme/Scenes/RegisterNetRequest/RegisterNetRequestScene.cpp
   src/Core/Engine/ScenesCore/IScene.cpp
-  src/DefaultTheme/Scenes/Main/MainScene.cpp
   src/Core/Engine/Rendering/ImageRendering/ImageRenderer.cpp
-  src/Core/Engine/Input/KeyboardInput.cpp
-  src/Core/Engine/Input/MouseInput.cpp
   src/Core/Engine/GUICore/GUIWidget.cpp
   src/Core/Engine/GUICore/GUILabel.cpp
   src/Core/Configuration/ConfigurationFile.cpp
   src/Core/Engine/GUICore/GUITextBox.cpp
   src/Core/Engine/GUICore/GUI.cpp
   src/Core/Engine/GUICore/GUIButton.cpp
-  src/Core/Engine/GUICore/GUIMessageBox.cpp
-  external/SHA256/src/SHA256.cpp
-  src/Core/WorldFileReading/WorldFileReader.cpp
-  src/DefaultTheme/Scenes/Main/SubProcess/EnsureGoodPlayerPosition.cpp
-  src/DefaultTheme/Scenes/Main/SubProcess/WorldView/WorldView.cpp
-  src/DefaultTheme/Scenes/Main/SubProcess/UpdateKeyboardMovement.cpp
-  src/DefaultTheme/Scenes/Main/SubProcess/UpdateClickMovement.cpp
-  src/DefaultTheme/Scenes/Main/SubProcess/TileHoverer.cpp
-  src/DefaultTheme/Scenes/Main/SubProcess/FPSCounter.cpp
   src/Core/Engine/Rendering/RenderingCore/RendererBase.cpp
   src/Core/Engine/Rendering/RenderingCore/ShaderProgram.cpp
-  src/Core/Engine/Input/MouseButton.cpp
   src/Core/Engine/Rendering/TextRendering/TextRenderer.cpp
   src/Core/Engine/GUICore/ManagedTextString.cpp
-  src/Core/Engine/GUICore/OnScreenKeyboard.cpp
-  src/Core/Engine/GUICore/GUIWindow.cpp
-  ../shared/world_structure/src/WorldArea.cpp
-  ../shared/world_structure/src/Tile.cpp
-  ../shared/world_structure/src/World.cpp
-  ../shared/world_structure/src/Object.cpp
-  src/Core/Engine/CoreGameObjects/Player.cpp
-  src/Core/Engine/CoreMath/TileGridCalculations.cpp
   src/Core/Engine/Rendering/TextRendering/Font.cpp
-  src/Core/Engine/GUICore/GUIMovableWidget.cpp
+#   src/DefaultTheme/Scenes/LoginNetRequest/LoginNetRequestScene.cpp
+#   src/DefaultTheme/Scenes/Register/RegisterScene.cpp
+#   src/DefaultTheme/Scenes/RegisterNetRequest/RegisterNetRequestScene.cpp
+#   src/DefaultTheme/Scenes/Main/MainScene.cpp
+#   src/Core/Engine/Input/KeyboardInput.cpp
+#   src/Core/Engine/Input/MouseInput.cpp
+#   src/Core/Engine/GUICore/GUIMessageBox.cpp
+#   external/SHA256/src/SHA256.cpp
+#   src/Core/WorldFileReading/WorldFileReader.cpp
+#   src/DefaultTheme/Scenes/Main/SubProcess/EnsureGoodPlayerPosition.cpp
+#   src/DefaultTheme/Scenes/Main/SubProcess/WorldView/WorldView.cpp
+#   src/DefaultTheme/Scenes/Main/SubProcess/UpdateKeyboardMovement.cpp
+#   src/DefaultTheme/Scenes/Main/SubProcess/UpdateClickMovement.cpp
+#   src/DefaultTheme/Scenes/Main/SubProcess/TileHoverer.cpp
+#   src/DefaultTheme/Scenes/Main/SubProcess/FPSCounter.cpp
+#   src/Core/Engine/Input/MouseButton.cpp
+#   src/Core/Engine/GUICore/OnScreenKeyboard.cpp
+#   src/Core/Engine/GUICore/GUIWindow.cpp
+#   ../shared/world_structure/src/WorldArea.cpp
+#   ../shared/world_structure/src/Tile.cpp
+#   ../shared/world_structure/src/World.cpp
+#   ../shared/world_structure/src/Object.cpp
+#   src/Core/Engine/CoreGameObjects/Player.cpp
+#   src/Core/Engine/CoreMath/TileGridCalculations.cpp
+#   src/Core/Engine/GUICore/GUIMovableWidget.cpp
 )
 
 target_link_libraries(WebClient websocket)
