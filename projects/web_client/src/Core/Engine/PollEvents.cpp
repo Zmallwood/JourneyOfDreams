@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "PollEvents.h"
 #include "Input/KeyboardInput.h"
 #include "Input/MouseInput.h"

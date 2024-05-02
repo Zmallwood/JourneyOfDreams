@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "Utilities.h"
 #include "Core/Engine/Graphics/Graphics.h"
 
@@ -66,20 +68,23 @@ namespace JourneyOfDreams
 
     PointF GetMousePosition()
     {
+        double xpos, ypos;
+        glfwGetCursorPos(_<Graphics>().Window(), &xpos, &ypos);
         /*
         ** To store mouse coordinates in pixels. */
         int x;
         int y;
         /*
         ** Use SDL to get current mouse coordinates. */
-        SDL_GetMouseState(&x, &y);
+        // SDL_GetMouseState(&x, &y);
+        glfwGetWindowPos(_<Graphics>().Window(), &x, &y);
         /*
         ** Get canvas size. */
         auto canvasSize = GetCanvasSize();
         /*
         ** And use it to convert pixel coordinates to fractal coordinates. */
         auto mousePosition
-            = PointF{ static_cast<float>(x) / canvasSize.w, static_cast<float>(y) / canvasSize.h };
+            = PointF{ static_cast<float>(xpos) / canvasSize.w, static_cast<float>(ypos) / canvasSize.h };
 
         return mousePosition;
     }

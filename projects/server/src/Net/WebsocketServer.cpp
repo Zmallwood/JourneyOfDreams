@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "WebsocketServer.h"
 
 // The name of the special JSON field that holds the message type for messages

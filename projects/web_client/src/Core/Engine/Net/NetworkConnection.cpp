@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "NetworkConnection.h"
 #include "Core/Configuration/ConfigurationFile.h"
 #include "NetClient.h"

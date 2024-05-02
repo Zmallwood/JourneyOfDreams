@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "GUILabel.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 

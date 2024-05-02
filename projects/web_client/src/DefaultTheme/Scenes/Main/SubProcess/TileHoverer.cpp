@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "TileHoverer.h"
 #include "Core/Configuration/ClientProperties.h"
 #include "Core/Engine/CoreGameObjects/Player.h"

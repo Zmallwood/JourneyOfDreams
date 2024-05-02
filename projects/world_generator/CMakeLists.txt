@@ -1,3 +1,5 @@
+#  Copyright (C) 2024 Andreas Åkerberg
+
 project(Game2Emscripten)
 cmake_minimum_required(VERSION 3.22)
 

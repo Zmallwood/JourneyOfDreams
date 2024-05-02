@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "RegisterScene.h"
 #include "Core/Engine/GUICore/GUIButton.h"
 #include "Core/Engine/GUICore/GUI.h"

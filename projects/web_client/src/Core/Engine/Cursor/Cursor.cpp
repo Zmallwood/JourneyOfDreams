@@ -1,5 +1,8 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "Cursor.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
+#include "Core/Engine/Graphics/Graphics.h"
 
 namespace JourneyOfDreams
 {
@@ -11,6 +14,7 @@ namespace JourneyOfDreams
         /*
         ** Hide default system cursor when mouse is inside the game canvas. */
         SDL_ShowCursor(SDL_DISABLE); 
+        glfwSetInputMode(_<Graphics>().Window(), GLFW_CURSOR, GLFW_CURSOR_DISABLED); 
     } 
 
     void Cursor::ResetStyle()

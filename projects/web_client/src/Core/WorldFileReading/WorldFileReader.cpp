@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "WorldFileReader.h"
 #include "world_structure/src/Tile.h"
 #include "world_structure/src/World.h"

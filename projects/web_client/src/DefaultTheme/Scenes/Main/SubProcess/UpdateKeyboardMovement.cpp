@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "UpdateKeyboardMovement.h"
 #include "Core/Engine/CoreGameObjects/Player.h"
 #include "Core/Engine/Input/KeyboardInput.h"

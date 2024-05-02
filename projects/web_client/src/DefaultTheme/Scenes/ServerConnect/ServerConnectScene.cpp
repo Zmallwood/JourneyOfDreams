@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "ServerConnectScene.h"
 #include "Core/Engine/GUICore/GUILabel.h"
 #include "Core/Engine/GUICore/GUI.h"

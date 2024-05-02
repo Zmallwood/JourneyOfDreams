@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #pragma once
 
 #define GL_GLEXT_PROTOTYPES 1

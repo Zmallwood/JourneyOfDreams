@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "NetClient.h"
 #include "NetworkConnection.h"
 

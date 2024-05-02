@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #pragma once
 
 namespace JourneyOfDreams
@@ -5,8 +7,6 @@ namespace JourneyOfDreams
     template <class T>
     auto &_()
     {
-        // static std::shared_ptr<T> instance = std::make_shared<T>();
-        // return *instance;
         static T instance;
         return instance;
     }

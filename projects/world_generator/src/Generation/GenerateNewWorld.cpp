@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "GenerateNewWorld.h"
 #include "../../shared/world_structure/src/World.h"
 #include "SubProcess/GenerateGrass.h"

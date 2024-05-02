@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "TextRenderer.h"
 #include "Core/Engine/Assets/ImageBank.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"

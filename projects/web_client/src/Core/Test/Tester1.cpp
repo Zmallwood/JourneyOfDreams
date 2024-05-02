@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "Tester1.h"
 
 namespace JourneyOfDreams

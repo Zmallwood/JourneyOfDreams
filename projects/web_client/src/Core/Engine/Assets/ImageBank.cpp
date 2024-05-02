@@ -1,4 +1,4 @@
-
+//  Copyright (C) 2024 Andreas Åkerberg
 
 #include "ImageBank.h"
 #include <png.h>

@@ -1,3 +1,5 @@
+#  Copyright (C) 2024 Andreas Åkerberg
+
 project(WebClient)
 cmake_minimum_required(VERSION 3.22)
 

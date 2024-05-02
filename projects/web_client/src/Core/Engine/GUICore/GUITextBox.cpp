@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "GUITextBox.h"
 #include "Core/Engine/Cursor/Cursor.h"
 #include "Core/Engine/GUICore/GUI.h"

@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "GUIWidget.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "GUI.h"

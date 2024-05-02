@@ -1,6 +1,9 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #pragma once
 
 typedef struct _TTF_Font TTF_Font;
+
 namespace JourneyOfDreams
 {
     /////////////////////////////////////////////////

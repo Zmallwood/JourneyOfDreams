@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "SceneManager.h"
 #include "DefaultTheme/Scenes/Login/LoginScene.h"
 #include "DefaultTheme/Scenes/LoginNetRequest/LoginNetRequestScene.h"

@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "ImageRenderer.h"
 #include "Core/Engine/Assets/ImageBank.h"
 #include "Core/Engine/Rendering/RenderingCore/ShaderProgram.h"

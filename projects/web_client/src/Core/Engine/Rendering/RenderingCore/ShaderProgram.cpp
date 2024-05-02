@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "ShaderProgram.h"
 
 namespace JourneyOfDreams

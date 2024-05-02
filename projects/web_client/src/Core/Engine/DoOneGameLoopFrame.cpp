@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "DoOneGameLoopFrame.h"
 #include "Assets/ImageBank.h"
 #include "Core/Test/Tester1.h"

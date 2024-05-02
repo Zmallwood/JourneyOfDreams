@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "FPSCounter.h"
 #include "Core/Engine/GUICore/GUI.h"
 #include "Core/Engine/GUICore/GUILabel.h"

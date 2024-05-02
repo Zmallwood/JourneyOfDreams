@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "GameInstance.h"
 #include "Engine/DoOneGameLoopFrame.h"
 #include "Engine/Engine.h"

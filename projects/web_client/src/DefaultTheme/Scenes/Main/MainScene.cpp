@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "MainScene.h"
 #include "Core/WorldFileReading/WorldFileReader.h"
 #include "SubProcess/EnsureGoodPlayerPosition.h"

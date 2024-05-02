@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "SDLDeleter.h"
 
 namespace JourneyOfDreams

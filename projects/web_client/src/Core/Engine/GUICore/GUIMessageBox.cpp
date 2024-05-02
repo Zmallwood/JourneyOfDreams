@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "GUIMessageBox.h"
 #include "GUIButton.h"
 #include "GUILabel.h"

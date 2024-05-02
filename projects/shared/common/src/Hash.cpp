@@ -1,3 +1,5 @@
+//  Modified work, Copyright (C) 2024 Andreas Åkerberg
+
 #include "Hash.h"
 
 namespace JourneyOfDreams

@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "EnsureGoodPlayerPosition.h"
 #include "Core/Engine/CoreGameObjects/Player.h"
 #include "world_structure/src/Tile.h"

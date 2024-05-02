@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "Tester3.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 

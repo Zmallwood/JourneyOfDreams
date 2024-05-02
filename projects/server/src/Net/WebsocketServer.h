@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #ifndef _WEBSOCKET_SERVER
 #define _WEBSOCKET_SERVER
 

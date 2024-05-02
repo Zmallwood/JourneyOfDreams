@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "Engine.h"
 #include "Cursor/Cursor.h"
 #include "Graphics/Graphics.h"

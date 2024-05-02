@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "RegisterNetRequestScene.h"
 #include "Core/Engine/GUICore/GUILabel.h"
 #include "Core/Engine/GUICore/GUITextBox.h"

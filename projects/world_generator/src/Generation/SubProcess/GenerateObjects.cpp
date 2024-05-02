@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "GenerateObjects.h"
 #include "../../shared/world_structure/src/Object.h"
 #include "../../shared/world_structure/src/Tile.h"

@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "WorldArea.h"
 #include "Tile.h"
 #include "configuration/src/GlobalProperties.h"

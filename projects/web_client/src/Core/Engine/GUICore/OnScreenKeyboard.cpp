@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "OnScreenKeyboard.h"
 #include "GUI.h"
 #include "GUIButton.h"

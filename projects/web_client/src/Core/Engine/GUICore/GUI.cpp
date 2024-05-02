@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "GUI.h"
 #include "Core/Engine/Input/KeyboardInput.h"
 #include "Core/Engine/Input/MouseInput.h"

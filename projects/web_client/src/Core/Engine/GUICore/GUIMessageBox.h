@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #pragma once
 
 #include "GUIWindow.h"

@@ -1,3 +1,5 @@
+//  Copyright (C) 2024 Andreas Åkerberg
+
 #include "RendererBase.h"
 #include "ShaderProgram.h"
 
