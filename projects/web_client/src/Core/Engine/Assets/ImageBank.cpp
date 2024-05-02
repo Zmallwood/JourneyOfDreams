@@ -273,6 +273,8 @@ namespace JourneyOfDreams
         ** Apply necessary texture parameters */
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
         /*
         ** If image format is RGBA (with alpha channel) */
         if (surf->format->BytesPerPixel == 4)
@@ -302,75 +304,75 @@ namespace JourneyOfDreams
 
     SDL_Surface *ImageBank::LoadImageData(const char *filename)
     {
-        //         int width;
-        //         int height;
-        //         int bytesPerPixel;
-        //         /*
-        //         ** Read data */
-        //         void *data = stbi_load(filename, &width, &height, &bytesPerPixel, 0);
+                int width;
+                int height;
+                int bytesPerPixel;
+                /*
+                ** Read data */
+                void *data = stbi_load(filename, &width, &height, &bytesPerPixel, 0);
 
-        //         int pitch;
-        //         /*
-        //         ** Calculate pitch */
-        //         pitch = width * bytesPerPixel;
-        //         pitch = (pitch + 3) & ~3;
+                int pitch;
+                /*
+                ** Calculate pitch */
+                pitch = width * bytesPerPixel;
+                pitch = (pitch + 3) & ~3;
 
-        //         int Rmask;
-        //         int Gmask;
-        //         int Bmask;
-        //         int Amask;
-        //         /*
-        //         ** Setup relevance bitmask */
-        // #if SDL_BYTEORDER == SDL_LIL_ENDIAN
-        //         Rmask = 0x000000FF;
-        //         Gmask = 0x0000FF00;
-        //         Bmask = 0x00FF0000;
-        //         Amask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
-        // #else
-        //         int s = (bytesPerPixel == 4) ? 0 : 8;
-        //         Rmask = 0xFF000000 >> s;
-        //         Gmask = 0x00FF0000 >> s;
-        //         Bmask = 0x0000FF00 >> s;
-        //         Amask = 0x000000FF >> s;
-        // #endif
-        std::vector<RGBA> pixels;
-        std::uint32_t  width, height;
-        std::uint16_t bitsperpixel;
-        LoadPngImage(filename, pixels, width, height, bitsperpixel);
+                int Rmask;
+                int Gmask;
+                int Bmask;
+                int Amask;
+                /*
+                ** Setup relevance bitmask */
+        #if SDL_BYTEORDER == SDL_LIL_ENDIAN
+                Rmask = 0x000000FF;
+                Gmask = 0x0000FF00;
+                Bmask = 0x00FF0000;
+                Amask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
+        #else
+                int s = (bytesPerPixel == 4) ? 0 : 8;
+                Rmask = 0xFF000000 >> s;
+                Gmask = 0x00FF0000 >> s;
+                Bmask = 0x0000FF00 >> s;
+                Amask = 0x000000FF >> s;
+        #endif
+//         std::vector<RGBA> pixels;
+//         std::uint32_t width, height;
+//         std::uint16_t bitsperpixel;
+//         LoadPngImage(filename, pixels, width, height, bitsperpixel);
 
-        auto bytesPerPixel = bitsperpixel*8;
-        int pitch;
-        /*
-        ** Calculate pitch */
-        pitch = width * bytesPerPixel;
-        pitch = (pitch + 3) & ~3;
+//         auto bytesPerPixel = bitsperpixel * 8;
+//         int pitch;
+//         /*
+//         ** Calculate pitch */
+//         pitch = width * bytesPerPixel;
+//         pitch = (pitch + 3) & ~3;
 
-        int Rmask;
-        int Gmask;
-        int Bmask;
-        int Amask;
-        /*
-        ** Setup relevance bitmask */
-#if SDL_BYTEORDER == SDL_LIL_ENDIAN
-        Rmask = 0x000000FF;
-        Gmask = 0x0000FF00;
-        Bmask = 0x00FF0000;
-        Amask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
-#else
-        int s = (bytesPerPixel == 4) ? 0 : 8;
-        Rmask = 0xFF000000 >> s;
-        Gmask = 0x00FF0000 >> s;
-        Bmask = 0x0000FF00 >> s;
-        Amask = 0x000000FF >> s;
-#endif
+//         int Rmask;
+//         int Gmask;
+//         int Bmask;
+//         int Amask;
+//         /*
+//         ** Setup relevance bitmask */
+// #if SDL_BYTEORDER == SDL_LIL_ENDIAN
+//         Rmask = 0x000000FF;
+//         Gmask = 0x0000FF00;
+//         Bmask = 0x00FF0000;
+//         Amask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
+// #else
+//         int s = (bytesPerPixel == 4) ? 0 : 8;
+//         Rmask = 0xFF000000 >> s;
+//         Gmask = 0x00FF0000 >> s;
+//         Bmask = 0x0000FF00 >> s;
+//         Amask = 0x000000FF >> s;
+//#endif
 
         /*
         ** Create SDL surface from image data */
-        SDL_Surface *surface = SDL_CreateRGBSurfaceFrom(pixels.data(), width, height, bitsperpixel, pitch,
-                                                        Rmask, Gmask, Bmask, Amask);
-        // SDL_Surface *surface = SDL_CreateRGBSurfaceFrom(data, width, height, bytesPerPixel * 8, pitch,
-        // Rmask,
-        //                                                 Gmask, Bmask, Amask);
+        //SDL_Surface *surface = SDL_CreateRGBSurfaceFrom(pixels.data(), width, height, bitsperpixel, pitch,
+         //                                               Rmask, Gmask, Bmask, Amask);
+         SDL_Surface *surface = SDL_CreateRGBSurfaceFrom(data, width, height, bytesPerPixel * 8, pitch,
+         Rmask,
+                                                         Gmask, Bmask, Amask);
         // stbi_image_free(data);
         /*
         ** If surface creation failed */
