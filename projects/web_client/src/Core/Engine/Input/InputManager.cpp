@@ -44,10 +44,26 @@ namespace JourneyOfDreams
         _<KeyboardInput>().AppendTextInput(std::string(1, (char)codepoint));
     }
 
+    static EM_BOOL TouchStartCallback(int, EmscriptenTouchEvent const *, void *)
+    {
+        _<MouseInput>().LeftButton().OnPress();
+        static int i = 0;
+        std::cout << ++i << std::endl;
+        return EM_FALSE;
+    }
+
+    static EM_BOOL TouchEndCallback(int, EmscriptenTouchEvent const *, void *)
+    {
+        _<MouseInput>().LeftButton().OnRelease();
+        return EM_FALSE;
+    }
+
     InputManager::InputManager()
     {
         glfwSetKeyCallback(_<Graphics>().Window(), KeyCallback);
         glfwSetMouseButtonCallback(_<Graphics>().Window(), MouseButtonCallback);
         glfwSetCharCallback(_<Graphics>().Window(), CharacterCallback);
+        emscripten_set_touchstart_callback("#canvas", nullptr, true, TouchStartCallback);
+        emscripten_set_touchend_callback("#canvas", nullptr, true, TouchEndCallback);
     }
 }

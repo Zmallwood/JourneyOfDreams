@@ -28,7 +28,7 @@ namespace JourneyOfDreams
 
     void Engine::HandleInput()
     {
-        //PollEvents();
+        PollEvents();
     }
 
     void Engine::Update()

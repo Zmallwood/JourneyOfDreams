@@ -25,11 +25,13 @@ namespace JourneyOfDreams
 
                 break;
             case SDL_MOUSEBUTTONDOWN:
-                _<MouseInput>().OnPress(event.button.button);
+            std::cout << "down\n";
+                // _<MouseInput>().OnPress(event.button.button);
 
                 break;
             case SDL_MOUSEBUTTONUP:
-                _<MouseInput>().OnRelease(event.button.button);
+            std::cout << "up\n";
+                // _<MouseInput>().OnRelease(event.button.button);
 
                 break;
             case SDL_MOUSEMOTION:
