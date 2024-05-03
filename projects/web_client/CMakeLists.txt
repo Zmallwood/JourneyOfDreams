@@ -27,12 +27,12 @@ add_executable(WebClient
   src/DefaultTheme/RunNewGameInstance.cpp
   src/Core/GameInstance.cpp
   src/Core/Engine/DoOneGameLoopFrame.cpp
-  src/Core/Test/Tester1.cpp
-  src/Core/Test/Tester2.cpp
+  src/Core/Tests/Test1.cpp
+  src/Core/Tests/Test2.cpp
   src/Core/Engine/Assets/ImageBank.cpp
   ../shared/common/src/Hash.cpp
   src/Common/Utilities.cpp
-  src/Core/Test/Tester3.cpp
+  src/Core/Tests/Test3.cpp
   src/Core/Engine/Rendering/ImageRendering/ImageRenderer.cpp
   src/Core/Engine/Rendering/RenderingCore/RendererBase.cpp
   src/Core/Engine/Rendering/RenderingCore/ShaderProgram.cpp

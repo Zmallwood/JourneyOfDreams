@@ -1,6 +1,6 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
-#include "Tester1.h"
+#include "Test1.h"
 
 namespace JourneyOfDreams
 {
@@ -46,7 +46,7 @@ namespace JourneyOfDreams
     static GLFWwindow *window;
     static GLuint maxitersLocation ;
 
-    Tester1::Tester1()
+    Test1::Test1()
     {
         SDL_Init(SDL_INIT_EVERYTHING);
         glfwInit();
@@ -120,7 +120,7 @@ namespace JourneyOfDreams
         glUniform1f(maxitersLocation, 10);
     }
 
-    void Tester1::Render()
+    void Test1::Render()
     {
         if (!m_active)
         {
@@ -141,7 +141,7 @@ namespace JourneyOfDreams
         iters = iters + 0.1;
     }
 
-    void Tester1::Stop()
+    void Test1::Stop()
     {
         m_active = false;
         glfwDestroyWindow(window);

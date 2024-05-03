@@ -24,29 +24,29 @@ namespace JourneyOfDreams
 
     void GUIButton::UpdateDerived()
     {
-        // auto mousePos = GetMousePosition();
-        // /*
-        // ** If mouse is over button area. */
-        // if (GetFinalArea().Contains(mousePos))
-        // {
-        //     /*
-        //     ** Mark as hovered. */
-        //     m_isHovered = true;
-        //     /*
-        //     ** If mouse button also has been pressed. */
-        //     if (_<MouseInput>().LeftButton().PressedPickResult())
-        //     {
-        //         /*
-        //         ** Execute button action. */
-        //         m_onClick();
-        //     }
-        // }
-        // else
-        // {
-        //     /*
-        //     ** Mark as not being hovered. */
-        //     m_isHovered = false;
-        // }
+        auto mousePos = GetMousePosition();
+        /*
+        ** If mouse is over button area. */
+        if (GetFinalArea().Contains(mousePos))
+        {
+            /*
+            ** Mark as hovered. */
+            m_isHovered = true;
+            /*
+            ** If mouse button also has been pressed. */
+            if (_<MouseInput>().LeftButton().PressedPickResult())
+            {
+                /*
+                ** Execute button action. */
+                m_onClick();
+            }
+        }
+        else
+        {
+            /*
+            ** Mark as not being hovered. */
+            m_isHovered = false;
+        }
     }
 
     void GUIButton::RenderDerived()

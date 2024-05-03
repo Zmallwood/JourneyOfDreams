@@ -13,7 +13,7 @@ namespace JourneyOfDreams
     {
         srand(time(0));
         
-        // _<NetClient>();    // Touch NetClient to initialize it
+        _<NetClient>();    // Touch NetClient to initialize it
         _<SceneManager>(); // Touch SceneManager to initialize it
         _<Cursor>();       // Touch Cursor to initialize it
     }
@@ -26,7 +26,7 @@ namespace JourneyOfDreams
 
     void Engine::HandleInput()
     {
-        PollEvents();
+        //PollEvents();
     }
 
     void Engine::Update()
@@ -36,7 +36,7 @@ namespace JourneyOfDreams
 
     void Engine::UpdateNet()
     {
-        // _<NetClient>().Update();
+        _<NetClient>().Update();
     }
 
     void Engine::Render()

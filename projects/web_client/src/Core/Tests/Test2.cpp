@@ -1,6 +1,6 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
-#include "Tester2.h"
+#include "Test2.h"
 #include "Core/Engine/Assets/ImageBank.h"
 
 namespace JourneyOfDreams
@@ -29,7 +29,7 @@ namespace JourneyOfDreams
     static GLFWwindow *window;
     static GLuint maxitersLocation;
 
-    Tester2::Tester2()
+    Test2::Test2()
     {
         SDL_Init(SDL_INIT_EVERYTHING);
         glfwInit();
@@ -103,7 +103,7 @@ namespace JourneyOfDreams
         // glUniform1f(maxitersLocation, 10);
     }
 
-    void Tester2::Render()
+    void Test2::Render()
     {
         if (!m_active)
         {
@@ -130,7 +130,7 @@ namespace JourneyOfDreams
         iters = iters + 0.1;
     }
 
-    void Tester2::Stop()
+    void Test2::Stop()
     {
         m_active = false;
         glfwDestroyWindow(window);

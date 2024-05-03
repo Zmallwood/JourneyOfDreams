@@ -2,9 +2,9 @@
 
 #include "DoOneGameLoopFrame.h"
 #include "Assets/ImageBank.h"
-#include "Core/Test/Tester1.h"
-#include "Core/Test/Tester2.h"
-#include "Core/Test/Tester3.h"
+#include "Core/Tests/Test1.h"
+#include "Core/Tests/Test2.h"
+#include "Core/Tests/Test3.h"
 #include "Development/DeveloperSettings.h"
 #include "Engine.h"
 #include "Graphics/Graphics.h"
@@ -14,17 +14,17 @@ namespace JourneyOfDreams
     void DoOneGameLoopFrame()
     {
 #if defined(DEV_TEST_MODE)
-        _<Tester1>().Render();
-        //_<Tester1>().Stop();
+        _<Test1>().Render();
+        //_<Test1>().Stop();
 
-        _<Tester2>().Render();
-        //_<Tester1>().Stop();
+        //_<Test2>().Render();
+        //_<Test1>().Stop();
 
-        _<Graphics>();  // Touch Graphics to initialize it
-        _<ImageBank>(); // Touch ImageBank to initialize
+        //_<Graphics>();  // Touch Graphics to initialize it
+        //_<ImageBank>(); // Touch ImageBank to initialize
 
-        _<Tester3>().Render();
-        //_<Tester3>().Stop();
+        //_<Test3>().Render();
+        //_<Test3>().Stop();
 #else
         _<Graphics>();  // Touch Graphics to initialize it
         _<ImageBank>(); // Touch ImageBank to initialize

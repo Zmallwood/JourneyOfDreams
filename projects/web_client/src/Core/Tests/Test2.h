@@ -4,10 +4,10 @@
 
 namespace JourneyOfDreams
 {
-    class Tester2
+    class Test2
     {
       public:
-        Tester2();
+        Test2();
         void Render();
         void Stop();
 
