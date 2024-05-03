@@ -11,11 +11,11 @@ namespace JourneyOfDreams
       public:
         TestScene();
 
-        void OnEnter() override;
-
         void UpdateDerived() override;
 
         void RenderDerived() override;
+
+        void UpdatePostRender() override;
 
       private:
         RID m_ridBackground{ 0 };

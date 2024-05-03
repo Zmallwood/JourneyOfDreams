@@ -17,10 +17,10 @@ namespace JourneyOfDreams
 
         void UpdatePostRenderCurrentScene();
 
-        void GoToScene(const std::string& sceneName);
+        void GoToScene(const std::string &sceneName);
 
       private:
-        std::map<int, IScene&> m_scenes;
+        std::map<int, IScene &> m_scenes;
         int m_currentScene{ 0 };
     };
 }
