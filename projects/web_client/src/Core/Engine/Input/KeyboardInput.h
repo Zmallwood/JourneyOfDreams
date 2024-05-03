@@ -15,14 +15,14 @@ namespace JourneyOfDreams
         ///
         /// \param key The key that was pressed.
         /////////////////////////////////////////////////
-        void OnKeyPress(SDL_Keycode key);
+        void OnKeyPress(int key);
 
         /////////////////////////////////////////////////
         /// Called when a key is released.
         ///
         /// \param key The key that was released.
         /////////////////////////////////////////////////
-        void OnKeyRelease(SDL_Keycode key);
+        void OnKeyRelease(int key);
 
         /////////////////////////////////////////////////
         /// Tells if any key is pressed.
@@ -37,7 +37,7 @@ namespace JourneyOfDreams
         /// \param key The key to check.
         /// \return True if the key is pressed.
         /////////////////////////////////////////////////
-        bool KeyIsPressed(SDL_Keycode key);
+        bool KeyIsPressed(int key);
 
         /////////////////////////////////////////////////
         /// Tells if a certain key has been fired, and
@@ -47,7 +47,7 @@ namespace JourneyOfDreams
         /// \param key The key to check.
         /// \return True if the key has been fired.
         /////////////////////////////////////////////////
-        bool KeyHasBeenFiredPickResult(SDL_Keycode key);
+        bool KeyHasBeenFiredPickResult(int key);
 
         /////////////////////////////////////////////////
         /// Appends text input to the text input buffer.
@@ -71,7 +71,7 @@ namespace JourneyOfDreams
         void ClearTextInput();
 
       private:
-        std::set<SDL_Keycode> m_pressedKeys;
+        std::set<int> m_pressedKeys;
         std::string m_textInput;
     };
 }

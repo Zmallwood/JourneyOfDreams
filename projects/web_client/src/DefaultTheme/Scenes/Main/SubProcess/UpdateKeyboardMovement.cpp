@@ -9,10 +9,10 @@ namespace JourneyOfDreams
     void UpdateKeyboardMovement()
     {
         auto &player = _<Player>();
-        auto upPressed = _<KeyboardInput>().KeyIsPressed(SDLK_UP);
-        auto downPressed = _<KeyboardInput>().KeyIsPressed(SDLK_DOWN);
-        auto leftPressed = _<KeyboardInput>().KeyIsPressed(SDLK_LEFT);
-        auto rightPressed = _<KeyboardInput>().KeyIsPressed(SDLK_RIGHT);
+        auto upPressed = _<KeyboardInput>().KeyIsPressed(GLFW_KEY_UP);
+        auto downPressed = _<KeyboardInput>().KeyIsPressed(GLFW_KEY_DOWN);
+        auto leftPressed = _<KeyboardInput>().KeyIsPressed(GLFW_KEY_LEFT);
+        auto rightPressed = _<KeyboardInput>().KeyIsPressed(GLFW_KEY_RIGHT);
 
         if (Ticks() > player.TicksLastMove() + 1000 / player.MovementSpeed()
             && (upPressed || rightPressed || downPressed || leftPressed))

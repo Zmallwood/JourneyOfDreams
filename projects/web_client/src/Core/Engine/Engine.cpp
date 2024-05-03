@@ -6,6 +6,7 @@
 #include "Net/NetClient.h"
 #include "PollEvents.h"
 #include "ScenesCore/SceneManager.h"
+#include "Input/InputManager.h"
 
 namespace JourneyOfDreams
 {
@@ -16,6 +17,7 @@ namespace JourneyOfDreams
         _<NetClient>();    // Touch NetClient to initialize it
         _<SceneManager>(); // Touch SceneManager to initialize it
         _<Cursor>();       // Touch Cursor to initialize it
+        _<InputManager>(); // Touch InputManager to initialize it
     }
 
     void Engine::Reset()

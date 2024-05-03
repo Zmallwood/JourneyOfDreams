@@ -67,37 +67,37 @@ namespace JourneyOfDreams
             m_managedTextLine.InsertText(textInput);
             /*
             ** Add left arrow key functionality.*/
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_LEFT))
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_LEFT))
             {
                 m_managedTextLine.TryMoveCursorLeft();
             }
             /*
             ** Add right arrow key functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_RIGHT))
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_RIGHT))
             {
                 m_managedTextLine.TryMoveCursorRight();
             }
             /*
             ** Add backspace key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_BACKSPACE))
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_BACKSPACE))
             {
                 m_managedTextLine.TryDeleteLeft();
             }
             /*
             ** Add delete key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_DELETE))
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_DELETE))
             {
                 m_managedTextLine.TryDeleteRight();
             }
             /*
             ** Add home key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_HOME))
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_HOME))
             {
                 m_managedTextLine.MoveCursorToStart();
             }
             /*
             ** Add end key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_END))
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_END))
             {
                 m_managedTextLine.MoveCursorToEnd();
             }

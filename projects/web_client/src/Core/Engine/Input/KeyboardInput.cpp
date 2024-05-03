@@ -4,14 +4,14 @@
 
 namespace JourneyOfDreams
 {
-    void KeyboardInput::OnKeyPress(SDL_Keycode key)
+    void KeyboardInput::OnKeyPress(int key)
     {
         /*
         ** Add the key to the set of pressed keys.*/
         m_pressedKeys.insert(key);
     }
 
-    void KeyboardInput::OnKeyRelease(SDL_Keycode key)
+    void KeyboardInput::OnKeyRelease(int key)
     {
         /*
         ** Remove the key from the set of pressed keys. */
@@ -25,14 +25,14 @@ namespace JourneyOfDreams
         return m_pressedKeys.size() > 0;
     }
 
-    bool KeyboardInput::KeyIsPressed(SDL_Keycode key)
+    bool KeyboardInput::KeyIsPressed(int key)
     {
         /*
         ** Return true if the key is pressed. */
         return m_pressedKeys.contains(key);
     }
 
-    bool KeyboardInput::KeyHasBeenFiredPickResult(SDL_Keycode key)
+    bool KeyboardInput::KeyHasBeenFiredPickResult(int key)
     {
         /*
         ** Pick out result. */

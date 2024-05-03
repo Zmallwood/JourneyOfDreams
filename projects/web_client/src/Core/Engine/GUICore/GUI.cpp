@@ -52,7 +52,7 @@ namespace JourneyOfDreams
         InsertWaitingWidgets();
         /*
         ** Focus next widget on pressing the tab key. */
-        if (_<KeyboardInput>().KeyHasBeenFiredPickResult(SDLK_TAB))
+        if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_TAB))
         {
             FocusNextWidget();
         }
