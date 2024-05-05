@@ -30,4 +30,4 @@ namespace JourneyOfDreams
   sdl_deleter::operator()(TTF_Font *font) {
     TTF_CloseFont(font);
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

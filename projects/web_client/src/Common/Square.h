@@ -17,11 +17,7 @@ namespace JourneyOfDreams
     ///
     /// \param value Value to set all values to.
     /////////////////////////////////////////////////
-    void
-    SetAll(T value) {
-      // set all values to the same value at the same time
-      _00 = _01 = _11 = _10 = value;
-    }
+    void SetAll(T value);
 
     /////////////////////////////////////////////////
     /// Top left corner value.
@@ -43,4 +39,11 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     T _10;
   };
+
+  template <class T>
+  void
+  Square<T>::SetAll(T value) {
+    // set all values to the same value at the same time
+    _00 = _01 = _11 = _10 = value;
+  }
 } // namespace JourneyOfDreams
