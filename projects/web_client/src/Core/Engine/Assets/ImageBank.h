@@ -28,14 +28,16 @@ namespace JourneyOfDreams
       /// \param imageName Name of the image to get.
       /// \return Image resource ID.
       /////////////////////////////////////////////////
-      GLuint GetImage(const std::string &imageName);
+      GLuint
+      GetImage(const std::string &imageName);
       /////////////////////////////////////////////////
       /// Gets an image resource by hash code.
       ///
       /// \param imageNameHash Hash code of the image to get.
       /// \return Image resource ID.
       /////////////////////////////////////////////////
-      GLuint GetImage(int imageNameHash);
+      GLuint
+      GetImage(int imageNameHash);
       /////////////////////////////////////////////////
       /// Creates a blank image resource, given
       /// the specified name, and returns its ID.
@@ -43,11 +45,15 @@ namespace JourneyOfDreams
       /// \param uniqueImageName Name of the image to create.
       /// \return Image resource ID.
       /////////////////////////////////////////////////
-      GLuint CreateBlankImage(const std::string &uniqueImageName);
+      GLuint
+      CreateBlankImage(const std::string &uniqueImageName);
     private:
-      void LoadImages();
-      GLuint LoadSingleImage(const std::string &absFilePath);
-      SDL_Surface *LoadImageData(const char *filename);
+      void
+      LoadImages();
+      GLuint
+      LoadSingleImage(const std::string &absFilePath);
+      SDL_Surface *
+      LoadImageData(const char *filename);
       std::map<int, GLuint> m_images;
       const std::string k_relImagesPath = "images";
    };

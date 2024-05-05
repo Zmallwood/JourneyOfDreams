@@ -147,7 +147,7 @@ SpaceBeforeCaseColon: false
 SpaceBeforeCpp11BracedList: false
 SpaceBeforeCtorInitializerColon: true
 SpaceBeforeInheritanceColon: true
-SpaceBeforeParens: ControlStatements
+SpaceBeforeParens: Always
 SpaceBeforeParensOptions:
   AfterControlStatements: false
   AfterForeachMacros: false

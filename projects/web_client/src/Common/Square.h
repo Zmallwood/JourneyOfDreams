@@ -18,7 +18,7 @@ namespace JourneyOfDreams
       ///
       /// \param value Value to set all values to.
       /////////////////////////////////////////////////
-      void SetAll(T value) {
+      void SetAll (T value) {
          //set all values to the same value at the same time
          _00 = _01 = _11 = _10 = value;
       }
