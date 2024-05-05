@@ -4,7 +4,7 @@
 //
 //  TideGridCalculations declaration.
 //
-namespace JourneyOfDreams
+namespace journey_of_dreams
 {
    /////////////////////////////////////////////////
    /// Calculate the number of grid columns
@@ -13,4 +13,4 @@ namespace JourneyOfDreams
    /// \return Number of grid columns.
    /////////////////////////////////////////////////
    int CalculateNumGridCols();
-} // namespace JourneyOfDreams
+} // namespace journey_of_dreams

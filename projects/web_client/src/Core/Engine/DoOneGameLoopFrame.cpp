@@ -9,7 +9,7 @@
 #include "Engine.h"
 #include "Graphics/Graphics.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void DoOneGameLoopFrame() {
 #if defined(DEV_TEST_MODE)
         _<Test1>().Render();

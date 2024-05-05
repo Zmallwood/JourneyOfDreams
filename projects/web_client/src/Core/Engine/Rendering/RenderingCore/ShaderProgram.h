@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// Represents a shader program with a vertex and fragment shader.
     /////////////////////////////////////////////////

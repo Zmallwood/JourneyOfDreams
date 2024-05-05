@@ -4,7 +4,7 @@
 #include "Core/Engine/Rendering/TextRendering/FontSizes.h"
 #include "GUIWidget.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// A label widget for the GUI.
     /////////////////////////////////////////////////

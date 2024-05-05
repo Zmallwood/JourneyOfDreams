@@ -2,7 +2,7 @@
 
 #include "Font.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     Font::Font(const std::string &fontFileName, int fontSize) {
         m_font = std::shared_ptr<TTF_Font>(TTF_OpenFont(fontFileName.c_str(), fontSize), sdl_deleter());
         m_outlineFont = std::shared_ptr<TTF_Font>(TTF_OpenFont(fontFileName.c_str(), fontSize), sdl_deleter());

@@ -3,7 +3,7 @@
 #include "GUILabel.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     GUILabel::GUILabel(PointF position, const std::string &text, GUIAlign alignment, FontSizes fontSize,
                        ColorF textColor)
         : GUIWidget(position, _<TextRenderer>().MeasureString(text, fontSize), alignment),

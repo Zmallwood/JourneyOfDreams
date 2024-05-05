@@ -8,7 +8,7 @@
 #include "Core/Engine/ScenesCore/SceneManager.h"
 #include "DefaultTheme/Scenes/Login/LoginScene.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     LoginNetRequestScene::LoginNetRequestScene() {
         GUI()->AddWidget("AttempLoginLabel",
                          std::make_shared<GUILabel>(PointF{ .x = 0.5f, .y = 0.5f }, "Attempting to login...",

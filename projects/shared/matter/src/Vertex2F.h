@@ -4,7 +4,7 @@
 #include "ColorF.h"
 #include "PointF.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class Vertex2F {
       public:
         PointF pos;

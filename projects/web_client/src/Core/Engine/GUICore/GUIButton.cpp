@@ -5,7 +5,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     GUIButton::GUIButton(RectF area, const std::string &text, std::function<void()> onClick, ColorF textColor)
         : GUIWidget(area), m_text(text), m_textColor(textColor), m_onClick(std::move(onClick)) {
         /*

@@ -3,7 +3,7 @@
 #pragma once
 #include "GUIMovableWidget.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// Window widget that can be moved around.
     /////////////////////////////////////////////////

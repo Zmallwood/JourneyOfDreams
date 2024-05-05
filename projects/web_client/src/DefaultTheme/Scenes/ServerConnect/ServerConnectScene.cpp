@@ -6,7 +6,7 @@
 #include "Core/Engine/Net/NetClient.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     ServerConnectScene::ServerConnectScene() {
         GUI()->AddWidget(std::make_shared<GUILabel>(PointF{ .x = 0.5f, .y = 0.5f }, "Connecting to server...",
                                                     GUIAlign::Center));

@@ -6,7 +6,7 @@
 EM_JS(int, canvas_get_width, (), { return window.innerWidth; });
 EM_JS(int, canvas_get_height, (), { return window.innerHeight; });
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     Graphics::Graphics() {
         SDL_Init(SDL_INIT_EVERYTHING);
         glfwInit();

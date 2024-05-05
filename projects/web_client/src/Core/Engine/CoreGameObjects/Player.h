@@ -4,7 +4,7 @@
 //
 //  Player class declaration.
 //
-namespace JourneyOfDreams
+namespace journey_of_dreams
 {
    /////////////////////////////////////////////////
    /// Player controller character in the game.
@@ -93,4 +93,4 @@ namespace JourneyOfDreams
       float m_movementSpeed{ 3.0f };
       Point m_destination{ .x = -1, .y = -1 };
    };
-} // namespace JourneyOfDreams
+} // namespace journey_of_dreams

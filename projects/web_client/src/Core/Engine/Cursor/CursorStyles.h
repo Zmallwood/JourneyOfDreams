@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// Available cursor styles, each yielding a
     /// different rendered cursor image.

@@ -4,7 +4,7 @@
 #include "Core/Configuration/ClientProperties.h"
 #include "Core/Engine/CoreGameObjects/Player.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void TileHoverer::Update() {
         auto numGridRows = _<ClientProperties>().NumGridRows();
         auto numGridCols = CalculateNumGridCols();

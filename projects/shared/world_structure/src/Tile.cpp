@@ -2,7 +2,7 @@
 
 #include "Tile.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void Tile::SetGround(const std::string &groundName) {
         m_ground = Hash(groundName);
     }

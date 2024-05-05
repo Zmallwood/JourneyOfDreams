@@ -8,7 +8,7 @@
 #include "PollEvents.h"
 #include "ScenesCore/SceneManager.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     Engine::Engine() {
         srand(time(0));
 

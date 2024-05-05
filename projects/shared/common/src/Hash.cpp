@@ -2,7 +2,7 @@
 
 #include "Hash.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     int Hash(const std::string &text) {
         unsigned long hash = 5381;
         for (size_t i = 0; i < text.size(); ++i)

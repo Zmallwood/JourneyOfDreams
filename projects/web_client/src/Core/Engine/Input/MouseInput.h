@@ -3,7 +3,7 @@
 #pragma once
 #include "MouseButton.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// Manages the mouse input.
     /////////////////////////////////////////////////

@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// The different types of buffers that can be created.
     /////////////////////////////////////////////////

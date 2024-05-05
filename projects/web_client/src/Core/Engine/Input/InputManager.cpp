@@ -5,7 +5,7 @@
 #include "KeyboardInput.h"
 #include "MouseInput.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     static void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mods) {
         if (action == GLFW_PRESS) {
             _<KeyboardInput>().OnKeyPress(key);

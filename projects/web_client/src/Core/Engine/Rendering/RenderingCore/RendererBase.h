@@ -3,7 +3,7 @@
 #pragma once
 #include "BufferTypes.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class ShaderProgram;
 
     /////////////////////////////////////////////////
@@ -115,7 +115,7 @@ namespace JourneyOfDreams {
         ///
         /// \return The shader program.
         /////////////////////////////////////////////////
-        std::shared_ptr<JourneyOfDreams::ShaderProgram> ShaderProgram();
+        std::shared_ptr<journey_of_dreams::ShaderProgram> ShaderProgram();
 
         /////////////////////////////////////////////////
         /// Get number of vertices in a rectangle.
@@ -135,7 +135,7 @@ namespace JourneyOfDreams {
                                       int layoutLocation) const;
         std::shared_ptr<std::vector<GLuint>> m_VAOIDs;
         std::shared_ptr<std::map<BufferTypes, std::shared_ptr<std::map<GLuint, GLuint>>>> m_VBOIDs;
-        std::shared_ptr<JourneyOfDreams::ShaderProgram> m_shaderProgram;
+        std::shared_ptr<journey_of_dreams::ShaderProgram> m_shaderProgram;
         inline static const auto k_numFloatsPerEntry
             = std::map<BufferTypes, int>{ { BufferTypes::Indices, 1 },     { BufferTypes::Positions2D, 2 },
                                           { BufferTypes::Positions3D, 3 }, { BufferTypes::Colors, 4 },

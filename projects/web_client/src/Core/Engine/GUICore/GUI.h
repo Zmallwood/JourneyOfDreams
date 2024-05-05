@@ -3,7 +3,7 @@
 #pragma once
 #include "GUIWidget.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// Manages GUI widgets for a scene.
     /////////////////////////////////////////////////

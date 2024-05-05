@@ -4,7 +4,7 @@
 #include "Net/RunNetServer.h"
 
 int main(int argc, char *argv[]) {
-    using namespace JourneyOfDreams;
+    using namespace journey_of_dreams;
     _<DB>(); // Touch the DB singleton to ensure it is initialized
     RunNetServer();
 

@@ -3,7 +3,7 @@
 #pragma once
 #include "GUIPanel.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// A GUI panel that displays an on-screen
     /// keyboard for text input on touch devices.

@@ -5,7 +5,7 @@
 #include "PointF.h"
 #include "SizeF.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class RectF {
       public:
         GLRectF ToGLRectF() const {

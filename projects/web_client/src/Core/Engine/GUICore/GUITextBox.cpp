@@ -9,7 +9,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     GUITextBox::GUITextBox(RectF area, ColorF textColor, bool passwordMode)
         : GUIWidget(area), m_textColor(textColor), m_cursorHeight(area.h - 2 * Padding()),
           m_managedTextLine(area.w - 2 * Padding(), passwordMode) {

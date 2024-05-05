@@ -6,7 +6,7 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     static bool CoordinateIsGoodAsPlayerPosition(Point coordinate) {
         auto worldArea = _<World>().WorldArea();
         auto tile = worldArea->GetTile(coordinate);

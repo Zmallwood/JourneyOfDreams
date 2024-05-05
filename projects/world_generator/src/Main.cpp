@@ -4,7 +4,7 @@
 #include "Saving/WorldFileWriter.h"
 
 int main(int argc, char *argv[]) {
-    using namespace JourneyOfDreams;
+    using namespace journey_of_dreams;
 
     std::cout << "Journey Of Dreams - World Generator\n";
 

@@ -1,18 +1,19 @@
 // Copyright (c) 2024 Andreas Åkerberg.
 
 #pragma once
-//
-//  ConfigurationFile class definition.
-//
-namespace JourneyOfDreams
+
+// ConfigurationFile class definition.
+
+namespace journey_of_dreams
 {
    class ConfigurationFile {
-    public:
+     public:
       /////////////////////////////////////////////////
       /// Read the configuration file and store
       /// the values in the class.
       /////////////////////////////////////////////////
       ConfigurationFile();
+
       /////////////////////////////////////////////////
       /// Gets the server address from the
       /// configuration file that has been read.
@@ -20,6 +21,7 @@ namespace JourneyOfDreams
       /// \return Server address.
       /////////////////////////////////////////////////
       std::string ServerAddress() const;
+
       /////////////////////////////////////////////////
       /// Gets the server port from the
       /// configuration file that has been read.
@@ -27,9 +29,10 @@ namespace JourneyOfDreams
       /// \return Server port.
       /////////////////////////////////////////////////
       int ServerPort() const;
-    private:
+
+     private:
       std::string m_serverAddress{};
       int m_serverPort{};
-      const std::string k_filePath{ "configuration/settings.cfg" };
+      const std::string k_filePath{"configuration/settings.cfg"};
    };
-} // namespace JourneyOfDreams
+} // namespace journey_of_dreams

@@ -3,9 +3,9 @@
 #include "RendererBase.h"
 #include "ShaderProgram.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     RendererBase::RendererBase()
-        : m_shaderProgram(std::make_shared<JourneyOfDreams::ShaderProgram>()),
+        : m_shaderProgram(std::make_shared<journey_of_dreams::ShaderProgram>()),
           m_VAOIDs(std::make_shared<std::vector<GLuint>>()),
           m_VBOIDs(std::make_shared<std::map<BufferTypes, std::shared_ptr<std::map<GLuint, GLuint>>>>()) {
     }
@@ -141,7 +141,7 @@ namespace JourneyOfDreams {
 
         m_shaderProgram->Cleanup(); // Finally, clean up shader proram
     }
-    std::shared_ptr<JourneyOfDreams::ShaderProgram> RendererBase::ShaderProgram() {
+    std::shared_ptr<journey_of_dreams::ShaderProgram> RendererBase::ShaderProgram() {
         return m_shaderProgram;
     }
     const int RendererBase::NumVerticesInRectangle() {

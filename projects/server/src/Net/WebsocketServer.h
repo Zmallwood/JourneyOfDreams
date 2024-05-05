@@ -16,7 +16,7 @@
 #include <string>
 #include <vector>
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     using std::map;
     using std::string;
     using std::vector;

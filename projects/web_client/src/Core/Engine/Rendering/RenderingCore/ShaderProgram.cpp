@@ -2,7 +2,7 @@
 
 #include "ShaderProgram.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     bool ShaderProgram::Create(const GLchar *vertexShaderSource, const GLchar *fragmentShaderSource) {
         GLuint vertexShader = 0;
         GLuint fragmentShader = 0;

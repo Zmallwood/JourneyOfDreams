@@ -2,7 +2,7 @@
 
 #include "KeyboardInput.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void KeyboardInput::OnKeyPress(int key) {
         /*
         ** Add the key to the set of pressed keys.*/

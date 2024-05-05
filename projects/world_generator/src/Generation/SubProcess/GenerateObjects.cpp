@@ -6,7 +6,7 @@
 #include "../../shared/world_structure/src/World.h"
 #include "../../shared/world_structure/src/WorldArea.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void GenerateObjects() {
         auto worldArea = _<World>().WorldArea();
 

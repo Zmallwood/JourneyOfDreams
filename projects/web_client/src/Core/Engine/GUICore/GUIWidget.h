@@ -4,7 +4,7 @@
 #include "GUIAlign.h"
 #include "WidgetEntry.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class GUI;
 
     /////////////////////////////////////////////////

@@ -5,7 +5,7 @@
 
 #define PORT_NUMBER 1238
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void RunNetServer() {
         // Create the event loop for the main thread, and the WebSocket server
         asio::io_service mainEventLoop;

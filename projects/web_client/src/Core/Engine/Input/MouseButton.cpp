@@ -2,7 +2,7 @@
 
 #include "MouseButton.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void MouseButton::OnPress() {
         /*
         ** Set the pressed flag to true. */

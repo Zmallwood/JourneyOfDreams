@@ -3,7 +3,7 @@
 #pragma once
 #include <SDL2/SDL.h>
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class ColorF {
       public:
         SDL_Color ToSDLColor(void) const {

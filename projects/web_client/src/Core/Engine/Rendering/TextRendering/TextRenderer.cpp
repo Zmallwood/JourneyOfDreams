@@ -5,7 +5,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Font.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     TextRenderer::TextRenderer() {
         TTF_Init();
         auto fontPath = k_relFontsPath + "DefaultFont.ttf";

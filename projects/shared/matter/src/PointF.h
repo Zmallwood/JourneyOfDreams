@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class PointF {
       public:
         PointF operator+=(const PointF &rhs) {

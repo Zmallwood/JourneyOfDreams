@@ -3,7 +3,7 @@
 #pragma once
 #include "Core/Engine/ScenesCore/IScene.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class RegisterScene : public IScene {
       public:
         RegisterScene();

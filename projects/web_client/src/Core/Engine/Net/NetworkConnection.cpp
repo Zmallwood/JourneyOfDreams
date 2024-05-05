@@ -4,7 +4,7 @@
 #include "Core/Configuration/ConfigurationFile.h"
 #include "NetClient.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     EM_BOOL OnOpen(int eventType, const EmscriptenWebSocketOpenEvent *websocketEvent, void *userData) {
         puts("onopen");
         std::cout << "connected\n";

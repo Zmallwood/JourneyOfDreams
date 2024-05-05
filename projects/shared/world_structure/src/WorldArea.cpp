@@ -4,7 +4,7 @@
 #include "Tile.h"
 #include "configuration/src/GlobalProperties.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     WorldArea::WorldArea() {
         auto width = _<GlobalProperties>().WorldAreaSize().w;
         auto height = _<GlobalProperties>().WorldAreaSize().h;

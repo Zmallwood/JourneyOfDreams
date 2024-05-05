@@ -6,7 +6,7 @@
 //
 //  Cursor class implementation.
 //
-namespace JourneyOfDreams
+namespace journey_of_dreams
 {
    Cursor::Cursor() {
       //allocate render ID for the image of the cursor
@@ -39,4 +39,4 @@ namespace JourneyOfDreams
       //setter
       m_style = style;
    }
-} // namespace JourneyOfDreams
+} // namespace journey_of_dreams

@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class WorldArea;
 
     class World {
@@ -13,6 +13,6 @@ namespace JourneyOfDreams {
         }
 
       private:
-        std::shared_ptr<JourneyOfDreams::WorldArea> m_worldArea;
+        std::shared_ptr<journey_of_dreams::WorldArea> m_worldArea;
     };
 }

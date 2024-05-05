@@ -3,7 +3,7 @@
 #include "World.h"
 #include "WorldArea.h"
 
-namespace JourneyOfDreams {
-    World::World() : m_worldArea(std::make_shared<JourneyOfDreams::WorldArea>()) {
+namespace journey_of_dreams {
+    World::World() : m_worldArea(std::make_shared<journey_of_dreams::WorldArea>()) {
     }
 }

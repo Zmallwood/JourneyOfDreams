@@ -5,7 +5,7 @@
 #include "Core/Engine/GUICore/GUILabel.h"
 #include "DefaultTheme/Scenes/Main/MainScene.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     FPSCounter::FPSCounter() {
         _<MainScene>().GUI()->AddWidget(
             "FPSCounterLabel", std::make_shared<GUILabel>(PointF{ .x = 0.85f, .y = 0.0f }, "FPS: 0"));

@@ -3,7 +3,7 @@
 #include "NetClient.h"
 #include "NetworkConnection.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     NetClient::NetClient() : m_connection(std::make_shared<NetworkConnection>()) {
         /*
         ** Do nothing. */

@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class GUI;
 
     /////////////////////////////////////////////////
@@ -52,9 +52,9 @@ namespace JourneyOfDreams {
         ///
         /// \return The scene GUI.
         /////////////////////////////////////////////////
-        std::shared_ptr<JourneyOfDreams::GUI> GUI();
+        std::shared_ptr<journey_of_dreams::GUI> GUI();
 
       private:
-        std::shared_ptr<JourneyOfDreams::GUI> m_gui;
+        std::shared_ptr<journey_of_dreams::GUI> m_gui;
     };
 }

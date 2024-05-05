@@ -2,7 +2,7 @@
 
 #include "MouseInput.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void MouseInput::OnPress(Uint8 button) {
         /*
         ** Forward call to correct button. */

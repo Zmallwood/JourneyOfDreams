@@ -4,7 +4,7 @@
 #include "Core/Engine/CoreGameObjects/Player.h"
 #include "Core/Engine/Input/KeyboardInput.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void UpdateKeyboardMovement() {
         auto &player = _<Player>();
         auto upPressed = _<KeyboardInput>().KeyIsPressed(GLFW_KEY_UP);

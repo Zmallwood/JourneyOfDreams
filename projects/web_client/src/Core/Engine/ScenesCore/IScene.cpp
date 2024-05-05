@@ -3,8 +3,8 @@
 #include "IScene.h"
 #include "Core/Engine/GUICore/GUI.h"
 
-namespace JourneyOfDreams {
-    IScene::IScene() : m_gui(std::make_shared<JourneyOfDreams::GUI>()) {
+namespace journey_of_dreams {
+    IScene::IScene() : m_gui(std::make_shared<journey_of_dreams::GUI>()) {
         m_gui->Initialize();
     }
     void IScene::Update() {
@@ -23,7 +23,7 @@ namespace JourneyOfDreams {
     }
     void IScene::UpdatePostRender() {
     }
-    std::shared_ptr<JourneyOfDreams::GUI> IScene::GUI() {
+    std::shared_ptr<journey_of_dreams::GUI> IScene::GUI() {
         return m_gui;
     }
 }

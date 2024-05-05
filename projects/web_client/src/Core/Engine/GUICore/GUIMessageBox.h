@@ -3,7 +3,7 @@
 #pragma once
 #include "GUIWindow.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// Message box widget for the GUI.
     /////////////////////////////////////////////////

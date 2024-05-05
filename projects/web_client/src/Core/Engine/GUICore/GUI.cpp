@@ -6,7 +6,7 @@
 #include "GUIWidget.h"
 #include "OnScreenKeyboard.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void GUI::Initialize() {
         /*
         ** Add an on-screen keyboard to every GUI. */

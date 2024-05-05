@@ -3,7 +3,7 @@
 #pragma once
 #include "FontSizes.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class Font;
 
     /////////////////////////////////////////////////

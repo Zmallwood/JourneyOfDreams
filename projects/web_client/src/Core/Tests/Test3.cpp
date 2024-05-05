@@ -3,7 +3,7 @@
 #include "Test3.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     Test3::Test3() {
         m_ridImage = _<ImageRenderer>().NewImage();
     }

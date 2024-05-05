@@ -4,7 +4,7 @@
 #include "Engine/DoOneGameLoopFrame.h"
 #include "Engine/Engine.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void GameInstance::Run() {
         int simulate_infinite_loop = 1;
 

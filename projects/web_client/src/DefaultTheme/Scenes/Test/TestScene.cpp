@@ -4,7 +4,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     TestScene::TestScene() {
         m_ridBackground = _<ImageRenderer>().NewImage();
         m_ridLogo = _<ImageRenderer>().NewImage();

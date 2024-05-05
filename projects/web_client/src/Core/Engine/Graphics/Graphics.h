@@ -5,7 +5,7 @@
 struct SDL_Window;
 struct SDL_Renderer;
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// Setups and holds the graphics objects.
     /////////////////////////////////////////////////

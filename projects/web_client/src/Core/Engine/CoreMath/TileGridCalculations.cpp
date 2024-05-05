@@ -5,7 +5,7 @@
 //
 //  TileGridCalculations implementation.
 //
-namespace JourneyOfDreams
+namespace journey_of_dreams
 {
    int CalculateNumGridCols() {
       //get number of grid rows from configuration
@@ -21,4 +21,4 @@ namespace JourneyOfDreams
       //results calculated
       return numGridCols;
    }
-} // namespace JourneyOfDreams
+} // namespace journey_of_dreams

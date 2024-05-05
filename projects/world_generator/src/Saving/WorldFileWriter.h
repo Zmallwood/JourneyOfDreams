@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class WorldFileWriter {
       public:
         void WriteWorldToFile();

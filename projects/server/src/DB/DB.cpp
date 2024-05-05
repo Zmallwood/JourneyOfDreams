@@ -2,7 +2,7 @@
 
 #include "DB.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     DB::DB() {
         std::cout << "Connecting to database..." << std::endl;
 

@@ -4,7 +4,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "GUI.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     GUIWidget::GUIWidget() : m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>()) {
         /*
         ** Do nothing. */

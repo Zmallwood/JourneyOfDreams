@@ -3,7 +3,7 @@
 #pragma once
 #include "GUIWidget.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// A movable widget for the GUI.
     /////////////////////////////////////////////////

@@ -10,7 +10,7 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     WorldView::WorldView()
         : m_ridsTiles(std::make_shared<std::vector<std::vector<RID>>>()),
           m_ridsObjects(std::make_shared<std::vector<std::vector<RID>>>()) {

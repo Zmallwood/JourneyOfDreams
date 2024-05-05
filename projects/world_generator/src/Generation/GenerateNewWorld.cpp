@@ -6,7 +6,7 @@
 #include "SubProcess/GenerateObjects.h"
 #include "SubProcess/GenerateWater.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void GenerateNewWorld() {
         srand(time(0));
         GenerateGrass();

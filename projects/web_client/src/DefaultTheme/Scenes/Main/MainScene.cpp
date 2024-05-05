@@ -9,7 +9,7 @@
 #include "SubProcess/UpdateKeyboardMovement.h"
 #include "SubProcess/WorldView/WorldView.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void MainScene::OnEnter() {
         _<WorldFileReader>().ReadWorldFile();
         EnsureGoodPlayerPosition();

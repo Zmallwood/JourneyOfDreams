@@ -6,7 +6,7 @@
 #include "Shader/DefaultShaderImagesFragment.h"
 #include "Shader/DefaultShaderImagesVertex.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     ImageRenderer::ImageRenderer() {
         ShaderProgram()->Create(defaultShaderImagesVertex, defaultShaderImagesFragment);
         // m_locNoPixelEffect = GetUniformLocation("noPixelEffect");

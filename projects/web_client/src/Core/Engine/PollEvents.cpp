@@ -4,7 +4,7 @@
 #include "Input/KeyboardInput.h"
 #include "Input/MouseInput.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void PollEvents() {
         SDL_Event event;
 

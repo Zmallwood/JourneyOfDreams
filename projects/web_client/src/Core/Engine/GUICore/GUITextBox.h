@@ -4,7 +4,7 @@
 #include "GUIWidget.h"
 #include "ManagedTextString.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// A text box widget for the GUI.
     /////////////////////////////////////////////////

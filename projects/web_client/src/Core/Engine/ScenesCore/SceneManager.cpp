@@ -9,7 +9,7 @@
 #include "DefaultTheme/Scenes/ServerConnect/ServerConnectScene.h"
 #include "DefaultTheme/Scenes/Test/TestScene.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     SceneManager::SceneManager() {
         m_scenes.insert({ Hash("TestScene"), _<TestScene>() });
         m_scenes.insert({ Hash("ServerConnectScene"), _<ServerConnectScene>() });

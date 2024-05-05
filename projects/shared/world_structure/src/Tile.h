@@ -2,7 +2,7 @@
 
 #pragma once
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     class Object;
 
     class Tile {
@@ -19,13 +19,13 @@ namespace JourneyOfDreams {
         auto Object() {
             return m_object;
         }
-        void SetObject(const std::shared_ptr<JourneyOfDreams::Object> object) {
+        void SetObject(const std::shared_ptr<journey_of_dreams::Object> object) {
             m_object = object;
         }
 
       private:
         int m_ground{ 0 };
         float m_elevation{ 0.0f };
-        std::shared_ptr<JourneyOfDreams::Object> m_object{};
+        std::shared_ptr<journey_of_dreams::Object> m_object{};
     };
 }

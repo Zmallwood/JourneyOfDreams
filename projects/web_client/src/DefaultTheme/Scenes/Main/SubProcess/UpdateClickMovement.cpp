@@ -5,7 +5,7 @@
 #include "Core/Engine/Input/MouseInput.h"
 #include "TileHoverer.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void UpdateClickMovement() {
         auto &player = _<Player>();
         auto hoveredCoord = _<TileHoverer>().HoveredCoordinate();

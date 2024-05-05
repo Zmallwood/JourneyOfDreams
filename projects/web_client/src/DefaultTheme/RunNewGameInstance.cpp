@@ -3,7 +3,7 @@
 #include "RunNewGameInstance.h"
 #include "Core/GameInstance.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     void RunNewGameInstance() {
         GameInstance gameInstance;
         gameInstance.Run();

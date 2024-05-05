@@ -2,7 +2,7 @@
 
 #include "Test1.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     static const char *vertexShaderSource = "#version 300 es\n"
                                             "layout (location = 0) in vec3 aPos;\n"
                                             "out float u;\n"

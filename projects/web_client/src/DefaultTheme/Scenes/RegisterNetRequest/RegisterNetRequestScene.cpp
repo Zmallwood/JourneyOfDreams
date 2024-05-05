@@ -8,7 +8,7 @@
 #include "Core/Engine/ScenesCore/SceneManager.h"
 #include "DefaultTheme/Scenes/Register/RegisterScene.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     RegisterNetRequestScene::RegisterNetRequestScene() {
         GUI()->AddWidget("RegisterAccountLabel",
                          std::make_shared<GUILabel>(PointF{ .x = 0.5f, .y = 0.5f }, "Registering account...",

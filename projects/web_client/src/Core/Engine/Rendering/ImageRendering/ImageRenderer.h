@@ -3,7 +3,7 @@
 #pragma once
 #include "Core/Engine/Rendering/RenderingCore/RendererBase.h"
 
-namespace JourneyOfDreams {
+namespace journey_of_dreams {
     /////////////////////////////////////////////////
     /// Allocates resources for, and renders images.
     /////////////////////////////////////////////////
