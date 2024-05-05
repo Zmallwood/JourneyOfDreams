@@ -25,33 +25,33 @@ namespace journey_of_dreams
   /////////////////////////////////////////////////
   /// Get file extension from file path.
   ///
-  /// \param absPath Absolute path to file.
+  /// \param _absPath Absolute path to file.
   /// \return File extension.
   /////////////////////////////////////////////////
-  std::string FileExtension(const std::string &absPath);
+  std::string FileExtension(const std::string &_absPath);
   /////////////////////////////////////////////////
   /// Get file name without extension from file path.
   ///
-  /// \param absPath Absolute path to file.
+  /// \param _absPath Absolute path to file.
   /// \return File name without extension.
   /////////////////////////////////////////////////
-  std::string FilenameNoExtension(const std::string &absPath);
+  std::string FilenameNoExtension(const std::string &_absPath);
 
   /////////////////////////////////////////////////
   /// Convert fractal width to corresponding height.
   ///
-  /// \param width Fractal width.
+  /// \param _width Fractal width.
   /// \return Fractal height.
   /////////////////////////////////////////////////
-  float ConvertWidthToHeight(float width);
+  float ConvertWidthToHeight(float _width);
 
   /////////////////////////////////////////////////
   /// Convert fractal height to corresponding width.
   ///
-  /// \param height Fractal height.
+  /// \param _height Fractal height.
   /// \return Fractal width.
   /////////////////////////////////////////////////
-  float ConvertHeightToWidth(float height);
+  float ConvertHeightToWidth(float _height);
 
   /////////////////////////////////////////////////
   /// Get mouse position in canvas in pixels.
