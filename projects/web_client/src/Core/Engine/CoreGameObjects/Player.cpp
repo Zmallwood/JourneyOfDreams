@@ -9,85 +9,59 @@ namespace journey_of_dreams
 {
   Player::Player() {
     // initialize player position to the center of the world area
-    auto worldAreaSize = _<GlobalProperties>().WorldAreaSize();
-    m_position = {.x = worldAreaSize.w / 2, .y = worldAreaSize.h / 2};
+    auto _worldAreaSize = _<GlobalProperties>().WorldAreaSize();
+    m_position = {.x = _worldAreaSize.w / 2, .y = _worldAreaSize.h / 2};
   }
 
-  int
-  Player::GetX() {
-    // return player x position
+  int Player::GetX() {
     return m_position.x;
   }
 
-  int
-  Player::GetY() {
-    // return player y position
+  int Player::GetY() {
     return m_position.y;
   }
 
-  void
-  Player::MoveNorth() {
-    // move player north
+  void Player::MoveNorth() {
     m_position.y -= 1;
   }
 
-  void
-  Player::MoveEast() {
-    // move player east
+  void Player::MoveEast() {
     m_position.x += 1;
   }
 
-  void
-  Player::MoveSouth() {
-    // move player south
+  void Player::MoveSouth() {
     m_position.y += 1;
   }
 
-  void
-  Player::MoveWest() {
-    // move player west
+  void Player::MoveWest() {
     m_position.x -= 1;
   }
 
-  Point
-  Player::Position() {
-    // getter
+  Point Player::Position() {
     return m_position;
   }
 
-  void
-  Player::SetPosition(Point position) {
-    // setter
-    m_position = position;
+  void Player::SetPosition(Point _position) {
+    m_position = _position;
   }
 
-  int
-  Player::TicksLastMove() {
-    // getter
+  int Player::TicksLastMove() {
     return m_ticksLastMove;
   }
 
-  void
-  Player::SetTicksLastMove(int ticksLastMove) {
-    // setter
-    m_ticksLastMove = ticksLastMove;
+  void Player::SetTicksLastMove(int _ticksLastMove) {
+    m_ticksLastMove = _ticksLastMove;
   }
 
-  float
-  Player::MovementSpeed() {
-    // getter
+  float Player::MovementSpeed() {
     return m_movementSpeed;
   }
 
-  Point
-  Player::Destination() {
-    // getter
+  Point Player::Destination() {
     return m_destination;
   }
-  
-  void
-  Player::SetDestination(Point destination) {
-    // setter
-    m_destination = destination;
+
+  void Player::SetDestination(Point _destination) {
+    m_destination = _destination;
   }
 } // namespace journey_of_dreams

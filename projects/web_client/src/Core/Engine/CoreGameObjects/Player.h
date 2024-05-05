@@ -60,9 +60,9 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     /// Sets the position of the player.
     ///
-    /// \param position Position point.
+    /// \param _position Position point.
     /////////////////////////////////////////////////
-    void SetPosition(Point position);
+    void SetPosition(Point _position);
 
     /////////////////////////////////////////////////
     /// Gets the number of ticks since the player
@@ -76,9 +76,9 @@ namespace journey_of_dreams
     /// Sets the number of ticks since the player
     /// last moved.
     ///
-    /// \param ticksLastMove Number of ticks.
+    /// \param _ticksLastMove Number of ticks.
     /////////////////////////////////////////////////
-    void SetTicksLastMove(int ticksLastMove);
+    void SetTicksLastMove(int _ticksLastMove);
 
     /////////////////////////////////////////////////
     /// Gets the movement speed of the player.
@@ -93,13 +93,13 @@ namespace journey_of_dreams
     /// \return Destination point.
     /////////////////////////////////////////////////
     Point Destination();
-    
+
     /////////////////////////////////////////////////
     /// Sets the destination of the player.
     ///
-    /// \param destination Destination point.
+    /// \param _destination Destination point.
     /////////////////////////////////////////////////
-    void SetDestination(Point destination);
+    void SetDestination(Point _destination);
 
    private:
     Point m_position{.x = 0, .y = 0};

@@ -43,7 +43,6 @@ namespace journey_of_dreams
   template <class T>
   void
   Square<T>::SetAll(T _value) {
-    // set all values to the same value at the same time
     _00 = _01 = _11 = _10 = _value;
   }
 } // namespace journey_of_dreams
