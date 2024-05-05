@@ -2,6 +2,8 @@
 
 #include "ShaderProgram.h"
 
+// shader_program class implementation.
+
 namespace journey_of_dreams
 {
   bool
@@ -65,7 +67,7 @@ namespace journey_of_dreams
 
     return shaderCompiled;
   }
-  
+
   GLuint
   ShaderProgram::ProgramID() {
     return m_programID;

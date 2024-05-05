@@ -7,39 +7,39 @@ struct SDL_Surface;
 struct SDL_Texture;
 typedef struct _TTF_Font TTF_Font;
 
-// SDLDeleter class declaration.
+// custom_deleter class declaration.
 
 namespace journey_of_dreams
 {
-  class sdl_deleter {
+  class custom_deleter {
    public:
     /////////////////////////////////////////////////
     /// Destroy SDL window object.
     ///
-    /// \param window SDL window object.
+    /// \param win SDL window object.
     /////////////////////////////////////////////////
-    void operator()(SDL_Window *window);
+    void operator()(SDL_Window *win);
 
     /////////////////////////////////////////////////
     /// estroy SDL renderer object.
     ///
-    /// \param renderer SDL renderer object.
+    /// \param rend SDL renderer object.
     /////////////////////////////////////////////////
-    void operator()(SDL_Renderer *renderer);
+    void operator()(SDL_Renderer *rend);
 
     /////////////////////////////////////////////////
     /// Destroy SDL surface object.
     ///
-    /// \param surface SDL surface object.
+    /// \param surf SDL surface object.
     /////////////////////////////////////////////////
-    void operator()(SDL_Surface *surface);
+    void operator()(SDL_Surface *surf);
 
     /////////////////////////////////////////////////
     /// Destroy SDL texture object.
     ///
-    /// \param texture SDL texture object.
+    /// \param tex SDL texture object.
     /////////////////////////////////////////////////
-    void operator()(SDL_Texture *texture);
+    void operator()(SDL_Texture *tex);
 
     /////////////////////////////////////////////////
     /// Destroy SDL font object.

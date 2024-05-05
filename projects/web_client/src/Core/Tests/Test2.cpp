@@ -3,6 +3,8 @@
 #include "Test2.h"
 #include "Core/Engine/Assets/ImageBank.h"
 
+// test2 class implementation.
+
 namespace journey_of_dreams
 {
   static const char *vertexShaderSource =
@@ -115,7 +117,7 @@ namespace journey_of_dreams
 
     iters = iters + 0.1;
   }
-  
+
   void
   Test2::Stop() {
     m_active = false;

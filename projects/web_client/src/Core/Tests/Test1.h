@@ -2,6 +2,8 @@
 
 #pragma once
 
+// test1 class declaration.
+
 namespace journey_of_dreams
 {
   class Test1 {

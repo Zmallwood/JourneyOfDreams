@@ -2,6 +2,8 @@
 
 #include "Tile.h"
 
+// tile class implementation.
+
 namespace journey_of_dreams
 {
   void
@@ -13,7 +15,7 @@ namespace journey_of_dreams
   Tile::SetGround(int groundHash) {
     m_ground = groundHash;
   }
-  
+
   bool
   Tile::IsWalkable() {
     return m_ground != Hash("GroundWater");

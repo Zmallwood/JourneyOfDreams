@@ -2,6 +2,8 @@
 
 #pragma once
 
+// precompiled headers for server.
+
 #include <algorithm>
 #include <functional>
 #include <iostream>

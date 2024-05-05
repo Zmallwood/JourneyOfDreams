@@ -3,6 +3,8 @@
 #pragma once
 #include "MouseButton.h"
 
+// mouse_input class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

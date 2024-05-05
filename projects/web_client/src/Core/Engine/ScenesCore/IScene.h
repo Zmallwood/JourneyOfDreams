@@ -2,6 +2,8 @@
 
 #pragma once
 
+// iscene class declaration.
+
 namespace journey_of_dreams
 {
   class GUI;

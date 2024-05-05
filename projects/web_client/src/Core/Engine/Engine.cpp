@@ -8,6 +8,8 @@
 #include "PollEvents.h"
 #include "ScenesCore/SceneManager.h"
 
+// engine class implementation.
+
 namespace journey_of_dreams
 {
   Engine::Engine() {
@@ -50,7 +52,7 @@ namespace journey_of_dreams
   Engine::UpdatePostRender() {
     _<SceneManager>().UpdatePostRenderCurrentScene();
   }
-  
+
   void
   Engine::PresentCanvas() {
     _<Graphics>().PresentCanvas();

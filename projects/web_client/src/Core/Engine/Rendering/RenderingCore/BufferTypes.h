@@ -2,6 +2,8 @@
 
 #pragma once
 
+// buffer_types enum declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

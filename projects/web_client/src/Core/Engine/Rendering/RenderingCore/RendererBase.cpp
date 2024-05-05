@@ -3,6 +3,8 @@
 #include "RendererBase.h"
 #include "ShaderProgram.h"
 
+// renderer_base class implementation.
+
 namespace journey_of_dreams
 {
   RendererBase::RendererBase()

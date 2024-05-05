@@ -6,6 +6,8 @@
 #include "Shader/DefaultShaderImagesFragment.h"
 #include "Shader/DefaultShaderImagesVertex.h"
 
+// image_renderer class implementation.
+
 namespace journey_of_dreams
 {
   ImageRenderer::ImageRenderer() {
@@ -97,7 +99,7 @@ namespace journey_of_dreams
                    GL_UNSIGNED_INT, NULL);
     UseVAOEnd();
   }
-  
+
   void
   ImageRenderer::DrawImage(RID rid, const std::string &imageName,
                            const RectF &dest, bool repeatTexture,

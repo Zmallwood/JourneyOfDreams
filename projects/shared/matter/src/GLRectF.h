@@ -2,6 +2,8 @@
 
 #pragma once
 
+// glrectf class declaration.
+
 namespace journey_of_dreams
 {
   class GLRectF {

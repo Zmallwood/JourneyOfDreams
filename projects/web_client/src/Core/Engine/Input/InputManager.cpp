@@ -5,6 +5,8 @@
 #include "KeyboardInput.h"
 #include "MouseInput.h"
 
+// input_manager class implementation.
+
 namespace journey_of_dreams
 {
   static void
@@ -45,7 +47,7 @@ namespace journey_of_dreams
     _<MouseInput>().LeftButton().OnRelease();
     return EM_FALSE;
   }
-  
+
   InputManager::InputManager() {
     glfwSetKeyCallback(_<Graphics>().Window(), KeyCallback);
     glfwSetMouseButtonCallback(_<Graphics>().Window(), MouseButtonCallback);

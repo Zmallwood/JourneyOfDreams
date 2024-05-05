@@ -5,6 +5,8 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
+// gui_button class implementation.
+
 namespace journey_of_dreams
 {
   GUIButton::GUIButton(RectF area, const std::string &text,
@@ -78,7 +80,7 @@ namespace journey_of_dreams
     ** Getter */
     return m_backgroundHoveredImage;
   }
-  
+
   void
   GUIButton::SetBackgroundHoveredImage(
       const std::string &backgroundHoveredImage) {

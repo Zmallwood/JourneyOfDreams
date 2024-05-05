@@ -2,6 +2,8 @@
 
 #pragma once
 
+// mouse_button class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

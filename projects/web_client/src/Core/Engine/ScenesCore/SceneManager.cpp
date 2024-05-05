@@ -9,6 +9,8 @@
 #include "DefaultTheme/Scenes/ServerConnect/ServerConnectScene.h"
 #include "DefaultTheme/Scenes/Test/TestScene.h"
 
+// scene_manager class implementation.
+
 namespace journey_of_dreams
 {
   SceneManager::SceneManager() {
@@ -41,7 +43,7 @@ namespace journey_of_dreams
     if (m_scenes.contains(m_currentScene))
       m_scenes.at(m_currentScene).UpdatePostRender();
   }
-  
+
   void
   SceneManager::GoToScene(const std::string &sceneName) {
     m_currentScene = Hash(sceneName);

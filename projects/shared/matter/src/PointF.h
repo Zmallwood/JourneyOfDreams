@@ -2,6 +2,8 @@
 
 #pragma once
 
+// pointf class declaration.
+
 namespace journey_of_dreams
 {
   class PointF {
@@ -12,7 +14,7 @@ namespace journey_of_dreams
       y += rhs.y;
       return *this;
     }
-    
+
     PointF
     operator-(const PointF &rhs) const {
       return PointF{x - rhs.x, y - rhs.y};

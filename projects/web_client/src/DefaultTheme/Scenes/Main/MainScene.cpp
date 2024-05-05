@@ -9,6 +9,8 @@
 #include "SubProcess/UpdateKeyboardMovement.h"
 #include "SubProcess/WorldView/WorldView.h"
 
+// main_scene class implementation.
+
 namespace journey_of_dreams
 {
   void
@@ -26,7 +28,7 @@ namespace journey_of_dreams
     _<WorldView>().Update();
     _<FPSCounter>().Update();
   }
-  
+
   void
   MainScene::RenderDerived() {
     _<WorldView>().Render();

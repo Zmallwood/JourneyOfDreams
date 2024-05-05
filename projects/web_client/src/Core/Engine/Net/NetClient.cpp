@@ -3,6 +3,8 @@
 #include "NetClient.h"
 #include "NetworkConnection.h"
 
+// net_client class implementation.
+
 namespace journey_of_dreams
 {
   NetClient::NetClient() : m_connection(std::make_shared<NetworkConnection>()) {
@@ -36,7 +38,7 @@ namespace journey_of_dreams
     ** Getter. */
     return m_connection->Connected();
   }
-  
+
   std::shared_ptr<NetworkConnection>
   NetClient::Connection() const {
     /*

@@ -2,6 +2,8 @@
 
 #pragma once
 
+// magical_creature class declaration.
+
 namespace journey_of_dreams
 {
   class MagicalCreature {

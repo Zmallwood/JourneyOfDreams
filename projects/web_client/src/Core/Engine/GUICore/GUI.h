@@ -3,6 +3,8 @@
 #pragma once
 #include "GUIWidget.h"
 
+// gui class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

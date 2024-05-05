@@ -5,6 +5,8 @@
 #include "../../shared/world_structure/src/World.h"
 #include "../../shared/world_structure/src/WorldArea.h"
 
+// generate_grass function implementation.
+
 namespace journey_of_dreams
 {
   void

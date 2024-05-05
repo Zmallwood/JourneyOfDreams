@@ -4,6 +4,8 @@
 #include "GUIButton.h"
 #include "GUILabel.h"
 
+// message_box class implementation.
+
 namespace journey_of_dreams
 {
   GUIMessageBox::GUIMessageBox(PointF position, const std::string &message,
@@ -15,7 +17,7 @@ namespace journey_of_dreams
     /*
     ** Do nothing. */
   }
-  
+
   void
   GUIMessageBox::Initialize() {
     /*

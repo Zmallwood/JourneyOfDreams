@@ -2,6 +2,8 @@
 
 #pragma once
 
+// animal class declaration.
+
 namespace journey_of_dreams
 {
   class Animal {

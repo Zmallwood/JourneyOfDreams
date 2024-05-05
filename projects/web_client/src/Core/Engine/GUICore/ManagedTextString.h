@@ -2,6 +2,8 @@
 
 #pragma once
 
+// managed_text_string class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

@@ -2,6 +2,8 @@
 
 #pragma once
 
+// default_shader_images_vertex declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

@@ -2,6 +2,8 @@
 
 #pragma once
 
+// update_click_movement function declaration.
+
 namespace journey_of_dreams
 {
   void UpdateClickMovement();

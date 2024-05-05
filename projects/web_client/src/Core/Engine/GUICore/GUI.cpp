@@ -6,6 +6,8 @@
 #include "GUIWidget.h"
 #include "OnScreenKeyboard.h"
 
+// gui class implementation.
+
 namespace journey_of_dreams
 {
   void

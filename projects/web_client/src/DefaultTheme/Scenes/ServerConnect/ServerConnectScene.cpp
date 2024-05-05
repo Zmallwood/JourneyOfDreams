@@ -6,6 +6,8 @@
 #include "Core/Engine/Net/NetClient.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
+// server_connect_scene class implementation.
+
 namespace journey_of_dreams
 {
   ServerConnectScene::ServerConnectScene() {
@@ -18,7 +20,7 @@ namespace journey_of_dreams
   ServerConnectScene::OnEnter() {
     _<NetClient>().BeginEstablishConnection();
   }
-  
+
   void
   ServerConnectScene::UpdateDerived() {
     if (_<NetClient>().Connected()) {

@@ -2,6 +2,8 @@
 
 #pragma once
 
+// world_file_writer class declaration.
+
 namespace journey_of_dreams
 {
   class WorldFileWriter {

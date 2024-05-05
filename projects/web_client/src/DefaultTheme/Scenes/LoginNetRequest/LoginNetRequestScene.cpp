@@ -8,6 +8,8 @@
 #include "Core/Engine/ScenesCore/SceneManager.h"
 #include "DefaultTheme/Scenes/Login/LoginScene.h"
 
+// login_net_request_scene class implementation.
+
 namespace journey_of_dreams
 {
   LoginNetRequestScene::LoginNetRequestScene() {
@@ -16,7 +18,7 @@ namespace journey_of_dreams
                                                 "Attempting to login...",
                                                 GUIAlign::Center));
   }
-  
+
   void
   LoginNetRequestScene::OnEnter() {
     auto username = _<LoginScene>()

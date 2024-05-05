@@ -2,6 +2,8 @@
 
 #pragma once
 
+// keyboard_input class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

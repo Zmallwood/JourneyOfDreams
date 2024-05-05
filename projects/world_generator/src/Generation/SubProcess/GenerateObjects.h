@@ -2,6 +2,8 @@
 
 #pragma once
 
+// genereate_objects function declaration.
+
 namespace journey_of_dreams
 {
   void GenerateObjects();

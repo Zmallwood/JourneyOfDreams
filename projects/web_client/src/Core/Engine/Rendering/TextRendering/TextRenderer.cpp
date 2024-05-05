@@ -5,6 +5,8 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Font.h"
 
+// text_renderer class implementation.
+
 namespace journey_of_dreams
 {
   TextRenderer::TextRenderer() {
@@ -131,7 +133,7 @@ namespace journey_of_dreams
     auto ridGLResource = m_ridsGLResources.at(rid);
     _<ImageRenderer>().DrawImage(ridGLResource, uniqueNameID, rect, false);
   }
-  
+
   SizeF
   TextRenderer::MeasureString(const std::string &text,
                               FontSizes fontSize) const {

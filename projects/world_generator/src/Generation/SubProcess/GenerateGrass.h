@@ -2,6 +2,8 @@
 
 #pragma once
 
+// generate_grass function declaration.
+
 namespace journey_of_dreams
 {
   void GenerateGrass();

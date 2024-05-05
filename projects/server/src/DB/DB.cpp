@@ -2,6 +2,8 @@
 
 #include "DB.h"
 
+// db class implementation.
+
 namespace journey_of_dreams
 {
   DB::DB() {
@@ -15,7 +17,7 @@ namespace journey_of_dreams
 
     std::cout << "Connected to database." << std::endl;
   }
-  
+
   DB::~DB() {
     m_session->close();
     std::cout << "Connection to database closed." << std::endl;

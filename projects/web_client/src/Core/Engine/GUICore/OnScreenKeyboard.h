@@ -3,6 +3,8 @@
 #pragma once
 #include "GUIPanel.h"
 
+// on_screen_keyboard class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

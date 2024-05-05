@@ -3,6 +3,8 @@
 #pragma once
 #include "FontSizes.h"
 
+// text_renderer class declaration.
+
 namespace journey_of_dreams
 {
   class Font;

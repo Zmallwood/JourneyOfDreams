@@ -2,6 +2,8 @@
 
 #pragma once
 
+// font_sizes enum class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

@@ -3,6 +3,8 @@
 #pragma once
 #include "GUIWindow.h"
 
+// gui_message_box class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

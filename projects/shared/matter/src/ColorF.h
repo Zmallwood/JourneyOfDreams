@@ -3,6 +3,8 @@
 #pragma once
 #include <SDL2/SDL.h>
 
+// colorf class declaration.
+
 namespace journey_of_dreams
 {
   class ColorF {

@@ -2,6 +2,8 @@
 
 #pragma once
 
+// default_shader_images_fragment declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

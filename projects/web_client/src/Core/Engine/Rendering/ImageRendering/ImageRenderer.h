@@ -3,6 +3,8 @@
 #pragma once
 #include "Core/Engine/Rendering/RenderingCore/RendererBase.h"
 
+// image_renderer class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

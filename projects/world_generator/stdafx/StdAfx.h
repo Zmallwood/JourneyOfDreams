@@ -2,6 +2,8 @@
 
 #pragma once
 
+// precompiled header for world_generator.
+
 #include <fstream>
 #include <iostream>
 #include <memory>

@@ -3,6 +3,8 @@
 #include "Test3.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 
+// test3 class implementation.
+
 namespace journey_of_dreams
 {
   Test3::Test3() {
@@ -17,7 +19,7 @@ namespace journey_of_dreams
     _<ImageRenderer>().DrawImage(m_ridImage, "DefaultSceneBackground",
                                  {0.0f, 0.0f, 1.0f, 1.0f});
   }
-  
+
   void
   Test3::Stop() {
     m_active = false;

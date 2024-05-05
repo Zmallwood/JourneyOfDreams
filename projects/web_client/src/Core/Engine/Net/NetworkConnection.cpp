@@ -4,6 +4,8 @@
 #include "Core/Configuration/ConfigurationFile.h"
 #include "NetClient.h"
 
+// network_connection class implementation.
+
 namespace journey_of_dreams
 {
   EM_BOOL

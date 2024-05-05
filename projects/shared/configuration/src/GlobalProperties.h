@@ -2,6 +2,8 @@
 
 #pragma once
 
+// global_properties class declaration.
+
 namespace journey_of_dreams
 {
   class GlobalProperties {

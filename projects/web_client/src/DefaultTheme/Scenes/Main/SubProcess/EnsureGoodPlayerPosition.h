@@ -2,6 +2,8 @@
 
 #pragma once
 
+// ensure_good_player_position function declaration.
+
 namespace journey_of_dreams
 {
   void EnsureGoodPlayerPosition();

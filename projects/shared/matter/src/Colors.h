@@ -2,6 +2,8 @@
 
 #pragma once
 
+// color class declaration.
+
 namespace journey_of_dreams
 {
   namespace Colors

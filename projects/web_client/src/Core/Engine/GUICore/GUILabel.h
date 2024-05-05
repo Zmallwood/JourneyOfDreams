@@ -4,6 +4,8 @@
 #include "Core/Engine/Rendering/TextRendering/FontSizes.h"
 #include "GUIWidget.h"
 
+// gui_label class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

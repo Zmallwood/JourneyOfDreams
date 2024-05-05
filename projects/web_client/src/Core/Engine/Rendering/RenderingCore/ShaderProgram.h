@@ -2,6 +2,8 @@
 
 #pragma once
 
+// shader_program class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

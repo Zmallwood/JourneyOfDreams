@@ -2,6 +2,8 @@
 
 #pragma once
 
+// scene_manager class declaration.
+
 namespace journey_of_dreams
 {
   class IScene;

@@ -2,6 +2,8 @@
 
 #pragma once
 
+// cursor_styles enum declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

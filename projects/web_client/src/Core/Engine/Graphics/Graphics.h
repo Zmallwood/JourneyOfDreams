@@ -5,6 +5,8 @@
 struct SDL_Window;
 struct SDL_Renderer;
 
+// graphics class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

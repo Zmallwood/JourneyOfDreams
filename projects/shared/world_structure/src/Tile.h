@@ -2,6 +2,8 @@
 
 #pragma once
 
+// tile class declaration.
+
 namespace journey_of_dreams
 {
   class Object;
@@ -26,7 +28,7 @@ namespace journey_of_dreams
     Object() {
       return m_object;
     }
-    
+
     void
     SetObject(const std::shared_ptr<journey_of_dreams::Object> object) {
       m_object = object;

@@ -3,6 +3,8 @@
 #include "GUILabel.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
+// gui_label class implementation.
+
 namespace journey_of_dreams
 {
   GUILabel::GUILabel(PointF position, const std::string &text,
@@ -95,7 +97,7 @@ namespace journey_of_dreams
     _<TextRenderer>().DrawString(m_ridText, *m_text, finalPosition, m_textColor,
                                  false, m_fontSize);
   }
-  
+
   void
   GUILabel::SetText(std::shared_ptr<std::string> text) {
     /*

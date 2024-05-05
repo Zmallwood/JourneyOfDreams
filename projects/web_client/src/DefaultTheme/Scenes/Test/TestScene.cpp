@@ -4,6 +4,8 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
+// test_scene class implementation.
+
 namespace journey_of_dreams
 {
   TestScene::TestScene() {
@@ -22,7 +24,7 @@ namespace journey_of_dreams
     _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo",
                                  {0.4f, 0.2f, 0.2f, 0.1f});
   }
-  
+
   void
   TestScene::UpdatePostRender() {
 

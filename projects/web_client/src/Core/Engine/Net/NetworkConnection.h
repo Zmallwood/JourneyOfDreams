@@ -2,6 +2,8 @@
 
 #pragma once
 
+// network_connection class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

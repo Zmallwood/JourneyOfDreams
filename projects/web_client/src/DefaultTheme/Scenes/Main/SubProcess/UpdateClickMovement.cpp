@@ -5,6 +5,8 @@
 #include "Core/Engine/Input/MouseInput.h"
 #include "TileHoverer.h"
 
+// update_click_movement function implementation.
+
 namespace journey_of_dreams
 {
   void

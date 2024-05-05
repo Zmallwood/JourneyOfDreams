@@ -2,6 +2,8 @@
 
 #pragma once
 
+// object class declaration.
+
 namespace journey_of_dreams
 {
   class Object {

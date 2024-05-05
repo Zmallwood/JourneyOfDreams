@@ -2,6 +2,8 @@
 
 #include "GUIWindow.h"
 
+// gui_window class implementation.
+
 namespace journey_of_dreams
 {
   GUIWindow::GUIWindow(RectF area, const std::string &title, GUIAlign alignment,

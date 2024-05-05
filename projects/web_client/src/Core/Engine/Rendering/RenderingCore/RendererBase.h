@@ -3,6 +3,8 @@
 #pragma once
 #include "BufferTypes.h"
 
+// renderer_base class declaration.
+
 namespace journey_of_dreams
 {
   class ShaderProgram;

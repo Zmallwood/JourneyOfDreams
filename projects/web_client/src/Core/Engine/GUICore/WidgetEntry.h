@@ -2,6 +2,8 @@
 
 #pragma once
 
+// gui_widget class declaration.
+
 namespace journey_of_dreams
 {
   class GUIWidget;

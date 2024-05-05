@@ -5,6 +5,8 @@
 #include "PointF.h"
 #include "SizeF.h"
 
+// rectf class declaration.
+
 namespace journey_of_dreams
 {
   class RectF {
@@ -23,7 +25,7 @@ namespace journey_of_dreams
     GetSize() const {
       return {w, h};
     }
-    
+
     bool
     Contains(PointF point) const {
       return point.x >= x && point.x <= x + w && point.y >= y &&

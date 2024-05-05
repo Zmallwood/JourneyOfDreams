@@ -6,6 +6,8 @@
 #include "GUIPanel.h"
 #include "GUITextBox.h"
 
+// on_screen_keyboard class implementation.
+
 namespace journey_of_dreams
 {
   OnScreenKeyboard::OnScreenKeyboard()
@@ -76,7 +78,7 @@ namespace journey_of_dreams
     ** Hide the on-screen keyboard. **/
     SetVisible(false);
   }
-  
+
   void
   OnScreenKeyboard::TypeCharacter(char c) {
     /*

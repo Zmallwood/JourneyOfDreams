@@ -3,6 +3,8 @@
 #include "ManagedTextString.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
+// managed_text_string class implementation.
+
 namespace journey_of_dreams
 {
   ManagedTextString::ManagedTextString(float maxRenderWidth, bool passwordMode)
@@ -265,7 +267,7 @@ namespace journey_of_dreams
     ** Getter */
     return m_cursorPosition;
   }
-  
+
   std::string
   ManagedTextString::Text() const {
     /*

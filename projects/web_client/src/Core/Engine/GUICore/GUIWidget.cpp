@@ -4,6 +4,8 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "GUI.h"
 
+// gui_widget class implementation.
+
 namespace journey_of_dreams
 {
   GUIWidget::GUIWidget()
@@ -714,7 +716,7 @@ namespace journey_of_dreams
     ** Setter. */
     m_visible = visible;
   }
-  
+
   void
   GUIWidget::SetPadding(float padding) {
     /*

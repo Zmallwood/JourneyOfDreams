@@ -15,6 +15,8 @@
 #include <string>
 #include <vector>
 
+// websocket_server class declaration.
+
 namespace journey_of_dreams
 {
   using std::map;
@@ -62,13 +64,13 @@ namespace journey_of_dreams
 
     // Sends a message to an individual client
     //(Note: the data transmission will take place on the thread that called
-    //WebsocketServer::run())
+    // WebsocketServer::run())
     void sendMessage(ClientConnection conn, const string &messageType,
                      const Json::Value &arguments);
 
     // Sends a message to all connected clients
     //(Note: the data transmission will take place on the thread that called
-    //WebsocketServer::run())
+    // WebsocketServer::run())
     void broadcastMessage(const string &messageType,
                           const Json::Value &arguments);
 

@@ -4,6 +4,8 @@
 #include "Tile.h"
 #include "configuration/src/GlobalProperties.h"
 
+// world_area class implementation.
+
 namespace journey_of_dreams
 {
   WorldArea::WorldArea() {
@@ -46,7 +48,7 @@ namespace journey_of_dreams
     auto size = GetSize();
     return {.x = rand() % size.w, .y = rand() % size.h};
   }
-  
+
   std::shared_ptr<Tile>
   WorldArea::GetRandomTile() {
     return GetTile(GetRandomCoordinate());

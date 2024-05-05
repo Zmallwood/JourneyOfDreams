@@ -2,6 +2,8 @@
 
 #pragma once
 
+// singleton function implementation.
+
 namespace journey_of_dreams
 {
   template <class T>

@@ -5,6 +5,8 @@
 #include "Core/Engine/GUICore/GUILabel.h"
 #include "DefaultTheme/Scenes/Main/MainScene.h"
 
+// fps_counter class implementation.
+
 namespace journey_of_dreams
 {
   FPSCounter::FPSCounter() {
@@ -24,7 +26,7 @@ namespace journey_of_dreams
       m_ticksLastUpdate = ticks;
     }
   }
-  
+
   void
   FPSCounter::Render() {
     _<MainScene>()

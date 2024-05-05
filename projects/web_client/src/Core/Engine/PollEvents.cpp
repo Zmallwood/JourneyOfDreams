@@ -4,6 +4,8 @@
 #include "Input/KeyboardInput.h"
 #include "Input/MouseInput.h"
 
+// poll_events function implementation.
+
 namespace journey_of_dreams
 {
   void

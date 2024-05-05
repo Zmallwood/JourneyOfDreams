@@ -2,6 +2,8 @@
 
 #pragma once
 
+// input_manager class declaration.
+
 namespace journey_of_dreams
 {
   class InputManager {

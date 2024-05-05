@@ -9,6 +9,8 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
+// gui_text_box class implementation.
+
 namespace journey_of_dreams
 {
   GUITextBox::GUITextBox(RectF area, ColorF textColor, bool passwordMode)
@@ -163,7 +165,7 @@ namespace journey_of_dreams
     ** Clear text in the text box. */
     m_managedTextLine.Reset();
   }
-  
+
   void
   GUITextBox::Focus() {
     /*

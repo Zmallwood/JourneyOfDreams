@@ -9,6 +9,8 @@
 #include "Engine.h"
 #include "Graphics/Graphics.h"
 
+// do_one_game_loop_frame function implementation.
+
 namespace journey_of_dreams
 {
   void

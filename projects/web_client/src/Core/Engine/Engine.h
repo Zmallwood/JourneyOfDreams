@@ -2,6 +2,8 @@
 
 #pragma once
 
+// engine class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

@@ -8,6 +8,8 @@
 #include "Core/Engine/ScenesCore/SceneManager.h"
 #include "DefaultTheme/Scenes/Register/RegisterScene.h"
 
+// register_net_request_scene class implementation.
+
 namespace journey_of_dreams
 {
   RegisterNetRequestScene::RegisterNetRequestScene() {
@@ -16,7 +18,7 @@ namespace journey_of_dreams
                                                 "Registering account...",
                                                 GUIAlign::Center));
   }
-  
+
   void
   RegisterNetRequestScene::OnEnter() {
     auto username = _<RegisterScene>()

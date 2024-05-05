@@ -4,6 +4,8 @@
 #include "Core/Configuration/ClientProperties.h"
 #include "Core/Engine/CoreGameObjects/Player.h"
 
+// tile_hoverer class implementation.
+
 namespace journey_of_dreams
 {
   void

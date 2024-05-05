@@ -2,6 +2,8 @@
 
 #pragma once
 
+// update_keyboard_movement function declaration.
+
 namespace journey_of_dreams
 {
   void UpdateKeyboardMovement();

@@ -2,6 +2,8 @@
 
 #pragma once
 
+// gui_align class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////

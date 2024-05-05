@@ -2,6 +2,8 @@
 
 #pragma once
 
+// net_client class declaration.
+
 namespace journey_of_dreams
 {
   class NetworkConnection;

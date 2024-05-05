@@ -2,6 +2,8 @@
 
 #include "MouseButton.h"
 
+// mouse_button class implementation.
+
 namespace journey_of_dreams
 {
   void

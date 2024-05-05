@@ -2,6 +2,8 @@
 
 #pragma once
 
+// precompiled headers for web_client
+
 #define GL_GLEXT_PROTOTYPES 1
 
 #include <filesystem>
@@ -27,7 +29,7 @@
 #include <emscripten/websocket.h>
 
 #include "Common/Aliases.h"
-#include "Common/SDLDeleter.h"
+#include "Common/custom_deleter.h"
 #include "Common/Square.h"
 #include "Common/Utilities.h"
 

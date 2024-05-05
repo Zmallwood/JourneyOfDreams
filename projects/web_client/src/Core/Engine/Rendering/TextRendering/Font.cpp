@@ -2,13 +2,15 @@
 
 #include "Font.h"
 
+// font class implementation.
+
 namespace journey_of_dreams
 {
   Font::Font(const std::string &fontFileName, int fontSize) {
     m_font = std::shared_ptr<TTF_Font>(
-        TTF_OpenFont(fontFileName.c_str(), fontSize), sdl_deleter());
+        TTF_OpenFont(fontFileName.c_str(), fontSize), custom_deleter());
     m_outlineFont = std::shared_ptr<TTF_Font>(
-        TTF_OpenFont(fontFileName.c_str(), fontSize), sdl_deleter());
+        TTF_OpenFont(fontFileName.c_str(), fontSize), custom_deleter());
 
     TTF_SetFontOutline(m_outlineFont.get(), k_fontOutlineWidth);
   }
@@ -22,7 +24,7 @@ namespace journey_of_dreams
   Font::OutlineSDLFont() const {
     return m_outlineFont;
   }
-  
+
   const int
   Font::FontOutlineWidth() {
     return k_fontOutlineWidth;

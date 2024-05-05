@@ -4,6 +4,8 @@
 #include "Engine/DoOneGameLoopFrame.h"
 #include "Engine/Engine.h"
 
+// game_instance class implementation.
+
 namespace journey_of_dreams
 {
   void

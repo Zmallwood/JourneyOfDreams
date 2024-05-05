@@ -2,6 +2,8 @@
 
 #include "WebsocketServer.h"
 
+// web_socket_server class implementation.
+
 // The name of the special JSON field that holds the message type for messages
 #define MESSAGE_FIELD "__MESSAGE__"
 

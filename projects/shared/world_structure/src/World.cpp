@@ -3,6 +3,8 @@
 #include "World.h"
 #include "WorldArea.h"
 
+// world class implementation.
+
 namespace journey_of_dreams
 {
   World::World()

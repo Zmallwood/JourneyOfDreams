@@ -2,6 +2,8 @@
 
 #pragma once
 
+// world class declaration.
+
 namespace journey_of_dreams
 {
   class WorldArea;
@@ -9,7 +11,7 @@ namespace journey_of_dreams
   class World {
    public:
     World();
-    
+
     auto
     WorldArea() {
       return m_worldArea;

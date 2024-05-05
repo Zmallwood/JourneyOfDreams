@@ -2,4 +2,6 @@
 
 #pragma once
 
+// developer settings macros.
+
 // #define DEV_TEST_MODE

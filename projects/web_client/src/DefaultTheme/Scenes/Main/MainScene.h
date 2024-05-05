@@ -3,6 +3,8 @@
 #pragma once
 #include "Core/Engine/ScenesCore/IScene.h"
 
+// main_scene class declaration.
+
 namespace journey_of_dreams
 {
   class MainScene : public IScene {

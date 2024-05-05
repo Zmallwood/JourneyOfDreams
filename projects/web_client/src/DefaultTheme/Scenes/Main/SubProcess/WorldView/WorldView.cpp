@@ -10,6 +10,8 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
+// world_view class implementation.
+
 namespace journey_of_dreams
 {
   WorldView::WorldView()
@@ -34,7 +36,7 @@ namespace journey_of_dreams
   void
   WorldView::Update() {
   }
-  
+
   void
   WorldView::Render() {
     auto numGridRows = _<ClientProperties>().NumGridRows();

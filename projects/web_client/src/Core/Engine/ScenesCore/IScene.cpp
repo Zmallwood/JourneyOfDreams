@@ -3,6 +3,8 @@
 #include "IScene.h"
 #include "Core/Engine/GUICore/GUI.h"
 
+// iscene class implementation.
+
 namespace journey_of_dreams
 {
   IScene::IScene() : m_gui(std::make_shared<journey_of_dreams::GUI>()) {
@@ -36,7 +38,7 @@ namespace journey_of_dreams
   void
   IScene::UpdatePostRender() {
   }
-  
+
   std::shared_ptr<journey_of_dreams::GUI>
   IScene::GUI() {
     return m_gui;

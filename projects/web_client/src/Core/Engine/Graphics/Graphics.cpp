@@ -3,6 +3,8 @@
 #include "Graphics.h"
 #include "Core/Configuration/ClientProperties.h"
 
+// graphics class implementation.
+
 EM_JS(int, canvas_get_width, (), { return window.innerWidth; });
 EM_JS(int, canvas_get_height, (), { return window.innerHeight; });
 
@@ -33,7 +35,7 @@ namespace journey_of_dreams
     glfwPollEvents();
     glFinish();
   }
-  
+
   GLFWwindow *
   Graphics::Window() {
     return window;

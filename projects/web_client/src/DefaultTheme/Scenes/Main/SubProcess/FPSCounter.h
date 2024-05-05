@@ -2,6 +2,8 @@
 
 #pragma once
 
+// fps_counter class declaration.
+
 namespace journey_of_dreams
 {
   class FPSCounter {

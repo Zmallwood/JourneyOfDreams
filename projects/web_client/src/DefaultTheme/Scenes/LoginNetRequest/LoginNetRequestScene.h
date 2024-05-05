@@ -3,6 +3,8 @@
 #pragma once
 #include "Core/Engine/ScenesCore/IScene.h"
 
+// login_net_request_scene class declaration
+
 namespace journey_of_dreams
 {
   class LoginNetRequestScene : public IScene {

@@ -2,6 +2,8 @@
 
 #include "Hash.h"
 
+// hash function implementation.
+
 namespace journey_of_dreams
 {
   int

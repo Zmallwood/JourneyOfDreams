@@ -2,6 +2,8 @@
 
 #include "KeyboardInput.h"
 
+// keyboard_input class definition.
+
 namespace journey_of_dreams
 {
   void
@@ -64,7 +66,7 @@ namespace journey_of_dreams
     ** Return result. */
     return result;
   }
-  
+
   void
   KeyboardInput::ClearTextInput() {
     /*

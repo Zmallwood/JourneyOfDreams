@@ -9,6 +9,8 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
+// login_scene class implementation.
+
 namespace journey_of_dreams
 {
   LoginScene::LoginScene() {
@@ -41,7 +43,7 @@ namespace journey_of_dreams
   void
   LoginScene::UpdateDerived() {
   }
-  
+
   void
   LoginScene::RenderDerived() {
     _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground",

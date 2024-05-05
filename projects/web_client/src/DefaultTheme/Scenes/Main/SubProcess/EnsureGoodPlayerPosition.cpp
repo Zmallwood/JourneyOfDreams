@@ -6,6 +6,8 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
+// ensure_good_player_position function implementation.
+
 namespace journey_of_dreams
 {
   static bool
@@ -19,7 +21,7 @@ namespace journey_of_dreams
 
     return true;
   }
-  
+
   void
   EnsureGoodPlayerPosition() {
     auto worldArea = _<World>().WorldArea();

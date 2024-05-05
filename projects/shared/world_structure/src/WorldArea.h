@@ -2,6 +2,8 @@
 
 #pragma once
 
+// world_area class declaration.
+
 namespace journey_of_dreams
 {
   class Tile;
@@ -14,7 +16,7 @@ namespace journey_of_dreams
     bool IsValidCoordinate(Point coordinate);
     Point GetRandomCoordinate();
     std::shared_ptr<Tile> GetRandomTile();
-    
+
     auto &
     Tiles() {
       return m_tiles;

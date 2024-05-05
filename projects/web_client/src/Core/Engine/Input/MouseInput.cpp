@@ -2,6 +2,8 @@
 
 #include "MouseInput.h"
 
+// mouse_input class implementation.
+
 namespace journey_of_dreams
 {
   void
@@ -39,7 +41,7 @@ namespace journey_of_dreams
     ** Getter by reference */
     return leftButton;
   }
-  
+
   MouseButton &
   MouseInput::RightButton() {
     /*

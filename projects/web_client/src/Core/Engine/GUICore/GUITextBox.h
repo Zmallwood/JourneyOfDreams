@@ -4,6 +4,8 @@
 #include "GUIWidget.h"
 #include "ManagedTextString.h"
 
+// gui_text_box class declaration.
+
 namespace journey_of_dreams
 {
   /////////////////////////////////////////////////
