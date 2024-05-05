@@ -109,7 +109,7 @@ namespace journey_of_dreams
     // return the previously generated resource ID
     return texID;
   }
-  
+
   SDL_Surface *
   ImageBank::LoadImageData(const char *filename) {
     int width;

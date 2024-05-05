@@ -38,7 +38,7 @@ namespace journey_of_dreams
     /// \return Image resource ID.
     /////////////////////////////////////////////////
     GLuint GetImage(int imageNameHash);
-    
+
     /////////////////////////////////////////////////
     /// Creates a blank image resource, given
     /// the specified name, and returns its ID.
