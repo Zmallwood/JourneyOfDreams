@@ -17,7 +17,7 @@ namespace JourneyOfDreams
       glfwGetWindowSize (_<Graphics> ().Window (), &w, &h);
       return { w, h };
    }
-   float GetAspect Ratio () {
+   float GetAspectRatio () {
       //get canvas dimensions
       auto canvasSize = GetCanvasSize ();
       //and calculate the ratio between them
