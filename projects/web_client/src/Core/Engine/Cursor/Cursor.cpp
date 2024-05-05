@@ -1,6 +1,5 @@
-//
-//  Copyright (C) 2024 Andreas Åkerberg
-//
+// Copyright (c) 2024 Andreas Åkerberg.
+
 #include "Cursor.h"
 #include "Core/Engine/Graphics/Graphics.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"

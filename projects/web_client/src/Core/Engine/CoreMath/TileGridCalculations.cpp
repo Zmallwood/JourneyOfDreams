@@ -1,6 +1,5 @@
-//
-//  Copyright (C) 2024 Andreas Åkerberg
-//
+// Copyright (c) 2024 Andreas Åkerberg.
+
 #include "TileGridCalculations.h"
 #include "Core/Configuration/ClientProperties.h"
 //

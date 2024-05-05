@@ -1,6 +1,5 @@
-//
-//  Copyright (C) 2024 Andreas Åkerberg.
-//
+// Copyright (c) 2024 Andreas Åkerberg.
+
 #pragma once
 #include "../../shared/matter/src/PointF.h"
 #include "../../shared/matter/src/Size.h"

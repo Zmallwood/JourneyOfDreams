@@ -1,4 +1,4 @@
-//  Copyright (C) 2024 Andreas Åkerberg
+// Copyright (c) 2024 Andreas Åkerberg.
 
 #include "GenerateGrass.h"
 #include "../../shared/world_structure/src/Tile.h"

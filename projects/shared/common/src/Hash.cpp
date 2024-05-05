@@ -1,4 +1,4 @@
-//  Modified work, Copyright (C) 2024 Andreas Åkerberg
+// Modified work, Copyright (c) 2024 Andreas Åkerberg
 
 #include "Hash.h"
 

@@ -1,11 +1,11 @@
-//  Copyright (C) 2024 Andreas Åkerberg
+// Copyright (c) 2024 Andreas Åkerberg.
 
 #include "Font.h"
 
 namespace JourneyOfDreams {
     Font::Font(const std::string &fontFileName, int fontSize) {
-        m_font = std::shared_ptr<TTF_Font>(TTF_OpenFont(fontFileName.c_str(), fontSize), SDLDeleter());
-        m_outlineFont = std::shared_ptr<TTF_Font>(TTF_OpenFont(fontFileName.c_str(), fontSize), SDLDeleter());
+        m_font = std::shared_ptr<TTF_Font>(TTF_OpenFont(fontFileName.c_str(), fontSize), sdl_deleter());
+        m_outlineFont = std::shared_ptr<TTF_Font>(TTF_OpenFont(fontFileName.c_str(), fontSize), sdl_deleter());
 
         TTF_SetFontOutline(m_outlineFont.get(), k_fontOutlineWidth);
     }
