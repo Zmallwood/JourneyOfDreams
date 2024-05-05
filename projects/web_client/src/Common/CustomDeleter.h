@@ -7,11 +7,11 @@ struct SDL_Surface;
 struct SDL_Texture;
 typedef struct _TTF_Font TTF_Font;
 
-// custom_deleter class declaration.
+// CustomDeleter class declaration.
 
 namespace journey_of_dreams
 {
-  class custom_deleter {
+  class CustomDeleter {
    public:
     /////////////////////////////////////////////////
     /// Destroy SDL window object.
