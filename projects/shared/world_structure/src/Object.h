@@ -2,16 +2,18 @@
 
 #pragma once
 
-namespace journey_of_dreams {
-    class Object {
-      public:
-        Object(const std::string &objectTypeName);
-        Object(int objectTypeHash);
-        auto Type() const {
-            return m_type;
-        }
+namespace journey_of_dreams
+{
+  class Object {
+   public:
+    Object(const std::string &objectTypeName);
+    Object(int objectTypeHash);
+    auto
+    Type() const {
+      return m_type;
+    }
 
-      private:
-        int m_type{ 0 };
-    };
-}
+   private:
+    int m_type{0};
+  };
+} // namespace journey_of_dreams

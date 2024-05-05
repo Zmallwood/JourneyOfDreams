@@ -2,6 +2,7 @@
 
 #pragma once
 
-namespace journey_of_dreams {
-    void RunNetServer();
+namespace journey_of_dreams
+{
+  void RunNetServer();
 }

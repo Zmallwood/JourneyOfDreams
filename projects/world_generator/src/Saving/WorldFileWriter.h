@@ -2,12 +2,13 @@
 
 #pragma once
 
-namespace journey_of_dreams {
-    class WorldFileWriter {
-      public:
-        void WriteWorldToFile();
+namespace journey_of_dreams
+{
+  class WorldFileWriter {
+   public:
+    void WriteWorldToFile();
 
-      private:
-        const std::string k_worldFileName{ "World.dat" };
-    };
-}
+   private:
+    const std::string k_worldFileName{"World.dat"};
+  };
+} // namespace journey_of_dreams

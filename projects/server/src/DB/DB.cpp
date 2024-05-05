@@ -2,20 +2,22 @@
 
 #include "DB.h"
 
-namespace journey_of_dreams {
-    DB::DB() {
-        std::cout << "Connecting to database..." << std::endl;
+namespace journey_of_dreams
+{
+  DB::DB() {
+    std::cout << "Connecting to database..." << std::endl;
 
-        m_parameters = std::make_unique<soci::connection_parameters>(
-            "postgresql",
-            "dbname=journeyofdreams user=postgres password=test host=host.docker.internal port=5432");
-        m_session = std::make_unique<soci::session>();
-        m_session->open(*m_parameters);
+    m_parameters = std::make_unique<soci::connection_parameters>(
+        "postgresql", "dbname=journeyofdreams user=postgres password=test "
+                      "host=host.docker.internal port=5432");
+    m_session = std::make_unique<soci::session>();
+    m_session->open(*m_parameters);
 
-        std::cout << "Connected to database." << std::endl;
-    }
-    DB::~DB() {
-        m_session->close();
-        std::cout << "Connection to database closed." << std::endl;
-    }
-}
+    std::cout << "Connected to database." << std::endl;
+  }
+  
+  DB::~DB() {
+    m_session->close();
+    std::cout << "Connection to database closed." << std::endl;
+  }
+} // namespace journey_of_dreams

@@ -2,6 +2,7 @@
 
 #pragma once
 
-namespace journey_of_dreams {
-    void DoOneGameLoopFrame();
+namespace journey_of_dreams
+{
+  void DoOneGameLoopFrame();
 }

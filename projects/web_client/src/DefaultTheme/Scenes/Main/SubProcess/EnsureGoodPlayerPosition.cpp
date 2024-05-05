@@ -6,25 +6,29 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
-namespace journey_of_dreams {
-    static bool CoordinateIsGoodAsPlayerPosition(Point coordinate) {
-        auto worldArea = _<World>().WorldArea();
-        auto tile = worldArea->GetTile(coordinate);
+namespace journey_of_dreams
+{
+  static bool
+  CoordinateIsGoodAsPlayerPosition(Point coordinate) {
+    auto worldArea = _<World>().WorldArea();
+    auto tile = worldArea->GetTile(coordinate);
 
-        if (!tile->IsWalkable()) {
-            return false;
-        }
-
-        return true;
+    if (!tile->IsWalkable()) {
+      return false;
     }
-    void EnsureGoodPlayerPosition() {
-        auto worldArea = _<World>().WorldArea();
-        Point coordinate;
-        do {
-            coordinate = worldArea->GetRandomCoordinate();
-        } while (CoordinateIsGoodAsPlayerPosition(coordinate) == false);
 
-        auto &player = _<Player>();
-        player.SetPosition(coordinate);
-    }
-}
+    return true;
+  }
+  
+  void
+  EnsureGoodPlayerPosition() {
+    auto worldArea = _<World>().WorldArea();
+    Point coordinate;
+    do {
+      coordinate = worldArea->GetRandomCoordinate();
+    } while (CoordinateIsGoodAsPlayerPosition(coordinate) == false);
+
+    auto &player = _<Player>();
+    player.SetPosition(coordinate);
+  }
+} // namespace journey_of_dreams

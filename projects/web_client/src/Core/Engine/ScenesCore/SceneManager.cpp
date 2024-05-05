@@ -9,33 +9,43 @@
 #include "DefaultTheme/Scenes/ServerConnect/ServerConnectScene.h"
 #include "DefaultTheme/Scenes/Test/TestScene.h"
 
-namespace journey_of_dreams {
-    SceneManager::SceneManager() {
-        m_scenes.insert({ Hash("TestScene"), _<TestScene>() });
-        m_scenes.insert({ Hash("ServerConnectScene"), _<ServerConnectScene>() });
-        m_scenes.insert({ Hash("LoginScene"), _<LoginScene>() });
-        m_scenes.insert({ Hash("LoginNetRequestScene"), _<LoginNetRequestScene>() });
-        m_scenes.insert({ Hash("RegisterScene"), _<RegisterScene>() });
-        m_scenes.insert({ Hash("RegisterNetRequestScene"), _<RegisterNetRequestScene>() });
-        m_scenes.insert({ Hash("MainScene"), _<MainScene>() });
+namespace journey_of_dreams
+{
+  SceneManager::SceneManager() {
+    m_scenes.insert({Hash("TestScene"), _<TestScene>()});
+    m_scenes.insert({Hash("ServerConnectScene"), _<ServerConnectScene>()});
+    m_scenes.insert({Hash("LoginScene"), _<LoginScene>()});
+    m_scenes.insert({Hash("LoginNetRequestScene"), _<LoginNetRequestScene>()});
+    m_scenes.insert({Hash("RegisterScene"), _<RegisterScene>()});
+    m_scenes.insert(
+        {Hash("RegisterNetRequestScene"), _<RegisterNetRequestScene>()});
+    m_scenes.insert({Hash("MainScene"), _<MainScene>()});
 
-        GoToScene("TestScene");
-    }
-    void SceneManager::UpdateCurrentScene() {
-        if (m_scenes.contains(m_currentScene))
-            m_scenes.at(m_currentScene).Update();
-    }
-    void SceneManager::RenderCurrentScene() {
-        if (m_scenes.contains(m_currentScene))
-            m_scenes.at(m_currentScene).Render();
-    }
-    void SceneManager::UpdatePostRenderCurrentScene() {
-        if (m_scenes.contains(m_currentScene))
-            m_scenes.at(m_currentScene).UpdatePostRender();
-    }
-    void SceneManager::GoToScene(const std::string &sceneName) {
-        m_currentScene = Hash(sceneName);
-        if (m_scenes.contains(m_currentScene))
-            m_scenes.at(m_currentScene).OnEnter();
-    }
-}
+    GoToScene("TestScene");
+  }
+
+  void
+  SceneManager::UpdateCurrentScene() {
+    if (m_scenes.contains(m_currentScene))
+      m_scenes.at(m_currentScene).Update();
+  }
+
+  void
+  SceneManager::RenderCurrentScene() {
+    if (m_scenes.contains(m_currentScene))
+      m_scenes.at(m_currentScene).Render();
+  }
+
+  void
+  SceneManager::UpdatePostRenderCurrentScene() {
+    if (m_scenes.contains(m_currentScene))
+      m_scenes.at(m_currentScene).UpdatePostRender();
+  }
+  
+  void
+  SceneManager::GoToScene(const std::string &sceneName) {
+    m_currentScene = Hash(sceneName);
+    if (m_scenes.contains(m_currentScene))
+      m_scenes.at(m_currentScene).OnEnter();
+  }
+} // namespace journey_of_dreams

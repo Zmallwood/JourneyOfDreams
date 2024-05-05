@@ -6,17 +6,23 @@
 #include "Core/Engine/Net/NetClient.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
-namespace journey_of_dreams {
-    ServerConnectScene::ServerConnectScene() {
-        GUI()->AddWidget(std::make_shared<GUILabel>(PointF{ .x = 0.5f, .y = 0.5f }, "Connecting to server...",
-                                                    GUIAlign::Center));
+namespace journey_of_dreams
+{
+  ServerConnectScene::ServerConnectScene() {
+    GUI()->AddWidget(std::make_shared<GUILabel>(PointF{.x = 0.5f, .y = 0.5f},
+                                                "Connecting to server...",
+                                                GUIAlign::Center));
+  }
+
+  void
+  ServerConnectScene::OnEnter() {
+    _<NetClient>().BeginEstablishConnection();
+  }
+  
+  void
+  ServerConnectScene::UpdateDerived() {
+    if (_<NetClient>().Connected()) {
+      _<SceneManager>().GoToScene("LoginScene");
     }
-    void ServerConnectScene::OnEnter() {
-        _<NetClient>().BeginEstablishConnection();
-    }
-    void ServerConnectScene::UpdateDerived() {
-        if (_<NetClient>().Connected()) {
-            _<SceneManager>().GoToScene("LoginScene");
-        }
-    }
-}
+  }
+} // namespace journey_of_dreams

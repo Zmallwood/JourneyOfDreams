@@ -2,23 +2,24 @@
 
 #pragma once
 
-namespace journey_of_dreams {
-    class IScene;
+namespace journey_of_dreams
+{
+  class IScene;
 
-    class SceneManager {
-      public:
-        SceneManager();
+  class SceneManager {
+   public:
+    SceneManager();
 
-        void UpdateCurrentScene();
+    void UpdateCurrentScene();
 
-        void RenderCurrentScene();
+    void RenderCurrentScene();
 
-        void UpdatePostRenderCurrentScene();
+    void UpdatePostRenderCurrentScene();
 
-        void GoToScene(const std::string &sceneName);
+    void GoToScene(const std::string &sceneName);
 
-      private:
-        std::map<int, IScene &> m_scenes;
-        int m_currentScene{ 0 };
-    };
-}
+   private:
+    std::map<int, IScene &> m_scenes;
+    int m_currentScene{0};
+  };
+} // namespace journey_of_dreams

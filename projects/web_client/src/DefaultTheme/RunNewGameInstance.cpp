@@ -3,9 +3,11 @@
 #include "RunNewGameInstance.h"
 #include "Core/GameInstance.h"
 
-namespace journey_of_dreams {
-    void RunNewGameInstance() {
-        GameInstance gameInstance;
-        gameInstance.Run();
-    }
-}
+namespace journey_of_dreams
+{
+  void
+  RunNewGameInstance() {
+    GameInstance gameInstance;
+    gameInstance.Run();
+  }
+} // namespace journey_of_dreams

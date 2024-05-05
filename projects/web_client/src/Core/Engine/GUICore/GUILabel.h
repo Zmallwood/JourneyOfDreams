@@ -4,63 +4,66 @@
 #include "Core/Engine/Rendering/TextRendering/FontSizes.h"
 #include "GUIWidget.h"
 
-namespace journey_of_dreams {
+namespace journey_of_dreams
+{
+  /////////////////////////////////////////////////
+  /// A label widget for the GUI.
+  /////////////////////////////////////////////////
+  class GUILabel : public GUIWidget {
+   public:
     /////////////////////////////////////////////////
-    /// A label widget for the GUI.
+    /// Initialize class members and graphical resources
+    /// and setup the default appearance of the label.
+    ///
+    /// \param position Position of the label.
+    /// \param text Text to display on the label.
+    /// \param alignment Alignment of the label.
+    /// \param fontSize Font size of the text.
+    /// \param textColor Color of the text.
     /////////////////////////////////////////////////
-    class GUILabel : public GUIWidget {
-      public:
-        /////////////////////////////////////////////////
-        /// Initialize class members and graphical resources
-        /// and setup the default appearance of the label.
-        ///
-        /// \param position Position of the label.
-        /// \param text Text to display on the label.
-        /// \param alignment Alignment of the label.
-        /// \param fontSize Font size of the text.
-        /// \param textColor Color of the text.
-        /////////////////////////////////////////////////
-        GUILabel(PointF position, const std::string &text, GUIAlign alignment = GUIAlign::TopLeft,
-                 FontSizes fontSize = FontSizes::_20, ColorF textColor = Colors::Wheat);
+    GUILabel(PointF position, const std::string &text,
+             GUIAlign alignment = GUIAlign::TopLeft,
+             FontSizes fontSize = FontSizes::_20,
+             ColorF textColor = Colors::Wheat);
 
-        /////////////////////////////////////////////////
-        /// Calls the other constructor some default values.
-        ///
-        /// \param position Position of the label.
-        /// \param text Text to display on the label.
-        /// \param textColor Color of the text.
-        /////////////////////////////////////////////////
-        GUILabel(PointF position, const std::string &text, ColorF textColor);
+    /////////////////////////////////////////////////
+    /// Calls the other constructor some default values.
+    ///
+    /// \param position Position of the label.
+    /// \param text Text to display on the label.
+    /// \param textColor Color of the text.
+    /////////////////////////////////////////////////
+    GUILabel(PointF position, const std::string &text, ColorF textColor);
 
-        /////////////////////////////////////////////////
-        /// Update the label's state.
-        /////////////////////////////////////////////////
-        void UpdateDerived() override;
+    /////////////////////////////////////////////////
+    /// Update the label's state.
+    /////////////////////////////////////////////////
+    void UpdateDerived() override;
 
-        /////////////////////////////////////////////////
-        /// Render the label.
-        /////////////////////////////////////////////////
-        void RenderDerived() override;
+    /////////////////////////////////////////////////
+    /// Render the label.
+    /////////////////////////////////////////////////
+    void RenderDerived() override;
 
-        /////////////////////////////////////////////////
-        /// Get absolute position of the label with
-        /// alignement taken into account.
-        ///
-        /// \return Absolute position of the label.
-        /////////////////////////////////////////////////
-        PointF GetAlignedAbsolutePosition() override;
+    /////////////////////////////////////////////////
+    /// Get absolute position of the label with
+    /// alignement taken into account.
+    ///
+    /// \return Absolute position of the label.
+    /////////////////////////////////////////////////
+    PointF GetAlignedAbsolutePosition() override;
 
-        /////////////////////////////////////////////////
-        /// Set the text of the label.
-        ///
-        /// \param text Text to set.
-        /////////////////////////////////////////////////
-        void SetText(std::shared_ptr<std::string> text);
+    /////////////////////////////////////////////////
+    /// Set the text of the label.
+    ///
+    /// \param text Text to set.
+    /////////////////////////////////////////////////
+    void SetText(std::shared_ptr<std::string> text);
 
-      private:
-        std::shared_ptr<std::string> m_text;
-        FontSizes m_fontSize;
-        ColorF m_textColor{ Colors::Wheat };
-        RID m_ridText{};
-    };
-}
+   private:
+    std::shared_ptr<std::string> m_text;
+    FontSizes m_fontSize;
+    ColorF m_textColor{Colors::Wheat};
+    RID m_ridText{};
+  };
+} // namespace journey_of_dreams

@@ -2,14 +2,15 @@
 
 #pragma once
 
-namespace journey_of_dreams {
-    class DB {
-      public:
-        DB();
-        ~DB();
+namespace journey_of_dreams
+{
+  class DB {
+   public:
+    DB();
+    ~DB();
 
-      private:
-        std::unique_ptr<soci::session> m_session;
-        std::unique_ptr<soci::connection_parameters> m_parameters;
-    };
-}
+   private:
+    std::unique_ptr<soci::session> m_session;
+    std::unique_ptr<soci::connection_parameters> m_parameters;
+  };
+} // namespace journey_of_dreams

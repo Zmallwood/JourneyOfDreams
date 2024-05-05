@@ -3,19 +3,20 @@
 #pragma once
 #include "Core/Engine/ScenesCore/IScene.h"
 
-namespace journey_of_dreams {
-    class LoginScene : public IScene {
-      public:
-        LoginScene();
+namespace journey_of_dreams
+{
+  class LoginScene : public IScene {
+   public:
+    LoginScene();
 
-        void OnEnter() override;
+    void OnEnter() override;
 
-        void UpdateDerived() override;
+    void UpdateDerived() override;
 
-        void RenderDerived() override;
+    void RenderDerived() override;
 
-      private:
-        RID m_ridBackground{ 0 };
-        RID m_ridLogo{ 0 };
-    };
-}
+   private:
+    RID m_ridBackground{0};
+    RID m_ridLogo{0};
+  };
+} // namespace journey_of_dreams

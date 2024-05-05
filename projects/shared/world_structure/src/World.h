@@ -2,17 +2,20 @@
 
 #pragma once
 
-namespace journey_of_dreams {
-    class WorldArea;
+namespace journey_of_dreams
+{
+  class WorldArea;
 
-    class World {
-      public:
-        World();
-        auto WorldArea() {
-            return m_worldArea;
-        }
+  class World {
+   public:
+    World();
+    
+    auto
+    WorldArea() {
+      return m_worldArea;
+    }
 
-      private:
-        std::shared_ptr<journey_of_dreams::WorldArea> m_worldArea;
-    };
-}
+   private:
+    std::shared_ptr<journey_of_dreams::WorldArea> m_worldArea;
+  };
+} // namespace journey_of_dreams

@@ -3,21 +3,22 @@
 #pragma once
 #include "Core/Engine/ScenesCore/IScene.h"
 
-namespace journey_of_dreams {
-    class RegisterScene : public IScene {
-      public:
-        RegisterScene();
+namespace journey_of_dreams
+{
+  class RegisterScene : public IScene {
+   public:
+    RegisterScene();
 
-        void OnEnter() override;
+    void OnEnter() override;
 
-        void UpdateDerived() override;
+    void UpdateDerived() override;
 
-        void RenderDerived() override;
+    void RenderDerived() override;
 
-      private:
-        bool EnsurePasswordConfirmed();
+   private:
+    bool EnsurePasswordConfirmed();
 
-        RID m_ridBackground{ 0 };
-        RID m_ridLogo{ 0 };
-    };
-}
+    RID m_ridBackground{0};
+    RID m_ridLogo{0};
+  };
+} // namespace journey_of_dreams

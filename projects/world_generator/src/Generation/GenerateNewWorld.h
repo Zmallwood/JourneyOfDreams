@@ -2,6 +2,7 @@
 
 #pragma once
 
-namespace journey_of_dreams {
-    void GenerateNewWorld();
+namespace journey_of_dreams
+{
+  void GenerateNewWorld();
 }

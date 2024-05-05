@@ -6,11 +6,13 @@
 #include "SubProcess/GenerateObjects.h"
 #include "SubProcess/GenerateWater.h"
 
-namespace journey_of_dreams {
-    void GenerateNewWorld() {
-        srand(time(0));
-        GenerateGrass();
-        GenerateWater();
-        GenerateObjects();
-    }
-}
+namespace journey_of_dreams
+{
+  void
+  GenerateNewWorld() {
+    srand(time(0));
+    GenerateGrass();
+    GenerateWater();
+    GenerateObjects();
+  }
+} // namespace journey_of_dreams

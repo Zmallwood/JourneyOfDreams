@@ -3,23 +3,25 @@
 #pragma once
 #include "GUIWidget.h"
 
-namespace journey_of_dreams {
+namespace journey_of_dreams
+{
+  /////////////////////////////////////////////////
+  /// A movable widget for the GUI.
+  /////////////////////////////////////////////////
+  class GUIMovableWidget : public GUIWidget {
+   public:
     /////////////////////////////////////////////////
-    /// A movable widget for the GUI.
+    /// Forwards the constructor arguments to the base
+    /// class and initializes the movable flag.
+    ///
+    /// \param area Area of the widget.
+    /// \param alignment Alignment of the widget.
+    /// \param movable Whether the widget is movable.
     /////////////////////////////////////////////////
-    class GUIMovableWidget : public GUIWidget {
-      public:
-        /////////////////////////////////////////////////
-        /// Forwards the constructor arguments to the base
-        /// class and initializes the movable flag.
-        ///
-        /// \param area Area of the widget.
-        /// \param alignment Alignment of the widget.
-        /// \param movable Whether the widget is movable.
-        /////////////////////////////////////////////////
-        GUIMovableWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft, bool movable = true);
+    GUIMovableWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft,
+                     bool movable = true);
 
-      private:
-        bool m_movable{ true };
-    };
-}
+   private:
+    bool m_movable{true};
+  };
+} // namespace journey_of_dreams

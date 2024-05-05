@@ -9,32 +9,34 @@
 #include "Engine.h"
 #include "Graphics/Graphics.h"
 
-namespace journey_of_dreams {
-    void DoOneGameLoopFrame() {
+namespace journey_of_dreams
+{
+  void
+  DoOneGameLoopFrame() {
 #if defined(DEV_TEST_MODE)
-        _<Test1>().Render();
-        //_<Test1>().Stop();
+    _<Test1>().Render();
+    //_<Test1>().Stop();
 
-        //_<Test2>().Render();
-        //_<Test1>().Stop();
+    //_<Test2>().Render();
+    //_<Test1>().Stop();
 
-        //_<Graphics>();  // Touch Graphics to initialize it
-        //_<ImageBank>(); // Touch ImageBank to initialize
+    //_<Graphics>();  // Touch Graphics to initialize it
+    //_<ImageBank>(); // Touch ImageBank to initialize
 
-        //_<Test3>().Render();
-        //_<Test3>().Stop();
+    //_<Test3>().Render();
+    //_<Test3>().Stop();
 #else
-        _<Graphics>();  // Touch Graphics to initialize it
-        _<ImageBank>(); // Touch ImageBank to initialize
-        _<Engine>();    // Touch Engine to initialize
+    _<Graphics>();  // Touch Graphics to initialize it
+    _<ImageBank>(); // Touch ImageBank to initialize
+    _<Engine>();    // Touch Engine to initialize
 
-        _<Engine>().Reset();
-        _<Engine>().HandleInput();
-        _<Engine>().Update();
-        _<Engine>().UpdateNet();
-        _<Engine>().Render();
-        _<Engine>().UpdatePostRender();
-        _<Engine>().PresentCanvas();
+    _<Engine>().Reset();
+    _<Engine>().HandleInput();
+    _<Engine>().Update();
+    _<Engine>().UpdateNet();
+    _<Engine>().Render();
+    _<Engine>().UpdatePostRender();
+    _<Engine>().PresentCanvas();
 #endif
-    }
-}
+  }
+} // namespace journey_of_dreams

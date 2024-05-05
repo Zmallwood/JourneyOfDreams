@@ -4,21 +4,24 @@
 #include "Core/Configuration/ClientProperties.h"
 #include "Core/Engine/CoreGameObjects/Player.h"
 
-namespace journey_of_dreams {
-    void TileHoverer::Update() {
-        auto numGridRows = _<ClientProperties>().NumGridRows();
-        auto numGridCols = CalculateNumGridCols();
+namespace journey_of_dreams
+{
+  void
+  TileHoverer::Update() {
+    auto numGridRows = _<ClientProperties>().NumGridRows();
+    auto numGridCols = CalculateNumGridCols();
 
-        auto &player = _<Player>();
-        auto tileHeight = 1.0f / numGridRows;
-        auto tileWidth = ConvertHeightToWidth(tileHeight);
+    auto &player = _<Player>();
+    auto tileHeight = 1.0f / numGridRows;
+    auto tileWidth = ConvertHeightToWidth(tileHeight);
 
-        auto mousePosition = GetMousePosition();
+    auto mousePosition = GetMousePosition();
 
-        auto hoveredCol = static_cast<int>(mousePosition.x / tileWidth);
-        auto hoveredRow = static_cast<int>(mousePosition.y / tileHeight);
+    auto hoveredCol = static_cast<int>(mousePosition.x / tileWidth);
+    auto hoveredRow = static_cast<int>(mousePosition.y / tileHeight);
 
-        m_hoveredCoordinate = { .x = player.GetX() - (numGridCols - 1) / 2 + hoveredCol,
-                                .y = player.GetY() - (numGridRows - 1) / 2 + hoveredRow };
-    }
-}
+    m_hoveredCoordinate = {
+        .x = player.GetX() - (numGridCols - 1) / 2 + hoveredCol,
+        .y = player.GetY() - (numGridRows - 1) / 2 + hoveredRow};
+  }
+} // namespace journey_of_dreams

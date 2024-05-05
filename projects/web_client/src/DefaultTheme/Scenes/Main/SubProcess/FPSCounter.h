@@ -2,18 +2,19 @@
 
 #pragma once
 
-namespace journey_of_dreams {
-    class FPSCounter {
-      public:
-        FPSCounter();
+namespace journey_of_dreams
+{
+  class FPSCounter {
+   public:
+    FPSCounter();
 
-        void Update();
+    void Update();
 
-        void Render();
+    void Render();
 
-      private:
-        int m_fps{ 0 };
-        int m_framesCount{ 0 };
-        int m_ticksLastUpdate{ 0 };
-    };
-}
+   private:
+    int m_fps{0};
+    int m_framesCount{0};
+    int m_ticksLastUpdate{0};
+  };
+} // namespace journey_of_dreams

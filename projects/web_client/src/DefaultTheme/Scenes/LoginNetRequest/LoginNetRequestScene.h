@@ -3,11 +3,12 @@
 #pragma once
 #include "Core/Engine/ScenesCore/IScene.h"
 
-namespace journey_of_dreams {
-    class LoginNetRequestScene : public IScene {
-      public:
-        LoginNetRequestScene();
+namespace journey_of_dreams
+{
+  class LoginNetRequestScene : public IScene {
+   public:
+    LoginNetRequestScene();
 
-        void OnEnter() override;
-    };
-}
+    void OnEnter() override;
+  };
+} // namespace journey_of_dreams

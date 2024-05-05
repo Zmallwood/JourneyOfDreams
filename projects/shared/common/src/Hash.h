@@ -2,6 +2,7 @@
 
 #pragma once
 
-namespace journey_of_dreams {
-    int Hash(const std::string &text);
+namespace journey_of_dreams
+{
+  int Hash(const std::string &text);
 }
