@@ -1,8 +1,11 @@
+//
 //  Copyright (C) 2024 Andreas Åkerberg
-
+//
 #include "Player.h"
 #include "configuration/src/GlobalProperties.h"
-
+//
+//  Player class implementation.
+//
 namespace JourneyOfDreams {
     Player::Player() {
         //initialize player position to the center of the world area
