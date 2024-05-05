@@ -18,12 +18,10 @@ namespace JourneyOfDreams
       /// in images folder.
       /////////////////////////////////////////////////
       ImageBank();
-
       /////////////////////////////////////////////////
       /// Frees all allocated OpenGL image resources.
       /////////////////////////////////////////////////
       ~ImageBank();
-
       /////////////////////////////////////////////////
       /// Gets an image resource by name.
       ///
@@ -31,7 +29,6 @@ namespace JourneyOfDreams
       /// \return Image resource ID.
       /////////////////////////////////////////////////
       GLuint GetImage(const std::string &imageName);
-
       /////////////////////////////////////////////////
       /// Gets an image resource by hash code.
       ///
@@ -39,7 +36,6 @@ namespace JourneyOfDreams
       /// \return Image resource ID.
       /////////////////////////////////////////////////
       GLuint GetImage(int imageNameHash);
-
       /////////////////////////////////////////////////
       /// Creates a blank image resource, given
       /// the specified name, and returns its ID.
