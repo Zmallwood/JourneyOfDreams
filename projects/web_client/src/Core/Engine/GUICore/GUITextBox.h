@@ -1,17 +1,14 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "GUIWidget.h"
 #include "ManagedTextString.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// A text box widget for the GUI.
     /////////////////////////////////////////////////
-    class GUITextBox : public GUIWidget
-    {
+    class GUITextBox : public GUIWidget {
       public:
         /////////////////////////////////////////////////
         /// Initialize class members and graphical resources

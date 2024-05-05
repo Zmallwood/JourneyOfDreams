@@ -5,13 +5,11 @@
 struct SDL_Window;
 struct SDL_Renderer;
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Setups and holds the graphics objects.
     /////////////////////////////////////////////////
-    class Graphics
-    {
+    class Graphics {
       public:
         /////////////////////////////////////////////////
         /// Setup SDL window, GL context and SDL renderer.
@@ -28,28 +26,9 @@ namespace JourneyOfDreams
         /////////////////////////////////////////////////
         void PresentCanvas();
 
-        // /////////////////////////////////////////////////
-        // /// Get the SDL window.
-        // ///
-        // /// \return SDL window.
-        // /////////////////////////////////////////////////
-        // std::shared_ptr<SDL_Window> Window();
-
-        // /////////////////////////////////////////////////
-        // /// Get the SDL renderer.
-        // ///
-        // /// \return SDL renderer.
-        // /////////////////////////////////////////////////
-        // std::shared_ptr<SDL_Renderer> Renderer();
-
-        auto Window()
-        {
-            return window;
-        }
+        GLFWwindow * Window();
 
       private:
-        // std::shared_ptr<SDL_Window> m_window{};
-        // std::shared_ptr<SDL_Renderer> m_renderer{};
         GLFWwindow *window;
     };
 }

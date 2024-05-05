@@ -2,15 +2,13 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     class NetworkConnection;
 
     /////////////////////////////////////////////////
     /// Manages the network communication to the server.
     /////////////////////////////////////////////////
-    class NetClient
-    {
+    class NetClient {
       public:
         /////////////////////////////////////////////////
         /// Create the network connection object.

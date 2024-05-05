@@ -2,11 +2,9 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     template <class T>
-    auto &_()
-    {
+    auto &_() {
         static T instance;
         return instance;
     }

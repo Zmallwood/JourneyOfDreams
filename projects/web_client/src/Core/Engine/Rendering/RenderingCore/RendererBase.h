@@ -1,19 +1,16 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "BufferTypes.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     class ShaderProgram;
 
     /////////////////////////////////////////////////
     /// Base class for all renderers which manages shader program,
     /// VAOs and VBOs.
     /////////////////////////////////////////////////
-    class RendererBase
-    {
+    class RendererBase {
       protected:
         /////////////////////////////////////////////////
         /// Create shader program and storages for VAOs and VBOs.
@@ -93,7 +90,7 @@ namespace JourneyOfDreams
 
         /////////////////////////////////////////////////
         /// Update data, other than indices, for a VBO with provided ID.
-        /// 
+        ///
         /// \param VBOID The ID of the VBO.
         /// \param data The data to update.
         /// \param buffType The type of buffer.

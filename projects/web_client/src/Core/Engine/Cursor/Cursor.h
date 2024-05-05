@@ -1,17 +1,14 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "CursorStyles.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Game mouse cursor which replaces default
     /// system cursor.
     /////////////////////////////////////////////////
-    class Cursor
-    {
+    class Cursor {
       public:
         /////////////////////////////////////////////////
         /// Allocated image resource and hides default

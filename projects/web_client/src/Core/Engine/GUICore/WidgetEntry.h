@@ -2,15 +2,13 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     class GUIWidget;
 
     /////////////////////////////////////////////////
     /// Storage-entry class for a widget in the GUI.
     /////////////////////////////////////////////////
-    class WidgetEntry
-    {
+    class WidgetEntry {
       public:
         /////////////////////////////////////////////////
         /// Id of the widget, equal to the hash of the

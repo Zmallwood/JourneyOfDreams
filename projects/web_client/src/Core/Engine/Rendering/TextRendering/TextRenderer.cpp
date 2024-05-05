@@ -5,10 +5,8 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Font.h"
 
-namespace JourneyOfDreams
-{
-    TextRenderer::TextRenderer()
-    {
+namespace JourneyOfDreams {
+    TextRenderer::TextRenderer() {
         TTF_Init();
         auto fontPath = k_relFontsPath + "DefaultFont.ttf";
         auto font20 = std::make_shared<Font>(fontPath, 20);
@@ -18,10 +16,8 @@ namespace JourneyOfDreams
         m_fonts.insert({ FontSizes::_30, font30 });
         m_fonts.insert({ FontSizes::_50, font50 });
     }
-
     void TextRenderer::RenderText(RID rid, const std::string &text, ColorF color, bool centerAlign,
-                                  FontSizes fontSize, std::string &outUniqueNameID, SizeF &outSize) const
-    {
+                                  FontSizes fontSize, std::string &outUniqueNameID, SizeF &outSize) const {
         auto font = m_fonts.at(fontSize)->SDLFont();
 
         if (!font)
@@ -82,9 +78,7 @@ namespace JourneyOfDreams
         SDL_FreeSurface(textSurf);
         SDL_FreeSurface(textOutlineSurf);
     }
-
-    RID TextRenderer::NewString()
-    {
+    RID TextRenderer::NewString() {
         static int s_idCounter = 0;
         auto id = s_idCounter++;
         auto uniqueName = "RenderedImage" + std::to_string(id);
@@ -95,10 +89,8 @@ namespace JourneyOfDreams
 
         return ridImage;
     }
-
     void TextRenderer::DrawString(RID rid, const std::string &text, PointF position, ColorF color,
-                                  bool centerAlign, FontSizes fontSize)
-    {
+                                  bool centerAlign, FontSizes fontSize) {
         std::string uniqueNameID;
         SizeF size;
         RenderText(rid, text, color, centerAlign, fontSize, uniqueNameID, size);
@@ -110,8 +102,7 @@ namespace JourneyOfDreams
         // rect.h *= GetAspectRatio(_<GraphicsView>()->Window());
         // rect.y -= static_cast<float>(text_h) / canvSz.h / 2.0f;
 
-        if (centerAlign)
-        {
+        if (centerAlign) {
             rect.x -= static_cast<float>(text_w) / static_cast<float>(canvSz.h) / 2.0f / GetAspectRatio();
             rect.y -= static_cast<float>(text_h) / static_cast<float>(canvSz.h) / 2.0f;
         }
@@ -124,9 +115,7 @@ namespace JourneyOfDreams
         auto ridGLResource = m_ridsGLResources.at(rid);
         _<ImageRenderer>().DrawImage(ridGLResource, uniqueNameID, rect, false);
     }
-
-    SizeF TextRenderer::MeasureString(const std::string &text, FontSizes fontSize) const
-    {
+    SizeF TextRenderer::MeasureString(const std::string &text, FontSizes fontSize) const {
         auto font = m_fonts.at(fontSize)->SDLFont();
         int text_w;
         int text_h;

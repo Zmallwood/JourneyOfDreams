@@ -16,8 +16,7 @@
 #include <string>
 #include <vector>
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     using std::map;
     using std::string;
     using std::vector;
@@ -25,8 +24,7 @@ namespace JourneyOfDreams
     typedef websocketpp::server<websocketpp::config::asio> WebsocketEndpoint;
     typedef websocketpp::connection_hdl ClientConnection;
 
-    class WebsocketServer
-    {
+    class WebsocketServer {
       public:
         WebsocketServer();
         void run(int port);
@@ -36,27 +34,24 @@ namespace JourneyOfDreams
 
         // Registers a callback for when a client connects
         template <typename CallbackTy>
-        void connect(CallbackTy handler)
-        {
+        void connect(CallbackTy handler) {
             // Make sure we only access the handlers list from the networking thread
             this->eventLoop.post([this, handler]() { this->connectHandlers.push_back(handler); });
         }
 
         // Registers a callback for when a client disconnects
         template <typename CallbackTy>
-        void disconnect(CallbackTy handler)
-        {
+        void disconnect(CallbackTy handler) {
             // Make sure we only access the handlers list from the networking thread
             this->eventLoop.post([this, handler]() { this->disconnectHandlers.push_back(handler); });
         }
 
         // Registers a callback for when a particular type of message is received
         template <typename CallbackTy>
-        void message(const string &messageType, CallbackTy handler)
-        {
+        void message(const string &messageType, CallbackTy handler) {
             // Make sure we only access the handlers list from the networking thread
-            this->eventLoop.post([this, messageType, handler]()
-                                 { this->messageHandlers[messageType].push_back(handler); });
+            this->eventLoop.post(
+                [this, messageType, handler]() { this->messageHandlers[messageType].push_back(handler); });
         }
 
         // Sends a message to an individual client

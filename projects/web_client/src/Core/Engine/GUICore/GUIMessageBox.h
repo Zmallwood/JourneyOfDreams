@@ -1,16 +1,13 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "GUIWindow.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Message box widget for the GUI.
     /////////////////////////////////////////////////
-    class GUIMessageBox : public GUIWindow
-    {
+    class GUIMessageBox : public GUIWindow {
       public:
         /////////////////////////////////////////////////
         /// Forwards the constructor arguments to the base

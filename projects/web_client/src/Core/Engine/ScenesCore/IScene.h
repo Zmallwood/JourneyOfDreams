@@ -2,15 +2,13 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     class GUI;
 
     /////////////////////////////////////////////////
     /// Base class for all scenes in the game.
     /////////////////////////////////////////////////
-    class IScene
-    {
+    class IScene {
       public:
         /////////////////////////////////////////////////
         /// Initializes the scene GUI.

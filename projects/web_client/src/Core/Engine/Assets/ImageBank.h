@@ -2,14 +2,12 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Loads and provides images that has
     /// been loaded from the filesystem.
     /////////////////////////////////////////////////
-    class ImageBank
-    {
+    class ImageBank {
       public:
         /////////////////////////////////////////////////
         /// Initializes bank by loading all images

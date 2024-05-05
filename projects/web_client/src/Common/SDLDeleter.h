@@ -8,10 +8,8 @@ struct SDL_Surface;
 struct SDL_Texture;
 typedef struct _TTF_Font TTF_Font;
 
-namespace JourneyOfDreams
-{
-    class SDLDeleter
-    {
+namespace JourneyOfDreams {
+    class SDLDeleter {
       public:
         /////////////////////////////////////////////////
         /// Destroy SDL window object.

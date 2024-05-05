@@ -2,13 +2,11 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// The different types of buffers that can be created.
     /////////////////////////////////////////////////
-    enum class BufferTypes
-    {
+    enum class BufferTypes {
         /////////////////////////////////////////////////
         /// The buffer contains indices.
         /////////////////////////////////////////////////

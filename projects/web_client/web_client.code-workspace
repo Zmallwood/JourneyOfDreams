@@ -84,7 +84,9 @@
 			"any": "cpp",
 			"pqxx": "cpp",
 			"future": "cpp",
-			"coroutine": "cpp"
+			"coroutine": "cpp",
+			"condition_variable": "cpp",
+			"stop_token": "cpp"
 		},
 		"editor.lineNumbers": "off"
 	}

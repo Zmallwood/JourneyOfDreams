@@ -1,18 +1,15 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "FontSizes.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     class Font;
 
     /////////////////////////////////////////////////
     /// Provides text rendering functionality.
     /////////////////////////////////////////////////
-    class TextRenderer
-    {
+    class TextRenderer {
       public:
         /////////////////////////////////////////////////
         /// Initialize SDL_ttf and load fonts for the

@@ -6,21 +6,15 @@
 #include "Shader/DefaultShaderImagesFragment.h"
 #include "Shader/DefaultShaderImagesVertex.h"
 
-namespace JourneyOfDreams
-{
-    ImageRenderer::ImageRenderer()
-    {
+namespace JourneyOfDreams {
+    ImageRenderer::ImageRenderer() {
         ShaderProgram()->Create(defaultShaderImagesVertex, defaultShaderImagesFragment);
         // m_locNoPixelEffect = GetUniformLocation("noPixelEffect");
     }
-
-    ImageRenderer::~ImageRenderer()
-    {
+    ImageRenderer::~ImageRenderer() {
         CleanupBase();
     }
-
-    RID ImageRenderer::NewImage()
-    {
+    RID ImageRenderer::NewImage() {
         auto rid = GenNewVAOID();
         UseVAOBegin(rid);
         auto indexBuffID = GenNewBuffID(BufferTypes::Indices, rid);
@@ -35,10 +29,8 @@ namespace JourneyOfDreams
 
         return rid;
     }
-
     void ImageRenderer::DrawImage(RID rid, int imageNameHash, const RectF &dest, bool repeatTexture,
-                                  SizeF textureFillAmount, ColorF color)
-    {
+                                  SizeF textureFillAmount, ColorF color) {
         auto GLRect = dest.ToGLRectF();
         Vertex2F verts[RendererBase::NumVerticesInRectangle()];
         verts[0].pos = { GLRect.x, GLRect.y - GLRect.h };
@@ -54,24 +46,20 @@ namespace JourneyOfDreams
         if (imageID == -1)
             return;
         glBindTexture(GL_TEXTURE_2D, imageID);
-        if (repeatTexture)
-        {
+        if (repeatTexture) {
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-        }
-        else
-        {
+        } else {
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
         }
-        
+
         auto indices = std::vector<int>(RendererBase::NumVerticesInRectangle());
         std::iota(std::begin(indices), std::end(indices), 0);
         std::vector<float> positions;
         std::vector<float> colors;
         std::vector<float> uvs;
-        for (auto &vert : verts)
-        {
+        for (auto &vert : verts) {
             positions.push_back(vert.pos.x);
             positions.push_back(vert.pos.y);
             colors.push_back(color.r);
@@ -96,10 +84,8 @@ namespace JourneyOfDreams
         glDrawElements(GL_TRIANGLE_FAN, RendererBase::NumVerticesInRectangle(), GL_UNSIGNED_INT, NULL);
         UseVAOEnd();
     }
-
     void ImageRenderer::DrawImage(RID rid, const std::string &imageName, const RectF &dest,
-                                  bool repeatTexture, SizeF textureFillAmount, ColorF color)
-    {
+                                  bool repeatTexture, SizeF textureFillAmount, ColorF color) {
         DrawImage(rid, Hash(imageName), dest, repeatTexture, textureFillAmount, color);
     }
 }

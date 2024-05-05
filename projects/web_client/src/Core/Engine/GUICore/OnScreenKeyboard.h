@@ -1,17 +1,14 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "GUIPanel.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// A GUI panel that displays an on-screen
     /// keyboard for text input on touch devices.
     /////////////////////////////////////////////////
-    class OnScreenKeyboard : public GUIPanel
-    {
+    class OnScreenKeyboard : public GUIPanel {
       public:
         /////////////////////////////////////////////////
         /// Makes the keyboard invisible by default

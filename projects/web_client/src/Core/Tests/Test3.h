@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class Test3
-    {
+namespace JourneyOfDreams {
+    class Test3 {
       public:
         Test3();
         void Render();

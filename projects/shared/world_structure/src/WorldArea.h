@@ -2,12 +2,10 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     class Tile;
 
-    class WorldArea
-    {
+    class WorldArea {
       public:
         WorldArea();
         Size GetSize();
@@ -15,8 +13,7 @@ namespace JourneyOfDreams
         bool IsValidCoordinate(Point coordinate);
         Point GetRandomCoordinate();
         std::shared_ptr<Tile> GetRandomTile();
-        auto &Tiles()
-        {
+        auto &Tiles() {
             return m_tiles;
         }
 

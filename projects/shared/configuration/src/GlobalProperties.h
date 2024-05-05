@@ -2,13 +2,10 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class GlobalProperties
-    {
+namespace JourneyOfDreams {
+    class GlobalProperties {
       public:
-        auto WorldAreaSize()
-        {
+        auto WorldAreaSize() {
             return m_worldAreaSize;
         }
 

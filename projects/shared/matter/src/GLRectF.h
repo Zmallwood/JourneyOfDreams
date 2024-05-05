@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class GLRectF
-    {
+namespace JourneyOfDreams {
+    class GLRectF {
       public:
         float x{ 0.0f };
         float y{ 0.0f };

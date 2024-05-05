@@ -2,8 +2,7 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Default fragment shader for the images rendering.
     /////////////////////////////////////////////////
@@ -18,5 +17,4 @@ namespace JourneyOfDreams
           "void main() {\n"
           "    FragColor = texture(TexUnit, ex_TexCoord);\n"
           "}\0";
-
 }

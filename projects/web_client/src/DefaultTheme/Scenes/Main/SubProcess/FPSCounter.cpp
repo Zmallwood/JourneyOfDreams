@@ -5,29 +5,22 @@
 #include "Core/Engine/GUICore/GUILabel.h"
 #include "DefaultTheme/Scenes/Main/MainScene.h"
 
-namespace JourneyOfDreams
-{
-    FPSCounter::FPSCounter()
-    {
-        _<MainScene>().GUI()->AddWidget("FPSCounterLabel",
-                                        std::make_shared<GUILabel>(PointF{ .x = 0.85f, .y = 0.0f }, "FPS: 0"));
+namespace JourneyOfDreams {
+    FPSCounter::FPSCounter() {
+        _<MainScene>().GUI()->AddWidget(
+            "FPSCounterLabel", std::make_shared<GUILabel>(PointF{ .x = 0.85f, .y = 0.0f }, "FPS: 0"));
     }
-
-    void FPSCounter::Update()
-    {
+    void FPSCounter::Update() {
         m_framesCount++;
 
         unsigned int ticks{ Ticks() };
-        if (ticks - m_ticksLastUpdate >= 1000)
-        {
+        if (ticks - m_ticksLastUpdate >= 1000) {
             m_fps = m_framesCount;
             m_framesCount = 0;
             m_ticksLastUpdate = ticks;
         }
     }
-
-    void FPSCounter::Render()
-    {
+    void FPSCounter::Render() {
         _<MainScene>()
             .GUI()
             ->GetWidget<GUILabel>("FPSCounterLabel")

@@ -9,10 +9,8 @@
 #include "Engine.h"
 #include "Graphics/Graphics.h"
 
-namespace JourneyOfDreams
-{
-    void DoOneGameLoopFrame()
-    {
+namespace JourneyOfDreams {
+    void DoOneGameLoopFrame() {
 #if defined(DEV_TEST_MODE)
         _<Test1>().Render();
         //_<Test1>().Stop();

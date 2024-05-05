@@ -2,14 +2,12 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Available cursor styles, each yielding a
     /// different rendered cursor image.
     /////////////////////////////////////////////////
-    enum class CursorStyles
-    {
+    enum class CursorStyles {
         /////////////////////////////////////////////////
         /// Default style.
         /////////////////////////////////////////////////
@@ -29,7 +27,7 @@ namespace JourneyOfDreams
         /// When rotating the camera in 3D view.
         /////////////////////////////////////////////////
         Rotating,
-        
+
         /////////////////////////////////////////////////
         /// When attack is possible on mouse click.
         /////////////////////////////////////////////////

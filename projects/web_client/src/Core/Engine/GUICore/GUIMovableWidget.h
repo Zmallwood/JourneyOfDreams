@@ -1,16 +1,13 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "GUIWidget.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// A movable widget for the GUI.
     /////////////////////////////////////////////////
-    class GUIMovableWidget : public GUIWidget
-    {
+    class GUIMovableWidget : public GUIWidget {
       public:
         /////////////////////////////////////////////////
         /// Forwards the constructor arguments to the base

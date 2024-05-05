@@ -1,16 +1,13 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "GUIWidget.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Manages GUI widgets for a scene.
     /////////////////////////////////////////////////
-    class GUI : public GUIWidget
-    {
+    class GUI : public GUIWidget {
       public:
         /////////////////////////////////////////////////
         /// Initializes the GUI by adding an
@@ -59,8 +56,7 @@ namespace JourneyOfDreams
         /// \return Widget casted to T pointer.
         /////////////////////////////////////////////////
         template <class T>
-        std::shared_ptr<T> GetWidget(const std::string &nameIdentifier)
-        {
+        std::shared_ptr<T> GetWidget(const std::string &nameIdentifier) {
             return static_pointer_cast<T>(GetWidget(nameIdentifier));
         }
 

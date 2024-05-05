@@ -2,13 +2,11 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Player controller character in the game.
     /////////////////////////////////////////////////
-    class Player
-    {
+    class Player {
       public:
         /////////////////////////////////////////////////
         /// Initializes player at center of world area.
@@ -21,48 +19,48 @@ namespace JourneyOfDreams
         /// \return X coordinate.
         /////////////////////////////////////////////////
         int GetX();
-        
+
         /////////////////////////////////////////////////
         /// Gets the Y coordinate of the player.
         ///
         /// \return Y coordinate.
         /////////////////////////////////////////////////
         int GetY();
-        
+
         /////////////////////////////////////////////////
         /// Moves the player north.
         /////////////////////////////////////////////////
         void MoveNorth();
-        
+
         /////////////////////////////////////////////////
         /// Moves the player east.
         /////////////////////////////////////////////////
         void MoveEast();
-        
+
         /////////////////////////////////////////////////
         /// Moves the player south.
         /////////////////////////////////////////////////
         void MoveSouth();
-        
+
         /////////////////////////////////////////////////
         /// Moves the player west.
         /////////////////////////////////////////////////
         void MoveWest();
-        
+
         /////////////////////////////////////////////////
         /// Gets the position of the player.
         ///
         /// \return Position point.
         /////////////////////////////////////////////////
         Point Position();
-        
+
         /////////////////////////////////////////////////
         /// Sets the position of the player.
         ///
         /// \param position Position point.
         /////////////////////////////////////////////////
         void SetPosition(Point position);
-        
+
         /////////////////////////////////////////////////
         /// Gets the number of ticks since the player
         /// last moved.
@@ -70,7 +68,7 @@ namespace JourneyOfDreams
         /// \return Number of ticks.
         /////////////////////////////////////////////////
         int TicksLastMove();
-        
+
         /////////////////////////////////////////////////
         /// Sets the number of ticks since the player
         /// last moved.
@@ -78,21 +76,21 @@ namespace JourneyOfDreams
         /// \param ticksLastMove Number of ticks.
         /////////////////////////////////////////////////
         void SetTicksLastMove(int ticksLastMove);
-        
+
         /////////////////////////////////////////////////
         /// Gets the movement speed of the player.
         ///
         /// \return Movement speed.
         /////////////////////////////////////////////////
         float MovementSpeed();
-        
+
         /////////////////////////////////////////////////
         /// Gets the destination of the player.
         ///
         /// \return Destination point.
         /////////////////////////////////////////////////
         Point Destination();
-        
+
         /////////////////////////////////////////////////
         /// Sets the destination of the player.
         ///

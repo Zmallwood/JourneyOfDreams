@@ -9,10 +9,8 @@
 #include "DefaultTheme/Scenes/ServerConnect/ServerConnectScene.h"
 #include "DefaultTheme/Scenes/Test/TestScene.h"
 
-namespace JourneyOfDreams
-{
-    SceneManager::SceneManager()
-    {
+namespace JourneyOfDreams {
+    SceneManager::SceneManager() {
         m_scenes.insert({ Hash("TestScene"), _<TestScene>() });
         m_scenes.insert({ Hash("ServerConnectScene"), _<ServerConnectScene>() });
         m_scenes.insert({ Hash("LoginScene"), _<LoginScene>() });
@@ -23,27 +21,19 @@ namespace JourneyOfDreams
 
         GoToScene("TestScene");
     }
-
-    void SceneManager::UpdateCurrentScene()
-    {
+    void SceneManager::UpdateCurrentScene() {
         if (m_scenes.contains(m_currentScene))
             m_scenes.at(m_currentScene).Update();
     }
-
-    void SceneManager::RenderCurrentScene()
-    {
+    void SceneManager::RenderCurrentScene() {
         if (m_scenes.contains(m_currentScene))
             m_scenes.at(m_currentScene).Render();
     }
-
-    void SceneManager::UpdatePostRenderCurrentScene()
-    {
+    void SceneManager::UpdatePostRenderCurrentScene() {
         if (m_scenes.contains(m_currentScene))
             m_scenes.at(m_currentScene).UpdatePostRender();
     }
-
-    void SceneManager::GoToScene(const std::string &sceneName)
-    {
+    void SceneManager::GoToScene(const std::string &sceneName) {
         m_currentScene = Hash(sceneName);
         if (m_scenes.contains(m_currentScene))
             m_scenes.at(m_currentScene).OnEnter();

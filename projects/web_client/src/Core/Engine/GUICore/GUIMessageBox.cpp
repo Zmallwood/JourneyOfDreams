@@ -4,19 +4,15 @@
 #include "GUIButton.h"
 #include "GUILabel.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     GUIMessageBox::GUIMessageBox(PointF position, const std::string &message, const std::string &title,
                                  SizeF size, GUIAlign alignment, bool movable)
         : GUIWindow(RectF{ position.x, position.y, size.w, size.h }, title, alignment, movable),
-          m_message(message)
-    {
+          m_message(message) {
         /*
         ** Do nothing. */
     }
-
-    void GUIMessageBox::Initialize()
-    {
+    void GUIMessageBox::Initialize() {
         /*
         ** Add a label to this window. */
         AddWidget(std::make_shared<GUILabel>(PointF{ 0.0f, 0.0f }, m_message));

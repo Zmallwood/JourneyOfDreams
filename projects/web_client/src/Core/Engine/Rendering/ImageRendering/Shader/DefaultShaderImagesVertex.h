@@ -2,8 +2,7 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Default vertex shader for the images rendering.
     /////////////////////////////////////////////////

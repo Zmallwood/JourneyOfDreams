@@ -2,10 +2,8 @@
 
 #include "DB.h"
 
-namespace JourneyOfDreams
-{
-    DB::DB()
-    {
+namespace JourneyOfDreams {
+    DB::DB() {
         std::cout << "Connecting to database..." << std::endl;
 
         m_parameters = std::make_unique<soci::connection_parameters>(
@@ -16,9 +14,7 @@ namespace JourneyOfDreams
 
         std::cout << "Connected to database." << std::endl;
     }
-
-    DB::~DB()
-    {
+    DB::~DB() {
         m_session->close();
         std::cout << "Connection to database closed." << std::endl;
     }

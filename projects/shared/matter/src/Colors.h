@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    namespace Colors
-    {
+namespace JourneyOfDreams {
+    namespace Colors {
         constexpr ColorF Black{ 0.0f, 0.0f, 0.0f };
         constexpr ColorF White{ 1.0f, 1.0f, 1.0f };
         constexpr ColorF Red{ 1.0f, 0.0f, 0.0f };

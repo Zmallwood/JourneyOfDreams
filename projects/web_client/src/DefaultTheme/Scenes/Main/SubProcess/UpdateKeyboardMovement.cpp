@@ -4,10 +4,8 @@
 #include "Core/Engine/CoreGameObjects/Player.h"
 #include "Core/Engine/Input/KeyboardInput.h"
 
-namespace JourneyOfDreams
-{
-    void UpdateKeyboardMovement()
-    {
+namespace JourneyOfDreams {
+    void UpdateKeyboardMovement() {
         auto &player = _<Player>();
         auto upPressed = _<KeyboardInput>().KeyIsPressed(GLFW_KEY_UP);
         auto downPressed = _<KeyboardInput>().KeyIsPressed(GLFW_KEY_DOWN);
@@ -15,22 +13,17 @@ namespace JourneyOfDreams
         auto rightPressed = _<KeyboardInput>().KeyIsPressed(GLFW_KEY_RIGHT);
 
         if (Ticks() > player.TicksLastMove() + 1000 / player.MovementSpeed()
-            && (upPressed || rightPressed || downPressed || leftPressed))
-        {
-            if (upPressed)
-            {
+            && (upPressed || rightPressed || downPressed || leftPressed)) {
+            if (upPressed) {
                 player.MoveNorth();
             }
-            if (rightPressed)
-            {
+            if (rightPressed) {
                 player.MoveEast();
             }
-            if (downPressed)
-            {
+            if (downPressed) {
                 player.MoveSouth();
             }
-            if (leftPressed)
-            {
+            if (leftPressed) {
                 player.MoveWest();
             }
             player.SetTicksLastMove(Ticks());

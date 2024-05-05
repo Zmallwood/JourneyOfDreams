@@ -4,25 +4,19 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "GUI.h"
 
-namespace JourneyOfDreams
-{
-    GUIWidget::GUIWidget() : m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>())
-    {
+namespace JourneyOfDreams {
+    GUIWidget::GUIWidget() : m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>()) {
         /*
         ** Do nothing. */
     }
-
     GUIWidget::GUIWidget(RectF area, GUIAlign alignment)
-        : GUIWidget(area.GetPosition(), area.GetSize(), alignment)
-    {
+        : GUIWidget(area.GetPosition(), area.GetSize(), alignment) {
         /*
         ** Do nothing. */
     }
-
     GUIWidget::GUIWidget(PointF position, SizeF size, GUIAlign alignment)
         : m_position(position), m_size(size), m_alignment(alignment),
-          m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>())
-    {
+          m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>()) {
         /*
         ** Allocate graphics resources. */
         m_ridBackgroundImage = _<ImageRenderer>().NewImage();
@@ -35,13 +29,10 @@ namespace JourneyOfDreams
         m_ridBorderCornerBottomLeft = _<ImageRenderer>().NewImage();
         m_ridBorderCornerBottomRight = _<ImageRenderer>().NewImage();
     }
-
-    void GUIWidget::InsertWaitingWidgets()
-    {
+    void GUIWidget::InsertWaitingWidgets() {
         /*
         ** Add all widgets from the waiting-collection. */
-        for (auto &entry : *m_widgetsToInsert)
-        {
+        for (auto &entry : *m_widgetsToInsert) {
             m_childWidgets.push_back(entry);
         }
         /*
@@ -49,55 +40,43 @@ namespace JourneyOfDreams
         m_widgetsToInsert->clear();
         /*
         ** Repeat this recursively for all child widgets. */
-        for (auto &entry : m_childWidgets)
-        {
+        for (auto &entry : m_childWidgets) {
             entry.widget->InsertWaitingWidgets();
         }
     }
-
-    void GUIWidget::Destroy()
-    {
+    void GUIWidget::Destroy() {
         /*
         ** Mark this widget for destruction, erasing it here immediately would disrupt current
         ** iteration through the widgets for updating/rendering. */
         m_markedForDestruction = true;
         /*
         ** Mark also all the child widgets recursively. */
-        for (auto &entry : m_childWidgets)
-        {
+        for (auto &entry : m_childWidgets) {
             entry.widget->Destroy();
         }
     }
-
-    void GUIWidget::DestroyMarkedWidgets()
-    {
+    void GUIWidget::DestroyMarkedWidgets() {
         /*
         ** Iterate through all child widgets. */
-        for (auto it = ChildWidgets().begin(); it != ChildWidgets().end();)
-        {
+        for (auto it = ChildWidgets().begin(); it != ChildWidgets().end();) {
             /*
             ** First, destroy marked child widgets (recursively) of the child widget in iterator.
             ** They cannot be destroyed afterwards. */
             it->widget->DestroyMarkedWidgets();
             /*
             ** Check if the widget in the iterator should be destroyed. */
-            if (it->widget->MarkedForDestruction())
-            {
+            if (it->widget->MarkedForDestruction()) {
                 /*
                 ** Erase it from the vector and set the iterator to the next element. */
                 it = ChildWidgets().erase(it);
-            }
-            else
-            {
+            } else {
                 /*
                 ** The iterator was not marked for destruction, just continue to next element. */
                 ++it;
             }
         }
     }
-
-    bool GUIWidget::MouseOver()
-    {
+    bool GUIWidget::MouseOver() {
         auto mousePosition = GetMousePosition();
         auto finalArea = GetFinalArea();
         /*
@@ -105,20 +84,15 @@ namespace JourneyOfDreams
         return mousePosition.x >= finalArea.x && mousePosition.x <= finalArea.x + finalArea.w
                && mousePosition.y >= finalArea.y && mousePosition.y <= finalArea.y + finalArea.h;
     }
-
-    void GUIWidget::Initialize()
-    {
+    void GUIWidget::Initialize() {
         /*
         ** Do nothing. */
     }
-
-    void GUIWidget::BringToFront()
-    {
+    void GUIWidget::BringToFront() {
         /*
         ** If has no parent widget, this widget must be a GUI and
         ** cannot be brought to front. */
-        if (ParentWidget() == nullptr)
-        {
+        if (ParentWidget() == nullptr) {
             return;
         }
         /*
@@ -127,8 +101,7 @@ namespace JourneyOfDreams
         auto &parentChildWidgets = ParentWidget()->ChildWidgets();
         /*
         ** Cancel if there are no other "competing" widgets. */
-        if (parentChildWidgets.size() == 0)
-        {
+        if (parentChildWidgets.size() == 0) {
             return;
         }
         /*
@@ -136,12 +109,10 @@ namespace JourneyOfDreams
         ** child widget collection. */
         int i;
 
-        for (i = 0; i < parentChildWidgets.size(); i++)
-        {
+        for (i = 0; i < parentChildWidgets.size(); i++) {
             /*
             ** This widget, and its index, has been found so cancel the loop. */
-            if (parentChildWidgets[i].widget.get() == this)
-            {
+            if (parentChildWidgets[i].widget.get() == this) {
                 break;
             }
         }
@@ -152,32 +123,25 @@ namespace JourneyOfDreams
         ** Now swap this widget and the currently top-most widget. */
         std::rotate(it, it + 1, parentChildWidgets.end());
     }
-
-    void GUIWidget::Update()
-    {
+    void GUIWidget::Update() {
         /*
         ** Dont update if not visible. */
-        if (!m_visible)
-        {
+        if (!m_visible) {
             return;
         }
         /*
         ** Update the child widgets before this one. (Recursively) */
-        for (auto &entry : m_childWidgets)
-        {
+        for (auto &entry : m_childWidgets) {
             entry.widget->Update();
         }
         /*
         ** Update the logic provided by inheriting classes. */
         UpdateDerived();
     }
-
-    void GUIWidget::Render()
-    {
+    void GUIWidget::Render() {
         /*
         ** Dont render if not visible. */
-        if (!m_visible)
-        {
+        if (!m_visible) {
             return;
         }
         /*
@@ -188,67 +152,56 @@ namespace JourneyOfDreams
         ** Combine the position with the widget size to get widget area. */
         auto finalArea = RectF{ alignedAbsPosition.x, alignedAbsPosition.y, m_size.w, m_size.h };
 
-        if (m_drawBackground)
-        {
+        if (m_drawBackground) {
             /*
             ** Calculate the fill values to get a repeating background image. */
             auto backgroundPatternFillAmount = SizeF{ .w = finalArea.w * m_backgroundPatternSize.w,
                                                       .h = finalArea.h * m_backgroundPatternSize.h };
             /*
             ** Adjust the final area according the alternative alignments. */
-            switch (m_alignment)
-            {
-            case GUIAlign::TopLeft:
-            {
+            switch (m_alignment) {
+            case GUIAlign::TopLeft: {
                 break;
             }
-            case GUIAlign::TopCenter:
-            {
+            case GUIAlign::TopCenter: {
                 finalArea.x -= finalArea.w / 2;
 
                 break;
             }
-            case GUIAlign::TopRight:
-            {
+            case GUIAlign::TopRight: {
                 finalArea.x -= finalArea.w;
 
                 break;
             }
-            case GUIAlign::RightCenter:
-            {
+            case GUIAlign::RightCenter: {
                 finalArea.x -= finalArea.w;
                 finalArea.y -= finalArea.h / 2;
 
                 break;
             }
-            case GUIAlign::BottomRight:
-            {
+            case GUIAlign::BottomRight: {
                 finalArea.x -= finalArea.w;
                 finalArea.y -= finalArea.h;
 
                 break;
             }
-            case GUIAlign::BottomCenter:
-            {
+            case GUIAlign::BottomCenter: {
                 finalArea.x -= finalArea.w / 2;
                 finalArea.y -= finalArea.h;
 
                 break;
             }
-            case GUIAlign::BottomLeft:
-            {
+            case GUIAlign::BottomLeft: {
                 finalArea.y -= finalArea.h;
 
                 break;
             }
-            case GUIAlign::LeftCenter:
-            {
+            case GUIAlign::LeftCenter: {
                 finalArea.y -= finalArea.h / 2;
 
                 break;
             }
-            case GUIAlign::Center:
-            {
+            case GUIAlign::Center: {
                 finalArea.x -= finalArea.w / 2;
                 finalArea.y -= finalArea.h / 2;
 
@@ -261,8 +214,7 @@ namespace JourneyOfDreams
                                          backgroundPatternFillAmount);
         }
 
-        if (m_drawBorders)
-        {
+        if (m_drawBorders) {
             /*
             ** Get the width of the horizontal borders (top/bottom). */
             auto horizontalBorderWidth = m_borderWidth;
@@ -327,47 +279,36 @@ namespace JourneyOfDreams
         }
         /*
         ** Render all the child widgets on top of the already rendered background and borders. */
-        for (auto &entry : m_childWidgets)
-        {
+        for (auto &entry : m_childWidgets) {
             entry.widget->Render();
         }
         /*
         ** Render specific render operations in inherited classes. */
         RenderDerived();
     }
-
-    void GUIWidget::UpdateDerived()
-    {
+    void GUIWidget::UpdateDerived() {
         /*
         ** Do nothing. */
     }
-
-    void GUIWidget::RenderDerived()
-    {
+    void GUIWidget::RenderDerived() {
         /*
         ** Do nothing. */
     }
-
     std::shared_ptr<GUIWidget> GUIWidget::AddWidget(const std::string &nameIdentifier,
-                                                    std::shared_ptr<GUIWidget> childWidget)
-    {
+                                                    std::shared_ptr<GUIWidget> childWidget) {
         auto nameHash = Hash(nameIdentifier);
         /*
         ** If widget with the provided widget name already exists, cancel. */
-        for (auto &entry : m_childWidgets)
-        {
-            if (entry.id == nameHash)
-            {
+        for (auto &entry : m_childWidgets) {
+            if (entry.id == nameHash) {
                 return nullptr;
             }
         }
         /*
         ** If a widget with the provided widget name is already waiting to be inserted,
         ** cancel as well. */
-        for (auto &entry : *m_widgetsToInsert)
-        {
-            if (entry.id == nameHash)
-            {
+        for (auto &entry : *m_widgetsToInsert) {
+            if (entry.id == nameHash) {
                 return nullptr;
             }
         }
@@ -384,9 +325,7 @@ namespace JourneyOfDreams
         ** Return the added child widgets, just for convenience. */
         return childWidget;
     }
-
-    std::shared_ptr<GUIWidget> GUIWidget::AddWidget(std::shared_ptr<GUIWidget> childWidget)
-    {
+    std::shared_ptr<GUIWidget> GUIWidget::AddWidget(std::shared_ptr<GUIWidget> childWidget) {
         /*
         ** "Nameless" widgets gets a autogenerated unique name under the hood. */
         auto generatedName = "Widget" + std::to_string(s_unnamedWidgetCounter++);
@@ -394,89 +333,73 @@ namespace JourneyOfDreams
         ** Use the autogenerate image name to add the widget as usual. */
         return AddWidget(generatedName, childWidget);
     }
-
-    PointF GUIWidget::GetAbsolutePosition()
-    {
+    PointF GUIWidget::GetAbsolutePosition() {
         /*
         ** Start with the position local from the parents point of view. */
         auto finalPosition = m_position;
         /*
         ** If parent exists (this is not a GUI), at the parents position to the local value.
         ** Note that this is done recursively. */
-        if (m_parentWidget)
-        {
+        if (m_parentWidget) {
             finalPosition += m_parentWidget->GetAbsolutePosition();
         }
 
         return finalPosition;
     }
-
-    PointF GUIWidget::GetAlignedAbsolutePosition()
-    {
+    PointF GUIWidget::GetAlignedAbsolutePosition() {
         /*
         ** Start with the absolute position of this widget,
         ** assuming that the alignment is TopLeft. */
         auto alignedPosition = GetAbsolutePosition();
         /*
         ** If parent exists (this is not a GUI). */
-        if (ParentWidget())
-        {
+        if (ParentWidget()) {
             /*
             ** Apply position translation depending on the
             ** alternative alignment types of the parent. */
-            switch (ParentWidget()->Alignment())
-            {
-            case GUIAlign::TopLeft:
-            {
+            switch (ParentWidget()->Alignment()) {
+            case GUIAlign::TopLeft: {
                 break;
             }
-            case GUIAlign::TopCenter:
-            {
+            case GUIAlign::TopCenter: {
                 alignedPosition.x -= ParentWidget()->Size().w / 2;
 
                 break;
             }
-            case GUIAlign::TopRight:
-            {
+            case GUIAlign::TopRight: {
                 alignedPosition.x -= ParentWidget()->Size().w;
 
                 break;
             }
-            case GUIAlign::RightCenter:
-            {
+            case GUIAlign::RightCenter: {
                 alignedPosition.x -= ParentWidget()->Size().w;
                 alignedPosition.y -= ParentWidget()->Size().h / 2;
 
                 break;
             }
-            case GUIAlign::BottomRight:
-            {
+            case GUIAlign::BottomRight: {
                 alignedPosition.x -= ParentWidget()->Size().w;
                 alignedPosition.y -= ParentWidget()->Size().h;
 
                 break;
             }
-            case GUIAlign::BottomCenter:
-            {
+            case GUIAlign::BottomCenter: {
                 alignedPosition.x -= ParentWidget()->Size().w / 2;
                 alignedPosition.y -= ParentWidget()->Size().h;
 
                 break;
             }
-            case GUIAlign::BottomLeft:
-            {
+            case GUIAlign::BottomLeft: {
                 alignedPosition.y -= ParentWidget()->Size().h;
 
                 break;
             }
-            case GUIAlign::LeftCenter:
-            {
+            case GUIAlign::LeftCenter: {
                 alignedPosition.y -= ParentWidget()->Size().h / 2;
 
                 break;
             }
-            case GUIAlign::Center:
-            {
+            case GUIAlign::Center: {
                 alignedPosition.x -= ParentWidget()->Size().w / 2;
                 alignedPosition.y -= ParentWidget()->Size().h / 2;
 
@@ -489,9 +412,7 @@ namespace JourneyOfDreams
         ** the parents alignment. */
         return alignedPosition;
     }
-
-    PointF GUIWidget::GetFinalPosition()
-    {
+    PointF GUIWidget::GetFinalPosition() {
         /*
         ** Get the final positiong without padding. */
         auto paddedAlignedPosition = GetAlignedAbsolutePosition();
@@ -501,83 +422,69 @@ namespace JourneyOfDreams
         auto verticalPadding = ConvertWidthToHeight(m_padding);
         /*
         ** Add padding according to this widgets alignment. */
-        switch (m_alignment)
-        {
-        case GUIAlign::TopLeft:
-        {
+        switch (m_alignment) {
+        case GUIAlign::TopLeft: {
             paddedAlignedPosition.x += horizontalPadding;
             paddedAlignedPosition.y += verticalPadding;
 
             break;
         }
-        case GUIAlign::TopCenter:
-        {
+        case GUIAlign::TopCenter: {
             paddedAlignedPosition.x += -m_size.w / 2;
             paddedAlignedPosition.y += verticalPadding;
 
             break;
         }
-        case GUIAlign::TopRight:
-        {
+        case GUIAlign::TopRight: {
             paddedAlignedPosition.x += -m_size.w - horizontalPadding;
             paddedAlignedPosition.y += verticalPadding;
 
             break;
         }
-        case GUIAlign::RightCenter:
-        {
+        case GUIAlign::RightCenter: {
             paddedAlignedPosition.x += -m_size.w - horizontalPadding;
             paddedAlignedPosition.y += -m_size.h / 2;
 
             break;
         }
-        case GUIAlign::BottomRight:
-        {
+        case GUIAlign::BottomRight: {
             paddedAlignedPosition.x += -m_size.w - horizontalPadding;
             paddedAlignedPosition.y += -m_size.h - verticalPadding;
 
             break;
         }
-        case GUIAlign::BottomCenter:
-        {
+        case GUIAlign::BottomCenter: {
             paddedAlignedPosition.x += -m_size.w / 2;
             paddedAlignedPosition.y += -m_size.h - verticalPadding;
 
             break;
         }
-        case GUIAlign::BottomLeft:
-        {
+        case GUIAlign::BottomLeft: {
             paddedAlignedPosition.x += horizontalPadding;
             paddedAlignedPosition.y += -m_size.h - verticalPadding;
 
             break;
         }
-        case GUIAlign::LeftCenter:
-        {
+        case GUIAlign::LeftCenter: {
             paddedAlignedPosition.x += horizontalPadding;
             paddedAlignedPosition.y += m_size.h / 2;
 
             break;
         }
-        case GUIAlign::Center:
-        {
+        case GUIAlign::Center: {
             break;
         }
         }
 
         return paddedAlignedPosition;
     }
-
-    RectF GUIWidget::GetFinalArea()
-    {
+    RectF GUIWidget::GetFinalArea() {
         auto finalPosition = GetFinalPosition();
         /*
         ** Combine final position and widget size to get final area. */
         return RectF{ finalPosition.x, finalPosition.y, m_size.w, m_size.h };
     }
-
-    void GUIWidget::Focus()
-    {
+    void GUIWidget::Focus() {
         /*
         ** Get root GUI object and set this widget as focused. */
         GetParentGUI()->SetFocusedWidget(shared_from_this());
@@ -586,40 +493,32 @@ namespace JourneyOfDreams
         ** cursor blinking effect to reset at a new focus event. */
         m_ticksTimeGotFocus = Ticks();
     }
-
-    std::shared_ptr<GUI> GUIWidget::GetParentGUI()
-    {
+    std::shared_ptr<GUI> GUIWidget::GetParentGUI() {
         /*
         ** Start with current parent widget. */
         std::shared_ptr<GUIWidget> parent = m_parentWidget;
         /*
         ** Iterate "upwards" until there is no more parent widget. */
-        while (parent->ParentWidget() != nullptr)
-        {
+        while (parent->ParentWidget() != nullptr) {
             parent = parent->ParentWidget();
         }
         /*
         ** Cast the found root widget to GUI object. */
         return dynamic_pointer_cast<GUI>(parent);
     }
-
-    bool GUIWidget::HasFocus()
-    {
+    bool GUIWidget::HasFocus() {
         /*
         ** Check if the widget has focus. */
         return GetParentGUI()->FocusedWidget() == shared_from_this();
     }
-
-    std::vector<WidgetEntry> GUIWidget::GetChildWidgetsRecursively()
-    {
+    std::vector<WidgetEntry> GUIWidget::GetChildWidgetsRecursively() {
         /*
         ** To hold all child widgets, and child widgets of child widgets
         ** and so on (recursively). */
         std::vector<WidgetEntry> result;
         /*
         ** Iterate through this widgets child widgets. */
-        for (auto &entry : m_childWidgets)
-        {
+        for (auto &entry : m_childWidgets) {
             /*
             ** Add the child widget. */
             result.push_back(entry);
@@ -634,121 +533,87 @@ namespace JourneyOfDreams
 
         return result;
     }
-
-    std::vector<WidgetEntry> &GUIWidget::ChildWidgets()
-    {
+    std::vector<WidgetEntry> &GUIWidget::ChildWidgets() {
         /*
         ** Getter by reference. */
         return m_childWidgets;
     }
-
-    std::shared_ptr<GUIWidget> GUIWidget::ParentWidget()
-    {
+    std::shared_ptr<GUIWidget> GUIWidget::ParentWidget() {
         /*
         ** Getter. */
         return m_parentWidget;
     }
-
-    void GUIWidget::SetParentWidget(std::shared_ptr<GUIWidget> parentWidget)
-    {
+    void GUIWidget::SetParentWidget(std::shared_ptr<GUIWidget> parentWidget) {
         /*
         ** Setter. */
         m_parentWidget = parentWidget;
     }
-
-    GUIAlign GUIWidget::Alignment()
-    {
+    GUIAlign GUIWidget::Alignment() {
         /*
         ** Getter. */
         return m_alignment;
     }
-
-    void GUIWidget::SetSize(SizeF size)
-    {
+    void GUIWidget::SetSize(SizeF size) {
         /*
         ** Setter. */
         m_size = size;
     }
-
-    SizeF GUIWidget::Size()
-    {
+    SizeF GUIWidget::Size() {
         /*
         ** Getter. */
         return m_size;
     }
-
-    float GUIWidget::Padding()
-    {
+    float GUIWidget::Padding() {
         /*
         ** Getter. */
         return m_padding;
     }
-
-    bool GUIWidget::Focusable()
-    {
+    bool GUIWidget::Focusable() {
         /*
         ** Getter. */
         return m_focusable;
     }
-
-    bool GUIWidget::MarkedForDestruction()
-    {
+    bool GUIWidget::MarkedForDestruction() {
         /*
         ** Getter. */
         return m_markedForDestruction;
     }
-
-    void GUIWidget::SetDrawBackground(bool drawBackground)
-    {
+    void GUIWidget::SetDrawBackground(bool drawBackground) {
         /*
         ** Setter. */
         m_drawBackground = drawBackground;
     }
-
-    void GUIWidget::SetDrawBorders(bool drawBorders)
-    {
+    void GUIWidget::SetDrawBorders(bool drawBorders) {
         /*
         ** Setter. */
         m_drawBorders = drawBorders;
     }
-
-    std::string GUIWidget::BackgroundImage()
-    {
+    std::string GUIWidget::BackgroundImage() {
         /*
         ** Getter. */
         return m_backgroundImage;
     }
-
-    void GUIWidget::SetBackgroundImage(const std::string &backgroundImage)
-    {
+    void GUIWidget::SetBackgroundImage(const std::string &backgroundImage) {
         /*
         ** Setter. */
         m_backgroundImage = backgroundImage;
     }
-
-    void GUIWidget::SetFocusable(bool focusable)
-    {
+    void GUIWidget::SetFocusable(bool focusable) {
         /*
         ** Setter. */
         m_focusable = focusable;
     }
-
-    int GUIWidget::TicksTimeGotFocus()
-    {
+    int GUIWidget::TicksTimeGotFocus() {
         /*
         ** Setter. */
         return m_ticksTimeGotFocus;
     }
-
-    void GUIWidget::SetVisible(bool visible)
-    {
+    void GUIWidget::SetVisible(bool visible) {
         /*
         ** Setter. */
         m_visible = visible;
     }
-
-    void GUIWidget::SetPadding(float padding)
-    {
+    void GUIWidget::SetPadding(float padding) {
         /*
         ** Setter. */
         m_padding = padding;

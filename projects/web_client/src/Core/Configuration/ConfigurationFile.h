@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class ConfigurationFile
-    {
+namespace JourneyOfDreams {
+    class ConfigurationFile {
       public:
         /////////////////////////////////////////////////
         /// Read the configuration file and store

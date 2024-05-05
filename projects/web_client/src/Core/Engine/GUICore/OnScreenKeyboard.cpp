@@ -6,19 +6,15 @@
 #include "GUIPanel.h"
 #include "GUITextBox.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     OnScreenKeyboard::OnScreenKeyboard()
-        : GUIPanel({ .x = 0.5f, .y = 1.0f }, { .w = 0.3f, .h = 0.15f }, GUIAlign::BottomCenter)
-    { 
+        : GUIPanel({ .x = 0.5f, .y = 1.0f }, { .w = 0.3f, .h = 0.15f }, GUIAlign::BottomCenter) {
         /*
         ** Set default widget propertis. **/
         SetVisible(false);
         SetPadding(0.0f);
     }
-
-    void OnScreenKeyboard::Initialize()
-    {
+    void OnScreenKeyboard::Initialize() {
         /*
         ** Create panel containing the lower case buttons. **/
         auto pnlLowerCase
@@ -51,31 +47,24 @@ namespace JourneyOfDreams
         AddWidget("btn0", std::make_shared<GUIButton>(RectF{ 0.162f, 0.0f, 0.015f, 0.05f }, "0",
                                                       [this]() { TypeCharacter('0'); }));
     }
-
-    void OnScreenKeyboard::Show()
-    {
+    void OnScreenKeyboard::Show() {
         /*
         ** Show the on-screen keyboard. **/
         SetVisible(true);
     }
-
-    void OnScreenKeyboard::Hide()
-    {
+    void OnScreenKeyboard::Hide() {
         /*
         ** Hide the on-screen keyboard. **/
         SetVisible(false);
     }
-
-    void OnScreenKeyboard::TypeCharacter(char c)
-    {
+    void OnScreenKeyboard::TypeCharacter(char c) {
         /*
         ** Get currently focused textbox. **/
         auto gui = GetParentGUI();
         auto focusedTextBox = dynamic_pointer_cast<GUITextBox>(gui->FocusedWidget());
         /*
         ** If any text box is focused. */
-        if (focusedTextBox)
-        {
+        if (focusedTextBox) {
             /*
             ** Send the pressed character to it. **/
             focusedTextBox->TypeCharacter(c);

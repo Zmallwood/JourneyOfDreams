@@ -2,13 +2,11 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Manaages keyboard input.
     /////////////////////////////////////////////////
-    class KeyboardInput
-    {
+    class KeyboardInput {
       public:
         /////////////////////////////////////////////////
         /// Called when a key is pressed.

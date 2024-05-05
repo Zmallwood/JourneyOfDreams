@@ -1,14 +1,11 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
-#include "PointF.h"
 #include "ColorF.h"
+#include "PointF.h"
 
-namespace JourneyOfDreams
-{
-    class Vertex2F
-    {
+namespace JourneyOfDreams {
+    class Vertex2F {
       public:
         PointF pos;
         ColorF color;

@@ -2,14 +2,12 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Manages a text string with manipulation
     /// operations and navigation with a cursor.
     /////////////////////////////////////////////////
-    class ManagedTextString
-    {
+    class ManagedTextString {
       public:
         /////////////////////////////////////////////////
         /// Initializes class members.

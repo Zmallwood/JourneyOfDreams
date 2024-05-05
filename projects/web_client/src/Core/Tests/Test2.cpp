@@ -3,8 +3,7 @@
 #include "Test2.h"
 #include "Core/Engine/Assets/ImageBank.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     static const char *vertexShaderSource = "#version 300 es\n"
                                             "layout (location = 0) in vec3 aPos;\n"
                                             "out float u;\n"
@@ -15,7 +14,6 @@ namespace JourneyOfDreams
                                             "   u = aPos.x;\n"
                                             "   v = aPos.y;\n"
                                             "}\0";
-
     static const char *fragmentShaderSource = "#version 300 es\n"
                                               "precision mediump float;\n"
                                               "in float u;\n"
@@ -25,12 +23,10 @@ namespace JourneyOfDreams
                                               "void main() {\n"
                                               "    FragColor = texture(TexUnit, vec2(u,v));\n"
                                               "}\0";
-
     static GLFWwindow *window;
     static GLuint maxitersLocation;
 
-    Test2::Test2()
-    {
+    Test2::Test2() {
         SDL_Init(SDL_INIT_EVERYTHING);
         glfwInit();
 
@@ -102,11 +98,8 @@ namespace JourneyOfDreams
 
         // glUniform1f(maxitersLocation, 10);
     }
-
-    void Test2::Render()
-    {
-        if (!m_active)
-        {
+    void Test2::Render() {
+        if (!m_active) {
             return;
         }
         static float iters = 0.0f;
@@ -129,9 +122,7 @@ namespace JourneyOfDreams
 
         iters = iters + 0.1;
     }
-
-    void Test2::Stop()
-    {
+    void Test2::Stop() {
         m_active = false;
         glfwDestroyWindow(window);
         glDeleteBuffers(1, &m_vbo);

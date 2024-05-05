@@ -1,17 +1,14 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "Core/Engine/Rendering/TextRendering/FontSizes.h"
 #include "GUIWidget.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// A label widget for the GUI.
     /////////////////////////////////////////////////
-    class GUILabel : public GUIWidget
-    {
+    class GUILabel : public GUIWidget {
       public:
         /////////////////////////////////////////////////
         /// Initialize class members and graphical resources
@@ -46,7 +43,7 @@ namespace JourneyOfDreams
         void RenderDerived() override;
 
         /////////////////////////////////////////////////
-        /// Get absolute position of the label with 
+        /// Get absolute position of the label with
         /// alignement taken into account.
         ///
         /// \return Absolute position of the label.

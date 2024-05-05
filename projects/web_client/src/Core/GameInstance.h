@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class GameInstance
-    {
+namespace JourneyOfDreams {
+    class GameInstance {
       public:
         void Run();
     };

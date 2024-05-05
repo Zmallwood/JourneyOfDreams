@@ -2,19 +2,15 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class PointF
-    {
+namespace JourneyOfDreams {
+    class PointF {
       public:
-        PointF operator+=(const PointF &rhs)
-        {
+        PointF operator+=(const PointF &rhs) {
             x += rhs.x;
             y += rhs.y;
             return *this;
         }
-        PointF operator-(const PointF &rhs) const
-        {
+        PointF operator-(const PointF &rhs) const {
             return PointF{ x - rhs.x, y - rhs.y };
         }
 

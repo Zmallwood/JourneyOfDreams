@@ -2,13 +2,11 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Network connection to the server.
     /////////////////////////////////////////////////
-    class NetworkConnection
-    {
+    class NetworkConnection {
       public:
         /////////////////////////////////////////////////
         /// Create connection and setup web socket callbacks.
@@ -16,7 +14,7 @@ namespace JourneyOfDreams
         void InitiateConnectToServer();
 
         /////////////////////////////////////////////////
-        /// Send a message to the server. 
+        /// Send a message to the server.
         ///
         /// \param data The data to send.
         /// \return The result of the send operation.

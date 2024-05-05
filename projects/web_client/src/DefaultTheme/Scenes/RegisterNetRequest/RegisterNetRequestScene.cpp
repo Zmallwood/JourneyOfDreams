@@ -1,24 +1,20 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #include "RegisterNetRequestScene.h"
+#include "Core/Engine/GUICore/GUI.h"
 #include "Core/Engine/GUICore/GUILabel.h"
 #include "Core/Engine/GUICore/GUITextBox.h"
-#include "Core/Engine/GUICore/GUI.h"
 #include "Core/Engine/Net/NetClient.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 #include "DefaultTheme/Scenes/Register/RegisterScene.h"
 
-namespace JourneyOfDreams
-{
-    RegisterNetRequestScene::RegisterNetRequestScene()
-    {
+namespace JourneyOfDreams {
+    RegisterNetRequestScene::RegisterNetRequestScene() {
         GUI()->AddWidget("RegisterAccountLabel",
                          std::make_shared<GUILabel>(PointF{ .x = 0.5f, .y = 0.5f }, "Registering account...",
                                                     GUIAlign::Center));
     }
-
-    void RegisterNetRequestScene::OnEnter()
-    {
+    void RegisterNetRequestScene::OnEnter() {
         auto username = _<RegisterScene>().GUI()->GetWidget<GUITextBox>("UsernameTextBox")->GetText();
         auto password = _<RegisterScene>().GUI()->GetWidget<GUITextBox>("PasswordTextBox")->GetText();
 
@@ -30,8 +26,8 @@ namespace JourneyOfDreams
         auto passwordHash = SHA256::toString(digestPassword);
 
         std::map<std::string, std::string> data;
-        data.insert({"Username", username});
-        data.insert({"PasswordHash", passwordHash});
+        data.insert({ "Username", username });
+        data.insert({ "PasswordHash", passwordHash });
 
         _<NetClient>().Send(data);
     }

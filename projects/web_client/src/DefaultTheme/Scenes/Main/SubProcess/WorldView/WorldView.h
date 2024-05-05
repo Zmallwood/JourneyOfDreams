@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class WorldView
-    {
+namespace JourneyOfDreams {
+    class WorldView {
       public:
         WorldView();
         void Update();

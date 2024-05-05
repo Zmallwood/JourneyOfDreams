@@ -2,14 +2,11 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class TileHoverer
-    {
+namespace JourneyOfDreams {
+    class TileHoverer {
       public:
         void Update();
-        auto HoveredCoordinate() const
-        {
+        auto HoveredCoordinate() const {
             return m_hoveredCoordinate;
         }
 

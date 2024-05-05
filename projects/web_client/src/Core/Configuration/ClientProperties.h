@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class ClientProperties
-    {
+namespace JourneyOfDreams {
+    class ClientProperties {
       public:
         /////////////////////////////////////////////////
         /// Return canvas size in pixels.
@@ -15,7 +13,7 @@ namespace JourneyOfDreams
         Size CanvasSize() const;
 
         /////////////////////////////////////////////////
-        /// Get default color used to clear the 
+        /// Get default color used to clear the
         /// screen at the beginning of each frame.
         ///
         /// \return Default clear color.

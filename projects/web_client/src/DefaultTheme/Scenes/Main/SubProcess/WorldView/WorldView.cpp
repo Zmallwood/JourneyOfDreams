@@ -10,21 +10,17 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     WorldView::WorldView()
         : m_ridsTiles(std::make_shared<std::vector<std::vector<RID>>>()),
-          m_ridsObjects(std::make_shared<std::vector<std::vector<RID>>>())
-    {
+          m_ridsObjects(std::make_shared<std::vector<std::vector<RID>>>()) {
         auto numGridRows = _<ClientProperties>().NumGridRows();
         auto numGridCols = CalculateNumGridCols();
 
-        for (auto x = 0; x < numGridCols; x++)
-        {
+        for (auto x = 0; x < numGridCols; x++) {
             m_ridsTiles->push_back(std::vector<RID>());
             m_ridsObjects->push_back(std::vector<RID>());
-            for (auto y = 0; y < numGridRows; y++)
-            {
+            for (auto y = 0; y < numGridRows; y++) {
                 m_ridsTiles->at(x).push_back(_<ImageRenderer>().NewImage());
                 m_ridsObjects->at(x).push_back(_<ImageRenderer>().NewImage());
             }
@@ -33,13 +29,9 @@ namespace JourneyOfDreams
         m_ridPlayer = _<ImageRenderer>().NewImage();
         m_ridHoveredTile = _<ImageRenderer>().NewImage();
     }
-
-    void WorldView::Update()
-    {
+    void WorldView::Update() {
     }
-
-    void WorldView::Render()
-    {
+    void WorldView::Render() {
         auto numGridRows = _<ClientProperties>().NumGridRows();
         auto numGridCols = CalculateNumGridCols();
 
@@ -47,15 +39,13 @@ namespace JourneyOfDreams
         auto &player = _<Player>();
         auto tileHeight = 1.0f / numGridRows;
         auto tileWidth = ConvertHeightToWidth(tileHeight);
-        for (auto y = 0; y < numGridRows; y++)
-        {
-            for (auto x = 0; x < numGridCols; x++)
-            {
+        for (auto y = 0; y < numGridRows; y++) {
+            for (auto x = 0; x < numGridCols; x++) {
                 auto mapX = player.GetX() - (numGridCols - 1) / 2 + x;
                 auto mapY = player.GetY() - (numGridRows - 1) / 2 + y;
 
-                if (mapX < 0 || mapY < 0 || mapX >= worldArea->GetSize().w || mapY >= worldArea->GetSize().h)
-                {
+                if (mapX < 0 || mapY < 0 || mapX >= worldArea->GetSize().w
+                    || mapY >= worldArea->GetSize().h) {
                     continue;
                 }
 
@@ -67,12 +57,9 @@ namespace JourneyOfDreams
                 auto dest = RectF{ tileX, tileY, tileWidth, tileHeight };
                 std::string groundImage;
 
-                if (tile->Ground() == Hash("GroundGrass"))
-                {
+                if (tile->Ground() == Hash("GroundGrass")) {
                     groundImage = "GroundGrass";
-                }
-                else if (tile->Ground() == Hash("GroundWater"))
-                {
+                } else if (tile->Ground() == Hash("GroundWater")) {
 
                     auto animIndex = (Ticks() % 1200) / 400;
                     groundImage = "GroundWater_" + std::to_string(animIndex);
@@ -82,18 +69,15 @@ namespace JourneyOfDreams
 
                 auto hoveredCoord = _<TileHoverer>().HoveredCoordinate();
 
-                if (hoveredCoord.x == mapX && hoveredCoord.y == mapY)
-                {
+                if (hoveredCoord.x == mapX && hoveredCoord.y == mapY) {
                     _<ImageRenderer>().DrawImage(m_ridHoveredTile, "HoveredTile", dest);
                 }
 
-                if (tile->Object() != nullptr)
-                {
+                if (tile->Object() != nullptr) {
                     _<ImageRenderer>().DrawImage(m_ridsObjects->at(x).at(y), tile->Object()->Type(), dest);
                 }
 
-                if (mapX == player.GetX() && mapY == player.GetY())
-                {
+                if (mapX == player.GetX() && mapY == player.GetY()) {
                     _<ImageRenderer>().DrawImage(m_ridPlayer, "Player", dest);
                 }
             }

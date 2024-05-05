@@ -2,52 +2,48 @@
 
 #include "Test1.h"
 
-namespace JourneyOfDreams
-{
-
+namespace JourneyOfDreams {
     static const char *vertexShaderSource = "#version 300 es\n"
-                                     "layout (location = 0) in vec3 aPos;\n"
-                                     "out float u;\n"
-                                     "out float v;\n"
-                                     "void main()\n"
-                                     "{\n"
-                                     "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-                                     "   u = aPos.x;\n"
-                                     "   v = aPos.y;\n"
-                                     "}\0";
-
-    static const char *fragmentShaderSource = "#version 300 es\n"
-                                       "precision mediump float;\n"
-                                       "uniform float maxiters;\n"
-                                       "in float u;\n"
-                                       "in float v;\n"
-                                       "out vec4 FragColor;\n"
-                                       "void main()\n"
-                                       "{\n"
-                                       "   FragColor = vec4(0.0f, 0.0f, 0.0f, 1.0f);\n"
-                                       "   float scaledx = (u-0.5)*1.5f;\n"
-                                       "   float scaledy = v*1.0f;\n"
-                                       "   float currentx = scaledx;\n"
-                                       "   float currenty = scaledy;\n"
-                                       "   float currentx2 = 0.0f;\n"
-                                       "   float currenty2 = 0.0f;\n"
-                                       "   for (int loopind = 1;loopind<int(maxiters);loopind++)\n"
-                                       "   {\n"
-                                       "      currentx2 = scaledx + currentx*currentx - currenty*currenty;\n"
-                                       "      currenty2 = scaledy + 2.0f*currentx*currenty;\n"
-                                       "      currentx = clamp(currentx2,-10000.0f,10000.0f);\n"
-                                       "      currenty = clamp(currenty2,-10000.0f,10000.0f);\n"
-                                       "   }\n"
-                                       "   float amplitude = currentx2*currentx + currenty2*currenty;\n"
-                                       "   if (amplitude>4.0)\n"
-                                       "       FragColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);\n"
-                                       "}\0";
-
+                                            "layout (location = 0) in vec3 aPos;\n"
+                                            "out float u;\n"
+                                            "out float v;\n"
+                                            "void main()\n"
+                                            "{\n"
+                                            "   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+                                            "   u = aPos.x;\n"
+                                            "   v = aPos.y;\n"
+                                            "}\0";
+    static const char *fragmentShaderSource
+        = "#version 300 es\n"
+          "precision mediump float;\n"
+          "uniform float maxiters;\n"
+          "in float u;\n"
+          "in float v;\n"
+          "out vec4 FragColor;\n"
+          "void main()\n"
+          "{\n"
+          "   FragColor = vec4(0.0f, 0.0f, 0.0f, 1.0f);\n"
+          "   float scaledx = (u-0.5)*1.5f;\n"
+          "   float scaledy = v*1.0f;\n"
+          "   float currentx = scaledx;\n"
+          "   float currenty = scaledy;\n"
+          "   float currentx2 = 0.0f;\n"
+          "   float currenty2 = 0.0f;\n"
+          "   for (int loopind = 1;loopind<int(maxiters);loopind++)\n"
+          "   {\n"
+          "      currentx2 = scaledx + currentx*currentx - currenty*currenty;\n"
+          "      currenty2 = scaledy + 2.0f*currentx*currenty;\n"
+          "      currentx = clamp(currentx2,-10000.0f,10000.0f);\n"
+          "      currenty = clamp(currenty2,-10000.0f,10000.0f);\n"
+          "   }\n"
+          "   float amplitude = currentx2*currentx + currenty2*currenty;\n"
+          "   if (amplitude>4.0)\n"
+          "       FragColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);\n"
+          "}\0";
     static GLFWwindow *window;
-    static GLuint maxitersLocation ;
+    static GLuint maxitersLocation;
 
-    Test1::Test1()
-    {
+    Test1::Test1() {
         SDL_Init(SDL_INIT_EVERYTHING);
         glfwInit();
 
@@ -119,11 +115,8 @@ namespace JourneyOfDreams
 
         glUniform1f(maxitersLocation, 10);
     }
-
-    void Test1::Render()
-    {
-        if (!m_active)
-        {
+    void Test1::Render() {
+        if (!m_active) {
             return;
         }
         static float iters = 0.0f;
@@ -140,9 +133,7 @@ namespace JourneyOfDreams
 
         iters = iters + 0.1;
     }
-
-    void Test1::Stop()
-    {
+    void Test1::Stop() {
         m_active = false;
         glfwDestroyWindow(window);
         glDeleteBuffers(1, &m_vbo);

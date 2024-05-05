@@ -1,13 +1,10 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "Core/Engine/ScenesCore/IScene.h"
 
-namespace JourneyOfDreams
-{
-    class RegisterNetRequestScene : public IScene
-    {
+namespace JourneyOfDreams {
+    class RegisterNetRequestScene : public IScene {
       public:
         RegisterNetRequestScene();
 

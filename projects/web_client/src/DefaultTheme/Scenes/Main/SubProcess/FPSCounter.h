@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class FPSCounter
-    {
+namespace JourneyOfDreams {
+    class FPSCounter {
       public:
         FPSCounter();
 

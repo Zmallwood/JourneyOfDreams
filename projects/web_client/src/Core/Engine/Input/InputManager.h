@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class InputManager
-    {
+namespace JourneyOfDreams {
+    class InputManager {
       public:
         InputManager();
     };

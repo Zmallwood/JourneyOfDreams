@@ -11,5 +11,5 @@
 
 #include "../../shared/common/src/Singleton.h"
 
-#include <soci/soci.h>
 #include <soci/postgresql/soci-postgresql.h>
+#include <soci/soci.h>

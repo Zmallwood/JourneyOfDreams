@@ -6,10 +6,8 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
-namespace JourneyOfDreams
-{
-    static bool CoordinateIsGoodAsPlayerPosition(Point coordinate)
-    {
+namespace JourneyOfDreams {
+    static bool CoordinateIsGoodAsPlayerPosition(Point coordinate) {
         auto worldArea = _<World>().WorldArea();
         auto tile = worldArea->GetTile(coordinate);
 
@@ -19,13 +17,10 @@ namespace JourneyOfDreams
 
         return true;
     }
-
-    void EnsureGoodPlayerPosition()
-    {
+    void EnsureGoodPlayerPosition() {
         auto worldArea = _<World>().WorldArea();
         Point coordinate;
-        do
-        {
+        do {
             coordinate = worldArea->GetRandomCoordinate();
         } while (CoordinateIsGoodAsPlayerPosition(coordinate) == false);
 

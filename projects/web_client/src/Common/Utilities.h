@@ -1,12 +1,10 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "../../shared/matter/src/PointF.h"
 #include "../../shared/matter/src/Size.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Return canvas size in pixels.
     ///

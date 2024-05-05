@@ -4,16 +4,12 @@
 #include "Input/KeyboardInput.h"
 #include "Input/MouseInput.h"
 
-namespace JourneyOfDreams
-{
-    void PollEvents()
-    {
+namespace JourneyOfDreams {
+    void PollEvents() {
         SDL_Event event;
 
-        while (SDL_PollEvent(&event) != 0)
-        {
-            switch (event.type)
-            {
+        while (SDL_PollEvent(&event) != 0) {
+            switch (event.type) {
             case SDL_QUIT:
                 break;
             case SDL_KEYDOWN:
@@ -25,12 +21,12 @@ namespace JourneyOfDreams
 
                 break;
             case SDL_MOUSEBUTTONDOWN:
-            std::cout << "down\n";
+                std::cout << "down\n";
                 // _<MouseInput>().OnPress(event.button.button);
 
                 break;
             case SDL_MOUSEBUTTONUP:
-            std::cout << "up\n";
+                std::cout << "up\n";
                 // _<MouseInput>().OnRelease(event.button.button);
 
                 break;

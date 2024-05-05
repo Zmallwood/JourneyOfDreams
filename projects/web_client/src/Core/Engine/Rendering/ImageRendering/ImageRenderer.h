@@ -1,16 +1,13 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "Core/Engine/Rendering/RenderingCore/RendererBase.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Allocates resources for, and renders images.
     /////////////////////////////////////////////////
-    class ImageRenderer : public RendererBase
-    {
+    class ImageRenderer : public RendererBase {
       public:
         /////////////////////////////////////////////////
         /// Initialize shader.

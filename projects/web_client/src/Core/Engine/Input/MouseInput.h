@@ -1,16 +1,13 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "MouseButton.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Manages the mouse input.
     /////////////////////////////////////////////////
-    class MouseInput
-    {
+    class MouseInput {
       public:
         /////////////////////////////////////////////////
         /// Called when a mouse button is pressed.

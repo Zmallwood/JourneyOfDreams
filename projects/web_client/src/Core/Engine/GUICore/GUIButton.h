@@ -1,16 +1,13 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
 #include "GUIWidget.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// A button widget for the GUI.
     /////////////////////////////////////////////////
-    class GUIButton : public GUIWidget
-    {
+    class GUIButton : public GUIWidget {
       public:
         /////////////////////////////////////////////////
         /// Initialize class members and graphical resources

@@ -2,16 +2,13 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     class WorldArea;
 
-    class World
-    {
+    class World {
       public:
         World();
-        auto WorldArea()
-        {
+        auto WorldArea() {
             return m_worldArea;
         }
 

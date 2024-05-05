@@ -2,20 +2,14 @@
 
 #include "Tile.h"
 
-namespace JourneyOfDreams
-{
-    void Tile::SetGround(const std::string &groundName)
-    {
+namespace JourneyOfDreams {
+    void Tile::SetGround(const std::string &groundName) {
         m_ground = Hash(groundName);
     }
-
-    void Tile::SetGround(int groundHash)
-    {
+    void Tile::SetGround(int groundHash) {
         m_ground = groundHash;
     }
-
-    bool Tile::IsWalkable()
-    {
+    bool Tile::IsWalkable() {
         return m_ground != Hash("GroundWater");
     }
 }

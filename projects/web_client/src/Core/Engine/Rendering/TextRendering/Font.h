@@ -4,13 +4,11 @@
 
 typedef struct _TTF_Font TTF_Font;
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Represents a font for rendering text.
     /////////////////////////////////////////////////
-    class Font
-    {
+    class Font {
       public:
         /////////////////////////////////////////////////
         /// Create a regular font object and a font object with an outline.

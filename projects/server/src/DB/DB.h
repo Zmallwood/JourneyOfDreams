@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class DB
-    {
+namespace JourneyOfDreams {
+    class DB {
       public:
         DB();
         ~DB();

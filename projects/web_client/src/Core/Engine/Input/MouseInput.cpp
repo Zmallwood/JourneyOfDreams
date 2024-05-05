@@ -2,52 +2,36 @@
 
 #include "MouseInput.h"
 
-namespace JourneyOfDreams
-{
-    void MouseInput::OnPress(Uint8 button)
-    {
+namespace JourneyOfDreams {
+    void MouseInput::OnPress(Uint8 button) {
         /*
         ** Forward call to correct button. */
-        if (button == SDL_BUTTON_LEFT)
-        {
+        if (button == SDL_BUTTON_LEFT) {
             leftButton.OnPress();
-        }
-        else if (button == SDL_BUTTON_RIGHT)
-        {
+        } else if (button == SDL_BUTTON_RIGHT) {
             rightButton.OnPress();
         }
     }
-
-    void MouseInput::OnRelease(Uint8 button)
-    {
+    void MouseInput::OnRelease(Uint8 button) {
         /*
         ** Forward call to correct button. */
-        if (button == SDL_BUTTON_LEFT)
-        {
+        if (button == SDL_BUTTON_LEFT) {
             leftButton.OnRelease();
-        }
-        else if (button == SDL_BUTTON_RIGHT)
-        {
+        } else if (button == SDL_BUTTON_RIGHT) {
             rightButton.OnRelease();
         }
     }
-
-    bool MouseInput::AnyButtonPressed()
-    {
+    bool MouseInput::AnyButtonPressed() {
         /*
         ** Return true if either button is pressed. */
         return leftButton.Pressed() || rightButton.Pressed();
     }
-
-    MouseButton &MouseInput::LeftButton()
-    {
+    MouseButton &MouseInput::LeftButton() {
         /*
         ** Getter by reference */
         return leftButton;
     }
-
-    MouseButton &MouseInput::RightButton()
-    {
+    MouseButton &MouseInput::RightButton() {
         /*
         ** Getter by reference */
         return rightButton;

@@ -2,7 +2,6 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     void UpdateClickMovement();
 }

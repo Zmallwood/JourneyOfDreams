@@ -2,8 +2,7 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Calculate the number of grid columns
     /// based on the number of grid rows.

@@ -2,13 +2,11 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Core engine
     /////////////////////////////////////////////////
-    class Engine
-    {
+    class Engine {
       public:
         /////////////////////////////////////////////////
         /// Randomization seed and touch essential systems.

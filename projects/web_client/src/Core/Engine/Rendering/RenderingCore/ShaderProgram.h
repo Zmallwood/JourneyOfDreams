@@ -2,13 +2,11 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Represents a shader program with a vertex and fragment shader.
     /////////////////////////////////////////////////
-    class ShaderProgram
-    {
+    class ShaderProgram {
       public:
         /////////////////////////////////////////////////
         /// Compile the vertex and fragment shaders and link them into a program.
@@ -33,6 +31,6 @@ namespace JourneyOfDreams
 
       private:
         GLuint CompileShader(const GLchar *shaderSource, GLuint *shader, GLenum shaderType);
-        GLuint m_programID {0};
+        GLuint m_programID{ 0 };
     };
 }

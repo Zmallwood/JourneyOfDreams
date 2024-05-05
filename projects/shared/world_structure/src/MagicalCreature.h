@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class MagicalCreature
-    {
+namespace JourneyOfDreams {
+    class MagicalCreature {
       public:
     };
 }

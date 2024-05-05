@@ -2,30 +2,24 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     class Object;
 
-    class Tile
-    {
+    class Tile {
       public:
         void SetGround(const std::string &groundName);
         void SetGround(int groundHash);
         bool IsWalkable();
-        auto Ground()
-        {
+        auto Ground() {
             return m_ground;
         }
-        auto Elevation()
-        {
+        auto Elevation() {
             return m_elevation;
         }
-        auto Object()
-        {
+        auto Object() {
             return m_object;
         }
-        void SetObject(const std::shared_ptr<JourneyOfDreams::Object> object)
-        {
+        void SetObject(const std::shared_ptr<JourneyOfDreams::Object> object) {
             m_object = object;
         }
 

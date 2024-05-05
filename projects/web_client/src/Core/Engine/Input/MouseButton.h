@@ -2,13 +2,11 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     /////////////////////////////////////////////////
     /// Manages mouse button input.
     /////////////////////////////////////////////////
-    class MouseButton
-    {
+    class MouseButton {
       public:
         /////////////////////////////////////////////////
         /// Called when the button is pressed.

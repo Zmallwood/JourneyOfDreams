@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class WorldFileWriter
-    {
+namespace JourneyOfDreams {
+    class WorldFileWriter {
       public:
         void WriteWorldToFile();
 

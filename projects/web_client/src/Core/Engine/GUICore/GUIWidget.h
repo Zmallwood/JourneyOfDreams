@@ -4,15 +4,13 @@
 #include "GUIAlign.h"
 #include "WidgetEntry.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     class GUI;
 
     /////////////////////////////////////////////////
     /// A widget for the GUI.
     /////////////////////////////////////////////////
-    class GUIWidget : public std::enable_shared_from_this<GUIWidget>
-    {
+    class GUIWidget : public std::enable_shared_from_this<GUIWidget> {
       public:
         /////////////////////////////////////////////////
         /// Default constructor, only used by the GUI

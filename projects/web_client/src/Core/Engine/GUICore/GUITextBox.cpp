@@ -9,12 +9,10 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     GUITextBox::GUITextBox(RectF area, ColorF textColor, bool passwordMode)
         : GUIWidget(area), m_textColor(textColor), m_cursorHeight(area.h - 2 * Padding()),
-          m_managedTextLine(area.w - 2 * Padding(), passwordMode)
-    {
+          m_managedTextLine(area.w - 2 * Padding(), passwordMode) {
         /*
         ** Allocate graphics resources. */
         m_ridBackground = _<ImageRenderer>().NewImage();
@@ -27,28 +25,22 @@ namespace JourneyOfDreams
         SetBackgroundImage("GUIDefaultTextBoxBackground");
         SetFocusable(true);
     }
-
-    void GUITextBox::TypeCharacter(char c)
-    {
+    void GUITextBox::TypeCharacter(char c) {
         /*
         ** Type a character into the text box. */
         m_managedTextLine.InsertCharacter(c);
     }
-
-    void GUITextBox::UpdateDerived()
-    {
+    void GUITextBox::UpdateDerived() {
         auto mousePos = GetMousePosition();
         /*
         ** If mouse is hovering this text box. */
-        if (GetFinalArea().Contains(mousePos))
-        {
+        if (GetFinalArea().Contains(mousePos)) {
             /*
             ** Change cursor symbol. */
             _<Cursor>().SetStyle(CursorStyles::TextInput);
             /*
             ** If left mouse button is also pressed. */
-            if (_<MouseInput>().LeftButton().Pressed())
-            {
+            if (_<MouseInput>().LeftButton().Pressed()) {
                 /*
                 ** Give focus */
                 Focus();
@@ -59,53 +51,44 @@ namespace JourneyOfDreams
             }
         }
 
-        if (HasFocus())
-        {
+        if (HasFocus()) {
             /*
             ** Pick all the text typed on keyboard and insert into this text box. */
             auto textInput = _<KeyboardInput>().PickTextInput();
             m_managedTextLine.InsertText(textInput);
             /*
             ** Add left arrow key functionality.*/
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_LEFT))
-            {
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_LEFT)) {
                 m_managedTextLine.TryMoveCursorLeft();
             }
             /*
             ** Add right arrow key functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_RIGHT))
-            {
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_RIGHT)) {
                 m_managedTextLine.TryMoveCursorRight();
             }
             /*
             ** Add backspace key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_BACKSPACE))
-            {
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_BACKSPACE)) {
                 m_managedTextLine.TryDeleteLeft();
             }
             /*
             ** Add delete key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_DELETE))
-            {
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_DELETE)) {
                 m_managedTextLine.TryDeleteRight();
             }
             /*
             ** Add home key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_HOME))
-            {
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_HOME)) {
                 m_managedTextLine.MoveCursorToStart();
             }
             /*
             ** Add end key erase functionality. */
-            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_END))
-            {
+            if (_<KeyboardInput>().KeyHasBeenFiredPickResult(GLFW_KEY_END)) {
                 m_managedTextLine.MoveCursorToEnd();
             }
         }
     }
-
-    void GUITextBox::RenderDerived()
-    {
+    void GUITextBox::RenderDerived() {
         /*
         ** Draw textbox background. */
         _<ImageRenderer>().DrawImage(m_ridBackground, BackgroundImage(), GetFinalArea());
@@ -126,17 +109,13 @@ namespace JourneyOfDreams
         /*
         ** Determine if text cursor should be rendered for this text box
         ** with regards to focus and the cursor blinking effect. */
-        if (HasFocus() && (Ticks() - TicksTimeGotFocus()) % 1000 < 500)
-        {
+        if (HasFocus() && (Ticks() - TicksTimeGotFocus()) % 1000 < 500) {
             cursorVisible = true;
-        }
-        else
-        {
+        } else {
             cursorVisible = false;
         }
 
-        if (cursorVisible)
-        {
+        if (cursorVisible) {
             /*
              ** Get the canvas x position in the to where text cursor will be drawn. */
             auto cursorX
@@ -155,23 +134,17 @@ namespace JourneyOfDreams
                                          RectF{ cursorX, cursorY, k_cursorWidth, m_cursorHeight });
         }
     }
-
-    std::string GUITextBox::GetText()
-    {
+    std::string GUITextBox::GetText() {
         /*
         ** Getter. */
         return m_managedTextLine.Text();
     }
-
-    void GUITextBox::ClearText()
-    {
+    void GUITextBox::ClearText() {
         /*
         ** Clear text in the text box. */
         m_managedTextLine.Reset();
     }
-
-    void GUITextBox::Focus()
-    {
+    void GUITextBox::Focus() {
         /*
         ** Show on-screen keyboard (for phones) when focusing a text box. */
         GetParentGUI()->ShowKeyboard();

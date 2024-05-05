@@ -2,12 +2,10 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
+namespace JourneyOfDreams {
     class IScene;
 
-    class SceneManager
-    {
+    class SceneManager {
       public:
         SceneManager();
 

@@ -2,10 +2,8 @@
 
 #pragma once
 
-namespace JourneyOfDreams
-{
-    class WorldFileReader
-    {
+namespace JourneyOfDreams {
+    class WorldFileReader {
       public:
         void ReadWorldFile();
 

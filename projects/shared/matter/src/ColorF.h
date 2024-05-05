@@ -1,20 +1,12 @@
 //  Copyright (C) 2024 Andreas Åkerberg
 
 #pragma once
-
-#if (EMSCRIPTEN)
 #include <SDL2/SDL.h>
-#else()
-#include <SDL2/SDL.h>
-#endif()
 
-namespace JourneyOfDreams
-{
-    class ColorF
-    {
+namespace JourneyOfDreams {
+    class ColorF {
       public:
-        SDL_Color ToSDLColor(void) const
-        {
+        SDL_Color ToSDLColor(void) const {
             return { static_cast<unsigned char>(r * 255), static_cast<unsigned char>(g * 255),
                      static_cast<unsigned char>(b * 255), static_cast<unsigned char>(a * 255) };
         }
