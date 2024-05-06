@@ -34,8 +34,8 @@ namespace JourneyOfDreams
      * 5) Insert new widgets that are waiting to be inserted.
      * 6) Focus next widget on pressing the tab key.
      * 7) Clear all typed text input as it has already been handled by the GUIs
-     *    widgets. */
-    * 8) Dont show on-screen keyboard if no widget is focused. */
+     *    widgets.
+     * 8) Dont show on-screen keyboard if no widget is focused. */
     GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->BringToFront();
 
     if (_<MouseInput>().LeftButton().Pressed() &&
