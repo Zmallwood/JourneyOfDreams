@@ -37,7 +37,6 @@ namespace JourneyOfDreams
      *    widgets.
      * 8) Dont show on-screen keyboard if no widget is focused. */
     GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->BringToFront();
-
     if (_<MouseInput>().LeftButton().Pressed() &&
         !GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->MouseOver()) {
       SetFocusedWidget(nullptr);
@@ -51,7 +50,6 @@ namespace JourneyOfDreams
       FocusNextWidget();
     }
     _<KeyboardInput>().ClearTextInput();
-
     if (FocusedWidget() == nullptr) {
       GetWidget<OnScreenKeyboard>("OnScreenKeyboard")->Hide();
     }
@@ -93,12 +91,10 @@ namespace JourneyOfDreams
     for (auto &entry : GetChildWidgetsRecursively()) {
       if (widget == nullptr && entry.widget->Focusable()) {
         widget = entry.widget;
-
         break;
       } else if (widget != nullptr && entry.widget->Focusable() &&
                  widget != entry.widget) {
         widget = entry.widget;
-
         break;
       }
     }

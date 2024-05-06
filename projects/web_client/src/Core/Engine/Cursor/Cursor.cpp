@@ -12,7 +12,6 @@ namespace JourneyOfDreams
     /* 1) Allocate render ID for the image of the cursor.
      * 2) Hide default system cursor when mouse is inside the game canvas. */
     m_ridCursorImage = _<ImageRenderer>().NewImage();
-    SDL_ShowCursor(SDL_DISABLE);
     glfwSetInputMode(_<Graphics>().Window(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
   }
 
@@ -28,13 +27,13 @@ namespace JourneyOfDreams
      * 4) Combine position and dimensions into the draw area.
      * 5) Get the cursor image corresponding to the current cursor style.
      * 6) Draw the cursor image at the draw area with the resource ID. */
-    auto mousePos = GetMousePosition();
-    auto cursorWidth = m_cursorSize;
-    auto cursorHeight = ConvertWidthToHeight(m_cursorSize);
-    auto cursorX = mousePos.x - cursorWidth / 2;
-    auto cursorY = mousePos.y - cursorHeight / 2;
-    auto cursorArea = RectF{cursorX, cursorY, cursorWidth, cursorHeight};
-    auto cursorImage = m_cursorImages.at(m_style);
+    auto mousePos{GetMousePosition()};
+    auto cursorWidth{m_cursorSize};
+    auto cursorHeight{ConvertWidthToHeight(m_cursorSize)};
+    auto cursorX{mousePos.x - cursorWidth / 2};
+    auto cursorY{mousePos.y - cursorHeight / 2};
+    auto cursorArea{RectF{cursorX, cursorY, cursorWidth, cursorHeight}};
+    auto cursorImage{m_cursorImages.at(m_style)};
     _<ImageRenderer>().DrawImage(m_ridCursorImage, cursorImage, cursorArea);
   }
 

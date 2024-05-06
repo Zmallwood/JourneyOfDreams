@@ -9,8 +9,8 @@ namespace JourneyOfDreams
 {
   Player::Player() {
     /* Initialize player position to the center of the world area. */
-    auto _worldAreaSize = _<GlobalProperties>().WorldAreaSize();
-    m_position = {.x = _worldAreaSize.w / 2, .y = _worldAreaSize.h / 2};
+    auto worldAreaSize = _<GlobalProperties>().WorldAreaSize();
+    m_position = {.x = worldAreaSize.w / 2, .y = worldAreaSize.h / 2};
   }
 
   int Player::GetX() {
@@ -41,16 +41,16 @@ namespace JourneyOfDreams
     return m_position;
   }
 
-  void Player::SetPosition(Point _position) {
-    m_position = _position;
+  void Player::SetPosition(Point position) {
+    m_position = position;
   }
 
   int Player::TicksLastMove() {
     return m_ticksLastMove;
   }
 
-  void Player::SetTicksLastMove(int _ticksLastMove) {
-    m_ticksLastMove = _ticksLastMove;
+  void Player::SetTicksLastMove(int ticksLastMove) {
+    m_ticksLastMove = ticksLastMove;
   }
 
   float Player::MovementSpeed() {
@@ -61,7 +61,7 @@ namespace JourneyOfDreams
     return m_destination;
   }
 
-  void Player::SetDestination(Point _destination) {
-    m_destination = _destination;
+  void Player::SetDestination(Point destination) {
+    m_destination = destination;
   }
 }

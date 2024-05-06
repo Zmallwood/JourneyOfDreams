@@ -59,7 +59,7 @@ namespace JourneyOfDreams
     ///
     /// @param c Character to type.
     /////////////////////////////////////////////////
-    void TypeCharacter(char c);
+    void TypeCharacter(char character);
 
    private:
     RID m_ridBackground{};

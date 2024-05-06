@@ -14,39 +14,29 @@ namespace JourneyOfDreams
         m_text(std::make_shared<std::string>(text)),
         m_fontSize(fontSize),
         m_textColor(textColor) {
-    /*
-    ** Allocate graphis resources. */
+    /* 1) Allocate graphis resources.
+     * 2) Set default properties. */
     m_ridText = _<TextRenderer>().NewString();
-    /*
-    ** Set default properties. */
     SetDrawBackground(false);
     SetDrawBorders(false);
   }
 
   GUILabel::GUILabel(PointF position, const std::string &text, ColorF textColor)
       : GUILabel(position, text, GUIAlign::TopLeft, FontSizes::_20, textColor) {
-    /*
-    ** Do nothing. */
   }
 
   void GUILabel::UpdateDerived() {
-    /*
-    ** Do nothing. */
   }
 
   PointF GUILabel::GetAlignedAbsolutePosition() {
-    /*
-    ** Measure label text rendered size. */
+    /* 1) Measure label text rendered size.
+     * 2) Get absolute position of this label widget.
+     * 3) Declare variable to hold the resulting position.
+     * 4) Set the resulting position, based on the text center point and the
+     *    rendered text size. */
     auto textSize = _<TextRenderer>().MeasureString(*m_text, m_fontSize);
-    /*
-    ** Get absolute position of this label widget. */
     auto absolutePosition = GUIWidget::GetAlignedAbsolutePosition();
-    /*
-    ** To hold the resulting position. */
     PointF alignedPosition;
-    /*
-    ** Set the resulting position, based on the text center point and the
-    *rendered text size. */
     switch (Alignment()) {
     case GUIAlign::TopLeft:
       alignedPosition = absolutePosition;
@@ -84,21 +74,17 @@ namespace JourneyOfDreams
                                absolutePosition.y - textSize.h / 2);
       break;
     }
-
     return alignedPosition;
   }
 
   void GUILabel::RenderDerived() {
-    /*
-    ** Draw label text at widget final position. */
+    /* Draw label text at widget final position. */
     auto finalPosition = GetFinalPosition();
     _<TextRenderer>().DrawString(m_ridText, *m_text, finalPosition, m_textColor,
                                  false, m_fontSize);
   }
 
   void GUILabel::SetText(std::shared_ptr<std::string> text) {
-    /*
-    ** Setter */
     m_text = text;
   }
 }

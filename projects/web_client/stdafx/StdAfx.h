@@ -29,7 +29,7 @@
 #include <emscripten/websocket.h>
 
 #include "Common/Aliases.h"
-#include "Common/CustomDeleter.h"
+#include "Common/SDLDeleter.h"
 #include "Common/Square.h"
 #include "Common/Utilities.h"
 

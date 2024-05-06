@@ -39,7 +39,7 @@ add_executable(WebClient
   src/Core/Engine/Graphics/Graphics.cpp
    src/Core/Configuration/ClientProperties.cpp
    # DevTestsRequired source files END
-  src/Common/CustomDeleter.cpp
+  src/Common/SDLDeleter.cpp
   src/Core/Engine/Engine.cpp
   src/DefaultTheme/Scenes/Test/TestScene.cpp
   src/Core/Engine/ScenesCore/IScene.cpp
