@@ -17,4 +17,4 @@ namespace journey_of_dreams
   int ClientProperties::NumGridRows() const {
     return m_numGridRows;
   }
-} // namespace journey_of_dreams
+}

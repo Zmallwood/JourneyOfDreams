@@ -49,4 +49,4 @@ namespace journey_of_dreams
   int ConfigurationFile::ServerPort() const {
     return m_serverPort;
   }
-} // namespace journey_of_dreams
+}

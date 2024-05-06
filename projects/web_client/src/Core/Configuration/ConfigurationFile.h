@@ -38,4 +38,4 @@ namespace journey_of_dreams
     int m_serverPort{};
     const std::string k_filePath{"configuration/settings.cfg"};
   };
-} // namespace journey_of_dreams
+}

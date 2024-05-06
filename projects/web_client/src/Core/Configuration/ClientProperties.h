@@ -36,4 +36,4 @@ namespace journey_of_dreams
     ColorF m_defaultClearColor{0.0f, 0.5f, 1.0f};
     int m_numGridRows = 11;
   };
-} // namespace journey_of_dreams
+}

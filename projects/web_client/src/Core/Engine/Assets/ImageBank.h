@@ -55,4 +55,4 @@ namespace journey_of_dreams
     std::map<int, GLuint> m_images;
     const std::string k_relImagesPath = "images";
   };
-} // namespace journey_of_dreams
+}
