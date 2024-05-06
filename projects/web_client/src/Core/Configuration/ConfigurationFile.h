@@ -21,7 +21,7 @@ namespace JourneyOfDreams
     /// Gets the server address from the
     /// configuration file that has been read.
     ///
-    /// \return Server address.
+    /// @return Server address.
     /////////////////////////////////////////////////
     std::string ServerAddress() const;
 
@@ -29,7 +29,7 @@ namespace JourneyOfDreams
     /// Gets the server port from the
     /// configuration file that has been read.
     ///
-    /// \return Server port.
+    /// @return Server port.
     /////////////////////////////////////////////////
     int ServerPort() const;
 

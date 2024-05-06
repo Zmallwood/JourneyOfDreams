@@ -1,9 +1,10 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "CursorStyles.h"
 
-// Cursor class declaration.
+/* Cursor class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -29,11 +30,11 @@ namespace JourneyOfDreams
     /// Render the cursor image at current mouse location.
     /////////////////////////////////////////////////
     void Render();
-    
+
     /////////////////////////////////////////////////
     /// Style setter.
     ///
-    /// \param style New cursor style.
+    /// @param style New cursor style.
     /////////////////////////////////////////////////
     void SetStyle(CursorStyles style);
 
@@ -48,4 +49,4 @@ namespace JourneyOfDreams
         {CursorStyles::Rotating, "CursorRotating"},
         {CursorStyles::Attacking, "CursorAttacking"}};
   };
-} // namespace JourneyOfDreams
+}

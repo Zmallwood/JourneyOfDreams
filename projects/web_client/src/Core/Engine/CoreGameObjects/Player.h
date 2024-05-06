@@ -1,8 +1,8 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
-// Player class declaration.
+/* Player class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -19,14 +19,14 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Gets the X coordinate of the player.
     ///
-    /// \return X coordinate.
+    /// @return X coordinate.
     /////////////////////////////////////////////////
     int GetX();
 
     /////////////////////////////////////////////////
     /// Gets the Y coordinate of the player.
     ///
-    /// \return Y coordinate.
+    /// @return Y coordinate.
     /////////////////////////////////////////////////
     int GetY();
 
@@ -53,14 +53,14 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Gets the position of the player.
     ///
-    /// \return Position point.
+    /// @return Position point.
     /////////////////////////////////////////////////
     Point Position();
 
     /////////////////////////////////////////////////
     /// Sets the position of the player.
     ///
-    /// \param _position Position point.
+    /// @param _position Position point.
     /////////////////////////////////////////////////
     void SetPosition(Point _position);
 
@@ -68,7 +68,7 @@ namespace JourneyOfDreams
     /// Gets the number of ticks since the player
     /// last moved.
     ///
-    /// \return Number of ticks.
+    /// @return Number of ticks.
     /////////////////////////////////////////////////
     int TicksLastMove();
 
@@ -76,28 +76,28 @@ namespace JourneyOfDreams
     /// Sets the number of ticks since the player
     /// last moved.
     ///
-    /// \param _ticksLastMove Number of ticks.
+    /// @param _ticksLastMove Number of ticks.
     /////////////////////////////////////////////////
     void SetTicksLastMove(int _ticksLastMove);
 
     /////////////////////////////////////////////////
     /// Gets the movement speed of the player.
     ///
-    /// \return Movement speed.
+    /// @return Movement speed.
     /////////////////////////////////////////////////
     float MovementSpeed();
 
     /////////////////////////////////////////////////
     /// Gets the destination of the player.
     ///
-    /// \return Destination point.
+    /// @return Destination point.
     /////////////////////////////////////////////////
     Point Destination();
 
     /////////////////////////////////////////////////
     /// Sets the destination of the player.
     ///
-    /// \param _destination Destination point.
+    /// @param _destination Destination point.
     /////////////////////////////////////////////////
     void SetDestination(Point _destination);
 
@@ -107,4 +107,4 @@ namespace JourneyOfDreams
     float m_movementSpeed{3.0f};
     Point m_destination{.x = -1, .y = -1};
   };
-} // namespace JourneyOfDreams
+}

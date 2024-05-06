@@ -1,11 +1,11 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
 struct SDL_Window;
 struct SDL_Renderer;
 
-// graphics class declaration.
+/* Graphics class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -29,9 +29,14 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     void PresentCanvas();
 
+    /////////////////////////////////////////////////
+    /// Get the window object.
+    ///
+    /// @return The window object.
+    /////////////////////////////////////////////////
     GLFWwindow *Window();
 
    private:
-    GLFWwindow *window;
+    GLFWwindow *m_window {nullptr};
   };
-} // namespace JourneyOfDreams
+}

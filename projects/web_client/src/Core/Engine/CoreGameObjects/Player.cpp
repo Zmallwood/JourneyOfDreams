@@ -1,14 +1,14 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "Player.h"
 #include "configuration/src/GlobalProperties.h"
 
-// Player class implementation.
+/* Player class implementation. */
 
 namespace JourneyOfDreams
 {
   Player::Player() {
-    // initialize player position to the center of the world area
+    /* Initialize player position to the center of the world area. */
     auto _worldAreaSize = _<GlobalProperties>().WorldAreaSize();
     m_position = {.x = _worldAreaSize.w / 2, .y = _worldAreaSize.h / 2};
   }
@@ -64,4 +64,4 @@ namespace JourneyOfDreams
   void Player::SetDestination(Point _destination) {
     m_destination = _destination;
   }
-} // namespace JourneyOfDreams
+}

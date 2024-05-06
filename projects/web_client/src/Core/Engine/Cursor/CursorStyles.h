@@ -1,8 +1,8 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
-// cursor_styles enum declaration.
+/* cursor_styles enum declaration. */
 
 namespace JourneyOfDreams
 {
@@ -36,4 +36,4 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     Attacking
   };
-} // namespace JourneyOfDreams
+}

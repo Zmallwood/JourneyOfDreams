@@ -26,16 +26,16 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Gets an image resource by name.
     ///
-    /// \param imageName Name of the image to get.
-    /// \return Image resource ID.
+    /// @param imageName Name of the image to get.
+    /// @return Image resource ID.
     /////////////////////////////////////////////////
     GLuint GetImage(const std::string &imageName);
 
     /////////////////////////////////////////////////
     /// Gets an image resource by hash code.
     ///
-    /// \param imageNameHash Hash code of the image to get.
-    /// \return Image resource ID.
+    /// @param imageNameHash Hash code of the image to get.
+    /// @return Image resource ID.
     /////////////////////////////////////////////////
     GLuint GetImage(int imageNameHash);
 
@@ -43,8 +43,8 @@ namespace JourneyOfDreams
     /// Creates a blank image resource, given
     /// the specified name, and returns its ID.
     ///
-    /// \param uniqueImageName Name of the image to create.
-    /// \return Image resource ID.
+    /// @param uniqueImageName Name of the image to create.
+    /// @return Image resource ID.
     /////////////////////////////////////////////////
     GLuint CreateBlankImage(const std::string &uniqueImageName);
 
