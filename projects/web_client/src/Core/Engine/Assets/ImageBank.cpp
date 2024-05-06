@@ -20,7 +20,7 @@ namespace journey_of_dreams
   }
 
   GLuint ImageBank::GetImage(const std::string &_imageName) {
-    // Hash the image name and call the other GetImage method.
+    /* Hash the image name and call the other GetImage method. */
     return GetImage(Hash(_imageName));
   }
 
