@@ -12,8 +12,8 @@ namespace journey_of_dreams
   }
 
   ImageBank::~ImageBank() {
-    // Iterate through all the loaded images.
-    // Free every allocated image resource
+    // 1) Iterate through all the loaded images.
+    // 2) Free every allocated image resource
     for (const auto &_img : m_images) {
       glDeleteTextures(1, &_img.second);
     }

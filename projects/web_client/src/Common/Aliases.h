@@ -15,7 +15,7 @@ namespace journey_of_dreams
   /////////////////////////////////////////////////
   /// Ticks elapsed since game start.
   ///
-  /// \return Number of ticks since game start.
+  /// @return Number of ticks since game start.
   /////////////////////////////////////////////////
   static auto Ticks = SDL_GetTicks;
 } // namespace journey_of_dreams

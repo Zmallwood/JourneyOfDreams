@@ -15,7 +15,7 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     /// Set all values to the same value.
     ///
-    /// \param _value Value to set all values to.
+    /// @param _value Value to set all values to.
     /////////////////////////////////////////////////
     void SetAll(T _value);
 

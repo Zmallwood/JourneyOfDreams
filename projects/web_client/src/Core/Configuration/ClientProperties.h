@@ -11,7 +11,7 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     /// Return canvas size in pixels.
     ///
-    /// \return Size of canvas in pixels.
+    /// @return Size of canvas in pixels.
     /////////////////////////////////////////////////
     Size CanvasSize() const;
 
@@ -19,7 +19,7 @@ namespace journey_of_dreams
     /// Get default color used to clear the
     /// screen at the beginning of each frame.
     ///
-    /// \return Default clear color.
+    /// @return Default clear color.
     /////////////////////////////////////////////////
     ColorF DefaultClearColor() const;
 
@@ -27,7 +27,7 @@ namespace journey_of_dreams
     /// Get number of rows in the 2D grid in
     /// the world view.
     ///
-    /// \return Number of rows in the grid.
+    /// @return Number of rows in the grid.
     /////////////////////////////////////////////////
     int NumGridRows() const;
 
