@@ -4,7 +4,10 @@
 
 /* Main function implementation. */
 
-int main(int argc, char *argv[]) { // Game entry point.
+/////////////////////////////////////////////////
+/// Game entry point.
+/////////////////////////////////////////////////
+int main(int argc, char *argv[]) {
   JourneyOfDreams::RunNewGameInstance();
   return 0;
 }

@@ -45,7 +45,6 @@ add_executable(WebClient
   src/Core/Engine/ScenesCore/IScene.cpp
   src/Core/Engine/ScenesCore/SceneManager.cpp
   src/Core/Engine/Cursor/Cursor.cpp
-  src/Core/Engine/PollEvents.cpp
   src/Core/Engine/Net/NetClient.cpp
   src/DefaultTheme/Scenes/ServerConnect/ServerConnectScene.cpp
   src/Core/Engine/Net/NetworkConnection.cpp

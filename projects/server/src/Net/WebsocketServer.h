@@ -26,15 +26,29 @@ namespace JourneyOfDreams
   typedef websocketpp::server<websocketpp::config::asio> WebsocketEndpoint;
   typedef websocketpp::connection_hdl ClientConnection;
 
+  /////////////////////////////////////////////////
+  ///
+  /////////////////////////////////////////////////
   class WebsocketServer {
    public:
+    /////////////////////////////////////////////////
+    ///
+    /////////////////////////////////////////////////
     WebsocketServer();
+
+    /////////////////////////////////////////////////
+    ///
+    /////////////////////////////////////////////////
     void run(int port);
 
-    // Returns the number of currently connected clients
+    /////////////////////////////////////////////////
+    /// Returns the number of currently connected clients.
+    /////////////////////////////////////////////////
     size_t numConnections();
 
-    // Registers a callback for when a client connects
+    /////////////////////////////////////////////////
+    /// Registers a callback for when a client connects.
+    /////////////////////////////////////////////////
     template <typename CallbackTy>
     void connect(CallbackTy handler) {
       // Make sure we only access the handlers list from the networking thread
@@ -42,7 +56,9 @@ namespace JourneyOfDreams
           [this, handler]() { this->connectHandlers.push_back(handler); });
     }
 
-    // Registers a callback for when a client disconnects
+    /////////////////////////////////////////////////
+    /// Registers a callback for when a client disconnects.
+    /////////////////////////////////////////////////
     template <typename CallbackTy>
     void disconnect(CallbackTy handler) {
       // Make sure we only access the handlers list from the networking thread
@@ -50,7 +66,9 @@ namespace JourneyOfDreams
           [this, handler]() { this->disconnectHandlers.push_back(handler); });
     }
 
-    // Registers a callback for when a particular type of message is received
+    /////////////////////////////////////////////////
+    /// Registers a callback for when a particular type of message is received.
+    /////////////////////////////////////////////////
     template <typename CallbackTy>
     void message(const string &messageType, CallbackTy handler) {
       // Make sure we only access the handlers list from the networking thread
@@ -59,31 +77,32 @@ namespace JourneyOfDreams
       });
     }
 
-    // Sends a message to an individual client
-    //(Note: the data transmission will take place on the thread that called
-    // WebsocketServer::run())
+    /////////////////////////////////////////////////
+    /// Sends a message to an individual client (Note: the data
+    /// transmission will take place on the thread that called
+    /// WebsocketServer::run()).
+    /////////////////////////////////////////////////
     void sendMessage(ClientConnection conn, const string &messageType,
                      const Json::Value &arguments);
 
-    // Sends a message to all connected clients
-    //(Note: the data transmission will take place on the thread that called
-    // WebsocketServer::run())
+    /////////////////////////////////////////////////
+    /// Sends a message to all connected clients (Note: the data
+    /// transmission will take place on the thread that called
+    /// WebsocketServer::run()).
+    /////////////////////////////////////////////////
     void broadcastMessage(const string &messageType,
                           const Json::Value &arguments);
 
    protected:
     static Json::Value parseJson(const string &json);
     static string stringifyJson(const Json::Value &val);
-
     void onOpen(ClientConnection conn);
     void onClose(ClientConnection conn);
     void onMessage(ClientConnection conn, WebsocketEndpoint::message_ptr msg);
-
     asio::io_service eventLoop;
     WebsocketEndpoint endpoint;
     vector<ClientConnection> openConnections;
     std::mutex connectionListMutex;
-
     vector<std::function<void(ClientConnection)>> connectHandlers;
     vector<std::function<void(ClientConnection)>> disconnectHandlers;
     map<string,
