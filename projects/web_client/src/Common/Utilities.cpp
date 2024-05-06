@@ -1,9 +1,9 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "Utilities.h"
 #include "Core/Engine/Graphics/Graphics.h"
 
-// Utility functions implementation.
+/* Utility functions implementation. */
 
 namespace journey_of_dreams
 {
@@ -63,4 +63,4 @@ namespace journey_of_dreams
                                  static_cast<float>(_ypos) / _canvasSize.h};
     return _mousePosition;
   }
-} // namespace journey_of_dreams
+}

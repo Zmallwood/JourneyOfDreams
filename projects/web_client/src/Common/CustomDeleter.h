@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 struct SDL_Window;
@@ -7,7 +7,7 @@ struct SDL_Surface;
 struct SDL_Texture;
 typedef struct _TTF_Font TTF_Font;
 
-// CustomDeleter class declaration.
+/* CustomDeleter class declaration. */
 
 namespace journey_of_dreams
 {
@@ -48,4 +48,4 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     void operator()(TTF_Font *_font);
   };
-} // namespace journey_of_dreams
+}

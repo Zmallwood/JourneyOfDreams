@@ -1,8 +1,8 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "ClientProperties.h"
 
-// ClientProperties class implementation.
+/* ClientProperties class implementation. */
 
 namespace journey_of_dreams
 {

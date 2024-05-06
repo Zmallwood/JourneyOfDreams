@@ -1,8 +1,8 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
-// Square class declaration and implementation.
+/* Square class declaration and implementation. */
 
 namespace journey_of_dreams
 {
@@ -46,4 +46,4 @@ namespace journey_of_dreams
     /* Set all corners to the same value. */
     _00 = _01 = _11 = _10 = _value;
   }
-} // namespace journey_of_dreams
+}

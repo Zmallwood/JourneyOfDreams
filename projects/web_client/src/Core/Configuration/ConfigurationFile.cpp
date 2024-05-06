@@ -1,8 +1,8 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "ConfigurationFile.h"
 
-// ConfigurationFile class implementation.
+/* ConfigurationFile class implementation. */
 
 namespace journey_of_dreams
 {

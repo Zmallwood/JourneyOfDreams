@@ -1,10 +1,10 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "../../shared/matter/src/PointF.h"
 #include "../../shared/matter/src/Size.h"
 
-// Utility functions declaration.
+/* Utility functions declaration. */
 
 namespace journey_of_dreams
 {
@@ -60,4 +60,4 @@ namespace journey_of_dreams
   ///         values..
   /////////////////////////////////////////////////
   PointF GetMousePosition();
-} // namespace journey_of_dreams
+}

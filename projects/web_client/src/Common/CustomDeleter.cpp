@@ -1,8 +1,8 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "CustomDeleter.h"
 
-// CustomDeleter class implementation.
+/* CustomDeleter class implementation. */
 
 namespace journey_of_dreams
 {
@@ -30,4 +30,4 @@ namespace journey_of_dreams
     /* Destroy the font. */
     TTF_CloseFont(_font);
   }
-} // namespace journey_of_dreams
+}

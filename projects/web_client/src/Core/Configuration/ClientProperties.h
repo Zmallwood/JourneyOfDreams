@@ -1,8 +1,8 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
-// ClientProperties class declaration.
+/* ClientProperties class declaration. */
 
 namespace journey_of_dreams
 {

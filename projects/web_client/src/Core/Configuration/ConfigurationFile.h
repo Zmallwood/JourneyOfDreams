@@ -1,8 +1,8 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
-// ConfigurationFile class definition.
+/* ConfigurationFile class definition. */
 
 namespace journey_of_dreams
 {
