@@ -26,8 +26,8 @@ namespace journey_of_dreams
 
   GLuint ImageBank::GetImage(int _imageNameHash) {
     // 1. Iterate through all the loaded images.
-    // 2.0 If its key, being the hash of the image name, equals
-    // the hash of the specified name.
+    // 2. If its key, being the hash of the image name, equals
+    //    the hash of the specified name.
     // 3. No image with the name found, return fail value.
     for (auto _img : m_images) {
       if (_img.first == _imageNameHash) {
@@ -41,7 +41,7 @@ namespace journey_of_dreams
   GLuint ImageBank::CreateBlankImage(const std::string &_uniqueImageName) {
     // 1. Generate new image resource and get its ID.
     // 2. Insert new image entry with image name hash as key
-    // and the new ID as value.
+    //    and the new ID as value.
     // 3. return the ID of the newly created blank image resource.
     GLuint _texID;
     glGenTextures(1, &_texID);
@@ -55,7 +55,7 @@ namespace journey_of_dreams
     // 3. Load the current file as an image resource.
     // 4. Extract its pure name without path or extension.
     // 5. Insert a new entry into the images storage, with the
-    // image name hash as key and the resource ID as value.
+    //    image name hash as key and the resource ID as value.
     using iterator = std::filesystem::recursive_directory_iterator;
     auto _allImagesPath = k_relImagesPath + "/";
     for (auto &_entry : iterator(_allImagesPath)) {
@@ -86,11 +86,11 @@ namespace journey_of_dreams
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     // 1. if image format is RGBA (with alpha channel),
-    // then transfer image data from SDL surface to OpenGL texture resource.
-    // Else if image format is RGB (without alpha channel),
-    // then transfer image data from SDL surface to OpenGL texture resource.
+    //    then transfer image data from SDL surface to OpenGL texture resource.
+    //    Else if image format is RGB (without alpha channel),
+    //    then transfer image data from SDL surface to OpenGL texture resource.
     // 2. Free SDL surface resource, its not needed anymore as the image data is
-    // stored in the OpenGL texture now.
+    //    stored in the OpenGL texture now.
     // 3. Return the previously generated resource ID.
     if (_surf->format->BytesPerPixel == 4) {
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, _surf->w, _surf->h, 0, GL_RGBA,
