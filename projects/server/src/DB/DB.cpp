@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "DB.h"
 
@@ -22,4 +22,4 @@ namespace JourneyOfDreams
     m_session->close();
     std::cout << "Connection to database closed." << std::endl;
   }
-} // namespace JourneyOfDreams
+}

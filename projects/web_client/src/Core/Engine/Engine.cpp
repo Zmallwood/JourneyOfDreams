@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "Engine.h"
 #include "Cursor/Cursor.h"
@@ -21,40 +21,33 @@ namespace JourneyOfDreams
     _<InputManager>(); // Touch InputManager to initialize it
   }
 
-  void
-  Engine::Reset() {
+  void Engine::Reset() {
     _<Cursor>().ResetStyle();
     _<Graphics>().ClearCanvas();
   }
 
-  void
-  Engine::HandleInput() {
+  void Engine::HandleInput() {
     PollEvents();
   }
 
-  void
-  Engine::Update() {
+  void Engine::Update() {
     _<SceneManager>().UpdateCurrentScene();
   }
 
-  void
-  Engine::UpdateNet() {
+  void Engine::UpdateNet() {
     _<NetClient>().Update();
   }
 
-  void
-  Engine::Render() {
+  void Engine::Render() {
     _<SceneManager>().RenderCurrentScene();
     _<Cursor>().Render();
   }
 
-  void
-  Engine::UpdatePostRender() {
+  void Engine::UpdatePostRender() {
     _<SceneManager>().UpdatePostRenderCurrentScene();
   }
 
-  void
-  Engine::PresentCanvas() {
+  void Engine::PresentCanvas() {
     _<Graphics>().PresentCanvas();
   }
-} // namespace JourneyOfDreams
+}

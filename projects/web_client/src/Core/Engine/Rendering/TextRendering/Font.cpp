@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "Font.h"
 
@@ -15,18 +15,15 @@ namespace JourneyOfDreams
     TTF_SetFontOutline(m_outlineFont.get(), k_fontOutlineWidth);
   }
 
-  std::shared_ptr<TTF_Font>
-  Font::SDLFont() const {
+  std::shared_ptr<TTF_Font> Font::SDLFont() const {
     return m_font;
   }
 
-  std::shared_ptr<TTF_Font>
-  Font::OutlineSDLFont() const {
+  std::shared_ptr<TTF_Font> Font::OutlineSDLFont() const {
     return m_outlineFont;
   }
 
-  const int
-  Font::FontOutlineWidth() {
+  const int Font::FontOutlineWidth() {
     return k_fontOutlineWidth;
   }
-} // namespace JourneyOfDreams
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -19,18 +19,15 @@ namespace JourneyOfDreams
       return m_ground;
     }
 
-    auto
-    Elevation() {
+    auto Elevation() {
       return m_elevation;
     }
 
-    auto
-    Object() {
+    auto Object() {
       return m_object;
     }
 
-    void
-    SetObject(const std::shared_ptr<JourneyOfDreams::Object> object) {
+    void SetObject(const std::shared_ptr<JourneyOfDreams::Object> object) {
       m_object = object;
     }
 
@@ -39,4 +36,4 @@ namespace JourneyOfDreams
     float m_elevation{0.0f};
     std::shared_ptr<JourneyOfDreams::Object> m_object{};
   };
-} // namespace JourneyOfDreams
+}

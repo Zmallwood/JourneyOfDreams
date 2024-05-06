@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "GUIAlign.h"
@@ -343,4 +343,4 @@ namespace JourneyOfDreams
     bool m_visible{true};
     inline static int s_unnamedWidgetCounter{0};
   };
-} // namespace JourneyOfDreams
+}

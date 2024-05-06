@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "GUIPanel.h"
@@ -37,4 +37,4 @@ namespace JourneyOfDreams
    private:
     void TypeCharacter(char c);
   };
-} // namespace JourneyOfDreams
+}

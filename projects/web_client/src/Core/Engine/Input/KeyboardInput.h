@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -75,4 +75,4 @@ namespace JourneyOfDreams
     std::set<int> m_pressedKeys;
     std::string m_textInput;
   };
-} // namespace JourneyOfDreams
+}

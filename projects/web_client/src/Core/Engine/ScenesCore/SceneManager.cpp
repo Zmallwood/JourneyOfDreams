@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "SceneManager.h"
 #include "DefaultTheme/Scenes/Login/LoginScene.h"
@@ -26,28 +26,24 @@ namespace JourneyOfDreams
     GoToScene("TestScene");
   }
 
-  void
-  SceneManager::UpdateCurrentScene() {
+  void SceneManager::UpdateCurrentScene() {
     if (m_scenes.contains(m_currentScene))
       m_scenes.at(m_currentScene).Update();
   }
 
-  void
-  SceneManager::RenderCurrentScene() {
+  void SceneManager::RenderCurrentScene() {
     if (m_scenes.contains(m_currentScene))
       m_scenes.at(m_currentScene).Render();
   }
 
-  void
-  SceneManager::UpdatePostRenderCurrentScene() {
+  void SceneManager::UpdatePostRenderCurrentScene() {
     if (m_scenes.contains(m_currentScene))
       m_scenes.at(m_currentScene).UpdatePostRender();
   }
 
-  void
-  SceneManager::GoToScene(const std::string &sceneName) {
+  void SceneManager::GoToScene(const std::string &sceneName) {
     m_currentScene = Hash(sceneName);
     if (m_scenes.contains(m_currentScene))
       m_scenes.at(m_currentScene).OnEnter();
   }
-} // namespace JourneyOfDreams
+}

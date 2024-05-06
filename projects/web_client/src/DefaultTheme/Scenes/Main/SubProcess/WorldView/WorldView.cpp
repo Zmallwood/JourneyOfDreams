@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "WorldView.h"
 #include "Core/Configuration/ClientProperties.h"
@@ -33,12 +33,10 @@ namespace JourneyOfDreams
     m_ridHoveredTile = _<ImageRenderer>().NewImage();
   }
 
-  void
-  WorldView::Update() {
+  void WorldView::Update() {
   }
 
-  void
-  WorldView::Render() {
+  void WorldView::Render() {
     auto numGridRows = _<ClientProperties>().NumGridRows();
     auto numGridCols = CalculateNumGridCols();
 
@@ -92,4 +90,4 @@ namespace JourneyOfDreams
       }
     }
   }
-} // namespace JourneyOfDreams
+}

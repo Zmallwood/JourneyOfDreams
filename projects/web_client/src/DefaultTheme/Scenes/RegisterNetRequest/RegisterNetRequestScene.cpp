@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "RegisterNetRequestScene.h"
 #include "Core/Engine/GUICore/GUI.h"
@@ -19,8 +19,7 @@ namespace JourneyOfDreams
                                                 GUIAlign::Center));
   }
 
-  void
-  RegisterNetRequestScene::OnEnter() {
+  void RegisterNetRequestScene::OnEnter() {
     auto username = _<RegisterScene>()
                         .GUI()
                         ->GetWidget<GUITextBox>("UsernameTextBox")
@@ -43,4 +42,4 @@ namespace JourneyOfDreams
 
     _<NetClient>().Send(data);
   }
-} // namespace JourneyOfDreams
+}

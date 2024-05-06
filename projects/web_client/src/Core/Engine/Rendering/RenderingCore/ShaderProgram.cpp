@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "ShaderProgram.h"
 
@@ -6,9 +6,8 @@
 
 namespace JourneyOfDreams
 {
-  bool
-  ShaderProgram::Create(const GLchar *vertexShaderSource,
-                        const GLchar *fragmentShaderSource) {
+  bool ShaderProgram::Create(const GLchar *vertexShaderSource,
+                             const GLchar *fragmentShaderSource) {
     GLuint vertexShader = 0;
     GLuint fragmentShader = 0;
     m_programID = glCreateProgram();
@@ -51,14 +50,12 @@ namespace JourneyOfDreams
     return success;
   }
 
-  void
-  ShaderProgram::Cleanup() {
+  void ShaderProgram::Cleanup() {
     glDeleteProgram(m_programID);
   }
 
-  GLuint
-  ShaderProgram::CompileShader(const GLchar *shaderSource, GLuint *shader,
-                               GLenum shaderType) {
+  GLuint ShaderProgram::CompileShader(const GLchar *shaderSource,
+                                      GLuint *shader, GLenum shaderType) {
     *shader = glCreateShader(shaderType);
     glShaderSource(*shader, 1, &shaderSource, NULL);
     glCompileShader(*shader);
@@ -68,8 +65,7 @@ namespace JourneyOfDreams
     return shaderCompiled;
   }
 
-  GLuint
-  ShaderProgram::ProgramID() {
+  GLuint ShaderProgram::ProgramID() {
     return m_programID;
   }
-} // namespace JourneyOfDreams
+}

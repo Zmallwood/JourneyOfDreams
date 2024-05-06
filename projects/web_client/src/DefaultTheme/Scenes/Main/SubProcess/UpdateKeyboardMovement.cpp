@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "UpdateKeyboardMovement.h"
 #include "Core/Engine/CoreGameObjects/Player.h"
@@ -8,8 +8,7 @@
 
 namespace JourneyOfDreams
 {
-  void
-  UpdateKeyboardMovement() {
+  void UpdateKeyboardMovement() {
     auto &player = _<Player>();
     auto upPressed = _<KeyboardInput>().KeyIsPressed(GLFW_KEY_UP);
     auto downPressed = _<KeyboardInput>().KeyIsPressed(GLFW_KEY_DOWN);
@@ -33,4 +32,4 @@ namespace JourneyOfDreams
       player.SetTicksLastMove(Ticks());
     }
   }
-} // namespace JourneyOfDreams
+}

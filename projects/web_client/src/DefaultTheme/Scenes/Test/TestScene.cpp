@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "TestScene.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
@@ -13,21 +13,18 @@ namespace JourneyOfDreams
     m_ridLogo = _<ImageRenderer>().NewImage();
   }
 
-  void
-  TestScene::UpdateDerived() {
+  void TestScene::UpdateDerived() {
   }
 
-  void
-  TestScene::RenderDerived() {
+  void TestScene::RenderDerived() {
     _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground",
                                  {0.0f, 0.0f, 1.0f, 1.0f});
     _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo",
                                  {0.4f, 0.2f, 0.2f, 0.1f});
   }
 
-  void
-  TestScene::UpdatePostRender() {
+  void TestScene::UpdatePostRender() {
 
     _<SceneManager>().GoToScene("ServerConnectScene");
   }
-} // namespace JourneyOfDreams
+}

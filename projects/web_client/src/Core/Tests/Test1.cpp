@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "Test1.h"
 
@@ -119,9 +119,8 @@ namespace JourneyOfDreams
 
     glUniform1f(maxitersLocation, 10);
   }
-  
-  void
-  Test1::Render() {
+
+  void Test1::Render() {
     if (!m_active) {
       return;
     }
@@ -140,8 +139,7 @@ namespace JourneyOfDreams
     iters = iters + 0.1;
   }
 
-  void
-  Test1::Stop() {
+  void Test1::Stop() {
     m_active = false;
     glfwDestroyWindow(window);
     glDeleteBuffers(1, &m_vbo);
@@ -149,4 +147,4 @@ namespace JourneyOfDreams
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
   }
-} // namespace JourneyOfDreams
+}

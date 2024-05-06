@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "GenerateWater.h"
 #include "../../shared/world_structure/src/Tile.h"
@@ -9,8 +9,7 @@
 
 namespace JourneyOfDreams
 {
-  void
-  GenerateWater() {
+  void GenerateWater() {
     auto worldArea = _<World>().WorldArea();
     auto width = worldArea->GetSize().w;
     auto height = worldArea->GetSize().h;
@@ -39,4 +38,4 @@ namespace JourneyOfDreams
       }
     }
   }
-} // namespace JourneyOfDreams
+}

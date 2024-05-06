@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "WebsocketServer.h"
 
@@ -9,16 +9,14 @@
 
 namespace JourneyOfDreams
 {
-  Json::Value
-  WebsocketServer::parseJson(const string &json) {
+  Json::Value WebsocketServer::parseJson(const string &json) {
     Json::Value root;
     Json::Reader reader;
     reader.parse(json, root);
     return root;
   }
 
-  string
-  WebsocketServer::stringifyJson(const Json::Value &val) {
+  string WebsocketServer::stringifyJson(const Json::Value &val) {
     // When we transmit JSON data, we omit all whitespace
     Json::StreamWriterBuilder wbuilder;
     wbuilder["commentStyle"] = "None";
@@ -44,8 +42,7 @@ namespace JourneyOfDreams
     this->endpoint.init_asio(&(this->eventLoop));
   }
 
-  void
-  WebsocketServer::run(int port) {
+  void WebsocketServer::run(int port) {
     // Listen on the specified port number and start accepting connections
     this->endpoint.listen(port);
     this->endpoint.start_accept();
@@ -54,8 +51,7 @@ namespace JourneyOfDreams
     this->endpoint.run();
   }
 
-  size_t
-  WebsocketServer::numConnections() {
+  size_t WebsocketServer::numConnections() {
     // Prevent concurrent access to the list of open connections from multiple
     // threads
     std::lock_guard<std::mutex> lock(this->connectionListMutex);
@@ -63,9 +59,9 @@ namespace JourneyOfDreams
     return this->openConnections.size();
   }
 
-  void
-  WebsocketServer::sendMessage(ClientConnection conn, const string &messageType,
-                               const Json::Value &arguments) {
+  void WebsocketServer::sendMessage(ClientConnection conn,
+                                    const string &messageType,
+                                    const Json::Value &arguments) {
     // Copy the argument values, and bundle the message type into the object
     Json::Value messageData = arguments;
     messageData[MESSAGE_FIELD] = messageType;
@@ -76,9 +72,8 @@ namespace JourneyOfDreams
                         websocketpp::frame::opcode::text);
   }
 
-  void
-  WebsocketServer::broadcastMessage(const string &messageType,
-                                    const Json::Value &arguments) {
+  void WebsocketServer::broadcastMessage(const string &messageType,
+                                         const Json::Value &arguments) {
     // Prevent concurrent access to the list of open connections from multiple
     // threads
     std::lock_guard<std::mutex> lock(this->connectionListMutex);
@@ -88,8 +83,7 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  WebsocketServer::onOpen(ClientConnection conn) {
+  void WebsocketServer::onOpen(ClientConnection conn) {
     {
       // Prevent concurrent access to the list of open connections from multiple
       // threads
@@ -105,8 +99,7 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  WebsocketServer::onClose(ClientConnection conn) {
+  void WebsocketServer::onClose(ClientConnection conn) {
     {
       // Prevent concurrent access to the list of open connections from multiple
       // threads
@@ -145,9 +138,8 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  WebsocketServer::onMessage(ClientConnection conn,
-                             WebsocketEndpoint::message_ptr msg) {
+  void WebsocketServer::onMessage(ClientConnection conn,
+                                  WebsocketEndpoint::message_ptr msg) {
     // Validate that the incoming message contains valid JSON
     Json::Value messageObject = WebsocketServer::parseJson(msg->get_payload());
     if (messageObject.isNull() == false) {
@@ -165,4 +157,4 @@ namespace JourneyOfDreams
       }
     }
   }
-} // namespace JourneyOfDreams
+}

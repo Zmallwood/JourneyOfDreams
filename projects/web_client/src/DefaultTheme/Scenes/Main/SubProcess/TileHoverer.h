@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -9,12 +9,11 @@ namespace JourneyOfDreams
   class TileHoverer {
    public:
     void Update();
-    auto
-    HoveredCoordinate() const {
+    auto HoveredCoordinate() const {
       return m_hoveredCoordinate;
     }
 
    private:
     Point m_hoveredCoordinate{-1, -1};
   };
-} // namespace JourneyOfDreams
+}

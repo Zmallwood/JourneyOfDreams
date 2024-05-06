@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "MouseInput.h"
 
@@ -6,8 +6,7 @@
 
 namespace JourneyOfDreams
 {
-  void
-  MouseInput::OnPress(Uint8 button) {
+  void MouseInput::OnPress(Uint8 button) {
     /*
     ** Forward call to correct button. */
     if (button == SDL_BUTTON_LEFT) {
@@ -17,8 +16,7 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  MouseInput::OnRelease(Uint8 button) {
+  void MouseInput::OnRelease(Uint8 button) {
     /*
     ** Forward call to correct button. */
     if (button == SDL_BUTTON_LEFT) {
@@ -28,24 +26,21 @@ namespace JourneyOfDreams
     }
   }
 
-  bool
-  MouseInput::AnyButtonPressed() {
+  bool MouseInput::AnyButtonPressed() {
     /*
     ** Return true if either button is pressed. */
     return leftButton.Pressed() || rightButton.Pressed();
   }
 
-  MouseButton &
-  MouseInput::LeftButton() {
+  MouseButton &MouseInput::LeftButton() {
     /*
     ** Getter by reference */
     return leftButton;
   }
 
-  MouseButton &
-  MouseInput::RightButton() {
+  MouseButton &MouseInput::RightButton() {
     /*
     ** Getter by reference */
     return rightButton;
   }
-} // namespace JourneyOfDreams
+}

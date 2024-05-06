@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "WorldFileReader.h"
 #include "world_structure/src/Object.h"
@@ -10,8 +10,7 @@
 
 namespace JourneyOfDreams
 {
-  void
-  WorldFileReader::ReadWorldFile() {
+  void WorldFileReader::ReadWorldFile() {
     auto worldArea = _<World>().WorldArea();
     auto width = worldArea->GetSize().w;
     auto height = worldArea->GetSize().h;
@@ -41,4 +40,4 @@ namespace JourneyOfDreams
 
     worldFile.close();
   }
-} // namespace JourneyOfDreams
+}

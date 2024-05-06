@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -19,4 +19,4 @@ namespace JourneyOfDreams
     RID m_ridPlayer;
     RID m_ridHoveredTile;
   };
-} // namespace JourneyOfDreams
+}

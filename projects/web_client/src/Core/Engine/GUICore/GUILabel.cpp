@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "GUILabel.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
@@ -28,14 +28,12 @@ namespace JourneyOfDreams
     ** Do nothing. */
   }
 
-  void
-  GUILabel::UpdateDerived() {
+  void GUILabel::UpdateDerived() {
     /*
     ** Do nothing. */
   }
 
-  PointF
-  GUILabel::GetAlignedAbsolutePosition() {
+  PointF GUILabel::GetAlignedAbsolutePosition() {
     /*
     ** Measure label text rendered size. */
     auto textSize = _<TextRenderer>().MeasureString(*m_text, m_fontSize);
@@ -88,9 +86,8 @@ namespace JourneyOfDreams
 
     return alignedPosition;
   }
-  
-  void
-  GUILabel::RenderDerived() {
+
+  void GUILabel::RenderDerived() {
     /*
     ** Draw label text at widget final position. */
     auto finalPosition = GetFinalPosition();
@@ -98,10 +95,9 @@ namespace JourneyOfDreams
                                  false, m_fontSize);
   }
 
-  void
-  GUILabel::SetText(std::shared_ptr<std::string> text) {
+  void GUILabel::SetText(std::shared_ptr<std::string> text) {
     /*
     ** Setter */
     m_text = text;
   }
-} // namespace JourneyOfDreams
+}

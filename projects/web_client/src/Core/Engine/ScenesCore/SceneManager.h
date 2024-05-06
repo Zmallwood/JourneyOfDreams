@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -24,4 +24,4 @@ namespace JourneyOfDreams
     std::map<int, IScene &> m_scenes;
     int m_currentScene{0};
   };
-} // namespace JourneyOfDreams
+}

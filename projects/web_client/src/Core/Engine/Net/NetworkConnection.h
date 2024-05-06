@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -49,4 +49,4 @@ namespace JourneyOfDreams
     bool m_connected{false};
     const EMSCRIPTEN_WEBSOCKET_T *m_serverSocket{nullptr};
   };
-} // namespace JourneyOfDreams
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "NetClient.h"
 #include "NetworkConnection.h"
@@ -12,8 +12,7 @@ namespace JourneyOfDreams
     ** Do nothing. */
   }
 
-  void
-  NetClient::BeginEstablishConnection() {
+  void NetClient::BeginEstablishConnection() {
     /*
     ** Try connect. */
     m_connection->InitiateConnectToServer();
@@ -26,23 +25,20 @@ namespace JourneyOfDreams
     return m_connection->SendMessage(data);
   }
 
-  void
-  NetClient::Update() {
+  void NetClient::Update() {
     /*
     ** To implement: Update of network logic. */
   }
 
-  bool
-  NetClient::Connected() {
+  bool NetClient::Connected() {
     /*
     ** Getter. */
     return m_connection->Connected();
   }
 
-  std::shared_ptr<NetworkConnection>
-  NetClient::Connection() const {
+  std::shared_ptr<NetworkConnection> NetClient::Connection() const {
     /*
     ** Getter. */
     return m_connection;
   }
-} // namespace JourneyOfDreams
+}

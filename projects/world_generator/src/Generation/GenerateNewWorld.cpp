@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "GenerateNewWorld.h"
 #include "../../shared/world_structure/src/World.h"
@@ -10,11 +10,10 @@
 
 namespace JourneyOfDreams
 {
-  void
-  GenerateNewWorld() {
+  void GenerateNewWorld() {
     srand(time(0));
     GenerateGrass();
     GenerateWater();
     GenerateObjects();
   }
-} // namespace JourneyOfDreams
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "Core/Engine/Rendering/TextRendering/FontSizes.h"
@@ -68,4 +68,4 @@ namespace JourneyOfDreams
     ColorF m_textColor{Colors::Wheat};
     RID m_ridText{};
   };
-} // namespace JourneyOfDreams
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "TileHoverer.h"
 #include "Core/Configuration/ClientProperties.h"
@@ -8,8 +8,7 @@
 
 namespace JourneyOfDreams
 {
-  void
-  TileHoverer::Update() {
+  void TileHoverer::Update() {
     auto numGridRows = _<ClientProperties>().NumGridRows();
     auto numGridCols = CalculateNumGridCols();
 
@@ -26,4 +25,4 @@ namespace JourneyOfDreams
         .x = player.GetX() - (numGridCols - 1) / 2 + hoveredCol,
         .y = player.GetY() - (numGridRows - 1) / 2 + hoveredRow};
   }
-} // namespace JourneyOfDreams
+}

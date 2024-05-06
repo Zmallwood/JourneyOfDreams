@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "Test2.h"
 #include "Core/Engine/Assets/ImageBank.h"
@@ -92,8 +92,7 @@ namespace JourneyOfDreams
     glUseProgram(program);
   }
 
-  void
-  Test2::Render() {
+  void Test2::Render() {
     if (!m_active) {
       return;
     }
@@ -118,8 +117,7 @@ namespace JourneyOfDreams
     iters = iters + 0.1;
   }
 
-  void
-  Test2::Stop() {
+  void Test2::Stop() {
     m_active = false;
     glfwDestroyWindow(window);
     glDeleteBuffers(1, &m_vbo);
@@ -127,4 +125,4 @@ namespace JourneyOfDreams
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
   }
-} // namespace JourneyOfDreams
+}

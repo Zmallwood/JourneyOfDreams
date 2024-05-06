@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -12,12 +12,11 @@ namespace JourneyOfDreams
    public:
     World();
 
-    auto
-    WorldArea() {
+    auto WorldArea() {
       return m_worldArea;
     }
 
    private:
     std::shared_ptr<JourneyOfDreams::WorldArea> m_worldArea;
   };
-} // namespace JourneyOfDreams
+}

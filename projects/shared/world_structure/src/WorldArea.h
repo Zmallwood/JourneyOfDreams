@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -17,12 +17,11 @@ namespace JourneyOfDreams
     Point GetRandomCoordinate();
     std::shared_ptr<Tile> GetRandomTile();
 
-    auto &
-    Tiles() {
+    auto &Tiles() {
       return m_tiles;
     }
 
    private:
     std::vector<std::vector<std::shared_ptr<Tile>>> m_tiles;
   };
-} // namespace JourneyOfDreams
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "RendererBase.h"
 #include "ShaderProgram.h"
@@ -15,8 +15,7 @@ namespace JourneyOfDreams
                 BufferTypes, std::shared_ptr<std::map<GLuint, GLuint>>>>()) {
   }
 
-  GLuint
-  RendererBase::GenNewVAOID() {
+  GLuint RendererBase::GenNewVAOID() {
     GLuint VAOID;
     glGenVertexArraysOES(1, &VAOID);
     m_VAOIDs->push_back(VAOID); // Store newly created VAO id
@@ -24,8 +23,7 @@ namespace JourneyOfDreams
     return VAOID;
   }
 
-  GLuint
-  RendererBase::GenNewBuffID(BufferTypes buffType, GLuint VAOID) {
+  GLuint RendererBase::GenNewBuffID(BufferTypes buffType, GLuint VAOID) {
     GLuint buffID;
     glGenBuffers(1, &buffID);
     if (!m_VBOIDs->contains(buffType)) {
@@ -37,9 +35,8 @@ namespace JourneyOfDreams
     return buffID;
   }
 
-  void
-  RendererBase::SetIndicesData(GLuint indicesVBOID, int numIndices,
-                               const void *data) const {
+  void RendererBase::SetIndicesData(GLuint indicesVBOID, int numIndices,
+                                    const void *data) const {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, // Bind the VBO buffer that should
                                           // hold indices data
                  indicesVBOID);
@@ -50,9 +47,8 @@ namespace JourneyOfDreams
         data, GL_DYNAMIC_DRAW);
   }
 
-  void
-  RendererBase::SetData(GLuint VBOID, int numEntries, const void *data,
-                        BufferTypes buffType, int layoutLocation) const {
+  void RendererBase::SetData(GLuint VBOID, int numEntries, const void *data,
+                             BufferTypes buffType, int layoutLocation) const {
     if (buffType == BufferTypes::BoneIDs) {
       SetArrayBufferDataInt(
           VBOID, // Call other method for BoneIDs than other buffer types
@@ -64,10 +60,9 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  RendererBase::SetArrayBufferData(GLuint VBOID, int numEntries,
-                                   const void *data, int numFloatsPerEntry,
-                                   int layoutLocation) const {
+  void RendererBase::SetArrayBufferData(GLuint VBOID, int numEntries,
+                                        const void *data, int numFloatsPerEntry,
+                                        int layoutLocation) const {
     glBindBuffer(GL_ARRAY_BUFFER,
                  VBOID);          // Bind the VBO for the provided VBO id
     glBufferData(GL_ARRAY_BUFFER, // Set the buffer data as an array buffer
@@ -84,10 +79,10 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  RendererBase::SetArrayBufferDataInt(GLuint VBOID, int numEntries,
-                                      const void *data, int numFloatsPerEntry,
-                                      int layoutLocation) const {
+  void RendererBase::SetArrayBufferDataInt(GLuint VBOID, int numEntries,
+                                           const void *data,
+                                           int numFloatsPerEntry,
+                                           int layoutLocation) const {
     glBindBuffer(GL_ARRAY_BUFFER,
                  VBOID);          // Bind the VBO for the provided VBO id
     glBufferData(GL_ARRAY_BUFFER, // Set the buffer data as an array buffer
@@ -107,30 +102,26 @@ namespace JourneyOfDreams
     }
   }
 
-  GLuint
-  RendererBase::GetUniformLocation(const std::string &variableName) {
+  GLuint RendererBase::GetUniformLocation(const std::string &variableName) {
     return glGetUniformLocation( // Get layout location of uniform variable in
                                  // the shader
         m_shaderProgram->ProgramID(), variableName.c_str());
   }
 
-  void
-  RendererBase::UseVAOBegin(GLuint VAOID) const {
+  void RendererBase::UseVAOBegin(GLuint VAOID) const {
     glUseProgram(
         m_shaderProgram
             ->ProgramID()); // Start using shader  program and provided VAO
     glBindVertexArrayOES(VAOID);
   }
 
-  GLuint
-  RendererBase::GetBuffID(BufferTypes buffType, GLuint VAOID) const {
+  GLuint RendererBase::GetBuffID(BufferTypes buffType, GLuint VAOID) const {
     return m_VBOIDs->at(buffType)->at(
         VAOID); // Returns the buffer of provided type and VAO id
   }
 
-  void
-  RendererBase::UpdateIndicesData(GLuint indicesVBOID,
-                                  std::vector<int> &indices) const {
+  void RendererBase::UpdateIndicesData(GLuint indicesVBOID,
+                                       std::vector<int> &indices) const {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, // Bind VBO with provided id, being an
                                           // element array buffer
                  indicesVBOID);
@@ -138,10 +129,10 @@ namespace JourneyOfDreams
                     0, sizeof(float) * indices.size(), indices.data());
   }
 
-  void
-  RendererBase::UpdateArrayBufferData(GLuint VBOID, std::vector<float> &data,
-                                      int numFloatsPerEntry,
-                                      int layoutLocation) const {
+  void RendererBase::UpdateArrayBufferData(GLuint VBOID,
+                                           std::vector<float> &data,
+                                           int numFloatsPerEntry,
+                                           int layoutLocation) const {
     glBindBuffer(GL_ARRAY_BUFFER,
                  VBOID); // Bind VBO with provided id, being an array buffer
     glBufferSubData(GL_ARRAY_BUFFER, // Set the buffer data
@@ -151,10 +142,10 @@ namespace JourneyOfDreams
     glEnableVertexAttribArray(layoutLocation); // Enable layout
   }
 
-  void
-  RendererBase::UpdateArrayBufferDataInt(GLuint VBOID, std::vector<float> &data,
-                                         int numFloatsPerEntry,
-                                         int layoutLocation) const {
+  void RendererBase::UpdateArrayBufferDataInt(GLuint VBOID,
+                                              std::vector<float> &data,
+                                              int numFloatsPerEntry,
+                                              int layoutLocation) const {
     glBindBuffer(GL_ARRAY_BUFFER,
                  VBOID); // Bind VBO with provided id, being an array buffer
     glBufferSubData(GL_ARRAY_BUFFER, // Set the buffer data
@@ -166,9 +157,9 @@ namespace JourneyOfDreams
     glEnableVertexAttribArray(layoutLocation); // Enable layout
   }
 
-  void
-  RendererBase::UpdateData(GLuint VBOID, std::vector<float> &data,
-                           BufferTypes buffType, int layoutLocation) const {
+  void RendererBase::UpdateData(GLuint VBOID, std::vector<float> &data,
+                                BufferTypes buffType,
+                                int layoutLocation) const {
     if (buffType == BufferTypes::BoneIDs) // Does the buffer hold BoneID data=
     {
       UpdateArrayBufferDataInt(VBOID, // If so, update buffer with int data
@@ -181,14 +172,12 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  RendererBase::UseVAOEnd() const {
+  void RendererBase::UseVAOEnd() const {
     glBindVertexArrayOES(0); // Unbind currently used VAO
     glUseProgram(0);         // Stop using shader program
   }
 
-  void
-  RendererBase::CleanupBase() const {
+  void RendererBase::CleanupBase() const {
     for (auto &buffType : *m_VBOIDs) // Loop through all keys of buffer types
     {
       for (auto &bufferEntry :
@@ -212,8 +201,7 @@ namespace JourneyOfDreams
     return m_shaderProgram;
   }
 
-  const int
-  RendererBase::NumVerticesInRectangle() {
+  const int RendererBase::NumVerticesInRectangle() {
     return k_numVerticesInRectangle;
   }
-} // namespace JourneyOfDreams
+}

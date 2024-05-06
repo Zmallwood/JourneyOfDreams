@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "Core/Engine/ScenesCore/IScene.h"
@@ -15,4 +15,4 @@ namespace JourneyOfDreams
 
     void UpdateDerived() override;
   };
-} // namespace JourneyOfDreams
+}

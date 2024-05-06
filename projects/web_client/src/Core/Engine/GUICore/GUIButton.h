@@ -1,9 +1,10 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "GUIWidget.h"
 
-// gui_button class declaration.
+/* GUIButton class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -16,10 +17,10 @@ namespace JourneyOfDreams
     /// Initialize class members and graphical resources
     /// and setup the default appearance of the button.
     ///
-    /// \param area Area of the button.
-    /// \param text Text to display on the button.
-    /// \param onClick Function to call when the button is clicked.
-    /// \param textColor Color of the text.
+    /// @param area Area of the button.
+    /// @param text Text to display on the button.
+    /// @param onClick Function to call when the button is clicked.
+    /// @param textColor Color of the text.
     /////////////////////////////////////////////////
     GUIButton(RectF area, const std::string &text,
               std::function<void()> onClick, ColorF textColor = Colors::Wheat);
@@ -38,7 +39,7 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Get the background image for the button when hovered.
     ///
-    /// \return Background image for the button when hovered.
+    /// @return Background image for the button when hovered.
     /////////////////////////////////////////////////
     std::string BackgroundHoveredImage();
 
@@ -46,7 +47,7 @@ namespace JourneyOfDreams
     /// Set the background image for the button when
     /// hovered.
     ///
-    /// \param backgroundHoveredImage Background image for
+    /// @param backgroundHoveredImage Background image for
     ///                               the button when hovered.
     /////////////////////////////////////////////////
     void SetBackgroundHoveredImage(const std::string &backgroundHoveredImage);
@@ -60,4 +61,4 @@ namespace JourneyOfDreams
     bool m_isHovered{false};
     std::string m_backgroundHoveredImage{};
   };
-} // namespace JourneyOfDreams
+}

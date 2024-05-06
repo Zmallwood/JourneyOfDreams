@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "ColorF.h"
@@ -14,4 +14,4 @@ namespace JourneyOfDreams
     ColorF color;
     PointF uv;
   };
-} // namespace JourneyOfDreams
+}

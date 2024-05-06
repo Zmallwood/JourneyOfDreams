@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "LoginNetRequestScene.h"
 #include "Core/Engine/GUICore/GUI.h"
@@ -19,8 +19,7 @@ namespace JourneyOfDreams
                                                 GUIAlign::Center));
   }
 
-  void
-  LoginNetRequestScene::OnEnter() {
+  void LoginNetRequestScene::OnEnter() {
     auto username = _<LoginScene>()
                         .GUI()
                         ->GetWidget<GUITextBox>("UsernameTextBox")
@@ -32,4 +31,4 @@ namespace JourneyOfDreams
     _<NetClient>().Send({{"Username", username}, {"Password", password}});
     _<SceneManager>().GoToScene("MainScene");
   }
-} // namespace JourneyOfDreams
+}

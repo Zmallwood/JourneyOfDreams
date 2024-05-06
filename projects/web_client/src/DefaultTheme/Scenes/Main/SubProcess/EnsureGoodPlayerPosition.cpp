@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "EnsureGoodPlayerPosition.h"
 #include "Core/Engine/CoreGameObjects/Player.h"
@@ -10,8 +10,7 @@
 
 namespace JourneyOfDreams
 {
-  static bool
-  CoordinateIsGoodAsPlayerPosition(Point coordinate) {
+  static bool CoordinateIsGoodAsPlayerPosition(Point coordinate) {
     auto worldArea = _<World>().WorldArea();
     auto tile = worldArea->GetTile(coordinate);
 
@@ -22,8 +21,7 @@ namespace JourneyOfDreams
     return true;
   }
 
-  void
-  EnsureGoodPlayerPosition() {
+  void EnsureGoodPlayerPosition() {
     auto worldArea = _<World>().WorldArea();
     Point coordinate;
     do {
@@ -33,4 +31,4 @@ namespace JourneyOfDreams
     auto &player = _<Player>();
     player.SetPosition(coordinate);
   }
-} // namespace JourneyOfDreams
+}

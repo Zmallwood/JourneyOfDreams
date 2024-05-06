@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "PollEvents.h"
 #include "Input/KeyboardInput.h"
@@ -8,8 +8,7 @@
 
 namespace JourneyOfDreams
 {
-  void
-  PollEvents() {
+  void PollEvents() {
     SDL_Event event;
 
     while (SDL_PollEvent(&event) != 0) {
@@ -47,4 +46,4 @@ namespace JourneyOfDreams
       }
     }
   }
-} // namespace JourneyOfDreams
+}

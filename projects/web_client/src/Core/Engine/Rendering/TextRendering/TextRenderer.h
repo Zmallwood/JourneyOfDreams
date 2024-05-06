@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "FontSizes.h"
@@ -61,4 +61,4 @@ namespace JourneyOfDreams
     std::map<RID, std::string> m_uniqueNameIDs;
     std::map<RID, RID> m_ridsGLResources;
   };
-} // namespace JourneyOfDreams
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "GUITextBox.h"
 #include "Core/Engine/Cursor/Cursor.h"
@@ -30,15 +30,13 @@ namespace JourneyOfDreams
     SetFocusable(true);
   }
 
-  void
-  GUITextBox::TypeCharacter(char c) {
+  void GUITextBox::TypeCharacter(char c) {
     /*
     ** Type a character into the text box. */
     m_managedTextLine.InsertCharacter(c);
   }
 
-  void
-  GUITextBox::UpdateDerived() {
+  void GUITextBox::UpdateDerived() {
     auto mousePos = GetMousePosition();
     /*
     ** If mouse is hovering this text box. */
@@ -54,7 +52,7 @@ namespace JourneyOfDreams
         Focus();
         /*
         ** And set the cursor position in the text box to where it was clicked.
-       */
+        */
         auto localMousePosX = mousePos.x - GetFinalPosition().x - Padding();
         m_managedTextLine.SetCursorPositionFromLocalX(localMousePosX);
       }
@@ -98,8 +96,7 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  GUITextBox::RenderDerived() {
+  void GUITextBox::RenderDerived() {
     /*
     ** Draw textbox background. */
     _<ImageRenderer>().DrawImage(m_ridBackground, BackgroundImage(),
@@ -131,7 +128,7 @@ namespace JourneyOfDreams
     if (cursorVisible) {
       /*
        ** Get the canvas x position in the to where text cursor will be drawn.
-      */
+       */
       auto cursorX =
           finalPosition.x +
           _<TextRenderer>()
@@ -152,22 +149,19 @@ namespace JourneyOfDreams
     }
   }
 
-  std::string
-  GUITextBox::GetText() {
+  std::string GUITextBox::GetText() {
     /*
     ** Getter. */
     return m_managedTextLine.Text();
   }
 
-  void
-  GUITextBox::ClearText() {
+  void GUITextBox::ClearText() {
     /*
     ** Clear text in the text box. */
     m_managedTextLine.Reset();
   }
 
-  void
-  GUITextBox::Focus() {
+  void GUITextBox::Focus() {
     /*
     ** Show on-screen keyboard (for phones) when focusing a text box. */
     GetParentGUI()->ShowKeyboard();
@@ -175,4 +169,4 @@ namespace JourneyOfDreams
     ** Call base focus logic. */
     GUIWidget::Focus();
   }
-} // namespace JourneyOfDreams
+}

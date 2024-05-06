@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "Object.h"
 
@@ -12,4 +12,4 @@ namespace JourneyOfDreams
 
   Object::Object(int objectTypeHash) : m_type(objectTypeHash) {
   }
-} // namespace JourneyOfDreams
+}

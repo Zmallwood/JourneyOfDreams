@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "GUIWindow.h"
 
@@ -12,4 +12,4 @@ namespace JourneyOfDreams
     /*
     ** Do nothing. */
   }
-} // namespace JourneyOfDreams
+}

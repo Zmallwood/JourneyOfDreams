@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "MouseButton.h"
@@ -47,4 +47,4 @@ namespace JourneyOfDreams
     MouseButton leftButton;
     MouseButton rightButton;
   };
-} // namespace JourneyOfDreams
+}

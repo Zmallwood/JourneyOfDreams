@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "BufferTypes.h"
@@ -153,4 +153,4 @@ namespace JourneyOfDreams
         {BufferTypes::BoneIDs, 4},     {BufferTypes::Weights, 4}};
     inline static const int k_numVerticesInRectangle{4};
   };
-} // namespace JourneyOfDreams
+}

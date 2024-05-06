@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "IScene.h"
 #include "Core/Engine/GUICore/GUI.h"
@@ -11,36 +11,29 @@ namespace JourneyOfDreams
     m_gui->Initialize();
   }
 
-  void
-  IScene::Update() {
+  void IScene::Update() {
     UpdateDerived();
     m_gui->Update();
   }
 
-  void
-  IScene::Render() {
+  void IScene::Render() {
     RenderDerived();
     m_gui->Render();
   }
 
-  void
-  IScene::OnEnter() {
+  void IScene::OnEnter() {
   }
 
-  void
-  IScene::UpdateDerived() {
+  void IScene::UpdateDerived() {
   }
 
-  void
-  IScene::RenderDerived() {
+  void IScene::RenderDerived() {
   }
 
-  void
-  IScene::UpdatePostRender() {
+  void IScene::UpdatePostRender() {
   }
 
-  std::shared_ptr<JourneyOfDreams::GUI>
-  IScene::GUI() {
+  std::shared_ptr<JourneyOfDreams::GUI> IScene::GUI() {
     return m_gui;
   }
-} // namespace JourneyOfDreams
+}

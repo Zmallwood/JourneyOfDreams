@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "InputManager.h"
 #include "Core/Engine/Graphics/Graphics.h"
@@ -9,8 +9,8 @@
 
 namespace JourneyOfDreams
 {
-  static void
-  KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mods) {
+  static void KeyCallback(GLFWwindow *window, int key, int scancode, int action,
+                          int mods) {
     if (action == GLFW_PRESS) {
       _<KeyboardInput>().OnKeyPress(key);
     } else if (action == GLFW_RELEASE) {
@@ -18,8 +18,8 @@ namespace JourneyOfDreams
     }
   }
 
-  static void
-  MouseButtonCallback(GLFWwindow *window, int button, int action, int mods) {
+  static void MouseButtonCallback(GLFWwindow *window, int button, int action,
+                                  int mods) {
     if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
       _<MouseInput>().LeftButton().OnPress();
     } else if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_RELEASE) {
@@ -31,19 +31,16 @@ namespace JourneyOfDreams
     }
   }
 
-  static void
-  CharacterCallback(GLFWwindow *window, unsigned int codepoint) {
+  static void CharacterCallback(GLFWwindow *window, unsigned int codepoint) {
     _<KeyboardInput>().AppendTextInput(std::string(1, (char)codepoint));
   }
 
-  static EM_BOOL
-  TouchStartCallback(int, EmscriptenTouchEvent const *, void *) {
+  static EM_BOOL TouchStartCallback(int, EmscriptenTouchEvent const *, void *) {
     _<MouseInput>().LeftButton().OnPress();
     return EM_FALSE;
   }
 
-  static EM_BOOL
-  TouchEndCallback(int, EmscriptenTouchEvent const *, void *) {
+  static EM_BOOL TouchEndCallback(int, EmscriptenTouchEvent const *, void *) {
     _<MouseInput>().LeftButton().OnRelease();
     return EM_FALSE;
   }
@@ -57,4 +54,4 @@ namespace JourneyOfDreams
     emscripten_set_touchend_callback("#canvas", nullptr, true,
                                      TouchEndCallback);
   }
-} // namespace JourneyOfDreams
+}

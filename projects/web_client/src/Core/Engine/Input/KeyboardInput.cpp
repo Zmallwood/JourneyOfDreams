@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "KeyboardInput.h"
 
@@ -6,36 +6,31 @@
 
 namespace JourneyOfDreams
 {
-  void
-  KeyboardInput::OnKeyPress(int key) {
+  void KeyboardInput::OnKeyPress(int key) {
     /*
     ** Add the key to the set of pressed keys.*/
     m_pressedKeys.insert(key);
   }
 
-  void
-  KeyboardInput::OnKeyRelease(int key) {
+  void KeyboardInput::OnKeyRelease(int key) {
     /*
     ** Remove the key from the set of pressed keys. */
     m_pressedKeys.erase(key);
   }
 
-  bool
-  KeyboardInput::AnyKeyIsPressed() {
+  bool KeyboardInput::AnyKeyIsPressed() {
     /*
     ** Return true if any key is pressed. */
     return m_pressedKeys.size() > 0;
   }
 
-  bool
-  KeyboardInput::KeyIsPressed(int key) {
+  bool KeyboardInput::KeyIsPressed(int key) {
     /*
     ** Return true if the key is pressed. */
     return m_pressedKeys.contains(key);
   }
 
-  bool
-  KeyboardInput::KeyHasBeenFiredPickResult(int key) {
+  bool KeyboardInput::KeyHasBeenFiredPickResult(int key) {
     /*
     ** Pick out result. */
     auto result = m_pressedKeys.contains(key);
@@ -47,15 +42,13 @@ namespace JourneyOfDreams
     return result;
   }
 
-  void
-  KeyboardInput::AppendTextInput(const std::string &text) {
+  void KeyboardInput::AppendTextInput(const std::string &text) {
     /*
     ** Append text to the text input buffer. */
     m_textInput += text;
   }
 
-  std::string
-  KeyboardInput::PickTextInput() {
+  std::string KeyboardInput::PickTextInput() {
     /*
     ** Pick out result. */
     auto result = m_textInput;
@@ -67,10 +60,9 @@ namespace JourneyOfDreams
     return result;
   }
 
-  void
-  KeyboardInput::ClearTextInput() {
+  void KeyboardInput::ClearTextInput() {
     /*
     ** Clear the text input buffer. */
     m_textInput.clear();
   }
-} // namespace JourneyOfDreams
+}

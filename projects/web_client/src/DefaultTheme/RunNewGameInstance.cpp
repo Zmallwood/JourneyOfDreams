@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "RunNewGameInstance.h"
 #include "Core/GameInstance.h"
@@ -7,9 +7,8 @@
 
 namespace JourneyOfDreams
 {
-  void
-  RunNewGameInstance() {
+  void RunNewGameInstance() {
     GameInstance gameInstance;
     gameInstance.Run();
   }
-} // namespace JourneyOfDreams
+}

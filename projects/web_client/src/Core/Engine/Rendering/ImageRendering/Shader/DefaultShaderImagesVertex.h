@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -24,4 +24,4 @@ namespace JourneyOfDreams
       "   ex_TexCoord = in_TexCoord;\n"
       "   ex_Pos = aPos.xy;\n"
       "}\0";
-} // namespace JourneyOfDreams
+}

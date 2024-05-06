@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -36,8 +36,7 @@ namespace JourneyOfDreams
 
     // Registers a callback for when a client connects
     template <typename CallbackTy>
-    void
-    connect(CallbackTy handler) {
+    void connect(CallbackTy handler) {
       // Make sure we only access the handlers list from the networking thread
       this->eventLoop.post(
           [this, handler]() { this->connectHandlers.push_back(handler); });
@@ -45,8 +44,7 @@ namespace JourneyOfDreams
 
     // Registers a callback for when a client disconnects
     template <typename CallbackTy>
-    void
-    disconnect(CallbackTy handler) {
+    void disconnect(CallbackTy handler) {
       // Make sure we only access the handlers list from the networking thread
       this->eventLoop.post(
           [this, handler]() { this->disconnectHandlers.push_back(handler); });
@@ -54,8 +52,7 @@ namespace JourneyOfDreams
 
     // Registers a callback for when a particular type of message is received
     template <typename CallbackTy>
-    void
-    message(const string &messageType, CallbackTy handler) {
+    void message(const string &messageType, CallbackTy handler) {
       // Make sure we only access the handlers list from the networking thread
       this->eventLoop.post([this, messageType, handler]() {
         this->messageHandlers[messageType].push_back(handler);
@@ -93,4 +90,4 @@ namespace JourneyOfDreams
         vector<std::function<void(ClientConnection, const Json::Value &)>>>
         messageHandlers;
   };
-} // namespace JourneyOfDreams
+}

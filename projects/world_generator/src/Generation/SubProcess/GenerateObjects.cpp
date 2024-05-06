@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "GenerateObjects.h"
 #include "../../shared/world_structure/src/Object.h"
@@ -10,8 +10,7 @@
 
 namespace JourneyOfDreams
 {
-  void
-  GenerateObjects() {
+  void GenerateObjects() {
     auto worldArea = _<World>().WorldArea();
 
     auto numTree1s = 400;
@@ -44,4 +43,4 @@ namespace JourneyOfDreams
       }
     }
   }
-} // namespace JourneyOfDreams
+}

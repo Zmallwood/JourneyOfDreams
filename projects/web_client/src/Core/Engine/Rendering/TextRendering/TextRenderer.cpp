@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "TextRenderer.h"
 #include "Core/Engine/Assets/ImageBank.h"
@@ -20,10 +20,10 @@ namespace JourneyOfDreams
     m_fonts.insert({FontSizes::_50, font50});
   }
 
-  void
-  TextRenderer::RenderText(RID rid, const std::string &text, ColorF color,
-                           bool centerAlign, FontSizes fontSize,
-                           std::string &outUniqueNameID, SizeF &outSize) const {
+  void TextRenderer::RenderText(RID rid, const std::string &text, ColorF color,
+                                bool centerAlign, FontSizes fontSize,
+                                std::string &outUniqueNameID,
+                                SizeF &outSize) const {
     auto font = m_fonts.at(fontSize)->SDLFont();
 
     if (!font)
@@ -90,8 +90,7 @@ namespace JourneyOfDreams
     SDL_FreeSurface(textOutlineSurf);
   }
 
-  RID
-  TextRenderer::NewString() {
+  RID TextRenderer::NewString() {
     static int s_idCounter = 0;
     auto id = s_idCounter++;
     auto uniqueName = "RenderedImage" + std::to_string(id);
@@ -103,9 +102,9 @@ namespace JourneyOfDreams
     return ridImage;
   }
 
-  void
-  TextRenderer::DrawString(RID rid, const std::string &text, PointF position,
-                           ColorF color, bool centerAlign, FontSizes fontSize) {
+  void TextRenderer::DrawString(RID rid, const std::string &text,
+                                PointF position, ColorF color, bool centerAlign,
+                                FontSizes fontSize) {
     std::string uniqueNameID;
     SizeF size;
     RenderText(rid, text, color, centerAlign, fontSize, uniqueNameID, size);
@@ -134,9 +133,8 @@ namespace JourneyOfDreams
     _<ImageRenderer>().DrawImage(ridGLResource, uniqueNameID, rect, false);
   }
 
-  SizeF
-  TextRenderer::MeasureString(const std::string &text,
-                              FontSizes fontSize) const {
+  SizeF TextRenderer::MeasureString(const std::string &text,
+                                    FontSizes fontSize) const {
     auto font = m_fonts.at(fontSize)->SDLFont();
     int text_w;
     int text_h;
@@ -145,4 +143,4 @@ namespace JourneyOfDreams
     return {static_cast<float>(text_w) / canvSz.w,
             static_cast<float>(text_h) / canvSz.h};
   }
-} // namespace JourneyOfDreams
+}

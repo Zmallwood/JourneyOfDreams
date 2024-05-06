@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "RunNetServer.h"
 #include "WebsocketServer.h"
@@ -9,8 +9,7 @@
 
 namespace JourneyOfDreams
 {
-  void
-  RunNetServer() {
+  void RunNetServer() {
     // Create the event loop for the main thread, and the WebSocket server
     asio::io_service mainEventLoop;
     WebsocketServer server;
@@ -81,4 +80,4 @@ namespace JourneyOfDreams
     asio::io_service::work work(mainEventLoop);
     mainEventLoop.run();
   }
-} // namespace JourneyOfDreams
+}

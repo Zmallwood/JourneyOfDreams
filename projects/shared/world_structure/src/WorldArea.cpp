@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "WorldArea.h"
 #include "Tile.h"
@@ -20,37 +20,32 @@ namespace JourneyOfDreams
     }
   }
 
-  Size
-  WorldArea::GetSize() {
+  Size WorldArea::GetSize() {
     auto width = m_tiles.size();
     auto height = width > 0 ? m_tiles.at(0).size() : 0;
 
     return {static_cast<int>(width), static_cast<int>(height)};
   }
 
-  std::shared_ptr<Tile>
-  WorldArea::GetTile(Point coordinate) {
+  std::shared_ptr<Tile> WorldArea::GetTile(Point coordinate) {
     if (IsValidCoordinate(coordinate))
       return m_tiles.at(coordinate.x).at(coordinate.y);
     else
       return nullptr;
   }
 
-  bool
-  WorldArea::IsValidCoordinate(Point coordinate) {
+  bool WorldArea::IsValidCoordinate(Point coordinate) {
     auto size = GetSize();
     return coordinate.x >= 0 && coordinate.y >= 0 && coordinate.x < size.w &&
            coordinate.y < size.h;
   }
 
-  Point
-  WorldArea::GetRandomCoordinate() {
+  Point WorldArea::GetRandomCoordinate() {
     auto size = GetSize();
     return {.x = rand() % size.w, .y = rand() % size.h};
   }
 
-  std::shared_ptr<Tile>
-  WorldArea::GetRandomTile() {
+  std::shared_ptr<Tile> WorldArea::GetRandomTile() {
     return GetTile(GetRandomCoordinate());
   }
-} // namespace JourneyOfDreams
+}

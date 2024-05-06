@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "GUIMovableWidget.h"
@@ -27,4 +27,4 @@ namespace JourneyOfDreams
    private:
     std::string m_title{};
   };
-} // namespace JourneyOfDreams
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "ManagedTextString.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
@@ -13,8 +13,7 @@ namespace JourneyOfDreams
     ** Do nothing. */
   }
 
-  void
-  ManagedTextString::InsertText(const std::string &text) {
+  void ManagedTextString::InsertText(const std::string &text) {
     /*
     ** Cancel if there is nothing to insert. */
     if (text.empty()) {
@@ -31,8 +30,7 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  ManagedTextString::InsertCharacter(char c) {
+  void ManagedTextString::InsertCharacter(char c) {
     /*
     ** Insert character and reposition text cursor. */
     m_text.insert(m_cursorPosition, 1, c);
@@ -44,8 +42,7 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  ManagedTextString::TryMoveCursorLeft() {
+  void ManagedTextString::TryMoveCursorLeft() {
     /*
     ** Try move cursor to the left. */
     if (m_cursorPosition > 0) {
@@ -64,8 +61,7 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  ManagedTextString::TryMoveCursorRight() {
+  void ManagedTextString::TryMoveCursorRight() {
     /*
     ** Try move cursor to the right. */
     if (m_cursorPosition < m_text.size()) {
@@ -88,8 +84,7 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  ManagedTextString::TryDeleteLeft() {
+  void ManagedTextString::TryDeleteLeft() {
     /*
     ** If the text cursor is not at the left edge of the text. */
     if (m_cursorPosition > 0) {
@@ -108,8 +103,7 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  ManagedTextString::TryDeleteRight() {
+  void ManagedTextString::TryDeleteRight() {
     /*
     ** Ensure cursor is not outside text. */
     if (m_cursorPosition < m_text.size()) {
@@ -127,31 +121,27 @@ namespace JourneyOfDreams
     }
   }
 
-  int
-  ManagedTextString::AppearedCursorPosition() const {
+  int ManagedTextString::AppearedCursorPosition() const {
     /*
     ** Return cursor position as appeared with regard to the offset. */
     return m_cursorPosition - m_cursorOffset;
   }
 
-  bool
-  ManagedTextString::IsTextOverflow() const {
+  bool ManagedTextString::IsTextOverflow() const {
     /*
     ** Return true if text is overflowed. */
     return _<TextRenderer>()
                .MeasureString(GetAppearedText(), FontSizes::_20)
                .w > m_maxRenderWidth;
   }
-  
-  std::string
-  ManagedTextString::OffsetedText() const {
+
+  std::string ManagedTextString::OffsetedText() const {
     /*
     ** Return text with regard to the offset. */
     return m_text.substr(m_cursorOffset);
   }
 
-  std::string
-  ManagedTextString::GetAppearedText() const {
+  std::string ManagedTextString::GetAppearedText() const {
     /*
     ** Get offseted text, that dont include text outside
     ** of the left edge of the visible text field. */
@@ -169,8 +159,7 @@ namespace JourneyOfDreams
     return result;
   }
 
-  void
-  ManagedTextString::MoveCursorToStart() {
+  void ManagedTextString::MoveCursorToStart() {
     /*
     ** Both positiong and offset must be set to 0. */
     m_cursorPosition = 0;
@@ -183,11 +172,10 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  ManagedTextString::MoveCursorToEnd() {
+  void ManagedTextString::MoveCursorToEnd() {
     /*
     ** Set text cursor position to right side of the last character in the text.
-   */
+    */
     m_cursorPosition = m_text.size();
     /*
     ** No need of right side clipping when we know we are at the right end of
@@ -201,14 +189,13 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  ManagedTextString::SetCursorPositionFromLocalX(float xPosition) {
+  void ManagedTextString::SetCursorPositionFromLocalX(float xPosition) {
     /*
     ** Get only the visible part of the text. */
     auto textToRender = GetAppearedText();
     /*
     ** To hold the resulting cursor position, with the cursor offset subtracted.
-   */
+    */
     auto offsetedCursorPosition = 0;
     /*
     ** Iterate through the characters of the visible text. */
@@ -245,8 +232,7 @@ namespace JourneyOfDreams
     m_cursorPosition = offsetedCursorPosition + m_cursorOffset;
   }
 
-  void
-  ManagedTextString::Reset() {
+  void ManagedTextString::Reset() {
     /*
     ** Should not contain any text anymore. */
     m_text.clear();
@@ -261,17 +247,15 @@ namespace JourneyOfDreams
     m_cursorRightClip = 0;
   }
 
-  int
-  ManagedTextString::CursorPosition() const {
+  int ManagedTextString::CursorPosition() const {
     /*
     ** Getter */
     return m_cursorPosition;
   }
 
-  std::string
-  ManagedTextString::Text() const {
+  std::string ManagedTextString::Text() const {
     /*
     ** Getter */
     return m_text;
   }
-} // namespace JourneyOfDreams
+}

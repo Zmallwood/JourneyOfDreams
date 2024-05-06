@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -16,4 +16,4 @@ namespace JourneyOfDreams
     bool m_active{true};
     RID m_ridImage{0};
   };
-} // namespace JourneyOfDreams
+}

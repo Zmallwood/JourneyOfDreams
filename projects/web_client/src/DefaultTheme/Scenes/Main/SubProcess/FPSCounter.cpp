@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "FPSCounter.h"
 #include "Core/Engine/GUICore/GUI.h"
@@ -15,8 +15,7 @@ namespace JourneyOfDreams
         std::make_shared<GUILabel>(PointF{.x = 0.85f, .y = 0.0f}, "FPS: 0"));
   }
 
-  void
-  FPSCounter::Update() {
+  void FPSCounter::Update() {
     m_framesCount++;
 
     unsigned int ticks{Ticks()};
@@ -27,12 +26,11 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  FPSCounter::Render() {
+  void FPSCounter::Render() {
     _<MainScene>()
         .GUI()
         ->GetWidget<GUILabel>("FPSCounterLabel")
         ->SetText(
             std::make_shared<std::string>("FPS: " + std::to_string(m_fps)));
   }
-} // namespace JourneyOfDreams
+}

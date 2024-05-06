@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -128,4 +128,4 @@ namespace JourneyOfDreams
     float m_maxRenderWidth{1.0f};
     bool m_passwordMode{false};
   };
-} // namespace JourneyOfDreams
+}

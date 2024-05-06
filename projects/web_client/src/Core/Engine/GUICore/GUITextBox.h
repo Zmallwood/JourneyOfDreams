@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "GUIWidget.h"
@@ -70,4 +70,4 @@ namespace JourneyOfDreams
     const std::string k_cursorImage{"GUITextBoxCursor"};
     const float k_cursorWidth{0.002f};
   };
-} // namespace JourneyOfDreams
+}

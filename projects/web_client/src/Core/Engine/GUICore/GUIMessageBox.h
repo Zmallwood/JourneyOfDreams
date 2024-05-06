@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "GUIWindow.h"
@@ -37,4 +37,4 @@ namespace JourneyOfDreams
     std::string m_message{};
     static constexpr SizeF k_defaultSize = {0.5f, 0.2f};
   };
-} // namespace JourneyOfDreams
+}

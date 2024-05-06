@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 typedef struct _TTF_Font TTF_Font;
@@ -46,4 +46,4 @@ namespace JourneyOfDreams
     std::shared_ptr<TTF_Font> m_outlineFont;
     static constexpr int k_fontOutlineWidth{2};
   };
-} // namespace JourneyOfDreams
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "NetworkConnection.h"
 #include "Core/Configuration/ConfigurationFile.h"
@@ -78,8 +78,7 @@ namespace JourneyOfDreams
     return EM_TRUE;
   }
 
-  void
-  NetworkConnection::InitiateConnectToServer() {
+  void NetworkConnection::InitiateConnectToServer() {
     if (!emscripten_websocket_is_supported())
       return;
 
@@ -98,19 +97,16 @@ namespace JourneyOfDreams
     emscripten_websocket_set_onmessage_callback(ws, NULL, OnMessage);
   }
 
-  bool
-  NetworkConnection::Connected() const {
+  bool NetworkConnection::Connected() const {
     return m_connected;
   }
 
-  void
-  NetworkConnection::SetConnected(bool connected) {
+  void NetworkConnection::SetConnected(bool connected) {
     m_connected = connected;
   }
 
-  void
-  NetworkConnection::SetServerSocket(
+  void NetworkConnection::SetServerSocket(
       const EMSCRIPTEN_WEBSOCKET_T *serverSocket) {
     m_serverSocket = serverSocket;
   }
-} // namespace JourneyOfDreams
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -20,4 +20,4 @@ namespace JourneyOfDreams
       "void main() {\n"
       "    FragColor = texture(TexUnit, ex_TexCoord);\n"
       "}\0";
-} // namespace JourneyOfDreams
+}

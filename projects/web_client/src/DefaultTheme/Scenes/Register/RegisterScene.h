@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "Core/Engine/ScenesCore/IScene.h"
@@ -23,4 +23,4 @@ namespace JourneyOfDreams
     RID m_ridBackground{0};
     RID m_ridLogo{0};
   };
-} // namespace JourneyOfDreams
+}

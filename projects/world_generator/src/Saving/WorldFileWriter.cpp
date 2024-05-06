@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "WorldFileWriter.h"
 #include "../../shared/world_structure/src/Object.h"
@@ -10,8 +10,7 @@
 
 namespace JourneyOfDreams
 {
-  void
-  WorldFileWriter::WriteWorldToFile() {
+  void WorldFileWriter::WriteWorldToFile() {
 
     auto worldArea = _<World>().WorldArea();
     auto width = worldArea->GetSize().w;
@@ -36,4 +35,4 @@ namespace JourneyOfDreams
 
     worldFile.close();
   }
-} // namespace JourneyOfDreams
+}

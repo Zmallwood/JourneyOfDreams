@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "MainScene.h"
 #include "Core/WorldFileReading/WorldFileReader.h"
@@ -13,15 +13,13 @@
 
 namespace JourneyOfDreams
 {
-  void
-  MainScene::OnEnter() {
+  void MainScene::OnEnter() {
     _<WorldFileReader>().ReadWorldFile();
     EnsureGoodPlayerPosition();
     _<WorldView>();
   }
 
-  void
-  MainScene::UpdateDerived() {
+  void MainScene::UpdateDerived() {
     UpdateKeyboardMovement();
     UpdateClickMovement();
     _<TileHoverer>().Update();
@@ -29,9 +27,8 @@ namespace JourneyOfDreams
     _<FPSCounter>().Update();
   }
 
-  void
-  MainScene::RenderDerived() {
+  void MainScene::RenderDerived() {
     _<WorldView>().Render();
     _<FPSCounter>().Render();
   }
-} // namespace JourneyOfDreams
+}

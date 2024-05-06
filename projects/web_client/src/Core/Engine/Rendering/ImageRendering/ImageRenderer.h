@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "Core/Engine/Rendering/RenderingCore/RendererBase.h"
@@ -67,4 +67,4 @@ namespace JourneyOfDreams
     static constexpr int k_locUv = 2;
     int m_locNoPixelEffect = -1;
   };
-} // namespace JourneyOfDreams
+}

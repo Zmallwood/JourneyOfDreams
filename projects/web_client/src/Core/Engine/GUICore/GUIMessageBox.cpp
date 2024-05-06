@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "GUIMessageBox.h"
 #include "GUIButton.h"
@@ -18,8 +18,7 @@ namespace JourneyOfDreams
     ** Do nothing. */
   }
 
-  void
-  GUIMessageBox::Initialize() {
+  void GUIMessageBox::Initialize() {
     /*
     ** Add a label to this window. */
     AddWidget(std::make_shared<GUILabel>(PointF{0.0f, 0.0f}, m_message));
@@ -28,4 +27,4 @@ namespace JourneyOfDreams
     AddWidget(std::make_shared<GUIButton>(RectF{0.35f, 0.1f, 0.1f, 0.05f}, "OK",
                                           [this]() { Destroy(); }));
   }
-} // namespace JourneyOfDreams
+}

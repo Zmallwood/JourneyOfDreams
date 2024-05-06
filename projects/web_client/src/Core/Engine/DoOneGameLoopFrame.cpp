@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "DoOneGameLoopFrame.h"
 #include "Assets/ImageBank.h"
@@ -13,8 +13,7 @@
 
 namespace JourneyOfDreams
 {
-  void
-  DoOneGameLoopFrame() {
+  void DoOneGameLoopFrame() {
 #if defined(DEV_TEST_MODE)
     _<Test1>().Render();
     //_<Test1>().Stop();
@@ -41,4 +40,4 @@ namespace JourneyOfDreams
     _<Engine>().PresentCanvas();
 #endif
   }
-} // namespace JourneyOfDreams
+}

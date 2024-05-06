@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -21,4 +21,4 @@ namespace JourneyOfDreams
     GLuint m_ebo;
     unsigned int m_shaderProgram;
   };
-} // namespace JourneyOfDreams
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 #include "GLRectF.h"
@@ -11,23 +11,19 @@ namespace JourneyOfDreams
 {
   class RectF {
    public:
-    GLRectF
-    ToGLRectF() const {
+    GLRectF ToGLRectF() const {
       return {x * 2 - 1.0f, 1.0f - y * 2, w * 2, h * 2};
     }
 
-    PointF
-    GetPosition() const {
+    PointF GetPosition() const {
       return {x, y};
     }
 
-    SizeF
-    GetSize() const {
+    SizeF GetSize() const {
       return {w, h};
     }
 
-    bool
-    Contains(PointF point) const {
+    bool Contains(PointF point) const {
       return point.x >= x && point.x <= x + w && point.y >= y &&
              point.y <= y + h;
     }
@@ -37,4 +33,4 @@ namespace JourneyOfDreams
     float w{0.0f};
     float h{0.0f};
   };
-} // namespace JourneyOfDreams
+}

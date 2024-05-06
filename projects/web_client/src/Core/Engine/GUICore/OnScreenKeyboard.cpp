@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "OnScreenKeyboard.h"
 #include "GUI.h"
@@ -19,8 +19,7 @@ namespace JourneyOfDreams
     SetPadding(0.0f);
   }
 
-  void
-  OnScreenKeyboard::Initialize() {
+  void OnScreenKeyboard::Initialize() {
     /*
     ** Create panel containing the lower case buttons. **/
     auto pnlLowerCase =
@@ -65,22 +64,19 @@ namespace JourneyOfDreams
                           [this]() { TypeCharacter('0'); }));
   }
 
-  void
-  OnScreenKeyboard::Show() {
+  void OnScreenKeyboard::Show() {
     /*
     ** Show the on-screen keyboard. **/
     SetVisible(true);
   }
 
-  void
-  OnScreenKeyboard::Hide() {
+  void OnScreenKeyboard::Hide() {
     /*
     ** Hide the on-screen keyboard. **/
     SetVisible(false);
   }
 
-  void
-  OnScreenKeyboard::TypeCharacter(char c) {
+  void OnScreenKeyboard::TypeCharacter(char c) {
     /*
     ** Get currently focused textbox. **/
     auto gui = GetParentGUI();
@@ -94,4 +90,4 @@ namespace JourneyOfDreams
       focusedTextBox->TypeCharacter(c);
     }
   }
-} // namespace JourneyOfDreams
+}

@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
@@ -53,4 +53,4 @@ namespace JourneyOfDreams
    private:
     std::shared_ptr<NetworkConnection> m_connection;
   };
-} // namespace JourneyOfDreams
+}

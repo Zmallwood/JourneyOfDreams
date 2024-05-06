@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "LoginScene.h"
 #include "Core/Engine/GUICore/GUI.h"
@@ -34,21 +34,18 @@ namespace JourneyOfDreams
                                      Colors::Wheat, true));
   }
 
-  void
-  LoginScene::OnEnter() {
+  void LoginScene::OnEnter() {
     GUI()->GetWidget<GUITextBox>("UsernameTextBox")->ClearText();
     GUI()->GetWidget<GUITextBox>("PasswordTextBox")->ClearText();
   }
 
-  void
-  LoginScene::UpdateDerived() {
+  void LoginScene::UpdateDerived() {
   }
 
-  void
-  LoginScene::RenderDerived() {
+  void LoginScene::RenderDerived() {
     _<ImageRenderer>().DrawImage(m_ridBackground, "DefaultSceneBackground",
                                  {0.0f, 0.0f, 1.0f, 1.0f});
     _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo",
                                  {0.4f, 0.2f, 0.2f, 0.1f});
   }
-} // namespace JourneyOfDreams
+}

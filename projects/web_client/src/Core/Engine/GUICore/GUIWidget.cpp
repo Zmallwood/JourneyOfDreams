@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "GUIWidget.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
@@ -36,8 +36,7 @@ namespace JourneyOfDreams
     m_ridBorderCornerBottomRight = _<ImageRenderer>().NewImage();
   }
 
-  void
-  GUIWidget::InsertWaitingWidgets() {
+  void GUIWidget::InsertWaitingWidgets() {
     /*
     ** Add all widgets from the waiting-collection. */
     for (auto &entry : *m_widgetsToInsert) {
@@ -53,8 +52,7 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  GUIWidget::Destroy() {
+  void GUIWidget::Destroy() {
     /*
     ** Mark this widget for destruction, erasing it here immediately would
     *disrupt current
@@ -67,8 +65,7 @@ namespace JourneyOfDreams
     }
   }
 
-  void
-  GUIWidget::DestroyMarkedWidgets() {
+  void GUIWidget::DestroyMarkedWidgets() {
     /*
     ** Iterate through all child widgets. */
     for (auto it = ChildWidgets().begin(); it != ChildWidgets().end();) {
@@ -92,8 +89,7 @@ namespace JourneyOfDreams
     }
   }
 
-  bool
-  GUIWidget::MouseOver() {
+  bool GUIWidget::MouseOver() {
     auto mousePosition = GetMousePosition();
     auto finalArea = GetFinalArea();
     /*
@@ -104,14 +100,12 @@ namespace JourneyOfDreams
            mousePosition.y <= finalArea.y + finalArea.h;
   }
 
-  void
-  GUIWidget::Initialize() {
+  void GUIWidget::Initialize() {
     /*
     ** Do nothing. */
   }
 
-  void
-  GUIWidget::BringToFront() {
+  void GUIWidget::BringToFront() {
     /*
     ** If has no parent widget, this widget must be a GUI and
     ** cannot be brought to front. */
@@ -147,8 +141,7 @@ namespace JourneyOfDreams
     std::rotate(it, it + 1, parentChildWidgets.end());
   }
 
-  void
-  GUIWidget::Update() {
+  void GUIWidget::Update() {
     /*
     ** Dont update if not visible. */
     if (!m_visible) {
@@ -164,8 +157,7 @@ namespace JourneyOfDreams
     UpdateDerived();
   }
 
-  void
-  GUIWidget::Render() {
+  void GUIWidget::Render() {
     /*
     ** Dont render if not visible. */
     if (!m_visible) {
@@ -253,7 +245,7 @@ namespace JourneyOfDreams
       auto verticalBorderWidth = ConvertWidthToHeight(m_borderWidth);
       /*
       ** Determine pattern fill values to get a repeated image in the rendering.
-     */
+      */
       auto borderHorizontalPatternFillAmount =
           SizeF{1.0f, finalArea.h * horizontalBorderWidth};
       auto borderVerticalPatternFillAmount =
@@ -332,14 +324,12 @@ namespace JourneyOfDreams
     RenderDerived();
   }
 
-  void
-  GUIWidget::UpdateDerived() {
+  void GUIWidget::UpdateDerived() {
     /*
     ** Do nothing. */
   }
 
-  void
-  GUIWidget::RenderDerived() {
+  void GUIWidget::RenderDerived() {
     /*
     ** Do nothing. */
   }
@@ -388,8 +378,7 @@ namespace JourneyOfDreams
     return AddWidget(generatedName, childWidget);
   }
 
-  PointF
-  GUIWidget::GetAbsolutePosition() {
+  PointF GUIWidget::GetAbsolutePosition() {
     /*
     ** Start with the position local from the parents point of view. */
     auto finalPosition = m_position;
@@ -404,8 +393,7 @@ namespace JourneyOfDreams
     return finalPosition;
   }
 
-  PointF
-  GUIWidget::GetAlignedAbsolutePosition() {
+  PointF GUIWidget::GetAlignedAbsolutePosition() {
     /*
     ** Start with the absolute position of this widget,
     ** assuming that the alignment is TopLeft. */
@@ -472,8 +460,7 @@ namespace JourneyOfDreams
     return alignedPosition;
   }
 
-  PointF
-  GUIWidget::GetFinalPosition() {
+  PointF GUIWidget::GetFinalPosition() {
     /*
     ** Get the final positiong without padding. */
     auto paddedAlignedPosition = GetAlignedAbsolutePosition();
@@ -540,16 +527,14 @@ namespace JourneyOfDreams
     return paddedAlignedPosition;
   }
 
-  RectF
-  GUIWidget::GetFinalArea() {
+  RectF GUIWidget::GetFinalArea() {
     auto finalPosition = GetFinalPosition();
     /*
     ** Combine final position and widget size to get final area. */
     return RectF{finalPosition.x, finalPosition.y, m_size.w, m_size.h};
   }
 
-  void
-  GUIWidget::Focus() {
+  void GUIWidget::Focus() {
     /*
     ** Get root GUI object and set this widget as focused. */
     GetParentGUI()->SetFocusedWidget(shared_from_this());
@@ -559,8 +544,7 @@ namespace JourneyOfDreams
     m_ticksTimeGotFocus = Ticks();
   }
 
-  std::shared_ptr<GUI>
-  GUIWidget::GetParentGUI() {
+  std::shared_ptr<GUI> GUIWidget::GetParentGUI() {
     /*
     ** Start with current parent widget. */
     std::shared_ptr<GUIWidget> parent = m_parentWidget;
@@ -574,15 +558,13 @@ namespace JourneyOfDreams
     return dynamic_pointer_cast<GUI>(parent);
   }
 
-  bool
-  GUIWidget::HasFocus() {
+  bool GUIWidget::HasFocus() {
     /*
     ** Check if the widget has focus. */
     return GetParentGUI()->FocusedWidget() == shared_from_this();
   }
 
-  std::vector<WidgetEntry>
-  GUIWidget::GetChildWidgetsRecursively() {
+  std::vector<WidgetEntry> GUIWidget::GetChildWidgetsRecursively() {
     /*
     ** To hold all child widgets, and child widgets of child widgets
     ** and so on (recursively). */
@@ -605,122 +587,105 @@ namespace JourneyOfDreams
     return result;
   }
 
-  std::vector<WidgetEntry> &
-  GUIWidget::ChildWidgets() {
+  std::vector<WidgetEntry> &GUIWidget::ChildWidgets() {
     /*
     ** Getter by reference. */
     return m_childWidgets;
   }
 
-  std::shared_ptr<GUIWidget>
-  GUIWidget::ParentWidget() {
+  std::shared_ptr<GUIWidget> GUIWidget::ParentWidget() {
     /*
     ** Getter. */
     return m_parentWidget;
   }
 
-  void
-  GUIWidget::SetParentWidget(std::shared_ptr<GUIWidget> parentWidget) {
+  void GUIWidget::SetParentWidget(std::shared_ptr<GUIWidget> parentWidget) {
     /*
     ** Setter. */
     m_parentWidget = parentWidget;
   }
 
-  GUIAlign
-  GUIWidget::Alignment() {
+  GUIAlign GUIWidget::Alignment() {
     /*
     ** Getter. */
     return m_alignment;
   }
 
-  void
-  GUIWidget::SetSize(SizeF size) {
+  void GUIWidget::SetSize(SizeF size) {
     /*
     ** Setter. */
     m_size = size;
   }
 
-  SizeF
-  GUIWidget::Size() {
+  SizeF GUIWidget::Size() {
     /*
     ** Getter. */
     return m_size;
   }
 
-  float
-  GUIWidget::Padding() {
+  float GUIWidget::Padding() {
     /*
     ** Getter. */
     return m_padding;
   }
 
-  bool
-  GUIWidget::Focusable() {
+  bool GUIWidget::Focusable() {
     /*
     ** Getter. */
     return m_focusable;
   }
 
-  bool
-  GUIWidget::MarkedForDestruction() {
+  bool GUIWidget::MarkedForDestruction() {
     /*
     ** Getter. */
     return m_markedForDestruction;
   }
 
-  void
-  GUIWidget::SetDrawBackground(bool drawBackground) {
+  void GUIWidget::SetDrawBackground(bool drawBackground) {
     /*
     ** Setter. */
     m_drawBackground = drawBackground;
   }
 
-  void
-  GUIWidget::SetDrawBorders(bool drawBorders) {
+  void GUIWidget::SetDrawBorders(bool drawBorders) {
     /*
     ** Setter. */
     m_drawBorders = drawBorders;
   }
 
-  std::string
-  GUIWidget::BackgroundImage() {
+  std::string GUIWidget::BackgroundImage() {
     /*
     ** Getter. */
     return m_backgroundImage;
   }
 
-  void
-  GUIWidget::SetBackgroundImage(const std::string &backgroundImage) {
+  void GUIWidget::SetBackgroundImage(const std::string &backgroundImage) {
     /*
     ** Setter. */
     m_backgroundImage = backgroundImage;
   }
 
-  void
-  GUIWidget::SetFocusable(bool focusable) {
+  void GUIWidget::SetFocusable(bool focusable) {
     /*
     ** Setter. */
     m_focusable = focusable;
   }
 
-  int
-  GUIWidget::TicksTimeGotFocus() {
+  int GUIWidget::TicksTimeGotFocus() {
     /*
     ** Setter. */
     return m_ticksTimeGotFocus;
   }
 
-  void
-  GUIWidget::SetVisible(bool visible) {
+  void GUIWidget::SetVisible(bool visible) {
     /*
     ** Setter. */
     m_visible = visible;
   }
 
-  void
-  GUIWidget::SetPadding(float padding) {
+  void GUIWidget::SetPadding(float padding) {
     /*
     ** Setter. */
     m_padding = padding;
   }
-} // namespace JourneyOfDreams
+}

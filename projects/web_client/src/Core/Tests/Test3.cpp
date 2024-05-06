@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "Test3.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
@@ -11,8 +11,7 @@ namespace JourneyOfDreams
     m_ridImage = _<ImageRenderer>().NewImage();
   }
 
-  void
-  Test3::Render() {
+  void Test3::Render() {
     if (!m_active) {
       return;
     }
@@ -20,8 +19,7 @@ namespace JourneyOfDreams
                                  {0.0f, 0.0f, 1.0f, 1.0f});
   }
 
-  void
-  Test3::Stop() {
+  void Test3::Stop() {
     m_active = false;
   }
-} // namespace JourneyOfDreams
+}

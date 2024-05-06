@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "ImageRenderer.h"
 #include "Core/Engine/Assets/ImageBank.h"
@@ -20,8 +20,7 @@ namespace JourneyOfDreams
     CleanupBase();
   }
 
-  RID
-  ImageRenderer::NewImage() {
+  RID ImageRenderer::NewImage() {
     auto rid = GenNewVAOID();
     UseVAOBegin(rid);
     auto indexBuffID = GenNewBuffID(BufferTypes::Indices, rid);
@@ -41,10 +40,9 @@ namespace JourneyOfDreams
     return rid;
   }
 
-  void
-  ImageRenderer::DrawImage(RID rid, int imageNameHash, const RectF &dest,
-                           bool repeatTexture, SizeF textureFillAmount,
-                           ColorF color) {
+  void ImageRenderer::DrawImage(RID rid, int imageNameHash, const RectF &dest,
+                                bool repeatTexture, SizeF textureFillAmount,
+                                ColorF color) {
     auto GLRect = dest.ToGLRectF();
     Vertex2F verts[RendererBase::NumVerticesInRectangle()];
     verts[0].pos = {GLRect.x, GLRect.y - GLRect.h};
@@ -100,11 +98,10 @@ namespace JourneyOfDreams
     UseVAOEnd();
   }
 
-  void
-  ImageRenderer::DrawImage(RID rid, const std::string &imageName,
-                           const RectF &dest, bool repeatTexture,
-                           SizeF textureFillAmount, ColorF color) {
+  void ImageRenderer::DrawImage(RID rid, const std::string &imageName,
+                                const RectF &dest, bool repeatTexture,
+                                SizeF textureFillAmount, ColorF color) {
     DrawImage(rid, Hash(imageName), dest, repeatTexture, textureFillAmount,
               color);
   }
-} // namespace JourneyOfDreams
+}

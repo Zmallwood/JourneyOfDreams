@@ -1,4 +1,4 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #include "ServerConnectScene.h"
 #include "Core/Engine/GUICore/GUI.h"
@@ -16,15 +16,13 @@ namespace JourneyOfDreams
                                                 GUIAlign::Center));
   }
 
-  void
-  ServerConnectScene::OnEnter() {
+  void ServerConnectScene::OnEnter() {
     _<NetClient>().BeginEstablishConnection();
   }
 
-  void
-  ServerConnectScene::UpdateDerived() {
+  void ServerConnectScene::UpdateDerived() {
     if (_<NetClient>().Connected()) {
       _<SceneManager>().GoToScene("LoginScene");
     }
   }
-} // namespace JourneyOfDreams
+}
