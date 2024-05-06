@@ -2,7 +2,7 @@
 
 #pragma once
 
-/* cursor_styles enum declaration. */
+/* CursorStyles enum declaration. */
 
 namespace JourneyOfDreams
 {

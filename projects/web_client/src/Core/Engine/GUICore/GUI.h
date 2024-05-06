@@ -1,9 +1,10 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "GUIWidget.h"
 
-// gui class declaration.
+/* GUI class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -42,21 +43,21 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Get focused widget.
     ///
-    /// \return Focused widget.
+    /// @return Focused widget.
     /////////////////////////////////////////////////
     std::shared_ptr<GUIWidget> FocusedWidget();
 
     /////////////////////////////////////////////////
     /// Set focused widget.
     ///
-    /// \param focusedWidget Focused widget.
+    /// @param focusedWidget Focused widget.
     /////////////////////////////////////////////////
     void SetFocusedWidget(std::shared_ptr<GUIWidget> focusedWidget);
 
     /////////////////////////////////////////////////
     /// Get widget by name, casted to T pointer.
-    /// \param nameIdentifier Name of the widget.
-    /// \return Widget casted to T pointer.
+    /// @param nameIdentifier Name of the widget.
+    /// @return Widget casted to T pointer.
     /////////////////////////////////////////////////
     template <class T>
     std::shared_ptr<T> GetWidget(const std::string &nameIdentifier);
@@ -68,8 +69,7 @@ namespace JourneyOfDreams
   };
 
   template <class T>
-  std::shared_ptr<T>
-  GUI::GetWidget(const std::string &nameIdentifier) {
+  std::shared_ptr<T> GUI::GetWidget(const std::string &nameIdentifier) {
     return static_pointer_cast<T>(GetWidget(nameIdentifier));
   }
-} // namespace JourneyOfDreams
+}

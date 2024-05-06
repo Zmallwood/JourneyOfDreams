@@ -1,8 +1,8 @@
-// Copyright (c) 2024 Andreas Åkerberg.
+/* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
 
-// gui_align class declaration.
+/* GUIAlign enum class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -55,4 +55,4 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     Center
   };
-} // namespace JourneyOfDreams
+}
