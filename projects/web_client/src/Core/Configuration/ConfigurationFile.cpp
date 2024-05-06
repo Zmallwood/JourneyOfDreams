@@ -7,15 +7,15 @@
 namespace journey_of_dreams
 {
   ConfigurationFile::ConfigurationFile() {
-    // To contain the read configuration file.
-    std::ifstream _configurationFile;
+    // Create object to contain the read configuration file.
     // Open the configuration file.
-    _configurationFile.open(SDL_GetBasePath() + k_filePath);
-    // To contain the read line.
-    std::string _line;
+    // Create string to contain the read line.
     // Read each line of the configuration file.
+    // Remove comments from the line.
+    std::ifstream _configurationFile;
+    _configurationFile.open(SDL_GetBasePath() + k_filePath);
+    std::string _line;
     while (std::getline(_configurationFile, _line)) {
-      // Remove comments from the line.
       for (auto &_c : _line) {
         if (_c == '#') {
           _line = _line.substr(0, _line.find('#'));
@@ -23,23 +23,22 @@ namespace journey_of_dreams
         }
       }
       // Get the parameter name and value.
+      // Convert parameter name to lowercase.
+      // Check if the parameter is the server address.
+      // Set the server address.
+      // Check if the parameter is the server port.
+      // Set the server port.
+      // Close the configuration file.
       auto _parameterName = _line.substr(0, _line.find('='));
       auto _parameterValue = _line.substr(_line.find('=') + 1);
-      // Convert parameter name to lowercase.
       std::transform(_parameterName.begin(), _parameterName.end(),
                      _parameterName.begin(), tolower);
-      // Check if the parameter is the server address.
       if (_parameterName == "serveraddress") {
-        // Set the server address.
         m_serverAddress = _parameterValue;
-      }
-      // Check if the parameter is the server port.
-      else if (_parameterName == "serverport") {
-        // Set the server port.
+      } else if (_parameterName == "serverport") {
         m_serverPort = std::stoi(_parameterValue);
       }
     }
-    // Close the configuration file.
     _configurationFile.close();
   }
 
