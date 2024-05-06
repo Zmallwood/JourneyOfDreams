@@ -93,11 +93,11 @@ namespace JourneyOfDreams
      *    stored in the OpenGL texture now.
      * 3) Return the previously generated resource ID. */
     if (surf->format->BytesPerPixel == 4) {
-      glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, _surf->w, _surf->h, 0, GL_RGBA,
-                   GL_UNSIGNED_BYTE, _surf->pixels);
+      glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGBA,
+                   GL_UNSIGNED_BYTE, surf->pixels);
     } else {
-      glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, _surf->w, _surf->h, 0, GL_RGB,
-                   GL_UNSIGNED_BYTE, _surf->pixels);
+      glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, surf->w, surf->h, 0, GL_RGB,
+                   GL_UNSIGNED_BYTE, surf->pixels);
     }
     SDL_FreeSurface(surf);
     return texID;
