@@ -4,7 +4,7 @@
 
 // world_view class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class WorldView {
    public:
@@ -19,4 +19,4 @@ namespace journey_of_dreams
     RID m_ridPlayer;
     RID m_ridHoveredTile;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -5,10 +5,10 @@
 
 // renderer_base class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   RendererBase::RendererBase()
-      : m_shaderProgram(std::make_shared<journey_of_dreams::ShaderProgram>()),
+      : m_shaderProgram(std::make_shared<JourneyOfDreams::ShaderProgram>()),
         m_VAOIDs(std::make_shared<std::vector<GLuint>>()),
         m_VBOIDs(
             std::make_shared<std::map<
@@ -207,7 +207,7 @@ namespace journey_of_dreams
     m_shaderProgram->Cleanup(); // Finally, clean up shader proram
   }
 
-  std::shared_ptr<journey_of_dreams::ShaderProgram>
+  std::shared_ptr<JourneyOfDreams::ShaderProgram>
   RendererBase::ShaderProgram() {
     return m_shaderProgram;
   }
@@ -216,4 +216,4 @@ namespace journey_of_dreams
   RendererBase::NumVerticesInRectangle() {
     return k_numVerticesInRectangle;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

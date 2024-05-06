@@ -6,7 +6,7 @@
 
 // tile_hoverer class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   TileHoverer::Update() {
@@ -26,4 +26,4 @@ namespace journey_of_dreams
         .x = player.GetX() - (numGridCols - 1) / 2 + hoveredCol,
         .y = player.GetY() - (numGridRows - 1) / 2 + hoveredRow};
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

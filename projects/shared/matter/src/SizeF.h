@@ -4,11 +4,11 @@
 
 // sizef class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class SizeF {
    public:
     float w{0.0f};
     float h{0.0f};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

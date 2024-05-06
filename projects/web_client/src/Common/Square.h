@@ -4,7 +4,7 @@
 
 /* Square class declaration and implementation. */
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Helper class for creating a square of type T.
@@ -15,9 +15,9 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     /// Set all values to the same value.
     ///
-    /// @param _value Value to set all values to.
+    /// @param value Value to set all values to.
     /////////////////////////////////////////////////
-    void SetAll(T _value);
+    void SetAll(T value);
 
     /////////////////////////////////////////////////
     /// Top left corner value.
@@ -41,9 +41,8 @@ namespace journey_of_dreams
   };
 
   template <class T>
-  void
-  Square<T>::SetAll(T _value) {
+  void Square<T>::SetAll(T value) {
     /* Set all corners to the same value. */
-    _00 = _01 = _11 = _10 = _value;
+    _00 = _01 = _11 = _10 = value;
   }
 }

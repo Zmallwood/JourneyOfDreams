@@ -10,7 +10,7 @@
 
 // register_net_request_scene class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   RegisterNetRequestScene::RegisterNetRequestScene() {
     GUI()->AddWidget("RegisterAccountLabel",
@@ -43,4 +43,4 @@ namespace journey_of_dreams
 
     _<NetClient>().Send(data);
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

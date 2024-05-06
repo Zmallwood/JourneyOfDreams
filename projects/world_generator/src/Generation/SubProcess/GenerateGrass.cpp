@@ -7,7 +7,7 @@
 
 // generate_grass function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   GenerateGrass() {
@@ -22,4 +22,4 @@ namespace journey_of_dreams
       }
     }
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

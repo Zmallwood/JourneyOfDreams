@@ -4,7 +4,7 @@
 
 // keyboard_input class definition.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   KeyboardInput::OnKeyPress(int key) {
@@ -73,4 +73,4 @@ namespace journey_of_dreams
     ** Clear the text input buffer. */
     m_textInput.clear();
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

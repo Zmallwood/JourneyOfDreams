@@ -7,7 +7,7 @@
 
 // fps_counter class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   FPSCounter::FPSCounter() {
     _<MainScene>().GUI()->AddWidget(
@@ -35,4 +35,4 @@ namespace journey_of_dreams
         ->SetText(
             std::make_shared<std::string>("FPS: " + std::to_string(m_fps)));
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

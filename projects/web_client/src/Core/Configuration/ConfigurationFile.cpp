@@ -4,7 +4,7 @@
 
 /* ConfigurationFile class implementation. */
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   ConfigurationFile::ConfigurationFile() {
     // 1) Create object to contain the read configuration file.
@@ -12,13 +12,13 @@ namespace journey_of_dreams
     // 3) Create string to contain the read line.
     // 4) Read each line of the configuration file.
     // 5) Remove comments from the line.
-    std::ifstream _configurationFile;
-    _configurationFile.open(SDL_GetBasePath() + k_filePath);
-    std::string _line;
-    while (std::getline(_configurationFile, _line)) {
-      for (auto &_c : _line) {
-        if (_c == '#') {
-          _line = _line.substr(0, _line.find('#'));
+    std::ifstream configurationFile;
+    configurationFile.open(SDL_GetBasePath() + k_filePath);
+    std::string line;
+    while (std::getline(configurationFile, line)) {
+      for (auto &c : line) {
+        if (c == '#') {
+          line = line.substr(0, line.find('#'));
           break;
         }
       }
@@ -29,17 +29,17 @@ namespace journey_of_dreams
       // 5) Check if the parameter is the server port.
       // 6) Set the server port.
       // 7) Close the configuration file.
-      auto _parameterName = _line.substr(0, _line.find('='));
-      auto _parameterValue = _line.substr(_line.find('=') + 1);
-      std::transform(_parameterName.begin(), _parameterName.end(),
-                     _parameterName.begin(), tolower);
-      if (_parameterName == "serveraddress") {
-        m_serverAddress = _parameterValue;
-      } else if (_parameterName == "serverport") {
-        m_serverPort = std::stoi(_parameterValue);
+      auto parameterName = line.substr(0, line.find('='));
+      auto parameterValue = line.substr(line.find('=') + 1);
+      std::transform(parameterName.begin(), parameterName.end(),
+                     parameterName.begin(), tolower);
+      if (parameterName == "serveraddress") {
+        m_serverAddress = parameterValue;
+      } else if (parameterName == "serverport") {
+        m_serverPort = std::stoi(parameterValue);
       }
     }
-    _configurationFile.close();
+    configurationFile.close();
   }
 
   std::string ConfigurationFile::ServerAddress() const {

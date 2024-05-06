@@ -5,7 +5,7 @@
 
 // Cursor class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Game mouse cursor which replaces default
@@ -48,4 +48,4 @@ namespace journey_of_dreams
         {CursorStyles::Rotating, "CursorRotating"},
         {CursorStyles::Attacking, "CursorAttacking"}};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

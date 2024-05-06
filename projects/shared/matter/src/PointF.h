@@ -4,7 +4,7 @@
 
 // pointf class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class PointF {
    public:
@@ -23,4 +23,4 @@ namespace journey_of_dreams
     float x{0.0f};
     float y = {0.0f};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // font class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   Font::Font(const std::string &fontFileName, int fontSize) {
     m_font = std::shared_ptr<TTF_Font>(
@@ -29,4 +29,4 @@ namespace journey_of_dreams
   Font::FontOutlineWidth() {
     return k_fontOutlineWidth;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

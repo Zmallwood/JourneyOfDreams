@@ -5,7 +5,7 @@
 
 // text_renderer class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class Font;
 
@@ -61,4 +61,4 @@ namespace journey_of_dreams
     std::map<RID, std::string> m_uniqueNameIDs;
     std::map<RID, RID> m_ridsGLResources;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

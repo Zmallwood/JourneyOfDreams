@@ -5,9 +5,9 @@
 
 // iscene class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
-  IScene::IScene() : m_gui(std::make_shared<journey_of_dreams::GUI>()) {
+  IScene::IScene() : m_gui(std::make_shared<JourneyOfDreams::GUI>()) {
     m_gui->Initialize();
   }
 
@@ -39,8 +39,8 @@ namespace journey_of_dreams
   IScene::UpdatePostRender() {
   }
 
-  std::shared_ptr<journey_of_dreams::GUI>
+  std::shared_ptr<JourneyOfDreams::GUI>
   IScene::GUI() {
     return m_gui;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

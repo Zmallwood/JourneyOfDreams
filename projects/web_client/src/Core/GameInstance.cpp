@@ -6,7 +6,7 @@
 
 // game_instance class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   GameInstance::Run() {
@@ -14,4 +14,4 @@ namespace journey_of_dreams
 
     emscripten_set_main_loop(DoOneGameLoopFrame, -1, simulate_infinite_loop);
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

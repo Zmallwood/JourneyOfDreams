@@ -4,7 +4,7 @@
 
 // generate_new_world function declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void GenerateNewWorld();
 }

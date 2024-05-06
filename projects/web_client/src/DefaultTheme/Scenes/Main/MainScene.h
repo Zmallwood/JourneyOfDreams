@@ -5,7 +5,7 @@
 
 // main_scene class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class MainScene : public IScene {
    public:
@@ -15,4 +15,4 @@ namespace journey_of_dreams
 
     void RenderDerived() override;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

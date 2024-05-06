@@ -7,7 +7,7 @@
 
 // update_click_movement function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   UpdateClickMovement() {
@@ -39,4 +39,4 @@ namespace journey_of_dreams
       }
     }
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

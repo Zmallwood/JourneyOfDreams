@@ -4,7 +4,7 @@
 
 // world_file_writer class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class WorldFileWriter {
    public:
@@ -13,4 +13,4 @@ namespace journey_of_dreams
    private:
     const std::string k_worldFileName{"World.dat"};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

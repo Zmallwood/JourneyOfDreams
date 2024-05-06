@@ -5,7 +5,7 @@
 
 // gui_message_box class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Message box widget for the GUI.
@@ -37,4 +37,4 @@ namespace journey_of_dreams
     std::string m_message{};
     static constexpr SizeF k_defaultSize = {0.5f, 0.2f};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

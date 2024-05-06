@@ -4,7 +4,7 @@
 
 // world_file_reader class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class WorldFileReader {
    public:
@@ -13,4 +13,4 @@ namespace journey_of_dreams
    private:
     const std::string k_worldFileName{"world/World.dat"};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

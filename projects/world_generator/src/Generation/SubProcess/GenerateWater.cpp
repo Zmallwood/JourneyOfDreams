@@ -7,7 +7,7 @@
 
 // generate_water function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   GenerateWater() {
@@ -39,4 +39,4 @@ namespace journey_of_dreams
       }
     }
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

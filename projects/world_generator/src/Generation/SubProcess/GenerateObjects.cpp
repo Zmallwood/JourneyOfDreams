@@ -8,7 +8,7 @@
 
 // generate_objects function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   GenerateObjects() {
@@ -44,4 +44,4 @@ namespace journey_of_dreams
       }
     }
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

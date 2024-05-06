@@ -4,7 +4,7 @@
 
 /* ClientProperties class declaration. */
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class ClientProperties {
    public:

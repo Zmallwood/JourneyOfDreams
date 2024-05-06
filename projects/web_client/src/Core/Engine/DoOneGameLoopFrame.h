@@ -4,7 +4,7 @@
 
 // do_one_game_loop_frame function declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void DoOneGameLoopFrame();
 }

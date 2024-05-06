@@ -4,7 +4,7 @@
 
 // db class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   DB::DB() {
     std::cout << "Connecting to database..." << std::endl;
@@ -22,4 +22,4 @@ namespace journey_of_dreams
     m_session->close();
     std::cout << "Connection to database closed." << std::endl;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // fps_counter class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class FPSCounter {
    public:
@@ -19,4 +19,4 @@ namespace journey_of_dreams
     int m_framesCount{0};
     int m_ticksLastUpdate{0};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

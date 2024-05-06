@@ -4,7 +4,7 @@
 
 // shader_program class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   bool
   ShaderProgram::Create(const GLchar *vertexShaderSource,
@@ -72,4 +72,4 @@ namespace journey_of_dreams
   ShaderProgram::ProgramID() {
     return m_programID;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // shader_program class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Represents a shader program with a vertex and fragment shader.
@@ -38,4 +38,4 @@ namespace journey_of_dreams
                          GLenum shaderType);
     GLuint m_programID{0};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

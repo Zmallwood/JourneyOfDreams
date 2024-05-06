@@ -5,7 +5,7 @@
 
 // gui_label class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   GUILabel::GUILabel(PointF position, const std::string &text,
                      GUIAlign alignment, FontSizes fontSize, ColorF textColor)
@@ -104,4 +104,4 @@ namespace journey_of_dreams
     ** Setter */
     m_text = text;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

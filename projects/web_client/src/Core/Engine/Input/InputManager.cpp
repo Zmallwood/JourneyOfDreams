@@ -7,7 +7,7 @@
 
 // input_manager class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   static void
   KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mods) {
@@ -57,4 +57,4 @@ namespace journey_of_dreams
     emscripten_set_touchend_callback("#canvas", nullptr, true,
                                      TouchEndCallback);
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

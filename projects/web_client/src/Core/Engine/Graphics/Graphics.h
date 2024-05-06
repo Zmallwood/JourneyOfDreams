@@ -7,7 +7,7 @@ struct SDL_Renderer;
 
 // graphics class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Setups and holds the graphics objects.
@@ -34,4 +34,4 @@ namespace journey_of_dreams
    private:
     GLFWwindow *window;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // test1 class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   static const char *vertexShaderSource =
       "#version 300 es\n"
@@ -149,4 +149,4 @@ namespace journey_of_dreams
     SDL_DestroyRenderer(m_renderer);
     SDL_DestroyWindow(m_window);
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

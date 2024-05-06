@@ -12,7 +12,7 @@
 
 // register_scene class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   RegisterScene::RegisterScene() {
     m_ridBackground = _<ImageRenderer>().NewImage();
@@ -86,4 +86,4 @@ namespace journey_of_dreams
     _<ImageRenderer>().DrawImage(m_ridLogo, "JourneyOfDreamsLogo",
                                  {0.4f, 0.2f, 0.2f, 0.1f});
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

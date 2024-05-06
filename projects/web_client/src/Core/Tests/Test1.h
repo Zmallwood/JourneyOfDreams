@@ -4,7 +4,7 @@
 
 // test1 class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class Test1 {
    public:
@@ -21,4 +21,4 @@ namespace journey_of_dreams
     GLuint m_ebo;
     unsigned int m_shaderProgram;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

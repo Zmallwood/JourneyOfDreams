@@ -8,7 +8,7 @@
 
 // server_connect_scene class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   ServerConnectScene::ServerConnectScene() {
     GUI()->AddWidget(std::make_shared<GUILabel>(PointF{.x = 0.5f, .y = 0.5f},
@@ -27,4 +27,4 @@ namespace journey_of_dreams
       _<SceneManager>().GoToScene("LoginScene");
     }
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

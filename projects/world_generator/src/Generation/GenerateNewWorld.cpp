@@ -8,7 +8,7 @@
 
 // generate_new_world function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   GenerateNewWorld() {
@@ -17,4 +17,4 @@ namespace journey_of_dreams
     GenerateWater();
     GenerateObjects();
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

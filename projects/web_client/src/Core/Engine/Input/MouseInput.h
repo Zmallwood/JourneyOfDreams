@@ -5,7 +5,7 @@
 
 // mouse_input class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Manages the mouse input.
@@ -47,4 +47,4 @@ namespace journey_of_dreams
     MouseButton leftButton;
     MouseButton rightButton;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

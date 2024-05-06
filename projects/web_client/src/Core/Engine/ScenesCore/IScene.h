@@ -4,7 +4,7 @@
 
 // iscene class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class GUI;
 
@@ -55,9 +55,9 @@ namespace journey_of_dreams
     ///
     /// \return The scene GUI.
     /////////////////////////////////////////////////
-    std::shared_ptr<journey_of_dreams::GUI> GUI();
+    std::shared_ptr<JourneyOfDreams::GUI> GUI();
 
    private:
-    std::shared_ptr<journey_of_dreams::GUI> m_gui;
+    std::shared_ptr<JourneyOfDreams::GUI> m_gui;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

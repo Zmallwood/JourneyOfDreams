@@ -4,11 +4,11 @@
 
 // point class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class Point {
    public:
     int x{0};
     int y{0};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

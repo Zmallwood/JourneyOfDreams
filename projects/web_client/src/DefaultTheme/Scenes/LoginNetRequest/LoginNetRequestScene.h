@@ -5,7 +5,7 @@
 
 // login_net_request_scene class declaration
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class LoginNetRequestScene : public IScene {
    public:
@@ -13,4 +13,4 @@ namespace journey_of_dreams
 
     void OnEnter() override;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

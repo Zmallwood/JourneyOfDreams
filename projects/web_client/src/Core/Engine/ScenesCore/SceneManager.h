@@ -4,7 +4,7 @@
 
 // scene_manager class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class IScene;
 
@@ -24,4 +24,4 @@ namespace journey_of_dreams
     std::map<int, IScene &> m_scenes;
     int m_currentScene{0};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

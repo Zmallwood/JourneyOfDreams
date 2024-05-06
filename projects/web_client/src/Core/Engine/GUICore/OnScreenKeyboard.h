@@ -5,7 +5,7 @@
 
 // on_screen_keyboard class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// A GUI panel that displays an on-screen
@@ -37,4 +37,4 @@ namespace journey_of_dreams
    private:
     void TypeCharacter(char c);
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

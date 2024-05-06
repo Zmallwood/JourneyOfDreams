@@ -4,7 +4,7 @@
 
 // mouse_button class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   MouseButton::OnPress() {
@@ -39,4 +39,4 @@ namespace journey_of_dreams
     ** Getter */
     return m_pressed;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // object class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class Object {
    public:
@@ -18,4 +18,4 @@ namespace journey_of_dreams
    private:
     int m_type{0};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

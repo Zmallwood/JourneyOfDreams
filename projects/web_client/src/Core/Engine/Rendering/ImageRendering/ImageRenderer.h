@@ -5,7 +5,7 @@
 
 // image_renderer class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Allocates resources for, and renders images.
@@ -67,4 +67,4 @@ namespace journey_of_dreams
     static constexpr int k_locUv = 2;
     int m_locNoPixelEffect = -1;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

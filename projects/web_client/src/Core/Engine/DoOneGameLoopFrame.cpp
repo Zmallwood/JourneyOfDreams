@@ -11,7 +11,7 @@
 
 // do_one_game_loop_frame function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   DoOneGameLoopFrame() {
@@ -41,4 +41,4 @@ namespace journey_of_dreams
     _<Engine>().PresentCanvas();
 #endif
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

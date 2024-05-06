@@ -5,7 +5,7 @@
 
 // gui_button class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// A button widget for the GUI.
@@ -60,4 +60,4 @@ namespace journey_of_dreams
     bool m_isHovered{false};
     std::string m_backgroundHoveredImage{};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // world class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class WorldArea;
 
@@ -18,6 +18,6 @@ namespace journey_of_dreams
     }
 
    private:
-    std::shared_ptr<journey_of_dreams::WorldArea> m_worldArea;
+    std::shared_ptr<JourneyOfDreams::WorldArea> m_worldArea;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

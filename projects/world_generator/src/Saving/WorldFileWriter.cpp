@@ -8,7 +8,7 @@
 
 // world_file_writer class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   WorldFileWriter::WriteWorldToFile() {
@@ -36,4 +36,4 @@ namespace journey_of_dreams
 
     worldFile.close();
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

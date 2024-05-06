@@ -4,7 +4,7 @@
 
 // gui_window class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   GUIWindow::GUIWindow(RectF area, const std::string &title, GUIAlign alignment,
                        bool movable)
@@ -12,4 +12,4 @@ namespace journey_of_dreams
     /*
     ** Do nothing. */
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // keyboard_input class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Manaages keyboard input.
@@ -75,4 +75,4 @@ namespace journey_of_dreams
     std::set<int> m_pressedKeys;
     std::string m_textInput;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // run_new_game_instance function declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void RunNewGameInstance();
 }

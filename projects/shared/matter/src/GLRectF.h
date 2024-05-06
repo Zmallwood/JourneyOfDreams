@@ -4,7 +4,7 @@
 
 // glrectf class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class GLRectF {
    public:
@@ -13,4 +13,4 @@ namespace journey_of_dreams
     float w{0.0f};
     float h{0.0f};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

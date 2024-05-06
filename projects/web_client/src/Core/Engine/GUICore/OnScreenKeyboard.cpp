@@ -8,7 +8,7 @@
 
 // on_screen_keyboard class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   OnScreenKeyboard::OnScreenKeyboard()
       : GUIPanel({.x = 0.5f, .y = 1.0f}, {.w = 0.3f, .h = 0.15f},
@@ -94,4 +94,4 @@ namespace journey_of_dreams
       focusedTextBox->TypeCharacter(c);
     }
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

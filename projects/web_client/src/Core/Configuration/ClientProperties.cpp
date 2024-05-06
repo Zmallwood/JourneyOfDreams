@@ -4,7 +4,7 @@
 
 /* ClientProperties class implementation. */
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   Size ClientProperties::CanvasSize() const {
     return m_canvasSize;

@@ -5,7 +5,7 @@
 
 // colorf class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class ColorF {
    public:
@@ -22,4 +22,4 @@ namespace journey_of_dreams
     float b{0.0f};
     float a{1.0f};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -6,7 +6,7 @@
 
 // message_box class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   GUIMessageBox::GUIMessageBox(PointF position, const std::string &message,
                                const std::string &title, SizeF size,
@@ -28,4 +28,4 @@ namespace journey_of_dreams
     AddWidget(std::make_shared<GUIButton>(RectF{0.35f, 0.1f, 0.1f, 0.05f}, "OK",
                                           [this]() { Destroy(); }));
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

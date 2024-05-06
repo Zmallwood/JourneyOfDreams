@@ -10,7 +10,7 @@
 
 // login_net_request_scene class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   LoginNetRequestScene::LoginNetRequestScene() {
     GUI()->AddWidget("AttempLoginLabel",
@@ -32,4 +32,4 @@ namespace journey_of_dreams
     _<NetClient>().Send({{"Username", username}, {"Password", password}});
     _<SceneManager>().GoToScene("MainScene");
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

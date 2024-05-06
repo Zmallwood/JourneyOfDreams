@@ -4,7 +4,7 @@
 
 // mouse_button class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Manages mouse button input.
@@ -40,4 +40,4 @@ namespace journey_of_dreams
    private:
     bool m_pressed{false};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

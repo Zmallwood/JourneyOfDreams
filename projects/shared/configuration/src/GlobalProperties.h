@@ -4,7 +4,7 @@
 
 // global_properties class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class GlobalProperties {
    public:
@@ -16,4 +16,4 @@ namespace journey_of_dreams
    private:
     Size m_worldAreaSize{100, 100};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

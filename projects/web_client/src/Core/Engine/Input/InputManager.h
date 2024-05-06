@@ -4,10 +4,10 @@
 
 // input_manager class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class InputManager {
    public:
     InputManager();
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

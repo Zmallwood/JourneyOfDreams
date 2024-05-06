@@ -4,7 +4,7 @@
 
 // font_sizes enum class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Represents the point sizes available for rendering text.
@@ -25,4 +25,4 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     _50
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

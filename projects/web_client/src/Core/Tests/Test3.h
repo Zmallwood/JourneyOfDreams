@@ -4,7 +4,7 @@
 
 // test3 class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class Test3 {
    public:
@@ -16,4 +16,4 @@ namespace journey_of_dreams
     bool m_active{true};
     RID m_ridImage{0};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 /* ConfigurationFile class definition. */
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Loads configuration file from filesystem.

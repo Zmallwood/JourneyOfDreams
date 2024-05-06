@@ -6,7 +6,7 @@
 
 // gui_widget class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   GUIWidget::GUIWidget()
       : m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>()) {
@@ -723,4 +723,4 @@ namespace journey_of_dreams
     ** Setter. */
     m_padding = padding;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

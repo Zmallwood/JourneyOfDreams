@@ -5,7 +5,7 @@
 
 // TileGridCalculations implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   int
   CalculateNumGridCols() {
@@ -22,4 +22,4 @@ namespace journey_of_dreams
     // results calculated
     return numGridCols;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -7,7 +7,7 @@
 // The name of the special JSON field that holds the message type for messages
 #define MESSAGE_FIELD "__MESSAGE__"
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   Json::Value
   WebsocketServer::parseJson(const string &json) {
@@ -165,4 +165,4 @@ namespace journey_of_dreams
       }
     }
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

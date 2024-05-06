@@ -5,7 +5,7 @@
 
 // Player class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   Player::Player() {
     // initialize player position to the center of the world area
@@ -64,4 +64,4 @@ namespace journey_of_dreams
   void Player::SetDestination(Point _destination) {
     m_destination = _destination;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

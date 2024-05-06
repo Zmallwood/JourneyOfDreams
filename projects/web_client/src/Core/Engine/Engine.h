@@ -4,7 +4,7 @@
 
 // engine class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Core engine
@@ -51,4 +51,4 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     void PresentCanvas();
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -8,7 +8,7 @@
 
 // image_renderer class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   ImageRenderer::ImageRenderer() {
     ShaderProgram()->Create(defaultShaderImagesVertex,
@@ -107,4 +107,4 @@ namespace journey_of_dreams
     DrawImage(rid, Hash(imageName), dest, repeatTexture, textureFillAmount,
               color);
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

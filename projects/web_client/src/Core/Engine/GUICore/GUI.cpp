@@ -8,7 +8,7 @@
 
 // gui class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   GUI::Initialize() {
@@ -144,4 +144,4 @@ namespace journey_of_dreams
     ** Setter */
     m_focusedWidget = focusedWidget;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

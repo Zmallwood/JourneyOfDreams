@@ -4,7 +4,7 @@
 
 // update_click_movement function declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void UpdateClickMovement();
 }

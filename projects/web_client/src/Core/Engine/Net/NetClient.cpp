@@ -5,7 +5,7 @@
 
 // net_client class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   NetClient::NetClient() : m_connection(std::make_shared<NetworkConnection>()) {
     /*
@@ -45,4 +45,4 @@ namespace journey_of_dreams
     ** Getter. */
     return m_connection;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

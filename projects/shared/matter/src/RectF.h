@@ -7,7 +7,7 @@
 
 // rectf class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class RectF {
    public:
@@ -37,4 +37,4 @@ namespace journey_of_dreams
     float w{0.0f};
     float h{0.0f};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

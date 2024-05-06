@@ -4,7 +4,7 @@
 
 // poll_events function declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void PollEvents();
 }

@@ -4,7 +4,7 @@
 
 // hash function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   int
   Hash(const std::string &text) {
@@ -13,4 +13,4 @@ namespace journey_of_dreams
       hash = 33 * hash + (unsigned char)text[i];
     return static_cast<int>(hash);
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // hash function declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   int Hash(const std::string &text);
 }

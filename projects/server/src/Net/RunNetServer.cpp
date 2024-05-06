@@ -7,7 +7,7 @@
 
 #define PORT_NUMBER 1238
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   RunNetServer() {
@@ -81,4 +81,4 @@ namespace journey_of_dreams
     asio::io_service::work work(mainEventLoop);
     mainEventLoop.run();
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

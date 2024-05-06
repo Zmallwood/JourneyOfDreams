@@ -4,7 +4,7 @@
 
 // tile class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   Tile::SetGround(const std::string &groundName) {
@@ -20,4 +20,4 @@ namespace journey_of_dreams
   Tile::IsWalkable() {
     return m_ground != Hash("GroundWater");
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -8,7 +8,7 @@
 
 // world_file_reader class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   WorldFileReader::ReadWorldFile() {
@@ -41,4 +41,4 @@ namespace journey_of_dreams
 
     worldFile.close();
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

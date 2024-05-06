@@ -5,7 +5,7 @@ typedef struct _TTF_Font TTF_Font;
 
 // font class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Represents a font for rendering text.
@@ -46,4 +46,4 @@ namespace journey_of_dreams
     std::shared_ptr<TTF_Font> m_outlineFont;
     static constexpr int k_fontOutlineWidth{2};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

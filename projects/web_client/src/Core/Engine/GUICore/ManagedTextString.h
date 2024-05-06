@@ -4,7 +4,7 @@
 
 // managed_text_string class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Manages a text string with manipulation
@@ -128,4 +128,4 @@ namespace journey_of_dreams
     float m_maxRenderWidth{1.0f};
     bool m_passwordMode{false};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

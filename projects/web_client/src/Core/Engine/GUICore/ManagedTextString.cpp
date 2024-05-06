@@ -5,7 +5,7 @@
 
 // managed_text_string class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   ManagedTextString::ManagedTextString(float maxRenderWidth, bool passwordMode)
       : m_maxRenderWidth(maxRenderWidth), m_passwordMode(passwordMode) {
@@ -274,4 +274,4 @@ namespace journey_of_dreams
     ** Getter */
     return m_text;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

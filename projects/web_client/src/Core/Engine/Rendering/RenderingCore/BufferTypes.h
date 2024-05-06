@@ -4,7 +4,7 @@
 
 // buffer_types enum declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// The different types of buffers that can be created.
@@ -55,4 +55,4 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     Misc
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

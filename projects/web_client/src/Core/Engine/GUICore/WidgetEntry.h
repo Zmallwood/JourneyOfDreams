@@ -4,7 +4,7 @@
 
 // gui_widget class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class GUIWidget;
 
@@ -24,4 +24,4 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     std::shared_ptr<GUIWidget> widget{};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

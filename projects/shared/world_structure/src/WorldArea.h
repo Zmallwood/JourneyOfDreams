@@ -4,7 +4,7 @@
 
 // world_area class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class Tile;
 
@@ -25,4 +25,4 @@ namespace journey_of_dreams
    private:
     std::vector<std::vector<std::shared_ptr<Tile>>> m_tiles;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

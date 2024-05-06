@@ -4,7 +4,7 @@
 
 // tile class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class Object;
 
@@ -30,13 +30,13 @@ namespace journey_of_dreams
     }
 
     void
-    SetObject(const std::shared_ptr<journey_of_dreams::Object> object) {
+    SetObject(const std::shared_ptr<JourneyOfDreams::Object> object) {
       m_object = object;
     }
 
    private:
     int m_ground{0};
     float m_elevation{0.0f};
-    std::shared_ptr<journey_of_dreams::Object> m_object{};
+    std::shared_ptr<JourneyOfDreams::Object> m_object{};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

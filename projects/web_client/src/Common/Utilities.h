@@ -1,12 +1,13 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "../../shared/matter/src/PointF.h"
 #include "../../shared/matter/src/Size.h"
 
 /* Utility functions declaration. */
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Return canvas size in pixels.
@@ -25,33 +26,33 @@ namespace journey_of_dreams
   /////////////////////////////////////////////////
   /// Get file extension from file path.
   ///
-  /// @param _absPath Absolute path to file.
+  /// @param absPath Absolute path to file.
   /// @return File extension.
   /////////////////////////////////////////////////
-  std::string FileExtension(const std::string &_absPath);
+  std::string FileExtension(const std::string &absPath);
   /////////////////////////////////////////////////
   /// Get file name without extension from file path.
   ///
-  /// @param _absPath Absolute path to file.
+  /// @param absPath Absolute path to file.
   /// @return File name without extension.
   /////////////////////////////////////////////////
-  std::string FilenameNoExtension(const std::string &_absPath);
+  std::string FilenameNoExtension(const std::string &absPath);
 
   /////////////////////////////////////////////////
   /// Convert fractal width to corresponding height.
   ///
-  /// @param _width Fractal width.
+  /// @param width Fractal width.
   /// @return Fractal height.
   /////////////////////////////////////////////////
-  float ConvertWidthToHeight(float _width);
+  float ConvertWidthToHeight(float width);
 
   /////////////////////////////////////////////////
   /// Convert fractal height to corresponding width.
   ///
-  /// @param _height Fractal height.
+  /// @param height Fractal height.
   /// @return Fractal width.
   /////////////////////////////////////////////////
-  float ConvertHeightToWidth(float _height);
+  float ConvertHeightToWidth(float height);
 
   /////////////////////////////////////////////////
   /// Get mouse position in canvas in pixels.

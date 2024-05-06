@@ -7,7 +7,7 @@
 
 // text_renderer class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   TextRenderer::TextRenderer() {
     TTF_Init();
@@ -145,4 +145,4 @@ namespace journey_of_dreams
     return {static_cast<float>(text_w) / canvSz.w,
             static_cast<float>(text_h) / canvSz.h};
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

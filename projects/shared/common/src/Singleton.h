@@ -4,7 +4,7 @@
 
 // singleton function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   template <class T>
   auto &
@@ -12,4 +12,4 @@ namespace journey_of_dreams
     static T instance;
     return instance;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

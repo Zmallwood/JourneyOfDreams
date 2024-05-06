@@ -4,11 +4,11 @@
 
 // size class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class Size {
    public:
     int w{0};
     int h{0};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

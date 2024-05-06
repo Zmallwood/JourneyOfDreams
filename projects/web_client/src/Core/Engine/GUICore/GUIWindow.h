@@ -5,7 +5,7 @@
 
 // gui_window class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Window widget that can be moved around.
@@ -27,4 +27,4 @@ namespace journey_of_dreams
    private:
     std::string m_title{};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

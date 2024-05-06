@@ -4,7 +4,7 @@
 
 /* ImageBank class implementation. */
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   ImageBank::ImageBank() {
     /* Load all images in images path. */
@@ -14,39 +14,39 @@ namespace journey_of_dreams
   ImageBank::~ImageBank() {
     /* 1) Iterate through all the loaded images.
      * 2) Free every allocated image resource */
-    for (const auto &_img : m_images) {
-      glDeleteTextures(1, &_img.second);
+    for (const auto &img : m_images) {
+      glDeleteTextures(1, &img.second);
     }
   }
 
-  GLuint ImageBank::GetImage(const std::string &_imageName) {
+  GLuint ImageBank::GetImage(const std::string &imageName) {
     /* Hash the image name and call the other GetImage method. */
-    return GetImage(Hash(_imageName));
+    return GetImage(Hash(imageName));
   }
 
-  GLuint ImageBank::GetImage(int _imageNameHash) {
+  GLuint ImageBank::GetImage(int imageNameHash) {
     /* 1) Iterate through all the loaded images.
      * 2) If its key, being the hash of the image name, equals
      *       the hash of the specified name,
      *       then, return this image ID
      * 3) No image with the name found, return fail value. */
-    for (auto _img : m_images) {
-      if (_img.first == _imageNameHash) {
-        return _img.second;
+    for (auto img : m_images) {
+      if (img.first == imageNameHash) {
+        return img.second;
       }
     }
     return -1;
   }
 
-  GLuint ImageBank::CreateBlankImage(const std::string &_uniqueImageName) {
+  GLuint ImageBank::CreateBlankImage(const std::string &uniqueImageName) {
     /* 1) Generate new image resource and get its ID.
      * 2) Insert new image entry with image name hash as key
      *    and the new ID as value.
      * 3) return the ID of the newly created blank image resource.*/
-    GLuint _texID;
-    glGenTextures(1, &_texID);
-    m_images.insert({Hash(_uniqueImageName), _texID});
-    return _texID;
+    GLuint texID;
+    glGenTextures(1, &texID);
+    m_images.insert({Hash(uniqueImageName), texID});
+    return texID;
   }
 
   void ImageBank::LoadImages() {
@@ -57,15 +57,15 @@ namespace journey_of_dreams
      * 5) Insert a new entry into the images storage, with the
      *    image name hash as key and the resource ID as value.*/
     using iterator = std::filesystem::recursive_directory_iterator;
-    auto _allImagesPath = k_relImagesPath + "/";
-    for (auto &_entry : iterator(_allImagesPath)) {
-      auto _absPath = _entry.path().string();
-      if (FileExtension(_absPath) != "png") {
+    auto allImagesPath = k_relImagesPath + "/";
+    for (auto &entry : iterator(allImagesPath)) {
+      auto absPath = entry.path().string();
+      if (FileExtension(absPath) != "png") {
         continue;
       }
-      auto _texID = LoadSingleImage(_absPath);
-      auto _imageName = FilenameNoExtension(_absPath);
-      m_images.insert({Hash(_imageName), _texID});
+      auto texID = LoadSingleImage(absPath);
+      auto imageName = FilenameNoExtension(absPath);
+      m_images.insert({Hash(imageName), texID});
     }
   }
 
@@ -76,11 +76,11 @@ namespace journey_of_dreams
      * 4) Generate a new OpenGL texture and get its ID.
      * 5) Use the newly created OpenGL texture.
      * 6) Apply necessary texture parameters. */
-    GLuint _texID;
-    auto _surf = LoadImageData(absFilePath.c_str());
+    GLuint texID;
+    auto surf = LoadImageData(absFilePath.c_str());
     glEnable(GL_TEXTURE_2D);
-    glGenTextures(1, &_texID);
-    glBindTexture(GL_TEXTURE_2D, _texID);
+    glGenTextures(1, &texID);
+    glBindTexture(GL_TEXTURE_2D, texID);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
@@ -92,15 +92,15 @@ namespace journey_of_dreams
      * 2) Free SDL surface resource, its not needed anymore as the image data is
      *    stored in the OpenGL texture now.
      * 3) Return the previously generated resource ID. */
-    if (_surf->format->BytesPerPixel == 4) {
+    if (surf->format->BytesPerPixel == 4) {
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, _surf->w, _surf->h, 0, GL_RGBA,
                    GL_UNSIGNED_BYTE, _surf->pixels);
     } else {
       glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, _surf->w, _surf->h, 0, GL_RGB,
                    GL_UNSIGNED_BYTE, _surf->pixels);
     }
-    SDL_FreeSurface(_surf);
-    return _texID;
+    SDL_FreeSurface(surf);
+    return texID;
   }
 
   SDL_Surface *ImageBank::LoadImageData(const char *filename) {
@@ -110,36 +110,36 @@ namespace journey_of_dreams
      * 4) Create SDL surface from image data.
      * 5) If surface creation failed, then free image data and return nullptr.
      * 6) Else if surface creation was successful, return the surface. */
-    int _width;
-    int _height;
-    int _bytesPerPixel;
-    void *_data = stbi_load(filename, &_width, &_height, &_bytesPerPixel, 0);
-    int _pitch;
-    _pitch = _width * _bytesPerPixel;
-    _pitch = (_pitch + 3) & ~3;
-    int _rMask;
-    int _gMask;
-    int _bMask;
-    int _aMask;
+    int width;
+    int height;
+    int bytesPerPixel;
+    void *data = stbi_load(filename, &width, &height, &bytesPerPixel, 0);
+    int pitch;
+    pitch = width * bytesPerPixel;
+    pitch = (pitch + 3) & ~3;
+    int rMask;
+    int gMask;
+    int bMask;
+    int aMask;
 #if SDL_BYTEORDER == SDL_LIL_ENDIAN
-    _rMask = 0x000000FF;
-    _gMask = 0x0000FF00;
-    _bMask = 0x00FF0000;
-    _aMask = (_bytesPerPixel == 4) ? 0xFF000000 : 0;
+    rMask = 0x000000FF;
+    gMask = 0x0000FF00;
+    bMask = 0x00FF0000;
+    aMask = (bytesPerPixel == 4) ? 0xFF000000 : 0;
 #else
     int s = (bytesPerPixel == 4) ? 0 : 8;
-    _rMask = 0xFF000000 >> s;
-    _gMask = 0x00FF0000 >> s;
-    _bMask = 0x0000FF00 >> s;
-    _aMask = 0x000000FF >> s;
+    rMask = 0xFF000000 >> s;
+    gMask = 0x00FF0000 >> s;
+    bMask = 0x0000FF00 >> s;
+    aMask = 0x000000FF >> s;
 #endif
-    SDL_Surface *_surface =
-        SDL_CreateRGBSurfaceFrom(_data, _width, _height, _bytesPerPixel * 8,
-                                 _pitch, _rMask, _gMask, _bMask, _aMask);
-    if (!_surface) {
+    SDL_Surface *surface =
+        SDL_CreateRGBSurfaceFrom(data, width, height, bytesPerPixel * 8, pitch,
+                                 rMask, gMask, bMask, aMask);
+    if (!surface) {
       stbi_image_free(data);
       return nullptr;
     }
-    return _surface;
+    return surface;
   }
 }

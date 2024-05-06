@@ -4,7 +4,7 @@
 
 // gui_movable_widget class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   GUIMovableWidget::GUIMovableWidget(RectF area, GUIAlign alignment,
                                      bool movable)
@@ -12,4 +12,4 @@ namespace journey_of_dreams
     /*
     ** Do nothing. */
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

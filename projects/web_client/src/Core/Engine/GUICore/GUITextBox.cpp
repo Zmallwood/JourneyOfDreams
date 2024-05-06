@@ -11,7 +11,7 @@
 
 // gui_text_box class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   GUITextBox::GUITextBox(RectF area, ColorF textColor, bool passwordMode)
       : GUIWidget(area), m_textColor(textColor),
@@ -175,4 +175,4 @@ namespace journey_of_dreams
     ** Call base focus logic. */
     GUIWidget::Focus();
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // mouse_input class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   MouseInput::OnPress(Uint8 button) {
@@ -48,4 +48,4 @@ namespace journey_of_dreams
     ** Getter by reference */
     return rightButton;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

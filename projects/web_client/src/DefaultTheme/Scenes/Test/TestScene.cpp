@@ -6,7 +6,7 @@
 
 // test_scene class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   TestScene::TestScene() {
     m_ridBackground = _<ImageRenderer>().NewImage();
@@ -30,4 +30,4 @@ namespace journey_of_dreams
 
     _<SceneManager>().GoToScene("ServerConnectScene");
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

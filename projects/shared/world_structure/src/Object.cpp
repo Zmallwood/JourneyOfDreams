@@ -4,7 +4,7 @@
 
 // object class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   Object::Object(const std::string &objectTypeName)
       : m_type(Hash(objectTypeName)) {
@@ -12,4 +12,4 @@ namespace journey_of_dreams
 
   Object::Object(int objectTypeHash) : m_type(objectTypeHash) {
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

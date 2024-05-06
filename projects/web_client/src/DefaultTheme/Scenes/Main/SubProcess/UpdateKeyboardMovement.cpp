@@ -6,7 +6,7 @@
 
 // update_keyboard_movement function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   UpdateKeyboardMovement() {
@@ -33,4 +33,4 @@ namespace journey_of_dreams
       player.SetTicksLastMove(Ticks());
     }
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

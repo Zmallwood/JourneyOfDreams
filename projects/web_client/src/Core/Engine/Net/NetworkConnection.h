@@ -4,7 +4,7 @@
 
 // network_connection class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Network connection to the server.
@@ -49,4 +49,4 @@ namespace journey_of_dreams
     bool m_connected{false};
     const EMSCRIPTEN_WEBSOCKET_T *m_serverSocket{nullptr};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

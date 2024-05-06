@@ -6,7 +6,7 @@
 
 // poll_events function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   PollEvents() {
@@ -47,4 +47,4 @@ namespace journey_of_dreams
       }
     }
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

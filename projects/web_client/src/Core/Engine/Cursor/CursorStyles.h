@@ -4,7 +4,7 @@
 
 // cursor_styles enum declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Available cursor styles, each yielding a
@@ -36,4 +36,4 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     Attacking
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

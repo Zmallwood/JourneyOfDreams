@@ -4,7 +4,7 @@
 
 // gui_align class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Possible alignments for GUI widgets.
@@ -55,4 +55,4 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     Center
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

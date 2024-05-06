@@ -4,7 +4,7 @@
 
 // tile_hoverer class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class TileHoverer {
    public:
@@ -17,4 +17,4 @@ namespace journey_of_dreams
    private:
     Point m_hoveredCoordinate{-1, -1};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

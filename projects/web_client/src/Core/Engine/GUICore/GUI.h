@@ -5,7 +5,7 @@
 
 // gui class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Manages GUI widgets for a scene.
@@ -72,4 +72,4 @@ namespace journey_of_dreams
   GUI::GetWidget(const std::string &nameIdentifier) {
     return static_pointer_cast<T>(GetWidget(nameIdentifier));
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // default_shader_images_vertex declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Default vertex shader for the images rendering.
@@ -24,4 +24,4 @@ namespace journey_of_dreams
       "   ex_TexCoord = in_TexCoord;\n"
       "   ex_Pos = aPos.xy;\n"
       "}\0";
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

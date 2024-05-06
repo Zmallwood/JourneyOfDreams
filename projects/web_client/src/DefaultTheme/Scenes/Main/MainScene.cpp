@@ -11,7 +11,7 @@
 
 // main_scene class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   MainScene::OnEnter() {
@@ -34,4 +34,4 @@ namespace journey_of_dreams
     _<WorldView>().Render();
     _<FPSCounter>().Render();
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // color class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   namespace Colors
   {
@@ -26,4 +26,4 @@ namespace journey_of_dreams
     constexpr ColorF Wheat{0.96f, 0.87f, 0.7f};
     constexpr ColorF DarkOrange{1.0f, 0.55f, 0.0f};
   } // namespace Colors
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

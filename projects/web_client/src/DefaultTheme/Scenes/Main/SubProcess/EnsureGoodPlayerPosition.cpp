@@ -8,7 +8,7 @@
 
 // ensure_good_player_position function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   static bool
   CoordinateIsGoodAsPlayerPosition(Point coordinate) {
@@ -33,4 +33,4 @@ namespace journey_of_dreams
     auto &player = _<Player>();
     player.SetPosition(coordinate);
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -6,7 +6,7 @@
 
 // gui_text_box class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// A text box widget for the GUI.
@@ -70,4 +70,4 @@ namespace journey_of_dreams
     const std::string k_cursorImage{"GUITextBoxCursor"};
     const float k_cursorWidth{0.002f};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

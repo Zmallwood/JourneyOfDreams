@@ -4,7 +4,7 @@
 
 // db class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class DB {
    public:
@@ -15,4 +15,4 @@ namespace journey_of_dreams
     std::unique_ptr<soci::session> m_session;
     std::unique_ptr<soci::connection_parameters> m_parameters;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -6,7 +6,7 @@
 
 // network_connection class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   EM_BOOL
   OnOpen(int eventType, const EmscriptenWebSocketOpenEvent *websocketEvent,
@@ -113,4 +113,4 @@ namespace journey_of_dreams
       const EMSCRIPTEN_WEBSOCKET_T *serverSocket) {
     m_serverSocket = serverSocket;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

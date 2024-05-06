@@ -17,7 +17,7 @@
 
 // websocket_server class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   using std::map;
   using std::string;
@@ -93,4 +93,4 @@ namespace journey_of_dreams
         vector<std::function<void(ClientConnection, const Json::Value &)>>>
         messageHandlers;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -4,7 +4,7 @@
 
 // default_shader_images_fragment declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Default fragment shader for the images rendering.
@@ -20,4 +20,4 @@ namespace journey_of_dreams
       "void main() {\n"
       "    FragColor = texture(TexUnit, ex_TexCoord);\n"
       "}\0";
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

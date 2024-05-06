@@ -7,7 +7,7 @@
 
 // gui_button class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   GUIButton::GUIButton(RectF area, const std::string &text,
                        std::function<void()> onClick, ColorF textColor)
@@ -88,4 +88,4 @@ namespace journey_of_dreams
     ** Setter */
     m_backgroundHoveredImage = backgroundHoveredImage;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

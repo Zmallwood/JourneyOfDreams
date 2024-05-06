@@ -4,7 +4,7 @@
 
 /* ImageBank class declaration. */
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// Loads and provides images that has
@@ -26,32 +26,32 @@ namespace journey_of_dreams
     /////////////////////////////////////////////////
     /// Gets an image resource by name.
     ///
-    /// \param _imageName Name of the image to get.
+    /// \param imageName Name of the image to get.
     /// \return Image resource ID.
     /////////////////////////////////////////////////
-    GLuint GetImage(const std::string &_imageName);
+    GLuint GetImage(const std::string &imageName);
 
     /////////////////////////////////////////////////
     /// Gets an image resource by hash code.
     ///
-    /// \param _imageNameHash Hash code of the image to get.
+    /// \param imageNameHash Hash code of the image to get.
     /// \return Image resource ID.
     /////////////////////////////////////////////////
-    GLuint GetImage(int _imageNameHash);
+    GLuint GetImage(int imageNameHash);
 
     /////////////////////////////////////////////////
     /// Creates a blank image resource, given
     /// the specified name, and returns its ID.
     ///
-    /// \param _uniqueImageName Name of the image to create.
+    /// \param uniqueImageName Name of the image to create.
     /// \return Image resource ID.
     /////////////////////////////////////////////////
-    GLuint CreateBlankImage(const std::string &_uniqueImageName);
+    GLuint CreateBlankImage(const std::string &uniqueImageName);
 
    private:
     void LoadImages();
-    GLuint LoadSingleImage(const std::string &_absFilePath);
-    SDL_Surface *LoadImageData(const char *_filename);
+    GLuint LoadSingleImage(const std::string &absFilePath);
+    SDL_Surface *LoadImageData(const char *filename);
     std::map<int, GLuint> m_images;
     const std::string k_relImagesPath = "images";
   };

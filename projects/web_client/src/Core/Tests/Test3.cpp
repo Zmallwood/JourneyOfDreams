@@ -5,7 +5,7 @@
 
 // test3 class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   Test3::Test3() {
     m_ridImage = _<ImageRenderer>().NewImage();
@@ -24,4 +24,4 @@ namespace journey_of_dreams
   Test3::Stop() {
     m_active = false;
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

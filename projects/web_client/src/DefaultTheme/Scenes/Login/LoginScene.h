@@ -5,7 +5,7 @@
 
 // login_scene class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class LoginScene : public IScene {
    public:
@@ -21,4 +21,4 @@ namespace journey_of_dreams
     RID m_ridBackground{0};
     RID m_ridLogo{0};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

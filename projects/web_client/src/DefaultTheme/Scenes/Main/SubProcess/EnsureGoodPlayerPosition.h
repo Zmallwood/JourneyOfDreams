@@ -4,7 +4,7 @@
 
 // ensure_good_player_position function declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void EnsureGoodPlayerPosition();
 }

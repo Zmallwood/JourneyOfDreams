@@ -6,7 +6,7 @@
 
 // vertex2f class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class Vertex2F {
    public:
@@ -14,4 +14,4 @@ namespace journey_of_dreams
     ColorF color;
     PointF uv;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

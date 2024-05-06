@@ -5,10 +5,10 @@
 
 // gui_panel class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// A panel widget for the GUI.
   /////////////////////////////////////////////////
   typedef GUIWidget GUIPanel;
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

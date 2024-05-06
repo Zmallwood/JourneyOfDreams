@@ -11,7 +11,7 @@
 
 // scene_manager class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   SceneManager::SceneManager() {
     m_scenes.insert({Hash("TestScene"), _<TestScene>()});
@@ -50,4 +50,4 @@ namespace journey_of_dreams
     if (m_scenes.contains(m_currentScene))
       m_scenes.at(m_currentScene).OnEnter();
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

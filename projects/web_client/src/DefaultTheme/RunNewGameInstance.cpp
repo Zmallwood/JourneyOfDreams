@@ -5,11 +5,11 @@
 
 // run_new_game_instance function implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   void
   RunNewGameInstance() {
     GameInstance gameInstance;
     gameInstance.Run();
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

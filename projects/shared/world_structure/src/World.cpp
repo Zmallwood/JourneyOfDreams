@@ -5,9 +5,9 @@
 
 // world class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   World::World()
-      : m_worldArea(std::make_shared<journey_of_dreams::WorldArea>()) {
+      : m_worldArea(std::make_shared<JourneyOfDreams::WorldArea>()) {
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

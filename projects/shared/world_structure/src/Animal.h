@@ -4,9 +4,9 @@
 
 // animal class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class Animal {
    public:
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

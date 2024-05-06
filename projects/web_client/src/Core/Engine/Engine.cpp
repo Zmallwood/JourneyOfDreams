@@ -10,7 +10,7 @@
 
 // engine class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   Engine::Engine() {
     srand(time(0));
@@ -57,4 +57,4 @@ namespace journey_of_dreams
   Engine::PresentCanvas() {
     _<Graphics>().PresentCanvas();
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

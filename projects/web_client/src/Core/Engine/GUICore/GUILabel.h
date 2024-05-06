@@ -6,7 +6,7 @@
 
 // gui_label class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// A label widget for the GUI.
@@ -68,4 +68,4 @@ namespace journey_of_dreams
     ColorF m_textColor{Colors::Wheat};
     RID m_ridText{};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

@@ -6,7 +6,7 @@
 
 // gui_widget class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class GUI;
 
@@ -343,4 +343,4 @@ namespace journey_of_dreams
     bool m_visible{true};
     inline static int s_unnamedWidgetCounter{0};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

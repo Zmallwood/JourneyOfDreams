@@ -4,7 +4,7 @@
 
 // net_client class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class NetworkConnection;
 
@@ -53,4 +53,4 @@ namespace journey_of_dreams
    private:
     std::shared_ptr<NetworkConnection> m_connection;
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

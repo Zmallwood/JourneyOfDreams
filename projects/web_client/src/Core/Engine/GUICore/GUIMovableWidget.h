@@ -5,7 +5,7 @@
 
 // gui_movable_widget class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
   /// A movable widget for the GUI.
@@ -26,4 +26,4 @@ namespace journey_of_dreams
    private:
     bool m_movable{true};
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

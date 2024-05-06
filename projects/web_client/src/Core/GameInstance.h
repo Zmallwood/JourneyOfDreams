@@ -4,10 +4,10 @@
 
 // game_instance class declaration.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   class GameInstance {
    public:
     void Run();
   };
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

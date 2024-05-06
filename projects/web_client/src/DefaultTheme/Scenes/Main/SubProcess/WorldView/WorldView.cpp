@@ -12,7 +12,7 @@
 
 // world_view class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   WorldView::WorldView()
       : m_ridsTiles(std::make_shared<std::vector<std::vector<RID>>>()),
@@ -92,4 +92,4 @@ namespace journey_of_dreams
       }
     }
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

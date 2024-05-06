@@ -6,7 +6,7 @@
 
 // world_area class implementation.
 
-namespace journey_of_dreams
+namespace JourneyOfDreams
 {
   WorldArea::WorldArea() {
     auto width = _<GlobalProperties>().WorldAreaSize().w;
@@ -53,4 +53,4 @@ namespace journey_of_dreams
   WorldArea::GetRandomTile() {
     return GetTile(GetRandomCoordinate());
   }
-} // namespace journey_of_dreams
+} // namespace JourneyOfDreams

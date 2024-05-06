@@ -6,6 +6,6 @@
 
 int
 main(int argc, char *argv[]) { // Game entry point.
-  journey_of_dreams::RunNewGameInstance();
+  JourneyOfDreams::RunNewGameInstance();
   return 0;
 }
