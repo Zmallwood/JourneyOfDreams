@@ -2,7 +2,7 @@
 
 #pragma once
 
-// genereate_objects function declaration.
+/* GenerateObjects function declaration. */
 
 namespace JourneyOfDreams
 {

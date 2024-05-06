@@ -1,10 +1,11 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "ColorF.h"
 #include "PointF.h"
 
-// vertex2f class declaration.
+/* Vertex2F class declaration. */
 
 namespace JourneyOfDreams
 {

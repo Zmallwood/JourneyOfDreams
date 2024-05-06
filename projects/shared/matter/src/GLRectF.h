@@ -2,7 +2,7 @@
 
 #pragma once
 
-// glrectf class declaration.
+/* GLRectF class declaration. */
 
 namespace JourneyOfDreams
 {

@@ -1,9 +1,10 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "Core/Engine/ScenesCore/IScene.h"
 
-// login_net_request_scene class declaration
+/* LoginNetRequestScene class declaration. */
 
 namespace JourneyOfDreams
 {

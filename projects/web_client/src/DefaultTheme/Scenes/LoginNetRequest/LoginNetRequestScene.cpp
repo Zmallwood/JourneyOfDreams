@@ -8,7 +8,7 @@
 #include "Core/Engine/ScenesCore/SceneManager.h"
 #include "DefaultTheme/Scenes/Login/LoginScene.h"
 
-// login_net_request_scene class implementation.
+/* LoginNetRequestScene class implementation. */
 
 namespace JourneyOfDreams
 {

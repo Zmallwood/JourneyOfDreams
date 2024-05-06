@@ -2,7 +2,7 @@
 
 #include "GUIMovableWidget.h"
 
-// gui_movable_widget class implementation.
+/* GUIMovableWidget class implementation. */
 
 namespace JourneyOfDreams
 {

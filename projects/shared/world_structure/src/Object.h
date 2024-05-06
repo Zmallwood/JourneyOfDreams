@@ -2,7 +2,7 @@
 
 #pragma once
 
-// object class declaration.
+/* Object class declaration. */
 
 namespace JourneyOfDreams
 {

@@ -2,7 +2,7 @@
 
 #include "Tile.h"
 
-// tile class implementation.
+/* Tile class implementation. */
 
 namespace JourneyOfDreams
 {

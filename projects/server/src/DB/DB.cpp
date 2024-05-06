@@ -2,7 +2,7 @@
 
 #include "DB.h"
 
-// db class implementation.
+/* DB class implementation. */
 
 namespace JourneyOfDreams
 {

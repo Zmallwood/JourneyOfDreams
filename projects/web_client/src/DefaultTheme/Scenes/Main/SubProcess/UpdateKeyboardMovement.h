@@ -2,7 +2,7 @@
 
 #pragma once
 
-// update_keyboard_movement function declaration.
+/* UpdateKeyboardMovement function declaration. */
 
 namespace JourneyOfDreams
 {

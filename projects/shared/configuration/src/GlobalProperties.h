@@ -2,7 +2,7 @@
 
 #pragma once
 
-// global_properties class declaration.
+/* GlobalProperties class declaration. */
 
 namespace JourneyOfDreams
 {

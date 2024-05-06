@@ -2,7 +2,7 @@
 
 #pragma once
 
-// iscene class declaration.
+/* IScene class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -53,7 +53,7 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Returns the scene GUI.
     ///
-    /// \return The scene GUI.
+    /// @return The scene GUI.
     /////////////////////////////////////////////////
     std::shared_ptr<JourneyOfDreams::GUI> GUI();
 

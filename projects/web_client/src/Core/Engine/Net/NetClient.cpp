@@ -3,11 +3,12 @@
 #include "NetClient.h"
 #include "NetworkConnection.h"
 
-// net_client class implementation.
+/* NetClient class implementation. */
 
 namespace JourneyOfDreams
 {
-  NetClient::NetClient() : m_connection(std::make_shared<NetworkConnection>()) {
+  NetClient::NetClient()
+      : m_connection(std::make_shared<NetworkConnection>()) {
     /*
     ** Do nothing. */
   }

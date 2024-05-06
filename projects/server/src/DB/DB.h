@@ -2,7 +2,7 @@
 
 #pragma once
 
-// db class declaration.
+/* DB class declaration. */
 
 namespace JourneyOfDreams
 {

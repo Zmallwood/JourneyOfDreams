@@ -2,7 +2,7 @@
 
 #pragma once
 
-// generate_grass function declaration.
+/* GenerateGrass function declaration. */
 
 namespace JourneyOfDreams
 {

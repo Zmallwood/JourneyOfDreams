@@ -1,9 +1,10 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "BufferTypes.h"
 
-// renderer_base class declaration.
+/* RendererBase class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -23,25 +24,25 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Generate new VAO ID, add it to storage and return it.
     ///
-    /// \return The new VAO ID.
+    /// @return The new VAO ID.
     /////////////////////////////////////////////////
     GLuint GenNewVAOID();
 
     /////////////////////////////////////////////////
     /// Generate new buffer ID, add it to storage and return it.
     ///
-    /// \param buffType The type of buffer.
-    /// \param VAOID The VAO ID to associate with the buffer.
-    /// \return The new buffer ID.
+    /// @param buffType The type of buffer.
+    /// @param VAOID The VAO ID to associate with the buffer.
+    /// @return The new buffer ID.
     /////////////////////////////////////////////////
     GLuint GenNewBuffID(BufferTypes buffType, GLuint VAOID);
 
     /////////////////////////////////////////////////
     /// Set indices data for a VBO with provided ID.
     ///
-    /// \param indicesVBOID The ID of the VBO.
-    /// \param numIndices The number of indices.
-    /// \param data The data to set.
+    /// @param indicesVBOID The ID of the VBO.
+    /// @param numIndices The number of indices.
+    /// @param data The data to set.
     /////////////////////////////////////////////////
     void SetIndicesData(GLuint indicesVBOID, int numIndices,
                         const void *data) const;
@@ -49,11 +50,11 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Set data, other than indices, for a VBO with provided ID.
     ///
-    /// \param VBOID The ID of the VBO.
-    /// \param numEntries The number of entries.
-    /// \param data The data to set.
-    /// \param buffType The type of buffer.
-    /// \param layoutLocation The layout location if
+    /// @param VBOID The ID of the VBO.
+    /// @param numEntries The number of entries.
+    /// @param data The data to set.
+    /// @param buffType The type of buffer.
+    /// @param layoutLocation The layout location if
     ///                       need to specify explicitly.
     /////////////////////////////////////////////////
     void SetData(GLuint VBOID, int numEntries, const void *data,
@@ -62,15 +63,15 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Get uniform location for a variable in shader program.
     ///
-    /// \param variableName The name of the variable.
-    /// \return The uniform location in the shader program.
+    /// @param variableName The name of the variable.
+    /// @return The uniform location in the shader program.
     /////////////////////////////////////////////////
     GLuint GetUniformLocation(const std::string &variableName);
 
     /////////////////////////////////////////////////
     /// Start use shader progrma and VAO with provided ID.
     ///
-    /// \param VAOID The ID of the VAO.
+    /// @param VAOID The ID of the VAO.
     /////////////////////////////////////////////////
     void UseVAOBegin(GLuint VAOID) const;
 
@@ -78,17 +79,17 @@ namespace JourneyOfDreams
     /// Get buffer ID for a VBO with provided type and
     /// which belongs to VAO with provided ID.
     ///
-    /// \param buffType The type of buffer.
-    /// \param VAOID The ID of the VAO to which the buffer belongs.
-    /// \return The buffer ID.
+    /// @param buffType The type of buffer.
+    /// @param VAOID The ID of the VAO to which the buffer belongs.
+    /// @return The buffer ID.
     /////////////////////////////////////////////////
     GLuint GetBuffID(BufferTypes buffType, GLuint VAOID) const;
 
     /////////////////////////////////////////////////
     /// Update indices data for a VBO with provided ID.
     ///
-    /// \param indicesVBOID The ID of the VBO.
-    /// \param indices The indices data to update.
+    /// @param indicesVBOID The ID of the VBO.
+    /// @param indices The indices data to update.
     /////////////////////////////////////////////////
     void UpdateIndicesData(GLuint indicesVBOID,
                            std::vector<int> &indices) const;
@@ -96,10 +97,10 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Update data, other than indices, for a VBO with provided ID.
     ///
-    /// \param VBOID The ID of the VBO.
-    /// \param data The data to update.
-    /// \param buffType The type of buffer.
-    /// \param layoutLocation The layout location of
+    /// @param VBOID The ID of the VBO.
+    /// @param data The data to update.
+    /// @param buffType The type of buffer.
+    /// @param layoutLocation The layout location of
     ///                       the data in the shader program.
     /////////////////////////////////////////////////
     void UpdateData(GLuint VBOID, std::vector<float> &data,
@@ -118,14 +119,14 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Get shader program.
     ///
-    /// \return The shader program.
+    /// @return The shader program.
     /////////////////////////////////////////////////
     std::shared_ptr<JourneyOfDreams::ShaderProgram> ShaderProgram();
 
     /////////////////////////////////////////////////
     /// Get number of vertices in a rectangle.
     ///
-    /// \return The number of vertices in a rectangle (4).
+    /// @return The number of vertices in a rectangle (4).
     /////////////////////////////////////////////////
     static const int NumVerticesInRectangle();
 

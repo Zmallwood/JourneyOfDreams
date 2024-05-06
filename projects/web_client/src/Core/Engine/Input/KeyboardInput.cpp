@@ -2,7 +2,7 @@
 
 #include "KeyboardInput.h"
 
-// keyboard_input class definition.
+/* KeyboardInput class implementation. */
 
 namespace JourneyOfDreams
 {

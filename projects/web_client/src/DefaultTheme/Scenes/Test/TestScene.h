@@ -1,9 +1,10 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "Core/Engine/ScenesCore/IScene.h"
 
-// test_scene class declaration.
+/* TestScene class declaration. */
 
 namespace JourneyOfDreams
 {

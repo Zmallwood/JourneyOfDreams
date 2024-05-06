@@ -1,9 +1,10 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "FontSizes.h"
 
-// text_renderer class declaration.
+/* TextRenderer class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -23,12 +24,12 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Draw a string of text to the canvas.
     ///
-    /// \param rid The resource ID of the string.
-    /// \param text The text to draw.
-    /// \param position The position to draw the text.
-    /// \param color The color of the text.
-    /// \param centerAlign Whether to center-align the text.
-    /// \param fontSize The point size of the font.
+    /// @param rid The resource ID of the string.
+    /// @param text The text to draw.
+    /// @param position The position to draw the text.
+    /// @param color The color of the text.
+    /// @param centerAlign Whether to center-align the text.
+    /// @param fontSize The point size of the font.
     /////////////////////////////////////////////////
     void DrawString(RID rid, const std::string &text, PointF position,
                     ColorF color = Colors::Wheat, bool centerAlign = false,
@@ -37,17 +38,17 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Allocate resources for a new string of text to be drawn.
     ///
-    /// \return The resource ID of the string.
+    /// @return The resource ID of the string.
     /////////////////////////////////////////////////
     RID NewString();
 
     /////////////////////////////////////////////////
     /// Measure the size of a rendered string of text.
     ///
-    /// \param text The text to measure.
-    /// \param fontSize The point size of the font to
+    /// @param text The text to measure.
+    /// @param fontSize The point size of the font to
     ///                 use for measuring the text.
-    /// \return The size (in the canvas) of the text.
+    /// @return The size (in the canvas) of the text.
     /////////////////////////////////////////////////
     SizeF MeasureString(const std::string &text, FontSizes fontSize) const;
 

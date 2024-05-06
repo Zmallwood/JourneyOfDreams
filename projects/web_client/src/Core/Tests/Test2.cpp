@@ -3,7 +3,7 @@
 #include "Test2.h"
 #include "Core/Engine/Assets/ImageBank.h"
 
-// test2 class implementation.
+/* Test2 class implementation. */
 
 namespace JourneyOfDreams
 {

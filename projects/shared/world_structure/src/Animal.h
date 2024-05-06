@@ -2,7 +2,7 @@
 
 #pragma once
 
-// animal class declaration.
+/* Animal class declaration. */
 
 namespace JourneyOfDreams
 {

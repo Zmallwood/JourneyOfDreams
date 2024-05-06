@@ -2,7 +2,7 @@
 
 #pragma once
 
-// run_new_game_instance function declaration.
+/* RunNewGameInstance function declaration. */
 
 namespace JourneyOfDreams
 {

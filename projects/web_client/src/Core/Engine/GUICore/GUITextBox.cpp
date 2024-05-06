@@ -9,12 +9,13 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
-// gui_text_box class implementation.
+/* GUITextBox class implementation. */
 
 namespace JourneyOfDreams
 {
   GUITextBox::GUITextBox(RectF area, ColorF textColor, bool passwordMode)
-      : GUIWidget(area), m_textColor(textColor),
+      : GUIWidget(area),
+        m_textColor(textColor),
         m_cursorHeight(area.h - 2 * Padding()),
         m_managedTextLine(area.w - 2 * Padding(), passwordMode) {
     /*

@@ -2,7 +2,7 @@
 
 #pragma once
 
-// engine class declaration.
+/* Engine class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -20,11 +20,6 @@ namespace JourneyOfDreams
     /// Resets cursor style and clear canvas.
     /////////////////////////////////////////////////
     void Reset();
-
-    /////////////////////////////////////////////////
-    /// Polls events.
-    /////////////////////////////////////////////////
-    void HandleInput();
 
     /////////////////////////////////////////////////
     /// Update current scene in SceneManager.

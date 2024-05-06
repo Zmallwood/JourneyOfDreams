@@ -2,7 +2,7 @@
 
 #pragma once
 
-// world_view class declaration.
+/* WorldView class declaration. */
 
 namespace JourneyOfDreams
 {

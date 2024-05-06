@@ -9,7 +9,7 @@
 #include "SubProcess/UpdateKeyboardMovement.h"
 #include "SubProcess/WorldView/WorldView.h"
 
-// main_scene class implementation.
+/* MainScene class implementation. */
 
 namespace JourneyOfDreams
 {

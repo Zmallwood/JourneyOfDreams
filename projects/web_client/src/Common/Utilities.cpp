@@ -60,7 +60,7 @@ namespace JourneyOfDreams
     glfwGetWindowPos(_<Graphics>().Window(), &x, &y);
     auto canvasSize = GetCanvasSize();
     auto mousePosition = PointF{static_cast<float>(xpos) / canvasSize.w,
-                                 static_cast<float>(ypos) / canvasSize.h};
+                                static_cast<float>(ypos) / canvasSize.h};
     return mousePosition;
   }
 }

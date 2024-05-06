@@ -2,7 +2,7 @@
 
 #pragma once
 
-// test1 class declaration.
+/* Test1 class declaration. */
 
 namespace JourneyOfDreams
 {

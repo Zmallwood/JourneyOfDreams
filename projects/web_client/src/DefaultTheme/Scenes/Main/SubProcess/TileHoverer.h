@@ -2,7 +2,7 @@
 
 #pragma once
 
-// tile_hoverer class declaration.
+/* TileHoverer class declaration. */
 
 namespace JourneyOfDreams
 {

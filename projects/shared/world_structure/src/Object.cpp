@@ -2,7 +2,7 @@
 
 #include "Object.h"
 
-// object class implementation.
+/* Object class implementation. */
 
 namespace JourneyOfDreams
 {
@@ -10,6 +10,7 @@ namespace JourneyOfDreams
       : m_type(Hash(objectTypeName)) {
   }
 
-  Object::Object(int objectTypeHash) : m_type(objectTypeHash) {
+  Object::Object(int objectTypeHash)
+      : m_type(objectTypeHash) {
   }
 }

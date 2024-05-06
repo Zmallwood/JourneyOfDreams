@@ -2,7 +2,7 @@
 
 #pragma once
 
-// default_shader_images_vertex declaration.
+/* DefaultShaderImagesVertex definition. */
 
 namespace JourneyOfDreams
 {

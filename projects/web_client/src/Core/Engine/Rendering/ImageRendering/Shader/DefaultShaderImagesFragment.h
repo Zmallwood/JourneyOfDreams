@@ -2,7 +2,7 @@
 
 #pragma once
 
-// default_shader_images_fragment declaration.
+/* DefaultShaderImagesFragment definition. */
 
 namespace JourneyOfDreams
 {

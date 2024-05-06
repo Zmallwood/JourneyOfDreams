@@ -2,7 +2,7 @@
 
 #pragma once
 
-// game_instance class declaration.
+/* GameInstance class declaration. */
 
 namespace JourneyOfDreams
 {

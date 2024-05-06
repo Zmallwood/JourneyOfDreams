@@ -2,7 +2,7 @@
 
 #include "DefaultTheme/RunNewGameInstance.h"
 
-// main function implementation.
+/* Main function implementation. */
 
 int main(int argc, char *argv[]) { // Game entry point.
   JourneyOfDreams::RunNewGameInstance();

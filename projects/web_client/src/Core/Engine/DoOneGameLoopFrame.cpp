@@ -9,7 +9,7 @@
 #include "Engine.h"
 #include "Graphics/Graphics.h"
 
-// do_one_game_loop_frame function implementation.
+/* DoOneGameLoopFrame function implementation. */
 
 namespace JourneyOfDreams
 {
@@ -32,7 +32,6 @@ namespace JourneyOfDreams
     _<Engine>();    // Touch Engine to initialize
 
     _<Engine>().Reset();
-    _<Engine>().HandleInput();
     _<Engine>().Update();
     _<Engine>().UpdateNet();
     _<Engine>().Render();

@@ -2,7 +2,7 @@
 
 #pragma once
 
-// gui_widget class declaration.
+/* WidgetEntry class declaration. */
 
 namespace JourneyOfDreams
 {

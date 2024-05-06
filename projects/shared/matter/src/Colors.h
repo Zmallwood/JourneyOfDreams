@@ -2,7 +2,7 @@
 
 #pragma once
 
-// color class declaration.
+/* Colors namespace definition. */
 
 namespace JourneyOfDreams
 {

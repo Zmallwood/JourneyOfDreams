@@ -3,7 +3,7 @@
 #include "GUILabel.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
-// gui_label class implementation.
+/* GUILabel class implementation. */
 
 namespace JourneyOfDreams
 {
@@ -11,7 +11,8 @@ namespace JourneyOfDreams
                      GUIAlign alignment, FontSizes fontSize, ColorF textColor)
       : GUIWidget(position, _<TextRenderer>().MeasureString(text, fontSize),
                   alignment),
-        m_text(std::make_shared<std::string>(text)), m_fontSize(fontSize),
+        m_text(std::make_shared<std::string>(text)),
+        m_fontSize(fontSize),
         m_textColor(textColor) {
     /*
     ** Allocate graphis resources. */

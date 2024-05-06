@@ -3,7 +3,7 @@
 #include "RunNewGameInstance.h"
 #include "Core/GameInstance.h"
 
-// run_new_game_instance function implementation.
+/* RunNewGameInstance function implementation. */
 
 namespace JourneyOfDreams
 {

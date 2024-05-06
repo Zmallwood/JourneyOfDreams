@@ -1,9 +1,10 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include <SDL2/SDL.h>
 
-// colorf class declaration.
+/* ColorF class declaration. */
 
 namespace JourneyOfDreams
 {

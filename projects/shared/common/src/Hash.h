@@ -2,7 +2,7 @@
 
 #pragma once
 
-// hash function declaration.
+/* Hash function declaration. */
 
 namespace JourneyOfDreams
 {

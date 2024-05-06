@@ -15,7 +15,7 @@
 #include <string>
 #include <vector>
 
-// websocket_server class declaration.
+/* WebsocketServer class declaration. */
 
 namespace JourneyOfDreams
 {

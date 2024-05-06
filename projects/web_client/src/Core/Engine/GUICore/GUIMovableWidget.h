@@ -1,9 +1,10 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "GUIWidget.h"
 
-// gui_movable_widget class declaration.
+/* GUIMovableWidget class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -16,9 +17,9 @@ namespace JourneyOfDreams
     /// Forwards the constructor arguments to the base
     /// class and initializes the movable flag.
     ///
-    /// \param area Area of the widget.
-    /// \param alignment Alignment of the widget.
-    /// \param movable Whether the widget is movable.
+    /// @param area Area of the widget.
+    /// @param alignment Alignment of the widget.
+    /// @param movable Whether the widget is movable.
     /////////////////////////////////////////////////
     GUIMovableWidget(RectF area, GUIAlign alignment = GUIAlign::TopLeft,
                      bool movable = true);

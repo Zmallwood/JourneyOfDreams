@@ -2,7 +2,7 @@
 
 #pragma once
 
-// world_file_reader class declaration.
+/* WorldFileReader class declaration. */
 
 namespace JourneyOfDreams
 {

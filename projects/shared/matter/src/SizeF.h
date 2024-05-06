@@ -2,7 +2,7 @@
 
 #pragma once
 
-// sizef class declaration.
+/* SizeF class declaration. */
 
 namespace JourneyOfDreams
 {

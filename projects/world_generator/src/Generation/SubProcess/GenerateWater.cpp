@@ -5,7 +5,7 @@
 #include "../../shared/world_structure/src/World.h"
 #include "../../shared/world_structure/src/WorldArea.h"
 
-// generate_water function implementation.
+/* GenerateWater function implementation. */
 
 namespace JourneyOfDreams
 {

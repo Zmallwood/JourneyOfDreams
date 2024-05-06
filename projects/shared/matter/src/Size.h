@@ -2,7 +2,7 @@
 
 #pragma once
 
-// size class declaration.
+/* Size class declaration. */
 
 namespace JourneyOfDreams
 {

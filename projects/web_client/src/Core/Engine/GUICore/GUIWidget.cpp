@@ -4,7 +4,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "GUI.h"
 
-// gui_widget class implementation.
+/* GUIWidget class implementation. */
 
 namespace JourneyOfDreams
 {
@@ -21,7 +21,9 @@ namespace JourneyOfDreams
   }
 
   GUIWidget::GUIWidget(PointF position, SizeF size, GUIAlign alignment)
-      : m_position(position), m_size(size), m_alignment(alignment),
+      : m_position(position),
+        m_size(size),
+        m_alignment(alignment),
         m_widgetsToInsert(std::make_shared<std::vector<WidgetEntry>>()) {
     /*
     ** Allocate graphics resources. */

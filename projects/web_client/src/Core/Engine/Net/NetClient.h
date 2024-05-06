@@ -2,7 +2,7 @@
 
 #pragma once
 
-// net_client class declaration.
+/* NetClient class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -31,22 +31,22 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Send a message to the server.
     ///
-    /// \param data The data in json format to send to the server.
-    /// \return The result of the operation.
+    /// @param data The data in json format to send to the server.
+    /// @return The result of the operation.
     /////////////////////////////////////////////////
     EMSCRIPTEN_RESULT Send(std::map<std::string, std::string> data);
 
     /////////////////////////////////////////////////
     /// Tells if the client is connected to the server.
     ///
-    /// \return True if the client is connected to the server.
+    /// @return True if the client is connected to the server.
     /////////////////////////////////////////////////
     bool Connected();
 
     /////////////////////////////////////////////////
     /// Get the network connection object.
     ///
-    /// \return The network connection object.
+    /// @return The network connection object.
     /////////////////////////////////////////////////
     std::shared_ptr<NetworkConnection> Connection() const;
 

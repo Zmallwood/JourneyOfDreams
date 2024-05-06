@@ -2,7 +2,7 @@
 
 #pragma once
 
-// precompiled header for world_generator.
+/* Precompiled headers for WorldGenerator. */
 
 #include <fstream>
 #include <iostream>

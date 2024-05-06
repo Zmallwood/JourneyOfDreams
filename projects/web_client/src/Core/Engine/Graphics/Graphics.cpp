@@ -17,7 +17,7 @@ namespace JourneyOfDreams
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
     m_window = glfwCreateWindow(canvas_get_width(), canvas_get_height(),
-                              "The Window Title", NULL, NULL);
+                                "The Window Title", NULL, NULL);
     glfwMakeContextCurrent(m_window);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

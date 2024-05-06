@@ -2,7 +2,7 @@
 
 #pragma once
 
-// world_area class declaration.
+/* WorldArea class declaration. */
 
 namespace JourneyOfDreams
 {

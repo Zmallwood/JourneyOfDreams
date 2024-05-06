@@ -2,7 +2,7 @@
 
 #include "ShaderProgram.h"
 
-// shader_program class implementation.
+/* ShaderProgram class implementation. */
 
 namespace JourneyOfDreams
 {

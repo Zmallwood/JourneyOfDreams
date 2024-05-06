@@ -2,7 +2,7 @@
 
 #pragma once
 
-// scene_manager class declaration.
+/* SceneManager class declaration. */
 
 namespace JourneyOfDreams
 {

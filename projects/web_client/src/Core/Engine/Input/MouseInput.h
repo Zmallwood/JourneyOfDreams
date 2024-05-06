@@ -1,9 +1,10 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "MouseButton.h"
 
-// mouse_input class declaration.
+/* MouseInput class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -25,21 +26,21 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Tells if any button is pressed.
     ///
-    /// \return True if any button is pressed.
+    /// @return True if any button is pressed.
     /////////////////////////////////////////////////
     bool AnyButtonPressed();
 
     /////////////////////////////////////////////////
     /// Getter (by reference) for the left mouse button.
     ///
-    /// \return Reference to the left mouse button.
+    /// @return Reference to the left mouse button.
     /////////////////////////////////////////////////
     MouseButton &LeftButton();
 
     /////////////////////////////////////////////////
     /// Getter (by reference) for the right mouse button.
     ///
-    /// \return Reference to the right mouse button.
+    /// @return Reference to the right mouse button.
     /////////////////////////////////////////////////
     MouseButton &RightButton();
 

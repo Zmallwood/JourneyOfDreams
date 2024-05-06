@@ -1,9 +1,10 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "GUIWindow.h"
 
-// gui_message_box class declaration.
+/* GUIMessageBox class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -16,12 +17,12 @@ namespace JourneyOfDreams
     /// Forwards the constructor arguments to the base
     /// class and initializes the message string.
     ///
-    /// \param position Position of the message box.
-    /// \param message Message to display in the message box.
-    /// \param title Title of the message box.
-    /// \param size Size of the message box.
-    /// \param alignment Alignment of the message box.
-    /// \param movable Whether the message box is movable.
+    /// @param position Position of the message box.
+    /// @param message Message to display in the message box.
+    /// @param title Title of the message box.
+    /// @param size Size of the message box.
+    /// @param alignment Alignment of the message box.
+    /// @param movable Whether the message box is movable.
     /////////////////////////////////////////////////
     GUIMessageBox(PointF position, const std::string &message,
                   const std::string &title = "Message",

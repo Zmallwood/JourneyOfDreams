@@ -2,7 +2,7 @@
 
 #pragma once
 
-// ensure_good_player_position function declaration.
+/* EnsureGoodPlayerPosition function declaration. */
 
 namespace JourneyOfDreams
 {

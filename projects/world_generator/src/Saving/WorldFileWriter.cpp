@@ -6,7 +6,7 @@
 #include "../../shared/world_structure/src/World.h"
 #include "../../shared/world_structure/src/WorldArea.h"
 
-// world_file_writer class implementation.
+/* WorldFileWriter class implementation. */
 
 namespace JourneyOfDreams
 {

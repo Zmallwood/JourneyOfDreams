@@ -2,7 +2,7 @@
 
 #pragma once
 
-// singleton function implementation.
+/* Singleton function implementation. */
 
 namespace JourneyOfDreams
 {

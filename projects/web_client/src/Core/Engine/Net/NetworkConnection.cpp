@@ -4,7 +4,7 @@
 #include "Core/Configuration/ConfigurationFile.h"
 #include "NetClient.h"
 
-// network_connection class implementation.
+/* NetworkConnection class implementation. */
 
 namespace JourneyOfDreams
 {

@@ -9,7 +9,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
-// login_scene class implementation.
+/* LoginScene class implementation. */
 
 namespace JourneyOfDreams
 {

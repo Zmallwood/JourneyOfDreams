@@ -2,7 +2,7 @@
 
 #pragma once
 
-// generate_new_world function declaration.
+/* GenerateNewWorld function declaration. */
 
 namespace JourneyOfDreams
 {

@@ -2,7 +2,7 @@
 
 #pragma once
 
-// managed_text_string class declaration.
+/* GUIManagedTextString class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -15,9 +15,9 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Initializes class members.
     ///
-    /// \param maxRenderWidth The maximum width of the
+    /// @param maxRenderWidth The maximum width of the
     ///                       rendererd text.
-    /// \param passwordMode Whether the text should be
+    /// @param passwordMode Whether the text should be
     ///                     displayed as a password.
     /////////////////////////////////////////////////
     ManagedTextString(float maxRenderWidth = 1.0f, bool passwordMode = false);
@@ -25,7 +25,7 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Inserts text at the current cursor position.
     ///
-    /// \param text The text to insert.
+    /// @param text The text to insert.
     /////////////////////////////////////////////////
     void InsertText(const std::string &text);
 
@@ -33,7 +33,7 @@ namespace JourneyOfDreams
     /// Insert a character at the current cursor
     /// position.
     ///
-    /// \param c The character to insert.
+    /// @param c The character to insert.
     /////////////////////////////////////////////////
     void InsertCharacter(char c);
 
@@ -66,7 +66,7 @@ namespace JourneyOfDreams
     /// is currently being displayed with regards
     /// to the cursor offset.
     ///
-    /// \return The cursor position.
+    /// @return The cursor position.
     /////////////////////////////////////////////////
     int AppearedCursorPosition() const;
 
@@ -75,7 +75,7 @@ namespace JourneyOfDreams
     /// displayed with regards to the cursor offset
     /// and cursor right clip.
     ///
-    /// \return The text.
+    /// @return The text.
     /////////////////////////////////////////////////
     std::string GetAppearedText() const;
 
@@ -94,7 +94,7 @@ namespace JourneyOfDreams
     /// at the given x position, measured from the left
     /// edge of the text area.
     ///
-    /// \param xPosition The x position.
+    /// @param xPosition The x position.
     /////////////////////////////////////////////////
     void SetCursorPositionFromLocalX(float xPosition);
 
@@ -107,14 +107,14 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Gets the cursor position in the text.
     ///
-    /// \return The cursor position.
+    /// @return The cursor position.
     /////////////////////////////////////////////////
     int CursorPosition() const;
 
     /////////////////////////////////////////////////
     /// Gets the complete text.
     ///
-    /// \return The text.
+    /// @return The text.
     /////////////////////////////////////////////////
     std::string Text() const;
 

@@ -6,7 +6,7 @@
 #include "Shader/DefaultShaderImagesFragment.h"
 #include "Shader/DefaultShaderImagesVertex.h"
 
-// image_renderer class implementation.
+/* ImageRenderer class implementation. */
 
 namespace JourneyOfDreams
 {

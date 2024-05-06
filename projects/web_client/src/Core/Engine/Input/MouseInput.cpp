@@ -2,7 +2,7 @@
 
 #include "MouseInput.h"
 
-// mouse_input class implementation.
+/* MouseInput class implementation. */
 
 namespace JourneyOfDreams
 {

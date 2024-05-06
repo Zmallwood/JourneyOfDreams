@@ -1,9 +1,10 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "Core/Engine/ScenesCore/IScene.h"
 
-// main_scene class declaration.
+/* MainScene class declaration. */
 
 namespace JourneyOfDreams
 {

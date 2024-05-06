@@ -5,7 +5,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Font.h"
 
-// text_renderer class implementation.
+/* TextRenderer class implementation. */
 
 namespace JourneyOfDreams
 {

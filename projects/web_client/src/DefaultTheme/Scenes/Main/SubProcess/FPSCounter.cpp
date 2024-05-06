@@ -5,7 +5,7 @@
 #include "Core/Engine/GUICore/GUILabel.h"
 #include "DefaultTheme/Scenes/Main/MainScene.h"
 
-// fps_counter class implementation.
+/* FPSCounter class implementation. */
 
 namespace JourneyOfDreams
 {

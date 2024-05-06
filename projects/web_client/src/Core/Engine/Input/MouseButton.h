@@ -2,7 +2,7 @@
 
 #pragma once
 
-// mouse_button class declaration.
+/* MouseButton class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -26,14 +26,14 @@ namespace JourneyOfDreams
     /// resets the state of the button so that
     /// proceeding calls will return false.
     ///
-    /// \return True if the button has been pressed.
+    /// @return True if the button has been pressed.
     /////////////////////////////////////////////////
     bool PressedPickResult();
 
     /////////////////////////////////////////////////
     /// Tells if the button is pressed.
     ///
-    /// \return True if the button is pressed.
+    /// @return True if the button is pressed.
     /////////////////////////////////////////////////
     bool Pressed();
 

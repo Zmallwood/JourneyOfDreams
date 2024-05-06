@@ -1,10 +1,11 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "Core/Engine/Rendering/TextRendering/FontSizes.h"
 #include "GUIWidget.h"
 
-// gui_label class declaration.
+/* GUILabel class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -17,11 +18,11 @@ namespace JourneyOfDreams
     /// Initialize class members and graphical resources
     /// and setup the default appearance of the label.
     ///
-    /// \param position Position of the label.
-    /// \param text Text to display on the label.
-    /// \param alignment Alignment of the label.
-    /// \param fontSize Font size of the text.
-    /// \param textColor Color of the text.
+    /// @param position Position of the label.
+    /// @param text Text to display on the label.
+    /// @param alignment Alignment of the label.
+    /// @param fontSize Font size of the text.
+    /// @param textColor Color of the text.
     /////////////////////////////////////////////////
     GUILabel(PointF position, const std::string &text,
              GUIAlign alignment = GUIAlign::TopLeft,
@@ -31,9 +32,9 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Calls the other constructor some default values.
     ///
-    /// \param position Position of the label.
-    /// \param text Text to display on the label.
-    /// \param textColor Color of the text.
+    /// @param position Position of the label.
+    /// @param text Text to display on the label.
+    /// @param textColor Color of the text.
     /////////////////////////////////////////////////
     GUILabel(PointF position, const std::string &text, ColorF textColor);
 
@@ -51,14 +52,14 @@ namespace JourneyOfDreams
     /// Get absolute position of the label with
     /// alignement taken into account.
     ///
-    /// \return Absolute position of the label.
+    /// @return Absolute position of the label.
     /////////////////////////////////////////////////
     PointF GetAlignedAbsolutePosition() override;
 
     /////////////////////////////////////////////////
     /// Set the text of the label.
     ///
-    /// \param text Text to set.
+    /// @param text Text to set.
     /////////////////////////////////////////////////
     void SetText(std::shared_ptr<std::string> text);
 

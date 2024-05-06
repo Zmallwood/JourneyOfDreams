@@ -6,7 +6,7 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
-// world_file_reader class implementation.
+/* WorldFileReader class implementation. */
 
 namespace JourneyOfDreams
 {

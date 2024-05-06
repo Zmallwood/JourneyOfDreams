@@ -3,11 +3,12 @@
 #include "IScene.h"
 #include "Core/Engine/GUICore/GUI.h"
 
-// iscene class implementation.
+/* IScene class implementation. */
 
 namespace JourneyOfDreams
 {
-  IScene::IScene() : m_gui(std::make_shared<JourneyOfDreams::GUI>()) {
+  IScene::IScene()
+      : m_gui(std::make_shared<JourneyOfDreams::GUI>()) {
     m_gui->Initialize();
   }
 

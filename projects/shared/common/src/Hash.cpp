@@ -2,7 +2,7 @@
 
 #include "Hash.h"
 
-// hash function implementation.
+/* Hash function implementation. */
 
 namespace JourneyOfDreams
 {

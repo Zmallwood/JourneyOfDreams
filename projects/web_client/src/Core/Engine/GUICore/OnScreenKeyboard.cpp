@@ -6,7 +6,7 @@
 #include "GUIPanel.h"
 #include "GUITextBox.h"
 
-// on_screen_keyboard class implementation.
+/* OnScreenKeyboard class implementation. */
 
 namespace JourneyOfDreams
 {

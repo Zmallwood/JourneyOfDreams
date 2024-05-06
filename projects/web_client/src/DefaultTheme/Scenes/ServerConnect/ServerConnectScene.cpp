@@ -6,7 +6,7 @@
 #include "Core/Engine/Net/NetClient.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
-// server_connect_scene class implementation.
+/* ServerConnectScene class implementation. */
 
 namespace JourneyOfDreams
 {

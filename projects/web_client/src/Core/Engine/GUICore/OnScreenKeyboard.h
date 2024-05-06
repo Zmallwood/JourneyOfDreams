@@ -1,9 +1,10 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "GUIPanel.h"
 
-// on_screen_keyboard class declaration.
+/* OnScreenKeyboard class declaration. */
 
 namespace JourneyOfDreams
 {

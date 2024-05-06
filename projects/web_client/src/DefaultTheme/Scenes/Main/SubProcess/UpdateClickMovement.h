@@ -2,7 +2,7 @@
 
 #pragma once
 
-// update_click_movement function declaration.
+/* UpdateClickMovement function declaration. */
 
 namespace JourneyOfDreams
 {

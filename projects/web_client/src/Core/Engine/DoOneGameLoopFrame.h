@@ -2,7 +2,7 @@
 
 #pragma once
 
-// do_one_game_loop_frame function declaration.
+/* DoOneGameLoopFrame function declaration. */
 
 namespace JourneyOfDreams
 {

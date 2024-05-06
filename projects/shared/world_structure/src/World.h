@@ -2,7 +2,7 @@
 
 #pragma once
 
-// world class declaration.
+/* World class declaration. */
 
 namespace JourneyOfDreams
 {

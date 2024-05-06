@@ -1,11 +1,12 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "GLRectF.h"
 #include "PointF.h"
 #include "SizeF.h"
 
-// rectf class declaration.
+/* RectF class declaration. */
 
 namespace JourneyOfDreams
 {

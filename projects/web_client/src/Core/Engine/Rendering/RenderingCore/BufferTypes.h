@@ -2,7 +2,7 @@
 
 #pragma once
 
-// buffer_types enum declaration.
+/* BufferTypes enum class declaration. */
 
 namespace JourneyOfDreams
 {

@@ -2,7 +2,7 @@
 
 #pragma once
 
-// run_net_server function declaration.
+/* RunNetServer function declaration. */
 
 namespace JourneyOfDreams
 {

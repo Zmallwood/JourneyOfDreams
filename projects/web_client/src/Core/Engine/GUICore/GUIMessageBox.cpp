@@ -4,7 +4,7 @@
 #include "GUIButton.h"
 #include "GUILabel.h"
 
-// message_box class implementation.
+/* GUIMessageBox class implementation. */
 
 namespace JourneyOfDreams
 {

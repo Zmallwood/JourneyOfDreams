@@ -8,7 +8,7 @@
 #include "Core/Engine/ScenesCore/SceneManager.h"
 #include "DefaultTheme/Scenes/Register/RegisterScene.h"
 
-// register_net_request_scene class implementation.
+/* RegisterNetRequestScene class implementation. */
 
 namespace JourneyOfDreams
 {

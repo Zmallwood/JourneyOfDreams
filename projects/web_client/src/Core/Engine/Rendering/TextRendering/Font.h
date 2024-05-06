@@ -1,9 +1,10 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 typedef struct _TTF_Font TTF_Font;
 
-// font class declaration.
+/* Font class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -15,29 +16,29 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Create a regular font object and a font object with an outline.
     ///
-    /// \param fontFileName The file name of the font.
-    /// \param fontSize The point size of the font.
+    /// @param fontFileName The file name of the font.
+    /// @param fontSize The point size of the font.
     /////////////////////////////////////////////////
     Font(const std::string &fontFileName, int fontSize);
 
     /////////////////////////////////////////////////
     /// Get the regular font object.
     ///
-    /// \return The regular font object.
+    /// @return The regular font object.
     /////////////////////////////////////////////////
     std::shared_ptr<TTF_Font> SDLFont() const;
 
     /////////////////////////////////////////////////
     /// Get the font object with an outline.
     ///
-    /// \return The font object with an outline.
+    /// @return The font object with an outline.
     /////////////////////////////////////////////////
     std::shared_ptr<TTF_Font> OutlineSDLFont() const;
 
     /////////////////////////////////////////////////
     /// Get the width of the font outline.
     ///
-    /// \return The width of the font outline.
+    /// @return The width of the font outline.
     /////////////////////////////////////////////////
     static const int FontOutlineWidth();
 

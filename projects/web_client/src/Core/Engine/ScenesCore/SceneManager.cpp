@@ -9,7 +9,7 @@
 #include "DefaultTheme/Scenes/ServerConnect/ServerConnectScene.h"
 #include "DefaultTheme/Scenes/Test/TestScene.h"
 
-// scene_manager class implementation.
+/* SceneManager class implementation. */
 
 namespace JourneyOfDreams
 {

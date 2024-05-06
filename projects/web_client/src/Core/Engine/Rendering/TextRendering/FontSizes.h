@@ -2,7 +2,7 @@
 
 #pragma once
 
-// font_sizes enum class declaration.
+/* FontSizes enum class declaration. */
 
 namespace JourneyOfDreams
 {

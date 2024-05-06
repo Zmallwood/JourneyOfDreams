@@ -5,10 +5,9 @@
 #include "Graphics/Graphics.h"
 #include "Input/InputManager.h"
 #include "Net/NetClient.h"
-#include "PollEvents.h"
 #include "ScenesCore/SceneManager.h"
 
-// engine class implementation.
+/* Engine class implementation. */
 
 namespace JourneyOfDreams
 {
@@ -24,10 +23,6 @@ namespace JourneyOfDreams
   void Engine::Reset() {
     _<Cursor>().ResetStyle();
     _<Graphics>().ClearCanvas();
-  }
-
-  void Engine::HandleInput() {
-    PollEvents();
   }
 
   void Engine::Update() {

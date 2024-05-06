@@ -2,7 +2,7 @@
 
 #pragma once
 
-// precompiled headers for server.
+/* Precompiled headers for Server. */
 
 #include <algorithm>
 #include <functional>

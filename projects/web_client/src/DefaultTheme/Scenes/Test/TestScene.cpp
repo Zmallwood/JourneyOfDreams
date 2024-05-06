@@ -4,7 +4,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
-// test_scene class implementation.
+/* TestScene class implementation. */
 
 namespace JourneyOfDreams
 {

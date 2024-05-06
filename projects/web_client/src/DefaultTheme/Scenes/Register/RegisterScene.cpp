@@ -10,7 +10,7 @@
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 #include "Core/Engine/ScenesCore/SceneManager.h"
 
-// register_scene class implementation.
+/* RegisterScene class implementation. */
 
 namespace JourneyOfDreams
 {

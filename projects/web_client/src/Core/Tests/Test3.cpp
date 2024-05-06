@@ -3,7 +3,7 @@
 #include "Test3.h"
 #include "Core/Engine/Rendering/ImageRendering/ImageRenderer.h"
 
-// test3 class implementation.
+/* Test3 class implementation. */
 
 namespace JourneyOfDreams
 {

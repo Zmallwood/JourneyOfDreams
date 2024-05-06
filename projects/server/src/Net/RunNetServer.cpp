@@ -3,7 +3,7 @@
 #include "RunNetServer.h"
 #include "WebsocketServer.h"
 
-// run_net_server function implementation.
+/* RunNetServer function implementation. */
 
 #define PORT_NUMBER 1238
 

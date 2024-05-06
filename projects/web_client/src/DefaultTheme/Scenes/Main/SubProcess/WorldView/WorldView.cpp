@@ -10,7 +10,7 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
-// world_view class implementation.
+/* WorldView class implementation. */
 
 namespace JourneyOfDreams
 {

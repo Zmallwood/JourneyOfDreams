@@ -2,7 +2,7 @@
 
 #include "Test1.h"
 
-// test1 class implementation.
+/* Test1 class implementation. */
 
 namespace JourneyOfDreams
 {

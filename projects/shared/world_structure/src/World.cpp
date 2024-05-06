@@ -3,10 +3,11 @@
 #include "World.h"
 #include "WorldArea.h"
 
-// world class implementation.
+/* World class implementation. */
 
 namespace JourneyOfDreams
 {
-  World::World() : m_worldArea(std::make_shared<JourneyOfDreams::WorldArea>()) {
+  World::World()
+      : m_worldArea(std::make_shared<JourneyOfDreams::WorldArea>()) {
   }
 }

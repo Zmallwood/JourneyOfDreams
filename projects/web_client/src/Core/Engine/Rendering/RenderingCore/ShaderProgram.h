@@ -2,7 +2,7 @@
 
 #pragma once
 
-// shader_program class declaration.
+/* ShaderProgram class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -14,9 +14,9 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Compile the vertex and fragment shaders and link them into a program.
     ///
-    /// \param vertexShaderSource The source code of the vertex shader.
-    /// \param fragmentShaderSource The source code of the fragment shader.
-    /// \return True if the shader program was created successfully.
+    /// @param vertexShaderSource The source code of the vertex shader.
+    /// @param fragmentShaderSource The source code of the fragment shader.
+    /// @return True if the shader program was created successfully.
     /////////////////////////////////////////////////
     bool Create(const GLchar *vertexShaderSource,
                 const GLchar *fragmentShaderSource);
@@ -29,7 +29,7 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Get the shader program ID.
     ///
-    /// \return The shader program ID.
+    /// @return The shader program ID.
     /////////////////////////////////////////////////
     GLuint ProgramID();
 

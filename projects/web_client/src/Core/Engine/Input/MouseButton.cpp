@@ -2,7 +2,7 @@
 
 #include "MouseButton.h"
 
-// mouse_button class implementation.
+/* MouseButton class implementation. */
 
 namespace JourneyOfDreams
 {

@@ -6,7 +6,7 @@
 #include "world_structure/src/World.h"
 #include "world_structure/src/WorldArea.h"
 
-// ensure_good_player_position function implementation.
+/* EnsureGoodPlayerPosition function implementation. */
 
 namespace JourneyOfDreams
 {

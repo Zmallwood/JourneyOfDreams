@@ -2,7 +2,7 @@
 
 #pragma once
 
-// pointf class declaration.
+/* PointF class declaration. */
 
 namespace JourneyOfDreams
 {

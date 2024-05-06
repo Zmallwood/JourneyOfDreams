@@ -2,7 +2,7 @@
 
 #pragma once
 
-// generate_water function declaration.
+/* GenerateWater function declaration. */
 
 namespace JourneyOfDreams
 {

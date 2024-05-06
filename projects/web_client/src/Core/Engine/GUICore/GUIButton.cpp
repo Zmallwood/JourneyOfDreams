@@ -11,7 +11,9 @@ namespace JourneyOfDreams
 {
   GUIButton::GUIButton(RectF area, const std::string &text,
                        std::function<void()> onClick, ColorF textColor)
-      : GUIWidget(area), m_text(text), m_textColor(textColor),
+      : GUIWidget(area),
+        m_text(text),
+        m_textColor(textColor),
         m_onClick(std::move(onClick)) {
     /* 1) Allocate graphics resources.
      * 2) Set default properties. */

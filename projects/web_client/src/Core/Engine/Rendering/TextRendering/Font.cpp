@@ -2,7 +2,7 @@
 
 #include "Font.h"
 
-// font class implementation.
+/* Font class implementation. */
 
 namespace JourneyOfDreams
 {

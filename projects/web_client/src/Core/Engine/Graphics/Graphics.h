@@ -37,6 +37,6 @@ namespace JourneyOfDreams
     GLFWwindow *Window();
 
    private:
-    GLFWwindow *m_window {nullptr};
+    GLFWwindow *m_window{nullptr};
   };
 }

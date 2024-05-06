@@ -2,7 +2,7 @@
 
 #pragma once
 
-// precompiled headers for web_client
+/* Precompiled headers for WebClient. */
 
 #define GL_GLEXT_PROTOTYPES 1
 

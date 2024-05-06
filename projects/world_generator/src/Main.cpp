@@ -3,7 +3,7 @@
 #include "Generation/GenerateNewWorld.h"
 #include "Saving/WorldFileWriter.h"
 
-// main function implementation.
+/* Main function implementation. */
 
 int main(int argc, char *argv[]) {
   using namespace JourneyOfDreams;

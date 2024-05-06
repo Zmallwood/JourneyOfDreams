@@ -1,10 +1,11 @@
 /* Copyright (c) 2024 Andreas Åkerberg. */
 
 #pragma once
+
 #include "GUIWidget.h"
 #include "ManagedTextString.h"
 
-// gui_text_box class declaration.
+/* GUITextBox class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -17,9 +18,9 @@ namespace JourneyOfDreams
     /// Initialize class members and graphical resources
     /// and setup the default appearance of the text box.
     ///
-    /// \param area Area of the text box.
-    /// \param textColor Color of the text.
-    /// \param passwordMode Whether the text box is
+    /// @param area Area of the text box.
+    /// @param textColor Color of the text.
+    /// @param passwordMode Whether the text box is
     ///                     in password mode.
     /////////////////////////////////////////////////
     GUITextBox(RectF area, ColorF textColor = Colors::Wheat,
@@ -38,7 +39,7 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Get the text currently in the text field.
     ///
-    /// \return The text in the text field.
+    /// @return The text in the text field.
     /////////////////////////////////////////////////
     std::string GetText();
 
@@ -56,7 +57,7 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     /// Type a single character into the text box.
     ///
-    /// \param c Character to type.
+    /// @param c Character to type.
     /////////////////////////////////////////////////
     void TypeCharacter(char c);
 

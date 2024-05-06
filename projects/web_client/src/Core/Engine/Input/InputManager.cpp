@@ -5,7 +5,7 @@
 #include "KeyboardInput.h"
 #include "MouseInput.h"
 
-// input_manager class implementation.
+/* InputManager class implementation. */
 
 namespace JourneyOfDreams
 {

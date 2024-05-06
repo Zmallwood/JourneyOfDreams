@@ -2,7 +2,7 @@
 
 #include "GUIWindow.h"
 
-// gui_window class implementation.
+/* GUIWindow class implementation. */
 
 namespace JourneyOfDreams
 {

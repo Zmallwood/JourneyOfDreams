@@ -3,7 +3,7 @@
 #include "RendererBase.h"
 #include "ShaderProgram.h"
 
-// renderer_base class implementation.
+/* RendererBase class implementation. */
 
 namespace JourneyOfDreams
 {

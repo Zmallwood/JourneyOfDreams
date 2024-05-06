@@ -6,7 +6,7 @@
 #include "SubProcess/GenerateObjects.h"
 #include "SubProcess/GenerateWater.h"
 
-// generate_new_world function implementation.
+/* GenerateNewWorld function implementation. */
 
 namespace JourneyOfDreams
 {

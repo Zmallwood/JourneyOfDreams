@@ -2,7 +2,7 @@
 
 #pragma once
 
-// magical_creature class declaration.
+/* MagicalCreature class declaration. */
 
 namespace JourneyOfDreams
 {

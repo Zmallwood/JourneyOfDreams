@@ -3,7 +3,7 @@
 #include "ManagedTextString.h"
 #include "Core/Engine/Rendering/TextRendering/TextRenderer.h"
 
-// managed_text_string class implementation.
+/* GUIManagedTextString class implementation. */
 
 namespace JourneyOfDreams
 {

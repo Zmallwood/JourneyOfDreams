@@ -2,7 +2,7 @@
 
 #pragma once
 
-// tile class declaration.
+/* Tile class declaration. */
 
 namespace JourneyOfDreams
 {
@@ -13,9 +13,8 @@ namespace JourneyOfDreams
     void SetGround(const std::string &groundName);
     void SetGround(int groundHash);
     bool IsWalkable();
-    auto
 
-    Ground() {
+    auto Ground() {
       return m_ground;
     }
 

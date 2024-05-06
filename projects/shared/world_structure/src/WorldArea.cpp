@@ -4,7 +4,7 @@
 #include "Tile.h"
 #include "configuration/src/GlobalProperties.h"
 
-// world_area class implementation.
+/* WorldArea class implementation. */
 
 namespace JourneyOfDreams
 {

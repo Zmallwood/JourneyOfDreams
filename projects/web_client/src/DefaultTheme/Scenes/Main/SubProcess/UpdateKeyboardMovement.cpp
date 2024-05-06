@@ -4,7 +4,7 @@
 #include "Core/Engine/CoreGameObjects/Player.h"
 #include "Core/Engine/Input/KeyboardInput.h"
 
-// update_keyboard_movement function implementation.
+/* UpdateKeyboardMovement function implementation. */
 
 namespace JourneyOfDreams
 {
