@@ -9,150 +9,120 @@ namespace JourneyOfDreams
 {
   ManagedTextString::ManagedTextString(float maxRenderWidth, bool passwordMode)
       : m_maxRenderWidth(maxRenderWidth), m_passwordMode(passwordMode) {
-    /*
-    ** Do nothing. */
   }
 
   void ManagedTextString::InsertText(const std::string &text) {
-    /*
-    ** Cancel if there is nothing to insert. */
+    /* 1) Cancel if there is nothing to insert.
+     * 2) Insert text and reposition text cursor.
+     * 3) Increase offset while text end is outside visible field. */
     if (text.empty()) {
       return;
     }
-    /*
-    ** Insert text and reposition text cursor. */
     m_text.insert(m_cursorPosition, text);
     m_cursorPosition += text.size();
-    /*
-    ** Increase offset while text end is outside visible field. */
     while (IsTextOverflow()) {
       m_cursorOffset++;
     }
   }
 
   void ManagedTextString::InsertCharacter(char c) {
-    /*
-    ** Insert character and reposition text cursor. */
+    /* 1) Insert character and reposition text cursor.
+     * 2) Increase offset while text end is outside visible field. */
     m_text.insert(m_cursorPosition, 1, c);
     m_cursorPosition++;
-    /*
-    ** Increase offset while text end is outside visible field. */
     while (IsTextOverflow()) {
       m_cursorOffset++;
     }
   }
 
   void ManagedTextString::TryMoveCursorLeft() {
-    /*
-    ** Try move cursor to the left. */
+    /* 1) Try move cursor to the left.
+     * 2) If cursor is now outside visible field, decrease offset.
+     * 3) Increase right side clip until no characters are shown
+     *    outside visible field. */
     if (m_cursorPosition > 0) {
       m_cursorPosition--;
     }
-    /*
-    ** If cursor is now outside visible field, decrease offset. */
     if (m_cursorOffset > 0 && m_cursorPosition < m_cursorOffset) {
       m_cursorOffset--;
     }
-    /*
-    ** Increase right side clip until no characters are shown outside visible
-    *field. */
     while (IsTextOverflow()) {
       m_cursorRightClip++;
     }
   }
 
   void ManagedTextString::TryMoveCursorRight() {
-    /*
-    ** Try move cursor to the right. */
+    /* 1) Try move cursor to the right.
+     * 2) If offseted text is longer than the text that fits in the visible
+     *    field, increase offset.
+     * 3) Reset right side clip.
+     * 4) And increase it until there is no overflow. */
     if (m_cursorPosition < m_text.size()) {
       m_cursorPosition++;
-      /*
-      ** If offseted text is longer than the text that fits in the visible
-      *field,
-      ** increase offset. */
       if (m_cursorPosition - m_cursorOffset > GetAppearedText().size()) {
         m_cursorOffset++;
       }
     }
-    /*
-    ** Reset right side clip. */
     m_cursorRightClip = 0;
-    /*
-    ** And increase it until there is no overflow. */
     while (IsTextOverflow()) {
       m_cursorRightClip++;
     }
   }
 
   void ManagedTextString::TryDeleteLeft() {
-    /*
-    ** If the text cursor is not at the left edge of the text. */
+    /* 1) If the text cursor is not at the left edge of the text.
+     * 2) Then erase the character to the left of cursor.
+     * 3) Try decrease offset by 1, but not less than 0.
+     *    This makes at least one character visible to the left of
+     *    cursor, which makes it easier for further left-deletions,
+     *    to see which character that is being deleted. */
     if (m_cursorPosition > 0) {
-      /*
-      ** Erase the character to the left of cursor. */
       m_text.erase(m_cursorPosition - 1, 1);
-
       TryMoveCursorLeft();
-
-      /*
-      ** Try decrease offset by 1, but not less than 0.
-      ** This makes at least one character visible to the left of
-      ** cursor, which makes it easier for further left-deletions,
-      ** to see which character that is being deleted. */
       m_cursorOffset = std::max(0, m_cursorOffset - 1);
     }
   }
 
   void ManagedTextString::TryDeleteRight() {
-    /*
-    ** Ensure cursor is not outside text. */
+    /* 1) Ensure cursor is not outside text.
+     * 2) Erase the character to the right of cursor.
+     * 3) Reset right side clip.
+     * 4) And increase it until there is no overflow. */
     if (m_cursorPosition < m_text.size()) {
-      /*
-      ** Erase the character to the right of cursor. */
       m_text.erase(m_cursorPosition, 1);
     }
-    /*
-    ** Reset right side clip. */
     m_cursorRightClip = 0;
-    /*
-    ** And increase it until there is no overflow. */
     while (IsTextOverflow()) {
       m_cursorRightClip++;
     }
   }
 
   int ManagedTextString::AppearedCursorPosition() const {
-    /*
-    ** Return cursor position as appeared with regard to the offset. */
+    /* Return cursor position as appeared with regard to the offset. */
     return m_cursorPosition - m_cursorOffset;
   }
 
   bool ManagedTextString::IsTextOverflow() const {
-    /*
-    ** Return true if text is overflowed. */
+    /* Return true if text is overflowed. */
     return _<TextRenderer>()
                .MeasureString(GetAppearedText(), FontSizes::_20)
                .w > m_maxRenderWidth;
   }
 
   std::string ManagedTextString::OffsetedText() const {
-    /*
-    ** Return text with regard to the offset. */
+    /* Return text with regard to the offset. */
     return m_text.substr(m_cursorOffset);
   }
 
   std::string ManagedTextString::GetAppearedText() const {
-    /*
-    ** Get offseted text, that dont include text outside
-    ** of the left edge of the visible text field. */
+    /* 1) Get offseted text, that dont include text outside
+     *    of the left edge of the visible text field.
+     * 2) Clip the text outside of the right edge of the visible text field.
+     * 3) Check if enabled and apply password mode. */
     auto offsetedText = OffsetedText();
-    /*
-    ** Clip the text outside of the right edge of the visible text field. */
     auto clippedText =
         offsetedText.substr(0, offsetedText.size() - m_cursorRightClip);
     auto result = clippedText;
-    /*
-    ** Check if enabled and apply password mode. */
     if (m_passwordMode) {
       result = std::string(result.size(), '*');
     }
@@ -160,12 +130,10 @@ namespace JourneyOfDreams
   }
 
   void ManagedTextString::MoveCursorToStart() {
-    /*
-    ** Both positiong and offset must be set to 0. */
+    /* 1) Both positiong and offset must be set to 0.
+     * 2) Reapply right side clip. */
     m_cursorPosition = 0;
     m_cursorOffset = 0;
-    /*
-    ** Reapply right side clip. */
     m_cursorRightClip = 0;
     while (IsTextOverflow()) {
       m_cursorRightClip++;
@@ -173,16 +141,13 @@ namespace JourneyOfDreams
   }
 
   void ManagedTextString::MoveCursorToEnd() {
-    /*
-    ** Set text cursor position to right side of the last character in the text.
-    */
+    /* 1) Set text cursor position to right side of the last
+     *    character in the text.
+     * 2) No need of right side clipping when we know we are
+     *    at the right end of the text.
+     * 3) Reapply cursor offset.*/
     m_cursorPosition = m_text.size();
-    /*
-    ** No need of right side clipping when we know we are at the right end of
-    *the text. */
     m_cursorRightClip = 0;
-    /*
-    ** Reapply cursor offset. */
     m_cursorOffset = 0;
     while (IsTextOverflow()) {
       m_cursorOffset++;
@@ -190,72 +155,55 @@ namespace JourneyOfDreams
   }
 
   void ManagedTextString::SetCursorPositionFromLocalX(float xPosition) {
-    /*
-    ** Get only the visible part of the text. */
+    /* 1) Get only the visible part of the text.
+     * 2) Declare variable to hold the resulting cursor position,
+     *    with the cursor offset subtracted.
+     * 3) Iterate through the characters of the visible text.
+     * 4) Measure the rendered width of the substring from character
+     *    index 0 to i.
+     * 5) Measure the rendered width of the character at index i.
+     * 6) If the center of the currently iterated character exceeds
+     *    the x position:
+     * 7) Then the correct character, and its index has been found. Cancel loop.
+     * 8) Else, the correct character, and its index, not yet been found.
+     * 9) Keep iterating.
+     * 10)Set the final text cursor position, by just adding the
+     *    cursor offset to the value. */
     auto textToRender = GetAppearedText();
-    /*
-    ** To hold the resulting cursor position, with the cursor offset subtracted.
-    */
     auto offsetedCursorPosition = 0;
-    /*
-    ** Iterate through the characters of the visible text. */
     for (auto i = 0; i < textToRender.size(); i++) {
-      /*
-      ** Measure the rendered width of the substring from character index 0 to
-      *i. */
       auto leftSubStrWidth =
           _<TextRenderer>()
               .MeasureString(textToRender.substr(0, i), FontSizes::_20)
               .w;
-      /*
-      ** Measure the rendered width of the character at index i. */
       auto lastCharWidth =
           _<TextRenderer>()
               .MeasureString(textToRender.substr(i, 1), FontSizes::_20)
               .w;
-      /*
-      ** If the center of the currently iterated character exceeds the x
-      *position. */
       if (leftSubStrWidth + lastCharWidth / 2 > xPosition) {
-        /*
-        ** The correct character, and its index has been found. Cancel loop. */
         break;
       }
-      /*
-      ** The correct character, and its indx, not yet been found. Keep
-      *iterating. */
       offsetedCursorPosition++;
     }
-    /*
-    ** Set the final text cursor position, by just adding the cursor offset to
-    *the value. */
     m_cursorPosition = offsetedCursorPosition + m_cursorOffset;
   }
 
   void ManagedTextString::Reset() {
-    /*
-    ** Should not contain any text anymore. */
+    /* 1) Should not contain any text anymore.
+     * 2) Cursor position can only be 0 without text.
+     * 3) There is nothing to offset without text.
+     * 4) There is nothing to clip without text. */
     m_text.clear();
-    /*
-    ** Cursor position can only be 0 without text. */
     m_cursorPosition = 0;
-    /*
-    ** There is nothing to offset without text. */
     m_cursorOffset = 0;
-    /*
-    ** There is nothing to clip without text. */
     m_cursorRightClip = 0;
   }
 
   int ManagedTextString::CursorPosition() const {
-    /*
-    ** Getter */
     return m_cursorPosition;
   }
 
   std::string ManagedTextString::Text() const {
-    /*
-    ** Getter */
     return m_text;
   }
 }
