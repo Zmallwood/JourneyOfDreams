@@ -4,4 +4,5 @@
 
 /* Developer macro-settings. */
 
+/* Uncomment to activate tests in the game loop. */
 // #define DEV_TEST_MODE

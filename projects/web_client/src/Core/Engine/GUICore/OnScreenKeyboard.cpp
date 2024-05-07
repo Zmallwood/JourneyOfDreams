@@ -13,25 +13,21 @@ namespace JourneyOfDreams
   OnScreenKeyboard::OnScreenKeyboard()
       : GUIPanel({.x = 0.5f, .y = 1.0f}, {.w = 0.3f, .h = 0.15f},
                  GUIAlign::BottomCenter) {
-    /*
-    ** Set default widget propertis. **/
+    /* Set default widget propertis. **/
     SetVisible(false);
     SetPadding(0.0f);
   }
 
   void OnScreenKeyboard::Initialize() {
-    /*
-    ** Create panel containing the lower case buttons. **/
+    /* 1) Create panel containing the lower case buttons.
+     * 2) Set default properties for lower case panel.
+     * 3) Add buttons to the lower case panel. **/
     auto pnlLowerCase =
         AddWidget("pnlLowerCase",
                   std::make_shared<GUIPanel>(PointF{.x = 0.0f, .y = 0.0f},
                                              SizeF{.w = 0.3f, .h = 0.15f}));
-    /*
-    ** Set default properties for lower case panel.**/
     pnlLowerCase->SetDrawBackground(false);
     pnlLowerCase->SetDrawBorders(false);
-    /*
-    ** Add buttons to the lower case panel. **/
     AddWidget("btn1",
               std::make_shared<GUIButton>(RectF{0.0f, 0.0f, 0.015f, 0.05f}, "1",
                                           [this]() { TypeCharacter('1'); }));
@@ -65,28 +61,23 @@ namespace JourneyOfDreams
   }
 
   void OnScreenKeyboard::Show() {
-    /*
-    ** Show the on-screen keyboard. **/
+    /* Show the on-screen keyboard. **/
     SetVisible(true);
   }
 
   void OnScreenKeyboard::Hide() {
-    /*
-    ** Hide the on-screen keyboard. **/
+    /* Hide the on-screen keyboard. **/
     SetVisible(false);
   }
 
   void OnScreenKeyboard::TypeCharacter(char character) {
-    /*
-    ** Get currently focused textbox. **/
+    /* 1) Get currently focused textbox.
+     * 2) If any text box is focused:
+     * 3) Then send the pressed character to it. **/
     auto gui = GetParentGUI();
     auto focusedTextBox =
         dynamic_pointer_cast<GUITextBox>(gui->FocusedWidget());
-    /*
-    ** If any text box is focused. */
     if (focusedTextBox) {
-      /*
-      ** Send the pressed character to it. **/
       focusedTextBox->TypeCharacter(character);
     }
   }

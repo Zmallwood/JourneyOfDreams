@@ -151,7 +151,7 @@ namespace JourneyOfDreams
     inline static const auto k_numFloatsPerEntry = std::map<BufferTypes, int>{
         {BufferTypes::Indices, 1},     {BufferTypes::Positions2D, 2},
         {BufferTypes::Positions3D, 3}, {BufferTypes::Colors, 4},
-        {BufferTypes::Uvs, 2},         {BufferTypes::Normals, 3},
+        {BufferTypes::UVs, 2},         {BufferTypes::Normals, 3},
         {BufferTypes::BoneIDs, 4},     {BufferTypes::Weights, 4}};
     inline static const int k_numVerticesInRectangle{4};
   };

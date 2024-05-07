@@ -26,7 +26,7 @@ namespace JourneyOfDreams
     auto indexBuffID = GenNewBuffID(BufferTypes::Indices, rid);
     auto posBuffID = GenNewBuffID(BufferTypes::Positions2D, rid);
     auto colorBuffID = GenNewBuffID(BufferTypes::Colors, rid);
-    auto uvBuffID = GenNewBuffID(BufferTypes::Uvs, rid);
+    auto uvBuffID = GenNewBuffID(BufferTypes::UVs, rid);
     SetIndicesData(indexBuffID, RendererBase::NumVerticesInRectangle(),
                    nullptr);
     SetData(posBuffID, RendererBase::NumVerticesInRectangle(), nullptr,
@@ -34,7 +34,7 @@ namespace JourneyOfDreams
     SetData(colorBuffID, RendererBase::NumVerticesInRectangle(), nullptr,
             BufferTypes::Colors);
     SetData(uvBuffID, RendererBase::NumVerticesInRectangle(), nullptr,
-            BufferTypes::Uvs);
+            BufferTypes::UVs);
     UseVAOEnd();
 
     return rid;
@@ -88,11 +88,11 @@ namespace JourneyOfDreams
     auto indexBuffID = GetBuffID(BufferTypes::Indices, rid);
     auto posBuffID = GetBuffID(BufferTypes::Positions2D, rid);
     auto colorBuffID = GetBuffID(BufferTypes::Colors, rid);
-    auto uvBuffID = GetBuffID(BufferTypes::Uvs, rid);
+    auto uvBuffID = GetBuffID(BufferTypes::UVs, rid);
     UpdateIndicesData(indexBuffID, indices);
     UpdateData(posBuffID, positions, BufferTypes::Positions2D, k_locPosition);
     UpdateData(colorBuffID, colors, BufferTypes::Colors, k_locColor);
-    UpdateData(uvBuffID, uvs, BufferTypes::Uvs, k_locUv);
+    UpdateData(uvBuffID, uvs, BufferTypes::UVs, k_locUv);
     glDrawElements(GL_TRIANGLE_FAN, RendererBase::NumVerticesInRectangle(),
                    GL_UNSIGNED_INT, NULL);
     UseVAOEnd();

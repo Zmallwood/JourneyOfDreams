@@ -7,7 +7,8 @@
 namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
-  ///
+  /// Ensure the player is in a good position with
+  /// regards to walkability.
   /////////////////////////////////////////////////
   void EnsureGoodPlayerPosition();
 }

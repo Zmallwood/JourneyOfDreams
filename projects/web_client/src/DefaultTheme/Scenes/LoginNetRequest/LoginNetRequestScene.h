@@ -9,17 +9,19 @@
 namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
-  ///
+  /// Entered from LoginScene when login button is pressed.
+  /// Sends login request to server.
   /////////////////////////////////////////////////
   class LoginNetRequestScene : public IScene {
    public:
     /////////////////////////////////////////////////
-    ///
+    /// Set up GUILabel showing login message.
     /////////////////////////////////////////////////
     LoginNetRequestScene();
 
     /////////////////////////////////////////////////
-    ///
+    /// Grabs username and password from LoginScene and
+    /// sends login request to server.
     /////////////////////////////////////////////////
     void OnEnter() override;
   };

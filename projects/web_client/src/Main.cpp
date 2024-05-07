@@ -6,6 +6,10 @@
 
 /////////////////////////////////////////////////
 /// Game entry point.
+///
+/// @param argc Number of command-line arguments.
+/// @param argv Command-line arguments.
+/// @return Exit code.
 /////////////////////////////////////////////////
 int main(int argc, char *argv[]) {
   JourneyOfDreams::RunNewGameInstance();

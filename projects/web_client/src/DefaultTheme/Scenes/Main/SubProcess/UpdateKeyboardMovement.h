@@ -7,7 +7,8 @@
 namespace JourneyOfDreams
 {
   /////////////////////////////////////////////////
-  ///
+  /// Update the player movement caused by keyboard
+  /// input.
   /////////////////////////////////////////////////
   void UpdateKeyboardMovement();
 }

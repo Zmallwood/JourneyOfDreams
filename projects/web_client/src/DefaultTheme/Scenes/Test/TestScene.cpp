@@ -24,7 +24,6 @@ namespace JourneyOfDreams
   }
 
   void TestScene::UpdatePostRender() {
-
     _<SceneManager>().GoToScene("ServerConnectScene");
   }
 }
