@@ -84,6 +84,7 @@ add_executable(WebClient
   src/Core/Engine/CoreMath/TileGridCalculations.cpp
   src/Core/Engine/GUICore/GUIMovableWidget.cpp
   src/Core/Engine/Input/InputManager.cpp
+  ../shared/configuration/src/GlobalProperties.cpp
 )
 
 target_link_libraries(WebClient websocket)

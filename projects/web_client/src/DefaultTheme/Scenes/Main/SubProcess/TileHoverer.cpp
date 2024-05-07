@@ -25,4 +25,8 @@ namespace JourneyOfDreams
         .x = player.GetX() - (numGridCols - 1) / 2 + hoveredCol,
         .y = player.GetY() - (numGridRows - 1) / 2 + hoveredRow};
   }
+
+  Point TileHoverer::HoveredCoordinate() const {
+    return m_hoveredCoordinate;
+  }
 }

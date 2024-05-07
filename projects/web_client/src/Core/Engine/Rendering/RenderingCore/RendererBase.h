@@ -142,6 +142,7 @@ namespace JourneyOfDreams
     void UpdateArrayBufferDataInt(GLuint VBOID, std::vector<float> &data,
                                   int numFloatsPerEntry,
                                   int layoutLocation) const;
+
     std::shared_ptr<std::vector<GLuint>> m_VAOIDs;
     std::shared_ptr<
         std::map<BufferTypes, std::shared_ptr<std::map<GLuint, GLuint>>>>

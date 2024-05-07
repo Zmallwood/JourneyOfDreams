@@ -14,9 +14,7 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     ///
     /////////////////////////////////////////////////
-    auto WorldAreaSize() {
-      return m_worldAreaSize;
-    }
+    Size WorldAreaSize();
 
    private:
     Size m_worldAreaSize{100, 100};

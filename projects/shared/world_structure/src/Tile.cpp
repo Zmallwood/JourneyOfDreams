@@ -17,4 +17,20 @@ namespace JourneyOfDreams
   bool Tile::IsWalkable() {
     return m_ground != Hash("GroundWater");
   }
+
+  int Tile::Ground() {
+    return m_ground;
+  }
+
+  float Tile::Elevation() {
+    return m_elevation;
+  }
+
+  std::shared_ptr<JourneyOfDreams::Object> Tile::Object() {
+    return m_object;
+  }
+
+  void Tile::SetObject(const std::shared_ptr<JourneyOfDreams::Object> object) {
+    m_object = object;
+  }
 }

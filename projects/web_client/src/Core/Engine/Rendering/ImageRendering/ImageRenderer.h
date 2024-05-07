@@ -63,9 +63,9 @@ namespace JourneyOfDreams
                    ColorF color = {1.0f, 1.0f, 1.0f});
 
    private:
-    static constexpr int k_locPosition = 0;
-    static constexpr int k_locColor = 1;
-    static constexpr int k_locUv = 2;
-    int m_locNoPixelEffect = -1;
+    static constexpr int k_locPosition{0};
+    static constexpr int k_locColor{1};
+    static constexpr int k_locUv{2};
+    int m_locNoPixelEffect{-1};
   };
 }

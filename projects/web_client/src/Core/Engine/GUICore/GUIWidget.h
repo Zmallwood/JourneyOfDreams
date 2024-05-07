@@ -309,6 +309,7 @@ namespace JourneyOfDreams
 
    private:
     PointF GetAbsolutePosition();
+
     PointF m_position{0.0f, 0.0f};
     SizeF m_size{100.0f, 100.0f};
     std::string m_backgroundImage{"GUIDefaultBackground"};

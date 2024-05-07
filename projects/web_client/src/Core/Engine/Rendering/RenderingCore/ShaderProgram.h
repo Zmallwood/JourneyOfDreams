@@ -36,6 +36,7 @@ namespace JourneyOfDreams
    private:
     GLuint CompileShader(const GLchar *shaderSource, GLuint *shader,
                          GLenum shaderType);
+                         
     GLuint m_programID{0};
   };
 }

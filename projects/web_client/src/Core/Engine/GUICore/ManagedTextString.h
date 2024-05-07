@@ -121,6 +121,7 @@ namespace JourneyOfDreams
    private:
     std::string OffsetedText() const;
     bool IsTextOverflow() const;
+
     std::string m_text{};
     int m_cursorPosition{0};
     int m_cursorOffset{0};

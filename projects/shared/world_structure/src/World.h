@@ -21,9 +21,7 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     ///
     /////////////////////////////////////////////////
-    auto WorldArea() {
-      return m_worldArea;
-    }
+    std::shared_ptr<JourneyOfDreams::WorldArea> WorldArea();
 
    private:
     std::shared_ptr<JourneyOfDreams::WorldArea> m_worldArea;

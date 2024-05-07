@@ -31,30 +31,22 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     ///
     /////////////////////////////////////////////////
-    auto Ground() {
-      return m_ground;
-    }
+    int Ground();
 
     /////////////////////////////////////////////////
     ///
     /////////////////////////////////////////////////
-    auto Elevation() {
-      return m_elevation;
-    }
+    float Elevation();
 
     /////////////////////////////////////////////////
     ///
     /////////////////////////////////////////////////
-    auto Object() {
-      return m_object;
-    }
+    std::shared_ptr<JourneyOfDreams::Object> Object();
 
     /////////////////////////////////////////////////
     ///
     /////////////////////////////////////////////////
-    void SetObject(const std::shared_ptr<JourneyOfDreams::Object> object) {
-      m_object = object;
-    }
+    void SetObject(const std::shared_ptr<JourneyOfDreams::Object> object);
 
    private:
     int m_ground{0};

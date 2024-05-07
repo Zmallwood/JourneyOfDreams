@@ -48,4 +48,8 @@ namespace JourneyOfDreams
   std::shared_ptr<Tile> WorldArea::GetRandomTile() {
     return GetTile(GetRandomCoordinate());
   }
+
+  std::vector<std::vector<std::shared_ptr<Tile>>> &WorldArea::Tiles() {
+    return m_tiles;
+  }
 }

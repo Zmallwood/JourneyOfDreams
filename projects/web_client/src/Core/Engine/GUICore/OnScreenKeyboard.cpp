@@ -76,7 +76,7 @@ namespace JourneyOfDreams
     SetVisible(false);
   }
 
-  void OnScreenKeyboard::TypeCharacter(char c) {
+  void OnScreenKeyboard::TypeCharacter(char character) {
     /*
     ** Get currently focused textbox. **/
     auto gui = GetParentGUI();
@@ -87,7 +87,7 @@ namespace JourneyOfDreams
     if (focusedTextBox) {
       /*
       ** Send the pressed character to it. **/
-      focusedTextBox->TypeCharacter(c);
+      focusedTextBox->TypeCharacter(character);
     }
   }
 }

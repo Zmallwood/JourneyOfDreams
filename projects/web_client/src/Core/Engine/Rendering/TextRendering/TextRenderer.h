@@ -56,8 +56,9 @@ namespace JourneyOfDreams
     void RenderText(RID rid, const std::string &text, ColorF color,
                     bool centerAlign, FontSizes fontSize,
                     std::string &outUniqueNameID, SizeF &outSize) const;
-    const std::string k_relFontsPath = "fonts/";
-    const ColorF k_outlineColor = {0.0f, 0.0f, 0.0f, 1.0f};
+
+    const std::string k_relFontsPath{"fonts/"};
+    const ColorF k_outlineColor{0.0f, 0.0f, 0.0f, 1.0f};
     std::map<FontSizes, std::shared_ptr<Font>> m_fonts;
     std::map<RID, std::string> m_uniqueNameIDs;
     std::map<RID, RID> m_ridsGLResources;

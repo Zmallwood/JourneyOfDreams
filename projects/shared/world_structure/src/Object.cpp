@@ -13,4 +13,8 @@ namespace JourneyOfDreams
   Object::Object(int objectTypeHash)
       : m_type(objectTypeHash) {
   }
+
+  int Object::Type() const {
+    return m_type;
+  }
 }

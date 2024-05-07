@@ -36,6 +36,6 @@ namespace JourneyOfDreams
 
    private:
     std::string m_message{};
-    static constexpr SizeF k_defaultSize = {0.5f, 0.2f};
+    static constexpr SizeF k_defaultSize{0.5f, 0.2f};
   };
 }

@@ -58,6 +58,6 @@ namespace JourneyOfDreams
     std::shared_ptr<JourneyOfDreams::GUI> GUI();
 
    private:
-    std::shared_ptr<JourneyOfDreams::GUI> m_gui;
+    std::shared_ptr<JourneyOfDreams::GUI> m_gui{};
   };
 }

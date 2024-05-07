@@ -36,6 +36,6 @@ namespace JourneyOfDreams
     void Hide();
 
    private:
-    void TypeCharacter(char c);
+    void TypeCharacter(char character);
   };
 }

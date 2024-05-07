@@ -46,9 +46,7 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     ///
     /////////////////////////////////////////////////
-    auto &Tiles() {
-      return m_tiles;
-    }
+    std::vector<std::vector<std::shared_ptr<Tile>>> &Tiles();
 
    private:
     std::vector<std::vector<std::shared_ptr<Tile>>> m_tiles;

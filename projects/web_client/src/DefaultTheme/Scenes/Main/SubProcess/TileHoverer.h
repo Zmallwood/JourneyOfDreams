@@ -19,9 +19,7 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     ///
     /////////////////////////////////////////////////
-    auto HoveredCoordinate() const {
-      return m_hoveredCoordinate;
-    }
+    Point HoveredCoordinate() const;
 
    private:
     Point m_hoveredCoordinate{-1, -1};

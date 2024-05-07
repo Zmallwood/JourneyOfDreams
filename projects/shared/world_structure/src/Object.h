@@ -24,9 +24,7 @@ namespace JourneyOfDreams
     /////////////////////////////////////////////////
     ///
     /////////////////////////////////////////////////
-    auto Type() const {
-      return m_type;
-    }
+    int Type() const;
 
    private:
     int m_type{0};
