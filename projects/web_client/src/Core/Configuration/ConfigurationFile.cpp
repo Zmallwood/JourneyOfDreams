@@ -7,11 +7,11 @@
 namespace JourneyOfDreams
 {
   ConfigurationFile::ConfigurationFile() {
-    // 1) Create object to contain the read configuration file.
-    // 2) Open the configuration file.
-    // 3) Create string to contain the read line.
-    // 4) Read each line of the configuration file.
-    // 5) Remove comments from the line.
+    /* 1) Create object to contain the read configuration file.
+     * 2) Open the configuration file.
+     * 3) Create string to contain the read line.
+     * 4) Read each line of the configuration file.
+     * 5) Remove comments from the line.*/
     std::ifstream configurationFile;
     configurationFile.open(SDL_GetBasePath() + k_filePath);
     std::string line;
@@ -22,13 +22,13 @@ namespace JourneyOfDreams
           break;
         }
       }
-      // 1) Get the parameter name and value.
-      // 2) Convert parameter name to lowercase.
-      // 3) Check if the parameter is the server address.
-      // 4) Set the server address.
-      // 5) Check if the parameter is the server port.
-      // 6) Set the server port.
-      // 7) Close the configuration file.
+      /* 1) Get the parameter name and value.
+       * 2) Convert parameter name to lowercase.
+       * 3) Check if the parameter is the server address.
+       * 4) Set the server address.
+       * 5) Check if the parameter is the server port.
+       * 6) Set the server port.
+       * 7) Close the configuration file. */
       auto parameterName = line.substr(0, line.find('='));
       auto parameterValue = line.substr(line.find('=') + 1);
       std::transform(parameterName.begin(), parameterName.end(),

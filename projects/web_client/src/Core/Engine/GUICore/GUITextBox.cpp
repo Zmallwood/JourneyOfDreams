@@ -50,7 +50,6 @@ namespace JourneyOfDreams
         m_managedTextLine.SetCursorPositionFromLocalX(localMousePosX);
       }
     }
-
     if (HasFocus()) {
       /* 1) Pick all the text typed on keyboard and insert into this text box.
        * 2) Add left arrow key functionality

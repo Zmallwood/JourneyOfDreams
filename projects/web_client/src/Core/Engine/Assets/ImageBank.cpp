@@ -27,8 +27,8 @@ namespace JourneyOfDreams
   GLuint ImageBank::GetImage(int imageNameHash) {
     /* 1) Iterate through all the loaded images.
      * 2) If its key, being the hash of the image name, equals
-     *       the hash of the specified name,
-     *       then, return this image ID
+     *    the hash of the specified name,
+     *    then, return this image ID
      * 3) No image with the name found, return fail value. */
     for (auto img : m_images) {
       if (img.first == imageNameHash) {
